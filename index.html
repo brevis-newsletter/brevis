@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREVIS — 10 de março de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --accent: #c8371a;
+    --accent2: #1a4c8c;
+    --muted: #7a7670;
+    --rule: #d6d0c4;
+    --tag-prev: #c8371a;
+    --tag-civ: #1a4c8c;
+    --tag-trib: #1a6b42;
+    --tag-trab: #7a4a00;
+    --tag-hold: #5c2d82;
+    --tag-dest: #555;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ---- WRAPPER ---- */
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* ---- MASTHEAD ---- */
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 36px 0 20px;
+    text-align: center;
+  }
+  .masthead-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .masthead-logo span {
+    color: var(--accent);
+  }
+  .masthead-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .masthead-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .masthead-meta span::before {
+    content: '— ';
+  }
+
+  /* ---- INDEX ---- */
+  .index-block {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink);
+    background: white;
+    padding: 18px 22px;
+    margin: 28px 0 36px;
+  }
+  .index-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .index-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+  .index-list li {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .index-list li .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 16px;
+  }
+
+  /* ---- SECTION ---- */
+  .section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section:last-child {
+    border-bottom: none;
+  }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 24px;
+  }
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ---- ABERTURA ---- */
+  .abertura-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .abertura-text strong {
+    color: var(--accent);
+  }
+
+  /* ---- NEWS CARD ---- */
+  .news-card {
+    border-left: 3px solid var(--rule);
+    padding-left: 16px;
+    margin-bottom: 28px;
+  }
+  .news-card:last-child {
+    margin-bottom: 0;
+  }
+  .news-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: white;
+    margin-bottom: 7px;
+  }
+  .tag-prev { background: var(--tag-prev); }
+  .tag-civ  { background: var(--tag-civ); }
+  .tag-trib { background: var(--tag-trib); }
+  .tag-trab { background: var(--tag-trab); }
+  .tag-hold { background: var(--tag-hold); }
+  .tag-dest { background: var(--tag-dest); }
+
+  .news-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .news-impact {
+    background: #f0ede6;
+    border-left: 3px solid var(--accent);
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .news-impact strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .news-source {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .news-source a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .news-source a:hover {
+    text-decoration: underline;
+  }
+
+  /* ---- DECISÃO DO DIA ---- */
+  .decisao-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 24px;
+    border-radius: 2px;
+  }
+  .decisao-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8a882;
+    margin-bottom: 8px;
+  }
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    color: white;
+  }
+  .decisao-tese {
+    background: rgba(200, 55, 26, 0.18);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    color: #f0ede6;
+  }
+  .decisao-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #c8c0b0;
+    margin-bottom: 14px;
+  }
+  .decisao-pratica {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #e0d8cc;
+  }
+  .decisao-pratica strong {
+    color: #c8a882;
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .decisao-fonte {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #908880;
+  }
+  .decisao-fonte a {
+    color: #c8a882;
+    text-decoration: none;
+  }
+
+  /* ---- ALERTA ---- */
+  .alerta-box {
+    background: #fff8f0;
+    border: 1px solid #f0c080;
+    border-top: 4px solid #c8821a;
+    padding: 22px 20px;
+  }
+  .alerta-icon {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  .alerta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .alerta-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+  }
+  .alerta-fonte {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .alerta-fonte a { color: var(--accent2); text-decoration: none; font-weight: 600; }
+
+  /* ---- OPORTUNIDADE ---- */
+  .oport-box {
+    background: #f0f7f0;
+    border: 1px solid #b0d4b0;
+    border-top: 4px solid var(--tag-trib);
+    padding: 22px 20px;
+  }
+  .oport-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .oport-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2a3a2a;
+  }
+
+  /* ---- CURIOSIDADE ---- */
+  .curiosidade-box {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .curiosidade-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--rule);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .curiosidade-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .curiosidade-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+  }
+
+  /* ---- TERMO ---- */
+  .termo-box {
+    border: 2px solid var(--ink);
+    padding: 22px 20px;
+  }
+  .termo-word {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .termo-def {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #3a3834;
+  }
+  .termo-exemplo {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: var(--ink);
+    color: #f0ede6;
+    font-size: 12.5px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ---- MAXIMIANO ---- */
+  .max-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .max-item {
+    background: white;
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--ink);
+    padding: 16px 14px;
+  }
+  .max-item-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .max-item h4 {
+    font-size: 12.5px;
+    font-weight: 700;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .max-item p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  /* ---- FRASE ---- */
+  .frase-box {
+    text-align: center;
+    padding: 36px 20px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 2px;
+  }
+  .frase-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.45;
+    color: white;
+    margin-bottom: 14px;
+  }
+  .frase-author {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c8a882;
+  }
+
+  /* ---- PARA LER MAIS ---- */
+  .fontes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fontes-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+  }
+  .fontes-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .fontes-list a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .fontes-list a:hover { text-decoration: underline; }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 3px double var(--ink);
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--muted);
+    letter-spacing: -0.5px;
+  }
+  .footer-text {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 520px) {
+    .masthead-logo { font-size: 40px; }
+    .index-list { grid-template-columns: 1fr; }
+    .max-grid { grid-template-columns: 1fr; }
+    .curiosidade-num { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ===== MASTHEAD ===== -->
+  <header class="masthead">
+    <div class="masthead-logo">BREVI<span>S</span></div>
+    <div class="masthead-tagline">Radar jurídico diário para decisões estratégicas</div>
+    <div class="masthead-meta">
+      <span>Terça-feira, 10 de março de 2026</span>
+      <span>Edição nº 001</span>
+      <span>Leitura: 4 min</span>
+    </div>
+  </header>
+
+  <!-- ===== ÍNDICE ===== -->
+  <div class="index-block">
+    <div class="index-title">Nesta edição</div>
+    <ul class="index-list">
+      <li><span class="num">01</span> Abertura do Dia</li>
+      <li><span class="num">02</span> O Que Você Precisa Saber</li>
+      <li><span class="num">03</span> Decisão do Dia</li>
+      <li><span class="num">04</span> Alerta Jurídico</li>
+      <li><span class="num">05</span> Oportunidade de Atuação</li>
+      <li><span class="num">06</span> Curiosidade Jurídica</li>
+      <li><span class="num">07</span> Termo Jurídico do Dia</li>
+      <li><span class="num">08</span> Impacto para a Maximiano</li>
+      <li><span class="num">09</span> Frase do Dia</li>
+      <li><span class="num">10</span> Para Ler Mais</li>
+    </ul>
+  </div>
+
+  <!-- ===== SEÇÃO 1: ABERTURA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <span class="section-title">Abertura do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="abertura-text">
+      Bom dia. Este é o <strong>Brevis</strong>, seu radar jurídico diário. Hoje o STJ entrega duas decisões de impacto direto: uma sobre cartão de crédito consignado que pode gerar ondas de novos processos, e a confirmação — agora com tese vinculante publicada — de que a Fazenda Pública não pode rejeitar fiança bancária ou seguro-garantia em execuções fiscais. No campo trabalhista, o STF ainda não pautou o julgamento da pejotização (Tema 1.389), mas o ambiente segue tenso: 50 mil ações continuam suspensas em todo o país. Boa leitura.
+    </p>
+  </section>
+
+  <!-- ===== SEÇÃO 2: NOTÍCIAS ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <span class="section-title">O Que Você Precisa Saber Hoje</span>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- NOTÍCIA 1 -->
+    <div class="news-card">
+      <span class="news-tag tag-civ">Civil</span>
+      <h3>STJ afeta repetitivo sobre abusos em contratos de cartão de crédito consignado</h3>
+      <p>
+        A 2ª Seção do STJ afetou ao rito dos recursos repetitivos (REsp 2.224.599) a discussão sobre critérios para caracterizar abuso em contratos de cartão de crédito consignado. O colegiado vai decidir se cláusulas como taxas excessivas configuram abuso e qual a consequência jurídica — restituição ao estado anterior, conversão em empréstimo consignado ou revisão contratual. Determinou-se a suspensão nacional de todos os recursos que discutam o mesmo tema.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        A suspensão nacional paralisa processos em curso. Escritórios com clientes que possuem ações sobre cartão consignado devem monitorar o andamento da afetação. A eventual fixação de dano moral presumido (in re ipsa) pode abrir frente significativa de demandas por consumidores.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/10032026-repetitivo-discute-criterios-para-avaliar-abuso-em-contratos-de-cartao-de-credito-consignado.aspx" target="_blank">STJ — 10/03/2026</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 2 -->
+    <div class="news-card">
+      <span class="news-tag tag-trib">Tributário</span>
+      <h3>STJ confirma: Fazenda não pode recusar fiança ou seguro-garantia em execução fiscal</h3>
+      <p>
+        A 1ª Seção do STJ publicou hoje a tese vinculante do Tema 1.385: na execução de créditos tributários, a Fazenda Pública não pode recusar fiança bancária ou seguro-garantia com base na ordem de preferência de penhora do art. 11 da LEF. A decisão foi unânime e vale para todo o Judiciário.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Empresas em execuções fiscais podem substituir depósito em dinheiro por seguro-garantia ou fiança bancária, preservando caixa. Advogados tributaristas devem utilizar este precedente imediatamente em execuções em curso, especialmente contra municípios e estados que ainda resistiam à prática.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/10032026-na-execucao-de-credito-tributario--fazenda-nao-pode-invocar-ordem-legal-para-recusar-fianca-ou-seguro-garantia.aspx" target="_blank">STJ — 10/03/2026</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 3 -->
+    <div class="news-card">
+      <span class="news-tag tag-trab">Trabalhista</span>
+      <h3>Pejotização: STF ainda sem data para julgamento — 50 mil ações paradas</h3>
+      <p>
+        O STF segue sem data definida para julgar o Tema 1.389, que discute a licitude da contratação de trabalhadores como pessoas jurídicas (PJ). Em fevereiro, a PGR apresentou parecer favorável à constitucionalidade do modelo. Cerca de 50 mil ações trabalhistas permanecem suspensas no país desde abril de 2025, aguardando o desfecho.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Escritórios com causas trabalhistas envolvendo PJ devem orientar clientes a regularizar documentação (contratos com escopo definido, nota fiscal vinculada ao pagamento, ausência de subordinação). A decisão do STF terá efeito vinculante e pode reabrir ou encerrar centenas de processos de uma só vez.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.conjur.com.br/2026-jan-26/stf-julga-pejotizacao-fundo-eleitoral-e-foro-especial-em-2026/" target="_blank">Conjur</a> / <a href="https://portal.comunique-se.com.br/327980-stf-julgara-pejotizacao-e-define-regras-para-empresas-com-pj/" target="_blank">Portal Comunique-se</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 4 -->
+    <div class="news-card">
+      <span class="news-tag tag-prev">Previdenciário</span>
+      <h3>STF analisa contribuição previdenciária de servidores aposentados com doença incapacitante</h3>
+      <p>
+        O STF retomou o julgamento sobre a contribuição previdenciária de servidores aposentados com doenças incapacitantes. A reforma de 2019 reduziu a isenção: antes, incidia apenas sobre valores acima do dobro do teto do INSS; agora, abrange o dobro apenas do teto do RGPS. A Anamatra questiona que equiparar aposentados saudáveis a doentes viola a isonomia e a dignidade. O julgamento foi retomado em 3/03 e ainda não tem placar final.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Servidores aposentados com doenças graves podem ter direito a restituição dos valores recolhidos a maior. Há espaço para ações de revisão caso o STF declare a inconstitucionalidade das alíquotas aplicadas desde 2019.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.anamatra.org.br/imprensa/anamatra-na-midia/36343-stf-prepara-3-mudancas-na-aposentadoria-em-2026" target="_blank">Anamatra / STF</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 5 -->
+    <div class="news-card">
+      <span class="news-tag tag-civ">Civil</span>
+      <h3>STJ: multa por improbidade administrativa não se transmite a herdeiros</h3>
+      <p>
+        O Informativo de Jurisprudência nº 879 do STJ (março/2026) consolida: com a nova redação da Lei de Improbidade Administrativa (Lei 14.230/2021), a multa civil não pode mais ser transmitida aos herdeiros do réu. A inexistência superveniente de fundamento normativo na legislação determina a exclusão da transmissão.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Ações de improbidade com réus que vieram a falecer no curso do processo devem ter o pedido de multa civil extinto. Advogados que atuam na defesa em ações de improbidade devem invocar o precedente imediatamente.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/" target="_blank">STJ — Informativo 879, 3/03/2026</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 6 -->
+    <div class="news-card">
+      <span class="news-tag tag-dest">Destaque Livre</span>
+      <h3>STJ reafirma: prescrição só se interrompe uma única vez dentro da mesma relação jurídica</h3>
+      <p>
+        Também no Informativo 879, o STJ consolidou que, dentro da mesma relação jurídica, a interrupção da prescrição ocorre apenas uma vez, independentemente do fundamento invocado. No caso, notificações judiciais interromperam a prescrição, impedindo que o ajuizamento posterior de ação monitória o fizesse novamente.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Advogados devem atentar ao momento da primeira interrupção e calcular estrategicamente o prazo prescricional. Uma segunda ação com fundamento diferente, na mesma relação, não reinicia o prazo.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/" target="_blank">STJ — Informativo 879, 3/03/2026 — REsp 2.238.389-GO</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== SEÇÃO 3: DECISÃO DO DIA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <span class="section-title">Decisão do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="decisao-box">
+      <div class="decisao-tribunal">STJ · 1ª Seção · Tema Repetitivo 1.385 · 10/03/2026</div>
+      <div class="decisao-titulo">Fazenda Pública não pode rejeitar fiança bancária ou seguro-garantia em execução fiscal</div>
+      <div class="decisao-tese">
+        "Na execução fiscal, a fiança bancária ou o seguro-garantia oferecido em garantia de execução de crédito tributário não é recusável por inobservância à ordem legal da penhora."
+      </div>
+      <div class="decisao-body">
+        A ministra Maria Thereza de Assis Moura, relatora, explicou que esses instrumentos funcionam como estipulações em favor do credor — contratados pelo executado junto a instituições financeiras ou seguradoras para garantir o pagamento da dívida. O ministro Benedito Gonçalves, em voto-vista, reforçou que a Fazenda pode questionar a garantia em casos concretos, mas não recusá-la de forma automática e imotivada.
+      </div>
+      <div class="decisao-pratica">
+        <strong>O que muda na prática</strong>
+        Empresas com execuções fiscais em curso podem imediatamente oferecer fiança ou seguro-garantia no lugar de depósito em dinheiro, sem risco de rejeição unilateral pelo Fisco. Juízes e tribunais de todo o país estão vinculados a este entendimento. A decisão equilibra a proteção do crédito público com a preservação do fluxo de caixa empresarial.
+      </div>
+      <div class="decisao-fonte">
+        Fonte: <a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/10032026-na-execucao-de-credito-tributario--fazenda-nao-pode-invocar-ordem-legal-para-recusar-fianca-ou-seguro-garantia.aspx" target="_blank">STJ.jus.br — REsp 2.193.673 e REsp 2.203.951</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 4: ALERTA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <span class="section-title">Alerta Jurídico</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-icon">⚠️</div>
+      <h3>Cartão consignado sob repetitivo: atenção ao estoque de processos</h3>
+      <p>
+        A afetação do REsp 2.224.599 ao rito dos recursos repetitivos — decidida hoje pelo STJ — determinou a suspensão imediata de todos os recursos especiais e agravos que tratem de contratos de cartão de crédito consignado. Escritórios com processos neste tema em instâncias superiores devem verificar se já ocorreu a suspensão e acompanhar o prazo da afetação de perto. A possibilidade de o STJ fixar dano moral in re ipsa pode ampliar significativamente o passivo de instituições financeiras e, por consequência, o volume de novas demandas de revisão contratual.
+      </p>
+      <div class="alerta-fonte">
+        Fonte: <a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/10032026-repetitivo-discute-criterios-para-avaliar-abuso-em-contratos-de-cartao-de-credito-consignado.aspx" target="_blank">STJ — 10/03/2026</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 5: OPORTUNIDADE ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <span class="section-title">Oportunidade de Atuação</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="oport-box">
+      <h3>💼 Execuções fiscais: hora de substituir depósitos por seguro-garantia</h3>
+      <p>
+        A tese vinculante do Tema 1.385 do STJ abre janela concreta de atuação para clientes com execuções fiscais em curso em qualquer Vara da Fazenda do país. Empresas que fizeram depósitos judiciais podem buscar a substituição por seguro-garantia ou fiança bancária, liberando liquidez. Escritórios com carteira tributária devem mapear o estoque de execuções dos seus clientes e propor petições de substituição de garantia com fundamento no novo precedente vinculante — que tem aplicação imediata.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 6: CURIOSIDADE ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <span class="section-title">Curiosidade Jurídica do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="curiosidade-box">
+      <div class="curiosidade-num">50k</div>
+      <div class="curiosidade-content">
+        <h3>O Brasil tem 50 mil processos trabalhistas congelados esperando o STF decidir sobre PJ</h3>
+        <p>
+          Desde abril de 2025, o ministro Gilmar Mendes determinou a suspensão nacional de todos os processos que discutem a validade de contratos entre empresas e trabalhadores PJ — a chamada pejotização. É uma das maiores paralisações temáticas da história recente do Judiciário trabalhista. Para comparação: entre 2020 e 2024, o número de ações pedindo reconhecimento de vínculo de emprego passou de 167 mil para 443 mil processos, segundo o CNJ — um crescimento de 165% em apenas quatro anos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 7: TERMO ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <span class="section-title">Termo Jurídico do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="termo-box">
+      <div class="termo-word">Recurso Repetitivo</div>
+      <div class="termo-def">
+        É um mecanismo do STJ para julgar, de forma única e definitiva, uma questão jurídica que se repete em milhares de processos idênticos pelo país. Um ou poucos casos são escolhidos como "representativos da controvérsia". Enquanto o julgamento do repetitivo não termina, todos os outros processos com o mesmo tema ficam suspensos. Quando o STJ fixa a tese, ela se torna obrigatória para todos os juízes e tribunais do Brasil.
+      </div>
+      <div class="termo-exemplo">
+        Exemplo de hoje: O STJ afetou o tema dos contratos de cartão consignado como repetitivo (REsp 2.224.599). Isso significa que a tese a ser fixada valerá para todos os processos semelhantes no país — potencialmente milhares de ações.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 8: MAXIMIANO ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">08</span>
+      <span class="section-title">Impacto na sua rotina</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="max-grid">
+      <div class="max-item">
+        <div class="max-item-icon">🔍</div>
+        <h4>Novos Clientes</h4>
+        <p>A afetação do cartão consignado pode gerar demanda de clientes (aposentados, pensionistas) que sofreram cobranças abusivas. Vale divulgar esse serviço proativamente.</p>
+      </div>
+      <div class="max-item">
+        <div class="max-item-icon">⚖️</div>
+        <h4>Estratégia Processual</h4>
+        <p>Clientes com execuções fiscais devem ser imediatamente consultados sobre substituição de depósitos por seguro-garantia — aplicação direta do Tema 1.385 do STJ.</p>
+      </div>
+      <div class="max-item">
+        <div class="max-item-icon">📋</div>
+        <h4>Revisão de Contratos</h4>
+        <p>Clientes PJ prestadores de serviço devem revisar seus contratos antes do julgamento do Tema 1.389 no STF. Uma auditoria preventiva pode evitar riscos de vínculo empregatício futuro.</p>
+      </div>
+      <div class="max-item">
+        <div class="max-item-icon">🏥</div>
+        <h4>Previdenciário</h4>
+        <p>Acompanhar o julgamento do STF sobre servidores aposentados com doenças incapacitantes. Eventual inconstitucionalidade abre frente de ações de revisão de benefício.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 9: FRASE ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">09</span>
+      <span class="section-title">Frase do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="frase-box">
+      <div class="frase-text">"A lei é a razão humana enquanto governa todos os povos da terra."</div>
+      <div class="frase-author">— Montesquieu, O Espírito das Leis (1748)</div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 10: FONTES ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">10</span>
+      <span class="section-title">Para Ler Mais</span>
+      <div class="section-line"></div>
+    </div>
+
+    <ul class="fontes-list">
+      <li>
+        <a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/10032026-repetitivo-discute-criterios-para-avaliar-abuso-em-contratos-de-cartao-de-credito-consignado.aspx" target="_blank">STJ — Repetitivo sobre cartão de crédito consignado (REsp 2.224.599)</a>
+      </li>
+      <li>
+        <a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/10032026-na-execucao-de-credito-tributario--fazenda-nao-pode-invocar-ordem-legal-para-recusar-fianca-ou-seguro-garantia.aspx" target="_blank">STJ — Fazenda não pode recusar fiança em execução fiscal (Tema 1.385)</a>
+      </li>
+      <li>
+        <a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/" target="_blank">STJ — Informativo de Jurisprudência nº 879 (março/2026)</a>
+      </li>
+      <li>
+        <a href="https://www.conjur.com.br/2026-fev-21/tema-no-1-389-no-stf-a-justica-do-trabalho-esta-sendo-empurrada-para-fora-do-jogo/" target="_blank">Conjur — Análise do Tema 1.389 (Pejotização no STF)</a>
+      </li>
+      <li>
+        <a href="https://www.migalhas.com.br/depeso/450226/pejotizacao-no-brasil-para-onde-caminha-o-stf" target="_blank">Migalhas — Para onde caminha a pejotização no STF?</a>
+      </li>
+      <li>
+        <a href="https://www.anamatra.org.br/imprensa/anamatra-na-midia/36343-stf-prepara-3-mudancas-na-aposentadoria-em-2026" target="_blank">Anamatra — STF e as 3 mudanças na aposentadoria em 2026</a>
+      </li>
+      <li>
+        <a href="https://www.migalhas.com.br/quentes/450065/stj-impede-fisco-de-recusar-seguro-garantia-e-fianca-em-execucao" target="_blank">Migalhas — STJ impede fisco de recusar seguro-garantia em execução</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">BREVIS</div>
+    <div class="footer-text">
+      Produzido por Jean Barbosa
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
