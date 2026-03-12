@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREVIS — Edição nº 003 · 12 de março de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --accent: #c8371a;
+    --accent2: #1a4c8c;
+    --muted: #7a7670;
+    --rule: #d6d0c4;
+    --tag-prev: #c8371a;
+    --tag-civ: #1a4c8c;
+    --tag-trib: #1a6b42;
+    --tag-trab: #7a4a00;
+    --tag-hold: #5c2d82;
+    --tag-dest: #555;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* ---- MASTHEAD ---- */
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 36px 0 20px;
+    text-align: center;
+  }
+  .masthead-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .masthead-logo span { color: var(--accent); }
+  .masthead-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .masthead-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .masthead-meta span::before { content: '— '; }
+
+  /* ---- INDEX ---- */
+  .index-block {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink);
+    background: white;
+    padding: 18px 22px;
+    margin: 28px 0 36px;
+  }
+  .index-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .index-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+  .index-list li {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .index-list li .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 16px;
+  }
+
+  /* ---- SECTION ---- */
+  .section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section:last-child { border-bottom: none; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 24px;
+  }
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ---- ABERTURA ---- */
+  .abertura-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .abertura-text strong { color: var(--accent); }
+
+  /* ---- NEWS CARD ---- */
+  .news-card {
+    border-left: 3px solid var(--rule);
+    padding-left: 16px;
+    margin-bottom: 28px;
+  }
+  .news-card:last-child { margin-bottom: 0; }
+  .news-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: white;
+    margin-bottom: 7px;
+  }
+  .tag-prev { background: var(--tag-prev); }
+  .tag-civ  { background: var(--tag-civ); }
+  .tag-trib { background: var(--tag-trib); }
+  .tag-trab { background: var(--tag-trab); }
+  .tag-hold { background: var(--tag-hold); }
+  .tag-dest { background: var(--tag-dest); }
+
+  .news-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .news-impact {
+    background: #f0ede6;
+    border-left: 3px solid var(--accent);
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .news-impact strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .news-source {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .news-source a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .news-source a:hover { text-decoration: underline; }
+
+  /* ---- DECISÃO DO DIA ---- */
+  .decisao-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 24px;
+    border-radius: 2px;
+  }
+  .decisao-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8a882;
+    margin-bottom: 8px;
+  }
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    color: white;
+  }
+  .decisao-tese {
+    background: rgba(200, 55, 26, 0.18);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    color: #f0ede6;
+  }
+  .decisao-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #c8c0b0;
+    margin-bottom: 14px;
+  }
+  .decisao-pratica {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #e0d8cc;
+  }
+  .decisao-pratica strong {
+    color: #c8a882;
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .decisao-fonte {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #908880;
+  }
+  .decisao-fonte a { color: #c8a882; text-decoration: none; }
+
+  /* ---- ALERTA ---- */
+  .alerta-box {
+    background: #fff8f0;
+    border: 1px solid #f0c080;
+    border-top: 4px solid #c8821a;
+    padding: 22px 20px;
+  }
+  .alerta-icon { font-size: 20px; margin-bottom: 6px; }
+  .alerta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .alerta-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 8px;
+  }
+  .alerta-fonte {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .alerta-fonte a { color: var(--accent2); text-decoration: none; font-weight: 600; }
+
+  /* ---- OPORTUNIDADE ---- */
+  .oport-box {
+    background: #f0f7f0;
+    border: 1px solid #b0d4b0;
+    border-top: 4px solid var(--tag-trib);
+    padding: 22px 20px;
+  }
+  .oport-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .oport-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2a3a2a;
+    margin-bottom: 8px;
+  }
+
+  /* ---- CURIOSIDADE ---- */
+  .curiosidade-box {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .curiosidade-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--rule);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .curiosidade-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .curiosidade-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 8px;
+  }
+
+  /* ---- TERMO ---- */
+  .termo-box {
+    border: 2px solid var(--ink);
+    padding: 22px 20px;
+  }
+  .termo-word {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .termo-def {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .termo-subtitulo {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 12px 0 6px;
+  }
+  .termo-exemplo {
+    padding: 8px 12px;
+    background: var(--ink);
+    color: #f0ede6;
+    font-size: 12.5px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ---- ROTINA (IMPACTO) ---- */
+  .rotina-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .rotina-item {
+    background: white;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink);
+    padding: 14px 16px;
+  }
+  .rotina-item h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .rotina-item p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  /* ---- FRASE ---- */
+  .frase-box {
+    text-align: center;
+    padding: 36px 20px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 2px;
+  }
+  .frase-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.45;
+    color: white;
+    margin-bottom: 14px;
+  }
+  .frase-author {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c8a882;
+  }
+
+  /* ---- FONTES ---- */
+  .fontes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fontes-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+  }
+  .fontes-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .fontes-list a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .fontes-list a:hover { text-decoration: underline; }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 3px double var(--ink);
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--muted);
+    letter-spacing: -0.5px;
+  }
+  .footer-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin-top: 4px;
+  }
+  .footer-text {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 520px) {
+    .masthead-logo { font-size: 40px; }
+    .index-list { grid-template-columns: 1fr; }
+    .curiosidade-num { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- ===== NAVBAR ===== -->
+  <nav style="border-bottom:1px solid #d6d0c4;padding:10px 0;margin-bottom:0;display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#7a7670;text-decoration:none;">&#8592; Página Inicial</a>
+    <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#d6d0c4;">brevis.beehiiv.com</span>
+  </nav>
+
+
+  <!-- ===== MASTHEAD ===== -->
+  <header class="masthead">
+    <div class="masthead-logo">BREVI<span>S</span></div>
+    <div class="masthead-tagline">Radar jurídico diário para decisões estratégicas</div>
+    <div class="masthead-meta">
+      <span>Quinta-feira, 12 de março de 2026</span>
+      <span>Edição nº 003</span>
+      <span>Leitura: 3–5 min</span>
+    </div>
+  </header>
+
+  <!-- ===== ÍNDICE ===== -->
+  <div class="index-block">
+    <div class="index-title">Nesta edição</div>
+    <ul class="index-list">
+      <li><span class="num">01</span> Abertura do Dia</li>
+      <li><span class="num">02</span> O Que Você Precisa Saber</li>
+      <li><span class="num">03</span> Decisão do Dia</li>
+      <li><span class="num">04</span> Alerta Jurídico</li>
+      <li><span class="num">05</span> Oportunidade de Atuação</li>
+      <li><span class="num">06</span> Curiosidade Jurídica</li>
+      <li><span class="num">07</span> Termo Jurídico do Dia</li>
+      <li><span class="num">08</span> Impacto na sua rotina</li>
+      <li><span class="num">09</span> Frase do Dia</li>
+      <li><span class="num">10</span> Para Ler Mais</li>
+    </ul>
+  </div>
+
+  <!-- ===== SEÇÃO 1: ABERTURA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <span class="section-title">Abertura do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="abertura-text">
+      Bom dia. Este é o <strong>Brevis</strong>, seu radar jurídico diário. Ontem, o STJ concluiu o julgamento do Tema 1360 — um dos mais aguardados no campo previdenciário em 2026 — definindo quais meios de prova o segurado pode usar para comprovar desemprego involuntário e estender o período de graça. No campo trabalhista, o TST entrou em território inédito ao decidir pela primeira vez a responsabilidade das SAFs sobre passivos anteriores à sua constituição. E o Código de Defesa do Contribuinte, em vigor desde janeiro, começa a produzir efeitos concretos nos escritórios tributários.
+    </p>
+  </section>
+
+  <!-- ===== SEÇÃO 2: NOTÍCIAS ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <span class="section-title">O Que Você Precisa Saber Hoje</span>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- PREVIDENCIÁRIO 1 -->
+    <div class="news-card">
+      <span class="news-tag tag-prev">Previdenciário</span>
+      <h3>STJ define quais provas bastam para comprovar desemprego e estender o período de graça — Tema 1360</h3>
+      <p>
+        O STJ concluiu ontem, em sessão da Primeira Seção, o julgamento do Tema Repetitivo 1360. A questão central não é apenas a extensão do prazo: é a prova. O tribunal foi chamado a definir se a ausência de registro na CTPS ou no CNIS é suficiente para presumir o desemprego involuntário do segurado — ou se o INSS pode exigir documentação adicional. O IBDP atuou como amicus curiae defendendo que a falta de vínculo formal gera presunção de desemprego, invertendo o ônus da prova para o INSS. Os casos paradigmas são os REsp 2.169.736/RJ e REsp 2.188.714/MT.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        A tese fixada pode reabrir a porta para ações de segurados que tiveram benefícios negados por falha na comprovação do desemprego. Advogados previdenciários devem monitorar a publicação do acórdão e mapear clientes com histórico de negativas por esse fundamento.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.stj.jus.br/sites/portalp/Comunicacao/Ultimas-noticias" target="_blank">STJ — Portal de Notícias · stj.jus.br</a> / <a href="https://www.ibdp.org.br" target="_blank">IBDP</a> · Tema 1360 · REsp 2.169.736/RJ e REsp 2.188.714/MT
+      </div>
+    </div>
+
+    <!-- PREVIDENCIÁRIO / PROCESSUAL -->
+    <div class="news-card">
+      <span class="news-tag tag-prev">Previdenciário · Processual</span>
+      <h3>STJ consolida: intimação pessoal é pressuposto obrigatório para aplicação de multa coercitiva</h3>
+      <p>
+        O Informativo de Jurisprudência nº 880, publicado em 10 de março, consolidou a tese do Tema 1296: a prévia intimação pessoal do devedor é condição indispensável para que incida multa coercitiva (astreintes) em obrigações de fazer ou não fazer. A Súmula 410/STJ foi mantida mesmo após o CPC de 2015 — encerrando de vez o debate sobre eventual revogação tácita pelo novo código.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Astreintes aplicadas sem intimação pessoal prévia são passíveis de nulidade. Em execuções de obrigações de fazer em andamento, revisar se houve esse ato antes de discutir a multa é urgente — tanto para devedores quanto para credores que queiram preservar a validade da sanção.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/" target="_blank">STJ — Informativo de Jurisprudência nº 880 · 10/03/2026 · scon.stj.jus.br</a>
+      </div>
+    </div>
+
+    <!-- TRIBUTÁRIO -->
+    <div class="news-card">
+      <span class="news-tag tag-trib">Tributário</span>
+      <h3>Código de Defesa do Contribuinte em vigor: LC 225/2026 reorganiza a relação Fisco-contribuinte</h3>
+      <p>
+        A Lei Complementar 225/2026, publicada no Diário Oficial em 8 de janeiro, instituiu o Código de Defesa do Contribuinte. A lei estabelece direitos e garantias aplicáveis em todo o território nacional: ampla defesa em processos administrativos, motivação obrigatória dos atos fiscais, presunção de boa-fé do contribuinte e programas de conformidade tributária (Confia, Sintonia e OEA). Também criou a figura do devedor contumaz — com critérios objetivos e processo administrativo prévio para enquadramento.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Escritórios tributários devem revisar estratégias em execuções fiscais ativas à luz das novas garantias processuais. A presunção de boa-fé e a exigência de fundamentação dos atos fiscais são argumentos concretos para defesa em autuações e embargos.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.in.gov.br/en/web/dou/-/lei-complementar-n-225-de-8-de-janeiro-de-2026-680057299" target="_blank">Diário Oficial da União · LC 225/2026 · 8/01/2026</a> / <a href="https://www.conjur.com.br" target="_blank">Conjur</a>
+      </div>
+    </div>
+
+    <!-- TRABALHISTA 1 -->
+    <div class="news-card">
+      <span class="news-tag tag-trab">Trabalhista</span>
+      <h3>TST decide pela primeira vez: SAF não responde por passivos trabalhistas anteriores à sua constituição</h3>
+      <p>
+        Em 11 de março, a 3ª Turma do TST julgou, pelo mérito e pela primeira vez, a responsabilidade das Sociedades Anônimas do Futebol sobre dívidas trabalhistas anteriores à data de sua criação. O caso envolveu o Cruzeiro e débito gerado quando o clube ainda operava como associação civil. O colegiado — composto pelos ministros Amayry Rodrigues Pinto Júnior, Dezena da Silva e Hugo Scheuermann — entendeu que a Lei da SAF (Lei 14.193/2021) disciplina integralmente esse tema, afastando a aplicação da CLT para cobrança por grupo econômico ou sucessão trabalhista.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        O precedente vai além do futebol: cria parâmetro para spin-offs e reestruturações empresariais em qualquer setor. A delimitação temporal da responsabilidade da nova entidade é o ponto central. Advogados que assessoram reestruturações devem atentar para a necessidade de documentar com precisão o marco da constituição da nova sociedade.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.poder360.com.br/poder-sportsmkt/tst-limita-cobranca-trabalhista-contra-saf-do-cruzeiro/" target="_blank">Poder360 — 11/03/2026</a> / <a href="https://noataque.com.br/futebol/time/cruzeiro/noticia/2026/03/11/tst-toma-decisao-sobre-cobranca-juridica-a-saf-do-cruzeiro/" target="_blank">No Ataque — 11/03/2026</a>
+      </div>
+    </div>
+
+    <!-- TRABALHISTA 2 -->
+    <div class="news-card">
+      <span class="news-tag tag-trab">Trabalhista</span>
+      <h3>TST cancela 36 súmulas superadas pela Reforma Trabalhista e por decisões do STF</h3>
+      <p>
+        O TST aprovou o cancelamento de 36 enunciados de sua jurisprudência consolidada, tornados incompatíveis com a Reforma Trabalhista (Lei 13.467/2017) ou com decisões posteriores do STF sobre a constitucionalidade das novas normas. O movimento representa uma atualização formal do acervo jurisprudencial do tribunal — eliminando fundamentos que, na prática, já não tinham força, mas ainda circulavam em peças processuais.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Minutas, modelos e petições padrão que citem súmulas canceladas perdem embasamento. Revisão urgente do acervo de peças do escritório. Citar enunciado revogado pode prejudicar a tese e causar prejuízo ao cliente.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.tst.jus.br" target="_blank">TST — tst.jus.br</a> / <a href="https://www.trt5.jus.br" target="_blank">TRT5 — trt5.jus.br</a> (março de 2026)
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== SEÇÃO 3: DECISÃO DO DIA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <span class="section-title">Decisão do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="decisao-box">
+      <div class="decisao-tribunal">STJ · 1ª Seção · Tema Repetitivo 1296 · Informativo nº 880 · 10/03/2026</div>
+      <div class="decisao-titulo">Sem intimação pessoal do devedor, não há multa coercitiva válida</div>
+      <div class="decisao-tese">
+        Tese fixada: "A prévia intimação pessoal do devedor constitui condição indispensável para a aplicação de multa coercitiva (astreintes) em obrigações de fazer ou não fazer, nos termos da Súmula 410/STJ, que permanece aplicável sob a vigência do CPC/2015."
+      </div>
+      <div class="decisao-body">
+        O STJ encerrou a discussão sobre se o novo CPC havia esvaziado o entendimento consolidado na Súmula 410. Segundo o tribunal, a intimação pessoal não é mera formalidade — é pressuposto de validade da multa. Sem ela, o devedor não pode ser penalizado. A decisão uniformiza o entendimento em todo o Judiciário, vinculando instâncias inferiores a partir da publicação.
+      </div>
+      <div class="decisao-pratica">
+        <strong>O que muda na prática</strong>
+        Para devedores: a ausência de intimação pessoal é argumento direto para afastar ou anular astreintes já fixadas. Para credores: documentar a intimação pessoal é condição sine qua non para preservar a sanção. Revisar imediatamente as execuções de obrigações de fazer em andamento.
+      </div>
+      <div class="decisao-fonte">
+        Fonte: <a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/" target="_blank">STJ — Informativo nº 880 · scon.stj.jus.br · Tema 1296</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 4: ALERTA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <span class="section-title">Alerta Jurídico</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-icon">⚠️</div>
+      <h3>LC 225/2026 já está em vigor — estratégias fiscais precisam ser revisadas agora</h3>
+      <p>
+        O Código de Defesa do Contribuinte não é perspectiva — é realidade desde 8 de janeiro. A mudança mais imediata para quem litiga em execuções fiscais: a exigência de fundamentação clara dos atos fiscais e a presunção de boa-fé do contribuinte são argumentos acionáveis agora, em processos já em curso.
+      </p>
+      <p>
+        Escritórios que ainda não mapearam os impactos da LC 225/2026 sobre sua carteira ativa estão perdendo janela de aproveitamento processual. Os programas de conformidade (Confia e Sintonia) entram em vigor 90 dias após a publicação — prazo que já venceu ou está próximo de vencer para a maioria dos dispositivos.
+      </p>
+      <div class="alerta-fonte">
+        Fonte: <a href="https://www.in.gov.br/en/web/dou/-/lei-complementar-n-225-de-8-de-janeiro-de-2026-680057299" target="_blank">DOU · LC 225/2026</a> / <a href="https://www.conjur.com.br" target="_blank">Conjur</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 5: OPORTUNIDADE ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <span class="section-title">Oportunidade de Atuação</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="oport-box">
+      <h3>⚖️ Revisão de benefícios negados — Tema 1360 pode abrir nova frente previdenciária</h3>
+      <p>
+        Se o STJ fixar tese favorável ao segurado — reconhecendo que a ausência de registro na CTPS ou no CNIS é prova suficiente de desemprego involuntário —, abre-se uma frente relevante de revisões administrativas e judiciais. Segurados que tiveram benefícios negados por falha formal na comprovação do período de graça poderão questionar a decisão do INSS.
+      </p>
+      <p>
+        A ação recomendada é imediata: levantar na base de clientes os casos de benefício negado nos últimos 5 anos por falha na comprovação do desemprego. O prazo para ajuizamento depende do tipo de benefício e da data do ato negativo — mas a janela está aberta.
+      </p>
+      <p>
+        Adicionalmente, a tese pode impactar ações de pensão por morte e auxílio-doença em que a qualidade de segurado do falecido ou do beneficiário estava em discussão justamente por esse fundamento.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 6: CURIOSIDADE ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <span class="section-title">Curiosidade Jurídica do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="curiosidade-box">
+      <div class="curiosidade-num">83M</div>
+      <div class="curiosidade-content">
+        <h3>O Brasil tem mais de 83 milhões de processos pendentes no Judiciário</h3>
+        <p>
+          Segundo o relatório Justiça em Números 2024 do CNJ, o Brasil acumula mais de 83 milhões de processos em tramitação — o equivalente a aproximadamente um processo para cada dois brasileiros adultos. A Justiça do Trabalho responde por cerca de 20% de toda essa litigiosidade.
+        </p>
+        <p>
+          Só o TST recebeu mais de 240 mil novos casos em 2023. O número coloca em perspectiva a importância estratégica da jurisprudência consolidada: ela reduz o trabalho repetitivo, oferece previsibilidade às partes e valoriza o advogado que monitora decisões com antecedência — como você faz ao ler o Brevis.
+        </p>
+        <p style="font-size:12px; color: var(--muted); margin-top: 6px;">
+          Fonte: CNJ — Relatório Justiça em Números 2024 · cnj.jus.br
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 7: TERMO ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <span class="section-title">Termo Jurídico do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="termo-box">
+      <div class="termo-word">Período de Graça</div>
+      <div class="termo-def">
+        É o prazo durante o qual o segurado mantém a qualidade de filiado ao INSS — e conserva o direito a benefícios como aposentadoria, auxílio-doença e pensão por morte — mesmo sem realizar contribuições previdenciárias. A duração padrão é de 12 meses após a última contribuição. Esse prazo sobe para 24 meses quando o segurado comprova ter ficado desempregado involuntariamente (art. 15, §2º, da Lei 8.213/1991).
+      </div>
+      <div class="termo-subtitulo">Por que importa agora?</div>
+      <div class="termo-exemplo">
+        O STJ acaba de julgar o Tema 1360, que define justamente quais meios de prova são aceitos para comprovar esse desemprego. A tese fixada vai determinar, com efeito vinculante, se a ausência de registros formais (CTPS/CNIS) basta — ou se o INSS pode exigir documentação adicional. A decisão impacta diretamente o universo de benefícios previdenciários que dependem da chamada "qualidade de segurado".
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 8: IMPACTO NA SUA ROTINA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">08</span>
+      <span class="section-title">Impacto na sua rotina</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="rotina-grid">
+      <div class="rotina-item">
+        <h4>Previdenciários</h4>
+        <p>Acompanhar a publicação do acórdão do Tema 1360. Uma tese favorável ao segurado abre frente de revisões por negativas de período de graça nos últimos 5 anos — especialmente em casos de pensão por morte e auxílio-doença.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Tributários</h4>
+        <p>Revisar execuções fiscais ativas à luz da LC 225/2026. A presunção de boa-fé e a exigência de fundamentação dos atos fiscais são argumentos acionáveis agora, em processos em curso. Os programas de conformidade (Confia e Sintonia) já operam.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Trabalhistas</h4>
+        <p>Revisão urgente do acervo de peças processuais: 36 súmulas do TST foram canceladas. Citar enunciado revogado prejudica a tese. Atualizar minutas e modelos é prioridade antes do próximo prazo processual.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Executivos e Processualistas</h4>
+        <p>Nas execuções de obrigações de fazer, verificar se houve intimação pessoal antes de qualquer discussão sobre astreintes. Sem ela, a multa coercitiva não é válida — tese agora fixada de forma vinculante pelo STJ (Tema 1296).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 9: FRASE ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">09</span>
+      <span class="section-title">Frase do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="frase-box">
+      <div class="frase-text">"O processo é o instrumento da jurisdição e a jurisdição é a função estatal de realizar o direito no caso concreto."</div>
+      <div class="frase-author">— Cândido Rangel Dinamarco · Processualista brasileiro</div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 10: FONTES ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">10</span>
+      <span class="section-title">Para Ler Mais</span>
+      <div class="section-line"></div>
+    </div>
+
+    <ul class="fontes-list">
+      <li>
+        <a href="https://www.stj.jus.br/sites/portalp/Comunicacao/Ultimas-noticias" target="_blank">STJ — Últimas Notícias · stj.jus.br</a>
+      </li>
+      <li>
+        <a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/" target="_blank">STJ — Informativo de Jurisprudência nº 880 (10/03/2026) · Tema 1296</a>
+      </li>
+      <li>
+        <a href="https://www.ibdp.org.br/2026/03/11/stj-julga-regra-sobre-prova-de-desemprego-para-previdencia/" target="_blank">IBDP — STJ julga Tema 1360: prova de desemprego e período de graça (11/03/2026)</a>
+      </li>
+      <li>
+        <a href="https://www.in.gov.br/en/web/dou/-/lei-complementar-n-225-de-8-de-janeiro-de-2026-680057299" target="_blank">Diário Oficial da União — Lei Complementar nº 225/2026 · Código de Defesa do Contribuinte</a>
+      </li>
+      <li>
+        <a href="https://www.poder360.com.br/poder-sportsmkt/tst-limita-cobranca-trabalhista-contra-saf-do-cruzeiro/" target="_blank">Poder360 — TST limita cobrança trabalhista contra SAF do Cruzeiro (11/03/2026)</a>
+      </li>
+      <li>
+        <a href="https://noataque.com.br/futebol/time/cruzeiro/noticia/2026/03/11/tst-toma-decisao-sobre-cobranca-juridica-a-saf-do-cruzeiro/" target="_blank">No Ataque — TST: decisão sobre SAF do Cruzeiro e passivos trabalhistas (11/03/2026)</a>
+      </li>
+      <li>
+        <a href="https://www.tst.jus.br" target="_blank">TST — Portal Oficial · tst.jus.br</a>
+      </li>
+      <li>
+        <a href="https://www.trt5.jus.br/noticias/sumulas-orientacoes-jurisprudenciais-superadas-sao-canceladas-tst" target="_blank">TRT5 — Súmulas canceladas pelo TST em 2026</a>
+      </li>
+      <li>
+        <a href="https://www.conjur.com.br/2026-jan-14/lei-complementar-no-225-2026-aspectos-controvertidos-dos-creditos-em-situacao-irregular/" target="_blank">Conjur — LC 225/2026: aspectos controvertidos do Código de Defesa do Contribuinte</a>
+      </li>
+      <li>
+        <a href="https://www.cnj.jus.br/pesquisas-judiciarias/justica-em-numeros/" target="_blank">CNJ — Relatório Justiça em Números 2024 · cnj.jus.br</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== CADASTRO ===== -->
+  <section style="margin:40px 0;padding:40px 0;border-top:3px double #0f0e0c;border-bottom:3px double #0f0e0c;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#c8371a;margin-bottom:12px;">Gostou da Brevis?</div>
+    <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#0f0e0c;margin-bottom:8px;">Receba toda manhã, gratuitamente.</div>
+    <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:#7a7670;margin-bottom:24px;">Decisões do STJ e STF direto na sua caixa de entrada, antes das 07h30.</p>
+    <a href="https://brevis.beehiiv.com/?modal=signup" style="display:inline-block;background:#0f0e0c;color:#f7f4ee;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:14px 32px;">Inscrever-se gratuitamente &#8594;</a>
+    <div style="margin-top:14px;font-family:'DM Mono',monospace;font-size:10px;color:#d6d0c4;letter-spacing:0.1em;">Sem spam. Cancele quando quiser.</div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">BREVIS</div>
+    <div class="footer-tagline">Radar jurídico diário para decisões estratégicas</div>
+    <div class="footer-text">Produzido por Jean Barbosa · Edição independente de curadoria jurídica.</div>
+  </footer>
+
+</div>
+</body>
+</html>
