@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREVIS Previdenciário — Edição nº 001</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f5f3ef;
+    --paper-warm: #f0ede6;
+    --muted: #7a7670;
+    --rule: #d6d0c4;
+    --blue:        #1F4E79;
+    --blue-mid:    #2C6AA0;
+    --blue-light:  #3a82c4;
+    --gold:        #C8A24A;
+    --gold-soft:   #D8BC72;
+    --gold-pale:   #f5edda;
+    --accent:      var(--gold);
+    --accent2:     var(--blue);
+    --accent-dark: var(--blue);
+    --tag-trf6:   #1F4E79;
+    --tag-stj:    #2C6AA0;
+    --tag-tnu:    #3a82c4;
+    --tag-inss:   #C8A24A;
+    --tag-leg:    #7a6020;
+    --tag-dest:   #1F4E79;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 36px 0 20px;
+    text-align: center;
+  }
+  .masthead-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .masthead-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .masthead-editoria {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+    margin-top: 4px;
+  }
+  .masthead-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+  .masthead-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .masthead-meta span::before { content: '— '; }
+  .index-block {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--blue);
+    background: white;
+    padding: 18px 22px;
+    margin: 28px 0 36px;
+  }
+  .index-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .index-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+  .index-list li {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .index-list li .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    min-width: 16px;
+  }
+  .section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section:last-child { border-bottom: none; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    min-width: 24px;
+  }
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .abertura-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .abertura-text strong { color: var(--blue); }
+  .news-card {
+    border-left: 3px solid var(--rule);
+    padding-left: 16px;
+    margin-bottom: 28px;
+  }
+  .news-card:last-child { margin-bottom: 0; }
+  .news-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: white;
+    margin-bottom: 7px;
+  }
+  .tag-trf6 { background: var(--tag-trf6); }
+  .tag-stj  { background: var(--tag-stj); }
+  .tag-tnu  { background: var(--tag-tnu); }
+  .tag-inss { background: var(--tag-inss); }
+  .tag-leg  { background: var(--tag-leg); }
+  .tag-dest { background: var(--tag-dest); }
+  .selo-trf6 {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--blue);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 4px 10px 4px 8px;
+    border-radius: 2px;
+    margin-bottom: 7px;
+    border-left: 3px solid var(--gold);
+  }
+  .selo-trf6::before {
+    content: '★';
+    color: var(--gold);
+    font-size: 10px;
+  }
+  .news-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .news-impact {
+    background: var(--gold-pale);
+    border-left: 3px solid var(--gold);
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .news-impact strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .news-source {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .news-source a {
+    color: var(--blue-mid);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .news-source a:hover { text-decoration: underline; }
+  .decisao-box {
+    background: var(--blue);
+    color: var(--paper);
+    padding: 28px 24px;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .decisao-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--gold));
+  }
+  .decisao-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 8px;
+  }
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    color: white;
+  }
+  .decisao-tese {
+    background: rgba(200, 162, 74, 0.15);
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    color: #f0ede6;
+  }
+  .decisao-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #c8c0b0;
+    margin-bottom: 14px;
+  }
+  .decisao-pratica {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #e0d8cc;
+  }
+  .decisao-pratica strong {
+    color: var(--gold-soft);
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .decisao-fonte {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #908880;
+  }
+  .decisao-fonte a { color: var(--gold-soft); text-decoration: none; }
+  .trf6-box {
+    border: 1px solid var(--blue);
+    border-top: 4px solid var(--gold);
+    padding: 22px 20px;
+    background: white;
+  }
+  .trf6-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .trf6-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 8px;
+  }
+  .trf6-box .trf6-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .tese-box {
+    background: #eaf0f7;
+    border-left: 4px solid var(--blue-mid);
+    padding: 20px 18px;
+  }
+  .tese-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .tese-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2a3040;
+    margin-bottom: 8px;
+  }
+  .tese-quote {
+    background: white;
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 12px 0;
+    color: var(--ink);
+  }
+  .pratica-box {
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--blue);
+    padding: 22px 20px;
+    background: white;
+  }
+  .pratica-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .pratica-step {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+  .pratica-step:last-child { margin-bottom: 0; }
+  .pratica-step-num {
+    background: var(--blue);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    min-width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 2px;
+    margin-top: 2px;
+  }
+  .pratica-step-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #3a3834;
+  }
+  .pratica-step-text strong {
+    color: var(--blue);
+    font-weight: 600;
+  }
+  .alerta-box {
+    background: #fff8ec;
+    border: 1px solid #e8c96a;
+    border-top: 4px solid var(--gold);
+    padding: 22px 20px;
+  }
+  .alerta-icon { font-size: 20px; margin-bottom: 6px; }
+  .alerta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .alerta-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3020;
+    margin-bottom: 8px;
+  }
+  .alerta-fonte {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .alerta-fonte a { color: var(--blue-mid); text-decoration: none; font-weight: 600; }
+  .oport-box {
+    background: #eaf3ea;
+    border: 1px solid #a8cca8;
+    border-top: 4px solid #2a7a4a;
+    padding: 22px 20px;
+  }
+  .oport-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .oport-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #1e301e;
+    margin-bottom: 8px;
+  }
+  .carteira-box {
+    background: var(--blue);
+    color: white;
+    padding: 24px 22px;
+    border-radius: 2px;
+  }
+  .carteira-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 10px;
+  }
+  .carteira-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .carteira-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .carteira-checklist li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d0c8bc;
+  }
+  .carteira-checklist li::before {
+    content: '▸';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 12px;
+    margin-top: 3px;
+  }
+  .carteira-checklist li strong { color: white; font-weight: 600; }
+  .ferramenta-box {
+    border: 2px solid var(--ink);
+    padding: 22px 20px;
+  }
+  .ferramenta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .ferramenta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+  .ferramenta-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 8px;
+  }
+  .ferramenta-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--blue-mid);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1px;
+  }
+  .ferramenta-link:hover { color: var(--blue); }
+  .rotina-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .rotina-item {
+    background: white;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--blue);
+    padding: 14px 16px;
+  }
+  .rotina-item h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 5px;
+  }
+  .rotina-item p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .radar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .radar-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: white;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+  }
+  .radar-item-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: var(--blue);
+    color: white;
+    padding: 3px 7px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .radar-item-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .radar-item-text strong { color: var(--blue); }
+  .bastidor-box {
+    background: var(--gold-pale);
+    border: 1px solid #d8c080;
+    border-left: 4px solid var(--gold);
+    padding: 22px 20px;
+  }
+  .bastidor-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .bastidor-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .bastidor-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3010;
+    margin-bottom: 8px;
+  }
+  .bastidor-box p:last-child { margin-bottom: 0; }
+  .tnu-box {
+    border: 1px solid #b0c8e4;
+    border-top: 4px solid var(--blue-light);
+    padding: 22px 20px;
+    background: white;
+  }
+  .tnu-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .tnu-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 8px;
+  }
+  .fontes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fontes-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+  }
+  .fontes-list li::before {
+    content: '→';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .fontes-list a {
+    color: var(--blue-mid);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .fontes-list a:hover { text-decoration: underline; }
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 3px double var(--ink);
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--muted);
+    letter-spacing: -0.5px;
+  }
+  .footer-editoria {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-left: 6px;
+  }
+  .footer-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin-top: 4px;
+  }
+  .footer-text {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 520px) {
+    .masthead-logo { font-size: 40px; }
+    .index-list { grid-template-columns: 1fr; }
+    .pratica-step { flex-direction: column; gap: 8px; }
+    .radar-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header class="masthead">
+    <div class="masthead-eyebrow">Editoria especializada · Edição de lançamento</div>
+    <div class="masthead-logo">BREVIS</div>
+    <div class="masthead-editoria">Previdenciário</div>
+    <div class="masthead-tagline">Radar previdenciário estratégico da Maximiano</div>
+    <div class="masthead-meta">
+      <span>13 de março de 2026</span>
+      <span>Edição nº 001</span>
+      <span>Leitura: 3–4 min</span>
+    </div>
+  </header>
+
+  <div class="index-block">
+    <div class="index-title">Nesta edição</div>
+    <ul class="index-list">
+      <li><span class="num">01</span> Abertura</li>
+      <li><span class="num">02</span> O que saiu nos tribunais</li>
+      <li><span class="num">03</span> Decisão previdenciária do dia</li>
+      <li><span class="num">04</span> Jurisprudência do TRF6</li>
+      <li><span class="num">05</span> Tese previdenciária relevante</li>
+      <li><span class="num">06</span> Como usar na prática</li>
+      <li><span class="num">07</span> Atenção no INSS</li>
+      <li><span class="num">08</span> Oportunidade de atuação</li>
+      <li><span class="num">09</span> Tema em pauta na TNU</li>
+      <li><span class="num">10</span> Mapear a carteira</li>
+      <li><span class="num">11</span> Ferramenta da semana</li>
+      <li><span class="num">12</span> Radar da semana previdenciária</li>
+      <li><span class="num">13</span> Bastidor previdenciário</li>
+      <li><span class="num">14</span> Para consultar</li>
+    </ul>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <span class="section-title">Abertura</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="abertura-text">
+      Bom dia. Esta é a edição de lançamento do <strong>Brevis Previdenciário</strong> — radar estratégico do direito previdenciário para advogados que não podem perder tempo.
+    </p>
+    <p class="abertura-text" style="margin-top: 14px;">
+      A semana foi movimentada. O STJ julgou ontem o <strong>Tema 1360</strong> e fixou tese sobre prova de desemprego para o período de graça — decisão que impacta milhares de benefícios negados. A TNU se debruçou sobre EPI e agentes biológicos em ambiente hospitalar. E o STF Tema 1209 ainda repercute entre advogados previdenciaristas após virar o cenário da aposentadoria especial de vigilantes.
+    </p>
+    <p class="abertura-text" style="margin-top: 14px;">
+      Vamos ao que importa.
+    </p>
+  </section>
+
+  <!-- 02 O QUE SAIU NOS TRIBUNAIS -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <span class="section-title">O que saiu nos tribunais</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="news-card">
+      <span class="news-tag tag-stj">STJ · Repetitivo</span>
+      <h3>Ausência de registro em CTPS ou CNIS não basta para provar desemprego</h3>
+      <p>A 1ª Seção do STJ julgou ontem (11/03) o Tema 1360 e definiu a tese sobre prova de desemprego para prorrogação do período de graça do art. 15, §2º, da Lei 8.213/91. O relator foi o ministro Afrânio Vilela e o entendimento foi unânime.</p>
+      <p>A tese fixada reconhece que o registro no Ministério do Trabalho pode ser substituído por outros meios de prova, mas deixa claro que a simples ausência de anotações na CTPS ou no CNIS não é suficiente, por si só, para demonstrar o desemprego involuntário. A prova precisa ser efetiva — documental, testemunhal ou de outra natureza.</p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Processos sobrestados aguardando esse repetitivo voltam a tramitar. Revise os casos em que o benefício foi negado por ausência de comprovação de desemprego: o CTPS/CNIS zerado não bastava antes e continua não bastando — mas outros meios de prova, inclusive testemunhal, são válidos. Organize a instrução probatória com base nessa moldura.
+      </div>
+      <div class="news-source">Fonte: <a href="https://www.stj.jus.br" target="_blank">STJ — Julgamento do Tema Repetitivo 1360 · 11/03/2026 · stj.jus.br</a> · Ref. complementar: <a href="https://www.migalhas.com.br/quentes/451627/stj-falta-de-registro-na-carteira-de-trabalho-nao-basta-para-trabalhador-provar-desemprego" target="_blank">Migalhas</a></div>
+    </div>
+
+    <div class="news-card">
+      <span class="selo-trf6">Destaque TRF6</span>
+      <h3>Benefício assistencial pode ser convertido em aposentadoria por invalidez do segurado especial rural</h3>
+      <p>A 1ª Turma do TRF6 reconheceu que é possível converter renda mensal vitalícia por incapacidade em aposentadoria por invalidez quando, na data do requerimento administrativo, já estavam presentes os requisitos para concessão de benefício previdenciário. O relator foi o Desembargador Federal Edilson Vitorelli.</p>
+      <p>No caso concreto, o INSS havia concedido benefício assistencial em 1993 quando, na realidade, o segurado já detinha qualidade de segurado especial rural — comprovada por certidão de casamento, nascimento dos filhos e carteira sindical. A prova oral foi considerada firme e coerente.</p>
+      <div class="news-impact">
+        <strong>Relevância regional</strong>
+        Decisão diretamente aplicável no TRF6 (MG e ES). Verifique na carteira se há clientes que recebem BPC ou renda mensal vitalícia mas que, à época do requerimento, já possuíam qualidade de segurado especial. A conversão retroage à DER, com diferenças a receber.
+      </div>
+      <div class="news-source">Fonte: <a href="https://www.ieprev.com.br/noticias/trf6-admite-conversao-de-beneficio-assistencial-em-aposentadoria-por-invalidez-para-trabalhador-rural" target="_blank">IEPREV — TRF6, Ap. Cível nº 1006434-95.2020.4.01.9999/MG · 25/11/2025</a></div>
+    </div>
+
+    <div class="news-card">
+      <span class="news-tag tag-tnu">TNU · Sessão 11/03</span>
+      <h3>EPI e agentes biológicos em hospital: TNU analisa limite da eficácia declarada no PPP</h3>
+      <p>Na sessão de ontem (11/03), a TNU analisou o Tema 383, que trata do reconhecimento da atividade especial para trabalhadores expostos a agentes biológicos em ambiente hospitalar. O julgamento incluiu embargos de declaração sobre o Tema 323.</p>
+      <p>A discussão central: o registro de eficácia do EPI no PPP afasta o direito à aposentadoria especial quando o risco biológico é inerente à atividade? A relatora propôs, em tendência favorável ao segurado, que a proteção absoluta contra agentes biológicos é impossível — e que, por isso, o EPI declarado eficaz no PPP não deveria descaracterizar o tempo especial nesse contexto. O debate ainda está em andamento: no Tema 323, a TNU rejeitou embargos do INSS, mantendo posição anterior. A tese do Tema 383 permanece em análise.</p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        O tema ainda está em discussão na TNU — a tese não foi formalmente publicada. Profissionais de saúde expostos a agentes biológicos em ambiente hospitalar devem acompanhar o DJEN para saber o resultado definitivo antes de ajuizar ou reativar processos com base nesse fundamento.
+      </div>
+      <div class="news-source">Fonte: <a href="https://www.cjf.jus.br/tnu" target="_blank">TNU — Tema 383 · sessão 11/03/2026 · cjf.jus.br/tnu</a> · Ref. complementar: <a href="https://previdenciarista.com/blog/sessao-da-tnu-debate-epi-incapacidade-e-agente-calor/" target="_blank">Previdenciarista</a></div>
+    </div>
+
+  </section>
+
+  <!-- 03 DECISÃO PREVIDENCIÁRIA DO DIA -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <span class="section-title">Decisão previdenciária do dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="decisao-box">
+      <div class="decisao-tribunal">STJ · 1ª Seção · REsp 2.169.736/RJ e REsp 2.188.714/MT · Rel. Min. Afrânio Vilela · Julgado em 11/03/2026</div>
+      <div class="decisao-titulo">Tema 1360 — Prova de desemprego para prorrogação do período de graça</div>
+      <div class="decisao-tese">
+        Tese fixada: "Para fins de prorrogação do período de graça do art. 15, §2º, da Lei 8.213/91, o registro perante o Ministério do Trabalho pode ser suprido por outros meios de prova admitidos em direito, tanto na via administrativa quanto na judicial, desde que demonstrada a situação de desemprego involuntário, não sendo suficiente para este fim a mera ausência de anotações laborais na CTPS ou no CNIS."
+      </div>
+      <div class="decisao-body">
+        O período de graça é o intervalo em que o segurado mantém a qualidade de segurado sem contribuir, podendo acessar benefícios como auxílio por incapacidade, pensão por morte e aposentadoria por incapacidade permanente. Pela lei, esse período é de 12 meses — prorrogável para 24 meses se comprovado o desemprego involuntário. O debate girava em torno de qual prova seria suficiente: o INSS exigia mais do que a ausência de registro; o STJ agora confirma que outros meios valem, mas exige demonstração efetiva do desemprego.
+      </div>
+      <div class="decisao-pratica">
+        <strong>O que muda na prática</strong>
+        Não é possível mais se limitar a apresentar CTPS em branco. É preciso construir um conjunto probatório — depoimentos, declarações, histórico do CNIS com análise contextual, documentos que demonstrem a situação de desemprego. Por outro lado, o INSS também não pode negar o benefício apenas porque não há registro no Ministério do Trabalho. A valoração das provas passa a ser judicial, o que abre espaço tanto para o advogado instruir melhor quanto para contestar negativas administrativas com base em prova insuficiente.
+      </div>
+      <div class="decisao-fonte">
+        Fonte: <a href="https://www.stj.jus.br" target="_blank">STJ — Tema 1360 · stj.jus.br</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 JURISPRUDÊNCIA TRF6 -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <span class="section-title">Jurisprudência do TRF6</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="trf6-box">
+      <span class="trf6-label">Tribunal Regional Federal da 6ª Região · 1ª Turma Prev/Serv · Belo Horizonte</span>
+      <h3>TRF6 reconhece prova rural com documentação em nome do genitor em caso concreto</h3>
+      <p>Em acórdão proferido pela 1ª Turma do TRF6, o tribunal reconheceu, no caso concreto, que certidão de casamento, certidões de nascimento dos filhos e carteira de trabalhador rural em nome de familiar constituíram início razoável de prova material suficiente para o reconhecimento do labor rurícola como segurado especial, quando corroborados por prova testemunhal firme e coerente.</p>
+      <p>A decisão aplicou a jurisprudência do STJ e da TNU sobre flexibilização probatória em favor do segurado especial — o rol do art. 106 da Lei 8.213/91 é meramente exemplificativo. No caso, o TRF6 converteu benefício assistencial em aposentadoria por invalidez, reconhecendo que o INSS havia classificado equivocadamente o benefício desde 1993. O precedente reforça uma linha jurisprudencial favorável ao segurado e pode ser utilizado como referência em casos semelhantes — sempre com atenção às particularidades de cada situação.</p>
+      <div class="news-impact">
+        <strong>Relevância regional</strong>
+        Para o advogado que atua na área de abrangência do TRF6 (Minas Gerais e Espírito Santo), o precedente reforça a linha probatória em casos de trabalhadores rurais sem documentação própria. Documentos em nome do pai, do cônjuge ou de membros do grupo familiar podem servir de ponto de partida — mas a prova testemunhal precisa ser bem preparada e coerente com os documentos apresentados.
+      </div>
+      <div class="news-source">Fonte: <a href="https://portal.trf6.jus.br" target="_blank">TRF6 — Apelação Cível nº 1006434-95.2020.4.01.9999/MG, rel. Des. Edilson Vitorelli · trf6.jus.br</a></div>
+    </div>
+  </section>
+
+  <!-- 05 TESE PREVIDENCIÁRIA RELEVANTE -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <span class="section-title">Tese previdenciária relevante</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="tese-box">
+      <h3>STF Tema 1209 — O fim da aposentadoria especial de vigilante por periculosidade</h3>
+      <p>Em fevereiro de 2026, o STF julgou o Tema 1209 e fixou, por 6 votos a 4, que a atividade de vigilante — com ou sem uso de arma de fogo — não se caracteriza como especial para fins de aposentadoria apenas com base na periculosidade. O acórdão gerou impacto imediato sobre processos judiciais e pedidos administrativos em andamento.</p>
+      <div class="tese-quote">
+        Tese firmada: a periculosidade por si só — o risco à integridade física — não configura agente nocivo para fins do direito à aposentadoria especial do vigilante após a Reforma da Previdência.
+      </div>
+      <p>O que permanece possível: o reconhecimento de especialidade com base em outros agentes nocivos efetivamente comprovados (ruído, calor, produtos químicos), a via do enquadramento por categoria profissional para períodos anteriores a 28/04/1995, e a discussão sobre comprovação concreta de condições especiais caso a caso. O STF não analisou essas hipóteses — apenas afastou o enquadramento automático por periculosidade.</p>
+      <div class="news-source" style="margin-top: 10px;">Fonte: <a href="https://noticias.stf.jus.br" target="_blank">STF — Tema 1209 · stf.jus.br</a></div>
+    </div>
+  </section>
+
+  <!-- 06 COMO USAR NA PRÁTICA -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <span class="section-title">Como usar na prática</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="pratica-box">
+      <h3>Como aproveitar o STJ Tema 1360 em casos de benefício negado por perda da qualidade de segurado</h3>
+      <div class="pratica-step">
+        <div class="pratica-step-num">1</div>
+        <div class="pratica-step-text"><strong>Identifique o período:</strong> Verifique no CNIS a data do último vínculo empregatício registrado e calcule se o desemprego ocorreu dentro do prazo do período de graça padrão (12 meses) ou se poderia ter sido prorrogado para 24 meses com prova de desemprego involuntário.</div>
+      </div>
+      <div class="pratica-step">
+        <div class="pratica-step-num">2</div>
+        <div class="pratica-step-text"><strong>Monte o conjunto probatório:</strong> Reúna o histórico completo do CNIS, declaração de ex-empregador, extrato do seguro-desemprego se houver, comprovante de cadastro no SINE ou equivalente, e depoimento de testemunhas que atestem o período sem trabalho. A prova precisa ser efetiva — não basta o silêncio do CNIS.</div>
+      </div>
+      <div class="pratica-step">
+        <div class="pratica-step-num">3</div>
+        <div class="pratica-step-text"><strong>Conteste a negativa administrativa:</strong> Se o INSS negou o benefício apenas com fundamento na ausência de registro de desemprego no Ministério do Trabalho, a tese do Tema 1360 é direta: outros meios de prova são admitidos. Apresente recurso ao CRPS com a nova tese e o conjunto probatório organizado.</div>
+      </div>
+      <div class="pratica-step">
+        <div class="pratica-step-num">4</div>
+        <div class="pratica-step-text"><strong>Ajuíze ou retome ação judicial:</strong> Processos sobrestados aguardando o Tema 1360 voltam a tramitar. Para ações novas, instrua desde o início com prova documental e testemunhal robusta. Cite expressamente a tese firmada pela 1ª Seção do STJ em 11/03/2026.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 ATENÇÃO NO INSS -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <span class="section-title">Atenção no INSS</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-icon">⚠️</div>
+      <h3>INSS antecipa pagamentos para segurados em municípios mineiros em calamidade pública</h3>
+      <p>A Portaria Conjunta MPS/MDS nº 11, de 04/03/2026, publicada no DOU, autorizou o INSS a antecipar o pagamento de benefícios previdenciários e assistenciais para segurados domiciliados em Juiz de Fora, Ubá e Matias Barbosa (MG), em razão de estado de calamidade pública reconhecido pela Secretaria Nacional de Proteção e Defesa Civil.</p>
+      <p>A medida também determina atendimento prioritário na análise e concessão de benefícios para os segurados desses municípios, independentemente da espécie do benefício, da fase de tramitação ou da data do requerimento. Aplica-se inclusive a novos pedidos protocolados a partir da publicação da portaria.</p>
+      <p>Se você tem clientes nessas cidades com pedidos em análise ou recursos pendentes no INSS, acione o atendimento prioritário. A portaria está em vigor desde sua publicação e não tem prazo fixado de encerramento — vigora enquanto durar a situação de calamidade.</p>
+      <div class="alerta-fonte">Fonte: <a href="https://www.legisweb.com.br/legislacao/?id=491989" target="_blank">Portaria Conjunta MPS/MDS nº 11, de 04/03/2026 — DOU · gov.br/inss</a></div>
+    </div>
+  </section>
+
+  <!-- 08 OPORTUNIDADE DE ATUAÇÃO -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">08</span>
+      <span class="section-title">Oportunidade de atuação</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="oport-box">
+      <h3>⚖️ Revisão de casos de vigilantes com tempo especial anterior a 28/04/1995</h3>
+      <p>O STF Tema 1209 afastou a especialidade de vigilante por periculosidade — mas não tocou nos períodos anteriores a 28/04/1995, quando o enquadramento por categoria profissional era automático. Também não analisou a possibilidade de comprovar concretamente outros agentes nocivos (ruído, calor, produtos químicos) que eventualmente estiveram presentes na rotina do vigilante.</p>
+      <p>Clientes vigilantes com períodos trabalhados antes de abril de 1995 têm base para sustentar o tempo especial por categoria profissional. Aqueles com histórico de exposição documentada a agentes nocivos específicos ainda podem pleitear o reconhecimento da especialidade com laudo técnico individualizado.</p>
+      <p>A janela de oportunidade está aberta agora: o mercado ainda não absorveu completamente a decisão do STF e os segurados estão desorientados. Advogados que fizerem esse mapeamento rapidamente — identificando os períodos defensáveis — saem na frente. Além disso, os que tinham processos ajuizados com base na periculosidade precisam de reavaliação estratégica imediata.</p>
+    </div>
+  </section>
+
+  <!-- 09 TEMA EM PAUTA NA TNU -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">09</span>
+      <span class="section-title">Tema em pauta na TNU</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="tnu-box">
+      <h3>Tema 383 — EPI eficaz no PPP afasta especialidade em ambiente hospitalar? Debate em andamento</h3>
+      <p>A TNU analisou na sessão de 11/03/2026 o Tema 383, que discute se a anotação de eficácia do Equipamento de Proteção Individual no Perfil Profissiográfico Previdenciário afasta o reconhecimento da atividade especial quando o trabalhador está exposto a agentes biológicos em ambiente hospitalar.</p>
+      <p>A relatora propôs uma orientação favorável ao segurado: o risco biológico em contexto hospitalar seria inerente ao labor, tornando a eficácia declarada no PPP insuficiente para afastar a especialidade. Trata-se, porém, de proposta de tese ainda em discussão — o julgamento não foi concluído com publicação formal. Na mesma sessão, a TNU rejeitou embargos do INSS no Tema 323, mantendo posição anterior favorável ao trabalhador. O Tema 383 segue como tendência jurisprudencial a monitorar.</p>
+      <p>Processos de profissionais de saúde com especialidade negada pelo INSS com base na eficácia do EPI devem ser monitorados com atenção. Não é recomendável ajuizar ou reativar ações com base exclusiva na tese do Tema 383 antes da publicação formal no DJEN.</p>
+      <div class="news-source" style="margin-top: 10px;">Fonte: <a href="https://www.cjf.jus.br/tnu" target="_blank">TNU — Tema 383 e Tema 323, sessão 11/03/2026 · cjf.jus.br/tnu</a></div>
+    </div>
+  </section>
+
+  <!-- 10 MAPEAR A CARTEIRA -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">10</span>
+      <span class="section-title">Mapear a carteira</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="carteira-box">
+      <div class="carteira-title">Orientação de equipe · Revisão prioritária esta semana</div>
+      <h3>Quatro grupos que merecem atenção imediata após os julgamentos desta semana</h3>
+      <ul class="carteira-checklist">
+        <li><strong>Vigilantes com histórico anterior a 28/04/1995:</strong> Levantar todos os clientes ou ex-clientes que exerceram atividade de vigilante antes desse marco. Para esse período, o enquadramento por categoria profissional ainda é defensável — o STF Tema 1209 não fechou essa porta. Avaliar individualmente se há tempo suficiente para concessão ou revisão.</li>
+        <li><strong>Segurados com benefício negado por perda de qualidade (período de graça):</strong> Identificar processos administrativos ou judiciais em que o INSS negou auxílio-doença, pensão por morte ou aposentadoria por incapacidade com fundamento na ausência de comprovação de desemprego. O STJ Tema 1360 abre caminho para reapresentação com conjunto probatório mais robusto.</li>
+        <li><strong>Trabalhadores rurais com documentação indireta:</strong> Mapear clientes que tiveram prova rural rejeitada por terem apresentado documentos em nome de genitor ou cônjuge. A posição do TRF6 — e do STJ — é clara: esses documentos constituem início razoável de prova material e devem ser aceitos com complemento de prova testemunhal.</li>
+        <li><strong>Profissionais de saúde com especialidade negada por EPI:</strong> Verificar se há clientes enfermeiros, técnicos de enfermagem ou auxiliares hospitalares com pedido de aposentadoria especial negado com fundamento na eficácia do EPI declarada no PPP. Aguardar publicação da tese do TNU Tema 383 e reativar os processos assim que publicada.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 11 FERRAMENTA DA SEMANA -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">11</span>
+      <span class="section-title">Ferramenta da semana</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="ferramenta-box">
+      <div class="ferramenta-label">Recurso prático para o advogado previdenciário</div>
+      <h3>CNIS Online — Cadastro Nacional de Informações Sociais</h3>
+      <p>Após o STJ Tema 1360, o CNIS ganhou protagonismo ainda maior. Ele continua sendo o ponto de partida para qualquer análise de qualidade de segurado — mas deixou de ser a única prova relevante. O advogado precisa aprender a ler o CNIS estrategicamente: identificar lacunas, contextualizar histórico contributivo e construir narrativa probatória complementar.</p>
+      <p>Pelo aplicativo Meu INSS, o próprio cliente consegue extrair o CNIS completo com todos os vínculos, remunerações e períodos de benefício. O arquivo pode ser salvo em PDF e anexado diretamente ao processo ou ao recurso administrativo. Além dos vínculos, o relatório exibe o histórico de benefícios — essencial para identificar períodos de graça e eventuais sobreposições.</p>
+      <a class="ferramenta-link" href="https://meu.inss.gov.br" target="_blank">Acessar → meu.inss.gov.br</a>
+    </div>
+  </section>
+
+  <!-- 12 RADAR DA SEMANA PREVIDENCIÁRIA -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">12</span>
+      <span class="section-title">Radar da semana previdenciária</span>
+      <div class="section-line"></div>
+    </div>
+    <p style="font-size:13px; color: var(--muted); margin-bottom: 16px; font-family: 'DM Mono', monospace; letter-spacing: 0.05em;">O que mais movimentou o direito previdenciário nesta semana.</p>
+
+    <div class="radar-grid">
+      <div class="radar-item">
+        <div class="radar-item-tribunal">STJ</div>
+        <div class="radar-item-text"><strong>Tema 1360 julgado:</strong> CTPS e CNIS em branco não bastam para comprovar desemprego — outros meios de prova são exigidos para prorrogar o período de graça.</div>
+      </div>
+      <div class="radar-item">
+        <div class="radar-item-tribunal">TNU</div>
+        <div class="radar-item-text"><strong>Tema 383 em análise:</strong> EPI eficaz no PPP não afasta especialidade de trabalhadores expostos a agentes biológicos em ambiente hospitalar — tese protetiva proposta, aguarda publicação.</div>
+      </div>
+      <div class="radar-item">
+        <div class="radar-item-tribunal">STF</div>
+        <div class="radar-item-text"><strong>Tema 1209 em repercussão:</strong> Vigilante não tem direito automático à aposentadoria especial por periculosidade — mas período anterior a 28/04/1995 e comprovação de agentes nocivos concretos permanecem discutíveis.</div>
+      </div>
+      <div class="radar-item">
+        <div class="radar-item-tribunal">INSS</div>
+        <div class="radar-item-text"><strong>Portaria MPS/MDS nº 11/2026:</strong> Pagamentos antecipados e atendimento prioritário para segurados de Juiz de Fora, Ubá e Matias Barbosa (MG) em razão de calamidade pública.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 BASTIDOR PREVIDENCIÁRIO -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">13</span>
+      <span class="section-title">Bastidor previdenciário</span>
+      <div class="section-line"></div>
+    </div>
+    <p style="font-size:13px; color: var(--muted); margin-bottom: 16px; font-family: 'DM Mono', monospace; letter-spacing: 0.05em;">O tema que mais gerou conversa nos bastidores do direito previdenciário nesta semana.</p>
+
+    <div class="bastidor-box">
+      <div class="bastidor-label">Bastidor da semana</div>
+      <h3>A virada dos vigilantes e o que vem por aí</h3>
+      <p>Nos grupos de advogados previdenciaristas, a decisão do STF no Tema 1209 ainda é o assunto mais comentado de fevereiro — e vai continuar assim por semanas. A discussão já virou: não é mais "o STF vai julgar", é "o que fazemos agora com os clientes que têm tempo especial como vigilante".</p>
+      <p>O debate prático se divide em dois campos. De um lado, advogados que já orientam os clientes a focar nas regras de transição comuns — pontuação (103/93 pontos em 2026), pedágio ou aposentadoria por idade. Do outro, aqueles que ainda acreditam na viabilidade de comprovar agentes nocivos específicos além da periculosidade, especialmente em postos de trabalho com exposição a ruído ou calor. A questão é: vale o custo de instrução pericial?</p>
+      <p>O que fica claro nos bastidores é que os próximos meses vão exigir muito planejamento previdenciário individualizado. Os períodos anteriores a 28/04/1995 — marco da Lei 9.032/95, que eliminou o enquadramento por categoria profissional — continuam sendo um ativo estratégico para o advogado que souber explorar bem a documentação.</p>
+    </div>
+  </section>
+
+  <!-- 14 PARA CONSULTAR -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">14</span>
+      <span class="section-title">Para consultar</span>
+      <div class="section-line"></div>
+    </div>
+
+    <ul class="fontes-list">
+      <li><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/Noticias.aspx" target="_blank">STJ — Notícias e Informativos de Jurisprudência · stj.jus.br</a></li>
+      <li><a href="https://portal.trf6.jus.br" target="_blank">TRF6 — Tribunal Regional Federal da 6ª Região · trf6.jus.br</a></li>
+      <li><a href="https://www.cjf.jus.br/tnu" target="_blank">TNU — Turma Nacional de Uniformização dos JEFs · cjf.jus.br/tnu</a></li>
+      <li><a href="https://noticias.stf.jus.br" target="_blank">STF — Notícias e Pautas de Julgamento · stf.jus.br</a></li>
+      <li><a href="https://www.gov.br/inss/pt-br" target="_blank">INSS — Portal Oficial, Portarias e Normas · gov.br/inss</a></li>
+      <li><a href="https://www.migalhas.com.br/quentes/451627/stj-falta-de-registro-na-carteira-de-trabalho-nao-basta-para-trabalhador-provar-desemprego" target="_blank">Migalhas — STJ Tema 1360: tese completa sobre prova de desemprego · 11/03/2026</a></li>
+      <li><a href="https://www.ieprev.com.br/noticias/trf6-admite-conversao-de-beneficio-assistencial-em-aposentadoria-por-invalidez-para-trabalhador-rural" target="_blank">IEPREV — TRF6: conversão de benefício assistencial em aposentadoria por invalidez · 2025</a></li>
+      <li><a href="https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm" target="_blank">Lei nº 8.213/91 — Plano de Benefícios da Previdência Social (texto consolidado)</a></li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <div>
+      <span class="footer-logo">BREVIS</span>
+      <span class="footer-editoria">Previdenciário</span>
+    </div>
+    <div class="footer-tagline">Radar previdenciário estratégico.</div>
+    <div class="footer-text">Produzido por Jean Barbosa · Edição independente de curadoria jurídica.</div>
+  </footer>
+
+</div>
+</body>
+</html>
