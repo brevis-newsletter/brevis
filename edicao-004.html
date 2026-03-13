@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREVIS — Edição nº 004 · 13 de março de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --accent: #c8371a;
+    --accent2: #1a4c8c;
+    --muted: #7a7670;
+    --rule: #d6d0c4;
+    --tag-prev: #c8371a;
+    --tag-civ: #1a4c8c;
+    --tag-trib: #1a6b42;
+    --tag-trab: #7a4a00;
+    --tag-hold: #5c2d82;
+    --tag-dest: #555;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* ---- MASTHEAD ---- */
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 36px 0 20px;
+    text-align: center;
+  }
+  .masthead-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .masthead-logo span { color: var(--accent); }
+  .masthead-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .masthead-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .masthead-meta span::before { content: '— '; }
+
+  /* ---- INDEX ---- */
+  .index-block {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink);
+    background: white;
+    padding: 18px 22px;
+    margin: 28px 0 36px;
+  }
+  .index-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .index-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+  .index-list li {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .index-list li .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 16px;
+  }
+
+  /* ---- SECTION ---- */
+  .section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section:last-child { border-bottom: none; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 24px;
+  }
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ---- ABERTURA ---- */
+  .abertura-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .abertura-text strong { color: var(--accent); }
+
+  /* ---- NEWS CARD ---- */
+  .news-card {
+    border-left: 3px solid var(--rule);
+    padding-left: 16px;
+    margin-bottom: 28px;
+  }
+  .news-card:last-child { margin-bottom: 0; }
+  .news-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: white;
+    margin-bottom: 7px;
+  }
+  .tag-prev { background: var(--tag-prev); }
+  .tag-civ  { background: var(--tag-civ); }
+  .tag-trib { background: var(--tag-trib); }
+  .tag-trab { background: var(--tag-trab); }
+  .tag-hold { background: var(--tag-hold); }
+  .tag-dest { background: var(--tag-dest); }
+
+  .news-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .news-impact {
+    background: #f0ede6;
+    border-left: 3px solid var(--accent);
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .news-impact strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .news-source {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .news-source a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .news-source a:hover { text-decoration: underline; }
+
+  /* ---- DECISÃO DO DIA ---- */
+  .decisao-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 24px;
+    border-radius: 2px;
+  }
+  .decisao-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8a882;
+    margin-bottom: 8px;
+  }
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    color: white;
+  }
+  .decisao-tese {
+    background: rgba(200, 55, 26, 0.18);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    color: #f0ede6;
+  }
+  .decisao-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #c8c0b0;
+    margin-bottom: 14px;
+  }
+  .decisao-pratica {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #e0d8cc;
+  }
+  .decisao-pratica strong {
+    color: #c8a882;
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .decisao-fonte {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #908880;
+  }
+  .decisao-fonte a { color: #c8a882; text-decoration: none; }
+
+  /* ---- ALERTA ---- */
+  .alerta-box {
+    background: #fff8f0;
+    border: 1px solid #f0c080;
+    border-top: 4px solid #c8821a;
+    padding: 22px 20px;
+  }
+  .alerta-icon { font-size: 20px; margin-bottom: 6px; }
+  .alerta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .alerta-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 8px;
+  }
+  .alerta-fonte {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .alerta-fonte a { color: var(--accent2); text-decoration: none; font-weight: 600; }
+
+  /* ---- OPORTUNIDADE ---- */
+  .oport-box {
+    background: #f0f7f0;
+    border: 1px solid #b0d4b0;
+    border-top: 4px solid var(--tag-trib);
+    padding: 22px 20px;
+  }
+  .oport-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .oport-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2a3a2a;
+    margin-bottom: 8px;
+  }
+
+  /* ---- CURIOSIDADE ---- */
+  .curiosidade-box {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .curiosidade-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--rule);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .curiosidade-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .curiosidade-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 8px;
+  }
+
+  /* ---- TERMO ---- */
+  .termo-box {
+    border: 2px solid var(--ink);
+    padding: 22px 20px;
+  }
+  .termo-word {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .termo-def {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .termo-subtitulo {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 12px 0 6px;
+  }
+  .termo-exemplo {
+    padding: 8px 12px;
+    background: var(--ink);
+    color: #f0ede6;
+    font-size: 12.5px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* ---- ROTINA (IMPACTO) ---- */
+  .rotina-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .rotina-item {
+    background: white;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink);
+    padding: 14px 16px;
+  }
+  .rotina-item h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .rotina-item p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  /* ---- FRASE ---- */
+  .frase-box {
+    text-align: center;
+    padding: 36px 20px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 2px;
+  }
+  .frase-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.45;
+    color: white;
+    margin-bottom: 14px;
+  }
+  .frase-author {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c8a882;
+  }
+
+  /* ---- FONTES ---- */
+  .fontes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fontes-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+  }
+  .fontes-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .fontes-list a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .fontes-list a:hover { text-decoration: underline; }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 3px double var(--ink);
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--muted);
+    letter-spacing: -0.5px;
+  }
+  .footer-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin-top: 4px;
+  }
+  .footer-text {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 520px) {
+    .masthead-logo { font-size: 40px; }
+    .index-list { grid-template-columns: 1fr; }
+    .curiosidade-num { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ===== MASTHEAD ===== -->
+  <header class="masthead">
+    <div class="masthead-logo">BREVI<span>S</span></div>
+    <div class="masthead-tagline">Radar jurídico diário para decisões estratégicas</div>
+    <div class="masthead-meta">
+      <span>Sexta-feira, 13 de março de 2026</span>
+      <span>Edição nº 004</span>
+      <span>Leitura: 3–5 min</span>
+    </div>
+  </header>
+
+  <!-- ===== ÍNDICE ===== -->
+  <div class="index-block">
+    <div class="index-title">Nesta edição</div>
+    <ul class="index-list">
+      <li><span class="num">01</span> Abertura do Dia</li>
+      <li><span class="num">02</span> O Que Você Precisa Saber</li>
+      <li><span class="num">03</span> Decisão do Dia</li>
+      <li><span class="num">04</span> Alerta Jurídico</li>
+      <li><span class="num">05</span> Oportunidade de Atuação</li>
+      <li><span class="num">06</span> Curiosidade Jurídica</li>
+      <li><span class="num">07</span> Termo Jurídico do Dia</li>
+      <li><span class="num">08</span> Impacto na sua rotina</li>
+      <li><span class="num">09</span> Frase do Dia</li>
+      <li><span class="num">10</span> Radar da Semana</li>
+      <li><span class="num">11</span> Bastidor Jurídico</li>
+      <li><span class="num">12</span> Para Ler Mais</li>
+    </ul>
+  </div>
+
+  <!-- ===== SEÇÃO 1: ABERTURA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <span class="section-title">Abertura do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="abertura-text">
+      Boa sexta. Este é o <strong>Brevis</strong>, seu radar jurídico diário. A semana termina com três temas dominando a conversa no direito: o julgamento da AP 2670 no STF, uma tese importante do STJ sobre doação de imóveis sem outorga conjugal e o avanço da pauta tributária do tribunal com três temas repetitivos relevantes. Os olhos se voltam para o STF, que retoma na terça-feira (17/03) o julgamento histórico da AP 2670 — a primeira ação penal de desvio de emendas parlamentares julgada por um colegiado da Corte. No campo cível, o STJ consolidou no Informativo 880 uma tese importante para o direito de família e imobiliário: a doação de imóvel particular feita sem outorga conjugal é inválida, mesmo em comunhão parcial de bens, ainda que o bem não pertença à meação. E a agenda tributária avança com três temas repetitivos de alta relevância sobre contribuições federais.
+    </p>
+  </section>
+
+  <!-- ===== SEÇÃO 2: NOTÍCIAS ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <span class="section-title">O Que Você Precisa Saber Hoje</span>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- DESTAQUE -->
+    <div class="news-card">
+      <span class="news-tag tag-dest">Destaque · STF</span>
+      <h3>AP 2670: STF retoma em 17/03 o primeiro julgamento criminal por desvio de emendas parlamentares</h3>
+      <p>
+        A Primeira Turma do STF iniciou em 10/03 o julgamento da AP 2670 e ouvirá os votos dos ministros na terça-feira (17/03), a partir das 13h. No banco dos réus: os deputados federais Josimar Maranhãozinho (PL-MA) e Pastor Gil (PL-MA), além do suplente Bosco Costa (PL-SE), acusados de cobrar propina de 25% sobre R$ 6,67 milhões em emendas destinadas à saúde pública do município de São José de Ribamar (MA). São oito réus no total. A PGR pediu condenação por corrupção passiva e organização criminosa. As defesas negam todos os fatos.
+      </p>
+      <p>
+        É a primeira vez que um colegiado do STF julga o mérito de uma ação penal por desvio de emendas parlamentares — caso originado nas Operações Ágio Final e Emendário. O relator é o ministro Cristiano Zanin. Os votos começam por ele, seguidos pelos demais integrantes da Turma (ministros Alexandre de Moraes, Flávio Dino e Cármen Lúcia).
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        O resultado pode estabelecer um precedente criminal sobre a responsabilização de parlamentares em esquemas de desvio de emendas — tema que já tem ramificações administrativas e orçamentárias em disputa no próprio STF. Advogados públicos, do Legislativo e da área criminal devem acompanhar de perto.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://noticias.stf.jus.br/postsnoticias/ap-2670-pgr-pede-condenacao-de-oito-acusados-de-desvio-de-emendas-parlamentares/" target="_blank">STF — Notícias · AP 2670 · noticias.stf.jus.br</a> / <a href="https://www.cnnbrasil.com.br/politica/stf-comeca-a-julgar-hoje-deputados-do-pl-acusados-de-desvio-de-emendas/" target="_blank">CNN Brasil</a>
+      </div>
+    </div>
+
+    <!-- CIVIL -->
+    <div class="news-card">
+      <span class="news-tag tag-civ">Civil · Família</span>
+      <h3>STJ: doação de imóvel particular sem autorização do cônjuge é inválida — mesmo na comunhão parcial</h3>
+      <p>
+        O STJ publicou no Informativo 880 (10/03/2026) decisão relevante para o direito de família e imobiliário: a doação de bem imóvel particular realizada por cônjuge casado sob regime de comunhão parcial de bens exige outorga conjugal como requisito de validade. A falta dessa autorização torna o negócio anulável — independentemente de o bem não integrar a meação e de não haver prova de prejuízo ao outro cônjuge. A decisão é da 4ª Turma, por unanimidade, sob relatoria da ministra Maria Isabel Gallotti (REsp 2.130.069-SP).
+      </p>
+      <p>
+        O fundamento está no art. 1.647, I, do Código Civil: a outorga conjugal para imóveis é regra protetiva da estrutura patrimonial familiar — não mera formalidade. Mesmo que os frutos do bem particular possam vir a integrar a comunhão, o risco de redução do patrimônio familiar justifica a exigência.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Doações de imóveis particulares realizadas sem autorização do cônjuge em comunhão parcial são anuláveis — e podem ser contestadas pelo cônjuge preterido. Advogados de família e imobiliário devem revisar operações em andamento e orientar clientes sobre a necessidade da outorga. Cartórios e advogados que assessorem doações de imóveis devem exigir o consentimento independentemente do regime de bens — salvo na separação absoluta.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/?acao=pesquisarumaedicao&livre='0880'.cod." target="_blank">STJ — Informativo nº 880 · REsp 2.130.069-SP · Min. Maria Isabel Gallotti · 4ª Turma</a>
+      </div>
+    </div>
+
+    <!-- TRIBUTÁRIO -->
+    <div class="news-card">
+      <span class="news-tag tag-trib">Tributário</span>
+      <h3>STJ avança em março com três temas tributários repetitivos de alta relevância</h3>
+      <p>
+        A pauta tributária do STJ para março de 2026 concentra três temas repetitivos que podem uniformizar a jurisprudência sobre contribuições federais e ICMS em todo o país. Os Temas 1312, 1369 e 1373 tratam de matérias com elevado potencial de impacto para empresas e escritórios que atuam em contencioso tributário — especialmente no âmbito das contribuições sobre a folha de pagamento e de divergências sobre base de cálculo de tributos incidentes sobre serviços de telecomunicação.
+      </p>
+      <p>
+        O Tema 1369, por exemplo, discute a aplicação de alíquotas majoradas de ICMS sobre telecomunicações, com modulação dos efeitos da decisão do STF no Tema 745, que fixou inconstitucionalidade com eficácia prospectiva a partir de 2024 — salvo para ações ajuizadas até 5/2/2021.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Empresas com contencioso tributário ativo sobre contribuições ou ICMS de telecomunicação devem verificar se seus processos estão suspensos na origem aguardando as teses repetitivas. A publicação dos acórdãos orientará o desbloqueio massivo de processos sobrestados.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://tributario.com.br/rmorais/agenda-tributaria-do-stj-para-marco-de-2026-numa-analise-juridica-dos-temas-1312-1369-e-1373-e-seus-impactos-praticos/" target="_blank">Tributario.com.br — Análise Temas 1312, 1369 e 1373</a> / <a href="https://www.stj.jus.br" target="_blank">STJ · stj.jus.br</a>
+      </div>
+    </div>
+
+    <!-- PREVIDENCIÁRIO -->
+    <div class="news-card">
+      <span class="news-tag tag-prev">Previdenciário</span>
+      <h3>Tema 1360: acórdão ainda não publicado — tese sobre prova de desemprego aguardada pela advocacia previdenciária</h3>
+      <p>
+        Três dias após o julgamento do Tema 1360 pelo STJ (11/03), o acórdão que define quais meios de prova comprovam o desemprego involuntário para fins de extensão do período de graça ainda não foi publicado. A publicação é o marco que oficializa a tese vinculante e permite o início das revisões administrativas e ações judiciais com fundamento no novo entendimento. Enquanto isso, o monitoramento do DJEN — Diário da Justiça Eletrônico Nacional — é a ação mais importante para os advogados previdenciários neste momento.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        A tese do Tema 1360 só produz efeito vinculante após a publicação do acórdão. Monitorar o DJEN é prioridade. Advogados que já mapearam a carteira de clientes com negativas por comprovação de desemprego estão na linha de largada.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.stj.jus.br/sites/portalp/Comunicacao/Ultimas-noticias" target="_blank">STJ — Portal de Notícias · stj.jus.br</a> / <a href="https://www.ibdp.org.br" target="_blank">IBDP · ibdp.org.br</a>
+      </div>
+    </div>
+
+    <!-- TRABALHISTA -->
+    <div class="news-card">
+      <span class="news-tag tag-trab">Trabalhista · STF</span>
+      <h3>Pejotização: STF deve julgar ARE 1.532.603 em 2026 — precedente que vai redefinir o contencioso trabalhista</h3>
+      <p>
+        O STF ainda não pautou data para o julgamento do ARE 1.532.603, que discute a chamada "pejotização" — a contratação de trabalhadores como pessoa jurídica como possível fraude ao vínculo empregatício. O caso tem repercussão geral reconhecida (Tema 1389) e definirá o ônus da prova e a competência jurisdicional em disputas dessa natureza. Trata-se de um dos temas mais aguardados do ano no direito do trabalho, com impacto direto em modelos de terceirização, plataformas digitais e contratos de prestação de serviços por PJ.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Escritórios com carteira ativa em pejotização devem acompanhar a pauta do STF. A tese fixada valerá para todos os processos sobrestados no país. Clientes que operam com estruturas de PJ devem ser alertados sobre o risco de mudança de entendimento após o julgamento.
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://lefosse.com/noticias/newsletter/temas-trabalhistas-a-serem-julgados-no-stf-e-tst-em-2026/" target="_blank">Lefosse — Temas trabalhistas STF/TST em 2026</a> / <a href="https://portal.stf.jus.br" target="_blank">STF · portal.stf.jus.br · ARE 1.532.603 · Tema 1389</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== SEÇÃO 3: DECISÃO DO DIA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <span class="section-title">Decisão do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="decisao-box">
+      <div class="decisao-tribunal">STJ · 4ª Turma · Informativo nº 880 · REsp 2.130.069-SP · Rel. Min. Maria Isabel Gallotti · Julgado em 9/12/2025 · Publicado em 13/1/2026</div>
+      <div class="decisao-titulo">Doação de imóvel particular sem outorga conjugal é inválida — mesmo na comunhão parcial</div>
+      <div class="decisao-tese">
+        Tese fixada: "A doação de bem imóvel particular realizada por cônjuge casado sob regime de comunhão parcial de bens exige a outorga conjugal como requisito de validade do negócio jurídico, sendo irrelevante a inexistência de comunicação do bem e a ausência de comprovação de prejuízo à meação."
+      </div>
+      <div class="decisao-body">
+        A controvérsia era saber se, no regime de comunhão parcial, a exigência de outorga conjugal para doação de imóvel se aplicaria apenas a bens comuns — ou também a bens particulares do cônjuge doador. O STJ foi claro: aplica-se a todos os imóveis, sem exceção, porque os frutos dos bens particulares entram na comunhão. A regra do art. 1.647, I, do CC é protetiva da estrutura patrimonial familiar e não comporta a discussão sobre prejuízo concreto à meação. A ausência de outorga torna o negócio anulável, nos termos do art. 1.649 do CC.
+      </div>
+      <div class="decisao-pratica">
+        <strong>O que muda na prática</strong>
+        Para advogados de família: verificar se há doações de imóveis particulares realizadas na constância do casamento sem a autorização do cônjuge — especialmente em inventários e dissoluções de união. Para advogados imobiliários e tabeliães: exigir a outorga conjugal em qualquer doação de imóvel quando o doador for casado, independentemente do regime — salvo separação absoluta. Para clientes: doações já realizadas sem esse consentimento podem ser anuladas pelo cônjuge preterido.
+      </div>
+      <div class="decisao-fonte">
+        Fonte: <a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/?acao=pesquisarumaedicao&livre='0880'.cod." target="_blank">STJ — Informativo nº 880 · scon.stj.jus.br</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 4: ALERTA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <span class="section-title">Alerta Jurídico</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="alerta-box">
+      <div class="alerta-icon">⚠️</div>
+      <h3>AP 2670 no STF: julgamento histórico retoma terça-feira — advocacia criminal e parlamentar em atenção máxima</h3>
+      <p>
+        Na terça-feira (17/03, a partir das 13h), a Primeira Turma do STF apresentará os votos dos ministros na AP 2670 — a primeira ação penal sobre desvio de emendas parlamentares a ser julgada em colegiado pela Corte. O relator Cristiano Zanin abre a votação, seguido pelos ministros Alexandre de Moraes, Flávio Dino e Cármen Lúcia. Os réus respondem por corrupção passiva e organização criminosa. As defesas sustentam a improcedência da ação.
+      </p>
+      <p>
+        O julgamento ocorre em um contexto de crescente debate institucional sobre a transparência e rastreabilidade das emendas parlamentares. A decisão pode servir de referência para outras investigações e ações penais relacionadas ao uso de recursos públicos. Advogados que atuam na área criminal federal e no assessoramento de agentes políticos devem monitorar o desenvolvimento da sessão.
+      </p>
+      <div class="alerta-fonte">
+        Fonte: <a href="https://noticias.stf.jus.br" target="_blank">STF — noticias.stf.jus.br</a> / <a href="https://www.cnnbrasil.com.br" target="_blank">CNN Brasil</a> / <a href="https://jornalgrandebahia.com.br/2026/03/pgr-pede-condenacao-de-deputados-do-pl-por-desvio-de-emendas-julgamento-no-stf-e-suspenso/" target="_blank">Jornal Grande Bahia</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 5: OPORTUNIDADE ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <span class="section-title">Oportunidade de Atuação</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="oport-box">
+      <h3>⚖️ Revisão de doações imobiliárias — tese do STJ abre frente para anulação de negócios sem outorga conjugal</h3>
+      <p>
+        A consolidação da tese no Informativo 880 cria uma oportunidade concreta para advogados de família e inventaristas: revisar doações de imóveis realizadas durante a constância de casamentos sob comunhão parcial — especialmente aquelas em que o cônjuge não assinou a escritura como anuente. O prazo decadencial para anular o negócio é de dois anos a partir do término da sociedade conjugal (art. 1.649 do CC).
+      </p>
+      <p>
+        Os cenários mais comuns são: imóveis doados para filhos sem o consentimento do cônjuge; doações a terceiros como forma de planejamento patrimonial mal assessorado; e transferências informais de imóveis particulares feitas antes de separação judicial. Em todos esses casos, o cônjuge preterido tem legitimidade para pedir a anulação.
+      </p>
+      <p>
+        A ação recomendada: levantar na carteira de clientes de família os inventários, dissoluções e históricos de doações imobiliárias na constância do casamento. O mapeamento agora é vantagem competitiva — antes que o tema se popularize.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 6: CURIOSIDADE ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <span class="section-title">Curiosidade Jurídica do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="curiosidade-box">
+      <div class="curiosidade-num">25%</div>
+      <div class="curiosidade-content">
+        <h3>25%: o percentual citado na denúncia da PGR no caso das emendas parlamentares</h3>
+        <p>
+          Segundo a denúncia da PGR na AP 2670, o grupo investigado teria consolidado 25% como percentual padrão de propina sobre o valor das emendas parlamentares liberadas. A referência não é inédita no cenário nacional — diferentes investigações de corrupção ao longo das últimas décadas revelaram percentuais semelhantes como "preço de mercado" em esquemas que envolvem repasses públicos.
+        </p>
+        <p>
+          No caso concreto: R$ 6,67 milhões em emendas destinadas à saúde pública gerariam R$ 1,6 milhão de propina ao grupo. O STF julgará se as provas coletadas nas Operações Ágio Final e Emendário sustentam a condenação. O resultado sinaliza se o Judiciário consegue responsabilizar parlamentares em exercício por esse tipo de conduta.
+        </p>
+        <p style="font-size:12px; color: var(--muted); margin-top: 6px;">
+          Fonte: STF — AP 2670 · Denúncia da PGR · noticias.stf.jus.br
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 7: TERMO ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <span class="section-title">Termo Jurídico do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="termo-box">
+      <div class="termo-word">Outorga Conjugal</div>
+      <div class="termo-def">
+        É a autorização expressa de um cônjuge para que o outro pratique determinados atos jurídicos de relevância patrimonial — em especial, alienação ou gravame de bens imóveis (art. 1.647, I, do Código Civil). Aplica-se nos regimes de comunhão parcial, comunhão universal e participação final nos aquestos. A única exceção é o regime de separação absoluta de bens. A ausência da outorga não torna o negócio nulo — mas anulável, podendo ser contestado pelo cônjuge preterido no prazo de dois anos após a dissolução da sociedade conjugal.
+      </div>
+      <div class="termo-subtitulo">Por que importa agora?</div>
+      <div class="termo-exemplo">
+        O STJ acabou de reafirmar, no Informativo 880, que a outorga conjugal é exigível até para bens imóveis particulares do cônjuge — não apenas para os bens comuns. Isso afeta diretamente planejamentos patrimoniais, doações e transmissões imobiliárias feitas sem o consentimento do outro cônjuge na constância do casamento.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 8: IMPACTO NA SUA ROTINA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">08</span>
+      <span class="section-title">Impacto na sua rotina</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="rotina-grid">
+      <div class="rotina-item">
+        <h4>Civilistas e Familiaristas</h4>
+        <p>Revisar doações de imóveis realizadas em casamentos sob comunhão parcial sem outorga conjugal. O STJ consolidou: a falta de consentimento do cônjuge torna o negócio anulável — independentemente de o bem ser particular e de não haver prova de prejuízo.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Imobiliários e Notariais</h4>
+        <p>Exigir outorga conjugal em qualquer escritura de doação de imóvel quando o doador for casado — salvo separação absoluta. Negócio lavrado sem esse requisito pode ser questionado judicialmente pelo cônjuge não anuente.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Tributários</h4>
+        <p>Acompanhar o avanço dos Temas 1312, 1369 e 1373 no STJ. Processos sobre contribuições federais e ICMS de telecomunicação sobrestados na origem aguardam as teses. Verificar se a carteira ativa tem processos impactados.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Previdenciários</h4>
+        <p>Monitorar o DJEN para a publicação do acórdão do Tema 1360 (prova de desemprego para período de graça). Só após a publicação a tese produz efeito vinculante e as ações de revisão podem ser ajuizadas com fundamento no novo entendimento.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Trabalhistas e de RH</h4>
+        <p>Acompanhar a pauta do STF para o ARE 1.532.603 (pejotização — Tema 1389). Clientes com estruturas de contratação por PJ precisam ser alertados sobre o risco de requalificação do vínculo após o julgamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 9: FRASE ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">09</span>
+      <span class="section-title">Frase do Dia</span>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="frase-box">
+      <div class="frase-text">"O direito é a paz; o meio para alcançá-la é a luta. Enquanto o direito tiver de repelir o injusto — e isso durará enquanto o mundo existir —, não poderá subtrair-se à violência."</div>
+      <div class="frase-author">— Rudolf von Jhering · Jurista alemão · A Luta pelo Direito (1872)</div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 10: RADAR DA SEMANA ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">10</span>
+      <span class="section-title">Radar da Semana</span>
+      <div class="section-line"></div>
+    </div>
+    <p style="font-size:13px; color: var(--muted); margin-bottom: 16px; font-family: 'DM Mono', monospace; letter-spacing: 0.05em;">O que mais movimentou o jurídico nesta semana.</p>
+    <div class="rotina-grid">
+      <div class="rotina-item">
+        <h4>STJ · Previdenciário</h4>
+        <p>Tema 1360: definição das provas admissíveis para comprovação do desemprego involuntário e extensão do período de graça. Acórdão ainda não publicado no DJEN.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>STJ · Civil</h4>
+        <p>Informativo 880 consolida a exigência de outorga conjugal para doação de imóvel particular em comunhão parcial — mesmo sem comunicação do bem ou prova de prejuízo à meação (REsp 2.130.069-SP).</p>
+      </div>
+      <div class="rotina-item">
+        <h4>STF · Criminal</h4>
+        <p>AP 2670 inicia julgamento sobre desvio de emendas parlamentares — primeira ação penal do tipo analisada em colegiado pela Corte. Votação continua em 17/03 às 13h.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>STF · Trabalhista</h4>
+        <p>Expectativa sobre o julgamento do Tema 1389 da pejotização (ARE 1.532.603), com sobrestamento de processos em todo o país. Ainda sem data definida na pauta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 11: BASTIDOR JURÍDICO ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">11</span>
+      <span class="section-title">Bastidor Jurídico</span>
+      <div class="section-line"></div>
+    </div>
+    <p style="font-size:13px; color: var(--muted); margin-bottom: 16px; font-family: 'DM Mono', monospace; letter-spacing: 0.05em;">O tema que mais gerou conversa nos bastidores do direito nesta semana.</p>
+    <div class="alerta-box" style="border-top-color: var(--accent2);">
+      <div class="alerta-icon">💬</div>
+      <h3>Emendas parlamentares e responsabilidade penal: o debate que tomou conta dos grupos jurídicos esta semana</h3>
+      <p>
+        O julgamento da AP 2670 no STF dominou as conversas entre advogados e juristas nesta semana. A perspectiva de que um colegiado da Corte analise pela primeira vez o mérito de uma ação penal envolvendo o uso de emendas parlamentares reacendeu discussões sobre os limites da responsabilidade penal de agentes políticos e a eficácia dos mecanismos de controle sobre recursos públicos federais.
+      </p>
+      <p>
+        O debate extrapolou o caso concreto. Advogados de direito público, criminal e parlamentar passaram a semana discutindo as implicações do precedente em formação — especialmente diante do volume de investigações em curso sobre irregularidades no uso de emendas. A votação de terça-feira (17/03) deve intensificar esse debate.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 12: FONTES ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-num">12</span>
+      <span class="section-title">Para Ler Mais</span>
+      <div class="section-line"></div>
+    </div>
+
+    <ul class="fontes-list">
+      <li>
+        <a href="https://noticias.stf.jus.br/postsnoticias/ap-2670-pgr-pede-condenacao-de-oito-acusados-de-desvio-de-emendas-parlamentares/" target="_blank">STF — AP 2670: PGR pede condenação por desvio de emendas parlamentares · noticias.stf.jus.br</a>
+      </li>
+      <li>
+        <a href="https://www.cnnbrasil.com.br/politica/defesas-de-deputados-do-pl-negam-desvio-de-emenda-e-alegam-falta-de-provas/" target="_blank">CNN Brasil — Defesas negam desvio de emenda na AP 2670 · STF retoma votação em 17/03</a>
+      </li>
+      <li>
+        <a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/?acao=pesquisarumaedicao&livre='0880'.cod." target="_blank">STJ — Informativo nº 880 · 10/03/2026 · REsp 2.130.069-SP · Outorga conjugal e doação de imóvel</a>
+      </li>
+      <li>
+        <a href="https://anoregpb.org.br/informativo-de-jurisprudencia-do-stj-trata-da-doacao-de-bem-imovel-particular-realizada-por-conjuge-casado-sob-regime-de-comunhao-parcial-de-bens/" target="_blank">Anoreg-PB — STJ e a doação de bem imóvel particular em comunhão parcial: comentários ao REsp 2.130.069</a>
+      </li>
+      <li>
+        <a href="https://tributario.com.br/rmorais/agenda-tributaria-do-stj-para-marco-de-2026-numa-analise-juridica-dos-temas-1312-1369-e-1373-e-seus-impactos-praticos/" target="_blank">Tributario.com.br — Agenda tributária do STJ para março de 2026: Temas 1312, 1369 e 1373</a>
+      </li>
+      <li>
+        <a href="https://lefosse.com/noticias/newsletter/temas-trabalhistas-a-serem-julgados-no-stf-e-tst-em-2026/" target="_blank">Lefosse — Temas trabalhistas STF/TST em 2026 · ARE 1.532.603 (pejotização) · Tema 1389</a>
+      </li>
+      <li>
+        <a href="https://www.stj.jus.br/sites/portalp/Comunicacao/Ultimas-noticias" target="_blank">STJ — Últimas Notícias · stj.jus.br</a>
+      </li>
+      <li>
+        <a href="https://portal.stf.jus.br/" target="_blank">STF — Portal Oficial · Agenda de Julgamentos · portal.stf.jus.br</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">BREVIS</div>
+    <div class="footer-tagline">Radar jurídico diário para decisões estratégicas</div>
+    <div class="footer-text">Produzido por Jean Barbosa · Edição independente de curadoria jurídica.</div>
+  </footer>
+
+</div>
+</body>
+</html>
