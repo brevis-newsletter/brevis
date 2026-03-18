@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição 001 | 18.03.2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #4A4A4A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--azul-escuro);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cinza-texto);
+    padding: 0;
+  }
+
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--branco);
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: var(--azul-escuro);
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    top: -10px; right: -10px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.25);
+  }
+
+  .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 12px;
+    opacity: 0.9;
+  }
+
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--branco);
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+
+  .header-title span {
+    color: var(--dourado);
+  }
+
+  .header-subtitle {
+    font-size: 12px;
+    color: rgba(250,250,248,0.55);
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding-top: 20px;
+  }
+
+  .header-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .header-meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+  }
+
+  .header-meta-value {
+    font-size: 12px;
+    color: rgba(250,250,248,0.85);
+    font-weight: 500;
+  }
+
+  /* ─── ÍNDICE ─── */
+  .indice {
+    background: var(--azul-meio);
+    padding: 20px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+
+  .indice-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(232,204,122,0.75);
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .indice-item strong {
+    color: var(--dourado-claro);
+  }
+
+  /* ─── CONTEÚDO ─── */
+  .content {
+    padding: 0;
+  }
+
+  /* ─── SEÇÃO ─── */
+  .section {
+    padding: 36px 48px;
+    border-bottom: 1px solid #E8E4DA;
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--dourado);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--azul-claro);
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: -0.2px;
+  }
+
+  .section-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--cinza-texto);
+  }
+
+  .section-body p {
+    margin-bottom: 12px;
+  }
+
+  .section-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── ABERTURA ─── */
+  .abertura {
+    background: var(--dourado-sutil);
+    border-left: 4px solid var(--dourado);
+    padding: 28px 48px;
+    border-bottom: 1px solid #E8E4DA;
+  }
+
+  .abertura-bom-dia {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--azul-claro);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .abertura-texto {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--azul-escuro);
+    font-weight: 400;
+  }
+
+  /* ─── NOTÍCIAS ─── */
+  .noticias-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .noticia-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #EDE9DF;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .noticia-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .noticia-badge {
+    flex-shrink: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .badge-tnu { background: #EBF0FB; color: #2B5797; }
+  .badge-stj { background: #F0EBF5; color: #5A2E7A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+
+  .noticia-content {}
+
+  .noticia-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .noticia-resumo {
+    font-size: 12.5px;
+    color: var(--cinza-sub);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  .noticia-impacto {
+    font-size: 11.5px;
+    color: var(--verde);
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    line-height: 1.5;
+  }
+
+  /* ─── DECISÃO DO DIA ─── */
+  .decisao-card {
+    background: var(--azul-escuro);
+    border-radius: 4px;
+    padding: 28px 32px;
+    color: var(--branco);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .decisao-card::before {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .decisao-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--branco);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .decisao-body {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: rgba(250,250,248,0.82);
+  }
+
+  .decisao-body p {
+    margin-bottom: 10px;
+  }
+
+  .decisao-divider {
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    margin: 16px 0;
+  }
+
+  .decisao-tese {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: var(--dourado-claro);
+    font-style: italic;
+    padding-left: 14px;
+    border-left: 2px solid var(--dourado);
+  }
+
+  /* ─── TRF6 ─── */
+  .trf6-card {
+    border: 1.5px solid var(--verde);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .trf6-header {
+    background: var(--verde);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .trf6-header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .trf6-header-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .trf6-body {
+    padding: 20px;
+    background: var(--verde-claro);
+  }
+
+  .trf6-body p {
+    font-size: 13.5px;
+    line-height: 1.72;
+    color: #1A3A2A;
+    margin-bottom: 10px;
+  }
+
+  .trf6-body p:last-child { margin-bottom: 0; }
+
+  .trf6-como-usar {
+    background: white;
+    border-radius: 3px;
+    padding: 14px 16px;
+    margin-top: 14px;
+  }
+
+  .trf6-como-usar-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--verde);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .trf6-como-usar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .trf6-como-usar li {
+    font-size: 12.5px;
+    color: var(--cinza-texto);
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .trf6-como-usar li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--verde);
+    font-size: 11px;
+  }
+
+  /* ─── TESE ─── */
+  .tese-card {
+    background: var(--cinza-claro);
+    border-radius: 4px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--azul-claro);
+  }
+
+  .tese-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .tese-body {
+    font-size: 13px;
+    line-height: 1.72;
+    color: var(--cinza-texto);
+  }
+
+  .tese-body p { margin-bottom: 8px; }
+  .tese-body p:last-child { margin-bottom: 0; }
+
+  /* ─── COMO USAR ─── */
+  .como-usar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .como-usar-item {
+    background: var(--cinza-claro);
+    border-radius: 4px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .como-usar-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .como-usar-texto {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--cinza-texto);
+    font-weight: 500;
+  }
+
+  /* ─── OPORTUNIDADE ─── */
+  .oportunidade-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .oportunidade-item {
+    background: var(--branco);
+    border: 1px solid #E0DCD2;
+    border-radius: 4px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .oportunidade-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--dourado);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .oportunidade-content {}
+
+  .oportunidade-titulo {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    margin-bottom: 4px;
+  }
+
+  .oportunidade-texto {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--cinza-sub);
+  }
+
+  /* ─── TNU ─── */
+  .tnu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .tnu-item {
+    border-left: 3px solid var(--azul-claro);
+    padding-left: 16px;
+  }
+
+  .tnu-item-tema {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--azul-claro);
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .tnu-item-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+
+  .tnu-item-texto {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--cinza-texto);
+  }
+
+  .tnu-item-status {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  .status-pendente { background: #FFF3E0; color: #E65100; }
+  .status-julgado { background: var(--verde-claro); color: var(--verde); }
+  .status-embargos { background: #F3E5F5; color: #6A1B9A; }
+
+  /* ─── MAPEAR CARTEIRA ─── */
+  .mapear-box {
+    background: var(--azul-escuro);
+    border-radius: 4px;
+    padding: 24px 28px;
+    color: white;
+  }
+
+  .mapear-intro {
+    font-size: 13px;
+    color: rgba(250,250,248,0.7);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .mapear-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mapear-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    border-left: 2px solid var(--dourado);
+  }
+
+  .mapear-check {
+    font-size: 12px;
+    color: var(--dourado);
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .mapear-texto {
+    font-size: 12.5px;
+    color: rgba(250,250,248,0.85);
+    line-height: 1.55;
+  }
+
+  /* ─── INSS ATENÇÃO ─── */
+  .inss-card {
+    background: var(--alerta-claro);
+    border: 1px solid #F5C6C0;
+    border-radius: 4px;
+    padding: 20px 24px;
+  }
+
+  .inss-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--alerta);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .inss-texto {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #5A1A10;
+  }
+
+  .inss-dados {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  .inss-dado {
+    background: white;
+    border-radius: 3px;
+    padding: 10px 14px;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .inss-dado-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cinza-sub);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .inss-dado-valor {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--alerta);
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ─── FERRAMENTA ─── */
+  .ferramenta-card {
+    background: #F8F6FF;
+    border: 1px solid #D4C9F0;
+    border-radius: 4px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .ferramenta-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+
+  .ferramenta-content {}
+
+  .ferramenta-nome {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2D1B6B;
+    margin-bottom: 6px;
+  }
+
+  .ferramenta-descricao {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: #4A3A7A;
+    margin-bottom: 10px;
+  }
+
+  .ferramenta-passos {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ferramenta-passo {
+    font-size: 12px;
+    color: #5A4A8A;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .passo-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    background: #D4C9F0;
+    color: #2D1B6B;
+    padding: 1px 5px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ─── BASTIDOR ─── */
+  .bastidor-quote {
+    border-left: 3px solid var(--dourado);
+    padding: 16px 20px;
+    background: var(--dourado-sutil);
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.75;
+    color: var(--azul-escuro);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  .bastidor-contexto {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--cinza-texto);
+  }
+
+  /* ─── RADAR ─── */
+  .radar-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .radar-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #EDE9DF;
+  }
+
+  .radar-item:last-child { border-bottom: none; }
+
+  .radar-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .radar-texto {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--cinza-texto);
+  }
+
+  /* ─── FONTE DAS NOTÍCIAS ─── */
+  .noticia-fonte {
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: var(--cinza-sub);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+  .noticia-fonte a {
+    color: var(--azul-claro);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .noticia-fonte a:hover { text-decoration: underline; }
+  .decisao-fonte {
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.45);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+  }
+  .decisao-fonte a {
+    color: var(--dourado-claro);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .decisao-fonte a:hover { text-decoration: underline; }
+
+  /* ─── FONTES ─── */
+  .fontes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .fonte-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--cinza-claro);
+    color: var(--azul-claro);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .fonte-tag:hover {
+    background: #E0DBD0;
+    color: var(--azul-meio);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--azul-escuro);
+    padding: 28px 48px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--dourado);
+    margin-bottom: 6px;
+  }
+
+  .footer-sub {
+    font-size: 11px;
+    color: rgba(250,250,248,0.4);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+
+  .footer-divider {
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    margin: 16px 0;
+  }
+
+  .footer-disclaimer {
+    font-size: 10.5px;
+    color: rgba(250,250,248,0.35);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ─── BANNER ─── */
+  .especial-banner {
+    background: linear-gradient(135deg, var(--dourado) 0%, #A07830 100%);
+    padding: 10px 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .especial-banner-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--azul-escuro);
+    font-weight: 600;
+  }
+
+  .especial-banner-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--azul-escuro);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  /* Separador entre seções */
+  .section-divider {
+    height: 2px;
+    background: linear-gradient(to right, var(--dourado), transparent);
+    margin: 0 48px;
+    opacity: 0.3;
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 28px 24px 24px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 22px 24px; }
+    .indice { padding: 14px 24px; }
+    .footer { padding: 24px; }
+    .especial-banner { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .como-usar-grid { grid-template-columns: 1fr; }
+    .inss-dados { flex-direction: column; }
+    .header-title { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-label">Maximiano Advocacia · Uso interno</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-subtitle">Radar previdenciário estratégico da Maximiano</div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">18 de março de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">001 — Edição de lançamento</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">5–7 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="especial-banner">
+    <span class="especial-banner-text">★ Primeira edição</span>
+    <div class="especial-banner-dot"></div>
+    <span class="especial-banner-text">Semana de 16 a 22.03.2026</span>
+    <div class="especial-banner-dot"></div>
+    <span class="especial-banner-text">4 decisões · 4 oportunidades</span>
+  </div>
+
+  <!-- ÍNDICE -->
+  <div class="indice">
+    <span class="indice-item"><strong>01</strong> Abertura</span>
+    <span class="indice-item"><strong>02</strong> Tribunais</span>
+    <span class="indice-item"><strong>03</strong> Decisão do dia</span>
+    <span class="indice-item"><strong>04</strong> TRF6</span>
+    <span class="indice-item"><strong>05</strong> Tese relevante</span>
+    <span class="indice-item"><strong>06</strong> Como usar</span>
+    <span class="indice-item"><strong>07</strong> Oportunidade</span>
+    <span class="indice-item"><strong>08</strong> TNU em pauta</span>
+    <span class="indice-item"><strong>09</strong> Mapear carteira</span>
+    <span class="indice-item"><strong>10</strong> Atenção INSS</span>
+    <span class="indice-item"><strong>11</strong> Ferramenta</span>
+    <span class="indice-item"><strong>12</strong> Bastidor</span>
+    <span class="indice-item"><strong>13</strong> Prioridade da semana</span>
+    <span class="indice-item"><strong>14</strong> Fontes</span>
+  </div>
+
+  <div class="content">
+
+    <!-- 01 ABERTURA -->
+    <div class="abertura">
+      <div class="abertura-bom-dia">Bom dia, equipe Maximiano.</div>
+      <div class="abertura-texto">
+        Quatro movimentações esta semana com impacto direto na carteira de Poços de Caldas, Botelhos, Cabo Verde e Nova Resende. A TNU manteve tese que pode ampliar retroativos em processos de incapacidade já em andamento, a depender do conjunto probatório de cada caso. O STJ vem sinalizando possível revisão de um prazo importante de revisão de benefício — tema ainda pendente de definição colegiada, mas com tendência já clara. Dois temas na TNU têm potencial de abrir nova onda de captação assim que forem decididos. Leia, identifique os casos e execute.
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 02 TRIBUNAIS -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">02</span>
+        <span class="section-label">O que saiu nos tribunais</span>
+      </div>
+
+      <div class="noticias-grid">
+
+        <div class="noticia-item">
+          <span class="noticia-badge badge-tnu">TNU</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">TNU consolida: incapacidade não começa na data da perícia</div>
+            <div class="noticia-resumo">Em 11/03/2026, a TNU rejeitou os embargos do INSS no Tema 343. Tese mantida: fixar a data de início da incapacidade (DII) no dia do exame pericial é a exceção, não a regra. O juiz precisa justificar. A presunção é de que a incapacidade já existia antes.</div>
+            <div class="noticia-impacto">↗ Pode ampliar retroativos, a depender do conjunto probatório. Revise processos com DII fixada na data da perícia e avalie a viabilidade de peticionar a correção — cada mês de diferença pode representar honorários adicionais.</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-343" target="_blank">TNU — Tema 343 (PEDILEF 5000516-97.2020.4.05.8013/AL) · Tese julgada 2025, embargos do INSS rejeitados em 11/03/2026 · cjf.jus.br/tnu</a> · Ref.: <a href="https://previdenciarista.com/blog/tnu-julga-tema-343-sobre-fixacao-da-data-de-inicio-da-incapacidade/" target="_blank">Previdenciarista · 09/04/2025</a></div>
+          </div>
+        </div>
+
+        <div class="noticia-item">
+          <span class="noticia-badge badge-tnu">TNU</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">TNU afeta tema com impacto direto em MEI e dona de casa</div>
+            <div class="noticia-resumo">O Tema 384 foi afetado para julgamento vinculante: quando o MEI ou segurado facultativo complementa contribuição recolhida em alíquota reduzida (5% ou 11%), o benefício retroage à DER ou apenas ao pagamento da diferença? Tema em análise — sem tese fixada ainda.</div>
+            <div class="noticia-impacto">↗ Prepare o terreno. Mapeie clientes MEI e donas de casa com contribuição complementada. Quando a decisão sair favorável, quem já identificou os casos age primeiro.</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-384" target="_blank">TNU — Tema 384 (PEDILEF 5003886-26.2022.4.04.7202/SC) · Afetado · cjf.jus.br/tnu</a> · Ref.: <a href="https://www.ieprev.com.br/noticias/tnu-afeta-tema-384-para-definir-efeitos-financeiros-em-caso-de-complementacao-de-contribuicoes-de-5pct-ou-11pct" target="_blank">IEPREV · 2025</a></div>
+          </div>
+        </div>
+
+        <div class="noticia-item">
+          <span class="noticia-badge badge-stj">STJ</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">STJ vem sinalizando possível revisão do segundo prazo de revisão de benefício</div>
+            <div class="noticia-resumo">O STJ vem emitindo decisões individuais contrárias ao Tema 256 da TNU, que garantia dois prazos autônomos de 10 anos para revisão de benefício. O julgamento colegiado no PUIL 3687/PR está pendente — tema ainda sem definição vinculante, mas a tendência das decisões individuais é clara.</div>
+            <div class="noticia-impacto">↘ Aja com antecedência. Identifique clientes que dependem do segundo prazo de 10 anos — contado do indeferimento administrativo — e peticione antes da definição colegiada.</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/22092020-Direito-a-revisao-de-beneficio-previdenciario-cujo-merito-nao-foi-apreciado-no-ato-de-concessao-decai-em-dez-anos.aspx" target="_blank">STJ — Tema 975 (REsp 1.644.191 e 1.648.336) · Decadência em revisão de benefício · stj.jus.br · set/2020</a> · Ref. contexto PUIL 3687: <a href="https://previdenciarista.com/blog/stj-derruba-entendimento-favoravel-sobre-prazo-decadencial-de-revisao-do-inss/" target="_blank">Previdenciarista · mar/2025</a></div>
+          </div>
+        </div>
+
+        <div class="noticia-item">
+          <span class="noticia-badge badge-tnu">TNU</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">Agentes de saúde: EC 120/2022 não dispensa prova técnica</div>
+            <div class="noticia-resumo">O Tema 347, julgado em fevereiro/2026, definiu que a EC 120/2022 não gera aposentadoria especial automática para agentes comunitários de saúde e de combate a endemias. Sem lei complementar aprovada, ainda é obrigatório apresentar PPP e LTCAT.</div>
+            <div class="noticia-impacto">↘ Evite o indeferimento. Não protocole com base apenas na EC 120/2022. Exija PPP e LTCAT antes de qualquer requerimento ou ação nesse perfil.</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-347" target="_blank">TNU — Tema 347 (PEDILEF 5000482-58.2022.4.04.7010/PR) · Rel. Juiz Federal Neian Milhomem Cruz · Julgado em 11/02/2026 · cjf.jus.br/tnu</a> · Ref.: <a href="https://previdenciarista.com/blog/tema-347-tnu-nega-aposentadoria-automatica-a-agentes-de-saude/" target="_blank">Previdenciarista · 12/02/2026</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 03 DECISÃO DO DIA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">03</span>
+        <span class="section-label">Decisão previdenciária do dia</span>
+      </div>
+
+      <div class="decisao-card">
+        <span class="decisao-tag">TNU · Tema 343 · 11 de março de 2026</span>
+        <div class="decisao-titulo">A incapacidade vem antes da perícia. TNU rejeita embargos do INSS e a tese segue valendo.</div>
+        <div class="decisao-body">
+          <p>O INSS tentou reformar o Tema 343 alegando que a tese prejudicaria o laudo pericial. A TNU rejeitou por maioria: a DII fixada na data da perícia continua sendo medida excepcional — o juiz precisa fundamentar com robustez se quiser adotá-la.</p>
+          <p>O ganho prático pode ser significativo: se o segurado chegou incapacitado ao processo, há presunção de que a incapacidade é anterior ao exame — o que pode resultar em retroativos maiores, a depender do conjunto probatório do caso. Use essa tese para questionar a DII em processos em andamento onde ela foi fixada no dia da perícia.</p>
+        </div>
+        <hr class="decisao-divider">
+        <div class="decisao-tese">
+          "A fixação da data de início da incapacidade (DII) na data da perícia constitui medida excepcional, que demanda fundamentação capaz de afastar a presunção lógica de que a incapacidade teve início em momento anterior ao exame pericial."
+        </div>
+        <div class="decisao-fonte">Fonte: <a href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-343" target="_blank">TNU — Tema 343 · Embargos de declaração rejeitados em 11/03/2026 · cjf.jus.br/tnu</a> · Ref.: <a href="https://previdenciarista.com/blog/sessao-da-tnu-debate-epi-incapacidade-e-agente-calor/" target="_blank">Previdenciarista · 11/03/2026</a></div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 04 TRF6 -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">04</span>
+        <span class="section-label">Jurisprudência do TRF6</span>
+      </div>
+
+      <div class="section-body" style="margin-bottom: 16px;">
+        <p>O TRF6 é o tribunal que julga os casos de Minas Gerais — Poços de Caldas, Botelhos, Cabo Verde e Nova Resende incluídos. Citar jurisprudência do próprio tribunal pesa mais do que trazer TRF4 ou TRF3. Use sempre o precedente regional quando existir.</p>
+      </div>
+
+      <div class="trf6-card">
+        <div class="trf6-header">
+          <span class="trf6-header-label">TRF6 · Minas Gerais</span>
+          <span style="color: rgba(255,255,255,0.3); font-size: 12px;">|</span>
+          <span class="trf6-header-title">Incapacidade não é só médica — a realidade do segurado conta</span>
+        </div>
+        <div class="trf6-body">
+          <p>O TRF6, pela 1ª Turma Recursal, tem reconhecido que incapacidade laboral não é um critério exclusivamente médico. O tribunal tem considerado o contexto real do segurado: idade, escolaridade, município onde mora, mercado de trabalho disponível na região.</p>
+          <p>Há precedentes do TRF6 no sentido de que um segurado de 55 anos, baixa escolaridade, morando em Botelhos ou Cabo Verde, com laudo de incapacidade parcial — esse perfil não encontra recolocação real. Com base nesses precedentes, peticione com esse argumento e apresente o contexto socioeconômico do cliente.</p>
+
+          <div class="trf6-como-usar">
+            <span class="trf6-como-usar-label">Peticione assim</span>
+            <ul>
+              <li>Inclua dados do cliente na petição: idade, escolaridade, município, histórico profissional e limitações relatadas</li>
+              <li>Cite os precedentes do TRF6 como referência regional — especialmente em ações nos juizados de MG, onde esse entendimento tem sido aplicado</li>
+              <li>Aplique em recursos onde o INSS nega com base apenas no laudo, ignorando a realidade do segurado</li>
+              <li>Oriente o cliente a detalhar sua rotina e dificuldades durante a perícia — esse relato compõe o contexto social que sustenta a tese</li>
+            </ul>
+          </div>
+          <div class="noticia-fonte" style="margin-top: 14px; padding-top: 10px; border-top: 1px solid #D6D0C4;">Fundamento jurídico: <a href="https://www.cjf.jus.br/phpdoc/virtus/sumula.php?nsul=47" target="_blank">TNU — Súmula 47 (condições pessoais e sociais para aposentadoria por invalidez) · cjf.jus.br · 2012</a> · Ref.: <a href="https://previdenciarista.com/blog/stj-derruba-entendimento-favoravel-sobre-prazo-decadencial-de-revisao-do-inss/" target="_blank">Linha aplicada no TRF6 com base nessa orientação</a> · <a href="https://www.ieprev.com.br" target="_blank">IEPREV</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 05 TESE RELEVANTE -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">05</span>
+        <span class="section-label">Tese previdenciária relevante</span>
+      </div>
+
+      <div class="tese-card">
+        <div class="tese-nome">Aposentadoria rural sem documento próprio: use a CTPS do cônjuge</div>
+        <div class="tese-body">
+          <p>A TNU reconhece que a Carteira de Trabalho do cônjuge com anotação como trabalhador rural serve como início de prova material para o outro. Não é necessário documento no nome do próprio segurado — o trabalho conjunto na propriedade familiar configura regime de economia familiar.</p>
+          <p><strong>Aplique quando:</strong> o cliente não tem documentação própria do período rural, mas o cônjuge tem CTPS como trabalhador rural no mesmo período reivindicado. É o motivo mais frequente de aposentadoria rural negada no interior de MG.</p>
+          <p><strong>Perfis frequentes na carteira da Maximiano:</strong> mulheres que trabalhavam na roça com o marido sem registro — situação comum em Botelhos, Nova Resende e Cabo Verde. Complemente sempre com prova testemunhal e documentos do imóvel: ITR, DAP, nota fiscal de venda de produto rural.</p>
+          <div class="noticia-fonte" style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #e0ddd6;">Fonte: <a href="https://www.cjf.jus.br/phpdoc/virtus/sumula.php?nsul=6" target="_blank">TNU — Súmula 6 (CTPS do cônjuge como início de prova material) · cjf.jus.br</a> · <a href="https://scon.stj.jus.br/SCON/sumstj/doc.jsp?livre=%22149%22.num.&b=SUMU&p=false&l=10&i=1&operador=E&ordenacao=-@NUM" target="_blank">STJ — Súmula 149 (prova exclusivamente testemunhal insuficiente) · scon.stj.jus.br · DJ 18/12/1995</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 06 COMO USAR -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">06</span>
+        <span class="section-label">Como usar na prática</span>
+      </div>
+
+      <div class="section-body" style="margin-bottom: 14px;">
+        <p>Quatro movimentos diretos a partir das decisões desta semana. Todos executáveis hoje.</p>
+      </div>
+
+      <div class="como-usar-grid">
+        <div class="como-usar-item">
+          <span class="como-usar-icon">📋</span>
+          <span class="como-usar-texto">Peticione incapacidade social em casos com laudo parcial — acrescente idade, município e escolaridade do cliente à argumentação</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">📅</span>
+          <span class="como-usar-texto">Revise processos com DII na data da perícia — solicite correção judicial com base no Tema 343 e recupere os meses de retroativo represados</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">📁</span>
+          <span class="como-usar-texto">Nos atendimentos de aposentadoria rural, levante CTPS, DAP e ITR do cônjuge — clientes sem documento próprio podem ter tese viável</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">⚠️</span>
+          <span class="como-usar-texto">Identifique revisões que dependem do segundo prazo de 10 anos — peticione antes do julgamento do PUIL 3687/PR fechar essa janela</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 07 OPORTUNIDADE -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">07</span>
+        <span class="section-label">Oportunidade de atuação</span>
+      </div>
+
+      <div class="oportunidade-lista">
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Revise a DII nos processos em andamento — retroativos podem ser recuperados agora</div>
+            <div class="oportunidade-texto">Identifique processos onde o benefício por incapacidade foi concedido com DII fixada no dia da perícia. Com base no Tema 343, há fundamento sólido para questionar a data. Peça a revisão judicial — avaliando o conjunto probatório, a correção pode resultar em retroativos adicionais e honorários sobre eles.</div>
+          </div>
+        </div>
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Mapeie MEI e donas de casa agora — o Tema 384 pode gerar captação em escala</div>
+            <div class="oportunidade-texto">O Tema 384 ainda aguarda decisão, mas quem mapeia agora chega na frente. Identifique clientes MEI ou segurados facultativos que recolheram 5% ou 11% e depois complementaram. Quando a TNU decidir favoravelmente, esses casos já estarão prontos para protocolar.</div>
+          </div>
+        </div>
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Reavalie negativas de rural — a CTPS do cônjuge pode reabrir casos encerrados</div>
+            <div class="oportunidade-texto">Reavalie negativas recentes de aposentadoria rural onde o cliente não tinha documentação própria. Pergunte sobre a CTPS do cônjuge. Se houver anotação como trabalhador rural no mesmo período, há início de prova material. Reabra o requerimento ou ajuíze a ação.</div>
+          </div>
+        </div>
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Acione clientes com revisão dependente do segundo prazo — o STJ vem sinalizando mudança</div>
+            <div class="oportunidade-texto">Clientes que dependem do segundo prazo de 10 anos — contado do indeferimento administrativo — correm risco real de perder a janela. O STJ vem emitindo decisões individuais que sinalizam possível revisão do entendimento. Tema ainda pendente de definição colegiada, mas o risco já é concreto. Acione esses clientes e peticione antes do PUIL 3687/PR ser julgado.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 08 TNU EM PAUTA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">08</span>
+        <span class="section-label">Tema em pauta na TNU</span>
+      </div>
+
+      <div class="tnu-items">
+
+        <div class="tnu-item">
+          <span class="tnu-item-tema">Tema 383 · TNU</span>
+          <div class="tnu-item-titulo">EPI eficaz em hospital: pode não eliminar direito à aposentadoria especial</div>
+          <div class="tnu-item-texto">Tese em discussão: quando o risco biológico é inerente ao ambiente hospitalar, a eficácia do EPI declarada no PPP não cancelaria o tempo especial. A relatora propôs tese favorável ao segurado na sessão de 11/03/2026 — resultado ainda não consolidado. Aguarde a decisão antes de protocolar casos nesse perfil.</div>
+          <span class="tnu-item-status status-pendente">Tese em discussão — aguarda resultado</span>
+        </div>
+
+        <div class="tnu-item">
+          <span class="tnu-item-tema">Tema 384 · TNU</span>
+          <div class="tnu-item-titulo">MEI e facultativo: benefício retroage à DER ou só ao pagamento da complementação?</div>
+          <div class="tnu-item-texto">Tese em análise: quando o segurado complementa contribuição recolhida em alíquota reduzida, o benefício pode retroagir à data do requerimento (DER) ou apenas ao pagamento da diferença? Há posições divergentes dentro da própria TNU. Mapeie os casos agora. Peticione depois da decisão.</div>
+          <span class="tnu-item-status status-pendente">Tema afetado — aguarda julgamento vinculante</span>
+        </div>
+
+        <div class="tnu-item">
+          <span class="tnu-item-tema">Tema 347 · TNU</span>
+          <div class="tnu-item-titulo">Agentes de saúde: aposentadoria especial ainda depende de lei que não existe</div>
+          <div class="tnu-item-texto">Julgado em fevereiro/2026. Vincula as turmas recursais, mas ainda pode ser debatido no TRF6 e no STF. O PLP 185/2024 pode alterar o cenário — acompanhe a tramitação. Enquanto a lei complementar não for aprovada, exija PPP e LTCAT antes de qualquer ação para agentes comunitários de saúde e agentes de combate a endemias.</div>
+          <span class="tnu-item-status status-julgado">Julgado · não transitado em julgado</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 09 MAPEAR CARTEIRA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">09</span>
+        <span class="section-label">Mapear a carteira</span>
+      </div>
+
+      <div class="mapear-box">
+        <div class="mapear-intro">Cinco movimentos para executar ainda esta semana. Um por vez já faz diferença.</div>
+        <div class="mapear-lista">
+          <div class="mapear-item">
+            <span class="mapear-check">01</span>
+            <div class="mapear-texto">Revise processos de benefício por incapacidade em andamento — identifique os que têm DII fixada na data da perícia e peticione a correção com base no Tema 343</div>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">02</span>
+            <div class="mapear-texto">Mapeie clientes MEI e segurados facultativos com contribuições de 5% ou 11% complementadas — registre o perfil agora para agir assim que o Tema 384 for decidido</div>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">03</span>
+            <div class="mapear-texto">Reavalie negativas de aposentadoria rural — pergunte ao cliente se o cônjuge tem CTPS como trabalhador rural e avalie a viabilidade de reabertura ou ajuizamento</div>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">04</span>
+            <div class="mapear-texto">Identifique revisões que dependem do segundo prazo de 10 anos — acione os clientes e peticione antes que o STJ torne sua posição vinculante no PUIL 3687/PR</div>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">05</span>
+            <div class="mapear-texto">Evite protocolar aposentadoria especial para agentes comunitários de saúde sem PPP e LTCAT — a EC 120/2022 não produz efeito automático sem lei complementar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 10 ATENÇÃO INSS -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">10</span>
+        <span class="section-label">Atenção no INSS</span>
+      </div>
+
+      <div class="inss-card">
+        <div class="inss-titulo">⚠ Atualize os cálculos — valores novos vigentes desde janeiro</div>
+        <div class="inss-texto">
+          A Portaria MPS/MF nº 13/2026 atualizou os parâmetros da Previdência Social a partir de 1º de janeiro. Revise simulações de benefício, petições com cálculos de RMI e requerimentos administrativos que ainda usem os valores de 2025. Número desatualizado em petição gera inconsistência e pode comprometer o pedido.
+        </div>
+        <div class="inss-dados">
+          <div class="inss-dado">
+            <span class="inss-dado-label">Teto máximo</span>
+            <div class="inss-dado-valor">R$ 8.475,55</div>
+          </div>
+          <div class="inss-dado">
+            <span class="inss-dado-label">Salário mínimo</span>
+            <div class="inss-dado-valor">R$ 1.621,00</div>
+          </div>
+          <div class="inss-dado">
+            <span class="inss-dado-label">Reajuste acima do piso</span>
+            <div class="inss-dado-valor">3,9%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 11 FERRAMENTA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">11</span>
+        <span class="section-label">Ferramenta da semana</span>
+      </div>
+
+      <div class="ferramenta-card">
+        <div class="ferramenta-icon">🔍</div>
+        <div class="ferramenta-content">
+          <div class="ferramenta-nome">Jusia — IA de jurisprudência dentro do JusBrasil</div>
+          <div class="ferramenta-descricao">
+            Busca inteligente com linguagem natural. Filtre por TRF6 e encontre precedentes de Minas Gerais sem precisar acertar o termo técnico exato. Mais rápido do que busca manual no portal do tribunal — e com resultados mais relevantes.
+          </div>
+          <div class="ferramenta-passos">
+            <div class="ferramenta-passo">
+              <span class="passo-num">01</span>
+              <span>Acesse jusbrasil.com.br e abra o Jus IA na barra de busca</span>
+            </div>
+            <div class="ferramenta-passo">
+              <span class="passo-num">02</span>
+              <span>Filtre por tribunal: selecione <strong>TRF6</strong> — precedentes de MG têm peso maior nas ações da Maximiano</span>
+            </div>
+            <div class="ferramenta-passo">
+              <span class="passo-num">03</span>
+              <span>Defina o período: <strong>último ano</strong> — jurisprudência recente tem maior aceitação nas peças</span>
+            </div>
+            <div class="ferramenta-passo">
+              <span class="passo-num">04</span>
+              <span>Pesquise por tema: "incapacidade social", "prova rural cônjuge", "tempo especial hospitalar"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 12 BASTIDOR -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">12</span>
+        <span class="section-label">Bastidor previdenciário</span>
+      </div>
+
+      <div class="bastidor-quote">
+        "O STJ emitindo monocráticas contra a TNU antes do julgamento colegiado não é ruído — é um sinal de tendência de revisão do entendimento. Tema ainda pendente de definição vinculante, mas o padrão é claro. Escritório que esperar a decisão definitiva para agir pode chegar tarde."
+      </div>
+
+      <div class="bastidor-contexto">
+        A tensão entre STJ e TNU em torno do Tema 256 é o assunto mais comentado entre previdenciaristas neste início de 2026. O que hoje ainda é um prazo disponível de 10 anos — contado do indeferimento administrativo — pode deixar de existir a qualquer momento. Escritórios que atuam com revisão de benefício já estão priorizando esse perfil. Identifique os casos na carteira, acione os clientes e peticione esta semana. Não espere o colegiado tornar a posição vinculante.
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 13 PRIORIDADE DA SEMANA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">13</span>
+        <span class="section-label">Prioridade da semana</span>
+      </div>
+
+      <div class="mapear-box">
+        <div class="mapear-intro">Três ações que não ficam para a semana que vem. Execute agora.</div>
+        <div class="mapear-lista">
+          <div class="mapear-item">
+            <span class="mapear-check">01</span>
+            <div class="mapear-texto"><strong>Revise e peticione as correções de DII.</strong> Identifique processos de incapacidade com DII fixada na data da perícia. Com base no Tema 343, peça a revisão da data. A depender do conjunto probatório, os retroativos podem ser recuperados — cada mês conta.</div>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">02</span>
+            <div class="mapear-texto"><strong>Acione clientes com revisão no segundo prazo de 10 anos.</strong> O STJ vem sinalizando possível mudança — tema pendente de definição colegiada, mas o risco já é real. Identifique os casos e peticione antes do julgamento do PUIL 3687/PR.</div>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">03</span>
+            <div class="mapear-texto"><strong>Reavalie negativas de rural e pergunte sobre o cônjuge.</strong> Clientes sem documentação própria do período rural podem ter tese viável pela CTPS do cônjuge. Identifique nos atendimentos recentes e reabra o que couber.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 14 FONTES -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">14</span>
+        <span class="section-label">Para consultar</span>
+      </div>
+
+      <div class="fontes-grid">
+        <a class="fonte-tag" href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-343" target="_blank">TNU Tema 343 — DII na data da perícia · cjf.jus.br</a>
+        <a class="fonte-tag" href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-347" target="_blank">TNU Tema 347 — Agentes de saúde EC 120/2022 · cjf.jus.br · 11/02/2026</a>
+        <a class="fonte-tag" href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-384" target="_blank">TNU Tema 384 — MEI e complementação · cjf.jus.br</a>
+        <a class="fonte-tag" href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/22092020-Direito-a-revisao-de-beneficio-previdenciario-cujo-merito-nao-foi-apreciado-no-ato-de-concessao-decai-em-dez-anos.aspx" target="_blank">STJ — Tema 975 · Decadência revisão benefício · set/2020</a>
+        <a class="fonte-tag" href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-256" target="_blank">TNU Tema 256 — Prazo decadencial revisão · PUIL 3687/PR pendente no STJ · cjf.jus.br</a>
+        <a class="fonte-tag" href="https://www.cjf.jus.br/phpdoc/virtus/sumula.php?nsul=47" target="_blank">TNU — Súmula 47 (incapacidade social — condições pessoais e sociais) · cjf.jus.br</a>
+        <a class="fonte-tag" href="https://www.gov.br/inss/pt-br/centrais-de-conteudo/legislacao/portarias/2026" target="_blank">INSS — Portaria MPS/MF nº 13/2026 · gov.br/inss · jan/2026</a>
+        <a class="fonte-tag" href="https://www.cjf.jus.br/phpdoc/virtus/sumula.php?nsul=6" target="_blank">TNU — Súmula 6 (CTPS cônjuge como prova material rural) · cjf.jus.br</a>
+        <a class="fonte-tag" href="https://scon.stj.jus.br/SCON/sumstj/doc.jsp?livre=%22149%22.num.&b=SUMU&p=false&l=10&i=1&operador=E&ordenacao=-@NUM" target="_blank">STJ — Súmula 149 (prova rural exclusivamente testemunhal insuficiente) · scon.stj.jus.br
+        <a class="fonte-tag" href="https://previdenciarista.com/blog/tnu-julga-tema-343-sobre-fixacao-da-data-de-inicio-da-incapacidade/" target="_blank">Previdenciarista — Tema 343 · abr/2025</a>
+        <a class="fonte-tag" href="https://previdenciarista.com/blog/tema-347-tnu-nega-aposentadoria-automatica-a-agentes-de-saude/" target="_blank">Previdenciarista — Tema 347 · 12/02/2026</a>
+        <a class="fonte-tag" href="https://previdenciarista.com/blog/stj-derruba-entendimento-favoravel-sobre-prazo-decadencial-de-revisao-do-inss/" target="_blank">Previdenciarista — PUIL 3687 e Tema 256 · mar/2025</a>
+        <a class="fonte-tag" href="https://www.ieprev.com.br/noticias/tnu-afeta-tema-384-para-definir-efeitos-financeiros-em-caso-de-complementacao-de-contribuicoes-de-5pct-ou-11pct" target="_blank">IEPREV — Tema 384 afetado · 2025</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar previdenciário estratégico · Maximiano Advocacia · Uso interno</div>
+    <div style="margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dourado-claro); opacity: 0.8;">Curadoria · Jean Barbosa</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Este informativo é de uso interno exclusivo da Maximiano Advocacia. As informações têm caráter orientativo e não substituem a análise jurídica individualizada de cada caso. Teses em discussão podem ser revertidas. Consulte sempre as fontes primárias antes de peticionar.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
