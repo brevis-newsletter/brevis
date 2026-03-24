@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREVIS Semanal — Edição nº 005 · 24 de março de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --accent: #c8371a;
+    --accent2: #1a4c8c;
+    --muted: #7a7670;
+    --rule: #d6d0c4;
+    --tag-prev: #c8371a;
+    --tag-civ: #1a4c8c;
+    --tag-trib: #1a6b42;
+    --tag-trab: #7a4a00;
+    --tag-hold: #5c2d82;
+    --tag-dest: #555;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* ---- MASTHEAD ---- */
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 36px 0 20px;
+    text-align: center;
+  }
+  .masthead-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .masthead-logo span { color: var(--accent); }
+  .masthead-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .masthead-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .masthead-meta span::before { content: '— '; }
+
+  /* ---- INDEX ---- */
+  .index-block {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink);
+    background: white;
+    padding: 18px 22px;
+    margin: 28px 0 36px;
+  }
+  .index-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .index-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+  .index-list li {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .index-list li .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 16px;
+  }
+  .index-list a { color: inherit; text-decoration: none; }
+  .index-list a:hover { text-decoration: underline; color: var(--accent2); }
+
+  /* ---- SECTION ---- */
+  .section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 24px;
+  }
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ---- ABERTURA ---- */
+  .abertura-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .abertura-text strong { color: var(--accent); }
+
+  /* ---- NEWS CARD ---- */
+  .news-card {
+    border-left: 3px solid var(--rule);
+    padding-left: 16px;
+    margin-bottom: 32px;
+  }
+  .news-card:last-child { margin-bottom: 0; }
+  .news-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: white;
+    margin-bottom: 7px;
+  }
+  .tag-prev { background: var(--tag-prev); }
+  .tag-civ  { background: var(--tag-civ); }
+  .tag-trib { background: var(--tag-trib); }
+  .tag-trab { background: var(--tag-trab); }
+  .tag-hold { background: var(--tag-hold); }
+  .tag-dest { background: var(--tag-dest); }
+
+  .news-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+
+  /* Bloco impacto (vermelho) */
+  .news-impact {
+    background: #f0ede6;
+    border-left: 3px solid var(--accent);
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-impact strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  /* Bloco ação imediata (verde) */
+  .news-acao {
+    background: #f0f7f1;
+    border-left: 3px solid #1a6b42;
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-acao strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1a6b42;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  /* Bloco dinheiro (azul) */
+  .news-dinheiro {
+    background: #eef3fa;
+    border-left: 3px solid var(--accent2);
+    padding: 8px 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-dinheiro strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .news-source {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .news-source a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .news-source a:hover { text-decoration: underline; }
+  .news-base {
+    margin-top: 8px;
+    padding: 7px 12px;
+    background: #f0ede6;
+    border-left: 3px solid var(--accent2);
+    font-size: 11.5px;
+    color: #3a3834;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+  }
+  .news-base strong {
+    color: var(--accent2);
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  /* ---- DECISÃO DO DIA ---- */
+  .decisao-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 24px;
+    border-radius: 2px;
+  }
+  .decisao-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8a882;
+    margin-bottom: 8px;
+  }
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    color: white;
+  }
+  .decisao-tese {
+    background: rgba(200, 55, 26, 0.18);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 13.5px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    color: #f0ede6;
+  }
+  .decisao-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #c8c0b0;
+    margin-bottom: 14px;
+  }
+  .decisao-pratica {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #e0d8cc;
+  }
+  .decisao-pratica strong {
+    color: #c8a882;
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .decisao-fonte {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #908880;
+  }
+  .decisao-fonte a { color: #c8a882; text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+
+  /* ---- ALERTA ---- */
+  .alerta-box {
+    background: #fff8f0;
+    border: 1px solid #f0c080;
+    border-top: 4px solid #c8821a;
+    padding: 22px 20px;
+  }
+  .alerta-icon { font-size: 20px; margin-bottom: 6px; }
+  .alerta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .alerta-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 8px;
+  }
+  .alerta-fonte {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .alerta-fonte a { color: var(--accent2); text-decoration: none; font-weight: 600; }
+  .alerta-fonte a:hover { text-decoration: underline; }
+
+  /* ---- OPORTUNIDADE ---- */
+  .oport-box {
+    background: #f0f7f1;
+    border: 1px solid #b0d4b0;
+    border-top: 4px solid #1a6b42;
+    padding: 22px 20px;
+  }
+  .oport-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .oport-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2a3a2a;
+    margin-bottom: 8px;
+  }
+  .oport-box p strong { color: var(--ink); }
+
+  /* ---- CURIOSIDADE ---- */
+  .curiosidade-box {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .curiosidade-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--rule);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .curiosidade-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .curiosidade-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3a3834;
+    margin-bottom: 8px;
+  }
+
+  /* ---- TERMO ---- */
+  .termo-box {
+    border: 2px solid var(--ink);
+    padding: 22px 20px;
+  }
+  .termo-word {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .termo-def {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .termo-subtitulo {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 12px 0 6px;
+  }
+  .termo-exemplo {
+    padding: 10px 14px;
+    background: var(--ink);
+    color: #f0ede6;
+    font-size: 12.5px;
+    font-style: italic;
+    line-height: 1.65;
+  }
+
+  /* ---- ROTINA (IMPACTO) ---- */
+  .rotina-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .rotina-item {
+    background: white;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink);
+    padding: 14px 16px;
+  }
+  .rotina-item h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+  .rotina-item p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  /* ---- FRASE ---- */
+  .frase-box {
+    text-align: center;
+    padding: 36px 20px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 2px;
+  }
+  .frase-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.45;
+    color: white;
+    margin-bottom: 14px;
+  }
+  .frase-author {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #c8a882;
+  }
+
+  /* ---- PARA LER MAIS ---- */
+  .fontes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fontes-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .fontes-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .fontes-list a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .fontes-list a:hover { text-decoration: underline; }
+  .fontes-list span {
+    color: var(--muted);
+    font-size: 12px;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 3px double var(--ink);
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--muted);
+    letter-spacing: -0.5px;
+  }
+  .footer-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin-top: 4px;
+  }
+  .footer-text {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 520px) {
+    .masthead-logo { font-size: 40px; }
+    .masthead-meta { flex-direction: column; gap: 4px; align-items: center; }
+    .index-list { grid-template-columns: 1fr; }
+    .curiosidade-num { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav style="border-bottom:1px solid #d6d0c4;padding:10px 0;margin-bottom:0;display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#7a7670;text-decoration:none;">&#8592; Página Inicial</a>
+    <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#d6d0c4;">brevis.beehiiv.com</span>
+  </nav>
+
+  <!-- ===== MASTHEAD ===== -->
+  <header class="masthead">
+    <div class="masthead-logo">BREVI<span>S</span></div>
+    <div class="masthead-tagline">Radar jurídico semanal para decisões estratégicas</div>
+    <div class="masthead-meta">
+      <span>Terça-feira, 24 de março de 2026</span>
+      <span>Edição nº 005</span>
+      <span>Leitura: 6–8 min</span>
+    </div>
+  </header>
+
+  <!-- ===== ÍNDICE ===== -->
+  <div class="index-block">
+    <div class="index-title">Nesta edição</div>
+    <ul class="index-list">
+      <li><span class="num">01</span> <a href="#s01">Abertura do Dia</a></li>
+      <li><span class="num">06</span> <a href="#s06">Curiosidade Jurídica</a></li>
+      <li><span class="num">02</span> <a href="#s02">O Que Você Precisa Saber</a></li>
+      <li><span class="num">07</span> <a href="#s07">Termo Jurídico do Dia</a></li>
+      <li><span class="num">03</span> <a href="#s03">Decisão do Dia</a></li>
+      <li><span class="num">08</span> <a href="#s08">Impacto na sua Rotina</a></li>
+      <li><span class="num">04</span> <a href="#s04">Alerta Jurídico</a></li>
+      <li><span class="num">09</span> <a href="#s09">Frase do Dia</a></li>
+      <li><span class="num">05</span> <a href="#s05">Oportunidade de Atuação</a></li>
+      <li><span class="num">10</span> <a href="#s10">Para Ler Mais</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== S01 — ABERTURA ===== -->
+  <section class="section" id="s01">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <span class="section-title">Abertura do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="abertura-text">
+      Boa semana. Esta é a <strong>Edição nº 005 do Brevis</strong> — formato semanal, cobertura multidisciplinar. Oito temas esta semana, com forte presença do Direito Civil: o STJ avança em responsabilidade bancária no PIX sob coação, reforça a proteção ao consumidor no cancelamento abusivo de planos de saúde e amplia a solidariedade de plataformas de marketplace em casos de produtos falsificados. No campo tributário, o STF avança no Tema 1348 (ITBI), mas o julgamento ainda não foi concluído. No trabalhista, a NR-01 ampliada exige gestão de riscos psicossociais — e a fiscalização do MTE já está ativa. Oito notícias. Aplicação imediata. Leitura de 8 a 10 minutos.
+    </p>
+  </section>
+
+  <!-- ===== S02 — O QUE VOCÊ PRECISA SABER ===== -->
+  <section class="section" id="s02">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <span class="section-title">O Que Você Precisa Saber</span>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- NOTÍCIA 1 — CIVIL / PIX -->
+    <div class="news-card">
+      <span class="news-tag tag-civ">Civil · Consumidor · STJ</span>
+      <h3>PIX sob coação (sequestro relâmpago): banco responde objetivamente por falha de segurança — ônus da prova é do fornecedor</h3>
+      <p>
+        O STJ tem aplicado de forma consistente a responsabilidade objetiva das instituições financeiras (CDC, art. 14) em casos de transações via PIX realizadas por clientes sob coação — cenário recorrente nos chamados sequestros relâmpago. O fundamento é a teoria do <strong>fortuito interno</strong>: o risco de fraude e de coação integra a atividade bancária e não pode ser transferido ao consumidor. A violência sofrida pelo cliente não afasta a responsabilidade do banco pela falha no serviço.
+      </p>
+      <p>
+        Para se eximir, a instituição financeira deve demonstrar que adotou todas as medidas de segurança razoáveis e disponíveis: limites de transação noturna, alertas de comportamento atípico, bloqueio por geolocalização, verificação reforçada para transferências acima de determinado valor. <strong>O ônus dessa prova é integralmente do banco</strong> — e não do cliente. O dano moral é considerado presumido (in re ipsa) quando comprovada a coação e a falha no serviço. O dano material corresponde ao valor transferido.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Bancos que não implementaram limites de transação personalizados (especialmente no período noturno) ou que não oferecem ao cliente ferramentas de autoproteção ficam expostos à responsabilização objetiva. A ausência de mecanismos básicos de segurança é o principal argumento da vítima.
+      </div>
+      <div class="news-acao">
+        <strong>Ação imediata</strong>
+        Identifique clientes pessoas físicas ou empresas que sofreram transferências via PIX sob coação nos últimos 3 anos. Levante o extrato das transações e documente as circunstâncias da coação (boletim de ocorrência, perícia, testemunhas). Verifique se o banco oferecia mecanismos de limite noturno ou alerta — a ausência dessas ferramentas é o núcleo da tese de responsabilidade.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Onde está o dinheiro</strong>
+        Clientes pessoas físicas que tiveram valores expressivos transferidos via PIX durante sequestro relâmpago comprovado. O pedido envolve restituição integral do valor transferido + indenização por dano moral (calculada sobre o porte do banco e extensão do dano). Bancos de grande porte têm sido condenados a valores entre R$ 5.000 e R$ 30.000 por dano moral, além da restituição do principal.
+      </div>
+      <div class="news-base">
+        <strong>Base jurídica</strong>
+        CDC, art. 14 (Lei 8.078/1990) · Responsabilidade objetiva do fornecedor · Teoria do fortuito interno · CC, art. 927, §único · STJ: jurisprudência consolidada nas 3ª e 4ª Turmas sobre responsabilidade bancária em fraudes e coações envolvendo meios de pagamento eletrônico
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://scon.stj.jus.br/SCON/pesquisa.jsp?b=ACOR&livre=pix+coacao+responsabilidade+banco+fortuito+interno" target="_blank">STJ · Jurisprudência SCON · PIX, coação e responsabilidade bancária objetiva</a> · CDC, art. 14 (Lei 8.078/1990)
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 2 — CIVIL / PLANO DE SAÚDE -->
+    <div class="news-card">
+      <span class="news-tag tag-civ">Civil · Consumidor · STJ</span>
+      <h3>Plano de saúde não pode cancelar contrato por inadimplência mínima: adimplemento substancial protege especialmente idosos e pacientes em tratamento</h3>
+      <p>
+        O STJ pacificou que a teoria do <strong>adimplemento substancial</strong> impede a resolução unilateral do contrato de plano de saúde quando o beneficiário tem longo histórico de adimplência e a inadimplência é pontual ou de curta duração. A aplicação da teoria — consolidada nas 3ª e 4ª Turmas — parte do princípio de que o cumprimento do contrato em sua maior parte afasta o direito de resolução do fornecedor (CC, arts. 421 e 422; CDC, art. 51, IV). O cancelamento, nessa hipótese, é abusivo e passível de reversão judicial.
+      </p>
+      <p>
+        Especial atenção para beneficiários idosos (Lei 10.741/2003) e pacientes em tratamento contínuo (quimioterapia, diálise, pós-operatório): nesses casos, a interrupção do atendimento causa dano irreversível à saúde e os tribunais têm deferido liminares de reintegração de forma amplamente favorável. Adicionalmente, a ANS exige notificação prévia formal ao beneficiário antes de qualquer cancelamento (Resolução Normativa 195/2009, art. 14). O descumprimento desse rito torna a rescisão ilegal, independentemente do valor em aberto.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Operadoras que cancelam contratos unilateralmente após 1 a 3 meses de inadimplência — sem observar o rito da ANS e sem considerar o histórico do beneficiário — são sistematicamente condenadas à reintegração do plano e ao pagamento de danos morais. A liminar é quase sempre deferida em casos de tratamento em andamento.
+      </div>
+      <div class="news-acao">
+        <strong>Ação imediata</strong>
+        Identifique clientes com plano de saúde cancelado nos últimos 2 anos após inadimplência de até 3 meses. Verifique: (a) tempo de contrato e histórico de adimplência; (b) existência de tratamento médico em curso; (c) notificação prévia formal da operadora. Com esses elementos, ingresse com ação de obrigação de fazer + tutela de urgência para reativação imediata do plano.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Onde está o dinheiro</strong>
+        Beneficiários idosos ou portadores de doenças crônicas (câncer, insuficiência renal, cardiopatias, doenças raras) cujo plano foi cancelado por inadimplência de até 60 dias. A tutela de urgência é praticamente certa nesses perfis. A ação principal permite pleitear: reativação do plano + danos morais + reembolso de despesas médicas suportadas no período de suspensão indevida.
+      </div>
+      <div class="news-base">
+        <strong>Base jurídica</strong>
+        CC, arts. 421 e 422 (boa-fé objetiva e função social do contrato) · CDC, art. 51, IV (cláusulas abusivas) · Lei 10.741/2003 (Estatuto do Idoso), art. 15, §3º · ANS, Resolução Normativa nº 195/2009, art. 14 (rito obrigatório de cancelamento) · STJ: teoria do adimplemento substancial consolidada nas 3ª e 4ª Turmas (ex.: REsp 1.051.270/RS; AgRg no AREsp 309.905/SP)
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://scon.stj.jus.br/SCON/pesquisa.jsp?b=ACOR&livre=adimplemento+substancial+plano+saude+cancelamento+consumidor" target="_blank">STJ · Jurisprudência SCON · Adimplemento substancial e plano de saúde</a> · <a href="https://www.gov.br/ans/pt-br/acesso-a-informacao/normativas/resolucoes-normativas/resolucoes-normativas-2009/resolucao-normativa-n-195-14-07-2009-regulamenta-o-instituto-do-contrato-coletivo-empresarial-ou-por-adesao-de-planos-privados-de-assistencia-a-saude" target="_blank">ANS · Resolução Normativa 195/2009 · gov.br</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 3 — CIVIL / MARKETPLACE -->
+    <div class="news-card">
+      <span class="news-tag tag-civ">Civil · Empresarial · STJ</span>
+      <h3>Marketplace responde solidariamente por produtos falsificados após notificação: omissão da plataforma caracteriza cumplicidade e gera dever de indenizar</h3>
+      <p>
+        O STJ consolidou que plataformas de marketplace respondem <strong>solidariamente</strong> pelos danos causados por produtos falsificados comercializados em seu ambiente digital, desde que tenham sido formalmente notificadas pelo titular do direito violado e tenham permanecido inertes na remoção dos anúncios. O fundamento é o art. 7º, parágrafo único, do CDC combinado com a teoria do risco da atividade: a plataforma que monetiza a intermediação assume a responsabilidade pelos riscos inerentes ao serviço prestado.
+      </p>
+      <p>
+        O marco temporal é a notificação: a partir do momento em que a plataforma toma ciência da violação — seja por notificação extrajudicial do titular da marca, seja por denúncia interna do sistema — e deixa de agir, sua conduta omissiva converte-se em ação comissiva. Os danos indenizáveis abrangem: (a) dano material, calculado sobre o faturamento desviado pela venda do produto falso; (b) dano moral à marca, proporcional à sua notoriedade e extensão da violação; (c) eventual obrigação de fazer para remoção imediata dos anúncios, sob pena de multa diária.
+      </p>
+      <div class="news-impact">
+        <strong>Impacto prático</strong>
+        Titulares de marcas registradas no INPI têm base jurídica sólida para acionar plataformas que não removem produtos falsificados após notificação. O timing é essencial: quanto maior o volume de vendas irregulares documentado, maior o dano indenizável.
+      </div>
+      <div class="news-acao">
+        <strong>Ação imediata</strong>
+        Mapeie anúncios de produtos falsificados nos principais marketplaces (Mercado Livre, Shopee, Amazon, Americanas). Formalize notificação extrajudicial com AR e comprovante de recebimento. Preserve prints, URLs e dados de vendedores antes da remoção espontânea. Se a plataforma não remover em 48 a 72 horas, ingresse com ação de obrigação de fazer + indenização + medida cautelar de preservação de provas.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Onde está o dinheiro</strong>
+        Empresas com marcas registradas no INPI que identifiquem produtos falsificados em volume relevante. O dano material é calculado com base no histórico de vendas da marca e no volume estimado de vendas dos produtos falsos. Plataformas de grande porte foram condenadas a valores expressivos em casos de omissão reiterada após notificação documentada. Avalie especialmente setores de moda, eletrônicos, cosméticos e alimentos industrializados.
+      </div>
+      <div class="news-base">
+        <strong>Base jurídica</strong>
+        CDC, art. 7º, §único (responsabilidade solidária na cadeia de fornecimento) · Lei 9.279/1996 (LPI — Lei de Propriedade Industrial), arts. 129 e 131 (direitos do titular de marca registrada) · CC, art. 927, §único (responsabilidade pelo risco da atividade) · STJ: entendimento aplicado pela 3ª Turma em casos envolvendo grandes plataformas digitais após notificação formal do titular da marca
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://scon.stj.jus.br/SCON/pesquisa.jsp?b=ACOR&livre=marketplace+responsabilidade+produtos+falsificados+notificacao+solidaria" target="_blank">STJ · Jurisprudência SCON · Responsabilidade de plataformas por produtos falsificados</a> · CDC, art. 7º, parágrafo único (Lei 8.078/1990)
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 2 — TRIBUTÁRIO / ITBI -->
+    <div class="news-card">
+      <span class="news-tag tag-trib">Tributário · STF · Tema 1348</span>
+      <h3>ITBI na integralização de imóveis (Tema 1348): STF sinaliza imunidade, mas julgamento não foi concluído — risco de reversão existe</h3>
+      <p>
+        O STF analisa o Tema 1348 de Repercussão Geral (RE 1.313.382), que discute a incidência do ITBI sobre a transferência de imóveis ao capital social de pessoa jurídica, com ênfase na abrangência da imunidade prevista no art. 156, §2º, I da Constituição Federal. Votos inicialmente proferidos sinalizam tendência de preservação da imunidade para o ato de integralização — mas <strong>o julgamento ainda não foi concluído</strong> e a tese vinculante não foi fixada.
+      </p>
+      <p>
+        Municípios com alta dependência de ITBI na receita tributária têm apresentado sustentações orais contrárias à imunidade ampliada. Há risco real de que a tese final seja restritiva — excluindo da imunidade, por exemplo, empresas cuja atividade preponderante seja imobiliária. <strong>Trate como tendência, não como decisão consolidada.</strong>
+      </p>
+      <div class="news-impact">
+        <strong>Tendência — não decisão vinculante</strong>
+        Qualquer planejamento tributário baseado no Tema 1348 deve ser estruturado com cenário de contingência. Operações de integralização de imóvel realizadas antes do acórdão definitivo podem ser autuadas pelos municípios — e a defesa ficará condicionada ao resultado final do STF.
+      </div>
+      <div class="news-acao">
+        <strong>Ação imediata</strong>
+        Monitore o plenário virtual do STF semanalmente. Suspenda novas integralizações imobiliárias em escala até a publicação do acórdão. Para operações urgentes, estruture com provisão fiscal e orientação documentada ao cliente sobre o risco de reversão.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Onde está o dinheiro</strong>
+        Clientes que realizaram integralizações de imóveis entre 2021 e 2026 e recolheram ITBI por exigência municipal têm potencial de ação de repetição de indébito (prazo: 5 anos, art. 168 CTN) — dependendo da tese final. Mapeie agora; execute após o acórdão.
+      </div>
+      <div class="news-base">
+        <strong>Base jurídica</strong>
+        CF/88, art. 156, §2º, I (imunidade do ITBI na integralização ao capital social) · STF: RE 1.313.382 · Tema 1348 de Repercussão Geral · Rel. Min. André Mendonça · Julgamento em curso no Plenário Virtual · CTN, art. 168 (prazo de 5 anos para repetição de indébito)
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=6736376&numeroProcesso=1313382&classeProcesso=RE&numeroTema=1348" target="_blank">STF · RE 1.313.382 · Tema 1348 · portal.stf.jus.br</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 3 — TRIBUTÁRIO / IRPJ CSLL -->
+    <div class="news-card">
+      <span class="news-tag tag-trib">Tributário · STJ · 1ª Seção</span>
+      <h3>IRPJ e CSLL: STJ 1ª Seção debate dedutibilidade recíproca — tema relevante, mas ainda sem posição absolutamente consolidada</h3>
+      <p>
+        A 1ª Seção do STJ — instância uniformizadora em matéria tributária, composta pelas 1ª e 2ª Turmas — tem debatido a possibilidade de dedutibilidade recíproca entre IRPJ e CSLL em determinadas situações, com fundamento nas disposições da Lei 9.316/1996 e da Lei 9.249/1995. O tema tem relevância tributária expressiva para empresas de grande porte no regime do lucro real, e a orientação da 1ª Seção serve como importante referência interpretativa.
+      </p>
+      <p>
+        <strong>Atenção importante:</strong> trata-se de <strong>entendimento em formação</strong>, não de tese vinculante absoluta. A aplicação prática é complexa, varia conforme o regime de apuração, o período de competência e as especificidades de cada empresa. O STF ainda não se pronunciou sobre a constitucionalidade do tema, e a análise equivocada pode gerar autuações fiscais. <strong>Consulta tributária especializada é indispensável antes de qualquer pedido de compensação.</strong>
+      </p>
+      <div class="news-acao">
+        <strong>Ação imediata</strong>
+        Revise as ECFs (Escrituração Contábil Fiscal) dos últimos 5 anos de clientes no lucro real. Identifique se a dedutibilidade cruzada foi corretamente aplicada. Avalie pedido de compensação via PER/DCOMP com laudo técnico especializado — não automaticamente.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Onde está o dinheiro</strong>
+        Empresas no lucro real dos setores financeiro, industrial e de serviços intensivos em capital, com lucros relevantes nos últimos anos, são o alvo prioritário. Crédito potencial varia conforme o volume de tributos recolhidos — mas a economia pode ser material em grupos econômicos.
+      </div>
+      <div class="news-base">
+        <strong>Base jurídica</strong>
+        Lei 9.316/1996 (veda a dedução da CSLL para fins de apuração do IRPJ) · Lei 9.249/1995, art. 13 (alíquotas e base de cálculo do IRPJ/CSLL) · STJ: Tema Repetitivo 1319 · 1ª Seção · REsp 2.115.529 e afetados (julgamento em andamento — verificar publicação do acórdão) · RFB: PER/DCOMP como instrumento de compensação
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1319&cod_tema_final=1319" target="_blank">STJ · Tema Repetitivo 1319 · Dedutibilidade IRPJ/CSLL · 1ª Seção (nov./2025)</a> · <a href="https://www.planalto.gov.br/ccivil_03/leis/L9316.htm" target="_blank">Lei 9.316/1996 · Planalto.gov.br</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 4 — TRABALHISTA / TERÇO DE FÉRIAS -->
+    <div class="news-card">
+      <span class="news-tag tag-trab">Trabalhista · STF · Tema 985</span>
+      <h3>Terço constitucional de férias e INSS (Tema 985): risco potencial persiste para empregadores com autuações ou processos em aberto</h3>
+      <p>
+        O STF fixou no Tema 985 (RE 1.072.485) que o terço constitucional de férias, quando gozadas no período correto, <strong>não possui natureza contributiva</strong> para fins de INSS — afastando a incidência da contribuição previdenciária patronal sobre essa parcela. A tese foi amplamente comemorada pelos empregadores. No entanto, o risco potencial não foi eliminado integralmente.
+      </p>
+      <p>
+        Permanecem em disputa: (a) autuações lavradas pela Receita Federal <strong>antes</strong> do julgamento, em processos com trânsito em julgado ainda pendente; (b) situações envolvendo férias <strong>indenizadas</strong> (vendidas), para as quais o tratamento contributivo é distinto — o STF não estendeu a imunidade a esse caso. Empregadores com passivo tributário nessa área devem analisar a situação individualmente.
+      </p>
+      <div class="news-acao">
+        <strong>Ação imediata</strong>
+        Verifique se há processos administrativos ou judiciais em curso envolvendo INSS sobre terço de férias. Para autuações anteriores ao Tema 985, avalie cabimento de mandado de segurança ou impugnação administrativa com base na tese vinculante. Monitore prazo prescricional de 5 anos para repetição de indébito.
+      </div>
+      <div class="news-base">
+        <strong>Base jurídica</strong>
+        CF/88, art. 7º, XVII (terço constitucional de férias) · STF: RE 1.072.485 · Tema 985 de Repercussão Geral · Tese vinculante: "É inconstitucional a incidência de contribuição previdenciária patronal sobre o adicional de férias gozadas" · Acórdão publicado · CTN, art. 168 (prazo prescricional de 5 anos para repetição de indébito)
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=5251616&numeroProcesso=1072485&classeProcesso=RE&numeroTema=985" target="_blank">STF · RE 1.072.485 · Tema 985 · portal.stf.jus.br</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 5 — TRABALHISTA / TST TEMA 46 -->
+    <div class="news-card">
+      <span class="news-tag tag-trab">Trabalhista · TST · IRR Tema 46</span>
+      <h3>Prescrição intercorrente na execução trabalhista (TST Tema 46 — IRR): aplicação depende do caso concreto</h3>
+      <p>
+        O TST, por meio do Incidente de Recursos de Repetitivos (IRR) — Tema 46 —, consolidou que <strong>é possível a declaração de prescrição intercorrente na fase de execução trabalhista</strong>, com fundamento no art. 11-A, §1º da CLT, introduzido pela Reforma Trabalhista (Lei 13.467/2017). O prazo é de dois anos de inércia do credor após arquivamento provisório devidamente intimado.
+      </p>
+      <p>
+        Contudo, o TST ressaltou com clareza: <strong>a aplicação depende do caso concreto</strong>. É indispensável verificar se o arquivamento provisório foi devidamente comunicado ao credor, se houve ato concreto de abandono e se a paralisação resultou de inércia do exequente — e não de circunstâncias alheias à sua vontade (como falta de bens encontráveis ou embaraço processual). A declaração automática ou sem contraditório foi expressamente afastada.
+      </p>
+      <div class="news-acao">
+        <strong>Ação imediata</strong>
+        Revise o andamento de todas as execuções trabalhistas em que atua como credor. Protocole petição de movimentação em processos paralisados há mais de um ano. Para clientes devedores, mapeie execuções dormentes e avalie o cabimento da tese de prescrição intercorrente.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Onde está o dinheiro</strong>
+        Empresas com passivo trabalhista em execução paralisada há mais de dois anos — sem movimentação do exequente após intimação do arquivamento — têm base para postular a extinção do feito por prescrição intercorrente, nos termos do Tema 46. Impacto potencial: redução direta de passivo e provisões contábeis.
+      </div>
+      <div class="news-base">
+        <strong>Base jurídica</strong>
+        CLT, art. 11-A, §1º (inserido pela Lei 13.467/2017 — Reforma Trabalhista) · TST: IRR — Incidente de Recursos de Repetitivos · Tema 46 · Prazo: 2 anos de inércia após intimação do arquivamento provisório · CPC, art. 921, §5º (prescrição intercorrente no processo civil — prazo de 1 ano)
+      </div>
+      <div class="news-source">
+        Fonte: <a href="https://www.tst.jus.br/incidente-de-recursos-de-repetitivos" target="_blank">TST · Incidente de Recursos de Repetitivos (IRR) · Tema 46 · Prescrição Intercorrente · tst.jus.br</a>
+      </div>
+    </div>
+
+    <!-- NOTÍCIA 6 — PREVIDÊNCIA PRIVADA -->
+    <div class="news-card">
+      <span class="news-tag tag-prev">Previdência Privada · STJ · 2ª Turma</span>
+      <h3>PGBL/VGBL e penhora em execuções: STJ 2ª Turma sinaliza possível relativização da impenhorabilidade — decisão não vinculante</h3>
+      <p>
+        A 2ª Turma do STJ proferiu decisão recente sinalizando que planos de previdência privada (PGBL e VGBL) <strong>podem ser penhorados em execuções</strong> quando o produto foi estruturado predominantemente como investimento financeiro — e não como instrumento genuíno de previdência. O critério central adotado pelo colegiado é a <strong>finalidade real do produto</strong>: aportes concentrados, irregulares ou realizados próximos à propositura da execução podem afastar o caráter previdenciário e, com ele, a impenhorabilidade.
+      </p>
+      <p>
+        <strong>Atenção crítica e obrigatória:</strong> trata-se de sinalização da <strong>2ª Turma</strong> do STJ — colegiado de 5 ministros, sem poder vinculante. <strong>Não é decisão da 2ª Seção, não é tese repetitiva, não é vinculante para outros juízos.</strong> Há precedentes em sentido oposto em outras câmaras e turmas. Qualquer estratégia baseada nesse entendimento exige avaliação técnica e individualizada: histórico de aportes, regularidade das contribuições, data de início do plano, finalidade declarada no contrato e momento da constituição em face das execuções existentes.
+      </p>
+      <div class="news-acao">
+        <strong>Ação imediata</strong>
+        Revise a estrutura de planos de previdência privada de clientes com exposição a execuções cíveis ou trabalhistas. Verifique regularidade dos aportes e histórico temporal. Se necessário, repositione a estratégia de proteção patrimonial antes de eventual bloqueio judicial.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Onde está o dinheiro</strong>
+        Credores em execuções com devedores de patrimônio aparentemente reduzido podem questionar PGBL/VGBL com aportes irregulares ou concentrados. A análise técnica do histórico do plano é o ponto de partida para a tese. Avalie com cautela — a jurisprudência ainda não está consolidada.
+      </div>
+      <div class="news-base">
+        <strong>Base jurídica</strong>
+        CPC, art. 833, XII (impenhorabilidade de planos de previdência) · Lei Complementar 109/2001 (previdência complementar) · STJ: entendimento em formação na 2ª Turma · sem tese vinculante fixada · posições divergentes entre câmaras e turmas · critério de análise: finalidade real do plano vs. instrumento de blindagem patrimonial
+      </div>
+      <div class="news-source">
+        Fonte: Jurisprudência em formação · STJ · 2ª Turma · Tema: impenhorabilidade e penhora de PGBL/VGBL em execuções · posição ainda não uniformizada pela 2ª Seção do STJ
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== S03 — DECISÃO DO DIA ===== -->
+  <section class="section" id="s03">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <span class="section-title">Decisão do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="decisao-box">
+      <div class="decisao-tribunal">TST · IRR · Tema 46 · Execução Trabalhista</div>
+      <div class="decisao-titulo">Prescrição intercorrente na execução trabalhista: TST fixa parâmetros para aplicação — sem automatismo</div>
+      <div class="decisao-tese">
+        "A prescrição intercorrente, prevista no art. 11-A, §1º da CLT, é aplicável na fase de execução do processo trabalhista. Sua declaração, porém, pressupõe: intimação válida do credor sobre o arquivamento provisório, inércia concreta e comprovada por período superior a dois anos, e observância do contraditório. Não se aplica de forma automática."
+      </div>
+      <div class="decisao-body">
+        O Tema 46 do IRR representa o enfrentamento mais amplo do TST sobre um tema que se tornou pedra de toque da Reforma Trabalhista de 2017. A possibilidade de extinção da execução por inércia do credor — algo inexistente na CLT até 2017 — trouxe insegurança tanto para trabalhadores quanto para empresas. O TST estabeleceu parâmetros seguros: não basta o decurso do prazo; é necessário ato processual de intimação, inércia voluntária do credor e contraditório antes da extinção.
+      </div>
+      <div class="decisao-pratica">
+        <strong>Aplicação prática</strong>
+        Para o advogado do credor: cadastre alertas de prazo para todas as execuções arquivadas provisoriamente. A intimação do arquivamento dispara o prazo prescricional — e a ausência de movimentação por 24 meses é suficiente para o pedido de extinção. Para o advogado do devedor: mapeie execuções com paralisação superior a dois anos e formalize o pedido de declaração de prescrição, com documentação do arquivamento e da falta de movimentação.
+      </div>
+      <div class="decisao-fonte">
+        Fonte: <a href="https://www.tst.jus.br/incidente-de-recursos-de-repetitivos" target="_blank">TST · IRR · Tema 46 · Prescrição Intercorrente na Execução Trabalhista · tst.jus.br</a> / CLT, art. 11-A, §1º (Lei 13.467/2017)
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S04 — ALERTA JURÍDICO ===== -->
+  <section class="section" id="s04">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <span class="section-title">Alerta Jurídico</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-icon">⚠️</div>
+      <h3>NR-01 ampliada: gestão de riscos psicossociais é agora obrigação legal — prazo de adequação em curso e fiscalização ativa</h3>
+      <p>
+        A Norma Regulamentadora nº 1 do Ministério do Trabalho e Emprego foi atualizada para incluir expressamente a <strong>gestão de riscos psicossociais</strong> como parte integrante do Programa de Gerenciamento de Riscos (PGR). A norma atualizada abrange toda empresa com empregados regidos pela CLT — independentemente do porte.
+      </p>
+      <p>
+        Riscos psicossociais incluem: excesso de pressão por metas, assédio moral estrutural, ausência de autonomia no trabalho, jornadas extenuantes sem recuperação adequada e violência organizacional. A nova exigência não é recomendação: é obrigação legal documentada. O <strong>descumprimento</strong> pode gerar autuação pelo Auditor Fiscal do Trabalho, multa administrativa (art. 630 CLT) e embasar ações trabalhistas por dano existencial, moral ou acidente de trabalho.
+      </p>
+      <p>
+        A fiscalização do MTE está em andamento. Auditores Fiscais já têm orientação para verificar se o PGR das empresas contempla o novo capítulo de riscos psicossociais. Empresas que ainda não iniciaram a adequação estão expostas.
+      </p>
+      <div class="alerta-fonte">
+        Fonte oficial: <a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/legislacao/normas-regulamentadoras/nr-01-atualizada-2023.pdf" target="_blank">NR-01 Atualizada · Ministério do Trabalho e Emprego · gov.br</a>
+      </div>
+      <div class="news-base" style="margin-top:10px;">
+        <strong>Base jurídica</strong>
+        NR-01 atualizada (Portaria MTE nº 1.419/2024) · CLT, art. 157 (obrigações do empregador em segurança do trabalho) · CLT, art. 630 (base para autuação pelo Auditor Fiscal do Trabalho) · PGR — Programa de Gerenciamento de Riscos (obrigatório para empresas com empregados CLT) · Dano existencial: STJ — REsp 1.604.039/MT (parâmetro para indenização por violação de direitos fundamentais do trabalhador)
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S05 — OPORTUNIDADE DE ATUAÇÃO ===== -->
+  <section class="section" id="s05">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <span class="section-title">Oportunidade de Atuação</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="oport-box">
+      <h3>🎯 Diagnóstico NR-01 para PMEs: demanda urgente, mercado aberto e risco imediato para o cliente</h3>
+      <p>
+        <strong>Perfil do cliente:</strong> Pequenas e médias empresas com 5 a 200 empregados que ainda não adaptaram o Programa de Gerenciamento de Riscos (PGR) para incluir o capítulo de riscos psicossociais exigido pela NR-01 atualizada.
+      </p>
+      <p>
+        <strong>Oportunidade:</strong> A demanda é urgente e o mercado de assessoria jurídico-trabalhista preventiva está aquecido. Empresas que recebem autuação do MTE por descumprimento da NR-01 enfrentam multa administrativa imediata e ficam expostas a ações trabalhistas com tese de dano existencial — cujo quantum indenizatório tende a ser elevado.
+      </p>
+      <p>
+        <strong>Ação recomendada:</strong> Oferte serviço de diagnóstico de conformidade trabalhista (due diligence NR-01), com revisão do PGR existente, identificação de gaps, elaboração do capítulo de riscos psicossociais e treinamento de gestores. O produto pode ser entregue em conjunto com médico do trabalho ou consultoria especializada — ampliando o ticket médio.
+      </p>
+      <p>
+        <strong>Janela:</strong> Enquanto a fiscalização ainda não atingiu o cliente, o advogado tem espaço para agir preventivamente. Após a autuação, o papel muda — e o valor do serviço também.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== S06 — CURIOSIDADE JURÍDICA ===== -->
+  <section class="section" id="s06">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <span class="section-title">Curiosidade Jurídica do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="curiosidade-box">
+      <div class="curiosidade-num">?</div>
+      <div class="curiosidade-content">
+        <h3>A teoria da "perda de uma chance" começou em corridas de cavalos — e chegou ao STJ pelas mãos de advogados que perderam prazos</h3>
+        <p>
+          A <em>perte d'une chance</em> nasceu na jurisprudência francesa do século XIX em um caso singelo: um cavalo foi impedido de correr em uma corrida por culpa de terceiro, e o dono processou o responsável pelo lucro que poderia ter obtido — mas nunca saberia se teria obtido. A solução: indenizar não o prêmio perdido (incerto), mas a <em>chance</em> de ganhá-lo (que era real).
+        </p>
+        <p>
+          No Brasil, o STJ adotou a teoria formalmente nos anos 2000 e passou a aplicá-la em casos de erro médico, falhas advocatícias, concursos públicos e até programas de TV. Em 2005, o tribunal condenou emissora a indenizar participante de concurso eliminada por falha do programa — a chance perdida foi o critério. Hoje, a teoria é uma das mais citadas do direito de danos e representa risco concreto de responsabilidade para qualquer profissional liberal cujo serviço envolva uma oportunidade a ser aproveitada.
+        </p>
+        <p style="font-size:13px;color:#7a7670;font-style:italic;">
+          Referência: SAVI, Sérgio. <em>Responsabilidade Civil por Perda de uma Chance.</em> Atlas, 3ª ed. / STJ, REsp 788.459/BA (caso do programa de TV).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S07 — TERMO JURÍDICO DO DIA ===== -->
+  <section class="section" id="s07">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <span class="section-title">Termo Jurídico do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="termo-box">
+      <div class="termo-word">Prescrição Intercorrente</div>
+      <div class="termo-def">
+        A <strong>prescrição intercorrente</strong> é a extinção do direito de prosseguir com a execução judicial que ocorre <em>durante</em> o andamento do processo, quando o credor permanece inerte por prazo superior ao legalmente previsto após ser devidamente intimado sobre a paralisação. Diferente da prescrição comum — que opera antes do processo —, a intercorrente extingue uma execução já em curso.
+      </div>
+      <div class="termo-subtitulo">Fundamento legal e prazo</div>
+      <div class="termo-def">
+        Na Justiça do Trabalho: art. 11-A, §1º da CLT (inserido pela Reforma Trabalhista, Lei 13.467/2017) — prazo de <strong>dois anos</strong> contados da intimação do arquivamento provisório. No processo civil: art. 921, §5º do CPC — prazo de <strong>um ano</strong> após suspensão por ausência de bens.
+      </div>
+      <div class="termo-subtitulo">Exemplo prático</div>
+      <div class="termo-exemplo">
+        "A empresa X, executada em reclamação trabalhista desde 2019, postulou a declaração de prescrição intercorrente após o reclamante permanecer inerte por mais de dois anos contados da intimação do arquivamento provisório — conforme TST, IRR Tema 46. O juízo acolheu o pedido e extinguiu a execução, com redução direta do passivo trabalhista provisionado."
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S08 — IMPACTO NA ROTINA ===== -->
+  <section class="section" id="s08">
+    <div class="section-label">
+      <span class="section-num">08</span>
+      <span class="section-title">Impacto na sua Rotina</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="rotina-grid">
+      <div class="rotina-item">
+        <h4>Escritórios · Controle de Prazos e Risco Profissional</h4>
+        <p>Implante ou revise o sistema de controle de prazos processuais com checklist duplo. A teoria da perda de uma chance transforma falhas administrativas em condenações proporcionais ao valor da causa. Verifique apólice de seguro de responsabilidade civil profissional — prazo, cobertura e limite.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Empresas com Empregados · Adequação à NR-01</h4>
+        <p>Inicie imediatamente o mapeamento de riscos psicossociais no PGR se ainda não foi feito. Contrate médico do trabalho ou consultoria especializada para inclusão formal do capítulo no documento. A fiscalização do MTE está ativa — autuação pode ocorrer antes de qualquer notificação prévia.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Holdings e Estruturas Imobiliárias · ITBI (Tema 1348)</h4>
+        <p>Suspenda novas integralizações de imóveis em escala até a publicação do acórdão definitivo no Tema 1348 do STF. Para operações passadas com recolhimento de ITBI, mapeie os casos agora e defina estratégia de restituição após a decisão vinculante — que pode surgir a qualquer momento.</p>
+      </div>
+      <div class="rotina-item">
+        <h4>Clientes com Previdência Privada · PGBL/VGBL e Execuções</h4>
+        <p>Para clientes com exposição a execuções cíveis ou trabalhistas: revise o histórico de aportes nos planos de previdência privada. Aportes concentrados ou irregulares podem ser questionados como fraude à execução à luz do entendimento recente da 2ª Turma do STJ — ainda não vinculante, mas em ascensão.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== S09 — FRASE DO DIA ===== -->
+  <section class="section" id="s09">
+    <div class="section-label">
+      <span class="section-num">09</span>
+      <span class="section-title">Frase do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="frase-box">
+      <div class="frase-text">"O advogado não vende certezas. Vende análise, estratégia e a redução do incerto ao gerenciável."</div>
+      <div class="frase-author">— Reflexão editorial · Brevis nº 005</div>
+    </div>
+  </section>
+
+  <!-- ===== S10 — PARA LER MAIS ===== -->
+  <section class="section" id="s10">
+    <div class="section-label">
+      <span class="section-num">10</span>
+      <span class="section-title">Para Ler Mais</span>
+      <div class="section-line"></div>
+    </div>
+    <ul class="fontes-list">
+      <li>
+        <a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=6736376&numeroProcesso=1313382&classeProcesso=RE&numeroTema=1348" target="_blank">STF · RE 1.313.382 · Tema 1348 (ITBI na integralização de imóveis)</a>
+        <span>Acompanhe o placar de votos e andamento processual em tempo real.</span>
+      </li>
+      <li>
+        <a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=5251616&numeroProcesso=1072485&classeProcesso=RE&numeroTema=985" target="_blank">STF · RE 1.072.485 · Tema 985 (Terço de férias e contribuição previdenciária)</a>
+        <span>Tese vinculante fixada — inteiro teor e modulação dos efeitos.</span>
+      </li>
+      <li>
+        <a href="https://www.tst.jus.br/incidente-de-recursos-de-repetitivos" target="_blank">TST · Incidente de Recursos de Repetitivos (IRR) · Tema 46 · Prescrição intercorrente na execução trabalhista</a>
+        <span>Parâmetros fixados pelo pleno do TST — condições de aplicação, casos paradigmáticos e CLT art. 11-A, §1º.</span>
+      </li>
+      <li>
+        <a href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T" target="_blank">STJ · Portal de Temas Repetitivos · 1ª e 2ª Seções · processo.stj.jus.br</a>
+        <span>Consulta direta aos temas repetitivos e afetados para uniformização de jurisprudência.</span>
+      </li>
+      <li>
+        <a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/legislacao/normas-regulamentadoras/nr-01-atualizada-2023.pdf" target="_blank">NR-01 Atualizada · Ministério do Trabalho e Emprego · gov.br</a>
+        <span>Texto integral da norma com inclusão de riscos psicossociais no PGR.</span>
+      </li>
+      <li>
+        <a href="https://www.planalto.gov.br/ccivil_03/leis/L9316.htm" target="_blank">Lei 9.316/1996 · Dedutibilidade de IRPJ e CSLL · Planalto.gov.br</a>
+        <span>Base legal para a dedutibilidade cruzada analisada pela 1ª Seção do STJ.</span>
+      </li>
+      <li>
+        <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/07042022-STJ-aplica-teoria-da-perda-de-uma-chance-e-condena-escritorio-de-advocacia-por-desidia-em-acao-.aspx" target="_blank">STJ · Notícia Oficial · Perda de uma Chance e Responsabilidade Civil de Advogado (07/04/2022)</a>
+        <span>Notícia oficial do STJ com resumo do julgado e impacto na responsabilidade civil de profissionais liberais.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">BREVIS</div>
+    <div class="footer-tagline">Radar jurídico semanal para decisões estratégicas</div>
+    <div class="footer-text">Curadoria por Jean Barbosa · Maximiano Advocacia</div>
+    <div class="footer-text" style="margin-top:6px;color:#b0a898;">Edição nº 005 · 24 de março de 2026 · Todos os direitos reservados</div>
+  </footer>
+
+</div>
+</body>
+</html>
