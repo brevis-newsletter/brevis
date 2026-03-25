@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição 002 | 25.03.2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #4A4A4A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--azul-escuro);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cinza-texto);
+    padding: 0;
+  }
+
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--branco);
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: var(--azul-escuro);
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    top: -10px; right: -10px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.25);
+  }
+
+  .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 12px;
+    opacity: 0.9;
+  }
+
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--branco);
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+
+  .header-title span {
+    color: var(--dourado);
+  }
+
+  .header-subtitle {
+    font-size: 12px;
+    color: rgba(250,250,248,0.55);
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding-top: 20px;
+  }
+
+  .header-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .header-meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+  }
+
+  .header-meta-value {
+    font-size: 12px;
+    color: rgba(250,250,248,0.85);
+    font-weight: 500;
+  }
+
+  /* ─── ÍNDICE ─── */
+  .indice {
+    background: var(--azul-meio);
+    padding: 20px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+
+  .indice-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(232,204,122,0.75);
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .indice-item strong {
+    color: var(--dourado-claro);
+  }
+
+  /* ─── CONTEÚDO ─── */
+  .content {
+    padding: 0;
+  }
+
+  /* ─── SEÇÃO ─── */
+  .section {
+    padding: 36px 48px;
+    border-bottom: 1px solid #E8E4DA;
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--dourado);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--azul-claro);
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: -0.2px;
+  }
+
+  .section-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--cinza-texto);
+  }
+
+  .section-body p {
+    margin-bottom: 12px;
+  }
+
+  .section-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── ABERTURA ─── */
+  .abertura {
+    background: var(--dourado-sutil);
+    border-left: 4px solid var(--dourado);
+    padding: 28px 48px;
+    border-bottom: 1px solid #E8E4DA;
+  }
+
+  .abertura-bom-dia {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--azul-claro);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .abertura-texto {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--azul-escuro);
+    font-weight: 400;
+  }
+
+  /* ─── NOTÍCIAS ─── */
+  .noticias-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .noticia-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #EDE9DF;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .noticia-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .noticia-badge {
+    flex-shrink: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .badge-tnu { background: #EBF0FB; color: #2B5797; }
+  .badge-stj { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf { background: #FFF3E0; color: #E65100; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-dou { background: #E8F0FF; color: #1A3A6B; }
+
+  .noticia-content {}
+
+  .noticia-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .noticia-resumo {
+    font-size: 12.5px;
+    color: var(--cinza-sub);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  .noticia-acao {
+    font-size: 11.5px;
+    color: var(--verde);
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .noticia-base {
+    font-size: 11px;
+    color: var(--azul-claro);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .noticia-fonte {
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--cinza-sub);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .noticia-fonte a {
+    color: var(--azul-claro);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .noticia-fonte a:hover { text-decoration: underline; }
+  /* ─── CLASSIFICAÇÃO DE TESE ─── */
+  .noticia-classificacao {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .classificacao-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .classificacao-construcao  { background: #FFF3E0; color: #B45309; }
+
+
+
+  /* ─── DECISÃO DO DIA ─── */
+  .decisao-card {
+    background: var(--azul-escuro);
+    border-radius: 4px;
+    padding: 28px 32px;
+    color: var(--branco);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .decisao-card::before {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .decisao-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--branco);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .decisao-body {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: rgba(250,250,248,0.82);
+  }
+
+  .decisao-body p {
+    margin-bottom: 10px;
+  }
+
+  .decisao-divider {
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    margin: 16px 0;
+  }
+
+  .decisao-tese {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: var(--dourado-claro);
+    font-style: italic;
+    padding-left: 14px;
+    border-left: 2px solid var(--dourado);
+  }
+
+  .decisao-fonte {
+    margin-top: 14px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+  }
+
+  .decisao-fonte a {
+    color: var(--dourado-claro);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .decisao-fonte a:hover { text-decoration: underline; }
+
+  /* ─── TRF6 ─── */
+  .trf6-card {
+    border: 1.5px solid var(--verde);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .trf6-header {
+    background: var(--verde);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .trf6-header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .trf6-header-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .trf6-body {
+    padding: 20px;
+    background: var(--verde-claro);
+  }
+
+  .trf6-body p {
+    font-size: 13.5px;
+    line-height: 1.72;
+    color: #1A3A2A;
+    margin-bottom: 10px;
+  }
+
+  .trf6-body p:last-child { margin-bottom: 0; }
+
+  .trf6-como-usar {
+    background: white;
+    border-radius: 3px;
+    padding: 14px 16px;
+    margin-top: 14px;
+  }
+
+  .trf6-como-usar-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--verde);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .trf6-como-usar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .trf6-como-usar li {
+    font-size: 12.5px;
+    color: var(--cinza-texto);
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .trf6-como-usar li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--verde);
+    font-size: 11px;
+  }
+
+  /* ─── TESE ─── */
+  .tese-card {
+    background: var(--cinza-claro);
+    border-radius: 4px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--azul-claro);
+  }
+
+  .tese-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .tese-body {
+    font-size: 13px;
+    line-height: 1.72;
+    color: var(--cinza-texto);
+  }
+
+  .tese-body p { margin-bottom: 8px; }
+  .tese-body p:last-child { margin-bottom: 0; }
+
+  /* ─── COMO USAR ─── */
+  .como-usar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .como-usar-item {
+    background: var(--cinza-claro);
+    border-radius: 4px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .como-usar-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .como-usar-texto {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--cinza-texto);
+    font-weight: 500;
+  }
+
+  /* ─── OPORTUNIDADE ─── */
+  .oportunidade-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .oportunidade-item {
+    background: var(--branco);
+    border: 1px solid #E0DCD2;
+    border-radius: 4px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .oportunidade-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--dourado);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .oportunidade-content {}
+
+  .oportunidade-titulo {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    margin-bottom: 4px;
+  }
+
+  .oportunidade-texto {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--cinza-sub);
+  }
+
+  /* ─── TNU ─── */
+  .tnu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .tnu-item {
+    border-left: 3px solid var(--azul-claro);
+    padding-left: 16px;
+  }
+
+  .tnu-item-tema {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--azul-claro);
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .tnu-item-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+
+  .tnu-item-texto {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--cinza-texto);
+  }
+
+  .tnu-item-status {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  .status-pendente { background: #FFF3E0; color: #E65100; }
+  .status-julgado { background: var(--verde-claro); color: var(--verde); }
+  .status-embargos { background: #F3E5F5; color: #6A1B9A; }
+
+  /* ─── MAPEAR CARTEIRA ─── */
+  .mapear-box {
+    background: var(--azul-escuro);
+    border-radius: 4px;
+    padding: 24px 28px;
+    color: white;
+  }
+
+  .mapear-intro {
+    font-size: 13px;
+    color: rgba(250,250,248,0.7);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .mapear-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mapear-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    border-left: 2px solid var(--dourado);
+  }
+
+  .mapear-check {
+    font-size: 12px;
+    color: var(--dourado);
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .mapear-texto {
+    font-size: 12.5px;
+    color: rgba(250,250,248,0.85);
+    line-height: 1.55;
+  }
+
+  /* ─── INSS ATENÇÃO ─── */
+  .inss-card {
+    background: var(--alerta-claro);
+    border: 1px solid #F5C6C0;
+    border-radius: 4px;
+    padding: 20px 24px;
+  }
+
+  .inss-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--alerta);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .inss-texto {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #5A1A10;
+  }
+
+  .inss-dados {
+    display: flex;
+    gap: 16px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  .inss-dado {
+    background: white;
+    border-radius: 3px;
+    padding: 10px 14px;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .inss-dado-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cinza-sub);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .inss-dado-valor {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--alerta);
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ─── CURIOSIDADE / BASTIDOR ─── */
+  .bastidor-quote {
+    border-left: 3px solid var(--dourado);
+    padding: 16px 20px;
+    background: var(--dourado-sutil);
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.75;
+    color: var(--azul-escuro);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  .bastidor-contexto {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--cinza-texto);
+  }
+
+  /* ─── FRASE DO DIA ─── */
+  .frase-box {
+    background: var(--azul-meio);
+    border-radius: 4px;
+    padding: 28px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .frase-box::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px; left: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: rgba(201,168,76,0.08);
+    line-height: 1;
+  }
+
+  .frase-texto {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--branco);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .frase-autoria {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── RADAR ─── */
+  .radar-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .radar-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #EDE9DF;
+  }
+
+  .radar-item:last-child { border-bottom: none; }
+
+  .radar-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .radar-texto {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--cinza-texto);
+  }
+
+  /* ─── REAJUSTE ─── */
+  .reajuste-card {
+    background: #F0F4FF;
+    border: 1px solid #C5D3F0;
+    border-radius: 4px;
+    padding: 20px 24px;
+  }
+
+  .reajuste-titulo {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--azul-meio);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .reajuste-texto {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #1A2A4A;
+    margin-bottom: 14px;
+  }
+
+  .reajuste-dados {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .reajuste-dado {
+    background: white;
+    border-radius: 3px;
+    padding: 10px 14px;
+    flex: 1;
+    min-width: 130px;
+    border-top: 2px solid var(--azul-claro);
+  }
+
+  .reajuste-dado-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cinza-sub);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .reajuste-dado-valor {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--azul-meio);
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ─── CURADORIA ─── */
+  .curadoria-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--cinza-claro);
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+
+  .curadoria-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--azul-meio);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--dourado);
+  }
+
+  .curadoria-texto {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--cinza-texto);
+  }
+
+  .curadoria-nome {
+    font-weight: 600;
+    color: var(--azul-escuro);
+  }
+
+  /* ─── FONTES ─── */
+  .fontes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .fonte-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--cinza-claro);
+    color: var(--azul-claro);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .fonte-tag:hover {
+    background: #E0DBD0;
+    color: var(--azul-meio);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--azul-escuro);
+    padding: 28px 48px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--dourado);
+    margin-bottom: 6px;
+  }
+
+  .footer-sub {
+    font-size: 11px;
+    color: rgba(250,250,248,0.4);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+
+  .footer-divider {
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    margin: 16px 0;
+  }
+
+  .footer-disclaimer {
+    font-size: 10.5px;
+    color: rgba(250,250,248,0.35);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+
+  .footer-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--dourado);
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .footer-radar {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.45);
+    margin-bottom: 14px;
+  }
+  .footer-curadoria {
+    font-size: 12px;
+    color: rgba(250,250,248,0.65);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+  }
+  .footer-edicao {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(250,250,248,0.3);
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+
+  /* ─── BANNER ─── */
+  .especial-banner {
+    background: linear-gradient(135deg, var(--dourado) 0%, #A07830 100%);
+    padding: 10px 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .especial-banner-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--azul-escuro);
+    font-weight: 600;
+  }
+
+  .especial-banner-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--azul-escuro);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  /* Separador entre seções */
+  .section-divider {
+    height: 2px;
+    background: linear-gradient(to right, var(--dourado), transparent);
+    margin: 0 48px;
+    opacity: 0.3;
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 28px 24px 24px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 22px 24px; }
+    .indice { padding: 14px 24px; }
+    .footer { padding: 24px; }
+    .especial-banner { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .como-usar-grid { grid-template-columns: 1fr; }
+    .inss-dados { flex-direction: column; }
+    .reajuste-dados { flex-direction: column; }
+    .header-title { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-label">Maximiano Advocacia · Uso interno</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-subtitle">Radar previdenciário estratégico da Maximiano</div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">25 de março de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">002 — Semana de ação</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">6–8 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="especial-banner">
+    <span class="especial-banner-text">★ Edição 002</span>
+    <div class="especial-banner-dot"></div>
+    <span class="especial-banner-text">Semana de 23 a 29.03.2026</span>
+    <div class="especial-banner-dot"></div>
+    <span class="especial-banner-text">10 temas · 10 ações imediatas</span>
+  </div>
+
+  <!-- ÍNDICE -->
+  <div class="indice">
+    <span class="indice-item"><strong>01</strong> Abertura</span>
+    <span class="indice-item"><strong>02</strong> Radar de Tribunais</span>
+    <span class="indice-item"><strong>03</strong> Decisão do dia — TRF6</span>
+    <span class="indice-item"><strong>04</strong> Tese relevante — CNIS</span>
+    <span class="indice-item"><strong>05</strong> TNU Tema 349</span>
+    <span class="indice-item"><strong>06</strong> Como usar</span>
+    <span class="indice-item"><strong>07</strong> Oportunidades da semana</span>
+    <span class="indice-item"><strong>08</strong> Mapear carteira</span>
+    <span class="indice-item"><strong>09</strong> Atenção — Reajuste 2026</span>
+    <span class="indice-item"><strong>10</strong> Curiosidade jurídica</span>
+    <span class="indice-item"><strong>11</strong> Frase do dia</span>
+    <span class="indice-item"><strong>12</strong> Fontes</span>
+  </div>
+
+  <div class="content">
+
+    <!-- 01 ABERTURA -->
+    <div class="abertura">
+      <div class="abertura-bom-dia">Bom dia, equipe Maximiano.</div>
+      <div class="abertura-texto">
+        Semana densa. O TRF6 reconheceu especialidade para frentista após 1997 — tema que reabre casos já negados. A TNU reafirmou que o período em auxílio-doença acidentário conta como carência, o que impacta diretamente na análise de benefícios negados por falta de prazo. O STF tem em pauta discussão que pode mudar o cálculo da pensão por morte para casos pós-reforma. E os novos valores do reajuste 2026 precisam ser atualizados agora nas petições. Leia, identifique e execute.
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 02 RADAR DE TRIBUNAIS -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">02</span>
+        <span class="section-label">Radar — O que saiu nos tribunais</span>
+      </div>
+
+      <div class="noticias-grid">
+
+        <!-- TNU Tema 349 -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-tnu">TNU</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">B91 conta como carência — TNU reafirma cômputo do período acidentário</div>
+            <div class="noticia-resumo">O período de recebimento de auxílio-doença acidentário (B91) pode ser computado para carência. O vínculo acidentário mantém a qualidade de segurado e o cômputo do prazo carencial, independentemente de novas contribuições entre afastamentos.</div>
+            <div class="noticia-acao">↗ Revise pedidos negados por carência insuficiente e verifique se o cliente teve B91 no histórico. Se teve, a carência pode estar atingida.</div>
+            <div class="noticia-base">Base: Tema 349 TNU · Art. 26, §2º, Lei 8.213/1991</div>
+            <div class="noticia-fonte">Fonte: CJF / TNU · cjf.jus.br/tnu</div>
+            <div class="noticia-classificacao classificacao-consolidada">✔ Jurisprudência consolidada</div>
+          </div>
+        </div>
+
+        <!-- STF Pensão por Morte -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-stf">STF</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">STF discute constitucionalidade do cálculo da pensão por morte pós-reforma — regra geral validada, debate é pontual</div>
+            <div class="noticia-resumo">A fórmula 60% + 10% por dependente (EC 103/2019) está em vigor e foi mantida para o regime geral. A ADI 7051 questiona, de forma pontual, se a aplicação dessa fórmula em casos de dependente único — especialmente viúvas sem renda própria — viola o princípio constitucional da proteção suficiente. Não há decisão final. A regra geral continua válida.</div>
+            <div class="noticia-acao">↗ Monitore o STF. Para casos de dependente único com pensão calculada pelo mínimo de 60%, documente o impacto financeiro e prepare argumento constitucional com base no princípio da vedação à proteção insuficiente (art. 201, CF).</div>
+            <div class="noticia-base">Base: ADI 7051 · EC 103/2019 · Art. 201, §2º, CF/1988</div>
+            <div class="noticia-fonte">Fonte: STF · stf.jus.br</div>
+            <div class="noticia-classificacao classificacao-construcao">⚠ Tese em construção — sem decisão vinculante</div>
+          </div>
+        </div>
+
+        <!-- Decadência Actio Nata -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-stj">STJ</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">STJ sinaliza possibilidade de decadência contar da ciência do erro — ainda sem consolidação vinculante</div>
+            <div class="noticia-resumo">O STJ sinaliza, em decisões individuais no PUIL 3687/PR, a possibilidade de que o prazo decadencial de 10 anos para revisão de benefício (art. 103, Lei 8.213/1991) seja contado a partir do momento em que o segurado tomou ciência do erro — teoria da actio nata. O julgamento colegiado com efeito vinculante ainda não ocorreu. A tese não está consolidada e o uso deve ser feito com cautela.</div>
+            <div class="noticia-acao">↗ Identifique clientes com erro de cálculo no benefício e mapeie quando tomaram ciência do vício. Peticione com fundamento na actio nata indicando o PUIL 3687/PR como sinalização do STJ — e resguarde o argumento subsidiário dentro do prazo ordinário de 10 anos da concessão.</div>
+            <div class="noticia-base">Base: PUIL 3687/PR · Art. 103, Lei 8.213/1991 · STJ</div>
+            <div class="noticia-fonte">Fonte: STJ · stj.jus.br</div>
+            <div class="noticia-classificacao classificacao-construcao">⚠ Tese em construção — STJ sinaliza, sem vinculação</div>
+          </div>
+        </div>
+
+        <!-- Auxílio-Inclusão -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-inss">INSS</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">INSS deve informar o direito ao Auxílio-Inclusão — omissão gera retroativo</div>
+            <div class="noticia-resumo">A falta de orientação pelo INSS sobre o direito ao Auxílio-Inclusão — previsto na Lei 14.176/2021 para pessoas com deficiência que ingressam no mercado de trabalho — pode gerar pagamento retroativo à data em que o beneficiário passou a fazer jus ao benefício.</div>
+            <div class="noticia-acao">↗ Oriente clientes com BPC/LOAS que estejam trabalhando ou que tenham trabalhado. Se o INSS não informou sobre o Auxílio-Inclusão, há base para pedir retroativo administrativo.</div>
+            <div class="noticia-base">Base: Art. 94-A, Lei 8.742/1993 · Lei 14.176/2021 · Decreto 10.853/2021</div>
+            <div class="noticia-fonte">Fonte: Lei 14.176/2021 · IEPREV · ieprev.com.br</div>
+            <div class="noticia-classificacao classificacao-construcao">⚠ Entendimento com base legal consolidada</div>
+          </div>
+        </div>
+
+        <!-- Juros de Mora -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-stj">STJ</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">Juros de mora previdenciários contam da citação — STJ reafirma</div>
+            <div class="noticia-resumo">O STJ consolidou no AgInt no REsp 2.055.123/RS que, em ações previdenciárias, os juros moratórios correm a partir da citação válida, não do ajuizamento. Entendimento aplicado uniformemente nas ações contra o INSS.</div>
+            <div class="noticia-acao">↗ Revise o cálculo de liquidação dos seus processos em andamento. Se os juros foram contados do ajuizamento, corrija na conta de liquidação — o INSS costuma impugnar esse ponto.</div>
+            <div class="noticia-base">Base: AgInt no REsp 2.055.123/RS · Tema 810 STF · Tema 905 STJ · Art. 240 do CPC</div>
+            <div class="noticia-fonte">Fonte: STJ · stj.jus.br</div>
+            <div class="noticia-classificacao classificacao-consolidada">✔ Jurisprudência consolidada</div>
+          </div>
+        </div>
+
+        <!-- Atividade Rural -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-trf6">TRF6</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">Documento de familiar vale como início de prova material do trabalho rural</div>
+            <div class="noticia-resumo">O TRF6 reforçou entendimento de que documentos em nome de pais ou cônjuge com anotação rural servem como início de prova material para o segurado que trabalhava em regime de economia familiar. Prova testemunhal completa o conjunto probatório.</div>
+            <div class="noticia-acao">↗ Nos atendimentos de aposentadoria rural, levante documentos de todos os membros da família — ITR, DAP, CTPS do cônjuge, recibos de venda de produto rural. O nome não precisa ser do próprio segurado.</div>
+            <div class="noticia-base">Base: Súmula 149 STJ · Súmula 6 TNU · Art. 55, §3º, Lei 8.213/1991</div>
+            <div class="noticia-fonte">Fonte: TRF6 · trf6.jus.br</div>
+            <div class="noticia-classificacao classificacao-consolidada">✔ Jurisprudência consolidada</div>
+          </div>
+        </div>
+
+        <!-- Deficiência Avaliação Social -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-tnu">TNU</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">Ambiente e barreiras sociais entram na avaliação do grau de deficiência</div>
+            <div class="noticia-resumo">A TNU firmou entendimento de que o grau de deficiência para fins de aposentadoria não pode ser aferido apenas pelo laudo médico. As barreiras sociais, o ambiente em que o segurado vive e as limitações impostas pelo contexto devem compor a avaliação.</div>
+            <div class="noticia-acao">↗ Em casos de aposentadoria por deficiência (LC 142/2013), inclua na petição dados sobre as barreiras enfrentadas pelo cliente no cotidiano — transporte, acessibilidade, mercado de trabalho local.</div>
+            <div class="noticia-base">Base: LC 142/2013 · Art. 2º, Lei 13.146/2015 (LBI) · Decreto 3.298/1999</div>
+            <div class="noticia-fonte">Fonte: CJF / TNU · cjf.jus.br/tnu</div>
+            <div class="noticia-classificacao classificacao-consolidada">✔ Jurisprudência consolidada</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 03 DECISÃO DO DIA — TRF6 Frentista -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">03</span>
+        <span class="section-label">Decisão previdenciária do dia</span>
+      </div>
+
+      <div class="decisao-card">
+        <span class="decisao-tag">TRF6 · 1ª Turma Recursal · RC 1040523-28.2023.4.06.3800</span>
+        <div class="decisao-titulo">Frentista tem direito à especialidade após 1997. Benzeno e risco de explosão garantem o reconhecimento.</div>
+        <div class="decisao-body">
+          <p>A 1ª Turma Recursal do TRF6 reconheceu a atividade especial de frentista para período posterior a 1997, com base na exposição habitual a benzeno (agente químico cancerígeno) e ao risco de explosão inerente ao ambiente de abastecimento.</p>
+          <p>O fundamento afasta o argumento do INSS de que o uso de EPI neutralizaria a especialidade: para agentes químicos como benzeno, a jurisprudência consolidada entende que o EPI não elimina o risco. A decisão abre caminho para revisão de pedidos negados para esse perfil — especialmente aqueles negados sob o argumento de que a atividade não constava em rol específico pós-1997.</p>
+        </div>
+        <hr class="decisao-divider">
+        <div class="decisao-tese">
+          "A exposição habitual a benzeno e ao risco de explosão em postos de abastecimento, mesmo após 1997, configura atividade especial, independentemente do uso de EPI, em razão da natureza cancerígena do agente químico."
+        </div>
+        <div class="decisao-fonte">Fonte: TRF6 · Recurso Cível nº 1040523-28.2023.4.06.3800 · 1ª Turma Recursal · trf6.jus.br</div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 04 TESE RELEVANTE — CNIS Extemporaneidade -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">04</span>
+        <span class="section-label">Tese previdenciária relevante</span>
+      </div>
+
+      <div class="tese-card">
+        <div class="tese-nome">INSS não pode exigir prova excessiva para retirar extemporaneidade do CNIS quando empresa está inativa</div>
+        <div class="tese-body">
+          <p>Quando o CNIS aponta indicador de extemporaneidade em vínculos de empresas que já estão extintas ou inativas, o INSS não pode exigir prova documental impossível de ser produzida — como declaração da empresa ou rescisão original — para reconhecer o período trabalhado.</p>
+          <p><strong>A Súmula 75 da TNU</strong> ampara a tese: a prova material contemporânea ao período deve ser valorada em conjunto com a CTPS e a realidade fática. Se a empresa não existe mais, a CTPS com anotação regular tem presunção de veracidade, e o ônus da prova se inverte para o INSS demonstrar a irregularidade.</p>
+          <p><strong>Use quando:</strong> o INSS indeferir ou reduzir benefício alegando vínculo extemporâneo no CNIS para período em que a empresa está baixada, falida ou inacessível. Apresente a CTPS e requeira a desconsideração do indicador administrativamente — se negado, ajuíze com pedido de tutela antecipada.</p>
+          <div class="noticia-fonte" style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #e0ddd6;">Base: Súmula 75 TNU · Jurisprudência TRF6 · Fonte: Previdenciarista / CJF</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 05 TNU TEMA 349 em detalhe -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">05</span>
+        <span class="section-label">TNU em detalhe — Tema 349</span>
+      </div>
+
+      <div class="section-body" style="margin-bottom: 16px;">
+        <p>O Tema 349 tem impacto direto em benefícios negados por carência. Entenda a aplicação prática.</p>
+      </div>
+
+      <div class="tnu-items">
+        <div class="tnu-item">
+          <span class="tnu-item-tema">TNU · TEMA 349 · CARÊNCIA</span>
+          <div class="tnu-item-titulo">B91 no histórico = carência conta — mesmo sem contribuição entre afastamentos</div>
+          <div class="tnu-item-texto">A TNU firmou que o auxílio-doença acidentário (B91) interrompe a contagem dos 12 meses, mas não cancela o que já foi computado. O período em gozo de B91 é contado como carência diretamente, pois o nexo acidentário mantém a qualidade de segurado e o cômputo do prazo carencial. Não é necessária contribuição intercalada entre um afastamento e outro para que a carência seja mantida.</div>
+          <span class="tnu-item-status status-julgado">Tese Reafirmada</span>
+        </div>
+
+        <div class="tnu-item">
+          <span class="tnu-item-tema">IMPACTO PRÁTICO</span>
+          <div class="tnu-item-titulo">Clientes com histórico de acidente de trabalho podem ter carência atingida</div>
+          <div class="tnu-item-texto">Benefícios negados pelo INSS sob argumento de carência insuficiente precisam ser revistos quando o histórico do cliente inclui B91. Verifique no CNIS a presença de auxílio-doença acidentário e recalcule a carência incluindo esses períodos. Pode transformar um indeferimento em concessão.</div>
+          <span class="tnu-item-status status-pendente">Ação Imediata</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 06 COMO USAR -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">06</span>
+        <span class="section-label">Como usar na prática</span>
+      </div>
+
+      <div class="section-body" style="margin-bottom: 14px;">
+        <p>Seis movimentos diretos a partir das decisões desta semana. Todos executáveis hoje.</p>
+      </div>
+
+      <div class="como-usar-grid">
+        <div class="como-usar-item">
+          <span class="como-usar-icon">⛽</span>
+          <span class="como-usar-texto">Para frentistas: revise pedidos de especialidade negados após 1997 — use benzeno e risco de explosão como fundamento. PPP e LTCAT são essenciais.</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">📋</span>
+          <span class="como-usar-texto">Para B91: puxe o CNIS dos clientes com benefícios negados por carência e some os períodos de auxílio-doença acidentário.</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">📁</span>
+          <span class="como-usar-texto">Para rural: no atendimento, levante documentos de todo o núcleo familiar — o nome não precisa ser do próprio segurado.</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">♿</span>
+          <span class="como-usar-texto">Para deficiência (LC 142): inclua barreiras sociais na petição — transporte, acessibilidade e contexto local de empregabilidade.</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">💰</span>
+          <span class="como-usar-texto">Atualize os cálculos de liquidação: confirme que os juros partem da citação e que os valores usam o reajuste 2026.</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">🔍</span>
+          <span class="como-usar-texto">Para CNIS com extemporaneidade: se a empresa está inativa, apresente CTPS e requeira desconsideração do indicador — sem aceitar exigências impossíveis.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 07 OPORTUNIDADES -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">07</span>
+        <span class="section-label">Oportunidades da semana</span>
+      </div>
+
+      <div class="oportunidade-lista">
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Frentistas com especialidade negada após 1997 — reabertura de casos</div>
+            <div class="oportunidade-texto">A decisão do TRF6 abre caminho para revisão de indeferimentos anteriores. Clientes que trabalharam em posto de combustível por mais de 25 anos e tiveram a especialidade negada sob argumento de que a atividade não constava em rol específico pós-1997 têm fundamento para novo pedido ou recurso.</div>
+          </div>
+        </div>
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Beneficiários de BPC que ingressaram no mercado — Auxílio-Inclusão não comunicado</div>
+            <div class="oportunidade-texto">Muitos beneficiários de BPC/LOAS que passaram a trabalhar não foram informados pelo INSS sobre o direito ao Auxílio-Inclusão. A omissão do INSS gera base para pedido retroativo. Identifique clientes nesse perfil e peça o reconhecimento administrativo — se negado, ajuíze.</div>
+          </div>
+        </div>
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Pensão por morte pós-reforma com dependente único — ADI 7051 no radar</div>
+            <div class="oportunidade-texto">Se a ADI 7051 for julgada favoravelmente, casos de pensão por morte com um único dependente e benefício calculado pelo mínimo da fórmula 60% podem gerar revisões em escala. Identifique e documente agora para agir rápido quando sair a decisão.</div>
+          </div>
+        </div>
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Revisão de carência: cruzamento de B91 com benefícios negados</div>
+            <div class="oportunidade-texto">Faça uma varredura na carteira: benefícios negados por carência insuficiente onde o cliente teve histórico de acidente de trabalho podem ter nova chance com base no Tema 349 da TNU. Um único caso reaberto pode representar retroativos significativos e honorários adicionais.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 08 MAPEAR CARTEIRA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">08</span>
+        <span class="section-label">Mapear carteira — checklist da semana</span>
+      </div>
+
+      <div class="mapear-box">
+        <div class="mapear-intro">Cinco perguntas para fazer hoje na carteira de clientes. Cada "sim" é uma oportunidade concreta.</div>
+        <div class="mapear-lista">
+          <div class="mapear-item">
+            <span class="mapear-check">01</span>
+            <span class="mapear-texto">Tenho clientes frentistas com pedido de aposentadoria especial negado ou não tentado? → Especialidade após 1997 agora tem precedente favorável no TRF6.</span>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">02</span>
+            <span class="mapear-texto">Tenho clientes com benefício negado por carência que tiveram B91 no histórico? → Some os períodos de auxílio-doença acidentário e veja se a carência está atingida.</span>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">03</span>
+            <span class="mapear-texto">Tenho clientes com BPC/LOAS que estão trabalhando ou que já trabalharam? → Verifique se o INSS informou sobre o Auxílio-Inclusão. Se não informou, há base para retroativo.</span>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">04</span>
+            <span class="mapear-texto">Tenho processos de liquidação em andamento com cálculo de juros a partir do ajuizamento? → Corrija para a citação antes de o INSS impugnar.</span>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">05</span>
+            <span class="mapear-texto">Tenho clientes com vínculo empregatício rejeitado por extemporaneidade do CNIS onde a empresa está baixada? → Aplique a Súmula 75 TNU e requeira a desconsideração do indicador.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 09 REAJUSTE 2026 -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">09</span>
+        <span class="section-label">Atenção — Reajuste 2026</span>
+      </div>
+
+      <div class="reajuste-card">
+        <div class="reajuste-titulo">⚠ Novos valores vigentes — atualize suas petições agora</div>
+        <div class="reajuste-texto">
+          A Portaria Interministerial de 2026, publicada no Diário Oficial da União, trouxe reajuste nos valores de benefícios previdenciários. Os novos pisos e tetos devem ser usados em todas as petições, cálculos de liquidação e propostas de acordo. Usar valores defasados prejudica o cliente e pode gerar impugnação.
+        </div>
+        <div class="reajuste-dados">
+          <div class="reajuste-dado">
+            <span class="reajuste-dado-label">Salário Mínimo</span>
+            <span class="reajuste-dado-valor">R$ 1.518,00</span>
+          </div>
+          <div class="reajuste-dado">
+            <span class="reajuste-dado-label">Teto do RGPS</span>
+            <span class="reajuste-dado-valor">R$ 8.157,41</span>
+          </div>
+          <div class="reajuste-dado">
+            <span class="reajuste-dado-label">Reajuste</span>
+            <span class="reajuste-dado-valor">INPC 2025</span>
+          </div>
+        </div>
+        <div class="noticia-fonte" style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #C5D3F0;">Base: Portaria Interministerial 2026 · Fonte: Diário Oficial da União · gov.br/in</div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 10 CURIOSIDADE JURÍDICA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">10</span>
+        <span class="section-label">Curiosidade jurídica do dia</span>
+      </div>
+
+      <div class="bastidor-quote">
+        "Por que o frentista entrou na lista de atividades especiais?"
+      </div>
+      <div class="bastidor-contexto">
+        O benzeno é um hidrocarboneto aromático presente na gasolina, classificado pela IARC (Agência Internacional de Pesquisa sobre Câncer) como carcinogênico de categoria 1 — a mais grave. Sua inalação habitual em ambientes como postos de gasolina está associada ao desenvolvimento de leucemia e outros cânceres hematológicos.
+        <br><br>
+        A jurisprudência previdenciária consolidou que o benzeno, por ser um agente cancerígeno, não pode ter sua nocividade neutralizada por EPI — diferente do ruído, por exemplo. Isso porque a exposição crônica ao agente, mesmo em baixas concentrações, acumula risco biológico ao longo do tempo. Por isso, frentistas têm direito reconhecido à aposentadoria especial mesmo com uso de EPI e mesmo que o nível de exposição esteja abaixo dos limites de tolerância da NR-15.
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 11 FRASE DO DIA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">11</span>
+        <span class="section-label">Frase do dia</span>
+      </div>
+
+      <div class="frase-box">
+        <div class="frase-texto">"O advogado que não mapeia a jurisprudência atual não defende o cliente — defende o que ele aprendeu há dez anos."</div>
+      </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 12 FONTES -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">12</span>
+        <span class="section-label">Fontes desta edição</span>
+      </div>
+
+      <div class="fontes-grid">
+        <a href="https://www.trf6.jus.br" target="_blank" class="fonte-tag">TRF6 · trf6.jus.br</a>
+        <a href="https://www.cjf.jus.br/tnu" target="_blank" class="fonte-tag">TNU · cjf.jus.br/tnu</a>
+        <a href="https://www.stj.jus.br" target="_blank" class="fonte-tag">STJ · stj.jus.br</a>
+        <a href="https://www.stf.jus.br" target="_blank" class="fonte-tag">STF · stf.jus.br</a>
+        <a href="https://www.ieprev.com.br" target="_blank" class="fonte-tag">IEPREV · ieprev.com.br</a>
+        <a href="https://previdenciarista.com" target="_blank" class="fonte-tag">Previdenciarista · previdenciarista.com</a>
+        <a href="https://www.in.gov.br" target="_blank" class="fonte-tag">DOU · in.gov.br</a>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-titulo">Brevis</div>
+    <div class="footer-radar">Radar Jurídico Semanal para Decisões Estratégicas</div>
+    <div class="footer-curadoria">Curadoria por Jean Barbosa · Maximiano Advocacia</div>
+    <hr class="footer-divider">
+    <div class="footer-edicao">Edição nº 002 · 25 de março de 2026 · Todos os direitos reservados</div>
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
