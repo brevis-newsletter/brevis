@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREVIS Semanal — Edição nº 006 · 31 de março de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --accent: #c8371a;
+    --accent2: #1a4c8c;
+    --muted: #7a7670;
+    --rule: #d6d0c4;
+    --tag-prev: #c8371a;
+    --tag-civ: #1a4c8c;
+    --tag-trib: #1a6b42;
+    --tag-trab: #7a4a00;
+    --tag-hold: #5c2d82;
+    --tag-dest: #555555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* ---- MASTHEAD ---- */
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 36px 0 20px;
+    text-align: center;
+  }
+  .masthead-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .masthead-logo span { color: var(--accent); }
+  .masthead-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .masthead-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .masthead-meta span::before { content: '— '; }
+
+  /* ---- INDEX ---- */
+  .index-block {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink);
+    background: white;
+    padding: 18px 22px;
+    margin: 28px 0 36px;
+  }
+  .index-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .index-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+  .index-list li {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .index-list li .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 16px;
+  }
+  .index-list a { color: inherit; text-decoration: none; }
+  .index-list a:hover { text-decoration: underline; color: var(--accent2); }
+
+  /* ---- SECTION ---- */
+  .section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 24px;
+  }
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ---- ABERTURA ---- */
+  .abertura-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .abertura-text strong { color: var(--accent); }
+
+  /* ---- NEWS CARD ---- */
+  .news-card {
+    border-left: 3px solid var(--rule);
+    padding-left: 16px;
+    margin-bottom: 34px;
+  }
+  .news-card:last-child { margin-bottom: 0; }
+
+  .news-tag-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    flex-wrap: wrap;
+  }
+  .news-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: white;
+  }
+  .tag-prev { background: var(--tag-prev); }
+  .tag-civ  { background: var(--tag-civ); }
+  .tag-trib { background: var(--tag-trib); }
+  .tag-trab { background: var(--tag-trab); }
+  .tag-hold { background: var(--tag-hold); }
+  .tag-dest { background: var(--tag-dest); }
+
+  .urgente-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 2px;
+    color: white;
+    background: #b91c1c;
+  }
+  .status-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 2px;
+    color: #3a3834;
+    background: #e8e4dc;
+  }
+
+  .news-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .news-card p {
+    font-size: 14px;
+    line-height: 1.72;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .news-card p:last-of-type { margin-bottom: 8px; }
+
+  /* Bloco impacto */
+  .news-impact {
+    background: #f0ede6;
+    border-left: 3px solid var(--accent);
+    padding: 9px 13px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-impact strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Bloco ação */
+  .news-acao {
+    background: #f0f7f1;
+    border-left: 3px solid #1a6b42;
+    padding: 9px 13px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-acao strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1a6b42;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Bloco dinheiro */
+  .news-dinheiro {
+    background: #eef3fa;
+    border-left: 3px solid var(--accent2);
+    padding: 9px 13px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-dinheiro strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .news-source {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .news-source a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .news-source a:hover { text-decoration: underline; }
+
+  /* ---- DECISÃO DO DIA ---- */
+  .decisao-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 26px;
+    border-radius: 2px;
+  }
+  .decisao-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8a882;
+    margin-bottom: 8px;
+  }
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: white;
+  }
+  .decisao-tese {
+    background: rgba(200, 55, 26, 0.2);
+    border-left: 3px solid var(--accent);
+    padding: 11px 15px;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.65;
+    margin-bottom: 16px;
+    color: #f0ede6;
+  }
+  .decisao-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #c8c0b0;
+    margin-bottom: 16px;
+  }
+  .decisao-pratica {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 14px;
+    font-size: 13.5px;
+    line-height: 1.68;
+    color: #e0d8cc;
+  }
+  .decisao-pratica strong {
+    color: #c8a882;
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .decisao-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: #6a6258;
+    margin-top: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---- ALERTA ---- */
+  .alerta-box {
+    background: #fff8f7;
+    border: 1px solid #f0c0b8;
+    border-top: 4px solid var(--accent);
+    padding: 22px 24px;
+    border-radius: 2px;
+  }
+  .alerta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .alerta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .alerta-box p {
+    font-size: 14px;
+    line-height: 1.72;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .alerta-acao {
+    background: #f0f7f1;
+    border-left: 3px solid #1a6b42;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-top: 14px;
+    color: var(--ink);
+    border-radius: 0 2px 2px 0;
+  }
+  .alerta-acao strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1a6b42;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ---- OPORTUNIDADE ---- */
+  .oport-box {
+    background: #f4f0fa;
+    border-left: 4px solid var(--tag-hold);
+    padding: 22px 24px;
+    border-radius: 2px;
+  }
+  .oport-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tag-hold);
+    margin-bottom: 8px;
+  }
+  .oport-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .oport-box p {
+    font-size: 14px;
+    line-height: 1.72;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .oport-perfil {
+    background: white;
+    border: 1px solid #cfc5e8;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-top: 12px;
+    color: var(--ink);
+    border-radius: 2px;
+  }
+  .oport-perfil strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--tag-hold);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ---- CURIOSIDADE ---- */
+  .curiosidade-text {
+    font-size: 14.5px;
+    line-height: 1.78;
+    color: #3a3834;
+    margin-bottom: 12px;
+  }
+  .curiosidade-text em {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* ---- TERMO ---- */
+  .termo-box {
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent2);
+    padding: 20px 22px;
+    background: white;
+    border-radius: 0 0 2px 2px;
+  }
+  .termo-nome {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 900;
+    color: var(--accent2);
+    margin-bottom: 4px;
+  }
+  .termo-origem {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .termo-box p {
+    font-size: 14px;
+    line-height: 1.72;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .termo-box p:last-child { margin-bottom: 0; }
+
+  /* ---- ROTINA ---- */
+  .rotina-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .rotina-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 1.68;
+    color: #3a3834;
+  }
+  .rotina-bullet {
+    min-width: 7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  /* ---- FRASE ---- */
+  .frase-box {
+    border-left: 4px solid var(--accent);
+    padding: 18px 22px;
+    background: white;
+    border-radius: 0 2px 2px 0;
+  }
+  .frase-texto {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .frase-autor {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ---- PARA LER MAIS ---- */
+  .lermais-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .lermais-list li {
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+  }
+  .lermais-list li:first-child { padding-top: 0; }
+  .lermais-list li:last-child { border-bottom: none; }
+  .lermais-list a {
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--accent2);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .lermais-list a:hover { text-decoration: underline; }
+  .lermais-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    border-top: 3px double var(--ink);
+    padding-top: 22px;
+    margin-top: 48px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    line-height: 2;
+  }
+  .footer strong { color: var(--ink); }
+  .footer-disclaimer {
+    font-size: 10px;
+    color: #b0ada8;
+    margin-top: 8px;
+    line-height: 1.6;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---- TOP 3 DA SEMANA ---- */
+  .top3-block {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 20px 24px;
+    margin: 28px 0 0;
+    border-radius: 2px;
+  }
+  .top3-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c8a882;
+    margin-bottom: 14px;
+  }
+  .top3-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .top3-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #e8e0d4;
+  }
+  .top3-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 22px;
+    margin-top: 1px;
+  }
+  .top3-item-body { display: flex; flex-direction: column; gap: 2px; }
+  .top3-item-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13.5px;
+    color: white;
+  }
+  .top3-item-sub {
+    font-size: 12.5px;
+    color: #b0a898;
+  }
+
+  /* ---- POTENCIAL DE HONORÁRIOS ---- */
+  .news-honorarios {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    margin-top: 2px;
+  }
+  .honorarios-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .honorarios-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: #1a6b42;
+    letter-spacing: 0.04em;
+  }
+  .honorarios-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---- BASE LEGAL VISUAL ---- */
+  .base-legal-box {
+    background: #eef3fa;
+    border: 1px solid #c8d8f0;
+    border-left: 3px solid var(--accent2);
+    padding: 8px 13px;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .base-legal-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .base-legal-items {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .base-legal-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent2);
+    background: white;
+    border: 1px solid #c8d8f0;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* ---- DIVERGÊNCIA / AVISO ---- */
+  .news-aviso {
+    background: #fffbf0;
+    border-left: 3px solid #d97706;
+    padding: 7px 12px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: #7a5000;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.01em;
+  }
+  .news-aviso strong {
+    color: #b45309;
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  @media (max-width: 520px) {
+    .index-list { grid-template-columns: 1fr; }
+    .masthead-logo { font-size: 40px; }
+    .masthead-meta { flex-direction: column; gap: 4px; align-items: center; }
+    .masthead-meta span::before { content: ''; }
+    .wrapper { padding: 0 16px 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ======================== MASTHEAD ======================== -->
+  <div class="masthead">
+    <div class="masthead-logo">BREV<span>IS</span></div>
+    <div class="masthead-tagline">Radar jurídico · Decisões estratégicas</div>
+    <div class="masthead-meta">
+      <span>Edição nº 006</span>
+      <span>31 de março de 2026</span>
+      <span>Segunda-feira</span>
+    </div>
+  </div>
+
+  <!-- NAV VOLTAR -->
+  <div style="padding: 10px 0 2px;">
+    <a href="index.html" style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none;">← Voltar para o índice</a>
+  </div>
+
+  <!-- ======================== ÍNDICE ======================== -->
+  <div class="index-block">
+    <div class="index-title">Nesta edição</div>
+    <ul class="index-list">
+      <li><span class="num">01</span><a href="#s01">Abertura do Dia</a></li>
+      <li><span class="num">02</span><a href="#s02">O Que Você Precisa Saber</a></li>
+      <li><span class="num">03</span><a href="#s03">Decisão do Dia</a></li>
+      <li><span class="num">04</span><a href="#s04">Alerta Jurídico</a></li>
+      <li><span class="num">05</span><a href="#s05">Oportunidade de Atuação</a></li>
+      <li><span class="num">06</span><a href="#s06">Curiosidade Jurídica</a></li>
+      <li><span class="num">07</span><a href="#s07">Termo Jurídico do Dia</a></li>
+      <li><span class="num">08</span><a href="#s08">Impacto na Sua Rotina</a></li>
+      <li><span class="num">09</span><a href="#s09">Frase do Dia</a></li>
+      <li><span class="num">10</span><a href="#s10">Para Ler Mais</a></li>
+    </ul>
+  </div>
+
+  <!-- ======================== S01 — ABERTURA ======================== -->
+  <section class="section" id="s01">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <span class="section-title">Abertura do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="abertura-text">Bom dia. Este é o Brevis, seu radar jurídico diário.</p>
+    <p class="abertura-text" style="margin-top:14px;">
+      A semana começa com <strong>cinco frentes exigindo ação imediata</strong>. O STJ consolidou teses importantes em remessa necessária e terapias para TEA — decisões com impacto direto no volume e na velocidade dos processos. No trabalhista, dois alertas urgentes: o TST expande o conceito de assédio moral para o campo político, com casos concretos já julgados, e a multa de 40% do FGTS em contratos de experiência rescindidos antecipadamente é um passivo que a maioria das empresas ainda não dimensionou. No campo sucessório, os Estados avançam na progressividade do ITCMD e a janela para planejamento ainda está aberta — mas não por muito tempo.
+    </p>
+    <p class="abertura-text" style="margin-top:12px;">
+      E uma novidade do STJ para o direito de família: a Terceira Turma autorizou a exclusão de sobrenome paterno em caso de abandono afetivo. Uma decisão que abre precedente relevante para a área.
+    </p>
+  </section>
+
+  <!-- ======================== TOP 3 DA SEMANA ======================== -->
+  <div class="top3-block">
+    <div class="top3-label">⭐ Top 3 da Semana — Maior Impacto Prático</div>
+    <ul class="top3-list">
+      <li>
+        <span class="top3-num">1</span>
+        <div class="top3-item-body">
+          <span class="top3-item-title">ITCMD — Planejamento Sucessório Urgente</span>
+          <span class="top3-item-sub">Alíquotas progressivas avançando nos Estados — janela tributária pode fechar em 2026. Potencial de honorários: $$$$</span>
+        </div>
+      </li>
+      <li>
+        <span class="top3-num">2</span>
+        <div class="top3-item-body">
+          <span class="top3-item-title">TEA — Planos de Saúde e Limite de Sessões</span>
+          <span class="top3-item-sub">STJ (2ª Seção) consolida cobertura irrestrita — liminares com alta taxa de concessão. Potencial de honorários: $$$$</span>
+        </div>
+      </li>
+      <li>
+        <span class="top3-num">3</span>
+        <div class="top3-item-body">
+          <span class="top3-item-title">Remessa Necessária — STJ Tema 1081</span>
+          <span class="top3-item-sub">Execuções contra a Fazenda aceleram — RPVs e precatórios desbloqueados sem reexame obrigatório. Potencial de honorários: $$$</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ======================== S02 — O QUE VOCÊ PRECISA SABER ======================== -->
+  <section class="section" id="s02">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <span class="section-title">O Que Você Precisa Saber</span>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- CARD 1: Remessa Necessária -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-civ">Cível · Processual</span>
+        <span class="status-badge">✔ Consolidado · STJ Tema 1081</span>
+      </div>
+      <h3>STJ dispensa remessa necessária em condenações abaixo de 1.000 salários mínimos, mesmo quando a sentença é ilíquida</h3>
+      <p>O STJ fixou no Tema 1081 que não cabe remessa necessária quando a condenação contra a Fazenda Pública for inferior a 1.000 salários mínimos — e estendeu esse entendimento para sentenças ilíquidas, desde que o valor seja apurável por cálculo aritmético simples.</p>
+      <p>O ponto novo é exatamente esse: antes, havia resistência dos tribunais em dispensar o reexame em sentenças sem liquidação definitiva, sob o argumento de que o valor seria incerto. O STJ encerrou essa discussão. Basta que o montante seja razoavelmente inferível sem perícia ou cálculo complexo.</p>
+      <div class="base-legal-box">
+        <span class="base-legal-title">Base Legal</span>
+        <div class="base-legal-items">
+          <span class="base-legal-item">Art. 496 CPC</span>
+          <span class="base-legal-item">Tema 1081 STJ</span>
+          <span class="base-legal-item">Art. 496, §3º, I CPC</span>
+        </div>
+      </div>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Processos contra entes públicos com condenação abaixo de ~R$ 1,52 milhão (base atual) passam diretamente à execução, sem aguardar reexame obrigatório. Isso acelera RPVs, precatórios e pagamentos em geral — especialmente em causas previdenciárias, tributárias e funcionais individuais.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Dimensão Financeira</strong>
+        O teto atual (1.000 × R$ 1.518) cobre a esmagadora maioria das ações individuais contra a Fazenda. Escritórios com carteira de previdenciário, tributário ou causas funcionais devem sentir diferença concreta no prazo de liquidação.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$$</span>
+        <span class="honorarios-desc">— aceleração de execuções e liberação de RPVs/precatórios represados</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1081&cod_tema_final=1081" target="_blank">STJ · Tema 1081</a> · Art. 496, §3º, I do CPC</p>
+    </div>
+
+    <!-- CARD 2: Assédio Moral Político TST -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-trab">Trabalhista</span>
+        <span class="status-badge">🟢 Favorável ao trabalhador</span>
+      </div>
+      <h3>TST condena empresa por assédio moral político: "faz o L" dito a caseiro que cobrava salário equivale a humilhação</h3>
+      <p>O TST manteve condenação por danos morais em caso no qual um caseiro ouviu a expressão "faz o L" do empregador ao cobrar o pagamento de salários atrasados. O tribunal entendeu que utilizar manifestação política para constranger e humilhar trabalhador no exercício de um direito legítimo configura assédio moral.</p>
+      <p>A decisão consolida um entendimento já delineado pelo TST em casos anteriores — como a condenação do Habib's por vincular funcionários a ato político em 2016 e a da Havan por assédio eleitoral. O fundamento é claro: o poder diretivo do empregador não inclui a imposição de convicções políticas ao trabalhador, especialmente em situações de vulnerabilidade como o não pagamento de salário.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Empresas com cultura política explícita — declarações públicas de donos, campanhas internas, pressão velada em reuniões — estão expostas a passivo trabalhista crescente. O risco não é teórico: há condenações transitadas em julgado em casos de grandes marcas nacionais.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Advogados trabalhistas que assessoram empresas devem alertar clientes sobre o risco de assédio ideológico. Advogados de trabalhadores devem documentar episódios similares e ajuizar com pedido de danos morais, com fundamento no art. 5º, X da CF e arts. 186 e 927 do CC.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$</span>
+        <span class="honorarios-desc">— danos morais individuais; risco de dano coletivo em empresas com conduta sistêmica</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.migalhas.com.br/quentes/452876/tst-caseiro-que-ouviu-faz-o-l-ao-cobrar-salario-atrasado-sera-indenizado" target="_blank">TST via Migalhas</a> · Art. 5º, X da CF · Arts. 186 e 927 do Código Civil</p>
+    </div>
+
+    <!-- CARD 3: Multa FGTS Contrato de Experiência URGENTE -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-trab">Trabalhista</span>
+        <span class="urgente-badge">🚨 Urgente</span>
+        <span class="status-badge">⚠ Em construção</span>
+      </div>
+      <h3>Rescisão antecipada do contrato de experiência sem cláusula específica pode gerar multa de 40% do FGTS além da indenização da CLT</h3>
+      <p>O TST tem reconhecido que a rescisão antecipada do contrato de experiência pelo empregador, sem a previsão de cláusula de rescisão recíproca, pode gerar dois passivos simultâneos: a indenização do art. 479 da CLT (metade das remunerações do período restante) e a multa de 40% sobre os depósitos do FGTS.</p>
+      <p>O fundamento está no art. 481 da CLT, que equipara o contrato de experiência ao contrato por prazo determinado. A jurisprudência trabalhista vem aplicando essa equiparação de forma ampla, estendendo ao trabalhador os mesmos direitos rescisórios de contratos a prazo fixo — incluindo a multa fundiária que muitos empregadores acreditavam não ser devida nesses casos.</p>
+      <div class="news-aviso">
+        <strong>⚠ Atenção — Segurança Jurídica</strong>
+        Há divergência em instâncias inferiores. A tendência dominante no TST aponta para o reconhecimento da multa de 40%, mas alguns TRTs ainda aplicam entendimento mais restritivo. Avaliar o caso concreto antes de orientar o cliente de forma definitiva.
+      </div>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Uma empresa que rescinde antecipadamente um contrato de experiência de 90 dias, sem cláusula de rescisão recíproca, pode ser condenada a pagar: 45 dias de salário (art. 479) + 40% sobre todos os depósitos de FGTS do período. Para salários mais altos, o passivo dobra o custo esperado da rescisão.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Urgente</strong>
+        Revise os modelos de contrato de experiência dos seus clientes empresariais. Inclua cláusula de rescisão recíproca quando houver intenção de possível rescisão antecipada. Oriente o RH a consultar o jurídico antes de qualquer desligamento durante o período de experiência.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$</span>
+        <span class="honorarios-desc">— revisão preventiva + defesa em reclamatórias; passivo pode superar R$ 20k por rescisão em salários medianos</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.tst.jus.br/noticias" target="_blank">TST</a> · Arts. 479 e 481 da CLT</p>
+    </div>
+
+    <!-- CARD 4: ITCMD Progressividade URGENTE -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-trib">Tributário</span>
+        <span class="news-tag tag-hold">Holding</span>
+        <span class="urgente-badge">🚨 Urgente</span>
+      </div>
+      <h3>Estados avançam na regulamentação do ITCMD progressivo com base na EC 132/2023 — carga tributária pode dobrar ainda em 2026</h3>
+      <p>A Emenda Constitucional 132/2023, que tornou obrigatória a progressividade do ITCMD em todo o país, está sendo regulamentada em ritmos distintos pelos Estados. Alguns já aprovaram legislação com alíquotas escalonadas por faixa de patrimônio; outros estão em fase final de aprovação. A alíquota máxima varia de 6% a 8% dependendo do Estado — e o movimento é irreversível.</p>
+      <p>Para fins práticos: patrimônios que hoje pagam ITCMD a alíquotas fixas de 4% podem ser tributados a 6%, 7% ou até 8% dependendo da faixa e da lei estadual já vigente ou prestes a entrar em vigor. O prazo para estruturar transferências patrimoniais pelas alíquotas atuais pode ser muito mais curto do que os clientes imaginam.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Para clientes com patrimônio relevante — imóveis, participações em empresas, ativos financeiros —, a diferença entre agir agora e agir depois pode representar dezenas ou centenas de milhares de reais a mais de imposto. A janela tributária existe e está se fechando.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Dimensão Financeira</strong>
+        Em um patrimônio de R$ 5 milhões sujeito a ITCMD: a diferença entre 4% e 8% representa R$ 200 mil a mais de imposto. Em holdings com múltiplos imóveis ou participações societárias, a conta pode ultrapassar R$ 500 mil. Cada Estado tem sua própria tabela — o advogado precisa consultar a legislação local.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Acione clientes com patrimônio acima de R$ 1 milhão para revisão ou antecipação do planejamento sucessório. Avalie doações com reserva de usufruto enquanto as alíquotas atuais ainda vigoram. Verifique o estágio da legislação estadual do seu cliente antes de qualquer recomendação.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$$</span>
+        <span class="honorarios-desc">— honorários de planejamento patrimonial podem superar R$ 30k por estrutura; urgência aumenta conversão</span>
+      </div>
+      <p class="news-source">Fonte: Art. 155, §1º da CF · <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm" target="_blank">EC 132/2023</a> · Legislações estaduais em regulamentação</p>
+    </div>
+
+    <!-- CARD 5: Sobrenome / Abandono Afetivo STJ -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-civ">Cível · Família</span>
+        <span class="status-badge">STJ · Informativo 880 · Mar/2026</span>
+      </div>
+      <h3>STJ autoriza exclusão de sobrenome paterno em caso de abandono afetivo: afeto é central na identidade contemporânea</h3>
+      <p>A Terceira Turma do STJ, por unanimidade, reconheceu que é possível a exclusão do patronímico (sobrenome paterno) em casos de abandono afetivo comprovado. A relatora, Ministra Nancy Andrighi, fundamentou a decisão no direito da personalidade e no livre desenvolvimento da identidade pessoal — princípios que, segundo o tribunal, são incompatíveis com a imposição de um sobrenome sem vínculo afetivo real.</p>
+      <p>A ministra afirmou que "impor a manutenção de sobrenome com o qual o interessado não mantém vínculo afetivo vai de encontro ao seu direito da personalidade", além de representar "identificação não condizente com a realidade vivida". A decisão é da Terceira Turma, publicada no Informativo de Jurisprudência n. 880 do STJ (10/03/2026), sob segredo de justiça — por isso sem número de processo público. Não tem caráter vinculante, mas representa forte sinalização da 3ª Turma, especializada em direito privado e família.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Advogados de família passam a ter fundamento robusto para pedidos de alteração de nome por abandono afetivo — uma tese que antes encontrava resistência nas instâncias inferiores. A decisão abre caminho para ações semelhantes com base nos direitos da personalidade e no art. 57, §8º da Lei 6.015/1973 (Lei de Registros Públicos).
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Identifique clientes em situação de abandono afetivo comprovado que já tenham manifestado interesse em excluir o sobrenome paterno. Instrua o pedido com prova do abandono, laço emocional rompido e impacto na identidade pessoal. Cite o Informativo 880 do STJ (10/03/2026) e o art. 57, §8º da Lei 6.015/1973 como fundamentos.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$</span>
+        <span class="honorarios-desc">— ação de retificação de registro; volume de demanda crescente em escritórios de família</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/13032026-Retirada-de-sobrenome-por-abandono-afetivo-e-um-dos-temas-da-nova-edicao-do-Informativo.aspx" target="_blank">STJ · Informativo 880 · 3ª Turma · Rel. Min. Nancy Andrighi · 10/03/2026</a> · processo sob segredo de justiça</p>
+    </div>
+
+    <!-- CARD 6: Herança Digital TJSP -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-hold">Holding · Sucessório</span>
+        <span class="status-badge">🔴 Desfavorável aos herdeiros</span>
+      </div>
+      <h3>TJSP nega acesso de herdeiros a redes sociais de falecido: intimidade sobrevive à morte, diz tribunal</h3>
+      <p>O Tribunal de Justiça de São Paulo negou pedido de herdeiros para acessar contas em redes sociais de pessoa falecida, entendendo que o direito à intimidade e à vida privada — garantido pelo art. 5º, X da Constituição — não se transmite automaticamente com a herança. Na ausência de autorização expressa em vida, os dados permanecem protegidos.</p>
+      <p>O TJSP aplicou o Marco Civil da Internet (Lei 12.965/2014), que impõe às plataformas o dever de sigilo sobre dados dos usuários. A decisão sinaliza que, sem testamento digital ou declaração expressa, o acesso à vida digital do falecido pode ser definitivamente negado — inclusive para familiares próximos.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        A decisão reforça a urgência de incluir disposições sobre herança digital nos instrumentos de planejamento sucessório. Sem isso, fotos, mensagens, arquivos, senhas e contas em plataformas digitais podem se tornar inacessíveis para sempre — independentemente de quanto valham economicamente ou afetivamente.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Inclua cláusula de herança digital em testamentos e instrumentos de holding familiar. Oriente clientes a registrar, em documento autenticado, suas preferências sobre o destino de contas digitais, arquivos e senhas — incluindo plataformas de streaming, e-mail e redes sociais.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$</span>
+        <span class="honorarios-desc">— honorários de planejamento + eventual litígio contra plataformas; nicho emergente</span>
+      </div>
+      <p class="news-source">Fonte: TJSP · Art. 5º, X da CF · <a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm" target="_blank">Lei 12.965/2014 (Marco Civil da Internet)</a></p>
+    </div>
+
+    <!-- CARD 7: TEA STJ -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-civ">Cível · Saúde</span>
+        <span class="status-badge">✔ Consolidado · STJ 2ª Seção</span>
+      </div>
+      <h3>STJ consolida: planos de saúde não podem limitar sessões de terapias para pacientes com TEA — cobertura é irrestrita</h3>
+      <p>A 2ª Seção do STJ — instância que unifica a jurisprudência das turmas de direito privado — reafirmou que operadoras de planos de saúde não podem estabelecer limite de sessões para terapias multidisciplinares indicadas para pacientes com Transtorno do Espectro Autista. ABA, fonoaudiologia, terapia ocupacional, psicologia: todas cobertas sem teto de sessões.</p>
+      <p>O entendimento é direto: o critério clínico do médico assistente é soberano sobre o critério contratual de custo da operadora. A tentativa de limitar sessões por cláusula contratual é prática ilegal — e a decisão da 2ª Seção do STJ funciona como escudo para liminares.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Qualquer limitação de sessões de terapia para TEA no contrato do plano de saúde é nula de pleno direito. O precedente da 2ª Seção fortalece pedidos liminares e reduz a resistência das instâncias inferiores — que tendem a seguir o posicionamento unificado da seção especializada.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Dimensão Financeira</strong>
+        Terapias multidisciplinares para TEA podem custar entre R$ 5 mil e R$ 20 mil por mês. A obrigação irrestrita representa passivo relevante para as operadoras — e honorários expressivos para advogados de consumidores. O mercado de ações de TEA contra planos de saúde é um dos mais ativos do direito do consumidor.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Se o seu cliente tem diagnóstico de TEA e o plano limita sessões — por terapia, por semana, ou por qualquer critério — ajuíze com pedido liminar. Cite a consolidação pela 2ª Seção do STJ. A liminar tem alta taxa de concessão com esse fundamento.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$$</span>
+        <span class="honorarios-desc">— demanda crescente, liminares com alta concessão, honorários de êxito em ações de obrigação de fazer</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2023/Planos-de-saude-nao-podem-limitar-sessoes-de-terapia-para-autistas--decide-Segunda-Secao.aspx" target="_blank">STJ · 2ª Seção · Entendimento consolidado</a></p>
+    </div>
+
+    <!-- CARD 8: STF Teto Constitucional -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-dest">Direito Público</span>
+        <span class="status-badge">✔ Consolidado · STF · Art. 37, XI CF</span>
+      </div>
+      <h3>STF reafirma limite dos "penduricalhos": verbas sem base legal criadas por ato administrativo não escapam do teto constitucional</h3>
+      <p>O STF reiterou que verbas remuneratórias criadas por portarias, resoluções internas ou deliberações administrativas — sem respaldo em lei formal — não podem superar o teto constitucional do art. 37, XI da CF. O contexto da reafirmação é o debate sobre "penduricalhos" — benefícios atípicos concedidos a servidores de Municípios, Estados e órgãos federais que escapavam ao controle simplesmente por não terem sido criados por lei.</p>
+      <p>O entendimento não cria obrigação nova: ele reforça o que já estava na Constituição. O impacto prático, no entanto, é relevante para escritórios que assessoram entes públicos ou servidores que recebem esse tipo de verba — pois a reafirmação tende a pautar revisões administrativas e ações de ressarcimento.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Entes públicos que pagam verbas sem base legal acima do teto estão sujeitos a revisão administrativa compulsória e eventual ação de ressarcimento. Servidores que recebem esses valores — especialmente em Municípios de menor porte — devem ser orientados sobre o risco de devolução, salvo prova de boa-fé qualificada. Advogados de entes públicos: é o momento de revisar os relatórios de folha de pagamento.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$</span>
+        <span class="honorarios-desc">— mais relevante para assessoria de entes públicos ou defesa de servidores em ações de ressarcimento</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://portal.stf.jus.br/" target="_blank">STF</a> · Art. 37, XI da CF · Informativo STF n. 1207 (Mar/2026)</p>
+    </div>
+
+  </section>
+
+  <!-- ======================== S03 — DECISÃO DO DIA ======================== -->
+  <section class="section" id="s03">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <span class="section-title">Decisão do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="decisao-box">
+      <div class="decisao-tribunal">STJ · 2ª Seção · Entendimento Consolidado · Direito do Consumidor</div>
+      <div class="decisao-titulo">Planos de saúde não podem limitar sessões de terapia para pacientes com TEA</div>
+      <div class="decisao-tese">
+        "As operadoras de planos de saúde não podem estabelecer limite quantitativo de sessões para terapias multidisciplinares indicadas ao tratamento do Transtorno do Espectro Autista — ABA, fonoaudiologia, terapia ocupacional e psicologia —, devendo custeá-las de forma integral conforme prescrição médica, sem teto contratual de sessões."
+      </div>
+      <div class="decisao-body">
+        A consolidação veio da 2ª Seção do STJ, que reúne as 3ª e 4ª Turmas e tem a função de unificar a jurisprudência em matéria de direito privado. Isso significa que o entendimento tem peso maior do que uma decisão de turma isolada — e serve de fundamento robusto para liminares em instâncias inferiores.
+      </div>
+      <div class="decisao-body">
+        O raciocínio do STJ é simples e direto: o médico define o tratamento. A operadora não tem capacidade técnica nem legitimidade para substituir o critério clínico por um critério de custo. Qualquer cláusula contratual que limite sessões de TEA é, por isso, nula de pleno direito.
+      </div>
+      <div class="decisao-pratica">
+        <strong>Para advogados — o que fazer agora</strong>
+        Se o seu cliente tem diagnóstico de TEA e o plano de saúde impõe limite de sessões — por modalidade terapêutica, por semana, por mês, ou por qualquer outro critério —, você tem fundamento sólido para tutela de urgência. Cite o entendimento consolidado da 2ª Seção do STJ, junte o laudo médico com a prescrição e o documento do plano com a negativa ou limitação. A taxa de concessão de liminar com esse conjunto é alta. E os honorários, expressivos.
+      </div>
+      <div class="decisao-source">STJ · 2ª Seção · Brevis Semanal · Ed. 006 · 31/03/2026</div>
+    </div>
+  </section>
+
+  <!-- ======================== S04 — ALERTA JURÍDICO ======================== -->
+  <section class="section" id="s04">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <span class="section-title">Alerta Jurídico</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-label">🚨 Atenção Imediata — Trabalhista</div>
+      <h3>Contrato de experiência sem cláusula de rescisão recíproca: risco de passivo duplo ignorado pela maioria das empresas</h3>
+      <p>O contrato de experiência é um dos contratos mais utilizados no mercado e, paradoxalmente, um dos menos revisados pelos departamentos jurídicos. A maioria dos modelos-padrão circulantes não prevê cláusula de rescisão recíproca — e isso é um problema quando o empregador precisa encerrar o vínculo antes do prazo.</p>
+      <p>O art. 481 da CLT equipara o contrato de experiência ao contrato por prazo determinado. Quando o empregador rescinde antecipadamente sem a cláusula específica, a jurisprudência trabalhista — especialmente no TST — tem reconhecido dois passivos simultâneos: (1) a indenização do art. 479 da CLT, equivalente à metade das remunerações que seriam devidas até o final do contrato; e (2) a multa de 40% sobre os depósitos do FGTS realizados durante o período de experiência.</p>
+      <p>Para muitas empresas, esse segundo passivo é uma surpresa total. Elas pagam a indenização da CLT achando que resolveram a questão — e são surpreendidas com ação reclamatória exigindo também a multa fundiária.</p>
+      <div class="alerta-acao">
+        <strong>O que fazer agora</strong>
+        Solicite cópia dos modelos de contrato de experiência usados pelos seus clientes empresariais. Se não houver cláusula de rescisão recíproca, inclua-a imediatamente nos novos contratos. Para os contratos em vigor, oriente o cliente a não rescindir antes do prazo sem consulta jurídica prévia. O custo de uma revisão contratual é uma fração do custo de uma reclamatória trabalhista com esse objeto.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== S05 — OPORTUNIDADE ======================== -->
+  <section class="section" id="s05">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <span class="section-title">Oportunidade de Atuação</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="oport-box">
+      <div class="oport-label">📈 Oportunidade Estratégica — Holding &amp; Tributário</div>
+      <h3>Progressividade do ITCMD: a janela tributária está aberta — mas está se fechando</h3>
+      <p>A EC 132/2023 tornou obrigatória a progressividade do ITCMD em todo o país. Estados que ainda operam com alíquotas fixas estão regulamentando a progressividade ao longo de 2026. A janela para estruturar transmissões patrimoniais pelas alíquotas atuais existe — mas tem prazo.</p>
+      <p>A estratégia mais acessível é a doação de bens em vida com reserva de usufruto, enquanto as alíquotas do Estado do cliente ainda não foram elevadas. Em holding familiar, a integralização de imóveis e a antecipação de cotas também funcionam como mecanismos de eficiência tributária. Cada Estado tem seu próprio cronograma legislativo — o que torna a análise urgente e personalizada.</p>
+      <p>O ponto mais importante: o cliente que não for acionado agora pelo seu advogado pode perder a janela e descobrir a diferença quando a lei estadual já estiver em vigor. Proatividade aqui não é cortesia — é serviço indispensável.</p>
+      <div class="oport-perfil">
+        <strong>Perfil do cliente ideal para essa conversa</strong>
+        Família com patrimônio imobiliário ou empresarial acima de R$ 1 milhão · Clientes com holding familiar constituída mas sem revisão recente · Empresários com sócios familiares e plano de sucessão em aberto · Qualquer cliente com imóvel, investimento ou empresa que nunca fez planejamento sucessório · Clientes acima de 50 anos com filhos · Cônjuges com pacto antenupcial e patrimônio relevante.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== S06 — CURIOSIDADE ======================== -->
+  <section class="section" id="s06">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <span class="section-title">Curiosidade Jurídica do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="curiosidade-text">
+      O conceito de <em>herança digital</em> é tão novo que o Brasil ainda não tem lei federal específica sobre o tema. O Marco Civil da Internet (Lei 12.965/2014) regulamenta a privacidade online de pessoas vivas — mas silencia sobre o destino dos dados após a morte.
+    </p>
+    <p class="curiosidade-text">
+      Nos Estados Unidos, a maioria dos estados já adotou versões do <em>Revised Uniform Fiduciary Access to Digital Assets Act</em> (RUFADAA), que permite ao executor testamentário acessar ativos digitais do falecido. Na Europa, a decisão costuma ficar com as próprias plataformas, que adotam políticas distintas — o Facebook tem um sistema de "contato legado", por exemplo.
+    </p>
+    <p class="curiosidade-text">
+      No Brasil, sem lei, sem testamento digital e sem orientação prévia do falecido, cada caso vai para o Judiciário — e as decisões variam dramaticamente. Enquanto o TJSP nega acesso por respeito à intimidade póstuma, outros tribunais já concederam acesso a herdeiros. A herança digital é, hoje, uma das fronteiras mais urgentes e menos reguladas do direito sucessório brasileiro.
+    </p>
+  </section>
+
+  <!-- ======================== S07 — TERMO JURÍDICO ======================== -->
+  <section class="section" id="s07">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <span class="section-title">Termo Jurídico do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="termo-box">
+      <div class="termo-nome">Remessa Necessária</div>
+      <div class="termo-origem">Também chamada de reexame necessário · Origem: direito processual luso-brasileiro · Art. 496 do CPC/2015</div>
+      <p>É o mecanismo pelo qual certas sentenças — especialmente as que condenam o Poder Público ou extinguem a punibilidade em processos penais — só produzem efeitos após reexame automático pelo tribunal de segunda instância, independentemente de recurso das partes. Funciona como um "recurso involuntário" criado pela própria lei.</p>
+      <p>A lógica histórica era proteger o erário de condenações precipitadas em instâncias inferiores. Na prática, tornou-se um mecanismo de atraso: processos aguardavam reexame de sentenças que ninguém contestava, represando RPVs e precatórios por meses ou anos.</p>
+      <p>O CPC/2015 já havia limitado a remessa necessária com base no valor da condenação. Com o Tema 1081 do STJ, a dispensa foi estendida a sentenças ilíquidas de valor inferível — encerrando uma das últimas zonas de resistência ao prosseguimento direto das execuções contra a Fazenda.</p>
+    </div>
+  </section>
+
+  <!-- ======================== S08 — IMPACTO NA ROTINA ======================== -->
+  <section class="section" id="s08">
+    <div class="section-label">
+      <span class="section-num">08</span>
+      <span class="section-title">Impacto na Sua Rotina</span>
+      <div class="section-line"></div>
+    </div>
+    <ul class="rotina-list">
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Revise imediatamente os modelos de contrato de experiência dos seus clientes empresariais</strong> — a ausência de cláusula de rescisão recíproca pode gerar multa de 40% do FGTS + indenização do art. 479 da CLT em qualquer rescisão antecipada.</span>
+      </li>
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Acione clientes com patrimônio relevante para conversa sobre planejamento sucessório</strong> — os Estados estão regulamentando o ITCMD progressivo e a janela de alíquotas mais baixas está se fechando. A antecipação pode economizar centenas de milhares de reais.</span>
+      </li>
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Se você tem clientes com filhos diagnosticados com TEA e plano de saúde,</strong> verifique se há limite de sessões no contrato. O STJ (2ª Seção) consolidou que qualquer limite é ilegal — ajuíze com pedido liminar. Alta taxa de concessão.</span>
+      </li>
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Inclua cláusula de herança digital nos instrumentos sucessórios que você está elaborando</strong> — testamentos, contratos de holding familiar, pactos — a ausência dessas disposições pode deixar contas, fotos e arquivos inacessíveis para os herdeiros, como demonstrou o TJSP.</span>
+      </li>
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Em processos contra a Fazenda Pública com condenação abaixo de 1.000 salários mínimos,</strong> verifique se o juízo está aguardando remessa necessária desnecessariamente — com o Tema 1081 do STJ, não há mais esse obstáculo quando o valor é inferível por cálculo simples.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ======================== S09 — FRASE DO DIA ======================== -->
+  <section class="section" id="s09">
+    <div class="section-label">
+      <span class="section-num">09</span>
+      <span class="section-title">Frase do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="frase-box">
+      <div class="frase-texto">"A família é o espelho da sociedade — e quando a lei se recusa a acompanhar as transformações desse espelho, quem paga o preço são as pessoas."</div>
+      <div class="frase-autor">— Jean Carbonnier, jurista francês e pai do direito de família moderno (1908–2003)</div>
+    </div>
+  </section>
+
+  <!-- ======================== S10 — PARA LER MAIS ======================== -->
+  <section class="section" id="s10">
+    <div class="section-label">
+      <span class="section-num">10</span>
+      <span class="section-title">Para Ler Mais</span>
+      <div class="section-line"></div>
+    </div>
+    <ul class="lermais-list">
+      <li>
+        <a href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1081&cod_tema_final=1081" target="_blank">STJ — Tema 1081: Remessa Necessária em Condenações contra a Fazenda</a>
+        <div class="lermais-desc">Página oficial do STJ com a tese fixada no Tema 1081, abrangendo sentenças ilíquidas de valor inferível por cálculo simples.</div>
+      </li>
+      <li>
+        <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/13032026-Retirada-de-sobrenome-por-abandono-afetivo-e-um-dos-temas-da-nova-edicao-do-Informativo.aspx" target="_blank">STJ — Informativo 880: Exclusão de sobrenome por abandono afetivo</a>
+        <div class="lermais-desc">Notícia oficial do STJ sobre a decisão da Terceira Turma que autoriza a supressão do patronímico em casos de abandono afetivo comprovado.</div>
+      </li>
+      <li>
+        <a href="https://www.migalhas.com.br/quentes/452876/tst-caseiro-que-ouviu-faz-o-l-ao-cobrar-salario-atrasado-sera-indenizado" target="_blank">Migalhas — TST: caseiro indenizado por assédio moral político</a>
+        <div class="lermais-desc">Detalhes do caso do caseiro que recebeu indenização após ser constrangido com expressão política ao cobrar salário atrasado.</div>
+      </li>
+      <li>
+        <a href="https://www.conjur.com.br/2026-fev-03/com-recursos-em-queda-stj-tem-33-teses-tributarias-para-resolver/" target="_blank">Conjur — STJ tem 33 teses tributárias para resolver em 2026</a>
+        <div class="lermais-desc">Panorama das teses tributárias pendentes no STJ para este ano — leitura essencial para advogados tributaristas e de planejamento patrimonial.</div>
+      </li>
+      <li>
+        <a href="https://portal.stf.jus.br/repercussaogeral/teses.asp" target="_blank">STF — Teses de Repercussão Geral (base completa)</a>
+        <div class="lermais-desc">Base atualizada de todas as teses de repercussão geral do STF — referência obrigatória para acompanhamento de precedentes vinculantes.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <div class="footer">
+    <strong>BREVIS</strong> · Radar jurídico para decisões estratégicas<br>
+    Edição nº 006 · 31 de março de 2026 · Segunda-feira<br>
+    Produzido por <strong>Jean Barbosa</strong>
+    <div class="footer-disclaimer">As informações desta edição têm caráter informativo e não substituem consulta jurídica individualizada. Verifique sempre as fontes primárias antes de tomar decisões com base neste conteúdo. Teses "em construção" devem ser avaliadas no caso concreto.</div>
+  </div>
+
+</div>
+</body>
+</html>
