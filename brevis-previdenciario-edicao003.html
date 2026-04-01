@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição 003 | 01.04.2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #4A4A4A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--azul-escuro);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--cinza-texto);
+    padding: 0;
+  }
+
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--branco);
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: var(--azul-escuro);
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    top: -10px; right: -10px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.25);
+  }
+
+  .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 12px;
+    opacity: 0.9;
+  }
+
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--branco);
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+
+  .header-title span {
+    color: var(--dourado);
+  }
+
+  .header-subtitle {
+    font-size: 12px;
+    color: rgba(250,250,248,0.55);
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding-top: 20px;
+  }
+
+  .header-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .header-meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+  }
+
+  .header-meta-value {
+    font-size: 12px;
+    color: rgba(250,250,248,0.85);
+    font-weight: 500;
+  }
+
+  /* ─── ÍNDICE ─── */
+  .indice {
+    background: var(--azul-meio);
+    padding: 20px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+
+  .indice-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(232,204,122,0.75);
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .indice-item strong {
+    color: var(--dourado-claro);
+  }
+
+  /* ─── CONTEÚDO ─── */
+  .content {
+    padding: 0;
+  }
+
+  /* ─── SEÇÃO ─── */
+  .section {
+    padding: 36px 48px;
+    border-bottom: 1px solid #E8E4DA;
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--dourado);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--azul-claro);
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    line-height: 1.2;
+    margin-bottom: 14px;
+    letter-spacing: -0.2px;
+  }
+
+  .section-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--cinza-texto);
+  }
+
+  .section-body p {
+    margin-bottom: 12px;
+  }
+
+  .section-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ─── ABERTURA ─── */
+  .abertura {
+    background: var(--dourado-sutil);
+    border-left: 4px solid var(--dourado);
+    padding: 28px 48px;
+    border-bottom: 1px solid #E8E4DA;
+  }
+
+  .abertura-bom-dia {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--azul-claro);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .abertura-texto {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--azul-escuro);
+    font-weight: 400;
+  }
+
+  /* ─── NOTÍCIAS ─── */
+  .noticias-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .noticia-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #EDE9DF;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .noticia-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .noticia-badge {
+    flex-shrink: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .badge-tnu { background: #EBF0FB; color: #2B5797; }
+  .badge-stj { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf { background: #FFF3E0; color: #E65100; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-dou { background: #E8F0FF; color: #1A3A6B; }
+
+  .noticia-content {}
+
+  .noticia-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .noticia-resumo {
+    font-size: 12.5px;
+    color: var(--cinza-sub);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  .noticia-acao {
+    font-size: 11.5px;
+    color: var(--verde);
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .noticia-base {
+    font-size: 11px;
+    color: var(--azul-claro);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .noticia-fonte {
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--cinza-sub);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .noticia-fonte a {
+    color: var(--azul-claro);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .noticia-fonte a:hover { text-decoration: underline; }
+
+  /* ─── CLASSIFICAÇÃO DE TESE ─── */
+  .noticia-classificacao {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .classificacao-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .classificacao-construcao  { background: #FFF3E0; color: #B45309; }
+  .classificacao-desfavoravel { background: #FDF0EE; color: var(--alerta); }
+  .classificacao-critica { background: #FDE8E8; color: #8B0000; }
+
+  /* ─── DECISÃO DO DIA ─── */
+  .decisao-card {
+    background: var(--azul-escuro);
+    border-radius: 4px;
+    padding: 28px 32px;
+    color: var(--branco);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .decisao-card::before {
+    content: '';
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .decisao-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--branco);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .decisao-body {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: rgba(250,250,248,0.82);
+  }
+
+  .decisao-body p {
+    margin-bottom: 10px;
+  }
+
+  .decisao-divider {
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    margin: 16px 0;
+  }
+
+  .decisao-tese {
+    font-family: 'DM Mono', monospace;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: var(--dourado-claro);
+    font-style: italic;
+    padding-left: 14px;
+    border-left: 2px solid var(--dourado);
+  }
+
+  .decisao-fonte {
+    margin-top: 14px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.03em;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+  }
+
+  .decisao-fonte a {
+    color: var(--dourado-claro);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .decisao-fonte a:hover { text-decoration: underline; }
+
+  /* ─── TESE ─── */
+  .tese-card {
+    background: var(--cinza-claro);
+    border-radius: 4px;
+    padding: 24px 28px;
+    border-left: 3px solid var(--azul-claro);
+  }
+
+  .tese-nome {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .tese-body {
+    font-size: 13px;
+    line-height: 1.72;
+    color: var(--cinza-texto);
+  }
+
+  .tese-body p { margin-bottom: 8px; }
+  .tese-body p:last-child { margin-bottom: 0; }
+
+  /* ─── TNU ─── */
+  .tnu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .tnu-item {
+    border-left: 3px solid var(--azul-claro);
+    padding-left: 16px;
+  }
+
+  .tnu-item-tema {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--azul-claro);
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .tnu-item-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+
+  .tnu-item-texto {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--cinza-texto);
+  }
+
+  .tnu-item-status {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  .status-pendente { background: #FFF3E0; color: #E65100; }
+  .status-julgado { background: var(--verde-claro); color: var(--verde); }
+  .status-embargos { background: #F3E5F5; color: #6A1B9A; }
+
+  /* ─── COMO USAR ─── */
+  .como-usar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .como-usar-item {
+    background: var(--cinza-claro);
+    border-radius: 4px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .como-usar-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .como-usar-texto {
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--cinza-texto);
+    font-weight: 500;
+  }
+
+  /* ─── OPORTUNIDADE ─── */
+  .oportunidade-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .oportunidade-item {
+    background: var(--branco);
+    border: 1px solid #E0DCD2;
+    border-radius: 4px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .oportunidade-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--dourado);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .oportunidade-content {}
+
+  .oportunidade-titulo {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--azul-escuro);
+    margin-bottom: 4px;
+  }
+
+  .oportunidade-texto {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--cinza-sub);
+  }
+
+  /* ─── MAPEAR CARTEIRA ─── */
+  .mapear-box {
+    background: var(--azul-escuro);
+    border-radius: 4px;
+    padding: 24px 28px;
+    color: white;
+  }
+
+  .mapear-intro {
+    font-size: 13px;
+    color: rgba(250,250,248,0.7);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .mapear-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mapear-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    border-left: 2px solid var(--dourado);
+  }
+
+  .mapear-check {
+    font-size: 12px;
+    color: var(--dourado);
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .mapear-texto {
+    font-size: 12.5px;
+    color: rgba(250,250,248,0.85);
+    line-height: 1.55;
+  }
+
+  /* ─── ATENÇÃO OPERACIONAL ─── */
+  .inss-card {
+    background: var(--alerta-claro);
+    border: 1px solid #F5C6C0;
+    border-radius: 4px;
+    padding: 20px 24px;
+  }
+
+  .inss-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--alerta);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .inss-texto {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #5A1A10;
+  }
+
+  /* ─── CURIOSIDADE ─── */
+  .bastidor-quote {
+    border-left: 3px solid var(--dourado);
+    padding: 16px 20px;
+    background: var(--dourado-sutil);
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.75;
+    color: var(--azul-escuro);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  .bastidor-contexto {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--cinza-texto);
+  }
+
+  /* ─── FRASE DO DIA ─── */
+  .frase-box {
+    background: var(--azul-meio);
+    border-radius: 4px;
+    padding: 28px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .frase-box::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px; left: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: rgba(201,168,76,0.08);
+    line-height: 1;
+  }
+
+  .frase-texto {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--branco);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .frase-autoria {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── RADAR ─── */
+  .radar-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .radar-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #EDE9DF;
+  }
+
+  .radar-item:last-child { border-bottom: none; }
+
+  .radar-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .radar-texto {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--cinza-texto);
+  }
+
+  /* ─── FONTES ─── */
+  .fontes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .fonte-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--cinza-claro);
+    color: var(--azul-claro);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .fonte-tag:hover {
+    background: #E0DBD0;
+    color: var(--azul-meio);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--azul-escuro);
+    padding: 28px 48px;
+    text-align: center;
+  }
+
+  .footer-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--dourado);
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+
+  .footer-radar {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(201,168,76,0.45);
+    margin-bottom: 14px;
+  }
+
+  .footer-curadoria {
+    font-size: 12px;
+    color: rgba(250,250,248,0.65);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+  }
+
+  .footer-divider {
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    margin: 16px 0;
+  }
+
+  .footer-edicao {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(250,250,248,0.3);
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+
+  /* ─── BANNER ─── */
+  .especial-banner {
+    background: linear-gradient(135deg, var(--dourado) 0%, #A07830 100%);
+    padding: 10px 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .especial-banner-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--azul-escuro);
+    font-weight: 600;
+  }
+
+  .especial-banner-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--azul-escuro);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  /* Separador entre seções */
+  .section-divider {
+    height: 2px;
+    background: linear-gradient(to right, var(--dourado), transparent);
+    margin: 0 48px;
+    opacity: 0.3;
+  }
+
+  /* Alerta crítico */
+  .alerta-critico {
+    background: #1A0A0A;
+    border: 1px solid var(--alerta);
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-top: 16px;
+  }
+
+  .alerta-critico-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--alerta);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .alerta-critico-titulo {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #FAFAF8;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .alerta-critico-texto {
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: rgba(250,250,248,0.7);
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 28px 24px 24px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 22px 24px; }
+    .indice { padding: 14px 24px; }
+    .footer { padding: 24px; }
+    .especial-banner { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .como-usar-grid { grid-template-columns: 1fr; }
+    .header-title { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- NAV VOLTAR -->
+  <div style="background: var(--azul-escuro); padding: 10px 48px; border-bottom: 1px solid rgba(201,168,76,0.1);">
+    <a href="index.html" style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(201,168,76,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s;">← Voltar para o índice</a>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-label">Maximiano Advocacia · Uso interno</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-subtitle">Radar previdenciário estratégico da Maximiano</div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">1º de abril de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">003 — Semana de ação</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">6–8 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="especial-banner">
+    <span class="especial-banner-text">★ Edição 003</span>
+    <div class="especial-banner-dot"></div>
+    <span class="especial-banner-text">Semana de 28 mar a 03 abr 2026</span>
+    <div class="especial-banner-dot"></div>
+    <span class="especial-banner-text">10 temas · urgência crítica: ADI 6309</span>
+  </div>
+
+  <!-- ÍNDICE -->
+  <div class="indice">
+    <span class="indice-item"><strong>01</strong> Abertura</span>
+    <span class="indice-item"><strong>02</strong> Radar de Tribunais</span>
+    <span class="indice-item"><strong>03</strong> Decisão do dia — TNU Tema 348</span>
+    <span class="indice-item"><strong>04</strong> Tese relevante — STJ Tema 1124</span>
+    <span class="indice-item"><strong>05</strong> TNU em destaque — Temas 383 e 343</span>
+    <span class="indice-item"><strong>06</strong> Como usar</span>
+    <span class="indice-item"><strong>07</strong> Oportunidades da semana</span>
+    <span class="indice-item"><strong>08</strong> Mapear carteira</span>
+    <span class="indice-item"><strong>09</strong> Atenção operacional — Atestmed e STJ Tema 1202</span>
+    <span class="indice-item"><strong>10</strong> Curiosidade jurídica</span>
+    <span class="indice-item"><strong>11</strong> Frase do dia</span>
+    <span class="indice-item"><strong>12</strong> Fontes</span>
+  </div>
+
+  <div class="content">
+
+    <!-- 01 ABERTURA -->
+    <div class="abertura">
+      <div class="abertura-bom-dia">Bom dia, equipe Maximiano.</div>
+      <div class="abertura-texto">
+        Semana de alto impacto. O STF retomou o julgamento da ADI 6309 — a tese sobre idade mínima na aposentadoria especial pode mudar as regras do jogo para milhares de trabalhadores expostos a agentes nocivos. A TNU firmou entendimento importante sobre o segurado especial em inatividade forçada, e o STJ avança na discussão sobre retroação de efeitos financeiros à DER em casos de prova judicial. No campo normativo, o Atestmed foi expandido para o auxílio-acidente, abrindo nova janela de concessão mais ágil. Leia, identifique e execute.
+      </div>
+    </div>
+
+    <!-- TOP 3 DA SEMANA -->
+    <div style="background: var(--azul-escuro); padding: 14px 48px 16px; border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.15);">
+      <div style="font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado); margin-bottom: 10px; opacity: 0.9;">★ Top 3 da semana</div>
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <span style="font-family: 'DM Mono', monospace; font-size: 11px; color: var(--dourado); font-weight: 600; flex-shrink: 0; min-width: 18px;">1.</span>
+          <span style="font-size: 12.5px; color: rgba(250,250,248,0.9); line-height: 1.5;"><strong style="color: var(--dourado-claro);">ADI 6309 (STF)</strong> — julgamento em andamento sobre idade mínima na aposentadoria especial; potencial de impacto sistêmico para trabalhadores em condições nocivas.</span>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <span style="font-family: 'DM Mono', monospace; font-size: 11px; color: var(--dourado); font-weight: 600; flex-shrink: 0; min-width: 18px;">2.</span>
+          <span style="font-size: 12.5px; color: rgba(250,250,248,0.9); line-height: 1.5;"><strong style="color: var(--dourado-claro);">Tema 348 (TNU)</strong> — inatividade forçada por clima ou crise regional equivale a desemprego involuntário; abre caminho para restabelecimento de benefícios de segurados especiais.</span>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <span style="font-family: 'DM Mono', monospace; font-size: 11px; color: var(--dourado); font-weight: 600; flex-shrink: 0; min-width: 18px;">3.</span>
+          <span style="font-size: 12.5px; color: rgba(250,250,248,0.9); line-height: 1.5;"><strong style="color: var(--dourado-claro);">Atestmed expandido (Portaria MPS/INSS nº 14/2026)</strong> — concessão administrativa de auxílio-acidente sem perícia presencial, em hipóteses específicas; reduz tempo de espera e antecipa honorários.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 02 RADAR DE TRIBUNAIS -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">02</span>
+        <span class="section-label">Radar — O que saiu nos tribunais</span>
+      </div>
+
+      <div class="noticias-grid">
+
+        <!-- TNU Tema 348 -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-tnu">TNU</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">Segurado especial mantém qualidade por até 24 meses em inatividade forçada por clima ou crise regional</div>
+            <div class="noticia-resumo">A TNU fixou que a interrupção da atividade por fatores externos — eventos climáticos ou crises regionais — equipara-se ao desemprego involuntário para fins de prorrogação da qualidade de segurado, independentemente de registro formal. O segurado mantém a proteção por até 24 meses.</div>
+            <div class="noticia-acao">↗ Revisite casos em que a perda da qualidade foi reconhecida pelo INSS em período de seca, enchente ou crise agrária. A decisão sustenta restabelecimento de benefícios e pensões indevidamente cancelados.</div>
+            <div class="noticia-base">Base: Tema 348 TNU · Art. 15, §2º, Lei 8.213/1991 · 30/03/2026</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.cjf.jus.br/tnu" target="_blank">CJF / TNU · cjf.jus.br/tnu</a></div>
+            <div class="noticia-classificacao classificacao-construcao">⚠ Uniformizada (TNU) · 🟢 Favorável ao segurado</div>
+          </div>
+        </div>
+
+        <!-- TNU Tema 343 -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-tnu">TNU</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">DII deve ser fixada no momento real da incapacidade — prontuários e histórico clínico prevalecem sobre a data da perícia</div>
+            <div class="noticia-resumo">A TNU reafirmou que a data de início da incapacidade (DII) não pode ser fixada automaticamente na data da perícia judicial. O juiz deve analisar o conjunto probatório — prontuários, exames, atestados e histórico clínico — para determinar o momento real da incapacidade.</div>
+            <div class="noticia-acao">↗ Instrua os processos de benefício por incapacidade com toda a documentação médica pré-perícia. A retroação da DII amplia o valor dos atrasados e pode antecipar a DIB para a DER.</div>
+            <div class="noticia-base">Base: Tema 343 TNU · Art. 60, Lei 8.213/1991 · 27/03/2026</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.cjf.jus.br/tnu" target="_blank">CJF / TNU · cjf.jus.br/tnu</a></div>
+            <div class="noticia-classificacao classificacao-construcao">⚠ Uniformizada (TNU) · 🟢 Favorável ao segurado</div>
+          </div>
+        </div>
+
+        <!-- TNU Tema 369 -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-tnu">TNU</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">TNU restringe exclusão de benefícios no cálculo de renda do BPC — apenas o salário mínimo é excluído</div>
+            <div class="noticia-resumo">A TNU restringiu a interpretação da norma de exclusão de renda familiar no BPC: apenas benefícios de valor igual ao salário mínimo são excluídos do cálculo da renda per capita. Benefícios acima desse patamar tendem a ser computados.</div>
+            <div class="noticia-acao">↗ Para casos com renda familiar acima do mínimo em razão de benefícios previdenciários, reforce a prova de gastos extraordinários com saúde para afastar o critério econômico e viabilizar a concessão judicial.</div>
+            <div class="noticia-base">Base: Tema 369 TNU · Art. 20, §3º, Lei 8.742/1993 · 20/03/2026</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.cjf.jus.br/tnu" target="_blank">CJF / TNU · cjf.jus.br/tnu</a></div>
+            <div class="noticia-classificacao classificacao-construcao">⚠ Uniformizada (TNU) · 🔴 Desfavorável · tendência restritiva</div>
+          </div>
+        </div>
+
+        <!-- TRF6 Prova Rural -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-trf6">TRF6</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">TRF6 consolida: prova rural não precisa cobrir todo o período — início de prova material corroborado por testemunhas basta</div>
+            <div class="noticia-resumo">O TRF6, em IAC (Incidente de Assunção de Competência), reafirmou que a prova material da atividade rural não precisa abranger todos os anos do período rural alegado. Um início de prova material idôneo, reforçado por prova testemunhal consistente, é suficiente.</div>
+            <div class="noticia-acao">↗ Organize a documentação disponível — certidões, notas fiscais, declarações sindicais, registros escolares rurais — e complemente com prova testemunhal. Não descarte casos por insuficiência documental parcial.</div>
+            <div class="noticia-base">Base: IAC do TRF6 (Incidente de Assunção de Competência) · Súmula 149 STJ · Art. 55, §3º, Lei 8.213/1991 · 28/03/2026</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.trf6.jus.br" target="_blank">TRF6 · trf6.jus.br</a></div>
+            <div class="noticia-classificacao classificacao-consolidada">✔ Consolidada (TRF6) · 🟢 Favorável ao segurado</div>
+          </div>
+        </div>
+
+        <!-- TRF6 Dano Moral -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-trf6">TRF6</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">Atraso superior a 90 dias na implantação de benefício gera dano moral presumido — TRF6</div>
+            <div class="noticia-resumo">O TRF6 reconheceu dano moral presumido em caso de demora superior a 90 dias após o trânsito em julgado para implantação de benefício previdenciário. A natureza alimentar do benefício reforça a ilicitude do atraso injustificado.</div>
+            <div class="noticia-acao">↗ Monitore o cumprimento de sentença. Decorridos 90 dias do trânsito sem implantação, inclua pedido de dano moral na fase executiva — a tendência do TRF6 é favorável à cumulação.</div>
+            <div class="noticia-base">Base: Ap. Cível 1033842-26.2023.4.06.3800 · TRF6 · Art. 5º, V e X, CF/1988 · Art. 186 e 927, CC · responsabilidade civil do Estado · 24/03/2026</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.trf6.jus.br" target="_blank">TRF6 · trf6.jus.br</a></div>
+            <div class="noticia-classificacao classificacao-construcao">⚠ Tendência (TRF6) · 🟢 Favorável ao segurado</div>
+          </div>
+        </div>
+
+        <!-- INSS Atestmed -->
+        <div class="noticia-item">
+          <span class="noticia-badge badge-inss">INSS</span>
+          <div class="noticia-content">
+            <div class="noticia-titulo">Atestmed expandido: auxílio-acidente agora pode ser concedido por análise documental</div>
+            <div class="noticia-resumo">A Portaria Conjunta MPS/INSS nº 14/2026 amplia o Atestmed para incluir hipóteses de concessão de auxílio-acidente sem perícia presencial — em hipóteses específicas definidas na portaria. A aplicação não é automática nem ampla: depende do cumprimento de requisitos médicos documentais expressamente previstos na norma.</div>
+            <div class="noticia-acao">↗ Verifique se o caso do cliente se enquadra nas hipóteses específicas da portaria antes de optar pela via documental. Reúna laudo completo com CID, nexo causal e documentação da sequela consolidada. A via documental, quando cabível, reduz o tempo de concessão e antecipa honorários.</div>
+            <div class="noticia-base">Base: Portaria Conjunta MPS/INSS nº 14/2026 · DOU 23/03/2026</div>
+            <div class="noticia-fonte">Fonte: <a href="https://www.in.gov.br" target="_blank">Diário Oficial da União · in.gov.br</a></div>
+            <div class="noticia-classificacao classificacao-consolidada">✔ Norma vigente</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 03 DECISÃO DO DIA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">03</span>
+        <span class="section-label">Decisão do dia — TNU Tema 348</span>
+      </div>
+
+      <div class="decisao-card">
+        <span class="decisao-tag">TNU · Tema 348 · 30/03/2026</span>
+        <div class="decisao-titulo">Segurado especial em inatividade forçada mantém qualidade por até 24 meses — sem registro formal de desemprego</div>
+        <div class="decisao-body">
+          <p>A TNU firmou entendimento de que a situação do segurado especial que interrompe a atividade por fatores externos — como eventos climáticos severos (seca, enchente) ou crises regionais prolongadas — equipara-se juridicamente ao desemprego involuntário para fins de prorrogação da qualidade de segurado.</p>
+          <p>O segurado mantém a proteção previdenciária por até 24 meses, independentemente de qualquer registro formal no sistema de emprego, visto que o trabalhador rural informal não possui vínculo empregatício registrado em carteira.</p>
+        </div>
+        <hr class="decisao-divider">
+        <div class="decisao-tese">
+          "Equipara-se a situação de desemprego involuntário à inatividade forçada do segurado especial por eventos climáticos ou crises regionais para fins de prorrogação da qualidade de segurado."
+        </div>
+        <div class="decisao-fonte">
+          Fonte: CJF / TNU · <a href="https://www.cjf.jus.br/tnu" target="_blank">cjf.jus.br/tnu</a> · Tema 348 · ⚠ Uniformizada (TNU) · 🟢 Favorável ao segurado
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 04 TESE RELEVANTE -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">04</span>
+        <span class="section-label">Tese relevante da semana — STJ Tema 1124</span>
+      </div>
+
+      <div class="tese-card">
+        <div class="tese-nome">Efeitos financeiros retroagem à DER mesmo quando a prova decisiva é produzida apenas em juízo?</div>
+        <div class="tese-body">
+          <p><strong>Qual é a tese:</strong> O STJ discute no Tema 1124 se os efeitos financeiros do benefício devem retroagir à Data de Entrada do Requerimento (DER) nos casos em que a prova definitiva é apresentada somente na fase judicial — não no âmbito administrativo.</p>
+          <p><strong>Base legal:</strong> Art. 54, Lei 8.213/1991 (DIB na DER); princípio do dever de orientação do INSS (art. 105 da Lei 8.213/1991).</p>
+          <p><strong>Como os tribunais estão decidindo:</strong> Há tendência crescente no STJ de reconhecer que o INSS possui dever de orientação ao segurado. Se esse dever foi descumprido — e o beneficiário não foi informado de quais provas seriam necessárias — o pagamento deve retroagir à DER, mesmo que a prova só tenha sido produzida judicialmente.</p>
+          <p><strong>O que esperar:</strong> O julgamento do Tema 1124 ainda está em construção. Quando consolidado, pode ampliar significativamente o valor de atrasados em ações previdenciárias em todo o país.</p>
+        </div>
+      </div>
+      <div style="margin-top: 10px;">
+        <span class="noticia-classificacao classificacao-construcao">⚠ Em construção · STJ Tema 1124 · 🟢 Tendência favorável</span>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 05 TNU EM DESTAQUE -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">05</span>
+        <span class="section-label">TNU em destaque — Temas 383 e ADI 6309 (STF)</span>
+      </div>
+
+      <div class="tnu-items">
+
+        <div class="tnu-item">
+          <span class="tnu-item-tema">TNU · Tema 383 · 25/03/2026</span>
+          <div class="tnu-item-titulo">EPI em ambiente hospitalar: o risco biológico pode ser inerente à atividade</div>
+          <div class="tnu-item-texto">
+            O Tema 383 da TNU discute se a indicação de "EPI eficaz" no PPP (Perfil Profissiográfico Previdenciário) afasta o reconhecimento de atividade especial para exposição a agentes biológicos. O julgamento aponta tendência de que, em ambiente hospitalar, o risco de contaminação biológica é inerente à função — o que pode afastar a eficácia do EPI como elemento descaracterizador da especialidade. A tese não está fechada. Trate como tendência favorável, não como precedente vinculante.
+          </div>
+          <span class="tnu-item-status status-pendente">⚠ Em construção · 🟢 Tendência favorável</span>
+        </div>
+
+        <div class="tnu-item">
+          <span class="tnu-item-tema">STF · ADI 6309 · 30/03/2026 · Urgência: CRÍTICA</span>
+          <div class="tnu-item-titulo">STF retoma discussão sobre constitucionalidade da idade mínima na aposentadoria especial</div>
+          <div class="tnu-item-texto">
+            O STF retomou o julgamento da ADI 6309, que questiona a exigência de idade mínima para a aposentadoria especial introduzida pela EC 103/2019. A tese tem potencial de impacto sistêmico: se o STF reconhecer a inconstitucionalidade da exigência etária para trabalhadores expostos a agentes nocivos, a regra pode ser afastada para uma ampla classe de segurados. O julgamento ainda está em andamento — evite afirmações definitivas ao cliente.
+          </div>
+          <span class="tnu-item-status status-pendente">⚠ Em julgamento · STF · Impacto sistêmico</span>
+        </div>
+
+      </div>
+
+      <!-- Alerta crítico ADI 6309 -->
+      <div class="alerta-critico">
+        <span class="alerta-critico-tag">⚠ Atenção editorial</span>
+        <div class="alerta-critico-titulo">ADI 6309 ainda em julgamento — não afirme resultado ao cliente</div>
+        <div class="alerta-critico-texto">Monitore a pauta do STF. Se houver placar favorável na sessão, prepare petições de tutela antecipada para clientes com aposentadoria especial pendente exclusivamente por conta da exigência etária. A janela de atuação pode ser estreita.</div>
+      </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 06 COMO USAR -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">06</span>
+        <span class="section-label">Como usar — Tema 348 TNU na petição inicial</span>
+      </div>
+
+      <p class="section-body" style="margin-bottom: 16px;">Passo a passo para aplicar o Tema 348 da TNU em ações de restabelecimento de benefício por perda indevida da qualidade de segurado especial:</p>
+
+      <div class="como-usar-grid">
+        <div class="como-usar-item">
+          <span class="como-usar-icon">📋</span>
+          <span class="como-usar-texto">Identifique o período em que o cliente parou de trabalhar e levante documentação sobre eventos climáticos ou crises regionais da época (decretos de emergência, registros de seca/enchente, notícias).</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">📅</span>
+          <span class="como-usar-texto">Verifique se o benefício foi negado ou cancelado por perda de qualidade de segurado dentro de um intervalo de até 24 meses após o início da inatividade forçada.</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">⚖️</span>
+          <span class="como-usar-texto">Cite expressamente o Tema 348 da TNU na petição, com a tese fixada: inatividade por eventos climáticos equivale a desemprego involuntário para fins do art. 15, §2º, Lei 8.213/1991.</span>
+        </div>
+        <div class="como-usar-item">
+          <span class="como-usar-icon">💰</span>
+          <span class="como-usar-texto">Calcule o retroativo a partir da data em que o benefício foi indevidamente cancelado ou negado. Junte prova testemunhal e documentação local que comprove a crise no período.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 07 OPORTUNIDADES -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">07</span>
+        <span class="section-label">Oportunidades da semana</span>
+      </div>
+
+      <div class="oportunidade-lista">
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Restabelecimento de benefícios de segurados especiais inativados por clima</div>
+            <div class="oportunidade-texto">Com o Tema 348 consolidado, identifique clientes rurais com benefícios cancelados por perda de qualidade em anos de seca ou enchente. Cada caso reaberto representa retroativos e honorários sobre o atrasado. Priorize regiões historicamente afetadas pelo clima (Nordeste, Sul).</div>
+          </div>
+        </div>
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Revisão de DII com documentação médica anterior à perícia</div>
+            <div class="oportunidade-texto">O Tema 343 da TNU abre espaço para revisão da DII em processos já transitados em julgado com data de incapacidade fixada na perícia. Se houver prontuários, laudos ou atestados anteriores ao exame pericial, o retroativo pode ser ampliado substancialmente.</div>
+          </div>
+        </div>
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Auxílio-acidente via Atestmed — concessão sem fila de perícia</div>
+            <div class="oportunidade-texto">A expansão do Atestmed para o auxílio-acidente (Portaria MPS/INSS nº 14/2026) cria uma via administrativa mais rápida — desde que enquadrado nas hipóteses da portaria. Oriente clientes com sequelas documentadas a verificar o enquadramento e requerir administrativamente antes de ajuizar. Reduz o tempo de espera e antecipa honorários contratuais.</div>
+          </div>
+        </div>
+
+        <div class="oportunidade-item">
+          <div class="oportunidade-dot"></div>
+          <div class="oportunidade-content">
+            <div class="oportunidade-titulo">Ações de atividade especial para profissionais de saúde — Tema 383 como fundamento complementar</div>
+            <div class="oportunidade-texto">Ainda que o Tema 383 não esteja consolidado, a tendência da TNU sobre agentes biológicos em hospital sustenta o ajuizamento de ações de reconhecimento de tempo especial para enfermeiros, técnicos e auxiliares de saúde. Use como argumento de reforço junto à prova do PPP e laudo técnico.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 08 MAPEAR CARTEIRA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">08</span>
+        <span class="section-label">Mapear carteira — checklist da semana</span>
+      </div>
+
+      <div class="mapear-box">
+        <div class="mapear-intro">Cinco perguntas para fazer hoje na carteira de clientes. Cada "sim" é uma oportunidade concreta.</div>
+        <div class="mapear-lista">
+          <div class="mapear-item">
+            <span class="mapear-check">01</span>
+            <span class="mapear-texto">Tenho clientes rurais com benefício negado ou cancelado por perda de qualidade de segurado em período de seca, enchente ou crise regional? → Tema 348 TNU sustenta restabelecimento com retroativo integral.</span>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">02</span>
+            <span class="mapear-texto">Tenho processos de auxílio-doença ou aposentadoria por invalidez com DII fixada na data da perícia, mas com laudos ou atestados médicos anteriores? → Tema 343 TNU permite revisão da DII e ampliação dos atrasados.</span>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">03</span>
+            <span class="mapear-texto">Tenho clientes profissionais de saúde (enfermeiros, técnicos, auxiliares) com pedido de aposentadoria especial negado por EPI eficaz no PPP? → Tema 383 TNU como fundamento de ação — tendência favorável.</span>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">04</span>
+            <span class="mapear-texto">Tenho clientes com benefício concedido judicialmente e efeitos financeiros fixados a partir da citação, não da DER? → STJ Tema 1124 pode fundamentar revisão dos atrasados em fase de liquidação.</span>
+          </div>
+          <div class="mapear-item">
+            <span class="mapear-check">05</span>
+            <span class="mapear-texto">Tenho clientes aposentados com desconto de cartão RMC no benefício que não autorizaram ou não reconhecem? → STJ Tema 1202 em análise — junte contratos, extrato e prepare ação de repetição de indébito.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 09 ATENÇÃO OPERACIONAL -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">09</span>
+        <span class="section-label">Atenção operacional — alertas práticos</span>
+      </div>
+
+      <div class="inss-card">
+        <div class="inss-titulo">⚠ Atestmed — aplicação restrita às hipóteses específicas definidas na portaria</div>
+        <div class="inss-texto">
+          A expansão do Atestmed pela Portaria Conjunta MPS/INSS nº 14/2026 não é automática nem de aplicação ampla. A concessão do auxílio-acidente por via documental só cabe em hipóteses específicas definidas na portaria — verifique o enquadramento antes de encaminhar o requerimento. O cliente deve reunir: laudo médico completo com CID, nexo causal com acidente ou doença ocupacional, e documentação da sequela consolidada. Requerimentos incompletos ou fora das hipóteses previstas serão indeferidos administrativamente.
+        </div>
+      </div>
+
+      <div class="inss-card" style="margin-top: 12px;">
+        <div class="inss-titulo">⚠ STJ Tema 1202 — cartão de crédito consignado (RMC): tese em construção, atue pelo CDC</div>
+        <div class="inss-texto">
+          O STJ analisa no Tema 1202 a validade de contratos de cartão de crédito consignado (RMC) vinculados a benefícios previdenciários, com foco em práticas que geram descontos contínuos e indevidos. A tese repetitiva ainda não foi finalizada. Ao orientar clientes, identifique o contrato específico de cartão de crédito consignado (RMC), verifique cláusulas abusivas e reúna extratos comprobatórios dos descontos. Ajuíze com fundamento no CDC — sem depender do julgamento do Tema 1202 para viabilizar a ação.
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 10 CURIOSIDADE JURÍDICA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">10</span>
+        <span class="section-label">Curiosidade jurídica do dia</span>
+      </div>
+
+      <div class="bastidor-quote">
+        "Por que o segurado especial não precisa se registrar no Sistema de Emprego para ter direito ao período de graça?"
+      </div>
+      <div class="bastidor-contexto">
+        O segurado especial — trabalhador rural, pescador artesanal, indígena — não possui vínculo empregatício formal. Sua proteção previdenciária decorre da atividade em si, não de contribuições mensais individuais. Por isso, a Lei 8.213/1991 previu um sistema específico de período de graça que não exige comprovação pelo Sistema Nacional de Emprego (SINE) ou equivalente.
+        <br><br>
+        A lógica por trás do Tema 348 da TNU é coerente com essa estrutura: seria incoerente exigir do segurado especial o mesmo formalismo exigido do empregado urbano para comprovar desemprego involuntário. O trabalhador rural que para de plantar por causa de uma seca prolongada não tem como registrar isso no CAGED. O direito previdenciário, nesse ponto, reconhece a informalidade como realidade estrutural — e não como obstáculo à proteção.
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 11 FRASE DO DIA -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">11</span>
+        <span class="section-label">Frase do dia</span>
+      </div>
+
+      <div class="frase-box">
+        <div class="frase-texto">"A prova não é barreira. É estratégia."</div>
+        <div class="frase-autoria">— Princípio orientador da advocacia previdenciária</div>
+      </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- 12 FONTES -->
+    <div class="section">
+      <div class="section-tag">
+        <span class="section-num">12</span>
+        <span class="section-label">Fontes desta edição</span>
+      </div>
+
+      <div class="fontes-grid">
+        <a href="https://www.cjf.jus.br/tnu" target="_blank" class="fonte-tag">TNU · cjf.jus.br/tnu</a>
+        <a href="https://www.trf6.jus.br" target="_blank" class="fonte-tag">TRF6 · trf6.jus.br</a>
+        <a href="https://www.stj.jus.br" target="_blank" class="fonte-tag">STJ · stj.jus.br</a>
+        <a href="https://www.stf.jus.br" target="_blank" class="fonte-tag">STF · stf.jus.br</a>
+        <a href="https://www.in.gov.br" target="_blank" class="fonte-tag">DOU · in.gov.br</a>
+        <a href="https://ibdp.com.br" target="_blank" class="fonte-tag">IBDP · ibdp.com.br</a>
+        <a href="https://www.conjur.com.br" target="_blank" class="fonte-tag">Conjur · conjur.com.br</a>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <a href="index.html" style="display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(201,168,76,0.6); text-decoration: none; margin-bottom: 16px;">← Voltar para o índice</a>
+    <div class="footer-titulo">Brevis</div>
+    <div class="footer-radar">Radar Jurídico Semanal para Decisões Estratégicas</div>
+    <div class="footer-curadoria">Curadoria por Jean Barbosa · Maximiano Advocacia</div>
+    <hr class="footer-divider">
+    <div class="footer-edicao">Edição nº 003 · 1º de abril de 2026 · Todos os direitos reservados</div>
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
