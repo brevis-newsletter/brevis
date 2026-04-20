@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 004 · 20 de abril de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 700px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+
+  /* VOLTAR */
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+
+  /* HEADER */
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+
+  /* BANNER */
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+
+  /* ÍNDICE */
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 5px 20px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; }
+  .indice-item strong { color: var(--dourado-claro); }
+
+  /* DIVISOR */
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+
+  /* SEÇÃO BASE */
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* ABERTURA */
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+
+  /* BADGES */
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; font-weight: 500; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-lei  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .impacto-badge { font-size: 11px; font-weight: 600; }
+
+  /* STATUS PILLS */
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+
+  /* TOP 5 */
+  .top5-item { padding: 22px 0; border-bottom: 1px solid #EDE9DF; }
+  .top5-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .top5-item:first-child { padding-top: 0; }
+  .top5-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top5-numero { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--dourado); opacity: 0.32; line-height: 1; flex-shrink: 0; margin-top: -2px; }
+  .top5-badges { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; flex-wrap: wrap; }
+  .top5-titulo { font-family: 'Playfair Display', serif; font-size: 16.5px; font-weight: 700; color: var(--azul-escuro); line-height: 1.3; }
+  .top5-corpo { font-size: 13.5px; line-height: 1.75; color: var(--cinza-texto); margin-bottom: 12px; }
+  .top5-corpo p { margin-bottom: 9px; }
+  .top5-corpo p:last-child { margin-bottom: 0; }
+  .top5-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 10px 14px; border-radius: 0 3px 3px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; }
+  .top5-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top5-status { margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top5-fonte { font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--cinza-sub); margin-top: 8px; }
+  .top5-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .top5-fonte a:hover { text-decoration: underline; }
+
+  /* DECISÃO */
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--verde); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #5DBF87; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+
+  /* TESE */
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  /* RADAR */
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+
+  /* DINHEIRO */
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+
+  /* AMANHÃ */
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+
+  /* MAPEAR */
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+
+  /* ATENÇÃO */
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+
+  /* NÚMERO */
+  .numero-card { background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-meio) 100%); border-radius: 5px; padding: 32px; color: white; position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--dourado); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--branco); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(250,250,248,0.68); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(201,168,76,0.45); margin-top: 16px; letter-spacing: 1px; }
+
+  /* MERCADO */
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+
+  /* FRASE */
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+
+  /* FONTES */
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+
+  /* FOOTER */
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+
+  /* RESPONSIVO */
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- VOLTAR TOPO -->
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico para advogados que atuam melhor, mais rápido e com mais resultado</div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">20 de abril de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">004</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">07 a 20 de abril · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">6–8 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Quinzena de 07 a 20.04.2026</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">5 temas · 5 ações imediatas</span>
+  </div>
+
+  <!-- ÍNDICE -->
+  <div class="indice">
+    <span class="indice-item"><strong>01</strong> Abertura</span>
+    <span class="indice-item"><strong>02</strong> Top 5</span>
+    <span class="indice-item"><strong>03</strong> Decisão do Dia</span>
+    <span class="indice-item"><strong>04</strong> Tese Relevante</span>
+    <span class="indice-item"><strong>05</strong> Radar</span>
+    <span class="indice-item"><strong>06</strong> Dinheiro na Mesa</span>
+    <span class="indice-item"><strong>07</strong> O que fazer amanhã</span>
+    <span class="indice-item"><strong>08</strong> Clientes para mapear</span>
+    <span class="indice-item"><strong>09</strong> Atenção Operacional</span>
+    <span class="indice-item"><strong>10</strong> Número do Direito</span>
+    <span class="indice-item"><strong>11</strong> Movimento de Mercado</span>
+    <span class="indice-item"><strong>12</strong> Frase Final</span>
+    <span class="indice-item"><strong>13</strong> Fontes</span>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário. O radar estratégico para advogados que querem atuar melhor, mais rápido e com mais resultado.</p>
+      <p>A quinzena foi movimentada. O STJ avança no Tema 1421, sobre retroatividade de benefícios para filhos menores — uma das teses com maior potencial de reativação de carteira dos últimos anos. A Lei 15.327/2026 entrega fundamento legal explícito para ressarcimento de descontos indevidos em benefícios. O STF firma entendimento sobre aposentadoria compulsória em estatais. E o STJ sedimenta tese que pode reabrir processos dados como prescritos.</p>
+      <p>Quatro movimentos. Impacto direto na carteira. Ações para fazer agora. Vamos ao que importa.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 5 -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 5 movimentos da quinzena</span>
+    </div>
+
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">1</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1421</span>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top5-titulo">Retroatividade de pensão e auxílio-reclusão para filhos menores de 16 anos vai a julgamento no STJ</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>O STJ incluiu em pauta o Tema 1421, que discute se a pensão por morte e o auxílio-reclusão devem ser pagos retroativamente aos filhos menores de 16 anos quando o requerimento não foi feito no prazo — por incapacidade civil dos dependentes ou por desconhecimento dos responsáveis.</p>
+        <p>A tese é tecnicamente sólida: o prazo prescricional não pode correr contra menor absolutamente incapaz, nos termos do art. 198, I do Código Civil. A jurisprudência das turmas já converge para isso. O que falta é a uniformização via repetitivo — e é o que o Tema 1421 vai entregar.</p>
+        <p>Com a fixação da tese favorável, escritórios com clientes nessa situação poderão ingressar com revisões retroativas cobrindo competências desde a data do óbito ou do recolhimento. Em casos mais antigos, isso representa anos de diferença — e de honorários.</p>
+      </div>
+      <div class="top5-impacto">
+        <span class="top5-impacto-label">↗ O que muda amanhã</span>
+        Mapeie hoje pensões por morte e auxílios-reclusão com filhos menores de 16 anos à época do fato gerador. Não ingresse antes do acórdão. Mas identifique os casos e prepare a narrativa fática de cada um.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-construcao">⚠ Em construção</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://www.stj.jus.br" target="_blank">STJ · stj.jus.br · Tema 1421</a></div>
+    </div>
+
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">2</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-lei">Lei Federal</span>
+            <span class="badge badge-inss">INSS</span>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top5-titulo">Lei 15.327/2026 proíbe descontos não autorizados em benefícios e cria via de ressarcimento</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>A Lei 15.327/2026 endurece as regras contra descontos irregulares em benefícios previdenciários. Exige autorização expressa e individual para qualquer desconto associativo, cooperativo ou financeiro. Elimina autorizações genéricas em contratos de adesão. Aumenta penalidades para entidades infratoras e cria mecanismo de ressarcimento direto pelo INSS.</p>
+        <p>Na prática: aposentados e pensionistas com descontos "automáticos" de associações que nunca contrataram diretamente têm, agora, fundamento legal explícito — não apenas tutela consumerista genérica. Isso muda a qualidade da petição e o poder de negociação extrajudicial.</p>
+        <p>A triagem de extratos de benefício pode ser oferecida como consultoria com honorários de resultado. O mercado está aberto — e enorme: mais de 14,7 milhões de beneficiários têm descontos associativos registrados em folha.</p>
+      </div>
+      <div class="top5-impacto">
+        <span class="top5-impacto-label">↗ O que muda amanhã</span>
+        Peça extratos de benefício aos clientes aposentados. Qualquer desconto não reconhecido é candidato a ressarcimento retroativo. A lei está vigente — a petição pode ser protocolada hoje.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-consolidada">✔ Consolidada — lei vigente</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://www.planalto.gov.br" target="_blank">Diário Oficial · Planalto.gov.br · Lei 15.327/2026</a></div>
+    </div>
+
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">3</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1410</span>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top5-titulo">STJ caminha para fixar: prescrição do fundo de direito não corre sem negativa formal do INSS</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>O STJ analisa no Tema 1410 o entendimento de que a prescrição do fundo de direito previdenciário só se inicia a partir da negativa formal e expressa pelo INSS. Silêncio administrativo, orientação verbal de servidor ou perda de prazo sem comunicação oficial não deflagram o prazo.</p>
+        <p>Para a prática: muitos benefícios foram negados tacitamente ou simplesmente ignorados pela autarquia. Clientes que desistiram de recorrer acreditando que o prazo havia passado — sem jamais terem recebido um "não" por escrito — podem ter caminho aberto. A tese reativa casos dados como encerrados.</p>
+        <p>O ponto determinante do acórdão será a definição precisa de "negativa formal". Esse critério vai ditar a extensão prática da tese — e vale monitorar de perto.</p>
+      </div>
+      <div class="top5-impacto">
+        <span class="top5-impacto-label">↗ O que muda amanhã</span>
+        Antes de arquivar qualquer processo por prescrição do fundo de direito, verifique: houve despacho formal de indeferimento registrado? Se não houve, o caso pode não estar prescrito. Vale a revisão.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-construcao">⚠ Em construção — aguardar acórdão</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://www.stj.jus.br" target="_blank">STJ · stj.jus.br · Tema 1410</a></div>
+    </div>
+
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">4</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-stf" style="background:#FFF7E0;color:#8B5E00;">Tema 1390</span>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top5-titulo">STF fixa repercussão geral: aposentadoria compulsória alcança empregados de estatais com função pública</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>O STF fixou repercussão geral no Tema 1390: a aposentadoria compulsória aos 75 anos não é exclusividade do funcionalismo estatutário. Alcança empregados de empresas públicas e sociedades de economia mista que exercem funções de natureza tipicamente estatal — concessão de crédito público, operação de infraestrutura, exploração de recursos estratégicos.</p>
+        <p>O critério é funcional, não jurídico. O que importa é o que o empregado faz — não o contrato que assinou. Caixa Econômica Federal, Banco do Brasil, Petrobras e BNDES estão no centro desse entendimento. A janela de planejamento para o empregado é agora.</p>
+      </div>
+      <div class="top5-impacto">
+        <span class="top5-impacto-label">↗ O que muda amanhã</span>
+        Clientes com 70 anos ou mais vinculados a estatais precisam de avaliação urgente. Aposentadoria voluntária com planejamento — melhores condições, transição organizada — é muito superior à compulsória sem aviso.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-consolidada">✔ Consolidada — Repercussão Geral STF</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://www.stf.jus.br" target="_blank">STF · stf.jus.br · Tema 1390</a></div>
+    </div>
+
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">5</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-tnu">TNU</span>
+            <span class="badge badge-tnu">Tema 385</span>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top5-titulo">TNU avança no Tema 385: BPC pode ser concedido além da incapacidade laboral clássica</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>A TNU está julgando o Tema 385, que discute se o BPC/LOAS pode ser concedido com base em vulnerabilidade socioeconômica grave, mesmo quando a incapacidade não é total e permanente. A tese rompe com o binômio clássico — incapacidade absoluta + miserabilidade estrita — e amplia o olhar para a realidade concreta do segurado.</p>
+        <p>A base argumentativa está na Convenção sobre os Direitos das Pessoas com Deficiência, internalizada com status constitucional, e no conceito de dignidade como vetor interpretativo. Incapacidade, nessa leitura, é social e contextual: leva em conta escolaridade, idade, mercado local de trabalho e estrutura familiar.</p>
+        <p>Se a TNU firmar a tese ampliativa, escritórios com clientes que têm laudos de incapacidade parcial combinados com hipossuficiência documentada terão novo fundamento para concessão ou revisão de BPC — inclusive em casos já negados.</p>
+      </div>
+      <div class="top5-impacto">
+        <span class="top5-impacto-label">↗ O que muda amanhã</span>
+        Revise BPCs negados por "incapacidade não total". Se o cliente tem PcD parcial com vulnerabilidade econômica documentada, separe para análise assim que o acórdão sair.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-construcao">⚠ Em construção — aguardar TNU</span>
+        <span class="status-pill status-favoravel">🟢 Tende ao favorável ao segurado</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://www.cjf.jus.br/tnu" target="_blank">TNU · cjf.jus.br/tnu · Tema 385</a></div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STJ · Tema 1421 · Abril de 2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">O prazo prescricional não pode correr contra quem ainda não tinha capacidade de agir. STJ vai a julgamento sobre retroatividade de benefícios para menores.</div>
+      <div class="decisao-body">
+        <p>Um segurado falece. Os filhos têm 8 e 11 anos. Ninguém orienta a família sobre o direito à pensão. O prazo passa. Anos depois, já adultos, descobrem que eram titulares de um benefício que nunca foi requerido — e que o INSS entende prescrito.</p>
+        <p>É exatamente esse cenário que o STJ enfrenta no Tema 1421. A discussão não é sobre o mérito do benefício: é sobre se o prazo prescricional pode correr contra alguém absolutamente incapaz de agir. O direito civil responde que não — art. 198, I do Código Civil. O que falta é o STJ aplicar esse princípio de forma vinculante ao direito previdenciário.</p>
+        <p>Quando o acórdão sair, a tese valerá para todos os processos sobrestados e abrirá caminho para novos pedidos de retroatividade. Em casos com décadas entre o evento e o requerimento, o impacto financeiro pode ser expressivo — tanto para o segurado quanto para o escritório.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        Tese em discussão: "O prazo prescricional para o menor absolutamente incapaz reclamar benefício previdenciário — pensão por morte ou auxílio-reclusão — não flui enquanto perdurar a incapacidade civil, devendo a retroatividade ser assegurada desde a data do evento gerador."
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata</span>
+        Mapeie casos com óbito ou reclusão do segurado quando havia filhos menores de 16 anos. Se o benefício foi negado, teve retroativo cortado ou nunca foi requerido, há fundamento para revisão. Prepare os casos agora — protocole após o acórdão.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-construcao">⚠ Em construção</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.stj.jus.br" target="_blank">stj.jus.br · Tema 1421</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante da semana</span>
+    </div>
+
+    <div class="section-title">STJ Tema 1410 · A prescrição que não começa sem uma negativa formal</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Fundo de direito previdenciário: o prazo não corre enquanto o INSS não disser "não" por escrito</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">A prescrição do fundo de direito só se inicia quando o INSS emite negativa expressa e formal. Silêncio administrativo, indeferimento verbal ou perda de prazo sem comunicação oficial não deflagram o prazo. O direito permanece vivo enquanto não houver recusa registrada em despacho, carta ou intimação oficial.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Base legal</span>
+        <div class="tese-bloco-texto">Art. 103 da Lei 8.213/91 combinado com o princípio da <em>actio nata</em> — o prazo nasce quando o titular poderia exercer o direito, o que pressupõe ciência inequívoca da negativa. A doutrina majoritária e a jurisprudência das turmas do STJ convergem nessa direção.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como os tribunais estão decidindo</span>
+        <div class="tese-bloco-texto">A 1ª Seção do STJ caminha para a tese favorável ao segurado. Acórdãos recentes das turmas especializadas apontam consistentemente nessa direção. O repetitivo ainda não foi encerrado — e a definição precisa do critério de "negativa formal" será o ponto central do acórdão.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Quando o repetitivo for encerrado, haverá reabertura de casos aparentemente extintos. Antes de arquivar definitivamente qualquer processo por prescrição do fundo de direito, confirme: houve negativa formal registrada? Se não, o caso pode não estar prescrito. Esse questionamento pode valer honorários.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Em construção</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 RADAR -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tnu" style="flex-shrink:0;margin-top:2px;">TNU</span>
+      <div>
+        <div class="radar-titulo">Tema 385 — BPC além da incapacidade total</div>
+        <div class="radar-texto">Julgamento em andamento na TNU. Potencial de abrir nova linha de concessões para PcD com incapacidade parcial combinada com hipossuficiência documentada. Decisão pode impactar volume expressivo de processos em todo o país.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Temas 1421 e 1410 — dois repetitivos em fase final</div>
+        <div class="radar-texto">Alta relevância para escritórios previdenciaristas. Acompanhe a pauta da 1ª Seção semanalmente — ambos podem ser pautados com pouco aviso prévio.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Tema 1390 — encerrado, repercussão geral fixada</div>
+        <div class="radar-texto">Aposentadoria compulsória em estatais com funções de natureza estatal. Clientes na faixa de 70+ anos vinculados a Caixa, BB, Petrobras e BNDES devem ser avaliados com urgência.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-trf6" style="flex-shrink:0;margin-top:2px;">TRF6</span>
+      <div>
+        <div class="radar-titulo">Precatórios e RPVs — Abril 2026, Minas Gerais</div>
+        <div class="radar-texto">Rodada relevante de expedições na JFMG. Subseções de Poços de Caldas, Varginha e Passos têm processos na fila de cumprimento. Consulte o e-Proc para clientes com condenações em execução.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-inss" style="flex-shrink:0;margin-top:2px;">INSS</span>
+      <div>
+        <div class="radar-titulo">Lei 15.327/2026 — Instrução Normativa pendente</div>
+        <div class="radar-texto">Lei vigente. Procedimentos administrativos de ressarcimento aguardam regulamentação via IN. Use a lei como fundamento em petições judiciais — para o rito administrativo, aguarde a publicação da instrução normativa.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 DINHEIRO NA MESA -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">Precatórios e RPVs de abril: o dinheiro já ganho que ainda não foi levantado</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>Abril de 2026 marca rodada relevante de expedição e pagamento de precatórios federais e Requisições de Pequeno Valor na Justiça Federal. Para escritórios com clientes em Minas Gerais, TRF6 e JFMG são o ponto de atenção imediato.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟠 Impacto Médio ·</span>
+        <span class="dinheiro-header-title">TRF6 e JFMG · Abril 2026</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Este é o dinheiro que já foi ganho na sentença — mas que ainda não chegou à conta do cliente. Processos com trânsito em julgado há mais de 90 dias sem confirmação de pagamento merecem verificação imediata.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Acesse o e-Proc (JFMG · jfmg.jus.br) e filtre processos previdenciários com condenação transitada em julgado sem pagamento confirmado</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Verifique expedições de RPV e inclusão em lista de precatórios — especialmente nas subseções de Poços de Caldas, Varginha e Passos</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>RPVs têm prazo de 2 anos para levantamento. Valores não sacados dentro desse prazo retornam à União — o resgate posterior exige procedimento próprio e pode ser demorado</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Oriente clientes com RPV liberada a sacar imediatamente na agência Caixa designada — muitos não recebem comunicação pelo sistema</span>
+          </div>
+        </div>
+        <p style="margin-top:14px; font-weight:600; color:#2D1B6B;">RPV não levantada é honorário que some junto.</p>
+        <span class="dinheiro-fonte">Fonte: TRF6 · trf6.jus.br · JFMG · jfmg.jus.br</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 O QUE FAZER AMANHÃ -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Cinco ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Mapear pensões por morte com filhos menores à época do óbito</div>
+          <div class="amanha-texto">Filtre processos com menores de 16 anos quando o segurado faleceu ou foi preso. Se o benefício foi negado, teve retroativo cortado ou nunca foi requerido, separe para análise. Quanto mais antigo o evento, maior o potencial retroativo.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Solicitar extratos de benefício a clientes aposentados e pensionistas</div>
+          <div class="amanha-texto">Identifique descontos de associações, cooperativas ou planos que o cliente não reconhece. Com a Lei 15.327/2026 em vigor, cada desconto não autorizado é candidato a ressarcimento retroativo. Esse serviço pode ser oferecido como consultoria com honorários de resultado.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Contatar clientes com 70+ anos vinculados a estatais</div>
+          <div class="amanha-texto">Caixa Econômica, Banco do Brasil, Petrobras, BNDES, Correios. Com o Tema 1390 com repercussão geral fixada, a compulsória aos 75 anos é realidade jurídica para empregados com funções de natureza estatal. A janela de aposentadoria voluntária com planejamento pode ser curta. Não espere o ofício da empresa.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Revisitar processos "prescritos" antes do arquivamento definitivo</div>
+          <div class="amanha-texto">Antes de fechar qualquer caso por prescrição do fundo de direito, responda: houve negativa formal registrada em despacho ou comunicação oficial? Se não houve, o prazo pode não ter começado a correr. Vale a revisão antes de arquivar.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Conferir RPVs e precatórios liberados em abril — TRF6 e JFMG</div>
+          <div class="amanha-texto">Acesse o e-Proc com dados dos clientes com processos em cumprimento de sentença. Prioridade para as subseções de Poços de Caldas, Varginha e Passos. RPV não levantada retorna à União após 2 anos.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 CLIENTES PARA MAPEAR -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Seis perfis prioritários desta quinzena. Cada critério é um filtro para aplicar agora na carteira.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Pensionistas com filho menor à época do óbito ou reclusão</strong> — benefício negado, parcialmente pago ou não requerido quando havia filhos com menos de 16 anos.
+            <span class="mapear-tese">→ STJ Tema 1421</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Aposentados e pensionistas com descontos estranhos no extrato</strong> — cobranças de associações, sindicatos ou planos que o cliente não reconhece como contratados.
+            <span class="mapear-tese">→ Ressarcimento · Lei 15.327/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Empregados de estatais com 70 anos ou mais</strong> — vínculo ativo em Caixa Econômica, BB, Petrobras, BNDES ou similar com função de natureza estatal.
+            <span class="mapear-tese">→ Risco de compulsória · STF Tema 1390</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>PcD com BPC negado por incapacidade não total</strong> — laudo sem incapacidade absoluta, mas com hipossuficiência documentada e dificuldade real de inserção no mercado.
+            <span class="mapear-tese">→ Tese ampliativa · TNU Tema 385</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Clientes com condenação em cumprimento sem movimentação</strong> — trânsito em julgado há mais de 90 dias, sem confirmação de pagamento de RPV ou precatório.
+            <span class="mapear-tese">→ Verificar abril/2026 · TRF6/JFMG</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">06</div>
+          <div class="mapear-texto">
+            <strong>Segurados com benefício negado sem resposta escrita do INSS</strong> — requerimento protocolado com histórico de silêncio administrativo ou orientação verbal, sem despacho formal.
+            <span class="mapear-tese">→ Prescrição em revisão · STJ Tema 1410</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 ATENÇÃO OPERACIONAL -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Instrução Normativa da Lei 15.327/2026 ainda não publicada</div>
+          <div class="atencao-texto">A lei está em vigor, mas o INSS ainda não regulamentou o rito administrativo de ressarcimento. Para petições judiciais, use a lei diretamente. Para o caminho administrativo, aguarde a IN antes de orientar o cliente sobre prazo e procedimento.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 1421 — não ingresse antes do acórdão</div>
+          <div class="atencao-texto">O repetitivo ainda está em julgamento. Ingressar antes da uniformização pode gerar sobrestamento ou decisão de turma recursal antes da tese vinculante. Mapeie os casos agora — protocole após o acórdão.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Revisão da Vida Toda — definitivamente encerrada</div>
+          <div class="atencao-texto">O STF rejeitou os embargos em caráter definitivo. Não existe caminho ativo. Não mencione para clientes como possibilidade. Contratos de honorários com esse fundamento em casos novos geram risco ético e contratual.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">RPVs têm prazo de 2 anos — controle ativo é obrigatório</div>
+          <div class="atencao-texto">Valores de RPV não levantados dentro do prazo de 2 anos retornam à União. O resgate posterior exige procedimento próprio e costuma ser lento. Monitore as expedições e comunique os clientes imediatamente após a liberação.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 NÚMERO DO DIREITO -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado previdenciário da quinzena</div>
+      <div class="numero-destaque">14,7<span class="numero-unidade">mi</span></div>
+      <div class="numero-titulo">aposentados e pensionistas com desconto de associação em folha de benefício</div>
+      <div class="numero-texto">Segundo levantamento do Ministério da Previdência Social, mais de 14,7 milhões de beneficiários possuem descontos de entidades associativas registrados em sua folha de pagamento do INSS. Com a Lei 15.327/2026 em vigor, cada autorização duvidosa é um caso potencial. O mercado de revisão de descontos indevidos acaba de receber respaldo legal explícito — e é enorme.</div>
+      <div class="numero-fonte">Fonte: MPS · Ministério da Previdência Social · Dados de 2025</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 MOVIMENTO DE MERCADO -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">O advogado previdenciarista que combina contencioso + revisão + captação consultiva tende a crescer mais em 2026. E a distância para quem não faz isso está aumentando.</div>
+
+    <div class="mercado-corpo">
+      <p>Há uma mudança silenciosa acontecendo na advocacia previdenciária. Os escritórios que crescem não são necessariamente os que mais captam causas novas — são os que melhor exploram a carteira que já têm. Triagem sistemática, revisão periódica de benefícios, identificação de teses aplicáveis, controle de RPVs: isso é operação. E operação gera receita sem custo de aquisição.</p>
+
+      <p>O contexto de 2026 amplifica essa lógica. Uma população que envelhece, benefícios historicamente mal calculados, descontos indevidos acumulados por décadas, jurisprudência em expansão — quatro variáveis favoráveis convergindo simultaneamente. O Tema 1421, o Tema 1410 e a Lei 15.327/2026 estão todos em pauta neste momento. O sistema está se corrigindo — e há honorários nessa correção.</p>
+
+      <p>O que diferencia o advogado que vai crescer não é o conhecimento da legislação. É a capacidade de traduzir atualização jurídica em protocolo de triagem. De ler esta edição e sair com seis perfis de clientes mapeados, cinco ações executadas e dois casos preparados para protocolo. Isso não é só cultura jurídica — é gestão de escritório.</p>
+
+      <p>Em 2026, o previdenciarista que opera como estrategista — e não apenas como causídico — não depende do cliente chegar. Ele vai até o cliente com uma oportunidade identificada. Esse movimento transforma ticket médio, reduz ociosidade de carteira e constrói reputação que nenhum anúncio compra.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Triagem sistemática de carteira é o ativo mais subestimado dos escritórios previdenciaristas. Esta edição entrega o mapa. O próximo passo é executar.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 FRASE FINAL -->
+  <div class="frase-section">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Conhecer a lei é o mínimo. Saber para quem ela serve — e agir antes que o prazo passe — é o que distingue o advogado do especialista.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 004</div>
+  </div>
+
+  <!-- 13 FONTES -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">13</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br" target="_blank">STJ · Tema 1421 — Pensão por morte e auxílio-reclusão para menores</a></div>
+          <div class="fonte-desc">Pauta e andamento do repetitivo na 1ª Seção. Alta relevância para escritórios com clientes dependentes de segurados falecidos ou presos.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br" target="_blank">STJ · Tema 1410 — Prescrição do fundo de direito</a></div>
+          <div class="fonte-desc">Acórdãos e andamento do repetitivo. Atenção ao critério de "negativa formal" — ponto central para aplicação prática em revisões e novos requerimentos.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stf.jus.br" target="_blank">STF · Tema 1390 — Aposentadoria compulsória em estatais</a></div>
+          <div class="fonte-desc">Repercussão geral fixada. Consulte o inteiro teor para identificar os critérios exatos de "função de natureza estatal" e os limites subjetivos da decisão.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.cjf.jus.br/tnu" target="_blank">TNU · Tema 385 — BPC/LOAS além da incapacidade laboral</a></div>
+          <div class="fonte-desc">Pauta e acórdãos no portal da TNU. Acompanhe a data de julgamento — decisão pode abrir nova linha de concessões para PcD com incapacidade parcial.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.planalto.gov.br" target="_blank">Lei 15.327/2026 — Descontos indevidos em benefícios</a></div>
+          <div class="fonte-desc">Texto completo no Planalto e Diário Oficial. Monitore o DOU para a Instrução Normativa do INSS regulamentando o rito administrativo.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.jfmg.jus.br" target="_blank">JFMG · e-Proc — Precatórios e RPVs</a></div>
+          <div class="fonte-desc">Consulta processual da Justiça Federal em Minas Gerais. Acesso por número de processo ou CPF para verificação de expedições de RPV e precatórios.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 004 · 20 de abril de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
