@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREVIS — Edição nº 007 · 2 de maio de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --accent: #c8371a;
+    --accent2: #1a4c8c;
+    --muted: #7a7670;
+    --rule: #d6d0c4;
+    --tag-civ:     #1a4c8c;
+    --tag-trib:    #1a6b42;
+    --tag-trab:    #7a4a00;
+    --tag-hold:    #5c2d82;
+    --tag-dest:    #555555;
+    --tag-digital: #0e7490;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* ---- MASTHEAD ---- */
+  .masthead {
+    border-bottom: 3px double var(--ink);
+    padding: 36px 0 20px;
+    text-align: center;
+  }
+  .masthead-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .masthead-logo span { color: var(--accent); }
+  .masthead-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .masthead-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .masthead-meta span::before { content: '— '; }
+
+  /* ---- INDEX ---- */
+  .index-block {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--ink);
+    background: white;
+    padding: 18px 22px;
+    margin: 28px 0 36px;
+  }
+  .index-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .index-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+  .index-list li {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+  }
+  .index-list li .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 16px;
+  }
+  .index-list a { color: inherit; text-decoration: none; }
+  .index-list a:hover { text-decoration: underline; color: var(--accent2); }
+
+  /* ---- SECTION ---- */
+  .section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    min-width: 24px;
+  }
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ---- ABERTURA ---- */
+  .abertura-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .abertura-text strong { color: var(--accent); }
+
+  /* ---- PRIORIDADE DIVIDER ---- */
+  .priority-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0 24px;
+  }
+  .priority-divider-line { flex: 1; height: 1px; background: var(--rule); }
+  .priority-divider-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ---- NEWS CARD ---- */
+  .news-card {
+    border-left: 3px solid var(--rule);
+    padding-left: 16px;
+    margin-bottom: 34px;
+  }
+  .news-card:last-child { margin-bottom: 0; }
+  .news-card.priority { border-left-color: var(--accent); }
+
+  .news-tag-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    flex-wrap: wrap;
+  }
+  .news-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color: white;
+  }
+  .tag-civ      { background: var(--tag-civ); }
+  .tag-trib     { background: var(--tag-trib); }
+  .tag-trab     { background: var(--tag-trab); }
+  .tag-hold     { background: var(--tag-hold); }
+  .tag-dest     { background: var(--tag-dest); }
+  .tag-digital  { background: var(--tag-digital); }
+
+  .urgente-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 2px;
+    color: white;
+    background: #b91c1c;
+  }
+  .status-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 2px;
+    color: #3a3834;
+    background: #e8e4dc;
+  }
+  .status-badge.mudanca { background: #fff0e8; color: #b45309; border: 1px solid #f0c890; }
+
+  .news-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .news-card p {
+    font-size: 14px;
+    line-height: 1.72;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .news-card p:last-of-type { margin-bottom: 8px; }
+
+  /* Bloco impacto */
+  .news-impact {
+    background: #f0ede6;
+    border-left: 3px solid var(--accent);
+    padding: 9px 13px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-impact strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Bloco ação */
+  .news-acao {
+    background: #f0f7f1;
+    border-left: 3px solid #1a6b42;
+    padding: 9px 13px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-acao strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1a6b42;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Bloco dinheiro */
+  .news-dinheiro {
+    background: #eef3fa;
+    border-left: 3px solid var(--accent2);
+    padding: 9px 13px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .news-dinheiro strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Bloco aviso */
+  .news-aviso {
+    background: #fffbf0;
+    border-left: 3px solid #d97706;
+    padding: 7px 12px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: #7a5000;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.01em;
+  }
+  .news-aviso strong {
+    color: #b45309;
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .news-source {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .news-source a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .news-source a:hover { text-decoration: underline; }
+
+  /* ---- BASE LEGAL ---- */
+  .base-legal-box {
+    background: #eef3fa;
+    border: 1px solid #c8d8f0;
+    border-left: 3px solid var(--accent2);
+    padding: 8px 13px;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .base-legal-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .base-legal-items { display: flex; gap: 8px; flex-wrap: wrap; }
+  .base-legal-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent2);
+    background: white;
+    border: 1px solid #c8d8f0;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* ---- HONORÁRIOS ---- */
+  .news-honorarios {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    margin-top: 2px;
+  }
+  .honorarios-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .honorarios-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: #1a6b42;
+    letter-spacing: 0.04em;
+  }
+  .honorarios-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---- DECISÃO DO DIA ---- */
+  .decisao-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 26px;
+    border-radius: 2px;
+  }
+  .decisao-tribunal {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8a882;
+    margin-bottom: 8px;
+  }
+  .decisao-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    color: white;
+  }
+  .decisao-tese {
+    background: rgba(200, 55, 26, 0.2);
+    border-left: 3px solid var(--accent);
+    padding: 11px 15px;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.65;
+    margin-bottom: 16px;
+    color: #f0ede6;
+  }
+  .decisao-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #c8c0b0;
+    margin-bottom: 16px;
+  }
+  .decisao-pratica {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 14px;
+    font-size: 13.5px;
+    line-height: 1.68;
+    color: #e0d8cc;
+  }
+  .decisao-pratica strong {
+    color: #c8a882;
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .decisao-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: #6a6258;
+    margin-top: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---- ALERTA ---- */
+  .alerta-box {
+    background: #fff8f7;
+    border: 1px solid #f0c0b8;
+    border-top: 4px solid var(--accent);
+    padding: 22px 24px;
+    border-radius: 2px;
+  }
+  .alerta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .alerta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .alerta-box p {
+    font-size: 14px;
+    line-height: 1.72;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .alerta-acao {
+    background: #f0f7f1;
+    border-left: 3px solid #1a6b42;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-top: 14px;
+    color: var(--ink);
+    border-radius: 0 2px 2px 0;
+  }
+  .alerta-acao strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1a6b42;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ---- OPORTUNIDADE ---- */
+  .oport-box {
+    background: #f4f0fa;
+    border-left: 4px solid var(--tag-hold);
+    padding: 22px 24px;
+    border-radius: 2px;
+  }
+  .oport-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tag-hold);
+    margin-bottom: 8px;
+  }
+  .oport-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .oport-box p {
+    font-size: 14px;
+    line-height: 1.72;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .oport-perfil {
+    background: white;
+    border: 1px solid #cfc5e8;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.65;
+    margin-top: 12px;
+    color: var(--ink);
+    border-radius: 2px;
+  }
+  .oport-perfil strong {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--tag-hold);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ---- CURIOSIDADE ---- */
+  .curiosidade-text {
+    font-size: 14.5px;
+    line-height: 1.78;
+    color: #3a3834;
+    margin-bottom: 12px;
+  }
+  .curiosidade-text em {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* ---- TERMO ---- */
+  .termo-box {
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent2);
+    padding: 20px 22px;
+    background: white;
+    border-radius: 0 0 2px 2px;
+  }
+  .termo-nome {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 900;
+    color: var(--accent2);
+    margin-bottom: 4px;
+  }
+  .termo-origem {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .termo-box p {
+    font-size: 14px;
+    line-height: 1.72;
+    color: #3a3834;
+    margin-bottom: 10px;
+  }
+  .termo-box p:last-child { margin-bottom: 0; }
+
+  /* ---- ROTINA ---- */
+  .rotina-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .rotina-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 1.68;
+    color: #3a3834;
+  }
+  .rotina-bullet {
+    min-width: 7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  /* ---- FRASE ---- */
+  .frase-box {
+    border-left: 4px solid var(--accent);
+    padding: 18px 22px;
+    background: white;
+    border-radius: 0 2px 2px 0;
+  }
+  .frase-texto {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .frase-autor {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ---- PARA LER MAIS ---- */
+  .lermais-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .lermais-list li {
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+  }
+  .lermais-list li:first-child { padding-top: 0; }
+  .lermais-list li:last-child { border-bottom: none; }
+  .lermais-list a {
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--accent2);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 3px;
+  }
+  .lermais-list a:hover { text-decoration: underline; }
+  .lermais-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    border-top: 3px double var(--ink);
+    padding-top: 22px;
+    margin-top: 48px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    line-height: 2;
+  }
+  .footer strong { color: var(--ink); }
+  .footer-disclaimer {
+    font-size: 10px;
+    color: #b0ada8;
+    margin-top: 8px;
+    line-height: 1.6;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---- TOP 3 ---- */
+  .top3-block {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 20px 24px;
+    margin: 28px 0 0;
+    border-radius: 2px;
+  }
+  .top3-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #c8a882;
+    margin-bottom: 14px;
+  }
+  .top3-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .top3-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #e8e0d4;
+  }
+  .top3-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 22px;
+    margin-top: 1px;
+  }
+  .top3-item-body { display: flex; flex-direction: column; gap: 2px; }
+  .top3-item-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13.5px;
+    color: white;
+  }
+  .top3-item-sub { font-size: 12.5px; color: #b0a898; }
+
+  @media (max-width: 520px) {
+    .index-list { grid-template-columns: 1fr; }
+    .masthead-logo { font-size: 40px; }
+    .masthead-meta { flex-direction: column; gap: 4px; align-items: center; }
+    .masthead-meta span::before { content: ''; }
+    .wrapper { padding: 0 16px 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ======================== MASTHEAD ======================== -->
+  <div class="masthead">
+    <div class="masthead-logo">BREVI<span>S</span></div>
+    <div class="masthead-tagline">Radar jurídico · Decisões estratégicas</div>
+    <div class="masthead-meta">
+      <span>Edição nº 007</span>
+      <span>2 de maio de 2026</span>
+      <span>Sábado</span>
+    </div>
+  </div>
+
+  <!-- NAV VOLTAR -->
+  <div style="padding: 10px 0 2px;">
+    <a href="index.html" style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none;">← Voltar para o índice</a>
+  </div>
+
+  <!-- ======================== ÍNDICE ======================== -->
+  <div class="index-block">
+    <div class="index-title">Nesta edição</div>
+    <ul class="index-list">
+      <li><span class="num">01</span><a href="#s01">Abertura</a></li>
+      <li><span class="num">02</span><a href="#s02">O Que Você Precisa Saber</a></li>
+      <li><span class="num">03</span><a href="#s03">Decisão do Dia</a></li>
+      <li><span class="num">04</span><a href="#s04">Alerta Jurídico</a></li>
+      <li><span class="num">05</span><a href="#s05">Oportunidade de Atuação</a></li>
+      <li><span class="num">06</span><a href="#s06">Curiosidade Jurídica</a></li>
+      <li><span class="num">07</span><a href="#s07">Termo Jurídico do Dia</a></li>
+      <li><span class="num">08</span><a href="#s08">Impacto na Sua Rotina</a></li>
+      <li><span class="num">09</span><a href="#s09">Frase do Dia</a></li>
+      <li><span class="num">10</span><a href="#s10">Para Ler Mais</a></li>
+    </ul>
+  </div>
+
+  <!-- ======================== S01 — ABERTURA ======================== -->
+  <section class="section" id="s01">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <span class="section-title">Abertura</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="abertura-text">Bom dia. Este é o Brevis. De volta — e com abril inteiro para cobrir.</p>
+    <p class="abertura-text" style="margin-top:14px;">
+      <strong>Três frentes exigem ação imediata.</strong> O STJ — pela sua 2ª Seção, instância de unificação da jurisprudência de direito privado — reafirmou a cobertura ilimitada de terapias para TEA e passou a admitir reembolso retroativo das sessões já pagas pelas famílias. Em muitos casos, o retroativo supera em valor o pedido de obrigação de fazer. No campo tributário, os Estados estão convertendo a EC 132 em lei estadual concreta: alíquotas de ITCMD estão subindo, e a janela para planejamento sucessório nas alíquotas antigas está visivelmente se fechando. E a Receita Federal abriu edital de transação tributária com descontos expressivos — uma oportunidade direta de regularizar passivos sem litígio.
+    </p>
+    <p class="abertura-text" style="margin-top:12px;">
+      No campo trabalhista, dois alertas que todo advogado com carteira empresarial precisa ver hoje: o TST reconhece rescisão indireta por atraso reiterado em horas extras, e os tribunais começam a condenar empresas por exigir <strong>disponibilidade ininterrupta</strong> via WhatsApp fora do expediente — o Direito à Desconexão chegou na prática antes de chegar na lei. E um ajuste importante de estratégia: o STJ encerrou a tese do dano moral automático em negativas de plano de saúde. Prova concreta passou a ser obrigatória.
+    </p>
+    <p class="abertura-text" style="margin-top:12px;">
+      Dez notícias. Cinco com ação urgente. Cada seção tem pelo menos um cliente no seu escritório esperando por ela.
+    </p>
+  </section>
+
+  <!-- ======================== TOP 3 ======================== -->
+  <div class="top3-block">
+    <div class="top3-label">⭐ Top 3 desta Edição — Maior Impacto Prático</div>
+    <ul class="top3-list">
+      <li>
+        <span class="top3-num">1</span>
+        <div class="top3-item-body">
+          <span class="top3-item-title">TEA — Reembolso Retroativo + Cobertura Ilimitada</span>
+          <span class="top3-item-sub">STJ 2ª Seção (Rel. Min. Nancy Andrighi) consolida e admite retroativo — mercado de massa. Potencial de honorários: $$$$</span>
+        </div>
+      </li>
+      <li>
+        <span class="top3-num">2</span>
+        <div class="top3-item-body">
+          <span class="top3-item-title">ITCMD Progressivo — Janela Tributária Urgente</span>
+          <span class="top3-item-sub">Estados regulamentando alíquotas em 2026 — ação agora ou custo dobrado depois. Potencial de honorários: $$$$</span>
+        </div>
+      </li>
+      <li>
+        <span class="top3-num">3</span>
+        <div class="top3-item-body">
+          <span class="top3-item-title">Transação Tributária — Edital Receita Federal</span>
+          <span class="top3-item-sub">Descontos reais, prazo de adesão, sem litígio. Regularização direta com honorários sobre economia gerada. Potencial: $$$</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ======================== S02 — O QUE VOCÊ PRECISA SABER ======================== -->
+  <section class="section" id="s02">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <span class="section-title">O Que Você Precisa Saber</span>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- DIVIDER PRIORIDADE MÁXIMA -->
+    <div class="priority-divider">
+      <div class="priority-divider-line"></div>
+      <span class="priority-divider-label">🔴 Prioridade Máxima</span>
+      <div class="priority-divider-line"></div>
+    </div>
+
+    <!-- CARD 1: TEA -->
+    <div class="news-card priority">
+      <div class="news-tag-row">
+        <span class="news-tag tag-civ">Cível · Saúde</span>
+        <span class="urgente-badge">🚨 Urgente</span>
+        <span class="status-badge">✔ Consolidado · STJ 2ª Seção</span>
+      </div>
+      <h3>STJ reafirma cobertura ilimitada para terapias de TEA e passa a admitir reembolso retroativo das sessões já pagas</h3>
+      <p>A 2ª Seção do STJ — instância que reúne a 3ª e a 4ª Turmas e tem função constitucional de unificar a jurisprudência de direito privado —, sob a relatoria da Ministra Nancy Andrighi, consolidou no Informativo 880 (10/04/2026) que operadoras de planos de saúde não podem limitar sessões de terapias multidisciplinares prescritas para pacientes com Transtorno do Espectro Autista. O peso da 2ª Seção é decisivo: não se trata de uma turma isolada, mas da instância que unifica o entendimento entre as turmas de direito privado — o que reduz drasticamente a resistência nas instâncias inferiores.</p>
+      <p>O elemento novo e estratégico desta versão do entendimento é a <strong>retroatividade</strong>: famílias que arcaram com o custo das sessões do próprio bolso — seja porque o plano negou cobertura, seja porque limitou o número de sessões e a família pagou a diferença — têm fundamento para ação de reembolso. O prazo prescricional do CDC (5 anos) define o horizonte do retroativo. Em muitas famílias, esse valor supera em muito a obrigação futura de fazer.</p>
+      <div class="base-legal-box">
+        <span class="base-legal-title">Base Legal</span>
+        <div class="base-legal-items">
+          <span class="base-legal-item">CDC — Art. 51</span>
+          <span class="base-legal-item">Lei 9.656/1998</span>
+          <span class="base-legal-item">Lei 12.764/2012 (Lei TEA)</span>
+          <span class="base-legal-item">STJ · Informativo 880</span>
+        </div>
+      </div>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Qualquer cláusula contratual que limite sessões de ABA, fonoaudiologia, terapia ocupacional ou psicologia para TEA é nula de pleno direito. O precedente da 2ª Seção — instância unificadora — garante alta taxa de concessão de liminares. O aspecto retroativo é o novo vetor de honorários: cada ano de sessões pagas fora do plano é base de cálculo para reembolso.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Dimensão Financeira</strong>
+        Uma família com 3 anos de sessões pagas do próprio bolso, à média de R$ 8 mil/mês, tem base de reembolso de R$ 288 mil. Honorários de êxito de 20% = R$ 57 mil por ação. O prazo prescricional de 5 anos pode ampliar ainda mais essa base. É uma das ações com maior potencial financeiro por caso individual no direito do consumidor.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Mapeie clientes com filhos com diagnóstico de TEA. Pergunte: (1) o plano limita sessões no contrato? (2) a família pagou sessões do próprio bolso nos últimos 5 anos? Se sim para qualquer das duas perguntas, você tem uma ação. Ajuíze com tutela de urgência (sessões futuras) + pedido de reembolso retroativo. Cite o Informativo 880 do STJ (10/04/2026) e a relatoria da Min. Nancy Andrighi na 2ª Seção.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$$</span>
+        <span class="honorarios-desc">— demanda crescente, liminares com alta concessão, retroativo com base de cálculo expressiva</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/13032026-Limitacao-de-sessoes-de-terapia-multidisciplinar-prescritas-a-paciente-com-TEA-e-abusiva.aspx" target="_blank">STJ · Informativo 880 · 2ª Seção · Rel. Min. Nancy Andrighi · 10/04/2026</a></p>
+    </div>
+
+    <!-- CARD 2: ITCMD -->
+    <div class="news-card priority">
+      <div class="news-tag-row">
+        <span class="news-tag tag-trib">Tributário</span>
+        <span class="news-tag tag-hold">Holding</span>
+        <span class="urgente-badge">🚨 Urgente</span>
+        <span class="status-badge">⚠ Tendência · Em regulamentação</span>
+      </div>
+      <h3>Estados aceleram regulamentação do ITCMD progressivo após EC 132/2023 — carga tributária pode dobrar ainda em 2026</h3>
+      <p>A Emenda Constitucional 132/2023 tornou obrigatória a progressividade do ITCMD em todo o país. O que era obrigação constitucional em 2023 virou realidade legislativa em 2026: os Estados estão aprovando leis estaduais com alíquotas escalonadas por faixa de patrimônio, com valores máximos variando de 6% a 8% conforme a lei de cada unidade federativa. Alguns Estados já têm lei vigente. Outros estão com projetos em votação final nas Assembleias Legislativas.</p>
+      <p>Atenção técnica essencial: a legislação relevante é a do Estado de domicílio do doador (para doações de bens móveis e participações societárias) ou do Estado de localização do imóvel (para doações imobiliárias). Antes de qualquer recomendação, o advogado deve verificar o estágio específico da lei estadual aplicável ao caso — a urgência e as alíquotas variam significativamente de Estado para Estado.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Para clientes com patrimônio relevante, a diferença entre agir antes e depois da lei nova pode representar dezenas ou centenas de milhares de reais de imposto. A doação com reserva de usufruto feita hoje trava a alíquota atual; feita após a lei nova, paga a alíquota progressiva. A janela existe — e é mensurável.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Dimensão Financeira</strong>
+        Patrimônio de R$ 5 milhões: diferença entre 4% e 8% = R$ 200 mil a mais de imposto. Em holdings com múltiplos imóveis ou participações societárias, a conta pode ultrapassar R$ 500 mil. Honorários de planejamento patrimonial: R$ 15 mil a R$ 50 mil por estrutura — e a urgência gerada pela regulamentação aumenta a taxa de conversão do cliente.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        (1) Identifique clientes com patrimônio acima de R$ 1 milhão. (2) Verifique a legislação estadual aplicável — domicílio do doador para bens móveis, localização do imóvel para bens imobiliários. (3) Calcule a diferença entre a alíquota atual e a projetada. (4) Apresente o número concreto ao cliente. A doação com reserva de usufruto é a estratégia mais acessível e eficaz para travar a alíquota vigente enquanto ela ainda existe.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$$</span>
+        <span class="honorarios-desc">— planejamento patrimonial com urgência real; R$ 15k–50k por estrutura; urgência legislativa aumenta conversão</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.conjur.com.br/2026-abr-22/estados-avancam-regulamentacao-itcmd-progressivo" target="_blank">ConJur · 22/04/2026</a> · <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm" target="_blank">EC 132/2023</a> · Art. 155, §1º da CF</p>
+    </div>
+
+    <!-- CARD 3: TRANSAÇÃO TRIBUTÁRIA -->
+    <div class="news-card priority">
+      <div class="news-tag-row">
+        <span class="news-tag tag-trib">Tributário</span>
+        <span class="urgente-badge">🚨 Urgente</span>
+        <span class="status-badge">✔ Regulamentado · Receita Federal</span>
+      </div>
+      <h3>Receita Federal amplia transação tributária para pequenos débitos com descontos expressivos e prazo de adesão</h3>
+      <p>A Receita Federal publicou novo edital de transação tributária voltado a contribuintes com débitos de menor valor, oferecendo condições objetivamente vantajosas: descontos expressivos sobre multas e juros acumulados, parcelamento estendido além das condições do parcelamento ordinário, e possibilidade de uso de créditos fiscais e prejuízo fiscal como moeda de pagamento para pessoas jurídicas. O edital tem prazo de adesão — e as condições mais favoráveis se concentram nas primeiras janelas.</p>
+      <p>Para escritórios com carteira tributária ou que assessoram empresas com passivo fiscal acumulado, este é o momento de fazer a conta: em muitos casos de débitos menores, o valor após o desconto da transação é substancialmente inferior ao valor que seria pago no litígio — considerando custas, honorários de defesa e tempo de exposição à execução fiscal.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Regularização tributária sem necessidade de litígio. O cliente resolve a pendência, libera a certidão negativa de débitos — ativo concreto para licitações, crédito e contratos —, e encerra o risco de penhora e execução. A adesão ao edital suspende qualquer medida executiva em andamento durante a negociação.
+      </div>
+      <div class="news-dinheiro">
+        <strong>Dimensão Financeira</strong>
+        Honorários de transação tributária são calculados sobre a economia gerada (percentual do desconto obtido) ou sobre o valor regularizado. Para débitos de R$ 100 mil a R$ 500 mil, honorários entre R$ 10 mil e R$ 50 mil são razoáveis e autofinanciados pela economia. O argumento de venda é a diferença entre o valor atual e o valor após o desconto — apresente os dois números lado a lado.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Mapeie clientes com débitos fiscais federais em aberto — especialmente os inscritos em dívida ativa ou com execução fiscal em curso. Calcule o valor atual da dívida (principal + multa + juros) e compare com o valor após o desconto do edital. Apresente como oportunidade de prazo limitado. O prazo de adesão é real: adiar significa perder as condições mais favoráveis.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$</span>
+        <span class="honorarios-desc">— honorários sobre economia gerada; conversão rápida; sem litígio</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.gov.br/receitafederal" target="_blank">Receita Federal · gov.br/receitafederal · 15/04/2026</a> · Lei 13.988/2020 · Art. 171 CTN</p>
+    </div>
+
+    <!-- CARD 4: WHATSAPP / DESCONEXÃO -->
+    <div class="news-card priority">
+      <div class="news-tag-row">
+        <span class="news-tag tag-digital">Digital · Trabalhista</span>
+        <span class="urgente-badge">🚨 Urgente</span>
+        <span class="status-badge">⚠ Tendência · Em construção</span>
+      </div>
+      <h3>Justiça reconhece dano existencial por violação ao Direito à Desconexão: disponibilidade ininterrupta via WhatsApp fora do expediente gera indenização</h3>
+      <p>Decisão recente reconheceu que o empregado submetido a <strong>disponibilidade ininterrupta</strong> — padrão habitual de demandas por WhatsApp fora do horário de trabalho, sem respeito ao período de descanso — sofre <strong>dano existencial</strong>, modalidade de dano moral que afeta o direito ao lazer, à vida pessoal e ao convívio familiar. O fundamento é o <strong>Direito à Desconexão</strong>: o trabalhador tem direito a um período de efetivo afastamento do trabalho, livre de obrigações patronais.</p>
+      <p>Atenção técnica: o que se condena não é a mensagem pontual ou o contato esporádico — é o padrão sistemático de exigência de resposta fora do expediente que torna o descanso impossível. A linha está sendo traçada caso a caso, e a prova central é o próprio histórico de mensagens: horários, frequência e natureza das demandas. Em muitos casos, o trabalhador tem essa prova guardada no próprio celular.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático — Duas frentes simultâneas</strong>
+        Para advogados de trabalhadores: identifique clientes que eram contactados de forma habitual e excessiva fora do expediente. O histórico de mensagens (screenshots com data e hora) é prova direta e acessível. Para advogados empresariais: a ausência de política de comunicação digital é uma vulnerabilidade ativa — a condenação não é teórica, já está acontecendo.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        <strong>Para trabalhadores:</strong> documente o padrão — print das conversas com horários, frequência e natureza das demandas. Ajuíze com pedido de dano existencial e, se houver horas extras efetivas decorrentes da disponibilidade, cumule o pedido. <strong>Para empresas:</strong> elabore política de comunicação digital com horários definidos. Inclua no regimento interno. Oriente gestores. O custo de uma política preventiva é uma fração do custo de uma condenação por dano existencial.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$</span>
+        <span class="honorarios-desc">— crescimento acelerado; prova acessível; empresas precisam de assessoria preventiva urgente</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.conjur.com.br" target="_blank">ConJur · 26/04/2026</a> · Art. 7º, XIII e XVI da CF · Arts. 186 e 927 do CC · CLT</p>
+    </div>
+
+    <!-- CARD 5: DANO MORAL PLANO DE SAÚDE -->
+    <div class="news-card priority">
+      <div class="news-tag-row">
+        <span class="news-tag tag-civ">Cível · Consumidor · Saúde</span>
+        <span class="urgente-badge">🚨 Urgente</span>
+        <span class="status-badge mudanca">⚠ Mudança de Rota · STJ 2026</span>
+      </div>
+      <h3>STJ encerra o dano moral automático em negativas de plano de saúde: exige agora prova concreta de agravamento da condição ou risco à saúde</h3>
+      <p>Em decisão de 2026, o STJ encerrou a aplicação da teoria do <em>dano in re ipsa</em> especificamente para negativas de cobertura por planos de saúde. O entendimento anterior — de que a negativa, por si só, gerava dano moral presumido, sem necessidade de prova adicional — foi expressamente afastado. Agora, o consumidor precisa demonstrar que a negativa gerou <strong>agravamento concreto da condição de saúde ou risco de morte</strong>, configurando o dano de forma não automática.</p>
+      <p>A mudança é relevante e exige ajuste imediato na estratégia de escritórios com volume de ações contra planos. A negativa continua sendo ilegal e fundamento para a obrigação de fazer — o que muda é o pedido de dano moral: sem prova do impacto concreto na saúde do paciente, o pedido corre risco real de improcedência.</p>
+      <div class="news-aviso">
+        <strong>⚠ Ajuste Estratégico Imediato</strong>
+        Revise os modelos de petição inicial usados em ações contra planos de saúde. O pedido de dano moral precisa agora ser instruído com: (1) declaração do paciente narrando o impacto da negativa; (2) documento médico sobre as consequências do atraso no tratamento; (3) comprovação de agravamento do quadro ou risco de morte. Sem essa instrução, o pedido de danos morais tem risco elevado de improcedência.
+      </div>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        A obrigação de fazer (cobrir o tratamento) continua plenamente cabível e com alta taxa de concessão liminar — especialmente com o fundamento do TEA (vide Card 1). O que muda é o pedido de dano moral: a prova passou a ser essencial. Escritórios com carteira de saúde devem revisar imediatamente seus modelos de petição e o checklist de documentos do cliente.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$</span>
+        <span class="honorarios-desc">— ajuste estratégico necessário; impacto maior em escritórios com volume de ações contra planos</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.stj.jus.br" target="_blank">STJ · 12/04/2026</a> · CDC · Art. 186 e 927 do CC</p>
+    </div>
+
+    <!-- DIVIDER SUPORTE ESTRATÉGICO -->
+    <div class="priority-divider">
+      <div class="priority-divider-line"></div>
+      <span class="priority-divider-label" style="color: var(--muted);">Suporte Estratégico</span>
+      <div class="priority-divider-line"></div>
+    </div>
+
+    <!-- CARD 6: RESCISÃO INDIRETA -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-trab">Trabalhista</span>
+        <span class="status-badge">⚠ Tendência · TST</span>
+      </div>
+      <h3>TST reconhece rescisão indireta por atraso reiterado no pagamento de horas extras</h3>
+      <p>O TST reafirmou que o não pagamento habitual de horas extras — de forma reiterada, não como episódio isolado — configura falta grave do empregador e autoriza o empregado a pleitear a rescisão indireta, com todos os direitos rescisórios de uma dispensa sem justa causa: FGTS + multa de 40%, aviso prévio e verbas rescisórias plenas. O trabalhador não precisa pedir demissão e perder seus direitos, nem "aguentar" indefinidamente. A rescisão indireta é o instrumento certo — e o TST está consolidando sua aplicação para essa hipótese.</p>
+      <div class="news-impact">
+        <strong>Impacto Prático</strong>
+        Histórico de horas extras não pagas documentado (extratos bancários, contracheques, registros de ponto) sustenta o pedido de rescisão indireta. A reiteração é o elemento central — um mês de atraso não basta; o padrão habitual sim.
+      </div>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Levante o histórico de pagamento de horas extras dos clientes empregados. Reiteração documentada sustenta pedido de rescisão indireta com FGTS + multa de 40% + aviso prévio.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$</span>
+        <span class="honorarios-desc">— reclamatória trabalhista com verbas rescisórias plenas; prova documental acessível</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.tst.jus.br/noticias" target="_blank">TST · 25/04/2026</a> · Art. 483, d, da CLT</p>
+    </div>
+
+    <!-- CARD 7: STF TETO -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-dest">Direito Público</span>
+        <span class="status-badge">✔ Consolidado · STF · Art. 37, XI CF</span>
+      </div>
+      <h3>STF reafirma teto constitucional para verbas criadas por ato administrativo sem base em lei formal</h3>
+      <p>O STF reiterou que verbas remuneratórias criadas por portarias, resoluções ou atos administrativos — sem respaldo em lei formal — não podem superar o teto constitucional do art. 37, XI da CF. Entes públicos que pagam esse tipo de verba acima do teto estão sujeitos a revisão administrativa e eventual ação de ressarcimento. Servidores que recebem esses valores — especialmente em Municípios de menor porte — devem ser orientados sobre o risco de devolução, salvo prova de boa-fé qualificada.</p>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Se você assessora entes públicos: solicite levantamento das verbas pagas sem amparo em lei formal e avalie exposição. Se você defende servidores: avalie boa-fé qualificada como fundamento para resistir ao ressarcimento.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$</span>
+        <span class="honorarios-desc">— assessoria de entes públicos ou defesa de servidores em ações de ressarcimento</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://portal.stf.jus.br" target="_blank">STF · 18/04/2026</a> · Art. 37, XI da CF</p>
+    </div>
+
+    <!-- CARD 8: COMPETÊNCIA ACP -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-civ">Cível · Processual</span>
+        <span class="status-badge">✔ Consolidado · STJ Informativo 885</span>
+      </div>
+      <h3>STJ fixa competência preventiva em ações coletivas de abrangência nacional</h3>
+      <p>O STJ consolidou que o juízo prevento concentra as ações civis públicas de abrangência nacional, evitando decisões contraditórias entre diferentes varas e tribunais. A regra se aplica a ACPs que discutem direitos difusos e coletivos em escala nacional — consumidor, saúde, meio ambiente. Antes de ajuizar qualquer ACP nacional, o advogado deve consultar o sistema para identificar o juízo prevento: distribuir para vara errada pode resultar em remessa ou extinção.</p>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Antes de ajuizar ACP de abrangência nacional, verifique o juízo prevento no sistema do STJ. Se houver ação anterior sobre o mesmo objeto, avalie ingresso como litisconsorte ou amicus curiae em vez de nova ação.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$</span>
+        <span class="honorarios-desc">— ações coletivas com honorários sobre benefício econômico; impacto estratégico no ajuizamento</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://scon.stj.jus.br" target="_blank">STJ · Informativo 885 · 23/04/2026</a></p>
+    </div>
+
+    <!-- CARD 9: DISPENSA DISCRIMINATÓRIA -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-trab">Trabalhista</span>
+        <span class="status-badge">✔ Consolidado · Súmula 443 TST</span>
+      </div>
+      <h3>TST mantém presunção de dispensa discriminatória em caso de doença grave — ônus é do empregador</h3>
+      <p>O TST reafirmou a Súmula 443: a dispensa de empregado portador de doença grave presume-se discriminatória, independentemente de prova direta do motivo. O empregador tem o ônus de afastar a presunção. A lista de doenças aplicável inclui HIV, hepatite, câncer, cardiopatia grave, entre outras. O pedido principal é reintegração + salários do período; subsidiariamente, indenização substitutiva + dano moral. O risco para a empresa é alto — reintegração forçada é uma das condenações mais custosas do trabalhista.</p>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Identifique clientes dispensados durante ou logo após tratamento de doença grave. Junte prontuário, laudo médico e carta de dispensa. A presunção é legal — o empregado não precisa provar o preconceito, só a doença e a dispensa.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$</span>
+        <span class="honorarios-desc">— reintegração + dano moral; risco alto para empresa; presunção legal favorece o trabalhador</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.tst.jus.br" target="_blank">TST · Súmula 443 · 20/04/2026</a> · Lei 9.029/1995</p>
+    </div>
+
+    <!-- CARD 10: ALIENAÇÃO FIDUCIÁRIA -->
+    <div class="news-card">
+      <div class="news-tag-row">
+        <span class="news-tag tag-civ">Cível · Imobiliário</span>
+        <span class="status-badge">⚠ Em afetação · STJ · Repetitivo</span>
+      </div>
+      <h3>STJ afeta repetitivo sobre validade de alienação fiduciária de imóvel sem registro em cartório</h3>
+      <p>O STJ afetou para julgamento repetitivo a questão sobre a validade, entre as partes, de contrato de alienação fiduciária de imóvel não registrado no Cartório de Registro de Imóveis. O ponto central: o contrato produz efeitos entre as partes ainda que sem o registro que o tornaria oponível a terceiros? Se o STJ entender que a ausência de registro invalida o contrato mesmo entre as partes, contratos hoje em execução — inclusive consolidações de propriedade em andamento — podem ser questionados. Escritórios com carteira imobiliária devem acompanhar a pauta.</p>
+      <div class="news-acao">
+        <strong>Ação Recomendada</strong>
+        Identifique contratos de alienação fiduciária em execução sem registro consolidado. Para credores: verifique o registro de todos os contratos ativos antes do julgamento. Para devedores: a tese pode ser utilizada como fundamento de defesa em ações de consolidação de propriedade.
+      </div>
+      <div class="news-honorarios">
+        <span class="honorarios-label">Potencial de Honorários:</span>
+        <span class="honorarios-value">$$$</span>
+        <span class="honorarios-desc">— contratos imobiliários em execução; tese defensiva ou consultiva antes do julgamento</span>
+      </div>
+      <p class="news-source">Fonte: <a href="https://www.stj.jus.br" target="_blank">STJ · 24/04/2026</a> · Lei 9.514/1997</p>
+    </div>
+
+  </section>
+
+  <!-- ======================== S03 — DECISÃO DO DIA ======================== -->
+  <section class="section" id="s03">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <span class="section-title">Decisão do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="decisao-box">
+      <div class="decisao-tribunal">STJ · 2ª Seção · Rel. Min. Nancy Andrighi · Informativo 880 · Direito do Consumidor · Saúde</div>
+      <div class="decisao-titulo">Planos de saúde não podem limitar sessões de terapia para pacientes com TEA — e o reembolso retroativo é cabível</div>
+      <div class="decisao-tese">
+        "A limitação, pelo plano de saúde, do número de sessões de terapias multidisciplinares prescritas para o tratamento do Transtorno do Espectro Autista constitui prática abusiva e nula de pleno direito — e o entendimento se aplica retroativamente, sendo cabível a ação de reembolso das despesas suportadas pelo consumidor nas sessões que deveriam ter sido custeadas pela operadora."
+      </div>
+      <div class="decisao-body">
+        A decisão veio da 2ª Seção do STJ, relatorada pela Ministra Nancy Andrighi. A 2ª Seção reúne a 3ª e a 4ª Turmas — as duas turmas de direito privado do tribunal — e tem a função institucional de unificar a jurisprudência nessa matéria. Isso significa que o entendimento tem peso muito superior ao de uma turma isolada: instâncias inferiores que contrariarem esse precedente estão sujeitas a cassação por recurso especial com fundamento na divergência da 2ª Seção.
+      </div>
+      <div class="decisao-body">
+        O raciocínio do STJ é direto: o médico define o tratamento. A operadora não tem capacidade técnica nem legitimidade jurídica para substituir o critério clínico por um critério de custo. Qualquer cláusula contratual que limite sessões de TEA é, portanto, nula de pleno direito — não importa o que o contrato diga. O ângulo novo e estratégico é o retroativo: o STJ passou a admitir que o consumidor que pagou do próprio bolso pode reaver esses valores, com o prazo prescricional do CDC (5 anos) como referência.
+      </div>
+      <div class="decisao-pratica">
+        <strong>Para advogados — o que fazer agora</strong>
+        Dois pedidos em uma ação: (1) tutela de urgência para cobertura das sessões futuras, sem limite; (2) reembolso retroativo das sessões pagas pela família nos últimos 5 anos. O conjunto probatório é acessível: laudo diagnóstico de TEA, prescrição médica das terapias, comprovantes de pagamento das sessões, e o contrato do plano com a limitação. Com esse conjunto e o fundamento da 2ª Seção, a liminar tem alta taxa de concessão. E o retroativo, dependendo do caso, pode representar mais de R$ 100 mil em base de cálculo.
+      </div>
+      <div class="decisao-source">STJ · 2ª Seção · Rel. Min. Nancy Andrighi · Informativo 880 · 10/04/2026 · Brevis · Ed. 007 · 02/05/2026</div>
+    </div>
+  </section>
+
+  <!-- ======================== S04 — ALERTA JURÍDICO ======================== -->
+  <section class="section" id="s04">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <span class="section-title">Alerta Jurídico</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="alerta-box">
+      <div class="alerta-label">🚨 Atenção Imediata — Tributário · Holding · Sucessório</div>
+      <h3>ITCMD Progressivo: a janela está se fechando — e o cliente que não agir agora vai pagar a conta depois</h3>
+      <p>A EC 132/2023 é de dois anos atrás. O que era texto constitucional em 2023 está virando lei estadual em 2026 — com alíquotas definidas, faixas estabelecidas e datas de vigência concretas. Não é mais "vai acontecer". Em alguns Estados, já aconteceu. Em outros, está em votação final na Assembleia Legislativa.</p>
+      <p>O mecanismo mais eficaz e acessível de preservar patrimônio antes da virada é a <strong>doação de bens em vida com reserva de usufruto</strong>: o bem é transmitido hoje, pela alíquota atual, e o doador mantém o direito de usar e usufruir do bem pelo resto da vida. É simples, legítima, amplamente utilizada e — quando feita antes da lei nova entrar em vigor — eficaz para travar a carga tributária atual.</p>
+      <p><strong>Atenção técnica essencial:</strong> a legislação que define a alíquota aplicável é a do Estado de domicílio do doador (para bens móveis e participações societárias) ou a do Estado de localização do imóvel (para bens imobiliários). Antes de qualquer recomendação ao cliente, o advogado deve verificar o estágio específico da lei estadual aplicável ao caso concreto — a urgência e as alíquotas variam de Estado para Estado, e uma orientação genérica pode ser imprecisa ou prejudicial.</p>
+      <div class="alerta-acao">
+        <strong>O que fazer agora</strong>
+        (1) Identifique clientes com patrimônio relevante — imóveis, participações societárias, ativos financeiros. (2) Verifique o estágio da legislação estadual aplicável ao caso (domicílio do doador ou localização do imóvel). (3) Calcule a diferença concreta entre a alíquota atual e a projetada. (4) Apresente ao cliente com um número real: "você pode economizar R$ X fazendo isso agora". A proatividade aqui não é cortesia — é o serviço que o cliente está pagando para receber. Clientes que não forem acionados hoje vão descobrir a diferença quando a janela já tiver fechado.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== S05 — OPORTUNIDADE ======================== -->
+  <section class="section" id="s05">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <span class="section-title">Oportunidade de Atuação</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="oport-box">
+      <div class="oport-label">📈 Oportunidade Estratégica — Tributário · Regularização</div>
+      <h3>Transação Tributária: o momento mais barato para resolver o passivo fiscal do seu cliente</h3>
+      <p>A Receita Federal publicou novo edital de transação tributária. Os descontos são reais, as condições são melhores do que o parcelamento ordinário, e o prazo de adesão é definido. Para clientes com passivo fiscal federal acumulado, este é provavelmente o melhor momento do ano para regularizar sem litígio.</p>
+      <p>O argumento é puramente financeiro e calculável: compare o valor atual da dívida (principal + multa + juros acumulados) com o valor após o desconto do edital. Em muitos casos, a diferença é de 30% a 60% do total. Os honorários do advogado podem ser calculados como percentual da economia gerada — o que torna o serviço autofinanciado pelo desconto obtido e elimina a objeção de custo do cliente.</p>
+      <p>Para as empresas, há um benefício adicional e concreto: a regularização libera a Certidão Negativa de Débitos, que é requisito para licitações, crédito bancário, contratos com grandes compradores e alguns processos de M&A. Em muitos casos, esse ativo vale mais do que o desconto em si.</p>
+      <div class="oport-perfil">
+        <strong>Perfil do cliente ideal para essa conversa agora</strong>
+        Empresa com débitos federais inscritos em dívida ativa ou com execução fiscal em curso · Microempresário ou profissional liberal com pendências na Receita por declarações ou contribuições atrasadas · Empresa que tentou parcelar anteriormente e não obteve condições razoáveis · Empresa em reestruturação que precisa limpar o passivo tributário para acessar crédito ou fechar contratos · Cliente que perdeu prazo de parcelamento convencional e está com o débito corrigido por Selic + multa de mora.
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== S06 — CURIOSIDADE ======================== -->
+  <section class="section" id="s06">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <span class="section-title">Curiosidade Jurídica do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <p class="curiosidade-text">
+      O <em>Direito à Desconexão</em> tem endereço e data de nascimento: França, 2017, pela chamada <em>Loi El Khomri</em> (ou Loi Travail). Foi a primeira vez que um país ocidental incluiu no código do trabalho a obrigação de empresas com mais de 50 funcionários negociarem formalmente com seus empregados políticas de desconexão digital — definindo horários em que o trabalhador não é obrigado a responder a demandas profissionais.
+    </p>
+    <p class="curiosidade-text">
+      A lógica é simples e poderosa: o smartphone tornou o trabalhador permanentemente alcançável. Antes da era digital, o final do expediente era físico e visível — o trabalhador saía do escritório e o trabalho ficava para trás. Hoje, uma mensagem no grupo da empresa às 23h ou um e-mail "urgente" no domingo de manhã chegam no bolso do trabalhador sem qualquer barreira física. Sem proteção legal, a jornada de trabalho se expande indefinidamente.
+    </p>
+    <p class="curiosidade-text">
+      No Brasil, não há lei federal específica sobre o tema — mas a jurisprudência trabalhista está construindo essa proteção caso a caso. O caminho é o típico do direito brasileiro: primeiro os tribunais reconhecem o direito, depois o legislador o positivia. A decisão noticiada nesta edição é mais um tijolo nessa construção. Para o advogado, isso cria duas frentes: representar trabalhadores com o histórico de mensagens como prova, e assessorar empresas que precisam criar políticas antes de virar réus.
+    </p>
+  </section>
+
+  <!-- ======================== S07 — TERMO JURÍDICO ======================== -->
+  <section class="section" id="s07">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <span class="section-title">Termo Jurídico do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="termo-box">
+      <div class="termo-nome">Transação Tributária</div>
+      <div class="termo-origem">Base legal: Art. 171 do CTN · Lei 13.988/2020 · Portarias da RFB e da PGFN</div>
+      <p>No direito civil, "transação" é o acordo pelo qual as partes fazem concessões mútuas para encerrar ou prevenir litígio (art. 840 do CC). No direito tributário, o conceito é estruturalmente semelhante — mas com uma restrição importante: a Fazenda Pública não pode simplesmente "perdoar" créditos tributários por conta própria, pois o crédito tributário é indisponível por força de lei. Por isso, o art. 171 do CTN condiciona a transação à autorização legislativa expressa.</p>
+      <p>Durante décadas, o art. 171 existia no papel — mas não havia lei federal que regulamentasse como a transação funcionaria na prática. Isso mudou em 2020, com a Lei 13.988, que criou o marco regulatório da transação tributária federal. A lei permite que a Receita Federal e a PGFN negociem débitos com contribuintes, oferecendo descontos sobre multas e juros, prazos diferenciados de parcelamento e uso de créditos fiscais como moeda — tudo dentro de parâmetros legalmente definidos por editais periódicos.</p>
+      <p>O resultado prático é uma troca objetiva: o Estado abre mão de parte do valor (tipicamente, multas e juros que, na prática, seriam irrecuperáveis) em troca de recebimento imediato do principal. O contribuinte regulariza sua situação fiscal com custo real inferior ao litígio. E o advogado entrega valor concreto e mensurável — a diferença entre o antes e o depois.</p>
+    </div>
+  </section>
+
+  <!-- ======================== S08 — IMPACTO NA ROTINA ======================== -->
+  <section class="section" id="s08">
+    <div class="section-label">
+      <span class="section-num">08</span>
+      <span class="section-title">Impacto na Sua Rotina</span>
+      <div class="section-line"></div>
+    </div>
+    <ul class="rotina-list">
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Mapeie clientes com filhos com diagnóstico de TEA.</strong> Pergunte se o plano limita sessões e se a família pagou do próprio bolso nos últimos 5 anos. O STJ (2ª Seção, Rel. Min. Nancy Andrighi) consolidou a nulidade de qualquer limitação e admite reembolso retroativo. Dois pedidos em uma ação — o retroativo pode ser o mais valioso.</span>
+      </li>
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Acione clientes com patrimônio relevante para conversa urgente sobre ITCMD.</strong> Verifique a lei estadual aplicável (domicílio do doador ou localização do imóvel), calcule a diferença de alíquota e apresente o número concreto. A janela para planejamento nas alíquotas atuais está visivelmente se fechando em vários Estados.</span>
+      </li>
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Revise o passivo fiscal dos clientes empresariais.</strong> O edital de transação tributária da Receita tem prazo de adesão. Calcule a dívida atual e o valor após o desconto do edital. O argumento vende sozinho — e os honorários são calculados sobre a economia gerada.</span>
+      </li>
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Oriente clientes empresariais sobre comunicação digital fora do expediente.</strong> A jurisprudência do Direito à Desconexão está se consolidando e as condenações por dano existencial estão acontecendo. Uma política de comunicação clara é a defesa mais eficaz. Para clientes trabalhadores: o histórico de mensagens no celular pode ser a prova central de uma ação.</span>
+      </li>
+      <li>
+        <div class="rotina-bullet"></div>
+        <span><strong>Revise os modelos de petição em ações contra planos de saúde.</strong> O STJ encerrou o dano moral automático: agora é necessário provar agravamento concreto da condição de saúde ou risco de morte. Inclua declaração do paciente e documento médico em todos os casos. O pedido de obrigação de fazer continua forte — o ajuste é no pedido de danos morais.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ======================== S09 — FRASE DO DIA ======================== -->
+  <section class="section" id="s09">
+    <div class="section-label">
+      <span class="section-num">09</span>
+      <span class="section-title">Frase do Dia</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="frase-box">
+      <div class="frase-texto">"O direito envelhece quando deixa de acompanhar o ritmo da vida que deve regular."</div>
+      <div class="frase-autor">— Rudolf von Jhering, jurista alemão, criador da teoria do fim no direito (1818–1892)</div>
+    </div>
+  </section>
+
+  <!-- ======================== S10 — PARA LER MAIS ======================== -->
+  <section class="section" id="s10">
+    <div class="section-label">
+      <span class="section-num">10</span>
+      <span class="section-title">Para Ler Mais</span>
+      <div class="section-line"></div>
+    </div>
+    <ul class="lermais-list">
+      <li>
+        <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/13032026-Limitacao-de-sessoes-de-terapia-multidisciplinar-prescritas-a-paciente-com-TEA-e-abusiva.aspx" target="_blank">STJ — Informativo 880: Limitação de sessões de TEA é abusiva</a>
+        <div class="lermais-desc">Notícia oficial do STJ sobre a consolidação pela 2ª Seção (Rel. Min. Nancy Andrighi) que reafirma a cobertura irrestrita e admite reembolso retroativo das terapias para TEA.</div>
+      </li>
+      <li>
+        <a href="https://www.conjur.com.br/2026-abr-22/estados-avancam-regulamentacao-itcmd-progressivo" target="_blank">ConJur — Estados avançam na regulamentação do ITCMD progressivo</a>
+        <div class="lermais-desc">Panorama atualizado do avanço legislativo nos Estados após a EC 132/2023 — leitura essencial para advogados de planejamento sucessório e holding familiar.</div>
+      </li>
+      <li>
+        <a href="https://www.gov.br/receitafederal" target="_blank">Receita Federal — Portal de Transação Tributária</a>
+        <div class="lermais-desc">Acesso direto aos editais vigentes de transação, condições de adesão e modalidades disponíveis. Verifique os prazos antes de orientar o cliente.</div>
+      </li>
+      <li>
+        <a href="https://www.conjur.com.br" target="_blank">ConJur — Direito à Desconexão e dano existencial por WhatsApp</a>
+        <div class="lermais-desc">Cobertura da decisão que reconhece indenização por disponibilidade ininterrupta fora do expediente — fundamento para ações de trabalhadores e assessoria preventiva para empresas.</div>
+      </li>
+      <li>
+        <a href="https://www.stj.jus.br" target="_blank">STJ — Alienação fiduciária sem registro: repetitivo afetado</a>
+        <div class="lermais-desc">Acompanhe a pauta do repetitivo do STJ sobre validade de contratos de alienação fiduciária de imóvel sem registro — impacto direto em contratos imobiliários em execução.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <div class="footer">
+    <strong>BREVIS</strong> · Radar jurídico para decisões estratégicas<br>
+    Edição nº 007 · 2 de maio de 2026 · Sábado<br>
+    Produzido por <strong>Jean Barbosa</strong> · CEO Maximiano Advogados
+    <div class="footer-disclaimer">As informações desta edição têm caráter informativo e não substituem consulta jurídica individualizada. Verifique sempre as fontes primárias antes de tomar decisões com base neste conteúdo. Teses indicadas como "em construção" ou "tendência" devem ser avaliadas no caso concreto antes de qualquer orientação definitiva ao cliente.</div>
+  </div>
+
+</div>
+</body>
+</html>
