@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREVIS — Arquivo de Edições</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:       #0f0e0c;
+    --paper:     #f7f4ee;
+    --muted:     #7a7670;
+    --rule:      #d6d0c4;
+    --red:       #c8371a;
+    --red-pale:  #fdf1ee;
+    --blue:      #1F4E79;
+    --blue-mid:  #2C6AA0;
+    --gold:      #C8A24A;
+    --gold-pale: #f5edda;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  .wrapper { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ─── MASTHEAD ─── */
+  .masthead { border-bottom: 3px double var(--ink); padding: 44px 0 24px; text-align: center; }
+  .masthead-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .masthead-logo { font-family: 'Playfair Display', serif; font-size: 68px; font-weight: 900; letter-spacing: -3px; line-height: 1; color: var(--ink); }
+  .masthead-logo span { color: var(--red); }
+  .masthead-tagline { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
+  .masthead-meta { display: flex; justify-content: center; gap: 28px; margin-top: 14px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
+  .masthead-meta span { padding: 0 2px; }
+  .masthead-meta span:not(:last-child)::after { content: ' ·'; margin-left: 14px; color: var(--rule); }
+
+  /* ─── LINHA EDITORIAL ─── */
+  .line-header { display: flex; align-items: center; gap: 12px; margin: 44px 0 20px; }
+  .line-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); flex-shrink: 0; }
+  .line-title { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+  .line-rule { flex: 1; height: 1px; background: var(--rule); }
+  .line-badge { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; flex-shrink: 0; }
+  .badge-geral { background: var(--red-pale); color: var(--red); border: 1px solid #f0c0b0; }
+  .badge-prev  { background: var(--gold-pale); color: var(--blue); border: 1px solid #d8c080; }
+
+  /* ─── DESCRIÇÃO ─── */
+  .line-desc { font-size: 13.5px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; padding-left: 2px; }
+  .line-desc strong { color: var(--ink); font-weight: 600; }
+
+  /* ─── GRADE ─── */
+  .editions-grid { display: flex; flex-direction: column; gap: 12px; }
+
+  /* ─── CARD DESTAQUE ─── */
+  .card-featured { border: 1px solid var(--rule); padding: 22px 24px; text-decoration: none; color: inherit; display: block; transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s; position: relative; background: white; }
+  .card-featured:hover { border-color: #a8a098; box-shadow: 0 3px 14px rgba(0,0,0,0.08); transform: translateY(-1px); }
+  .card-featured.geral { border-left: 4px solid var(--red); }
+  .card-featured.prev  { border-left: 4px solid var(--gold); }
+
+  .card-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+  .card-label-new { background: var(--red); color: white; padding: 2px 7px; border-radius: 2px; font-size: 8.5px; letter-spacing: 0.15em; }
+  .card-label-new.gold { background: var(--gold); }
+  .card-label-edition { color: var(--muted); }
+  .card-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; color: var(--ink); }
+  .card-summary { font-size: 13.5px; line-height: 1.65; color: #4a4844; margin-bottom: 12px; }
+  .card-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .card-date { font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--muted); letter-spacing: 0.06em; }
+  .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 8px; border-radius: 2px; letter-spacing: 0.1em; text-transform: uppercase; color: white; }
+  .tag-red    { background: var(--red); }
+  .tag-blue   { background: var(--blue-mid); }
+  .tag-gold   { background: var(--gold); }
+  .tag-green  { background: #1a6b42; }
+  .tag-purple { background: #5c2d82; }
+  .tag-gray   { background: #7a7670; }
+  .tag-navy   { background: #0D1F3C; }
+  .tag-teal   { background: #0e7490; }
+
+  .card-arrow { position: absolute; top: 22px; right: 20px; font-family: 'DM Mono', monospace; font-size: 13px; color: var(--rule); transition: color 0.18s, transform 0.18s; }
+  .card-featured:hover .card-arrow { color: var(--muted); transform: translateX(4px); }
+
+  /* ─── DESTAQUES DA EDIÇÃO ATUAL ─── */
+  .card-destaques { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 5px; }
+  .card-destaque-item { display: flex; gap: 8px; align-items: baseline; font-size: 12.5px; color: #3a3834; line-height: 1.5; }
+  .card-destaque-dot { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; }
+
+  /* ─── CARD LISTA ─── */
+  .card-list { display: flex; gap: 14px; align-items: flex-start; border-bottom: 1px solid var(--rule); padding: 14px 0; text-decoration: none; color: inherit; transition: opacity 0.15s; }
+  .card-list:last-child { border-bottom: none; }
+  .card-list:hover { opacity: 0.72; }
+  .card-list-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); flex-shrink: 0; min-width: 28px; margin-top: 3px; }
+  .card-list-body { flex: 1; }
+  .card-list-title { font-family: 'Playfair Display', serif; font-size: 15.5px; font-weight: 700; line-height: 1.3; color: var(--ink); margin-bottom: 4px; }
+  .card-list-meta { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 0.05em; }
+  .card-list-arrow { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--rule); flex-shrink: 0; margin-top: 3px; transition: transform 0.15s; }
+  .card-list:hover .card-list-arrow { transform: translateX(3px); }
+
+  /* ─── SEPARADOR ─── */
+  .section-divider { height: 1px; background: linear-gradient(to right, transparent, var(--rule), transparent); margin: 10px 0; }
+
+  /* ─── FOOTER ─── */
+  .footer { margin-top: 56px; padding-top: 20px; border-top: 3px double var(--ink); text-align: center; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
+  .footer-logo span { color: var(--red); }
+  .footer-tagline { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; }
+
+  @media (max-width: 520px) {
+    .masthead-logo { font-size: 48px; }
+    .card-arrow { display: none; }
+    .masthead-meta { flex-direction: column; gap: 4px; }
+    .masthead-meta span::after { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-eyebrow">Curadoria jurídica · Jean Barbosa</div>
+    <div class="masthead-logo">BREVI<span>S</span></div>
+    <div class="masthead-tagline">Radar jurídico estratégico · Todas as edições</div>
+    <div class="masthead-meta">
+      <span>Duas linhas editoriais</span>
+      <span>Jurídico Geral · Previdenciário</span>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       LINHA 1 — BREVIS · JURÍDICO GERAL
+  ════════════════════════════════════════════ -->
+  <div class="line-header">
+    <span class="line-num">01</span>
+    <span class="line-title">Brevis · Jurídico Geral</span>
+    <div class="line-rule"></div>
+    <span class="line-badge badge-geral">Jurídico Geral</span>
+  </div>
+
+  <p class="line-desc">
+    <strong>Cobertura multidisciplinar.</strong> STJ, STF, TST e regulatório — as decisões mais relevantes com impacto prático para advogados de todas as áreas. Foco em aplicabilidade e geração de honorários.
+  </p>
+
+  <div class="editions-grid">
+
+    <!-- Edição 007 — DESTAQUE ATUAL -->
+    <a href="brevis-edicao007.html" class="card-featured geral">
+      <div class="card-label">
+        <span class="card-label-new">Edição Atual</span>
+        <span class="card-label-edition">Edição nº 007 · 2 de maio de 2026</span>
+      </div>
+      <div class="card-title">TEA com reembolso retroativo, ITCMD acelerando nos Estados, transação tributária com desconto real e Direito à Desconexão na prática</div>
+      <div class="card-summary">STJ 2ª Seção consolida cobertura ilimitada de terapias para TEA e admite retroativo — ITCMD progressivo com legislações estaduais em vigor — Receita Federal com edital de transação tributária — dano existencial por disponibilidade ininterrupta via WhatsApp — STJ encerra dano moral automático em negativas de plano de saúde.</div>
+      <div class="card-destaques">
+        <div class="card-destaque-item">
+          <span class="card-destaque-dot">●</span>
+          <span><strong>TEA:</strong> STJ 2ª Seção (Rel. Min. Nancy Andrighi) — cobertura ilimitada + reembolso retroativo até 5 anos. Potencial: $$$$</span>
+        </div>
+        <div class="card-destaque-item">
+          <span class="card-destaque-dot">●</span>
+          <span><strong>ITCMD Progressivo:</strong> Estados regulamentando — janela tributária se fechando. Verifique lei estadual aplicável. Potencial: $$$$</span>
+        </div>
+        <div class="card-destaque-item">
+          <span class="card-destaque-dot">●</span>
+          <span><strong>Transação Tributária:</strong> Edital Receita Federal com descontos e prazo de adesão. Honorários sobre economia gerada. Potencial: $$$</span>
+        </div>
+      </div>
+      <div class="card-meta" style="margin-top:14px;">
+        <span class="card-date">2 de maio de 2026</span>
+        <div class="card-tags">
+          <span class="tag tag-blue">Cível · Saúde</span>
+          <span class="tag tag-green">Tributário</span>
+          <span class="tag tag-gray">Trabalhista</span>
+          <span class="tag tag-teal">Digital</span>
+        </div>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <!-- Edições anteriores -->
+    <div class="editions-grid" style="margin-top: 4px;">
+
+      <a href="brevis-semanal-edicao006.html" class="card-list">
+        <span class="card-list-num">006</span>
+        <div class="card-list-body">
+          <div class="card-list-title">STJ consolida remessa necessária e TEA, TST expande assédio moral político, FGTS em contratos de experiência e ITCMD progressivo</div>
+          <div class="card-list-meta">31 de março de 2026 · Civil · Trabalhista · Tributário · Família</div>
+        </div>
+        <span class="card-list-arrow">→</span>
+      </a>
+
+      <a href="brevis-semanal-edicao005.html" class="card-list">
+        <span class="card-list-num">005</span>
+        <div class="card-list-body">
+          <div class="card-list-title">PIX sob coação, adimplemento substancial em planos de saúde, ITBI no STF e NR-01 com riscos psicossociais</div>
+          <div class="card-list-meta">24 de março de 2026 · Civil · Tributário · Trabalhista</div>
+        </div>
+        <span class="card-list-arrow">→</span>
+      </a>
+
+      <a href="edicao-004.html" class="card-list">
+        <span class="card-list-num">004</span>
+        <div class="card-list-body">
+          <div class="card-list-title">AP 2670 no STF, outorga conjugal no STJ e pejotização aguardando julgamento</div>
+          <div class="card-list-meta">13 de março de 2026 · Civil · Previdenciário · Trabalhista</div>
+        </div>
+        <span class="card-list-arrow">→</span>
+      </a>
+
+      <a href="edicao-003.html" class="card-list">
+        <span class="card-list-num">003</span>
+        <div class="card-list-body">
+          <div class="card-list-title">Pauta do STJ e STF — decisões da semana de 12 de março</div>
+          <div class="card-list-meta">12 de março de 2026 · Multidisciplinar</div>
+        </div>
+        <span class="card-list-arrow">→</span>
+      </a>
+
+      <a href="edicao-002.html" class="card-list">
+        <span class="card-list-num">002</span>
+        <div class="card-list-body">
+          <div class="card-list-title">Radar jurídico da semana de 11 de março</div>
+          <div class="card-list-meta">11 de março de 2026 · Multidisciplinar</div>
+        </div>
+        <span class="card-list-arrow">→</span>
+      </a>
+
+      <a href="edicao-001.html" class="card-list">
+        <span class="card-list-num">001</span>
+        <div class="card-list-body">
+          <div class="card-list-title">Primeira edição — Radar jurídico de lançamento</div>
+          <div class="card-list-meta">10 de março de 2026 · Edição inaugural</div>
+        </div>
+        <span class="card-list-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="section-divider" style="margin-top: 44px;"></div>
+
+  <!-- ═══════════════════════════════════════════
+       LINHA 2 — BREVIS PREVIDENCIÁRIO
+  ════════════════════════════════════════════ -->
+  <div class="line-header">
+    <span class="line-num">02</span>
+    <span class="line-title">Brevis Previdenciário</span>
+    <div class="line-rule"></div>
+    <span class="line-badge badge-prev">Previdenciário</span>
+  </div>
+
+  <p class="line-desc">
+    <strong>Radar previdenciário estratégico.</strong> TNU, TRF6, STJ e INSS — decisões com impacto direto em carteiras de escritórios previdenciaristas. Curadoria Jean Barbosa.
+  </p>
+
+  <div class="editions-grid">
+
+    <!-- Edição Prev 004 — DESTAQUE -->
+    <a href="brevis-previdenciario-edicao004.html" class="card-featured prev">
+      <div class="card-label">
+        <span class="card-label-new gold">Edição Atual</span>
+        <span class="card-label-edition">Edição nº 004 · 20 de abril de 2026</span>
+      </div>
+      <div class="card-title">STJ Tema 1421, descontos indevidos no INSS e novo radar previdenciário de abril</div>
+      <div class="card-summary">STJ · Tema 1421 (retroatividade de pensão para menores) · Tema 1410 (prescrição sem negativa formal) — STF · Tema 1390 (compulsória em estatais) — TNU · Tema 385 (BPC além da incapacidade) — Lei 15.327/2026 — RPVs abril/TRF6.</div>
+      <div class="card-meta">
+        <span class="card-date">20 de abril de 2026</span>
+        <div class="card-tags">
+          <span class="tag tag-gold">STJ</span>
+          <span class="tag tag-navy">TNU</span>
+          <span class="tag tag-red">STF</span>
+          <span class="tag tag-green">TRF6</span>
+        </div>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <!-- Edições anteriores Previdenciário -->
+    <div class="editions-grid" style="margin-top: 4px;">
+
+      <a href="brevis-previdenciario-edicao003.html" class="card-list">
+        <span class="card-list-num">003</span>
+        <div class="card-list-body">
+          <div class="card-list-title">ADI 6309 no STF, Tema 348 TNU e Atestmed expandido — semana de alto impacto previdenciário</div>
+          <div class="card-list-meta">1º de abril de 2026 · TNU · TRF6 · STF · STJ</div>
+        </div>
+        <span class="card-list-arrow">→</span>
+      </a>
+
+      <a href="brevis-previdenciario-edicao002.html" class="card-list">
+        <span class="card-list-num">002</span>
+        <div class="card-list-body">
+          <div class="card-list-title">Frentista com especialidade após 1997, B91 conta para carência (TNU 349) e reajuste 2026 em vigor</div>
+          <div class="card-list-meta">25 de março de 2026 · TRF6 · TNU · STJ · STF</div>
+        </div>
+        <span class="card-list-arrow">→</span>
+      </a>
+
+      <a href="brevis-previdenciario-edicao001.html" class="card-list">
+        <span class="card-list-num">001</span>
+        <div class="card-list-body">
+          <div class="card-list-title">TNU Tema 343 mantido, decadência em alerta no STJ e agentes de saúde sem aposentadoria automática</div>
+          <div class="card-list-meta">18 de março de 2026 · TNU · TRF6 · STJ · Edição inaugural</div>
+        </div>
+        <span class="card-list-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">BREVI<span>S</span></div>
+    <div class="footer-tagline">Radar jurídico estratégico · Curadoria independente</div>
+    <div class="footer-text">Produzido por Jean Barbosa · CEO Maximiano Advogados · 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>
