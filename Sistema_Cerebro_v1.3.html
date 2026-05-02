@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sistema Cérebro — Maximiano Advogados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --dk:#08111F;
+  --nv:#0D1B3E;
+  --nv2:#112252;
+  --gd:#F5A623;
+  --gd2:#FFD080;
+  --bl:#2B5CAF;
+  --bl2:#3A74D4;
+  --gn:#14532D;
+  --gn2:#1E7A42;
+  --wh:#FFFFFF;
+  --gr:#E8EDF5;
+  --muted:#8899BB;
+  --card:#0F1F45;
+  --border:rgba(245,166,35,0.18);
+  --radius:12px;
+  --gap:2rem;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--dk);
+  color:var(--wh);
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.85rem 2rem;
+  background:rgba(8,17,31,.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  transition:all .3s;
+}
+.nav-brand{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:1.25rem;letter-spacing:.04em;
+  color:var(--gd);text-decoration:none;
+}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{
+  color:rgba(255,255,255,.6);font-size:.82rem;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;transition:color .2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--gd)}
+.nav-tag{
+  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--border);
+  padding:.25rem .7rem;border-radius:20px;
+}
+@media(max-width:768px){.nav-links{display:none}.nav-tag{display:none}}
+
+/* ── SECTIONS ── */
+section{position:relative;padding:7rem 0}
+.container{max-width:1140px;margin:0 auto;padding:0 2rem}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(43,92,175,.35) 0%,transparent 70%),
+             radial-gradient(ellipse 40% 40% at 85% 60%,rgba(245,166,35,.12) 0%,transparent 60%),
+             var(--dk);
+  padding-top:5rem;
+}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.3);
+  border-radius:20px;padding:.35rem 1rem;
+  font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gd);margin-bottom:1.5rem;
+}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--gd);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:clamp(3rem,6vw,5.5rem);
+  line-height:.95;letter-spacing:-.01em;
+  color:var(--wh);
+}
+.hero-title em{color:var(--gd);font-style:normal}
+.hero-sub{
+  margin-top:1.25rem;font-size:1.1rem;font-weight:300;
+  color:rgba(255,255,255,.65);max-width:480px;line-height:1.7;
+}
+.hero-meta{
+  margin-top:2rem;display:flex;gap:2rem;
+  font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+.hero-meta strong{display:block;font-size:1.1rem;color:var(--wh);letter-spacing:0;text-transform:none;font-weight:600}
+.hero-visual{position:relative}
+.brain-ring{
+  width:380px;height:380px;border-radius:50%;
+  border:1px solid rgba(245,166,35,.15);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;margin:0 auto;
+  animation:spin 30s linear infinite;
+}
+.brain-ring::before{
+  content:'';position:absolute;inset:-20px;border-radius:50%;
+  border:1px dashed rgba(43,92,175,.3);
+  animation:spin 20s linear infinite reverse;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.brain-core{
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle at 40% 35%,var(--bl2),var(--nv));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  animation:spin 30s linear infinite reverse;
+  box-shadow:0 0 60px rgba(43,92,175,.4),0 0 120px rgba(43,92,175,.15);
+}
+.brain-core-label{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:1.3rem;letter-spacing:.12em;color:var(--gd);
+}
+.brain-core-sub{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.orbit-dot{
+  position:absolute;width:36px;height:36px;border-radius:50%;
+  background:var(--nv2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--gd);font-weight:700;
+  animation:spin 30s linear infinite reverse;
+}
+.od1{top:-18px;left:calc(50% - 18px)}
+.od2{bottom:-18px;left:calc(50% - 18px)}
+.od3{left:-18px;top:calc(50% - 18px)}
+.od4{right:-18px;top:calc(50% - 18px)}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+}
+
+/* ── SECTION LABELS ── */
+.sec-label{
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gd);font-weight:700;margin-bottom:.75rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.sec-label::before{content:'';width:24px;height:2px;background:var(--gd)}
+.sec-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:clamp(2rem,4vw,3.2rem);
+  line-height:1;letter-spacing:-.01em;
+}
+.sec-title em{color:var(--gd);font-style:normal}
+.sec-body{margin-top:1rem;color:rgba(255,255,255,.62);max-width:600px;line-height:1.75;font-size:1rem}
+
+/* ── DIVIDER ── */
+.divider{
+  height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);
+  margin:0;
+}
+
+/* ── PROBLEMA ── */
+#problema{background:var(--nv)}
+.problems-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;
+}
+.prob-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--radius);padding:2rem;position:relative;overflow:hidden;
+}
+.prob-card::before{
+  content:attr(data-n);
+  position:absolute;top:1rem;right:1.25rem;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:4rem;color:rgba(255,255,255,.04);line-height:1;
+}
+.prob-icon{font-size:1.8rem;margin-bottom:1rem}
+.prob-title{font-weight:700;font-size:1rem;margin-bottom:.5rem}
+.prob-text{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.6}
+@media(max-width:768px){.problems-grid{grid-template-columns:1fr}}
+
+/* ── VISÃO ── */
+#visao{background:var(--dk)}
+.visao-quote{
+  border-left:3px solid var(--gd);padding:1.5rem 2rem;
+  background:rgba(245,166,35,.05);border-radius:0 var(--radius) var(--radius) 0;
+  font-size:1.25rem;font-weight:300;color:rgba(255,255,255,.8);
+  margin:2.5rem 0;font-style:italic;line-height:1.7;
+}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.pillar{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2rem;text-align:center;
+}
+.pillar-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;font-size:3.5rem;color:var(--gd);line-height:1;
+}
+.pillar-label{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.25rem}
+.pillar-desc{font-size:.9rem;color:rgba(255,255,255,.65);margin-top:.75rem;line-height:1.6}
+@media(max-width:768px){.pillars{grid-template-columns:1fr;gap:1rem}}
+
+/* ── ARQUITETURA ── */
+#arquitetura{background:var(--nv)}
+.arch-diagram{
+  margin-top:3rem;background:var(--card);
+  border:1px solid var(--border);border-radius:16px;
+  padding:3rem;position:relative;overflow:hidden;
+}
+.arch-diagram::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(43,92,175,.12),transparent 70%);
+}
+.arch-hub{
+  background:linear-gradient(135deg,var(--bl2),var(--bl));
+  border-radius:12px;padding:1.5rem 2rem;text-align:center;
+  max-width:380px;margin:0 auto 2.5rem;position:relative;
+  box-shadow:0 8px 40px rgba(43,92,175,.3);
+}
+.arch-hub-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.arch-hub-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;letter-spacing:.06em;color:var(--gd)}
+.arch-hub-sub{font-size:.82rem;color:rgba(255,255,255,.7);margin-top:.25rem}
+.arch-row{display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap}
+.arch-node{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:.85rem 1.25rem;text-align:center;min-width:110px;
+}
+.arch-node-icon{font-size:1.3rem}
+.arch-node-name{font-size:.75rem;font-weight:700;margin-top:.35rem;color:var(--wh)}
+.arch-node-role{font-size:.65rem;color:var(--muted);margin-top:.15rem;letter-spacing:.04em}
+.arch-connector{
+  display:flex;justify-content:center;margin:1.25rem 0;
+  gap:2rem;color:var(--muted);font-size:.7rem;letter-spacing:.08em;
+  text-transform:uppercase;align-items:center;
+}
+.arch-connector::before,.arch-connector::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(245,166,35,.25),transparent);
+}
+
+/* ── AGENTES ── */
+#agentes{background:var(--dk)}
+.agents-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem;
+}
+.agent-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.5rem;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  cursor:default;
+}
+.agent-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,.4);
+  border-color:rgba(245,166,35,.4);
+}
+.agent-icon{font-size:1.6rem;margin-bottom:.75rem}
+.agent-role{
+  font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gd);margin-bottom:.35rem;font-weight:700;
+}
+.agent-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:.02em}
+.agent-desc{font-size:.82rem;color:rgba(255,255,255,.55);margin-top:.5rem;line-height:1.55}
+.agent-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.85rem}
+.agent-tag{
+  font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:20px;padding:.2rem .6rem;color:rgba(255,255,255,.5);
+}
+@media(max-width:1000px){.agents-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.agents-grid{grid-template-columns:1fr}}
+
+/* ── CORE ── */
+#core{
+  background:linear-gradient(135deg,var(--nv) 0%,#0a1628 100%);
+  position:relative;overflow:hidden;
+}
+#core::before{
+  content:'CORE';position:absolute;right:-2rem;top:50%;transform:translateY(-50%);
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:18rem;color:rgba(245,166,35,.03);line-height:1;pointer-events:none;
+}
+.core-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:3rem}
+.core-commands,.core-motors{list-style:none}
+.core-commands li,.core-motors li{
+  display:flex;gap:1rem;align-items:flex-start;
+  padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.core-commands li:last-child,.core-motors li:last-child{border-bottom:none}
+.cmd-badge{
+  min-width:28px;height:28px;border-radius:6px;
+  background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.85rem;color:var(--gd);
+  margin-top:.1rem;
+}
+.motor-badge{
+  min-width:28px;height:28px;border-radius:6px;
+  background:rgba(43,92,175,.2);border:1px solid rgba(43,92,175,.35);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;margin-top:.1rem;
+}
+.cmd-text,.mot-text{display:flex;flex-direction:column}
+.cmd-name,.mot-name{font-weight:700;font-size:.92rem}
+.cmd-desc,.mot-desc{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.15rem;line-height:1.5}
+.core-mission{
+  background:rgba(245,166,35,.07);border:1px solid rgba(245,166,35,.2);
+  border-radius:var(--radius);padding:1.5rem;margin-top:1.5rem;
+}
+.core-mission p{font-size:.9rem;color:rgba(255,255,255,.7);font-style:italic;line-height:1.7}
+.core-block-title{
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gd);font-weight:700;margin-bottom:.5rem;
+}
+@media(max-width:768px){.core-grid{grid-template-columns:1fr}}
+
+/* ── IAS ── */
+#ias{background:var(--dk)}
+.ias-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.ia-card{
+  border-radius:var(--radius);padding:2rem;border:1px solid;
+  position:relative;overflow:hidden;
+}
+.ia-card.claude{border-color:rgba(43,92,175,.4);background:rgba(43,92,175,.08)}
+.ia-card.gpt{border-color:rgba(20,83,45,.5);background:rgba(20,83,45,.1)}
+.ia-card.gemini{border-color:rgba(245,166,35,.3);background:rgba(245,166,35,.05)}
+.ia-logo{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:1.6rem;letter-spacing:.04em;margin-bottom:.5rem;
+}
+.claude .ia-logo{color:#6B9FFF}
+.gpt .ia-logo{color:#10A37F}
+.gemini .ia-logo{color:var(--gd)}
+.ia-role{
+  font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);margin-bottom:1rem;font-weight:600;
+}
+.ia-feature{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.85rem;color:rgba(255,255,255,.7);margin-bottom:.5rem;
+}
+.ia-feature::before{content:'→';color:var(--gd);font-weight:700}
+.ia-main-badge{
+  position:absolute;top:1rem;right:1rem;
+  font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+  background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.3);
+  color:var(--gd);padding:.2rem .6rem;border-radius:20px;font-weight:700;
+}
+@media(max-width:768px){.ias-grid{grid-template-columns:1fr}}
+
+/* ── FLUXO ── */
+#fluxo{background:var(--nv)}
+.flow-steps{
+  display:flex;flex-direction:column;gap:0;margin-top:3rem;max-width:700px;margin-left:auto;margin-right:auto;
+}
+.flow-step{
+  display:flex;gap:1.5rem;align-items:flex-start;
+  padding-bottom:2rem;position:relative;
+}
+.flow-step:not(:last-child)::after{
+  content:'';position:absolute;left:1.1rem;top:2.5rem;bottom:0;
+  width:2px;background:linear-gradient(180deg,rgba(245,166,35,.3),rgba(245,166,35,.05));
+}
+.step-num{
+  min-width:36px;height:36px;border-radius:50%;
+  background:var(--gd);color:var(--dk);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;
+  flex-shrink:0;
+}
+.step-content{padding-top:.2rem}
+.step-title{font-weight:700;font-size:1rem;margin-bottom:.35rem}
+.step-desc{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.6}
+
+/* ── RITUAL ── */
+#ritual{background:var(--dk)}
+.ritual-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.ritual-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2rem;text-align:center;
+}
+.ritual-time{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:2.4rem;color:var(--gd);line-height:1;
+}
+.ritual-label{
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.45);margin-top:.25rem;
+}
+.ritual-actions{margin-top:1.25rem;text-align:left}
+.ritual-action{
+  display:flex;align-items:flex-start;gap:.5rem;
+  font-size:.82rem;color:rgba(255,255,255,.65);margin-bottom:.5rem;line-height:1.45;
+}
+.ritual-action span{color:var(--gd);font-weight:700;flex-shrink:0;margin-top:.05rem}
+@media(max-width:768px){.ritual-grid{grid-template-columns:1fr}}
+
+/* ── BLINDAGEM ── */
+#blindagem{background:var(--nv)}
+.blind-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.blind-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);padding:2rem;
+}
+.blind-icon{font-size:1.8rem;margin-bottom:.75rem}
+.blind-title{font-weight:700;font-size:1rem;margin-bottom:.5rem}
+.blind-text{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.6}
+.blind-highlight{color:var(--gd);font-weight:600}
+@media(max-width:768px){.blind-grid{grid-template-columns:1fr}}
+
+/* ── FASES ── */
+#fases{background:var(--dk)}
+.fases-track{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+  margin-top:3rem;position:relative;
+}
+.fases-track::before{
+  content:'';position:absolute;top:2.25rem;left:calc(16.66% + 1rem);right:calc(16.66% + 1rem);
+  height:2px;background:linear-gradient(90deg,var(--gd),rgba(245,166,35,.2));
+}
+.fase-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2rem 1.5rem;
+  position:relative;
+}
+.fase-card.active{
+  border-color:rgba(245,166,35,.5);
+  box-shadow:0 0 30px rgba(245,166,35,.1);
+}
+.fase-card.eval{border-color:rgba(245,166,35,.25)}
+.fase-card.plan{border-color:rgba(43,92,175,.2)}
+.fase-num{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;
+  line-height:1;color:rgba(255,255,255,.08);position:absolute;top:.75rem;right:1rem;
+}
+.fase-badge{
+  display:inline-block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.25rem .75rem;border-radius:20px;font-weight:700;margin-bottom:.75rem;
+}
+.active .fase-badge{background:rgba(20,83,45,.3);border:1px solid rgba(30,122,66,.5);color:#3DDB7B}
+.eval .fase-badge{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.3);color:var(--gd)}
+.plan .fase-badge{background:rgba(43,92,175,.15);border:1px solid rgba(43,92,175,.3);color:var(--bl2)}
+.fase-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:.02em;margin-bottom:.5rem}
+.fase-items{list-style:none;margin-top:.75rem}
+.fase-items li{
+  display:flex;gap:.5rem;align-items:flex-start;
+  font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:.4rem;line-height:1.45;
+}
+.fase-items li span{color:var(--gd);font-weight:700;flex-shrink:0}
+@media(max-width:768px){
+  .fases-track{grid-template-columns:1fr}
+  .fases-track::before{display:none}
+}
+
+/* ── RESULTADOS ── */
+#resultados{background:var(--nv)}
+.results-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;margin-top:3rem;
+}
+.result-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2rem;text-align:center;
+}
+.result-num{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:3rem;line-height:1;color:var(--gd);
+}
+.result-unit{font-size:1rem;color:var(--gd);vertical-align:top;margin-top:.25rem;display:inline}
+.result-label{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.4rem;letter-spacing:.04em}
+@media(max-width:768px){.results-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ── CLOSING ── */
+#closing{
+  min-height:60vh;display:flex;align-items:center;
+  background:radial-gradient(ellipse 70% 80% at 50% 100%,rgba(43,92,175,.25) 0%,transparent 70%),
+             var(--dk);
+  text-align:center;
+}
+.closing-inner{max-width:700px;margin:0 auto;padding:4rem 2rem}
+.closing-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;
+  font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;letter-spacing:-.01em;
+}
+.closing-title em{color:var(--gd);font-style:normal}
+.closing-body{
+  font-size:1.05rem;color:rgba(255,255,255,.6);margin-top:1.5rem;line-height:1.75;
+}
+.closing-meta{
+  margin-top:3rem;padding-top:2rem;
+  border-top:1px solid var(--border);
+  font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+.closing-meta strong{color:var(--wh);font-size:1rem;letter-spacing:0;text-transform:none}
+
+/* ── SCROLL REVEAL ── */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+.rv-l{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease}
+.rv-l.on{opacity:1;transform:translateX(0)}
+.rv-r{opacity:0;transform:translateX(28px);transition:opacity .65s ease,transform .65s ease}
+.rv-r.on{opacity:1;transform:translateX(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}.rv-d6{transition-delay:.6s}
+.rv-d7{transition-delay:.7s}.rv-d8{transition-delay:.8s}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--dk);border-top:1px solid var(--border);
+  padding:1.5rem 2rem;text-align:center;
+  font-size:.75rem;color:var(--muted);letter-spacing:.06em;
+}
+footer span{color:var(--gd)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#hero">MAXIMIANO</a>
+  <ul class="nav-links">
+    <li><a href="#problema">Problema</a></li>
+    <li><a href="#arquitetura">Sistema</a></li>
+    <li><a href="#agentes">Agentes</a></li>
+    <li><a href="#core">CORE</a></li>
+    <li><a href="#fases">Fases</a></li>
+  </ul>
+  <div class="nav-tag">v1.3 · Maio 2026</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge rv"><span></span>Sistema Operacional de CEO</div>
+        <h1 class="hero-title rv rv-d1">
+          Sistema<br/><em>Cérebro</em><br/>Maximiano
+        </h1>
+        <p class="hero-sub rv rv-d2">
+          Uma estrutura multi-agente de inteligência artificial que transforma conversas em decisões, decisões em tarefas e tarefas em execução — operando 24/7 junto ao CEO.
+        </p>
+        <div class="hero-meta rv rv-d3">
+          <div><strong>8 Agentes</strong>Especializados</div>
+          <div><strong>3 IAs</strong>em Sinergia</div>
+          <div><strong>100%</strong>Operacional</div>
+        </div>
+      </div>
+      <div class="hero-visual rv-r">
+        <div class="brain-ring">
+          <div class="brain-core">
+            <div class="brain-core-label">CÉREBRO</div>
+            <div class="brain-core-sub">Sistema v1.3</div>
+          </div>
+          <div class="orbit-dot od1">CEO</div>
+          <div class="orbit-dot od2">JUR</div>
+          <div class="orbit-dot od3">FIN</div>
+          <div class="orbit-dot od4">MKT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROBLEMA -->
+<section id="problema">
+  <div class="container">
+    <div class="sec-label rv">O Desafio</div>
+    <h2 class="sec-title rv rv-d1">O CEO moderno<br/><em>está afogado.</em></h2>
+    <p class="sec-body rv rv-d2">Decisões críticas competem com operação do dia a dia. Informação dispersa, reuniões sem síntese, times sem direção clara. O resultado: energia gasta no errado.</p>
+    <div class="problems-grid">
+      <div class="prob-card rv rv-d2" data-n="01">
+        <div class="prob-icon">🌊</div>
+        <div class="prob-title">Sobrecarga de Contexto</div>
+        <div class="prob-text">Cada área pede atenção simultânea. Jurídico, financeiro, comercial, pessoas — tudo chega ao mesmo tempo sem filtro.</div>
+      </div>
+      <div class="prob-card rv rv-d3" data-n="02">
+        <div class="prob-icon">🧩</div>
+        <div class="prob-title">Decisões Sem Memória</div>
+        <div class="prob-text">Sem registro estruturado, as mesmas discussões se repetem. O CEO redecide o que já foi decidido, semanas depois.</div>
+      </div>
+      <div class="prob-card rv rv-d4" data-n="03">
+        <div class="prob-icon">⚡</div>
+        <div class="prob-title">IA Sem Estratégia</div>
+        <div class="prob-text">Usar ChatGPT ou Claude pontualmente não é sistema. É mais ruído. Falta orquestração, contexto e especialização por área.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VISÃO -->
+<section id="visao">
+  <div class="container">
+    <div class="sec-label rv">A Visão</div>
+    <h2 class="sec-title rv rv-d1">IA como<br/><em>infraestrutura</em> de gestão.</h2>
+    <div class="visao-quote rv rv-d2">
+      "Não usamos IA como ferramenta pontual. Construímos um sistema operacional completo onde cada agente tem memória, especialização e integração com o CEO."
+    </div>
+    <div class="pillars">
+      <div class="pillar rv rv-d2">
+        <div class="pillar-num">01</div>
+        <div class="pillar-label">Especialização</div>
+        <div class="pillar-desc">Cada agente conhece profundamente sua área. Nenhum responde fora do seu escopo.</div>
+      </div>
+      <div class="pillar rv rv-d3">
+        <div class="pillar-num">02</div>
+        <div class="pillar-label">Memória Institucional</div>
+        <div class="pillar-desc">Todos os contextos, decisões e histórico ficam vivos — acessíveis em segundos.</div>
+      </div>
+      <div class="pillar rv rv-d4">
+        <div class="pillar-num">03</div>
+        <div class="pillar-label">Execução Real</div>
+        <div class="pillar-desc">O sistema não apenas responde — ele organiza, prioriza e transforma conversa em ação.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ARQUITETURA -->
+<section id="arquitetura">
+  <div class="container">
+    <div class="sec-label rv">Arquitetura</div>
+    <h2 class="sec-title rv rv-d1">Hub central +<br/><em>8 agentes</em> especializados.</h2>
+    <p class="sec-body rv rv-d2">Claude (Cowork) opera como hub de orquestração. Cada agente tem seu próprio arquivo de contexto, histórico e set de instruções. GPT e Gemini entram em funções específicas de confronto e validação.</p>
+    <div class="arch-diagram rv rv-d2">
+      <div class="arch-hub">
+        <div class="arch-hub-label">Hub Central de Orquestração</div>
+        <div class="arch-hub-title">CLAUDE · COWORK</div>
+        <div class="arch-hub-sub">Coordena todos os agentes + memória institucional</div>
+      </div>
+      <div class="arch-connector">Canal de Agentes</div>
+      <div class="arch-row">
+        <div class="arch-node"><div class="arch-node-icon">👤</div><div class="arch-node-name">CEO</div><div class="arch-node-role">Estratégia</div></div>
+        <div class="arch-node"><div class="arch-node-icon">💰</div><div class="arch-node-name">CFO</div><div class="arch-node-role">Financeiro</div></div>
+        <div class="arch-node"><div class="arch-node-icon">📈</div><div class="arch-node-name">Comercial</div><div class="arch-node-role">Vendas</div></div>
+        <div class="arch-node"><div class="arch-node-icon">⚖️</div><div class="arch-node-name">Jurídico</div><div class="arch-node-role">Legal</div></div>
+        <div class="arch-node"><div class="arch-node-icon">📣</div><div class="arch-node-name">CMO</div><div class="arch-node-role">Marketing</div></div>
+        <div class="arch-node"><div class="arch-node-icon">🤝</div><div class="arch-node-name">Pessoas</div><div class="arch-node-role">CHRO</div></div>
+        <div class="arch-node"><div class="arch-node-icon">🏛️</div><div class="arch-node-name">Governa</div><div class="arch-node-role">Processos</div></div>
+        <div class="arch-node"><div class="arch-node-icon">⚙️</div><div class="arch-node-name">CORE</div><div class="arch-node-role">S.O. CEO</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AGENTES -->
+<section id="agentes">
+  <div class="container">
+    <div class="sec-label rv">Os 8 Agentes</div>
+    <h2 class="sec-title rv rv-d1">Cada área.<br/><em>Um especialista.</em></h2>
+    <div class="agents-grid">
+      <div class="agent-card rv rv-d1">
+        <div class="agent-icon">👤</div>
+        <div class="agent-role">Estratégia & Liderança</div>
+        <div class="agent-name">Agente CEO</div>
+        <div class="agent-desc">Parceiro estratégico do Jean. Confronta decisões, mapeia riscos e ajuda na visão de longo prazo da firma.</div>
+        <div class="agent-tags"><span class="agent-tag">OKRs</span><span class="agent-tag">Decisão</span><span class="agent-tag">Visão</span></div>
+      </div>
+      <div class="agent-card rv rv-d2">
+        <div class="agent-icon">💰</div>
+        <div class="agent-role">Diretor Financeiro</div>
+        <div class="agent-name">Agente CFO</div>
+        <div class="agent-desc">Análise de fluxo de caixa, precificação de serviços, saúde financeira e indicadores da firma.</div>
+        <div class="agent-tags"><span class="agent-tag">Fluxo</span><span class="agent-tag">DRE</span><span class="agent-tag">KPIs</span></div>
+      </div>
+      <div class="agent-card rv rv-d3">
+        <div class="agent-icon">📈</div>
+        <div class="agent-role">Diretor Comercial</div>
+        <div class="agent-name">Comercial</div>
+        <div class="agent-desc">Pipeline de prospecção, follow-ups, propostas e análise de conversão. Mantém o funil de clientes vivo.</div>
+        <div class="agent-tags"><span class="agent-tag">Pipeline</span><span class="agent-tag">CRM</span><span class="agent-tag">Follow-up</span></div>
+      </div>
+      <div class="agent-card rv rv-d4">
+        <div class="agent-icon">⚖️</div>
+        <div class="agent-role">Especialista Jurídico</div>
+        <div class="agent-name">Jurídico</div>
+        <div class="agent-desc">Suporte em contratos, análise de risco legal, compliance e pareceres rápidos para decisões da firma.</div>
+        <div class="agent-tags"><span class="agent-tag">Contratos</span><span class="agent-tag">Compliance</span><span class="agent-tag">Risco</span></div>
+      </div>
+      <div class="agent-card rv rv-d5">
+        <div class="agent-icon">📣</div>
+        <div class="agent-role">Chief Marketing Officer</div>
+        <div class="agent-name">Agente CMO</div>
+        <div class="agent-desc">Estratégia de conteúdo, posicionamento, brand e gestão de fornecedores como New Arts (tráfego pago).</div>
+        <div class="agent-tags"><span class="agent-tag">Conteúdo</span><span class="agent-tag">Brand</span><span class="agent-tag">Tráfego</span></div>
+      </div>
+      <div class="agent-card rv rv-d6">
+        <div class="agent-icon">🤝</div>
+        <div class="agent-role">Chief HR Officer</div>
+        <div class="agent-name">Pessoas</div>
+        <div class="agent-desc">Cultura, desenvolvimento de time, feedbacks, processos seletivos e clima organizacional da firma.</div>
+        <div class="agent-tags"><span class="agent-tag">Cultura</span><span class="agent-tag">Equipe</span><span class="agent-tag">RH</span></div>
+      </div>
+      <div class="agent-card rv rv-d7">
+        <div class="agent-icon">🏛️</div>
+        <div class="agent-role">Governança & Processos</div>
+        <div class="agent-name">Governança</div>
+        <div class="agent-desc">Documentação de processos, padronização de operações, políticas internas e gestão do conhecimento.</div>
+        <div class="agent-tags"><span class="agent-tag">SOPs</span><span class="agent-tag">Processos</span><span class="agent-tag">Docs</span></div>
+      </div>
+      <div class="agent-card rv rv-d8" style="border-color:rgba(245,166,35,.35);background:rgba(245,166,35,.04)">
+        <div class="agent-icon">⚙️</div>
+        <div class="agent-role">Sistema Operacional do CEO</div>
+        <div class="agent-name" style="color:var(--gd)">CORE v2.0</div>
+        <div class="agent-desc">O novo agente central. Orquestra o dia operacional completo do CEO — do briefing matinal ao fechamento noturno.</div>
+        <div class="agent-tags"><span class="agent-tag" style="border-color:rgba(245,166,35,.3);color:rgba(245,166,35,.8)">Novo</span><span class="agent-tag">Rotina</span><span class="agent-tag">Síntese</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CORE -->
+<section id="core">
+  <div class="container">
+    <div class="sec-label rv">Destaque v1.3</div>
+    <h2 class="sec-title rv rv-d1"><em>CORE</em> — O Sistema<br/>Operacional do CEO.</h2>
+    <p class="sec-body rv rv-d2">Substitui a antiga Secretária Executiva. O CORE é o agente que acompanha o Jean em tempo real — transforma conversas e transcrições em decisões estruturadas, tarefas executáveis e registros permanentes.</p>
+    <div class="core-grid">
+      <div class="rv rv-d2">
+        <div class="core-block-title">6 Comandos Principais</div>
+        <ul class="core-commands">
+          <li>
+            <div class="cmd-badge">1</div>
+            <div class="cmd-text"><span class="cmd-name">Processamento do Dia</span><span class="cmd-desc">Consolida tudo que aconteceu — decisões, tarefas e próximos passos de forma estruturada.</span></div>
+          </li>
+          <li>
+            <div class="cmd-badge">2</div>
+            <div class="cmd-text"><span class="cmd-name">Planejamento do Dia</span><span class="cmd-desc">Monta o briefing matinal com prioridades baseadas no contexto acumulado.</span></div>
+          </li>
+          <li>
+            <div class="cmd-badge">3</div>
+            <div class="cmd-text"><span class="cmd-name">Entrada Rápida</span><span class="cmd-desc">Captura rápida de ideia, decisão ou tarefa em qualquer momento do dia.</span></div>
+          </li>
+          <li>
+            <div class="cmd-badge">4</div>
+            <div class="cmd-text"><span class="cmd-name">Fechamento do Dia</span><span class="cmd-desc">Revisão de tudo executado, pendências e síntese para o dia seguinte.</span></div>
+          </li>
+          <li>
+            <div class="cmd-badge">5</div>
+            <div class="cmd-text"><span class="cmd-name">Nova Transcrição</span><span class="cmd-desc">Processa transcrição de reunião (Padrão JACK) e extrai decisões e ações.</span></div>
+          </li>
+          <li>
+            <div class="cmd-badge">6</div>
+            <div class="cmd-text"><span class="cmd-name">Preparação de Reunião</span><span class="cmd-desc">Monta briefing completo de contexto antes de qualquer encontro importante.</span></div>
+          </li>
+        </ul>
+        <div class="core-mission">
+          <div class="core-block-title">Missão</div>
+          <p>Transformar <strong>conversas → decisões → tarefas → execução</strong>. O CORE garante que nenhuma decisão se perde e que o CEO sempre sabe qual é o próximo passo.</p>
+        </div>
+      </div>
+      <div class="rv rv-d3">
+        <div class="core-block-title">3 Motores Automáticos</div>
+        <ul class="core-motors">
+          <li>
+            <div class="motor-badge">🔮</div>
+            <div class="mot-text"><span class="mot-name">Motor de Antecipação</span><span class="mot-desc">Identifica padrões e sinaliza proativamente o que vai precisar de atenção antes que se torne urgente.</span></div>
+          </li>
+          <li>
+            <div class="motor-badge">⚡</div>
+            <div class="mot-text"><span class="mot-name">Motor de Decisão</span><span class="mot-desc">Estrutura decisões complexas em frameworks claros, apresentando opções com prós, contras e impacto.</span></div>
+          </li>
+          <li>
+            <div class="motor-badge">🔄</div>
+            <div class="mot-text"><span class="mot-name">Motor de Consistência</span><span class="mot-desc">Garante que decisões passadas sejam consultadas antes de novas deliberações. Evita contradições estratégicas.</span></div>
+          </li>
+        </ul>
+        <div style="margin-top:2rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem">
+          <div class="core-block-title">Livro de Registro Diário</div>
+          <div style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.7">Cada decisão, reunião e entrada rápida é registrada cronologicamente em <strong style="color:var(--wh)">LIVRO_REGISTRO_DIARIO.md</strong> — a memória permanente da firma. Nunca mais uma decisão se perde.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- IAS -->
+<section id="ias">
+  <div class="container">
+    <div class="sec-label rv">Inteligência Distribuída</div>
+    <h2 class="sec-title rv rv-d1">Três IAs.<br/><em>Uma sinergia.</em></h2>
+    <p class="sec-body rv rv-d2">Cada IA tem um papel definido no sistema. Não competem — se complementam. Isso garante qualidade, confronto de ideias e validação cruzada.</p>
+    <div class="ias-grid">
+      <div class="ia-card claude rv rv-d2">
+        <div class="ia-main-badge">Hub Principal</div>
+        <div class="ia-logo">Claude</div>
+        <div class="ia-role">Orquestração & Memória</div>
+        <div class="ia-feature">Hub central do sistema</div>
+        <div class="ia-feature">Todos os 8 agentes especializados</div>
+        <div class="ia-feature">Memória institucional longa</div>
+        <div class="ia-feature">Arquivo de contexto por área</div>
+        <div class="ia-feature">Cowork mode (desktop)</div>
+      </div>
+      <div class="ia-card gpt rv rv-d3">
+        <div class="ia-logo">GPT-4</div>
+        <div class="ia-role">Brainstorm & Confronto</div>
+        <div class="ia-feature">Segunda opinião estratégica</div>
+        <div class="ia-feature">Confronto de decisões críticas</div>
+        <div class="ia-feature">Geração de alternativas</div>
+        <div class="ia-feature">Devil's advocate do sistema</div>
+      </div>
+      <div class="ia-card gemini rv rv-d4">
+        <div class="ia-logo">Gemini</div>
+        <div class="ia-role">Validação & Pesquisa</div>
+        <div class="ia-feature">Validação de premissas</div>
+        <div class="ia-feature">Pesquisa de mercado e jurídica</div>
+        <div class="ia-feature">Análise de dados externos</div>
+        <div class="ia-feature">Cross-check de informações</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FLUXO -->
+<section id="fluxo">
+  <div class="container">
+    <div class="sec-label rv">Como Funciona</div>
+    <h2 class="sec-title rv rv-d1">Do input à<br/><em>execução</em> — em minutos.</h2>
+    <div class="flow-steps">
+      <div class="flow-step rv rv-d1">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Entrada — Conversa ou Transcrição</div>
+          <div class="step-desc">O CEO fala com o agente correspondente ou cola uma transcrição de reunião. O CORE captura tudo em linguagem natural, sem formulários.</div>
+        </div>
+      </div>
+      <div class="flow-step rv rv-d2">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Processamento — Contexto + Memória</div>
+          <div class="step-desc">O agente cruza a entrada com o histórico da área, decisões anteriores e arquivos de contexto. Tudo está acessível em segundos.</div>
+        </div>
+      </div>
+      <div class="flow-step rv rv-d3">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Confronto — Segunda Opinião</div>
+          <div class="step-desc">Em decisões críticas, GPT-4 confronta a análise inicial. Gemini valida premissas. O CEO recebe a visão de 3 perspectivas antes de decidir.</div>
+        </div>
+      </div>
+      <div class="flow-step rv rv-d4">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Estruturação — Decisão + Tarefas</div>
+          <div class="step-desc">O output é sempre estruturado: decisão tomada, racional, próximos passos com responsáveis e prazos. Nada fica em aberto.</div>
+        </div>
+      </div>
+      <div class="flow-step rv rv-d5">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Registro — Memória Permanente</div>
+          <div class="step-desc">Tudo vai para o Livro de Registro Diário e os arquivos das áreas. O sistema aprende e acumula contexto. Cada dia, mais inteligente.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RITUAL -->
+<section id="ritual">
+  <div class="container">
+    <div class="sec-label rv">Ritual Operacional</div>
+    <h2 class="sec-title rv rv-d1">O dia do CEO<br/><em>redesenhado.</em></h2>
+    <p class="sec-body rv rv-d2">O Sistema Cérebro não é usado só quando tem problema. É a infraestrutura do dia. Três momentos fixos que garantem foco, execução e aprendizado contínuo.</p>
+    <div class="ritual-grid">
+      <div class="ritual-card rv rv-d2">
+        <div class="ritual-time">07h</div>
+        <div class="ritual-label">Abertura — Briefing do Dia</div>
+        <div class="ritual-actions">
+          <div class="ritual-action"><span>→</span>CORE gera o briefing matinal com prioridades do dia</div>
+          <div class="ritual-action"><span>→</span>Consulta pendências das áreas críticas</div>
+          <div class="ritual-action"><span>→</span>CEO define o foco e os objetivos do dia</div>
+          <div class="ritual-action"><span>→</span>Reuniões já são preparadas com contexto completo</div>
+        </div>
+      </div>
+      <div class="ritual-card rv rv-d3">
+        <div class="ritual-time">12h</div>
+        <div class="ritual-label">Check-in — Meio do Dia</div>
+        <div class="ritual-actions">
+          <div class="ritual-action"><span>→</span>Atualização rápida de progresso</div>
+          <div class="ritual-action"><span>→</span>Entradas rápidas de ideias e decisões</div>
+          <div class="ritual-action"><span>→</span>Processamento de transcrições de reuniões</div>
+          <div class="ritual-action"><span>→</span>Redistribuição de prioridades se necessário</div>
+        </div>
+      </div>
+      <div class="ritual-card rv rv-d4">
+        <div class="ritual-time">19h</div>
+        <div class="ritual-label">Fechamento — Síntese do Dia</div>
+        <div class="ritual-actions">
+          <div class="ritual-action"><span>→</span>CORE consolida tudo o que foi feito</div>
+          <div class="ritual-action"><span>→</span>Registro de decisões no Livro Diário</div>
+          <div class="ritual-action"><span>→</span>Lista de pendências para amanhã</div>
+          <div class="ritual-action"><span>→</span>CEO termina o dia com clareza total</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BLINDAGEM -->
+<section id="blindagem">
+  <div class="container">
+    <div class="sec-label rv">Segurança & Confiabilidade</div>
+    <h2 class="sec-title rv rv-d1">Sistema<br/><em>blindado.</em></h2>
+    <div class="blind-grid">
+      <div class="blind-card rv rv-d1">
+        <div class="blind-icon">☁️</div>
+        <div class="blind-title">Backup Duplo Automatizado</div>
+        <div class="blind-text"><span class="blind-highlight">OneDrive (ativo)</span> + <span class="blind-highlight">Google Drive (configurado)</span>. Todos os arquivos de contexto e o Livro de Registro são sincronizados automaticamente. Nenhum dado é perdido.</div>
+      </div>
+      <div class="blind-card rv rv-d2">
+        <div class="blind-icon">📁</div>
+        <div class="blind-title">Estrutura de Pastas Padronizada</div>
+        <div class="blind-text">MAXIMIANO/ com subpastas SISTEMA_CEREBRO/, AREAS/, OPERACIONAL_CEO/ e LIVRO_REGISTRO_DIARIO.md. <span class="blind-highlight">Cada arquivo tem função específica</span> — sem duplicação, sem perda.</div>
+      </div>
+      <div class="blind-card rv rv-d3">
+        <div class="blind-icon">🔒</div>
+        <div class="blind-title">Memória Permanente</div>
+        <div class="blind-text">Contexto de cada área salvo em arquivos Markdown. <span class="blind-highlight">O sistema não depende de memória de sessão</span>. Qualquer agente pode ser ativado a qualquer momento com contexto completo.</div>
+      </div>
+      <div class="blind-card rv rv-d4">
+        <div class="blind-icon">⚙️</div>
+        <div class="blind-title">Padrão JACK de Transcrições</div>
+        <div class="blind-text">Protocolo padronizado para processamento de transcrições. <span class="blind-highlight">Qualquer reunião vira estrutura</span>: decisões, responsáveis, prazos e próximos passos — em minutos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FASES -->
+<section id="fases">
+  <div class="container">
+    <div class="sec-label rv">Roadmap de Evolução</div>
+    <h2 class="sec-title rv rv-d1">Fase 1 rodando.<br/><em>Fase 2 a caminho.</em></h2>
+    <div class="fases-track">
+      <div class="fase-card active rv rv-d2">
+        <div class="fase-num">1</div>
+        <div class="fase-badge">✓ 100% Operacional</div>
+        <div class="fase-title">Base Sólida</div>
+        <ul class="fase-items">
+          <li><span>✓</span>8 agentes especializados ativos</li>
+          <li><span>✓</span>CORE v2.0 implantado</li>
+          <li><span>✓</span>Ritual diário estruturado</li>
+          <li><span>✓</span>Livro de Registro funcionando</li>
+          <li><span>✓</span>Backup duplo configurado</li>
+          <li><span>✓</span>3 IAs em sinergia</li>
+        </ul>
+      </div>
+      <div class="fase-card eval rv rv-d4">
+        <div class="fase-num">2</div>
+        <div class="fase-badge">Em Avaliação</div>
+        <div class="fase-title">Integração Notion</div>
+        <ul class="fase-items">
+          <li><span>→</span>Dashboard visual de métricas</li>
+          <li><span>→</span>CRM integrado ao sistema</li>
+          <li><span>→</span>Tasks sincronizadas com agentes</li>
+          <li><span>→</span>Visualização de pipeline comercial</li>
+          <li><span>→</span>Relatórios automáticos semanais</li>
+        </ul>
+      </div>
+      <div class="fase-card plan rv rv-d6">
+        <div class="fase-num">3</div>
+        <div class="fase-badge">Planejamento</div>
+        <div class="fase-title">Automação N8N</div>
+        <ul class="fase-items">
+          <li><span>→</span>Automações de fluxo de dados</li>
+          <li><span>→</span>Webhooks entre sistemas</li>
+          <li><span>→</span>Alertas automáticos por área</li>
+          <li><span>→</span>Relatórios agendados</li>
+          <li><span>→</span>Integrações com APIs externas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RESULTADOS -->
+<section id="resultados">
+  <div class="container">
+    <div class="sec-label rv">Impacto Real</div>
+    <h2 class="sec-title rv rv-d1">O que <em>muda</em><br/>na prática.</h2>
+    <div class="results-grid">
+      <div class="result-card rv rv-d2">
+        <div class="result-num">8<span class="result-unit">x</span></div>
+        <div class="result-label">Áreas gerenciadas com clareza simultânea</div>
+      </div>
+      <div class="result-card rv rv-d3">
+        <div class="result-num">0</div>
+        <div class="result-label">Decisões perdidas ou esquecidas</div>
+      </div>
+      <div class="result-card rv rv-d4">
+        <div class="result-num">3</div>
+        <div class="result-label">IAs trabalhando em sinergia</div>
+      </div>
+      <div class="result-card rv rv-d5">
+        <div class="result-num">24<span class="result-unit">h</span></div>
+        <div class="result-label">Sistema disponível, todos os dias</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CLOSING -->
+<section id="closing">
+  <div class="closing-inner">
+    <div class="sec-label rv" style="justify-content:center">Maximiano Advogados</div>
+    <h2 class="closing-title rv rv-d1">
+      O futuro da<br/>gestão de escritórios<br/>é <em>agora.</em>
+    </h2>
+    <p class="closing-body rv rv-d2">
+      O Sistema Cérebro não é um experimento. É a infraestrutura operacional real de um escritório de advocacia em 2026 — construída do zero, em produção, gerando resultados todos os dias.
+    </p>
+    <div class="closing-meta rv rv-d3">
+      <strong>Jean Barbosa — CEO, Maximiano Advogados</strong><br/>
+      Sistema Cérebro v1.3 · Maio de 2026 · Construído sobre Claude · GPT-4 · Gemini
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Sistema Cérebro Maximiano</span> · v1.3 · Maio 2026 · Documento Confidencial
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.rv, .rv-l, .rv-r').forEach(el => observer.observe(el));
+
+// Nav active state
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const id = e.target.getAttribute('id');
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { threshold: 0.4 });
+
+sections.forEach(s => navObserver.observe(s));
+</script>
+</body>
+</html>
