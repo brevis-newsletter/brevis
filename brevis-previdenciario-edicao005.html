@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 005 · 19 de maio de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 700px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+
+  /* VOLTAR */
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+
+  /* HEADER */
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+
+  /* BANNER */
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+
+  /* ÍNDICE */
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 5px 20px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; }
+  .indice-item strong { color: var(--dourado-claro); }
+
+  /* DIVISOR */
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+
+  /* SEÇÃO BASE */
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* ABERTURA */
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+
+  /* BADGES */
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; font-weight: 500; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-lei  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .impacto-badge { font-size: 11px; font-weight: 600; }
+
+  /* STATUS PILLS */
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+
+  /* TOP 5 */
+  .top5-item { padding: 22px 0; border-bottom: 1px solid #EDE9DF; }
+  .top5-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .top5-item:first-child { padding-top: 0; }
+  .top5-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top5-numero { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--dourado); opacity: 0.32; line-height: 1; flex-shrink: 0; margin-top: -2px; }
+  .top5-badges { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; flex-wrap: wrap; }
+  .top5-titulo { font-family: 'Playfair Display', serif; font-size: 16.5px; font-weight: 700; color: var(--azul-escuro); line-height: 1.3; }
+  .top5-corpo { font-size: 13.5px; line-height: 1.75; color: var(--cinza-texto); margin-bottom: 12px; }
+  .top5-corpo p { margin-bottom: 9px; }
+  .top5-corpo p:last-child { margin-bottom: 0; }
+  .top5-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 10px 14px; border-radius: 0 3px 3px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; }
+  .top5-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top5-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 10px 14px; border-radius: 0 3px 3px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; }
+  .top5-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top5-status { margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top5-fonte { font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--cinza-sub); margin-top: 8px; }
+  .top5-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .top5-fonte a:hover { text-decoration: underline; }
+
+  /* DECISÃO */
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+
+  /* TESE */
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  /* RADAR */
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+
+  /* DINHEIRO */
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+
+  /* AMANHÃ */
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+
+  /* MAPEAR */
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+
+  /* ATENÇÃO */
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+
+  /* NÚMERO */
+  .numero-card { background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-meio) 100%); border-radius: 5px; padding: 32px; color: white; position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--dourado); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--branco); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(250,250,248,0.68); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(201,168,76,0.45); margin-top: 16px; letter-spacing: 1px; }
+
+  /* MERCADO */
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+
+  /* FRASE */
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+
+  /* FONTES */
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+
+  /* FOOTER */
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+
+  /* RESPONSIVO */
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- VOLTAR TOPO -->
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico para advogados que atuam melhor, mais rápido e com mais resultado</div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">19 de maio de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">005</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">05 a 19 de maio · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">7–9 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Quinzena de 05 a 19.05.2026</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">9 temas · 5 ações imediatas</span>
+  </div>
+
+  <!-- ÍNDICE -->
+  <div class="indice">
+    <span class="indice-item"><strong>01</strong> Abertura</span>
+    <span class="indice-item"><strong>02</strong> Top 5</span>
+    <span class="indice-item"><strong>03</strong> Decisão do Dia</span>
+    <span class="indice-item"><strong>04</strong> Tese Relevante</span>
+    <span class="indice-item"><strong>05</strong> Radar</span>
+    <span class="indice-item"><strong>06</strong> Dinheiro na Mesa</span>
+    <span class="indice-item"><strong>07</strong> O que fazer amanhã</span>
+    <span class="indice-item"><strong>08</strong> Clientes para mapear</span>
+    <span class="indice-item"><strong>09</strong> Atenção Operacional</span>
+    <span class="indice-item"><strong>10</strong> Número do Direito</span>
+    <span class="indice-item"><strong>11</strong> Movimento de Mercado</span>
+    <span class="indice-item"><strong>12</strong> Frase Final</span>
+    <span class="indice-item"><strong>13</strong> Fontes</span>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário. O radar estratégico para advogados que querem atuar melhor, mais rápido e com mais resultado.</p>
+      <p>Maio foi um mês de duplo sinal. O STJ entregou o Tema 1.157 — autorizando o INSS a cancelar na via administrativa benefícios por incapacidade concedidos judicialmente. O STF consolidou o Tema 1.209 e encerrou o debate sobre a aposentadoria especial do vigilante: a resposta foi não, por 6 a 4. Ao mesmo tempo, a ADI 6.309 segue em pleno vapor no plenário e pode redesenhar as regras da aposentadoria especial para trabalhadores expostos a agentes nocivos. A TNU fixou teses práticas sobre laudos extemporâneos e tolueno. E o CJF liberou R$ 2,5 bilhões em RPVs previdenciárias — dinheiro em trânsito que exige controle ativo.</p>
+      <p>Mês de defesa e de ofensiva ao mesmo tempo. Vamos ao que importa.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 5 -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 5 movimentos da quinzena</span>
+    </div>
+
+    <!-- ITEM 1 -->
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">1</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.157</span>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top5-titulo">INSS pode cancelar administrativamente benefício por incapacidade concedido judicialmente</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>A 1ª Seção do STJ, por unanimidade, fixou a tese do Tema Repetitivo 1.157: o INSS pode cessar na via administrativa o auxílio por incapacidade temporária ou aposentadoria por invalidez, mesmo quando concedidos por decisão judicial com trânsito em julgado — desde que realize nova perícia médica e respeite o devido processo administrativo com notificação prévia ao segurado.</p>
+        <p>O fundamento é a natureza dinâmica dos benefícios por incapacidade: eles dependem da manutenção da condição que os originou. A coisa julgada não cristaliza para sempre o estado de saúde do segurado. Portanto, se nova perícia aponta recuperação da capacidade laboral, o INSS pode agir administrativamente — sem precisar ajuizar ação revisional.</p>
+        <p>O acórdão foi julgado nos autos dos REsp 1.930.125/SP e REsp 1.932.145/SP. A tese é vinculante para todos os juizados especiais federais e turmas recursais do país.</p>
+      </div>
+      <div class="top5-impacto-alerta">
+        <span class="top5-impacto-alerta-label">⚠ Ação defensiva imediata</span>
+        Todo cliente com benefício por incapacidade concedido judicialmente é agora alvo potencial de cancelamento administrativo. Oriente-os a comunicar qualquer convocação para perícia do INSS antes de comparecer. O advogado deve ser notificado e acompanhar — o prazo para contestar o cancelamento administrativo pode ser curto.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-consolidada">✔ Consolidada — tese vinculante</span>
+        <span class="status-pill status-desfavoravel">🔴 Desfavorável ao segurado</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://www.stj.jus.br" target="_blank">STJ · stj.jus.br · Tema 1.157 · REsp 1.930.125/SP e REsp 1.932.145/SP · 07-09/05/2026</a></div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">2</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-stj">2ª Turma</span>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top5-titulo">Motorista antes de 1995 não precisa de laudo: basta a CTPS com a função</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>A 2ª Turma do STJ reafirmou, no REsp 2.110.482/RS, o entendimento consolidado: para períodos trabalhados como motorista antes de 28 de abril de 1995, basta o enquadramento por categoria profissional anotado na CTPS para reconhecimento do tempo especial. Não é exigível laudo técnico contemporâneo, PPP ou qualquer outra prova de exposição a agentes nocivos.</p>
+        <p>O fundamento está nos Decretos 53.831/64 (código 2.4.4) e 83.080/79 (Anexo II, código 2.4.2), que listavam a categoria de motorista como atividade especial por presunção legal. A extinção do enquadramento por categoria pela Lei 9.032/1995 só vale para períodos posteriores a 28/04/1995.</p>
+        <p>Tese plenamente consolidada no STJ — com impacto direto em clientes caminhoneiros, motoristas de ônibus e profissionais do transporte com vínculos anteriores a 1995.</p>
+      </div>
+      <div class="top5-impacto">
+        <span class="top5-impacto-label">↗ Oportunidade na carteira</span>
+        Qualquer cliente com registro na CTPS como motorista, caminhoneiro ou operador de veículo anterior a 28/04/1995 tem direito ao reconhecimento do tempo especial — independentemente de laudo. Mapeie os casos e ingresse com pedido administrativo ou judicial conforme o volume de tempo especial reconhecido.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-consolidada">✔ Consolidada</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://www.stj.jus.br" target="_blank">STJ · stj.jus.br · REsp 2.110.482/RS · 2ª Turma · maio/2026</a></div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">3</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-tnu">TNU</span>
+            <span class="badge badge-tema">Tema 348</span>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top5-titulo">Laudo e PPP extemporâneos não afastam a especialidade — empresa deve declarar ausência de alteração</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>A TNU fixou a tese do Tema 348 no PUIL 0001472-52.2021.4.03.6332: a extemporaneidade do laudo técnico ou do PPP não afasta, por si só, o reconhecimento do tempo especial. A condição da empresa — seu layout físico e organizacional — é presumida como permanente, salvo prova de alteração. Basta que o empregador declare formalmente a ausência de mudança nas condições de trabalho.</p>
+        <p>Na prática, isso resolve um dos obstáculos mais frequentes nas ações de aposentadoria especial: a empresa foi encerrada, foi adquirida ou simplesmente não emitiu o laudo à época. Com a tese fixada, o laudo extemporâneo acompanhado de declaração do responsável técnico supre a lacuna — e o período conta como especial.</p>
+      </div>
+      <div class="top5-impacto">
+        <span class="top5-impacto-label">↗ Ação imediata</span>
+        Revise pedidos de aposentadoria especial negados ou parcialmente reconhecidos por ausência de laudo contemporâneo. Se a empresa existia à época, um laudo extemporâneo com declaração de permanência das condições é suficiente. Inclua esse argumento em petições e recursos pendentes.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-consolidada">✔ Consolidada — tese TNU</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao" target="_blank">TNU · cjf.jus.br/tnu · Tema 348 · PUIL 0001472-52.2021.4.03.6332 · 15/05/2026</a></div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">4</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-stf" style="background:#FFF7E0;color:#8B5E00;">ADI 6.309</span>
+            <span class="impacto-badge">⚠ Impacto Altíssimo</span>
+          </div>
+          <div class="top5-titulo">ADI 6.309 no plenário: STF decide se a Reforma da Previdência foi longe demais na aposentadoria especial</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>O STF prosseguiu em 02/05/2026 com o julgamento presencial da ADI 6.309, que questiona a constitucionalidade de três pilares da EC 103/2019 aplicados à aposentadoria especial: (1) a criação de idade mínima (55, 58 ou 60 anos conforme o grau de risco); (2) a vedação à conversão de tempo especial em tempo comum; e (3) o novo cálculo do benefício. O julgamento está empatado e segue sem decisão final.</p>
+        <p>A disputa vai além do vigilante ou da categoria específica — qualquer trabalhador exposto a agentes nocivos que entrou no sistema após a Reforma pode ser afetado. Metalúrgicos, enfermeiros, eletricistas, trabalhadores da indústria química: todos aguardam o veredicto.</p>
+        <p>Se o STF declarar inconstitucional a exigência de idade mínima, milhões de trabalhadores poderão se aposentar mais cedo. Se mantiver, a EC 103 consolida barreiras significativas para a aposentadoria especial no RGPS.</p>
+      </div>
+      <div class="top5-impacto">
+        <span class="top5-impacto-label">→ Monitorar com urgência</span>
+        Não protocole pedidos de conversão de tempo especial em tempo comum enquanto a ADI 6.309 não for decidida — o cenário pode mudar drasticamente. Para clientes em atividade especial com perfil de aposentadoria próxima, acompanhe a pauta do STF semanalmente.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-construcao">⚠ Em construção — aguardar STF</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://portal.stf.jus.br/processos/detalhe.asp?incidente=5848987" target="_blank">STF · portal.stf.jus.br · ADI 6.309 · incidente 5.848.987</a></div>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="top5-item">
+      <div class="top5-header">
+        <div class="top5-numero">5</div>
+        <div>
+          <div class="top5-badges">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-stf" style="background:#FFF7E0;color:#8B5E00;">Tema 1.209</span>
+            <span class="impacto-badge">🔴 Consolidada</span>
+          </div>
+          <div class="top5-titulo">Vigilante não tem aposentadoria especial — STF decide por 6 a 4 no Tema 1.209</div>
+        </div>
+      </div>
+      <div class="top5-corpo">
+        <p>O STF encerrou em 13 de fevereiro de 2026 o julgamento do Tema 1.209 (RE 1.368.225): a atividade de vigilante, com ou sem arma de fogo, não caracteriza atividade especial para fins de aposentadoria diferenciada no RGPS. O placar foi de 6 a 4. A tese tem repercussão geral e vincula todos os tribunais do país.</p>
+        <p>O argumento da periculosidade foi rejeitado como fundamento autônomo para a especialidade previdenciária. O STF separou os conceitos: insalubridade trabalhista (que pode gerar adicional) não se confunde com agente nocivo à saúde para fins de aposentadoria especial previdenciária. O vigilante pode receber adicional de periculosidade — mas não tem direito à aposentação diferenciada.</p>
+        <p>Exceção: se o vigilante atuar em ambiente com agentes físicos, químicos ou biológicos comprovados (ex: vigilante hospitalar com exposição a agentes biológicos), a especialidade pode ser reconhecida por esses agentes — não pela categoria.</p>
+      </div>
+      <div class="top5-impacto-alerta">
+        <span class="top5-impacto-alerta-label">⚠ Atenção na carteira</span>
+        Clientes vigilantes com pedido de aposentadoria especial em andamento precisam ser orientados sobre o novo cenário. Revise petições com tese baseada em periculosidade — não têm mais sustentação. Avalie se há agentes nocivos específicos no ambiente de trabalho que permitam uma tese alternativa.
+      </div>
+      <div class="top5-status">
+        <span class="status-pill status-consolidada">✔ Consolidada — Repercussão Geral STF</span>
+        <span class="status-pill status-desfavoravel">🔴 Desfavorável ao segurado</span>
+      </div>
+      <div class="top5-fonte">Fonte: <a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=6344761&numeroProcesso=1368225&classeProcesso=RE&numeroTema=1209" target="_blank">STF · Tema 1.209 · RE 1.368.225 · incidente 6.344.761 · julgado em 13/02/2026</a></div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STJ · Tema 1.157 · REsp 1.930.125/SP · Maio de 2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">O INSS pode cancelar o benefício por incapacidade sem ir ao Judiciário — mesmo que a origem tenha sido uma decisão judicial.</div>
+      <div class="decisao-body">
+        <p>Um segurado obtém auxílio por incapacidade via ação judicial, com sentença transitada em julgado. Anos depois, o INSS convoca para nova perícia administrativa. Resultado: aptidão para o trabalho declarada. O benefício é suspenso. Sem nova ação judicial, sem ordem de novo juiz. Por ato administrativo próprio da autarquia.</p>
+        <p>Era isso que estava sub judice no Tema 1.157 — e a 1ª Seção do STJ respondeu por unanimidade: sim, o INSS pode fazer isso. A coisa julgada na ação original não petrifica o estado de saúde do segurado para sempre. O benefício por incapacidade é uma relação de trato continuado — e a manutenção das condições que o originaram é pressuposto de sua continuidade.</p>
+        <p>O que o STJ exigiu como salvaguarda: respeito ao contraditório e à ampla defesa no processo administrativo, notificação prévia do segurado antes da cessação e realização de nova perícia médica — não um simples corte automático. O segurado tem direito de contestar o resultado da perícia na esfera administrativa antes da cessação definitiva.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        Tese fixada: "É lícita a cessação, na via administrativa, de benefício por incapacidade temporária concedido por decisão judicial, uma vez realizada nova perícia médica pelo INSS, dado o caráter dinâmico do referido benefício, desde que observados o contraditório e a ampla defesa."
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação defensiva imediata</span>
+        Contate hoje clientes com benefício por incapacidade de origem judicial. Instrua-os a comunicar qualquer convocação para perícia do INSS antes de comparecer. O escritório deve ser notificado, deve acompanhar a perícia sempre que possível e deve estar pronto para impugnar administrativamente o resultado adverso — antes que o corte se consolide.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Consolidada — tese vinculante</span>
+        <span class="status-pill status-desfavoravel">🔴 Desfavorável ao segurado</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.stj.jus.br" target="_blank">stj.jus.br · Tema 1.157</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante da semana</span>
+    </div>
+
+    <div class="section-title">ADI 6.309 · A constitucionalidade da aposentadoria especial pós-EC 103 ainda não foi decidida</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Idade mínima, vedação à conversão e novo cálculo: três pontos da Reforma que o STF ainda não chancelou</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">A ADI 6.309 questiona se a EC 103/2019 violou o núcleo essencial do direito à aposentadoria especial ao (a) impor idade mínima para trabalhadores expostos a agentes nocivos, (b) vedar a conversão de tempo especial em tempo comum, e (c) alterar o cálculo do benefício de forma prejudicial. A inconstitucionalidade arguida é material — não formal.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Base legal</span>
+        <div class="tese-bloco-texto">Art. 201, §1º da CF/88 garante a aposentadoria especial. O debate é se a EC 103/19 preservou o núcleo desse direito ou criou obstáculos desproporcionais que esvaziam a proteção constitucional. A tese contrária sustenta que emendas podem reformar a Previdência desde que não atinjam o núcleo de identidade da proteção.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como o STF está decidindo</span>
+        <div class="tese-bloco-texto">O julgamento foi ao plenário presencial em 02/05/2026 e segue em andamento. Os votos já proferidos indicam divisão. Os ministros que votaram pela inconstitucionalidade parcial focam especialmente na vedação de conversão — vista como a medida mais severa. Nenhuma tese foi definitivamente fixada. O caso está empatado e aguarda os votos restantes.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que esperar — e o que fazer agora</span>
+        <div class="tese-bloco-texto">Enquanto a ADI não for julgada, aplica-se integralmente a EC 103/19 — inclusive a exigência de idade mínima e a vedação de conversão. Não oriente clientes com base em cenário hipotético de inconstitucionalidade. Mas sim: monitore a pauta do STF semanalmente. Quando sair o resultado, o impacto será imediato e volumoso para carteiras previdenciárias.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Em construção — aguardar STF</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 RADAR -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tnu" style="flex-shrink:0;margin-top:2px;">TNU</span>
+      <div>
+        <div class="radar-titulo">Tema 382 — Tolueno cutâneo não caracteriza especialidade por análise qualitativa</div>
+        <div class="radar-texto">A TNU fixou que a simples exposição ao tolueno por via cutânea — incluindo em forma líquida — não autoriza o reconhecimento de atividade especial por análise qualitativa (Anexo 13 da NR-15). A especialidade por tolueno exige prova de exposição por via inalatória. Tese desfavorável: requer revisão imediata de argumentos baseados exclusivamente em contato dérmico com a substância.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tnu" style="flex-shrink:0;margin-top:2px;">TNU</span>
+      <div>
+        <div class="radar-titulo">Tema 354 — MEI: recolhimento tardio não conta para carência, mas vale como tempo de contribuição</div>
+        <div class="radar-texto">A TNU consolidou o entendimento sobre os efeitos do recolhimento em atraso do MEI: contribuições pagas com atraso antes da primeira quitação em dia não são computadas para fins de carência — mas valem como tempo de contribuição. A distinção é relevante para clientes MEI que buscam benefícios por incapacidade ou aposentadoria: carência insuficiente pode inviabilizar o benefício mesmo com tempo de contribuição suficiente.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-trf4" style="flex-shrink:0;margin-top:2px;">TRF4</span>
+      <div>
+        <div class="radar-titulo">IRDR Tema 42 — Ruído intermitente com EPI ineficaz: incidente admitido para uniformização</div>
+        <div class="radar-texto">O TRF4 admitiu o IRDR nº 5028415-32.2024.4.04.0000 (Tema 42) para pacificar se a exposição intermitente a ruído mantém o caráter especial quando o EPI é comprovadamente ineficaz. A tese ainda está em construção, mas tende ao favorável — a súmula 9 da TNU já aponta que EPI ineficaz não afasta a especialidade. Acompanhe o andamento no portal do TRF4.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Tema 1.209 — Vigilante: acórdão publicado, tese vinculante em vigor</div>
+        <div class="radar-texto">Com o acórdão publicado, a tese do Tema 1.209 é vinculante. Turmas recursais e juízes federais já devem aplicá-la de ofício. Clientes vigilantes com ações em andamento baseadas em periculosidade devem receber orientação urgente sobre o novo cenário — a manutenção da tese superada pode gerar condenação em honorários sem perspectiva de êxito.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Tema 1.157 — Alerta para clientes com benefício por incapacidade de origem judicial</div>
+        <div class="radar-texto">Com a tese vinculante publicada, o INSS tem respaldo jurídico para convocar segurados com benefício judicial para nova perícia imediatamente. O volume de convocações tende a aumentar nas próximas semanas. Escritórios com carteira de benefícios por incapacidade de origem judicial devem implementar protocolo de monitoramento ativo.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 DINHEIRO NA MESA -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">RPVs previdenciárias de maio: R$ 2,5 bilhões em distribuição nos TRFs</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>O Conselho da Justiça Federal autorizou na primeira semana de maio de 2026 o repasse de R$ 2,8 bilhões para os Tribunais Regionais Federais efetuarem o pagamento de atrasados judiciais. Desse total, R$ 2,5 bilhões referem-se especificamente a ações previdenciárias — RPVs de beneficiários do INSS, aposentados, pensionistas e titulares de BPC com condenações transitadas em julgado.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟢 Impacto Alto ·</span>
+        <span class="dinheiro-header-title">CJF · Lote Previdenciário Maio/2026</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>R$ 2,5 bilhões são dinheiro que já foi ganho na sentença — e que está agora em trânsito entre o CJF, os TRFs e as contas dos clientes. Cada RPV não levantada dentro do prazo de 2 anos retorna à União. O trabalho do escritório não termina no trânsito em julgado.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Acesse o portal do TRF de sua região e consulte processos com condenação transitada em julgado há mais de 30 dias sem confirmação de pagamento</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Verifique no e-Proc ou sistema processual do seu TRF se houve expedição de alvará ou RPV nos últimos 30 dias para os processos da sua carteira</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Comunique os clientes beneficiados imediatamente após a liberação — muitos não recebem notificação automática do sistema</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>RPVs têm prazo de 2 anos para levantamento. Após esse prazo, o valor retorna à União — e o resgate posterior exige procedimento próprio, moroso e incerto</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Para clientes idosos ou com dificuldade de mobilidade, providencie procuração específica para levantamento bancário se necessário</span>
+          </div>
+        </div>
+        <p style="margin-top:14px; font-weight:600; color:#2D1B6B;">RPV não levantada é honorário que some junto — e responsabilidade do escritório que não monitorou.</p>
+        <span class="dinheiro-fonte">Fonte: CJF · cjf.jus.br · Lote de RPVs previdenciárias · Maio/2026 | Confirmado: R$ 2,8 bi total, R$ 2,5 bi previdenciários</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 O QUE FAZER AMANHÃ -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Cinco ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Contatar clientes com benefício por incapacidade de origem judicial</div>
+          <div class="amanha-texto">Tema 1.157 STJ: o INSS agora tem amparo legal para convocar esses clientes para nova perícia e cancelar o benefício administrativamente. Instrua-os a não comparecer a nenhuma perícia sem comunicar o escritório antes. Implemente protocolo de monitoramento ativo para esse grupo.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Mapear motoristas com vínculos anteriores a 28/04/1995</div>
+          <div class="amanha-texto">Qualquer cliente com anotação na CTPS como motorista, caminhoneiro ou operador de veículo antes de 28/04/1995 tem direito ao tempo especial reconhecido por categoria — sem laudo. Verifique se o período já está computado. Se não estiver, há fundamento para pedido administrativo ou judicial imediato.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Revisar casos de especialidade com laudo ou PPP extemporâneo negados</div>
+          <div class="amanha-texto">TNU Tema 348: laudos extemporâneos são válidos desde que acompanhados de declaração do responsável técnico sobre ausência de alteração nas condições. Se o pedido foi negado por esse motivo, há fundamento para revisão. Verifique processos com esse histórico na carteira.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Verificar RPVs liberadas no lote de maio/2026</div>
+          <div class="amanha-texto">R$ 2,5 bilhões em trânsito para os TRFs. Acesse o portal processual do seu TRF e consulte os processos com condenação em cumprimento. Comunique os clientes beneficiados imediatamente. O prazo de levantamento é de 2 anos — mas quanto antes, melhor.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Orientar clientes vigilantes com aposentadoria especial em andamento</div>
+          <div class="amanha-texto">STF Tema 1.209 é tese vinculante desde 13/02/2026. Clientes vigilantes com ação baseada em periculosidade precisam ser orientados sobre o cenário atual. Avalie se há fundamento alternativo (agentes químicos ou biológicos no ambiente de trabalho) antes de manter ou arquivar o processo.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 CLIENTES PARA MAPEAR -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Seis perfis prioritários desta quinzena. Cada critério é um filtro para aplicar agora na carteira.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Segurados com auxílio-doença ou aposentadoria por invalidez de origem judicial</strong> — benefício ativo obtido por sentença judicial transitada em julgado. Grupo mais exposto ao cancelamento administrativo pós-Tema 1.157.
+            <span class="mapear-tese">→ Ação defensiva urgente · STJ Tema 1.157</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Motoristas, caminhoneiros e operadores de veículo com vínculo anterior a 28/04/1995</strong> — CTPS com anotação da função antes de 1995, com ou sem laudo de especialidade no processo.
+            <span class="mapear-tese">→ Oportunidade de reconhecimento · STJ consolidado</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Trabalhadores com pedido de especialidade negado por laudo/PPP extemporâneo</strong> — empresa encerrada, adquirida ou sem documentação contemporânea. Laudo posterior com declaração de permanência das condições resolve.
+            <span class="mapear-tese">→ Revisão imediata · TNU Tema 348</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Trabalhadores com exposição a tolueno — especialmente cutânea</strong> — verificar se a tese do processo se baseia exclusivamente em contato dérmico com a substância. Revisar antes de protocolar ou dar continuidade.
+            <span class="mapear-tese">→ Revisão urgente de tese · TNU Tema 382 (desfavorável)</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Vigilantes com ação de aposentadoria especial em andamento baseada em periculosidade</strong> — tese sem sustentação desde 13/02/2026. Avaliar fundamento alternativo ou encerramento do processo.
+            <span class="mapear-tese">→ Revisão de estratégia · STF Tema 1.209</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">06</div>
+          <div class="mapear-texto">
+            <strong>Clientes com condenação em cumprimento sem movimentação nos últimos 30 dias</strong> — verificar se RPV foi expedida no lote de maio/2026 e ainda não foi levantada.
+            <span class="mapear-tese">→ Verificar lote CJF maio/2026 · R$ 2,5 bi liberados</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 ATENÇÃO OPERACIONAL -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 1.157 STJ: o INSS pode agir — mas precisa notificar antes</div>
+          <div class="atencao-texto">A tese é vinculante, mas o STJ exigiu observância do contraditório e da ampla defesa. Se o INSS cessar o benefício sem notificação prévia ou sem nova perícia formal, há vício processual. Qualquer cancelamento sem esses requisitos pode ser impugnado administrativamente e, se necessário, judicialmente com tutela de urgência para restabelecimento imediato.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tolueno cutâneo: não use mais como fundamento qualitativo isolado</div>
+          <div class="atencao-texto">O TNU fixou que a exposição por via cutânea, por si só, não autoriza o reconhecimento de especialidade por análise qualitativa (Anexo 13 da NR-15). Se o processo ou pedido administrativo se baseia exclusivamente nesse fundamento, a tese não tem mais suporte. Avalie se há exposição por via inalatória comprovada ou outro agente nocivo caracterizado antes de manter a tese.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">ADI 6.309: não protocole conversão de especial em comum agora</div>
+          <div class="atencao-texto">O julgamento está em andamento. A EC 103/19 veda a conversão atualmente — e enquanto a ADI não for decidida pelo STF, a vedação está em vigor. Protocolar pedido de conversão hoje é prematuro. Aguarde a decisão final e, se favorável ao segurado, ingresse imediatamente com os pedidos acumulados.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">MEI em atraso: carência e tempo de contribuição são institutos distintos</div>
+          <div class="atencao-texto">Clientes MEI com histórico de contribuições irregulares podem ter tempo de contribuição suficiente sem ter carência suficiente. Antes de protocolar pedido de benefício por incapacidade — que exige carência de 12 contribuições — verifique se as contribuições foram pagas em dia ou em atraso. Contribuição em atraso anterior à primeira paga em dia não conta para carência. Esse erro gera indeferimento evitável.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 NÚMERO DO DIREITO -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado previdenciário da quinzena</div>
+      <div class="numero-destaque">2,5<span class="numero-unidade">bi</span></div>
+      <div class="numero-titulo">em reais liberados pelo CJF em RPVs previdenciárias em maio de 2026</div>
+      <div class="numero-texto">Do total de R$ 2,8 bilhões autorizados pelo Conselho da Justiça Federal na primeira semana de maio, R$ 2,5 bilhões referem-se especificamente a Requisições de Pequeno Valor em ações previdenciárias — abrangendo processos de aposentados, pensionistas e titulares de BPC com condenações em fase de cumprimento de sentença. Cada processo pendente de levantamento representa honorários esperando para ser sacados.</div>
+      <div class="numero-fonte">Fonte: CJF · Conselho da Justiça Federal · Lote de repasse previdenciário · Maio/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 MOVIMENTO DE MERCADO -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Maio de 2026 ensina que o advogado previdenciarista precisa saber defender tão bem quanto atacar — e que as duas coisas exigem preparo diferente.</div>
+
+    <div class="mercado-corpo">
+      <p>Este mês apresentou dois perfis de notícia ao mesmo tempo: favoráveis e desfavoráveis, em equilíbrio quase perfeito. O STJ entregou o Tema 1.157 — que expõe uma carteira inteira de clientes a cancelamentos administrativos. O STF encerrou a discussão sobre o vigilante com uma derrota por placar expressivo. A TNU revisou a tese do tolueno em sentido restritivo.</p>
+
+      <p>Mas no mesmo período: a TNU favoreceu o reconhecimento de laudo extemporâneo, o STJ reafirmou o direito dos motoristas pré-1995 sem exigir laudo, e R$ 2,5 bilhões em RPVs estão em distribuição. O mês não foi nem só de ataque nem só de defesa — foi das duas coisas ao mesmo tempo.</p>
+
+      <p>Escritórios que chegaram a maio sem saber quais clientes têm benefício judicial em risco, sem controle de RPVs liberadas e sem tese revisada sobre o tolueno já estão atrás. O previdenciarista que leu esta edição tem um mapa. O que ainda não leu está operando no escuro — e no direito previdenciário de 2026, escuridão tem custo.</p>
+
+      <p>O diferencial competitivo não está mais em saber a lei. Está em traduzir jurisprudência em protocolo de escritório. Esta edição entregou nove movimentos verificados, seis perfis de clientes para mapear e cinco ações para executar amanhã. O próximo passo é apenas executar.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Em maio de 2026, o advogado previdenciarista que só sabe defender está incompleto. E o que só sabe atacar, também. A competência é saber qual modo ativar — e quando.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 FRASE FINAL -->
+  <div class="frase-section">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Conhecer a tese é o começo. Saber como ela muda de sinal de uma semana para outra — e agir antes que o cliente pague o preço — é o que define o especialista.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 005</div>
+  </div>
+
+  <!-- 13 FONTES -->
+  <div class="section">
+    <div class="section-tag">
+      <span class="section-num">13</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br" target="_blank">STJ · Tema 1.157 — Cancelamento administrativo de benefício concedido judicialmente</a></div>
+          <div class="fonte-desc">REsp 1.930.125/SP e REsp 1.932.145/SP — tese vinculante, 1ª Seção, julgamento concluído em maio de 2026. Leitura obrigatória para escritórios com carteira de benefícios por incapacidade de origem judicial.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=6344761&numeroProcesso=1368225&classeProcesso=RE&numeroTema=1209" target="_blank">STF · Tema 1.209 — Aposentadoria especial do vigilante (RE 1.368.225)</a></div>
+          <div class="fonte-desc">Tese vinculante fixada em 13/02/2026, por 6 a 4. Acórdão publicado. Consulte o inteiro teor para identificar as hipóteses excepcionais em que a especialidade ainda pode ser reconhecida para vigilantes.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://portal.stf.jus.br/processos/detalhe.asp?incidente=5848987" target="_blank">STF · ADI 6.309 — Constitucionalidade das regras de aposentadoria especial pós-EC 103/19</a></div>
+          <div class="fonte-desc">Julgamento em andamento no plenário. Três pontos: idade mínima, vedação à conversão e cálculo do benefício. Acompanhe a pauta — a decisão terá impacto imediato em carteiras previdenciárias.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao" target="_blank">TNU · Temas 348 e 382 — Laudo extemporâneo e tolueno cutâneo</a></div>
+          <div class="fonte-desc">Dois teses de impacto direto em ações de aposentadoria especial. Tema 348: laudo/PPP extemporâneo não afasta especialidade com declaração de permanência. Tema 382: exposição cutânea a tolueno isolada não caracteriza especialidade qualitativa.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conteudo.trf4.jus.br/internet/processual/irdr/visualizar_tema.php?id=42" target="_blank">TRF4 · IRDR Tema 42 — Ruído intermitente e eficácia do EPI</a></div>
+          <div class="fonte-desc">Incidente admitido para pacificar o ruído intermitente como agente especial quando o EPI é comprovadamente ineficaz. Em construção — acompanhe o andamento no portal do TRF4 para identificar o momento de protocolar com base na tese.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.cjf.jus.br" target="_blank">CJF · Repasse de RPVs previdenciárias — Lote de Maio/2026</a></div>
+          <div class="fonte-desc">R$ 2,8 bilhões autorizados, sendo R$ 2,5 bilhões destinados a ações previdenciárias. Consulte o e-Proc do seu TRF para verificar expedições e comunicar clientes beneficiados com urgência.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 005 · 19 de maio de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
