@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Semanal — Edição nº 008 · 26 de julho de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --creme: #FBF8F1;
+    --creme-forte: #F0E9D8;
+    --accent: #c8371a;
+    --accent-claro: #E8C6BC;
+    --accent-sutil: #FBEAE5;
+    --azul: #1a4c8c;
+    --azul-claro: #4D7AB8;
+    --verde: #1a6b42;
+    --verde-claro: #E8F5EE;
+    --marrom: #7a4a00;
+    --roxo: #5c2d82;
+    --muted: #7a7670;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #2E1811; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--paper); box-shadow: 0 0 90px rgba(0,0,0,0.55); }
+
+  .back-bar { background: var(--ink); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.75); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+  .back-link:hover { color: var(--accent-claro); }
+
+  .header { background: var(--ink); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.22); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--paper); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--accent); }
+  .header-sub { font-size: 12px; color: rgba(247,244,238,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(200,55,26,0.22); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(200,55,26,0.65); }
+  .header-meta-value { font-size: 12.5px; color: rgba(247,244,238,0.88); font-weight: 500; }
+
+  .banner-especial { background: linear-gradient(90deg, var(--accent) 0%, #8B2410 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--paper); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--paper); border-radius: 50%; opacity: 0.5; }
+
+  .indice { background: var(--ink); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,198,188,0.7); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(200,55,26,0.2); color: var(--accent-claro); }
+  .indice-item strong { color: var(--accent-claro); }
+
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--accent), transparent); margin: 0 48px; opacity: 0.25; }
+
+  .section { padding: 36px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: #2A2622; }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+
+  .abertura { background: var(--accent-sutil); border-left: 4px solid var(--accent); padding: 30px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--ink); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-civ { background: #EBF0FB; color: var(--azul); }
+  .badge-trib { background: #E8F5EE; color: var(--verde); }
+  .badge-trab { background: #FFF3E0; color: var(--marrom); }
+  .badge-hold { background: #F5EFFF; color: var(--roxo); }
+  .badge-crim { background: #FDF0EE; color: var(--accent); }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-stj  { background: #F0EBF5; color: var(--roxo); }
+  .badge-tst  { background: #FFF3E0; color: var(--marrom); }
+  .badge-tema { background: #F5EFFF; color: var(--roxo); }
+  .badge-fam  { background: #FDECF3; color: #A8104A; }
+  .badge-saude { background: #E6F7F5; color: #0F7A6E; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: var(--verde); }
+  .status-atencao     { background: var(--accent-sutil); color: var(--accent); }
+
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(15,14,12,0.06); transition: box-shadow 0.18s, transform 0.18s; scroll-margin-top: 16px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(200,55,26,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--accent-claro); border-color: var(--accent-claro); }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(15,14,12,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-trib { background: linear-gradient(90deg, #1a6b42, #4FA875); }
+  .bar-trab { background: linear-gradient(90deg, #7a4a00, #C9973F); }
+  .bar-civ  { background: linear-gradient(90deg, #1a4c8c, #6C97C9); }
+  .bar-hold { background: linear-gradient(90deg, #5c2d82, #A583C9); }
+  .bar-crim { background: linear-gradient(90deg, #c8371a, #D9634A); }
+  .bar-stf  { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-fam  { background: linear-gradient(90deg, #A8104A, #D95C8C); }
+  .bar-saude { background: linear-gradient(90deg, #0F7A6E, #4FBBA8); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: #2A2622; margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #16371F; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--accent-sutil); border-left: 3px solid var(--accent); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EEE7D8; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); }
+  .top-card-fonte a { color: var(--azul); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+
+  .decisao-card { background: var(--ink); border-radius: 6px; padding: 30px 34px; color: var(--paper); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.12); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.18); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(200,55,26,0.22); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--paper); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(247,244,238,0.82); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(200,55,26,0.25); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--accent-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--accent); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(247,244,238,0.88); border-left: 2px solid var(--azul-claro); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #8FB4E8; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .decisao-fonte a { color: var(--accent-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+
+  .tese-card { background: var(--creme-forte); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: #2A2622; }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DED5BE; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--accent); }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--accent); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: #2A2622; margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--muted); }
+  .panorama-fonte a { color: var(--azul); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EEE7D8; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul); opacity: 0.3; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+
+  .mapear-box { background: var(--ink); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(247,244,238,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.045); border-radius: 3px; border-left: 2px solid var(--accent); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent-claro); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(247,244,238,0.85); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(200,55,26,0.7); display: block; margin-top: 4px; }
+
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--accent-sutil); border: 1px solid #F0C5B8; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--accent); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+
+  .numero-card { background: linear-gradient(135deg, var(--ink) 0%, #2A231C 100%); border-radius: 5px; padding: 32px; color: var(--paper); position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--accent); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--paper); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(247,244,238,0.7); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(200,55,26,0.55); margin-top: 16px; letter-spacing: 1px; }
+
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--ink); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: #2A2622; }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--creme-forte); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--ink); font-weight: 500; border-left: 3px solid var(--azul); }
+
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E0D9C6; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--accent); opacity: 0.24; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--ink); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--muted); line-height: 1.55; }
+
+  .footer { background: var(--ink); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .footer-back-link:hover { color: var(--accent-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--accent); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(247,244,238,0.32); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(200,55,26,0.14); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(247,244,238,0.26); line-height: 1.7; font-style: italic; }
+
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Jurídica Geral · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Semanal</span></div>
+    <div class="header-sub">Radar jurídico amplo — <a href="#card-civel">Cível</a>, <a href="#card-familia">Família</a>, <a href="#card-saude">Saúde</a>, <a href="#card-tributario">Tributário</a>, <a href="#card-trabalhista">Trabalhista</a>, <a href="#card-holding">Holding Patrimonial</a> e <a href="#card-criminal">Criminal</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">26 de julho de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">008</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">16 jun a 26 jul de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">9–11 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Semanal</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Últimos 40 dias</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">7 áreas cobertas · 9 movimentos · 5 ações imediatas</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 6</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>O Plenário do STF fechou, em junho, a nova régua de responsabilidade das plataformas digitais — e o prazo de 60 dias para adequação está correndo. É a decisão que mais deve gerar consulta de cliente nas próximas semanas, e por isso abre esta edição.</p>
+      <p>Ao lado dela, o STJ publicou em julho dois repetitivos tributários que travam teses de crédito de PIS/Cofins e de ICMS-Difal, o TST fixou 40 novas teses vinculantes em rito repetitivo, e a reforma tributária empurrou o planejamento sucessório para uma janela que se fecha ainda este ano — assunto obrigatório para toda holding patrimonial em carteira.</p>
+      <p>Esta edição também amplia a cobertura para Família e Saúde: o STJ confirmou que o FGTS acumulado durante o casamento entra na partilha do divórcio, o STF lançou uma cartilha oficial sobre competência em ações de medicamentos contra o SUS, e o STJ ainda fixou a responsabilidade objetiva do subcontratado no transporte de cargas — mais um precedente cível direto para a carteira.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 6 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 9 movimentos do período</span>
+    </div>
+
+    <div class="top-grid">
+
+      <div class="top-card" id="card-tributario">
+        <div class="top-card-bar bar-trib"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 01 · TRIBUTÁRIO</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">PIS/Pasep-Cofins</span>
+          </div>
+          <div class="top-card-titulo">STJ nega crédito de PIS/Cofins sobre combustíveis a varejistas do regime monofásico</div>
+          <div class="top-card-corpo">
+            <p>Em 17/07, a Secretaria de Jurisprudência do STJ incluiu na base de repetitivos o julgamento dos REsp 2.178.164, 2.123.838 e 2.124.940: não há direito à obtenção e manutenção de créditos vinculados à aquisição de combustíveis por comerciante varejista sujeito ao regime monofásico, mesmo após as LC 192/2022 e 194/2022 e a MP 1.118/2022.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Atenção</span>
+            Clientes do varejo de combustíveis que vinham tomando esse crédito ficam expostos a autuação e devem revisar a apuração retroativa.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Repetitivo julgado</span>
+              <span class="status-pill status-atencao">🔴 Desfavorável ao contribuinte</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/17072026-Pagina-de-Repetitivos-inclui-teses-sobre-creditos-de-PISPasep-e-Cofins-e-sobre-ICMS-em-operacoes-interestaduais.aspx" target="_blank">STJ · 17/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card">
+        <div class="top-card-bar bar-trib"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 02 · TRIBUTÁRIO</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">ICMS-Difal</span>
+          </div>
+          <div class="top-card-titulo">STJ confirma: Lei Kandir já bastava para cobrar ICMS-Difal antes da LC 190/2022</div>
+          <div class="top-card-corpo">
+            <p>No mesmo lote de 17/07, os REsp 2.025.997 e 2.133.933 fixaram que a LC 87/1996 (Lei Kandir) era suficiente para disciplinar a cobrança do ICMS-Difal em operações interestaduais a consumidor final <strong>contribuinte</strong> do imposto, antes da entrada em vigor da LC 190/2022. Atenção: não confundir com o Tema 1.094 do STF ("tese do século" do Difal), que tratou de operações a consumidor final <strong>não contribuinte</strong> e exigiu lei complementar — são hipóteses distintas.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Oportunidade de revisão</span>
+            Fecha a tese de inexigibilidade do Difal no período pré-2022 para operações interestaduais entre contribuintes — reduz o espaço de discussão em teses já ajuizadas.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Repetitivo julgado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/17072026-Pagina-de-Repetitivos-inclui-teses-sobre-creditos-de-PISPasep-e-Cofins-e-sobre-ICMS-em-operacoes-interestaduais.aspx" target="_blank">STJ · 17/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-trabalhista">
+        <div class="top-card-bar bar-trab"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 03 · TRABALHISTA</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tst">TST</span>
+            <span class="badge badge-tema">Reafirmação de jurisprudência</span>
+          </div>
+          <div class="top-card-titulo">TST eleva 40 entendimentos consolidados a teses vinculantes</div>
+          <div class="top-card-corpo">
+            <p>Em sessão virtual entre 16 e 27/06, o Pleno do TST fixou 40 novas teses jurídicas de caráter vinculante, via procedimento de reafirmação de jurisprudência — matérias já pacificadas no Tribunal, sem divergência entre Turmas e SDI-1, que passam a ter efeito obrigatório para as instâncias ordinárias.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata</span>
+            Confira se algum processo em curso discute matéria já "tesada" — o argumento perde força e a estratégia processual deve ser ajustada.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Vinculante</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.tst.jus.br/en/-/tst-define-40-novas-teses-vinculantes%C2%A0" target="_blank">TST · sessão 16–27/06/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-civel">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 04 · CÍVEL</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">3ª Turma</span>
+          </div>
+          <div class="top-card-titulo">STJ divulga julgamento sobre responsabilidade de instituição de pagamento por falha em transação</div>
+          <div class="top-card-corpo">
+            <p>O Informativo de Jurisprudência Extraordinário nº 32, publicado em 21/07, trouxe a público o REsp 2.164.130-SP (3ª Turma, rel. min. Moura Ribeiro, julgado por unanimidade em 09/02/2026), sobre responsabilidade civil de instituição de pagamento por falha na prestação do serviço.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso na petição</span>
+            Precedente recente e citável para ações contra fintechs e instituições de pagamento — vale conferir o inteiro teor antes de usar como paradigma.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado (divulgado em 21/07)</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://processo.stj.jus.br/jurisprudencia/externo/informativo/?aplicacao=informativo&acao=pesquisar&livre=compra+e+venda&refinar=s.disp.&b=infj&p=true&t=&l=20&i=1" target="_blank">STJ · Informativo Extraordinário nº 32 · 21/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-holding">
+        <div class="top-card-bar bar-hold"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 05 · HOLDING PATRIMONIAL</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-hold">ITCMD</span>
+            <span class="badge badge-tema">Reforma Tributária</span>
+          </div>
+          <div class="top-card-titulo">Janela para planejamento sucessório nas alíquotas atuais de ITCMD começa a se fechar</div>
+          <div class="top-card-corpo">
+            <p>A reforma tributária tornou obrigatória a progressividade do ITCMD. Para a nova tabela valer a partir de 1º/01/2027, a lei estadual precisa ser sancionada e publicada ainda em 2026 — o que faz de julho um mês estratégico de decisão para clientes com patrimônio relevante em fase de planejamento.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Janela fechando</span>
+            Doações e reorganizações societárias que dependam da alíquota vigente precisam ser formalizadas antes da mudança de tabela em cada Estado.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-atencao">🔴 Prazo em curso</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://ibdfam.org.br/artigos/2580/Reforma+tribut%C3%A1ria,+aumento+do+ITCMD+e+planejamento+sucess%C3%B3rio:+antecipar+doa%C3%A7%C3%B5es+%C3%A9+sempre+a+melhor+decis%C3%A3o" target="_blank">IBDFAM · jul/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-criminal">
+        <div class="top-card-bar bar-crim"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 06 · CRIMINAL</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.367</span>
+          </div>
+          <div class="top-card-titulo">Repetitivo define início do cumprimento de pena por crime cometido durante livramento condicional</div>
+          <div class="top-card-corpo">
+            <p>Tema 1.367: nos REsp 2.205.262, 2.200.477 e 2.201.422, julgados por unanimidade em 07/05/2026 pela Terceira Seção (rel. min. Sebastião Reis Júnior), o STJ fixou que o cumprimento da pena por delito praticado durante o período de prova do livramento condicional começa no dia seguinte ao fim desse período, quando as penas não forem unificadas.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso na petição</span>
+            Tese vinculante para cálculo de execução penal nesses casos — já consolidada, mas ainda pouco conhecida fora da área.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Consolidada (mai/2026)</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/29052026-Repetitivo-define-que-pena-por-crime-cometido-sob-livramento-condicional-comeca-apos-fim-do-beneficio.aspx" target="_blank">STJ · Tema 1.367 · 07/05/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-familia">
+        <div class="top-card-bar bar-fam"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 07 · FAMÍLIA</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Partilha de bens</span>
+          </div>
+          <div class="top-card-titulo">STJ confirma que saldo de FGTS formado durante o casamento entra na partilha do divórcio</div>
+          <div class="top-card-corpo">
+            <p>O Informativo de Jurisprudência Extraordinário nº 32, publicado em 21/07/2026, trouxe julgado da Corte no sentido de que os valores depositados em conta vinculada ao FGTS, auferidos na constância do casamento sob o regime de comunhão parcial de bens, são comunicáveis e devem ser partilhados no divórcio.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso na petição</span>
+            Vale revisar partilhas em curso ou já formalizadas sem considerar o FGTS como bem comum — pode haver diferença relevante a favor do cliente.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado (divulgado em 21/07)</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://processo.stj.jus.br/jurisprudencia/externo/informativo/?aplicacao=informativo&acao=pesquisar&livre=FGTS&refinar=S.DISP.&b=INFJ&p=true&t=JURIDICO&l=10&i=1" target="_blank">STJ · Informativo Extraordinário nº 32 · 21/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-saude">
+        <div class="top-card-bar bar-saude"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 08 · SAÚDE / DIREITO MÉDICO</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Temas 6, 500 e 1.234</span>
+          </div>
+          <div class="top-card-titulo">STF lança cartilha oficial sobre competência em ações de medicamentos contra o SUS</div>
+          <div class="top-card-corpo">
+            <p>Em 06/07/2026, o STF disponibilizou material objetivo consolidando as regras de competência das ações de fornecimento de medicamentos (Temas 6, 500 e 1.234 de repercussão geral), incluindo o critério do custo anual do tratamento (limite de 210 salários-mínimos) para medicamentos não incorporados ao SUS e as regras para fármacos sem registro na Anvisa.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata</span>
+            Usar a cartilha para definir corretamente polo passivo e Justiça competente antes de ajuizar — reduz risco de extinção por ilegitimidade ou incompetência.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Orientação oficial</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.conjur.com.br/2026-jul-06/stf-lanca-cartilha-para-orientar-casos-sobre-fornecimento-de-medicamentos-pelo-sus/" target="_blank">ConJur (com STF) · 06/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 09 · CÍVEL</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Transporte de cargas</span>
+          </div>
+          <div class="top-card-titulo">STJ define que subcontratado no transporte de cargas responde objetivamente perante o subcontratante</div>
+          <div class="top-card-corpo">
+            <p>No REsp 2.236.189-PR (3ª Turma, rel. min. Ricardo Villas Bôas Cueva, julgado por unanimidade em 16/06/2026), o STJ fixou que, no transporte rodoviário de cargas por subcontratação, o subcontratante assume perante o subcontratado a mesma posição do contratante originário — com a responsabilidade objetiva do art. 7º da Lei 11.442/2007 incidindo nessa relação.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso na petição</span>
+            Relevante para clientes do setor de logística e transporte — reforça a responsabilidade objetiva em toda a cadeia de subcontratação, não só na ponta com o dono da carga.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/458303/stj-subcontratado-responde-objetivamente-em-transporte-de-cargas" target="_blank">Migalhas (STJ REsp 2.236.189-PR) · 16/06/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STF · RE 1.037.396 e RE 1.057.258 · 17/06/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">STF amplia a responsabilidade civil das plataformas digitais e redefine o artigo 19 do Marco Civil</div>
+      <div class="decisao-body">
+        <p>Em embargos de declaração, o Plenário do STF proclamou a tese que ajusta a interpretação do artigo 19 da Lei 12.965/2014. Até que o Congresso legisle especificamente sobre o tema, plataformas podem ser responsabilizadas solidariamente por conteúdo ilícito de terceiros quando falharem em remover após denúncia, por perfis falsos reincidentes e por anúncios pagos ou disseminação artificial de conteúdo ilícito — nesses últimos casos, com presunção relativa de culpa e sem exigência de notificação prévia.</p>
+        <p>Para conteúdos especialmente graves — atos antidemocráticos, terrorismo, incitação ao suicídio, discriminação, violência contra a mulher, exploração sexual infantil e tráfico de pessoas — o dever de cuidado é reforçado, com responsabilização em caso de falha sistêmica de prevenção ou remoção. O STF não criou responsabilidade objetiva: a análise de culpa segue caso a caso.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        "Até que o Congresso Nacional aprove legislação específica, o art. 19 do Marco Civil da Internet deve ser interpretado de forma ampliada para permitir a responsabilização civil das plataformas nas hipóteses fixadas pelo STF."
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Clientes que operam plataformas, marketplaces ou redes sociais com atuação no Brasil têm 60 dias corridos (contados de 17/06) para estruturar canais de notificação, relatórios de transparência e representação legal no país. O prazo vence em meados de agosto — mapear esses clientes esta semana.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Tese proclamada</span>
+        <span class="status-pill status-atencao">🔴 Amplia responsabilização</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.conjur.com.br/2026-jun-17/stf-amplia-responsabilidade-das-plataformas-digitais-e-redefine-aplicacao-do-marco-civil-da-internet/" target="_blank">ConJur · 17/06/2026</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">STF pauta Tema 118: exclusão do ISS da base de PIS/Cofins — a "irmã" da tese do século</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Tema 118 de Repercussão Geral — ISS na base de cálculo de PIS/Cofins</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">Discute se o ISS, tributo municipal incidente sobre prestação de serviços, deve ser excluído da base de cálculo do PIS e da Cofins — em linha direta com a lógica já firmada pelo STF para o ICMS no Tema 69 ("tese do século").</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Base legal e paradigmas</span>
+        <div class="tese-bloco-texto">Repercussão geral reconhecida; o precedente do Tema 69 (ICMS na base de PIS/Cofins) é o paradigma central invocado pelos contribuintes para sustentar a mesma lógica em relação ao ISS.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como está a tramitação</span>
+        <div class="tese-bloco-texto">O STF pautou o Tema 118 para julgamento — ainda sem tese fixada. É um dos processos tributários mais aguardados de 2026, com potencial de impacto direto sobre prestadores de serviço de todos os portes.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Mapear clientes prestadores de serviço com ISS relevante na base de PIS/Cofins e avaliar ajuizamento preventivo para resguardar o direito à repetição de indébito desde já, sem aguardar o trânsito em julgado.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Em construção — pautado, sem julgamento de mérito</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área — as 5 frentes do Brevis Semanal</span>
+    </div>
+    <div class="section-intro">Um achado verificado para cada área que o escritório cobre fora do previdenciário. Onde a movimentação mais relevante já apareceu no Top 6, trazemos aqui o ângulo prático para a rotina do escritório.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Cível</div>
+          <div class="panorama-titulo">Responsabilidade de instituições de pagamento ganha precedente citável</div>
+          <div class="panorama-texto">REsp 2.164.130-SP (STJ, 3ª Turma), divulgado no Informativo Extraordinário nº 32 de 21/07/2026, é referência recente para ações contra fintechs por falha de serviço.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte"><a href="https://processo.stj.jus.br/jurisprudencia/externo/informativo/?aplicacao=informativo&acao=pesquisar&livre=compra+e+venda&refinar=s.disp.&b=infj&p=true&t=&l=20&i=1" target="_blank">STJ Informativo 32</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Tributário</div>
+          <div class="panorama-titulo">STJ trava crédito de PIS/Cofins sobre combustíveis no regime monofásico</div>
+          <div class="panorama-texto">Repetitivo julgado (REsp 2.178.164 e conexos) fecha a discussão para o varejo de combustíveis — revisar apurações em curso.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Repetitivo</span><span class="panorama-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/17072026-Pagina-de-Repetitivos-inclui-teses-sobre-creditos-de-PISPasep-e-Cofins-e-sobre-ICMS-em-operacoes-interestaduais.aspx" target="_blank">STJ · 17/07/2026</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Trabalhista</div>
+          <div class="panorama-titulo">40 teses reafirmadas viram precedente vinculante no TST</div>
+          <div class="panorama-texto">Sessão virtual de 16 a 27/06/2026 eleva entendimentos já pacíficos a teses de observância obrigatória — reduz espaço de discussão em processos com essas matérias.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Vinculante</span><span class="panorama-fonte"><a href="https://www.tst.jus.br/en/-/tst-define-40-novas-teses-vinculantes%C2%A0" target="_blank">TST · jun/2026</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Holding Patrimonial</div>
+          <div class="panorama-titulo">Progressividade obrigatória do ITCMD encurta o prazo de planejamento sucessório</div>
+          <div class="panorama-texto">Estados precisam sancionar a lei ainda em 2026 para a nova tabela valer em 2027 — julho e agosto são a janela real de decisão para clientes de holding.</div>
+          <div class="panorama-footer"><span class="status-pill status-atencao">🔴 Prazo em curso</span><span class="panorama-fonte"><a href="https://www.migalhas.com.br/depeso/459859/reforma-tributaria-2-semestre-decisivo-no-planejamento-sucessorio" target="_blank">Migalhas · jul/2026</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">Criminal</div>
+          <div class="panorama-titulo">Tema 1.367 do STJ fixa termo inicial da pena em crime cometido sob livramento condicional</div>
+          <div class="panorama-texto">Repetitivo consolidado em maio/2026 (Terceira Seção) segue relevante para cálculos de execução penal em curso — ainda pouco aplicado na prática por desconhecimento.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada (mai/2026)</span><span class="panorama-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/29052026-Repetitivo-define-que-pena-por-crime-cometido-sob-livramento-condicional-comeca-apos-fim-do-beneficio.aspx" target="_blank">STJ · Tema 1.367</a></span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-civ" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Plataformas têm 60 dias corridos a partir de 17/06 para adequação estrutural</div>
+        <div class="radar-texto">Inclui representação legal no Brasil, canais de notificação e relatórios de transparência — prazo vence em meados de agosto de 2026.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-crim" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Golpe da falsa central de atendimento: bancos seguem sem responsabilidade automática</div>
+        <div class="radar-texto">A 3ª Turma do STJ manteve, por unanimidade, a negativa de indenização quando o cliente segue instruções de golpistas por iniciativa própria fora de canal oficial — reforça a distinção entre fortuito interno e culpa exclusiva da vítima já consolidada desde 2025.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-trib" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Tema 1.369 (ICMS-Difal pós-EC) segue na pauta de temas tributários aguardados de 2026</div>
+        <div class="radar-texto">Discussão irmã da fixada pelo STJ em 17/07 — acompanhar, pois pode alterar o cenário para operações já judicializadas.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">A janela do ITCMD progressivo é a oportunidade financeira mais concreta do trimestre</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>Com a reforma tributária tornando obrigatória a tabela progressiva do ITCMD, cada Estado precisa publicar sua lei ainda em 2026 para que a nova alíquota valha a partir de janeiro de 2027. Isso cria uma janela real — não hipotética — para antecipar doações e reorganizações societárias sob as alíquotas atualmente vigentes.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🔴 Impacto Alto ·</span>
+        <span class="dinheiro-header-title">Planejamento sucessório antes da virada de tabela</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Clientes com holding patrimonial constituída ou em estruturação devem revisar, ainda neste semestre, se a doação de cotas ou a reorganização societária vale mais sob a alíquota vigente do que sob a tabela progressiva que entra em vigor no Estado a partir de 2027.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Levantar, por Estado, a data prevista de sanção da lei que institui a progressividade</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Priorizar clientes com patrimônio imobiliário relevante ainda sem holding formalizada</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Simular o custo da doação hoje versus o custo projetado sob a tabela progressiva de 2027</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: IBDFAM e Migalhas · julho de 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>5 ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Mapear clientes que operam plataforma, marketplace ou rede social no Brasil</div>
+          <div class="amanha-texto">O prazo de 60 dias do STF (vencendo em agosto) exige estrutura de notificação, transparência e representação legal local.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Revisar apurações de PIS/Cofins de clientes varejistas de combustíveis</div>
+          <div class="amanha-texto">O repetitivo do STJ de 17/07 fecha a tese de crédito sobre esses insumos — checar exposição retroativa.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Cruzar processos trabalhistas em curso com as 40 novas teses vinculantes do TST</div>
+          <div class="amanha-texto">Matérias já "tesadas" perdem força como tese de defesa ou de recurso — ajustar estratégia processual.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Agendar conversa com clientes de holding sobre a janela do ITCMD</div>
+          <div class="amanha-texto">Cada mês que passa reduz o tempo hábil para reorganização societária sob a alíquota vigente.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Sinalizar aos prestadores de serviço em carteira o Tema 118 do STF (ISS x PIS/Cofins)</div>
+          <div class="amanha-texto">Ainda em construção, mas já justifica avaliação de ajuizamento preventivo para resguardar repetição de indébito.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">4 perfis prioritários deste período.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Empresas de tecnologia com plataforma, marketplace ou rede social</strong> — precisam se adequar à nova tese do Marco Civil em até 60 dias corridos.
+            <span class="mapear-tese">→ Estruturação de compliance · STF RE 1.037.396/1.057.258</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Varejistas de combustíveis no regime monofásico</strong> — expostos após o repetitivo do STJ sobre crédito de PIS/Cofins.
+            <span class="mapear-tese">→ Revisão de apuração tributária · STJ 17/07/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Famílias com patrimônio imobiliário relevante sem holding constituída</strong> — janela de planejamento sucessório se fecha ainda em 2026.
+            <span class="mapear-tese">→ Constituição de holding + doação de cotas · Reforma do ITCMD</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Prestadores de serviço com ISS relevante</strong> — potencial repetição de indébito de PIS/Cofins se o STF seguir a lógica do Tema 69.
+            <span class="mapear-tese">→ Ajuizamento preventivo · STF Tema 118 (em construção)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Prazo de 60 dias do STF vence em meados de agosto</div>
+          <div class="atencao-texto">Contado a partir de 17/06/2026 — clientes que operam plataforma no Brasil precisam de plano de adequação em andamento, não apenas planejado.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Leis estaduais de ITCMD progressivo têm calendário próprio</div>
+          <div class="atencao-texto">O prazo final depende do cronograma de cada Estado — confirmar a data prevista de sanção antes de prometer qualquer janela ao cliente.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado do período</div>
+      <div class="numero-destaque">60<span class="numero-unidade">dias</span></div>
+      <div class="numero-titulo">É o prazo que o STF deu às plataformas digitais para se adequar à nova tese do Marco Civil</div>
+      <div class="numero-texto">Contado a partir de 17 de junho de 2026, o prazo cobre a estruturação de canais de notificação, relatórios de transparência e representação legal no Brasil — e vence em meados de agosto.</div>
+      <div class="numero-fonte">Fonte: ConJur, com base na decisão do STF (RE 1.037.396 e RE 1.057.258)</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Julho de 2026 confirma um movimento que vinha se desenhando: o Judiciário e o Legislativo estão fechando janelas, não abrindo novas.</div>
+
+    <div class="mercado-corpo">
+      <p>Em tributário, o STJ trava de vez a discussão sobre crédito de PIS/Cofins em combustíveis e sobre ICMS-Difal pré-2022 — dois repetitivos no mesmo dia que reduzem o espaço de teses defensivas para quem ainda discutia essas matérias. Em trabalhista, o TST faz o mesmo movimento em bloco, elevando 40 entendimentos a teses vinculantes de uma só vez. É um ano de consolidação, não de novidade: os tribunais superiores estão convertendo jurisprudência dominante em precedente obrigatório, o que reduz a margem de manobra recursal em escala.</p>
+      <p>Do lado oposto, o STF abre uma frente nova e ainda instável: a responsabilidade das plataformas digitais. É a decisão do período com maior potencial de gerar contencioso novo — e, também, a que mais exige ação preventiva de compliance antes que o prazo de 60 dias se esgote.</p>
+      <p>Para holdings patrimoniais, o recado é o inverso do tributário: a janela não está fechada, mas está se fechando rápido. A progressividade do ITCMD é uma certeza; a única variável em aberto é o calendário de cada Estado.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Resumo prático: consolidação nos tribunais superiores, nova exposição regulatória para tecnologia, e uma janela tributária com prazo real para holdings. As três frentes pedem ação neste trimestre, não no próximo.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">A segurança jurídica não nasce da ausência de mudança, mas da clareza sobre quando e como ela ocorre.</div>
+    <div class="frase-autor">— Curadoria Brevis Semanal · Edição 008</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.conjur.com.br/2026-jun-17/stf-amplia-responsabilidade-das-plataformas-digitais-e-redefine-aplicacao-do-marco-civil-da-internet/" target="_blank">STF ajusta Marco Civil e amplia responsabilidade das plataformas — ConJur</a></div>
+          <div class="fonte-desc">Cobertura completa da tese fixada em 17/06/2026, com o inteiro teor do julgado.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/17072026-Pagina-de-Repetitivos-inclui-teses-sobre-creditos-de-PISPasep-e-Cofins-e-sobre-ICMS-em-operacoes-interestaduais.aspx" target="_blank">Página de Repetitivos do STJ inclui teses sobre direito tributário — STJ</a></div>
+          <div class="fonte-desc">Nota oficial do STJ sobre os repetitivos de PIS/Pasep-Cofins e ICMS-Difal, 17/07/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.tst.jus.br/en/-/tst-define-40-novas-teses-vinculantes%C2%A0" target="_blank">TST define 40 novas teses vinculantes — TST</a></div>
+          <div class="fonte-desc">Nota oficial do TST sobre a sessão virtual de reafirmação de jurisprudência de junho/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://ibdfam.org.br/artigos/2580/Reforma+tribut%C3%A1ria,+aumento+do+ITCMD+e+planejamento+sucess%C3%B3rio:+antecipar+doa%C3%A7%C3%B5es+%C3%A9+sempre+a+melhor+decis%C3%A3o" target="_blank">Reforma tributária, aumento do ITCMD e planejamento sucessório — IBDFAM</a></div>
+          <div class="fonte-desc">Análise especializada sobre a progressividade do ITCMD e a janela de planejamento sucessório em 2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/depeso/459859/reforma-tributaria-2-semestre-decisivo-no-planejamento-sucessorio" target="_blank">Reforma tributária: 2º semestre decisivo no planejamento sucessório — Migalhas</a></div>
+          <div class="fonte-desc">Contexto sobre o calendário estadual de implementação da progressividade do ITCMD.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/29052026-Repetitivo-define-que-pena-por-crime-cometido-sob-livramento-condicional-comeca-apos-fim-do-beneficio.aspx" target="_blank">Repetitivo define início de pena por crime cometido sob livramento condicional — STJ</a></div>
+          <div class="fonte-desc">Nota oficial sobre o Tema 1.367, julgado em 07/05/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://processo.stj.jus.br/jurisprudencia/externo/informativo/?aplicacao=informativo&acao=pesquisar&livre=FGTS&refinar=S.DISP.&b=INFJ&p=true&t=JURIDICO&l=10&i=1" target="_blank">STJ — Informativo de Jurisprudência Extraordinário nº 32</a></div>
+          <div class="fonte-desc">FGTS em comunhão parcial de bens é comunicável e sujeito à partilha no divórcio, 21/07/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.conjur.com.br/2026-jul-06/stf-lanca-cartilha-para-orientar-casos-sobre-fornecimento-de-medicamentos-pelo-sus/" target="_blank">STF lança cartilha sobre fornecimento de medicamentos pelo SUS — ConJur</a></div>
+          <div class="fonte-desc">Orientações de competência para ações de saúde com base nos Temas 6, 500 e 1.234, 06/07/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">09</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/458303/stj-subcontratado-responde-objetivamente-em-transporte-de-cargas" target="_blank">STJ: subcontratado responde objetivamente em transporte de cargas — Migalhas</a></div>
+          <div class="fonte-desc">Cobertura do REsp 2.236.189-PR, julgado em 16/06/2026.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Semanal</div>
+    <div class="footer-sub">Radar jurídico amplo · Edição nº 008 · 26 de julho de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
