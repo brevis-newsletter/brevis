@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 006 · 26 de julho de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+
+  /* VOLTAR */
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+
+  /* HEADER */
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--dourado-claro); border-color: var(--dourado-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+
+  /* BANNER */
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+
+  /* ÍNDICE — clicável */
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(201,168,76,0.16); color: var(--dourado-claro); }
+  .indice-item strong { color: var(--dourado-claro); }
+
+  /* DIVISOR */
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+
+  /* SEÇÃO BASE */
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--cinza-sub); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+
+  /* ABERTURA */
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+
+  /* BADGES */
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-cjf  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+
+  /* STATUS PILLS */
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+
+  /* TOP — cards de portal, não mais linhas empilhadas */
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,31,60,0.06); transition: box-shadow 0.18s, transform 0.18s; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(13,31,60,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-stj { background: linear-gradient(90deg, #5A2E7A, #8B5EA8); }
+  .bar-stf { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-tnu { background: linear-gradient(90deg, #2B5797, #6C97C9); }
+  .bar-inss { background: linear-gradient(90deg, #A8230E, #D9634A); }
+  .bar-cjf { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-trf4 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--azul-escuro); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EDE9DF; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cinza-sub); }
+  .top-card-fonte a { color: var(--azul-claro); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+
+  /* DECISÃO */
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+
+  /* TESE */
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  /* PANORAMA POR ÁREA — grade de 9 temas, 1 achado cada */
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--dourado); scroll-margin-top: 16px; }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--dourado); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--azul-escuro); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: var(--cinza-texto); margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--cinza-sub); }
+  .panorama-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+
+  /* RADAR */
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+
+  /* DINHEIRO */
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+
+  /* AMANHÃ */
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+
+  /* MAPEAR */
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+
+  /* ATENÇÃO */
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+
+  /* NÚMERO */
+  .numero-card { background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-meio) 100%); border-radius: 5px; padding: 32px; color: white; position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--dourado); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--branco); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(250,250,248,0.68); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(201,168,76,0.45); margin-top: 16px; letter-spacing: 1px; }
+
+  /* MERCADO */
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+
+  /* FRASE */
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+
+  /* FONTES */
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+
+  /* FOOTER */
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+
+  /* RESPONSIVO */
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- VOLTAR TOPO -->
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico — <a href="#panel-01">Introdução</a>, <a href="#panel-02">Aposentadoria por Idade</a>, <a href="#panel-03">Tempo de Contribuição</a>, <a href="#panel-04">Benefícios por Incapacidade</a>, <a href="#panel-05">BPC/LOAS</a>, <a href="#panel-06">Salário-Maternidade</a>, <a href="#panel-07">Pensão por Morte</a>, <a href="#panel-08">Protocolo Administrativo</a> e <a href="#panel-09">Processo Judicial</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">26 de julho de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">006</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">16 de junho a 26 de julho · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">9–11 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Retomada de 16.06 a 26.07.2026</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">9 áreas cobertas · 6 movimentos · 5 ações imediatas</span>
+  </div>
+
+  <!-- ÍNDICE CLICÁVEL -->
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 6</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário. O radar estratégico para advogados que querem atuar melhor, mais rápido e com mais resultado. Depois de um hiato editorial, voltamos cobrindo as nove frentes que sustentam a banca previdenciária do escritório — da qualidade de segurado ao processo judicial — com pelo menos um achado verificado em cada uma.</p>
+      <p>O destaque é duplo. Em 16/07/2026, o STJ fixou em repetitivo (Tema 1.360) que desemprego involuntário para prorrogar o período de graça pode ser provado por qualquer meio idôneo — não só pelo registro no Ministério do Trabalho. E a TNU fechou o Tema 385: deficiência para BPC/LOAS não exige mais prova de incapacidade para o trabalho. No campo administrativo, o INSS mudou a procuração eletrônica do Meu INSS, o STJ definiu prazo de efeitos financeiros na pensão por morte de menores de 16 anos (Tema 1.421), o STF encerrou a discussão do redutor de professor no RPPS e o TRF4 garantiu auxílio-acidente a quem sofre acidente ainda no período de graça.</p>
+      <p>Rural e híbrida — a praça forte da casa — seguem com o mapa consolidado que você já usa: tempo rural remoto conta sem exigir atividade rural atual, e prova testemunhal idônea complementa prova material insuficiente. Vamos ao que importa.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 6 — cards de portal -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 6 movimentos do período</span>
+    </div>
+
+    <div class="top-grid">
+
+      <!-- CARD 1 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-tnu"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 01 · BPC/LOAS</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tnu">TNU</span>
+            <span class="badge badge-tema">Tema 385</span>
+          </div>
+          <div class="top-card-titulo">Deficiência para o BPC/LOAS não exige incapacidade para o trabalho, fixa a TNU</div>
+          <div class="top-card-corpo">
+            <p>Julgado em 24/06/2026: o requisito de deficiência não pode mais ser negado só porque o requerente ainda tem, em tese, capacidade laborativa. A aferição passa a ser por avaliação biopsicossocial — impedimento de longo prazo que, em interação com barreiras, obstrui a participação plena na sociedade.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Oportunidade imediata</span>
+            Revise BPC/LOAS negados por "não incapacidade para o trabalho" sem avaliação biopsicossocial completa.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Consolidada</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.cjf.jus.br/cjf/noticias/2026/julho/conversas-sobre-a-controversia-detalha-decisao-da-tnu-sobre-concessao-de-beneficio-assistencial-de-prestacao-continuada" target="_blank">CJF/TNU · 24/06/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stj"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 02 · QUALIDADE DE SEGURADO</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.360</span>
+          </div>
+          <div class="top-card-titulo">Prova de desemprego para estender o período de graça não precisa mais ser só o registro no Ministério do Trabalho</div>
+          <div class="top-card-corpo">
+            <p>A 1ª Seção do STJ, em repetitivo julgado em 16/07/2026 (REsp 2.169.736 e 2.188.714, rel. min. Afrânio Vilela), decidiu que o desemprego involuntário — que estende o período de graça de 12 para 24 meses — pode ser provado por qualquer meio admitido em direito. Ressalva: só a ausência de anotação na CTPS/CNIS, isoladamente, não basta — é preciso prova adicional de falta de renda e busca por recolocação.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata</span>
+            Processos suspensos aguardando essa tese voltam a tramitar. Reforce a prova de desemprego com elementos além da CTPS: busca de emprego, CadÚnico, extrato do SINE, prova testemunhal.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Consolidada — repetitivo</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/16072026-Repetitivo-fixa-tese-sobre-prova-de-desemprego-para-extensao-do-periodo-de-graca-previdenciaria.aspx" target="_blank">STJ · Tema 1.360 · 16/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-trf4"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 03 · BENEFÍCIOS POR INCAPACIDADE</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-trf4">TRF4</span>
+            <span class="badge badge-tema">IRDR 5027228-70.2024</span>
+          </div>
+          <div class="top-card-titulo">Acidente no período de graça garante auxílio-acidente mesmo que a vítima já contribuísse como autônomo</div>
+          <div class="top-card-corpo">
+            <p>A 3ª Seção do TRF4 fixou, em 23/07/2026, tese em IRDR: quem sofre acidente com sequela permanente durante o período de graça de vínculo empregatício anterior tem direito ao auxílio-acidente, ainda que já estivesse recolhendo como contribuinte individual nesse intervalo — a condição de segurado empregado, mais vantajosa, prevalece (art. 15, §3º, Lei 8.213/91). O IEPREV atuou como amicus curiae.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Oportunidade na 4ª Região</span>
+            Revise auxílio-acidente negado por o segurado estar, no momento do acidente, recolhendo como CI durante o período de graça de vínculo anterior.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Tese fixada — IRDR TRF4</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://ieprev.com.br/noticias/trf4-fixa-tese-favoravel-aos-segurados-em-irdr-sobre-auxilio-acidente-durante-o-periodo-de-graca-com-atuacao-do-ieprev-como-amicus-curiae" target="_blank">IEPREV · 23/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stj"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 04 · PENSÃO POR MORTE</div>
+            </div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.421</span>
+          </div>
+          <div class="top-card-titulo">Pensão por morte e auxílio-reclusão de menores de 16 anos não retroagem se o pedido é tardio</div>
+          <div class="top-card-corpo">
+            <p>A 1ª Seção do STJ fixou, em 10/06/2026 (divulgado 24/06/2026): não retroagem à data do óbito ou do recolhimento à prisão os efeitos financeiros de pensão por morte ou auxílio-reclusão pedidos por filho menor de 16 anos após 180 dias do evento, na vigência da Lei 13.846/2019. Passado o prazo, os efeitos contam da DER — não do fato gerador.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Atenção na carteira</span>
+            Verifique a data do óbito/prisão e a data do requerimento em toda pensão por morte de menor de 16 anos. Requerimento após 180 dias perde retroação — oriente o responsável legal sobre o prazo antes de protocolar.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Consolidada — repetitivo</span>
+              <span class="status-pill status-desfavoravel">🔴 Restritiva ao dependente</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/24062026-Pensao-por-morte-e-auxilio-reclusao-a-menores-de-16-anos-nao-retroagem-se-pedido-e-posterior-ao-prazo-legal.aspx" target="_blank">STJ · Tema 1.421 · 24/06/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 05 · TEMPO DE CONTRIBUIÇÃO / PROFESSOR</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Tema 1.462</span>
+          </div>
+          <div class="top-card-titulo">STF reafirma redutor de 5 anos para aposentadoria proporcional de professor — mas a tese é do RPPS, não do INSS</div>
+          <div class="top-card-corpo">
+            <p>O Plenário Virtual concluiu em 10/06/2026 (RE 1.558.247): o redutor constitucional de 5 anos da aposentadoria integral do professor também vale no cálculo da invalidez proporcional, quando o servidor exerceu exclusivamente magistério. Atenção editorial: é Regime Próprio (RPPS) — o próprio STF ressalvou que não se aplica automaticamente a quem está no INSS.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação para clientes RPPS</span>
+            Revise invalidez proporcional de professores estaduais/municipais calculada sem o redutor. Não aplique a clientes vinculados ao INSS sem checar o regime.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Consolidada — RPPS</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao servidor-professor</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://noticias.stf.jus.br/postsnoticias/stf-reafirma-validade-de-redutor-do-tempo-para-aposentadoria-proporcional-de-professor/" target="_blank">STF · Tema 1.462 · 10/06/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 06 · CARÊNCIA</div>
+            </div>
+            <span class="impacto-badge">⚠ Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Tema 1.467</span>
+            <span class="badge badge-tnu">TNU 387</span>
+          </div>
+          <div class="top-card-titulo">STF vai decidir se contribuição abaixo do salário mínimo mantém a qualidade de segurado</div>
+          <div class="top-card-corpo">
+            <p>O STF afetou o Tema 1.467 sobre reconhecimento de qualidade de segurado com contribuições abaixo do piso após a EC 103/2019. Em razão disso, a TNU suspendeu por unanimidade o Tema 387, que discute se essas contribuições contam para carência.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Não prometer como certo</span>
+            Não afirme a clientes MEI, intermitentes ou de jornada reduzida que essas contribuições já garantem carência. Mapeie os casos e aguarde o STF.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Em construção</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.ibdp.org.br/2026/07/16/stf-vai-decidir-se-contribuicao-abaixo-do-minimo-quebra-vinculo-com-a-previdencia/" target="_blank">IBDP · 16/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        TNU · Tema 385 · Julgado em 24/06/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">Não ter incapacidade para o trabalho deixou de ser motivo automático para negar o BPC/LOAS.</div>
+      <div class="decisao-body">
+        <p>Por anos, parte relevante dos indeferimentos de BPC/LOAS baseou-se numa confusão conceitual: perícia atesta "capacidade para o trabalho" e o benefício assistencial é negado — como se deficiência e incapacidade laboral fossem sinônimos. A TNU encerrou essa confusão no Tema 385.</p>
+        <p>O requisito legal da deficiência é o impedimento de longo prazo — físico, mental, intelectual ou sensorial — que, em interação com barreiras do ambiente, obstrui a participação plena e efetiva do requerente na sociedade em igualdade de condições. Isso é aferido por avaliação biopsicossocial, não pela pergunta isolada sobre capacidade laborativa.</p>
+        <p>A TNU também definiu critérios de economia processual: ausência de impedimento, impedimento leve ou resolúvel em menos de 2 anos dispensam a avaliação biopsicossocial completa. Incapacidade total de longo prazo gera presunção relativa de deficiência. Impedimento moderado ou grave sem incapacidade total exige avaliação biopsicossocial completa, com análise de assistente social — distinta da análise de miserabilidade.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        Tese fixada: "Para fins de concessão do benefício de prestação continuada (BPC/LOAS), a caracterização da deficiência não exige a demonstração de incapacidade para o trabalho. O requisito legal é o impedimento de longo prazo de natureza física, mental, intelectual ou sensorial (...) devendo sua aferição ser realizada por meio de avaliação biopsicossocial."
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Levante os BPC/LOAS negados nos últimos anos com fundamento exclusivo em "capacidade para o trabalho" sem avaliação biopsicossocial completa. Esses casos voltam a ter viabilidade — por novo requerimento administrativo ou ação judicial com o Tema 385 como fundamento central.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Consolidada — tese TNU</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.cjf.jus.br/cjf/noticias/2026/julho/conversas-sobre-a-controversia-detalha-decisao-da-tnu-sobre-concessao-de-beneficio-assistencial-de-prestacao-continuada" target="_blank">cjf.jus.br/tnu · Tema 385</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">Tema 1.360 STJ · Provar desemprego para estender o período de graça ficou mais flexível — mas não automático</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Registro no Ministério do Trabalho deixa de ser a única prova aceita de desemprego involuntário</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">O art. 15, §2º, da Lei 8.213/1991 estende o período de graça de 12 para 24 meses quando o segurado comprova desemprego involuntário. A dúvida do Tema 1.360: essa comprovação precisa ser, necessariamente, o registro no órgão do Ministério do Trabalho, ou outros meios de prova servem? A 1ª Seção decidiu que qualquer meio de prova admitido em direito é válido — mas a mera ausência de anotação na CTPS/CNIS, isoladamente, não é suficiente.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Base legal e paradigmas</span>
+        <div class="tese-bloco-texto">Art. 15, §2º, da Lei 8.213/1991; art. 371 do CPC (livre convencimento motivado). Julgado sob o rito dos repetitivos nos REsp 2.169.736 e REsp 2.188.714, relatoria do ministro Afrânio Vilela, 1ª Seção do STJ, publicado em 16/07/2026.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como o STJ decidiu</span>
+        <div class="tese-bloco-texto">O relator afastou o formalismo excessivo: exigir apenas o registro ministerial, quando o desemprego pode ser demonstrado por outros meios idôneos, contraria a finalidade protetiva da norma. Ao mesmo tempo, o colegiado impôs um piso de prova: só a falta de anotação de emprego na CTPS ou no CNIS, sozinha, não prova desemprego involuntário — é preciso somar elementos que confirmem ausência de renda e busca ativa por recolocação.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Processos suspensos aguardando a definição do Tema 1.360 voltam a tramitar — verifique a carteira. Em novos casos, não se limite a apontar a ausência de vínculo na CTPS: reúna extrato do CadÚnico, comprovante de cadastro no SINE, prova testemunhal idônea e qualquer registro de busca por emprego no período. A tese é favorável, mas exige instrução mais robusta do que "não achei anotação na carteira".</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-consolidada">✔ Consolidada — repetitivo, tema 1.360 STJ, 16/07/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área — as 9 frentes da banca</span>
+    </div>
+    <div class="section-intro">Um achado verificado para cada uma das áreas que o escritório cobre. Onde não houve decisão inédita nos últimos 40 dias, trazemos a regra consolidada que continua valendo — marcado com clareza.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item" id="panel-01">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Introdução · Qualidade de Segurado</div>
+          <div class="panorama-titulo">Desemprego involuntário pode ser provado além do registro no Ministério do Trabalho</div>
+          <div class="panorama-texto">STJ Tema 1.360 (16/07/2026): qualquer meio de prova idôneo serve para estender o período de graça — mas exige mais do que a simples ausência de anotação na CTPS. Ver seção 04.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada</span><span class="panorama-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/16072026-Repetitivo-fixa-tese-sobre-prova-de-desemprego-para-extensao-do-periodo-de-graca-previdenciaria.aspx" target="_blank">stj.jus.br</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-02">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Aposentadoria por Idade · Urbana, Rural e Híbrida</div>
+          <div class="panorama-titulo">O mapa consolidado que sustenta a maior parte da carteira do escritório continua valendo</div>
+          <div class="panorama-texto">Sem decisão inédita nos últimos 40 dias — mas três regras seguem firmes e são a base da praça rural/híbrida da casa: (1) STJ Tema 1.007 — não é preciso estar exercendo atividade rural no momento do requerimento da híbrida; (2) Súmula 149/STJ mitigada — prova exclusivamente testemunhal não basta, mas prova material insuficiente complementada por testemunhal idônea é aceita (Súmula 577/STJ); (3) STJ Tema 642 — período rural pode ser descontínuo, desde que o segurado esteja em atividade rural ao completar a idade mínima.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Jurisprudência consolidada</span><span class="panorama-fonte">STJ — Súmulas 149 e 577, Temas 1.007 e 642</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-03">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Tempo de Contribuição · Transição, Especial, Professor, PCD</div>
+          <div class="panorama-titulo">Redutor de 5 anos do professor vale na invalidez proporcional — mas só no RPPS</div>
+          <div class="panorama-texto">STF Tema 1.462 (RE 1.558.247), julgamento concluído em 10/06/2026. Ver detalhe no Movimento 05 do Top 6.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada</span><span class="panorama-fonte"><a href="https://noticias.stf.jus.br/postsnoticias/stf-reafirma-validade-de-redutor-do-tempo-para-aposentadoria-proporcional-de-professor/" target="_blank">stf.jus.br</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-04">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Benefícios por Incapacidade · Temporário, Permanente, Perícia</div>
+          <div class="panorama-titulo">Auxílio-acidente garantido mesmo com acidente ocorrido no período de graça e recolhimento como autônomo</div>
+          <div class="panorama-texto">TRF4, IRDR 5027228-70.2024.4.04.0000, tese fixada em 23/07/2026. Ver detalhe no Movimento 03 do Top 6.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável ao segurado</span><span class="panorama-fonte"><a href="https://ieprev.com.br/noticias/trf4-fixa-tese-favoravel-aos-segurados-em-irdr-sobre-auxilio-acidente-durante-o-periodo-de-graca-com-atuacao-do-ieprev-como-amicus-curiae" target="_blank">IEPREV</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-05">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">BPC/LOAS</div>
+          <div class="panorama-titulo">Deficiência não exige mais prova de incapacidade laboral</div>
+          <div class="panorama-texto">TNU Tema 385, julgado em 24/06/2026 — é a Decisão do Dia desta edição. Ver seção 03.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada</span><span class="panorama-fonte"><a href="https://www.cjf.jus.br/cjf/noticias/2026/julho/conversas-sobre-a-controversia-detalha-decisao-da-tnu-sobre-concessao-de-beneficio-assistencial-de-prestacao-continuada" target="_blank">cjf.jus.br/tnu</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-06">
+        <div class="panorama-num">06</div>
+        <div>
+          <div class="panorama-area">Salário-Maternidade</div>
+          <div class="panorama-titulo">Carência segue inexigível — regra consolidada desde 2024, sem novidade no período</div>
+          <div class="panorama-texto">O STF julgou inconstitucional a exigência de carência para salário-maternidade nas ADIs 2.110 e 2.111 (21/03/2024). O INSS incorporou a decisão pela Instrução Normativa nº 188/2025. Não houve decisão nova nos últimos 40 dias, mas é regra que continua em vigor e vale reforçar: hoje só se exige qualidade de segurada na data do evento, sem carência mínima.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada — regra vigente</span><span class="panorama-fonte">STF ADIs 2.110/2.111 · IN INSS 188/2025</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-07">
+        <div class="panorama-num">07</div>
+        <div>
+          <div class="panorama-area">Pensão por Morte</div>
+          <div class="panorama-titulo">Pedido tardio de menor de 16 anos perde retroação ao óbito</div>
+          <div class="panorama-texto">STJ Tema 1.421, julgado em 10/06/2026, divulgado em 24/06/2026. Ver detalhe no Movimento 04 do Top 6.</div>
+          <div class="panorama-footer"><span class="status-pill status-desfavoravel">🔴 Restritiva</span><span class="panorama-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/24062026-Pensao-por-morte-e-auxilio-reclusao-a-menores-de-16-anos-nao-retroagem-se-pedido-e-posterior-ao-prazo-legal.aspx" target="_blank">stj.jus.br</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-08">
+        <div class="panorama-num">08</div>
+        <div>
+          <div class="panorama-area">Protocolo Administrativo · Meu INSS, Procuração, Documentação</div>
+          <div class="panorama-titulo">Procuração eletrônica do Meu INSS exige consentimento ativo e específico do segurado</div>
+          <div class="panorama-texto">Portaria Conjunta DTI/DIRBEN/INSS nº 21/2026, em vigor desde 02/06/2026: o representante inicia o pedido pela própria conta gov.br, mas a autorização só produz efeito após assinatura eletrônica do segurado (nível prata/ouro), com permissões específicas por serviço.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada</span><span class="panorama-fonte"><a href="https://www.gov.br/inss/pt-br/assuntos/saiba-o-passo-a-passo-para-acesso-ao-meu-inss-por-meio-de-procuracao-eletronica" target="_blank">gov.br/inss</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-09">
+        <div class="panorama-num">09</div>
+        <div>
+          <div class="panorama-area">Processo Judicial · JEF, Recursos, Pagamento</div>
+          <div class="panorama-titulo">R$ 2,4 bi em RPVs previdenciárias liberadas pelo CJF — e o STJ ainda decide o marco dos atrasados com prova nova</div>
+          <div class="panorama-texto">CJF liberou em 23/07/2026 o lote de RPVs de junho/2026 (ver seção 07). Em paralelo, o STJ analisou em 10/06/2026 embargos de declaração no Tema 1.124, sobre a partir de quando contam os atrasados quando o benefício é reconhecido em juízo com prova não apresentada ao INSS — acórdão ainda não publicado, então evite prometer valor definitivo de atrasados nesses casos.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Em parte pendente</span><span class="panorama-fonte"><a href="https://www.ibdp.org.br/2026/06/09/stj-julga-efeitos-financeiros-de-beneficios-previdenciarios-concedidos-na-justica/" target="_blank">IBDP</a> · <a href="https://www.cjf.jus.br/cjf/noticias/2026/julho/cjf-libera-o-pagamento-de-rpvs-a-mais-de-248-mil-beneficiarias-os" target="_blank">CJF</a></span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-inss" style="flex-shrink:0;margin-top:2px;">INSS</span>
+      <div>
+        <div class="radar-titulo">Portaria Conjunta DTI/DIRBEN/INSS nº 21/2026 — o que muda no dia a dia do escritório</div>
+        <div class="radar-texto">Em vigor desde 02/06/2026. O advogado inicia o pedido de procuração pela própria conta gov.br, mas o segurado precisa assinar eletronicamente (nível prata ou ouro) e as permissões passam a ser por serviço — não mais uma autorização genérica.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Tema 1.124 — embargos julgados em 10/06/2026, acórdão ainda não divulgado</div>
+        <div class="radar-texto">O IBDP pediu, como amicus curiae, esclarecimento sobre dispensa de novo requerimento administrativo quando a prova nova é sobre fato antigo, e regra de transição para quem já ajuizou ação. Acompanhe a publicação — pode alterar a estratégia de liquidação em ações com prova produzida só em juízo.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-cjf" style="flex-shrink:0;margin-top:2px;">TRF6</span>
+      <div>
+        <div class="radar-titulo">Lote de RPVs de junho/2026 inclui R$ 260 milhões para Minas Gerais</div>
+        <div class="radar-texto">Do total nacional liberado pelo CJF, o TRF6 recebeu R$ 260.070.176,22 em RPVs previdenciárias e assistenciais — 17.359 beneficiários em 13.808 processos.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-trf4" style="flex-shrink:0;margin-top:2px;">TRF4</span>
+      <div>
+        <div class="radar-titulo">Novo Regimento das Turmas Recursais e da TRU publicado em 23/07/2026</div>
+        <div class="radar-texto">O TRF4 publicou novo regimento interno para as Turmas Recursais e a Turma Regional de Uniformização. Vale revisar prazos e ritos recursais nos JEFs da 4ª Região antes de protocolar recurso.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Tema 1.370 segue afetado desde ago/2025, ainda sem julgamento de mérito</div>
+        <div class="radar-texto">A discussão sobre um possível segundo prazo decadencial em pedido de revisão administrativa negado (REsp 2.205.049/RS) permanece com suspensão nacional, mas sem novidade no período. Mantenha processos correlatos sobrestados e monitore — sem previsão de pauta até o fechamento desta edição.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">CJF libera R$ 2,86 bilhões em RPVs — R$ 2,4 bilhões são previdenciários e assistenciais</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>O Conselho da Justiça Federal liberou aos Tribunais Regionais Federais, em 23/07/2026, os limites para pagamento de Requisições de Pequeno Valor autuadas em junho de 2026: R$ 2.861.702.767,36 no total, para 194.131 processos e 248.833 beneficiários. Desse montante, R$ 2.404.658.281,26 são de matérias previdenciárias e assistenciais — revisões de aposentadoria, auxílio-doença, pensões e outros benefícios — somando 113.874 processos e 157.691 beneficiários.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟢 Impacto Alto ·</span>
+        <span class="dinheiro-header-title">CJF · Lote Previdenciário e Assistencial · Junho/2026</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Cabe a cada TRF, segundo cronograma próprio, efetuar o depósito. O prazo e a data exata de disponibilização para saque devem ser confirmados na consulta de RPVs do portal do TRF responsável — o CJF apenas libera o limite orçamentário aos tribunais.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>TRF1 (DF, GO, TO, MT, BA, PI, MA, PA, AM, AC, RR, RO, AP): R$ 584.636.569,31 previdenciário/assistencial — 29.083 processos, 35.289 beneficiários</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>TRF3 (SP, MS): R$ 384.926.017,61 — 12.764 processos, 16.885 beneficiários</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>TRF4 (RS, PR, SC): R$ 536.356.655,52 — 28.585 processos, 41.219 beneficiários</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>TRF5 (PE, CE, AL, SE, RN, PB): R$ 421.574.449,86 — 20.024 processos, 32.812 beneficiários</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>TRF6 (MG): R$ 260.070.176,22 — 13.808 processos, 17.359 beneficiários</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Consulte o portal do seu TRF para confirmar se processos da carteira constam no lote e comunique os clientes assim que houver confirmação de depósito</span>
+          </div>
+        </div>
+        <p style="margin-top:14px; font-weight:600; color:#2D1B6B;">É honorário disponível para saque assim que o TRF processar o depósito — monitoramento ativo evita RPV parada na conta por meses sem comunicação ao cliente.</p>
+        <span class="dinheiro-fonte">Fonte: CJF · cjf.jus.br · Lote de RPVs autuadas em junho/2026 · liberação em 23/07/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Cinco ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Levantar BPC/LOAS negados por "capacidade para o trabalho" sem avaliação biopsicossocial</div>
+          <div class="amanha-texto">TNU Tema 385: esse fundamento de indeferimento não tem mais sustentação isolada. Separe os casos da carteira e avalie novo requerimento administrativo ou ação judicial com a nova tese.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Reforçar a instrução probatória de desemprego em pedidos de período de graça estendido</div>
+          <div class="amanha-texto">STJ Tema 1.360: não basta apontar a ausência de anotação na CTPS. Reúna CadÚnico, cadastro no SINE, prova testemunhal e qualquer comprovante de busca por recolocação.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Revisar procurações eletrônicas ativas conforme a Portaria 21/2026</div>
+          <div class="amanha-texto">Confirme se as procurações do escritório no Meu INSS têm o consentimento eletrônico do segurado registrado corretamente e as permissões por serviço configuradas.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Verificar RPVs do lote de junho/2026 na carteira</div>
+          <div class="amanha-texto">R$ 2,4 bilhões em atrasados previdenciários e assistenciais liberados pelo CJF em 23/07/2026. Acesse o portal do seu TRF, confirme processos da carteira e comunique clientes beneficiados.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Checar prazo de 180 dias em pensões por morte e auxílios-reclusão de menores de 16 anos</div>
+          <div class="amanha-texto">STJ Tema 1.421: requerimento após 180 dias do óbito ou da prisão perde retroação. Confirme datas antes de protocolar e oriente o responsável legal sobre a urgência.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Seis perfis prioritários deste período. Cada critério é um filtro para aplicar agora na carteira.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Requerentes de BPC/LOAS negados por "capacidade para o trabalho"</strong> — sem avaliação biopsicossocial completa no processo administrativo ou judicial.
+            <span class="mapear-tese">→ Oportunidade imediata · TNU Tema 385</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Casos de período de graça estendido negados só por falta de anotação na CTPS</strong> — reabrir instrução com prova adicional de desemprego involuntário.
+            <span class="mapear-tese">→ Reforçar prova · STJ Tema 1.360</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Segurados acidentados durante período de graça, recolhendo como contribuinte individual</strong> — auxílio-acidente negado por essa razão, na jurisdição do TRF4.
+            <span class="mapear-tese">→ Oportunidade · TRF4 IRDR 5027228-70.2024</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Pensões por morte e auxílios-reclusão de menores de 16 anos com requerimento tardio</strong> — verificar se passou de 180 dias do óbito/prisão antes de orientar sobre retroação.
+            <span class="mapear-tese">→ Checar prazo · STJ Tema 1.421</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Professores da rede pública estadual/municipal (RPPS) com invalidez proporcional</strong> — calculada sem o redutor de 5 anos.
+            <span class="mapear-tese">→ Oportunidade de revisão · STF Tema 1.462</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">06</div>
+          <div class="mapear-texto">
+            <strong>Clientes com condenação em cumprimento sem movimentação recente</strong> — verificar se RPV foi expedida no lote de junho/2026 liberado pelo CJF em 23/07/2026.
+            <span class="mapear-tese">→ Verificar lote CJF · R$ 2,4 bi previdenciário/assistencial</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Período de graça: ausência de anotação na CTPS não basta sozinha</div>
+          <div class="atencao-texto">O STJ deixou claro no Tema 1.360 que só a falta de vínculo na carteira não comprova desemprego involuntário. Reforce sempre com prova adicional — do contrário, o pedido de extensão do período de graça pode ser indeferido mesmo com a tese favorável.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Procuração eletrônica: consentimento do segurado agora é etapa obrigatória e específica</div>
+          <div class="atencao-texto">Desde a Portaria 21/2026, a procuração no Meu INSS só produz efeito depois que o segurado assina eletronicamente, com conta gov.br nível prata ou ouro, com permissões por serviço. Procurações do fluxo anterior devem ser conferidas.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 1.124 STJ: embargos julgados, acórdão ainda não publicado</div>
+          <div class="atencao-texto">Não afirme a clientes qual será o marco inicial dos atrasados em ações com prova nova antes da publicação do acórdão dos embargos de declaração.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Contribuição abaixo do salário mínimo: carência ainda não está garantida</div>
+          <div class="atencao-texto">Com o Tema 387 da TNU suspenso aguardando o STF (Tema 1.467), não afirme a clientes MEI, intermitentes ou com jornada reduzida que essas contribuições já contam para carência.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado previdenciário do período</div>
+      <div class="numero-destaque">24<span class="numero-unidade">meses</span></div>
+      <div class="numero-titulo">é o novo teto do período de graça estendido — agora com prova de desemprego mais flexível</div>
+      <div class="numero-texto">Pela regra geral, o segurado mantém a qualidade por 12 meses sem contribuir. Comprovado o desemprego involuntário — hoje por qualquer meio de prova idôneo, segundo o Tema 1.360 do STJ — esse prazo dobra para 24 meses. Na prática, é a diferença entre perder ou manter direito a benefícios por incapacidade, pensão por morte e outros direitos decorrentes da qualidade de segurado.</div>
+      <div class="numero-fonte">Fonte: STJ · Tema 1.360 · art. 15, §2º, Lei 8.213/1991</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Entre junho e julho de 2026, o Judiciário previdenciário girou em torno de uma pergunta comum: quando o segurado erra no procedimento, quem paga a conta — ele ou o sistema que deveria orientá-lo?</div>
+
+    <div class="mercado-corpo">
+      <p>O Tema 385 da TNU corrigiu uma distorção que penalizava quem tinha deficiência real, mas "capacidade teórica" de trabalhar. O Tema 1.360 do STJ fez o mesmo raciocínio para quem perde o emprego e não tem como comprovar isso da forma mais burocrática possível. O TRF4 estendeu essa lógica ao auxílio-acidente: o segurado que continuou contribuindo, mesmo em categoria diferente, não pode ser punido por isso. Em todos os três, o Judiciário decidiu que formalismo excessivo não pode anular direito.</p>
+
+      <p>Do outro lado da balança, o Tema 1.421 do STJ mostra que prazo importa — e que a proteção ao dependente menor de 16 anos não é ilimitada no tempo: passar de 180 dias tem consequência financeira real. O Tema 1.124, ainda pendente, decide algo parecido para quem só prova o direito na Justiça.</p>
+
+      <p>No campo operacional, a mudança na procuração eletrônica do Meu INSS é pequena em manchete, mas grande em rotina: qualquer escritório com carteira ativa de procurações precisa revisar o fluxo antes que uma autorização mal configurada vire um problema no meio de um requerimento urgente.</p>
+
+      <p>E há dinheiro parado: R$ 2,4 bilhões em RPVs previdenciárias e assistenciais liberados pelo CJF neste mês, para mais de 157 mil pessoas. Verificar esse lote é o tipo de tarefa que não gera manchete, mas gera honorário.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      O verão jurídico de 2026 não trouxe grandes reviravoltas de manchete no previdenciário — trouxe várias teses que decidem, cada uma à sua maneira, até onde vai a proteção ao segurado quando o procedimento não é perfeito. É nesse detalhe que mora o resultado do cliente.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">O direito previdenciário não se decide só no mérito. Metade das batalhas se ganha — ou se perde — no prazo, na prova certa apresentada na hora certa e no processo que ninguém lembrou de sobrestar.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 006</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/16072026-Repetitivo-fixa-tese-sobre-prova-de-desemprego-para-extensao-do-periodo-de-graca-previdenciaria.aspx" target="_blank">STJ · Tema 1.360 — Prova de desemprego para extensão do período de graça</a></div>
+          <div class="fonte-desc">Julgado em 16/07/2026, REsp 2.169.736 e 2.188.714, rel. min. Afrânio Vilela. Leitura obrigatória: define os meios de prova aceitos para dobrar o período de graça.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.cjf.jus.br/cjf/noticias/2026/julho/conversas-sobre-a-controversia-detalha-decisao-da-tnu-sobre-concessao-de-beneficio-assistencial-de-prestacao-continuada" target="_blank">CJF/TNU · Tema 385 — Deficiência no BPC/LOAS não exige incapacidade laboral</a></div>
+          <div class="fonte-desc">Tese fixada em 24/06/2026, com tese integral e participação do juiz relator Fábio de Souza Silva.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://ieprev.com.br/noticias/trf4-fixa-tese-favoravel-aos-segurados-em-irdr-sobre-auxilio-acidente-durante-o-periodo-de-graca-com-atuacao-do-ieprev-como-amicus-curiae" target="_blank">IEPREV · TRF4 IRDR — Auxílio-acidente no período de graça</a></div>
+          <div class="fonte-desc">Tese fixada em 23/07/2026 pela 3ª Seção do TRF4, IRDR 5027228-70.2024.4.04.0000, com a íntegra da tese e o número do processo.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/24062026-Pensao-por-morte-e-auxilio-reclusao-a-menores-de-16-anos-nao-retroagem-se-pedido-e-posterior-ao-prazo-legal.aspx" target="_blank">STJ · Tema 1.421 — Pensão por morte e auxílio-reclusão de menores de 16 anos</a></div>
+          <div class="fonte-desc">Julgado em 10/06/2026, divulgado em 24/06/2026. Define a não retroação dos efeitos financeiros em pedido tardio.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/postsnoticias/stf-reafirma-validade-de-redutor-do-tempo-para-aposentadoria-proporcional-de-professor/" target="_blank">STF · Tema 1.462 — Redutor de 5 anos para professor (RPPS)</a></div>
+          <div class="fonte-desc">Julgamento concluído em 10/06/2026 no Plenário Virtual, com repercussão geral. Atenção: aplicável a Regime Próprio, não ao RGPS/INSS.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ibdp.org.br/2026/07/16/stf-vai-decidir-se-contribuicao-abaixo-do-minimo-quebra-vinculo-com-a-previdencia/" target="_blank">IBDP · STF Tema 1.467 e TNU Tema 387 — Contribuição abaixo do salário mínimo</a></div>
+          <div class="fonte-desc">Publicado em 16/07/2026. Explica a suspensão do Tema 387 da TNU e o que está em jogo no Tema 1.467 do STF.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.gov.br/inss/pt-br/assuntos/saiba-o-passo-a-passo-para-acesso-ao-meu-inss-por-meio-de-procuracao-eletronica" target="_blank">INSS · Procuração eletrônica no Meu INSS — Portaria 21/2026</a></div>
+          <div class="fonte-desc">Passo a passo oficial do INSS para representação digital, conforme a Portaria Conjunta DTI/DIRBEN/INSS nº 21/2026, em vigor desde 02/06/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.cjf.jus.br/cjf/noticias/2026/julho/cjf-libera-o-pagamento-de-rpvs-a-mais-de-248-mil-beneficiarias-os" target="_blank">CJF · Liberação de RPVs — Lote de Junho/2026</a></div>
+          <div class="fonte-desc">R$ 2,86 bilhões liberados aos TRFs em 23/07/2026, com detalhamento por região.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">09</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1007&cod_tema_final=1007" target="_blank">STJ · Tema 1.007 — Aposentadoria híbrida sem atividade rural atual</a></div>
+          <div class="fonte-desc">Base jurisprudencial consolidada para a praça rural/híbrida: tempo rural remoto e descontínuo conta para a híbrida, sem exigir atividade rural no momento do requerimento.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 006 · 26 de julho de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
