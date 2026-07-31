@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 007 · 31 de julho de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+
+  /* VOLTAR */
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+
+  /* HEADER */
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--dourado-claro); border-color: var(--dourado-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+
+  /* BANNER */
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+
+  /* ÍNDICE — clicável */
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(201,168,76,0.16); color: var(--dourado-claro); }
+  .indice-item strong { color: var(--dourado-claro); }
+
+  /* DIVISOR */
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+
+  /* SEÇÃO BASE */
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--cinza-sub); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+
+  /* ABERTURA */
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+
+  /* BADGES */
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-cjf  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+
+  /* STATUS PILLS */
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+
+  /* TOP — cards de portal, não mais linhas empilhadas */
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,31,60,0.06); transition: box-shadow 0.18s, transform 0.18s; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(13,31,60,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-stj { background: linear-gradient(90deg, #5A2E7A, #8B5EA8); }
+  .bar-stf { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-tnu { background: linear-gradient(90deg, #2B5797, #6C97C9); }
+  .bar-inss { background: linear-gradient(90deg, #A8230E, #D9634A); }
+  .bar-cjf { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-trf4 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--azul-escuro); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EDE9DF; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cinza-sub); }
+  .top-card-fonte a { color: var(--azul-claro); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+
+  /* DECISÃO */
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+
+  /* TESE */
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  /* PANORAMA POR ÁREA — grade de 9 temas, 1 achado cada */
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--dourado); scroll-margin-top: 16px; }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--dourado); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--azul-escuro); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: var(--cinza-texto); margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--cinza-sub); }
+  .panorama-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+
+  /* RADAR */
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+
+  /* DINHEIRO */
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+
+  /* AMANHÃ */
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+
+  /* MAPEAR */
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+
+  /* ATENÇÃO */
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+
+  /* NÚMERO */
+  .numero-card { background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-meio) 100%); border-radius: 5px; padding: 32px; color: white; position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--dourado); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--branco); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(250,250,248,0.68); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(201,168,76,0.45); margin-top: 16px; letter-spacing: 1px; }
+
+  /* MERCADO */
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+
+  /* FRASE */
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+
+  /* FONTES */
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+
+  /* FOOTER */
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+
+  /* RESPONSIVO */
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- VOLTAR TOPO -->
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico — <a href="#panel-01">Introdução</a>, <a href="#panel-02">Aposentadoria por Idade</a>, <a href="#panel-03">Tempo de Contribuição</a>, <a href="#panel-04">Benefícios por Incapacidade</a>, <a href="#panel-05">BPC/LOAS</a>, <a href="#panel-06">Salário-Maternidade</a>, <a href="#panel-07">Pensão por Morte</a>, <a href="#panel-08">Protocolo Administrativo</a> e <a href="#panel-09">Processo Judicial</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">31 de julho de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">007</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">7 de maio a 29 de julho · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">9–11 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Recorte de 07.05 a 29.07.2026</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">9 áreas cobertas · 6 movimentos · 5 ações imediatas</span>
+  </div>
+
+  <!-- ÍNDICE CLICÁVEL -->
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 6</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário nº 007. No dia 7 de maio, a 1ª Seção do STJ julgou, na mesma sessão, dois repetitivos que mexem com boa parte da carteira previdenciária: o Tema 1.157 (revisão administrativa de benefício por incapacidade concedido judicialmente) e o Tema 1.307 (aposentadoria especial por penosidade de motoristas e cobradores). Os dois só foram plenamente divulgados nas semanas seguintes — o 1.307 em comunicado do NUGEPNAC de 03/06, e o 1.157 destacado no balanço oficial do STJ de 29/07/2026 sobre os 39 repetitivos julgados no primeiro semestre.</p>
+      <p>No Legislativo, o Senado aprovou em primeiro e segundo turno, no mesmo dia 14/07/2026, a PEC 14/2021 — aposentadoria especial constitucional para agentes comunitários de saúde e de combate a endemias —, por 73 votos a 1. E no INSS, julho marcou o início dos primeiros pagamentos retroativos da pensão especial para órfãos de feminicídio, com a competência de vara já pacificada pela TRU do TRF4 desde março.</p>
+      <p>Rural e híbrida — a praça forte da casa — não tiveram decisão inédita neste recorte; seguem com o mapa consolidado que você já usa, registrado no Panorama por Área. Vamos ao que importa.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 6 — cards de portal -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 6 movimentos do período</span>
+    </div>
+
+    <div class="top-grid">
+
+      <!-- CARD 1 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stj"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 01 · BENEFÍCIOS POR INCAPACIDADE</div>
+            </div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.157</span>
+          </div>
+          <div class="top-card-titulo">INSS pode rever administrativamente e cessar benefício por incapacidade concedido por decisão judicial</div>
+          <div class="top-card-corpo">
+            <p>A 1ª Seção do STJ julgou em 07/05/2026, sob relatoria do min. Herman Benjamin (com voto-vista do min. Teodoro Silva Santos), o Tema 1.157: quando a perícia médica administrativa constata que a incapacidade cessou, o INSS pode rever e cessar administrativamente o benefício por incapacidade, mesmo que ele tenha sido concedido por decisão judicial — sem precisar ajuizar nova ação. O tema foi destacado pelo próprio STJ no balanço oficial de 29/07/2026 sobre os repetitivos do primeiro semestre.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Atenção na carteira</span>
+            Clientes com benefício por incapacidade concedido judicialmente não estão imunes à revisão administrativa. Oriente sobre o dever de comparecer às perícias de revisão e prepare o cliente para contestar administrativamente antes de judicializar de novo.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Consolidada — repetitivo</span>
+              <span class="status-pill status-desfavoravel">🔴 Restritiva ao segurado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/29072026-stj-julgou-39-temas-repetitivos-no-primeiro-semestre-de-2026--confira-todas-as-teses-fixadas.aspx" target="_blank">STJ · Tema 1.157 · julgado 07/05/2026, destacado 29/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stj"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 02 · TEMPO DE CONTRIBUIÇÃO</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.307</span>
+          </div>
+          <div class="top-card-titulo">Motoristas e cobradores de ônibus e caminhão podem ter aposentadoria especial reconhecida por penosidade — com perícia individual</div>
+          <div class="top-card-corpo">
+            <p>Na mesma sessão de 07/05/2026, a 1ª Seção fixou o Tema 1.307 (rel. min. Gurgel de Faria): é possível reconhecer o caráter especial da atividade de motorista/cobrador de ônibus ou motorista de caminhão, exercida após a Lei 9.032/1995, em razão da penosidade — mas não é reconhecimento automático. Exige perícia técnica individual que comprove exposição habitual e permanente a condições concretas de dano à saúde. O acórdão foi comunicado pelo NUGEPNAC aos tribunais em 03/06/2026.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Oportunidade condicionada</span>
+            Reabra a discussão para motoristas/cobradores da carteira, mas monte a instrução em torno da perícia técnica individualizada — a tese não dispensa essa prova.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Consolidada — repetitivo</span>
+              <span class="status-pill status-favoravel">🟢 Favorável, com perícia individual</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.ibdp.org.br/2026/05/07/stj-decide-se-motoristas-e-cobradores-podem-ter-aposentadoria-especial-por-penosidade/" target="_blank">IBDP · Tema 1.307 · 07/05/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-cjf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 03 · TEMPO DE CONTRIBUIÇÃO / LEGISLATIVO</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-cjf">SENADO</span>
+            <span class="badge badge-tema">PEC 14/2021</span>
+          </div>
+          <div class="top-card-titulo">Senado aprova, em primeiro e segundo turno no mesmo dia, aposentadoria especial constitucional para agentes de saúde e endemias</div>
+          <div class="top-card-corpo">
+            <p>Em 14/07/2026, o Plenário do Senado aprovou a PEC 14/2021 em primeiro e segundo turnos na mesma sessão, por 73 votos a 1 (1 abstenção). O texto altera os arts. 40, 198 e 201 da Constituição para criar regime constitucional específico de aposentadoria especial para Agentes Comunitários de Saúde (ACS), Agentes de Combate a Endemias (ACE), Agentes Indígenas de Saúde (AIS) e Agentes Indígenas de Saneamento (AISAN). Segue agora para promulgação.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação para a carteira</span>
+            Mapeie clientes ACS/ACE/AIS/AISAN e acompanhe a promulgação — a regulamentação infraconstitucional definirá os critérios de tempo e idade a exigir.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Aprovada — aguardando promulgação</span>
+              <span class="status-pill status-favoravel">🟢 Favorável à categoria</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/170850" target="_blank">Senado Federal · PEC 14/2021 · 14/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-trf4"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 04 · PENSÃO POR MORTE</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-inss">INSS</span>
+            <span class="badge badge-trf4">TRF4/TRU</span>
+          </div>
+          <div class="top-card-titulo">INSS começa a pagar, com retroação, a pensão especial para órfãos de feminicídio — e a competência da vara já está definida</div>
+          <div class="top-card-corpo">
+            <p>Em julho de 2026, o INSS iniciou a análise dos primeiros requerimentos da pensão especial da Lei 14.717/2023 (filhos e dependentes menores de 18 anos de vítimas de feminicídio), com previsão de concluir os pedidos iniciais até o fim do mês e pagamento retroativo à data do requerimento. Em paralelo, vale reforçar uma tese processual de março: a TRU do TRF4 já havia fixado, em 20/03/2026, que ações sobre esse benefício são de competência da Vara Previdenciária/assistencial — não da Vara Cível —, por semelhança com o BPC/LOAS.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata</span>
+            Identifique dependentes menores de 18 anos de vítimas de feminicídio na carteira ou na rede de indicação. Requerimento administrativo primeiro; se houver conflito de competência na Justiça, use o precedente do TRF4 para direcionar à vara previdenciária.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Competência pacificada — TRU/TRF4</span>
+              <span class="status-pill status-favoravel">🟢 Favorável aos dependentes</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.trf4.jus.br/trf4/controlador.php?acao=noticia_visualizar&id_noticia=30004" target="_blank">TRF4 · TRU · 20/03/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-inss"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 05 · PROTOCOLO ADMINISTRATIVO</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-inss">INSS</span>
+            <span class="badge badge-tema">Portaria 1.092/2026</span>
+          </div>
+          <div class="top-card-titulo">INSS atualiza fatores de correção de pecúlios, atrasados e salários de contribuição para julho</div>
+          <div class="top-card-corpo">
+            <p>A Portaria MPS nº 1.092, de 13/07/2026, fixa os fatores de atualização de julho para pecúlios, parcelas de benefícios pagas em atraso e salários de contribuição usados no cálculo da renda mensal inicial. É publicação mensal recorrente — mas o índice do mês impacta diretamente a liquidação de atrasados e a apuração de RMI em processos que estão sendo calculados agora.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Confira se o cálculo de atrasados/RMI em andamento está usando o fator de julho, não o de um mês anterior — erro de portaria gera valor de causa incorreto.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Em vigor</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.gov.br/inss/pt-br/centrais-de-conteudo/legislacao/portarias/2026" target="_blank">INSS · Portaria MPS 1.092/2026 · 13/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-cjf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 06 · PROCESSO JUDICIAL</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-cjf">CNJ</span>
+            <span class="badge badge-trf4">JUSTIÇA 4.0</span>
+          </div>
+          <div class="top-card-titulo">CNJ nacionaliza a "Fábrica de Cálculos" — ferramenta oficial de cálculo previdenciário passa a valer para todos os tribunais</div>
+          <div class="top-card-corpo">
+            <p>Desenvolvida pelo TRF3, a Fábrica de Cálculos foi incorporada à Plataforma Digital do Poder Judiciário (PDPJ-Br) e ao portal Jus.br via projeto Conecta, do Programa Justiça 4.0 do CNJ — nacionalização divulgada em 02/07/2026. A ferramenta calcula tempo de contribuição, RMI e liquidação de atrasados em ações previdenciárias, com leitura automática de CNIS e RDCTC, substituindo planilhas particulares.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação operacional</span>
+            Capacite a equipe de cálculo no curso autoinstrucional da Enaju (1h) — a padronização tende a se tornar exigência em varas e gabinetes previdenciários.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Nacionalizada</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.trf2.jus.br/jf2/noticia-jf2/2026/plataforma-que-simplifica-calculos-judiciais-disponibilizada-para-todos-os" target="_blank">CNJ/TRF2 · 02/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STJ · Tema 1.157 · Julgado em 07/05/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">Uma decisão judicial que concede benefício por incapacidade deixou de ser blindagem permanente contra revisão administrativa.</div>
+      <div class="decisao-body">
+        <p>Por anos, prevaleceu nos escritórios a leitura de que, uma vez concedido o benefício por incapacidade por decisão judicial, o INSS só poderia cessá-lo por meio de nova ação — respeitando a coisa julgada material sobre a incapacidade em si. O Tema 1.157 do STJ reorganiza essa lógica.</p>
+        <p>A 1ª Seção, sob relatoria do ministro Herman Benjamin, com voto-vista do ministro Teodoro Silva Santos, decidiu que a coisa julgada recai sobre a situação fática existente à época da decisão — não sobre uma condição de incapacidade permanente e imutável. Se a perícia médica administrativa, em revisão periódica, constata que a incapacidade cessou, o INSS pode rever e cessar o benefício administrativamente, sem necessidade de ajuizar ação rescisória ou nova demanda judicial.</p>
+        <p>O tema foi julgado em 07/05/2026 e ganhou novo destaque no balanço oficial que o próprio STJ publicou em 29/07/2026, listando os 39 temas repetitivos concluídos no primeiro semestre — o que reforça sua relevância prática para o segundo semestre de litígio previdenciário.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        Verifique a redação exata da tese fixada no acórdão publicado antes de citá-la literalmente em peças — o cerne já confirmado é: o INSS pode rever administrativamente e cessar benefício por incapacidade concedido por decisão judicial quando perícia médica administrativa constata a cessação da incapacidade, sem necessidade de nova ação judicial.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Avise clientes com benefício por incapacidade concedido judicialmente que a revisão periódica pelo INSS continua valendo e agora tem respaldo repetitivo mais claro. Prepare recurso administrativo (contestação da perícia, pedido de nova perícia, junta médica) como primeira linha de defesa — não espere o corte para judicializar.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Consolidada — repetitivo</span>
+        <span class="status-pill status-desfavoravel">🔴 Restritiva ao segurado</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/29072026-stj-julgou-39-temas-repetitivos-no-primeiro-semestre-de-2026--confira-todas-as-teses-fixadas.aspx" target="_blank">stj.jus.br · Tema 1.157</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">Tema 1.307 STJ · Penosidade de motoristas e cobradores vira caminho de aposentadoria especial — mas exige perícia técnica individual</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Não é reconhecimento automático: a penosidade tem de ser provada caso a caso</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">Após a Lei 9.032/1995, motoristas e cobradores de ônibus e motoristas de caminhão perderam o enquadramento automático por categoria profissional para fins de aposentadoria especial. O Tema 1.307 discutiu se a atividade ainda pode ser reconhecida como especial por outro fundamento: a penosidade. A 1ª Seção decidiu que sim — é possível o reconhecimento do caráter especial em razão da penosidade dessas atividades, desde que perícia técnica individual comprove exposição habitual e permanente a condições concretas de dano à saúde. A ressalva da perícia individualizada é parte essencial da tese, não um detalhe.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Base legal e paradigmas</span>
+        <div class="tese-bloco-texto">Lei 9.032/1995 (fim do enquadramento por categoria profissional); art. 57 e 58 da Lei 8.213/1991. Julgado sob o rito dos repetitivos, 1ª Seção do STJ, relatoria do ministro Gurgel de Faria, julgamento concluído em 07/05/2026, com comunicação do NUGEPNAC aos tribunais em 03/06/2026.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como o STJ decidiu</span>
+        <div class="tese-bloco-texto">O colegiado reconheceu que a atividade de motorista/cobrador de ônibus e caminhão pode envolver desgaste físico e mental compatível com o conceito de penosidade — jornadas longas, trânsito, ruído, vibração, tensão constante. Mas rejeitou a tese de reconhecimento automático por categoria: exigiu que cada caso seja instruído com perícia técnica individual (laudo pericial específico), demonstrando exposição habitual e permanente às condições concretas de desgaste à saúde daquele trabalhador — não uma presunção genérica da profissão.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Reabra a análise de clientes motoristas/cobradores de ônibus e caminhão com tempo de atividade após 1995. Antes de peticionar, monte a instrução em torno da perícia técnica individual — sem laudo específico de exposição concreta, a tese não socorre o caso. Verifique também se o pedido administrativo no INSS já foi feito com esse fundamento, já que a via administrativa tende a ser mais rápida que a judicial nesse tipo de matéria.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-consolidada">✔ Consolidada — repetitivo, tema 1.307 STJ, julgado 07/05/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área — as 9 frentes da banca</span>
+    </div>
+    <div class="section-intro">Um achado verificado para cada uma das áreas que o escritório cobre. Onde não houve decisão inédita neste recorte, trazemos a regra consolidada que continua valendo — marcado com clareza.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item" id="panel-01">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Introdução · Qualidade de Segurado</div>
+          <div class="panorama-titulo">Sem decisão inédita neste recorte — segue valendo a flexibilização da prova de desemprego</div>
+          <div class="panorama-texto">Continua em vigor a regra do STJ Tema 1.360 (16/07/2026, tratado na edição 006): qualquer meio de prova idôneo serve para estender o período de graça, mas a simples ausência de anotação na CTPS/CNIS não basta sozinha.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada</span><span class="panorama-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/16072026-Repetitivo-fixa-tese-sobre-prova-de-desemprego-para-extensao-do-periodo-de-graca-previdenciaria.aspx" target="_blank">stj.jus.br</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-02">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Aposentadoria por Idade · Urbana, Rural e Híbrida</div>
+          <div class="panorama-titulo">Sem novidade inédita neste recorte — o mapa consolidado que sustenta a maior parte da carteira do escritório continua valendo</div>
+          <div class="panorama-texto">Seguem firmes as três regras que são a base da praça rural/híbrida da casa: (1) STJ Tema 1.007 — não é preciso estar exercendo atividade rural no momento do requerimento da híbrida; (2) Súmula 149/STJ mitigada pela Súmula 577/STJ — prova exclusivamente testemunhal não basta, mas prova material insuficiente complementada por testemunhal idônea é aceita; (3) STJ Tema 642 — período rural pode ser descontínuo, desde que o segurado esteja em atividade rural ao completar a idade mínima.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Jurisprudência consolidada</span><span class="panorama-fonte">STJ — Súmulas 149 e 577, Temas 1.007 e 642</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-03">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Tempo de Contribuição · Transição, Especial, Professor, PCD</div>
+          <div class="panorama-titulo">Penosidade de motoristas/cobradores vira caminho de aposentadoria especial, com perícia individual</div>
+          <div class="panorama-texto">STJ Tema 1.307, julgado em 07/05/2026. Ver detalhe na seção 04 (Tese Relevante). Some-se a isso a PEC 14/2021, aprovada em 14/07/2026, que cria regime constitucional de aposentadoria especial para agentes de saúde e endemias.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável, com perícia individual</span><span class="panorama-fonte"><a href="https://www.ibdp.org.br/2026/05/07/stj-decide-se-motoristas-e-cobradores-podem-ter-aposentadoria-especial-por-penosidade/" target="_blank">IBDP</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-04">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Benefícios por Incapacidade · Temporário, Permanente, Perícia</div>
+          <div class="panorama-titulo">INSS pode rever administrativamente benefício concedido por decisão judicial, se perícia constata cessação</div>
+          <div class="panorama-texto">STJ Tema 1.157, julgado em 07/05/2026, destacado no balanço STJ de 29/07/2026. Ver Decisão do Dia (seção 03).</div>
+          <div class="panorama-footer"><span class="status-pill status-desfavoravel">🔴 Restritiva ao segurado</span><span class="panorama-fonte"><a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/29072026-stj-julgou-39-temas-repetitivos-no-primeiro-semestre-de-2026--confira-todas-as-teses-fixadas.aspx" target="_blank">stj.jus.br</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-05">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">BPC/LOAS</div>
+          <div class="panorama-titulo">Sem decisão judicial inédita — mas critérios de avaliação médica e social foram atualizados por portaria</div>
+          <div class="panorama-texto">Segue valendo o Tema 385 da TNU (24/06/2026, tratado na edição 006): deficiência não exige mais prova de incapacidade laboral. Complementarmente, a Portaria Conjunta MDS/MPS/INSS nº 37/2026 (01/04/2026) revisou os instrumentos de avaliação médica e social do BPC, eliminando a negativa automática por grau de deficiência.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada</span><span class="panorama-fonte">CJF/TNU · Portaria Conjunta 37/2026</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-06">
+        <div class="panorama-num">06</div>
+        <div>
+          <div class="panorama-area">Salário-Maternidade</div>
+          <div class="panorama-titulo">Carência segue inexigível — regra consolidada, sem novidade no período</div>
+          <div class="panorama-texto">O STF julgou inconstitucional a exigência de carência para salário-maternidade (ADIs 2.110 e 2.111, 21/03/2024). O INSS incorporou a decisão pela Instrução Normativa nº 188/2025. Não houve decisão nova neste recorte, mas a regra continua em vigor: hoje só se exige qualidade de segurada na data do evento, sem carência mínima.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada — regra vigente</span><span class="panorama-fonte">STF ADIs 2.110/2.111 · IN INSS 188/2025</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-07">
+        <div class="panorama-num">07</div>
+        <div>
+          <div class="panorama-area">Pensão por Morte</div>
+          <div class="panorama-titulo">INSS inicia pagamento retroativo da pensão especial a órfãos de feminicídio; competência de vara já pacificada</div>
+          <div class="panorama-texto">INSS começou a analisar e pagar os primeiros pedidos em julho/2026 (Lei 14.717/2023); TRU do TRF4 fixou em 20/03/2026 a competência da Vara Previdenciária. Ver detalhe no Movimento 04 do Top 6.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável aos dependentes</span><span class="panorama-fonte"><a href="https://www.trf4.jus.br/trf4/controlador.php?acao=noticia_visualizar&id_noticia=30004" target="_blank">trf4.jus.br</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-08">
+        <div class="panorama-num">08</div>
+        <div>
+          <div class="panorama-area">Protocolo Administrativo · Meu INSS, Procuração, Documentação</div>
+          <div class="panorama-titulo">Novos fatores de atualização de julho para pecúlios, atrasados e RMI</div>
+          <div class="panorama-texto">Portaria MPS nº 1.092/2026, de 13/07/2026. Ver detalhe no Movimento 05 do Top 6.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Em vigor</span><span class="panorama-fonte"><a href="https://www.gov.br/inss/pt-br/centrais-de-conteudo/legislacao/portarias/2026" target="_blank">gov.br/inss</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-09">
+        <div class="panorama-num">09</div>
+        <div>
+          <div class="panorama-area">Processo Judicial · JEF, Recursos, Pagamento</div>
+          <div class="panorama-titulo">CNJ nacionaliza a Fábrica de Cálculos como ferramenta oficial de cálculo previdenciário</div>
+          <div class="panorama-texto">Nacionalização divulgada em 02/07/2026 via projeto Conecta do Programa Justiça 4.0. Ver detalhe no Movimento 06 do Top 6.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Nacionalizada</span><span class="panorama-fonte"><a href="https://www.trf2.jus.br/jf2/noticia-jf2/2026/plataforma-que-simplifica-calculos-judiciais-disponibilizada-para-todos-os" target="_blank">CNJ/TRF2</a></span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Balanço oficial: STJ julgou 39 temas repetitivos no primeiro semestre de 2026</div>
+        <div class="radar-texto">Publicado em 29/07/2026, o balanço reúne todos os repetitivos do semestre, incluindo os Temas 1.081 (remessa necessária previdenciária), 1.157, 1.307, 1.360 (período de graça) e 1.421 (pensão por morte de menor de 16 anos) — vale conferir a lista completa para checar se algum outro tema afeta a carteira do escritório.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-inss" style="flex-shrink:0;margin-top:2px;">INSS</span>
+      <div>
+        <div class="radar-titulo">Pensão especial por feminicídio: prazo de conclusão da 1ª leva de pedidos é o fim de julho/2026</div>
+        <div class="radar-texto">Segundo veículos de imprensa, o INSS previa concluir a análise dos primeiros requerimentos até o fim de julho de 2026. Vale confirmar com o cliente se o resultado já saiu e, em caso de negativa, avaliar recurso administrativo antes de judicializar.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Tema 1.370 segue afetado desde ago/2025, ainda sem julgamento de mérito</div>
+        <div class="radar-texto">A discussão sobre um possível segundo prazo decadencial em pedido de revisão administrativa negado (REsp 2.205.049/RS) permanece com suspensão nacional, sem novidade neste recorte. Mantenha processos correlatos sobrestados e monitore.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-cjf" style="flex-shrink:0;margin-top:2px;">CNJ</span>
+      <div>
+        <div class="radar-titulo">Fábrica de Cálculos ganha curso oficial gratuito na Enaju</div>
+        <div class="radar-texto">Curso autoinstrucional de 1h, sem pré-requisitos, disponível na plataforma da Escola Nacional do Judiciário — recomendado para quem lida com liquidação de atrasados e cálculo de RMI no dia a dia.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-cjf" style="flex-shrink:0;margin-top:2px;">SENADO</span>
+      <div>
+        <div class="radar-titulo">PEC 14/2021 segue para promulgação</div>
+        <div class="radar-texto">Após aprovação em dois turnos no mesmo dia (14/07/2026), falta apenas a promulgação para a PEC virar Emenda Constitucional. Acompanhe a publicação — a regulamentação infraconstitucional definirá os requisitos concretos de acesso à aposentadoria especial.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">Pensão especial por feminicídio: pagamento retroativo pode representar valor relevante por dependente</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>A pensão especial da Lei 14.717/2023 é fixada em um salário mínimo nacional mensal por núcleo familiar elegível, e os benefícios deferidos são pagos de forma retroativa à data da solicitação, desde que cumpridos os requisitos legais. Com o INSS iniciando os primeiros pagamentos em julho/2026, escritórios com atuação em direito de família e violência doméstica têm uma porta de entrada nova para a área previdenciária/assistencial — e vice-versa.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟢 Impacto Médio ·</span>
+        <span class="dinheiro-header-title">Pensão Especial Feminicídio · Lei 14.717/2023</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Requisitos centrais: filhos biológicos ou adotivos, ou dependentes (enteados, tutelados, sob guarda) menores de 18 anos, de mulher vítima de feminicídio; renda familiar per capita de até 1/4 do salário mínimo; inscrição no CadÚnico. A lei permite requerer o benefício mesmo antes do trânsito em julgado da condenação criminal, com base em indícios consistentes (auto de prisão em flagrante, prisão preventiva, denúncia do MP, decisão judicial).</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Verifique se há dependentes elegíveis na rede de indicação do escritório — inclusive fora da carteira previdenciária tradicional, via parcerias com atuação em família e violência doméstica</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Priorize requerimento administrativo — o INSS já está processando pedidos e o pagamento retroage à data do requerimento, não à do óbito</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Se houver negativa ou conflito de competência, direcione a ação para Vara Previdenciária, conforme a tese fixada pela TRU do TRF4 em 20/03/2026</span>
+          </div>
+        </div>
+        <p style="margin-top:14px; font-weight:600; color:#2D1B6B;">É uma frente nova de atuação, ainda pouco explorada pela maioria dos escritórios — vale mapear antes que o mercado se sature.</p>
+        <span class="dinheiro-fonte">Fonte: Lei 14.717/2023 · INSS (imprensa, jul/2026) · TRF4/TRU · 20/03/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Cinco ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Avisar clientes com benefício por incapacidade concedido judicialmente sobre a revisão administrativa</div>
+          <div class="amanha-texto">STJ Tema 1.157: o INSS pode rever e cessar administrativamente, mesmo com decisão judicial de base, se a perícia constata cessação da incapacidade. Oriente sobre a importância de comparecer às perícias de revisão.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Levantar clientes motoristas/cobradores de ônibus e caminhão para reavaliação de aposentadoria especial</div>
+          <div class="amanha-texto">STJ Tema 1.307: penosidade pode ser reconhecida, mas exige perícia técnica individual. Monte a instrução em torno dessa prova antes de peticionar.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Mapear clientes ACS, ACE, AIS ou AISAN na carteira</div>
+          <div class="amanha-texto">PEC 14/2021 aprovada em 14/07/2026, aguardando promulgação. Adiante a triagem para já ter os casos organizados quando a regulamentação sair.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Identificar dependentes elegíveis à pensão especial de feminicídio</div>
+          <div class="amanha-texto">INSS já está pagando com retroação. Priorize requerimento administrativo e, se necessário, use o precedente do TRF4 para garantir distribuição à Vara Previdenciária.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Conferir se cálculos de atrasados/RMI em andamento usam o fator de julho da Portaria 1.092/2026</div>
+          <div class="amanha-texto">Fator de mês errado gera valor de causa e liquidação incorretos. Revise antes de protocolar ou de fechar cálculo com o cliente.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Seis perfis prioritários deste período. Cada critério é um filtro para aplicar agora na carteira.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Segurados com benefício por incapacidade concedido judicialmente</strong> — orientar sobre risco de revisão administrativa e preparar defesa técnica prévia.
+            <span class="mapear-tese">→ Atenção · STJ Tema 1.157</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Motoristas e cobradores de ônibus/caminhão após 1995</strong> — reavaliar aposentadoria especial condicionada a perícia técnica individual de penosidade.
+            <span class="mapear-tese">→ Oportunidade condicionada · STJ Tema 1.307</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Agentes comunitários de saúde e de combate a endemias (ACS/ACE/AIS/AISAN)</strong> — mapear para aposentadoria especial constitucional assim que a PEC 14/2021 for promulgada.
+            <span class="mapear-tese">→ Aguardar promulgação · PEC 14/2021</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Filhos e dependentes menores de 18 anos de vítimas de feminicídio</strong> — requerer pensão especial administrativamente; se negado, direcionar à Vara Previdenciária.
+            <span class="mapear-tese">→ Ação imediata · Lei 14.717/2023</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Processos com liquidação de atrasados ou cálculo de RMI em andamento</strong> — conferir se o fator de julho/2026 já foi aplicado corretamente.
+            <span class="mapear-tese">→ Checagem operacional · Portaria MPS 1.092/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">06</div>
+          <div class="mapear-texto">
+            <strong>Equipe interna de cálculo</strong> — capacitar na Fábrica de Cálculos nacionalizada, hoje ferramenta oficial em vários tribunais.
+            <span class="mapear-tese">→ Padronização · Fábrica de Cálculos / CNJ</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 1.157: coisa julgada sobre incapacidade não é mais blindagem absoluta</div>
+          <div class="atencao-texto">Não afirme a clientes que um benefício por incapacidade concedido judicialmente está imune a qualquer revisão futura. O INSS pode reavaliar administrativamente e cessar se a perícia constatar cessação da incapacidade.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 1.307: penosidade não é reconhecimento automático por categoria</div>
+          <div class="atencao-texto">Não prometa aposentadoria especial a motoristas/cobradores só pela função exercida. A tese exige perícia técnica individual comprovando exposição concreta — sem esse laudo, o pedido tende a ser negado.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">PEC 14/2021 ainda não foi promulgada</div>
+          <div class="atencao-texto">A aprovação em dois turnos no Senado não torna o benefício imediatamente exigível. Aguarde a promulgação e a regulamentação infraconstitucional antes de orientar sobre prazos ou requisitos concretos.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 1.370 STJ segue sem julgamento de mérito</div>
+          <div class="atencao-texto">A discussão sobre segundo prazo decadencial em revisão administrativa negada permanece sobrestada. Não afirme a clientes que há decisão de mérito — apenas suspensão nacional em vigor.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado previdenciário do período</div>
+      <div class="numero-destaque">39<span class="numero-unidade">temas</span></div>
+      <div class="numero-titulo">repetitivos julgados pelo STJ no primeiro semestre de 2026 — dois deles no mesmo dia, direto no previdenciário</div>
+      <div class="numero-texto">No balanço oficial divulgado em 29/07/2026, o STJ listou os 39 temas repetitivos concluídos entre janeiro e junho. Só na sessão de 07/05/2026, a 1ª Seção julgou dois com impacto direto na banca previdenciária — o Tema 1.157 (revisão administrativa de incapacidade) e o Tema 1.307 (penosidade de motoristas e cobradores). Vale revisar a lista completa: outros temas do semestre podem afetar clientes que ainda não foram remapeados.</div>
+      <div class="numero-fonte">Fonte: STJ · Balanço de repetitivos do 1º semestre de 2026 · 29/07/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Entre maio e julho de 2026, o previdenciário girou em torno de uma outra pergunta: até onde vai a palavra final do INSS, e até onde começa a do Judiciário?</div>
+
+    <div class="mercado-corpo">
+      <p>O Tema 1.157 do STJ devolveu ao INSS um poder de revisão administrativa que parte da advocacia considerava neutralizado pela coisa julgada — um lembrete de que "ganhar na Justiça" não encerra definitivamente a discussão em benefícios por incapacidade. Do outro lado, o Tema 1.307 abriu uma porta nova (penosidade de motoristas e cobradores), mas a fechou parcialmente ao exigir prova técnica individual — o STJ seguiu, nos dois casos julgados na mesma sessão, uma linha de rejeitar tanto o automatismo a favor do segurado quanto o automatismo a favor da autarquia.</p>
+
+      <p>No Legislativo, a aprovação da PEC 14/2021 em dois turnos no mesmo dia mostra como pautas de categoria profissional específica podem avançar rápido quando há consenso amplo (73 a 1). É um lembrete de que o radar previdenciário não pode se limitar ao Judiciário — o Congresso segue sendo fonte de mudança estrutural.</p>
+
+      <p>No campo social, o início dos pagamentos da pensão especial por feminicídio mostra a Previdência operando como rede de proteção em um contexto que, historicamente, ficava só no âmbito criminal e da assistência social. É uma área nova, ainda pouco mapeada pelos escritórios previdenciários tradicionais.</p>
+
+      <p>E, na rotina, a nacionalização da Fábrica de Cálculos pelo CNJ caminha na mesma direção da mudança na procuração eletrônica do Meu INSS, tratada na edição anterior: menos espaço para ferramenta improvisada, mais exigência de processo padronizado e rastreável.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      O recorte de maio a julho de 2026 não trouxe uma "vitória" ou "derrota" única para o segurado — trouxe o STJ recalibrando, tema a tema, até onde vai a autonomia do INSS e até onde vai o direito adquirido. Entender essa fronteira, caso a caso, é o que separa o escritório que só acompanha notícia do escritório que converte notícia em resultado para o cliente.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Nem toda vitória judicial é definitiva, e nem toda tese nova é automática. O trabalho do advogado previdenciarista, neste semestre, foi ler a letra miúda de cada exceção — e é aí que mora o resultado do cliente.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 007</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/29072026-stj-julgou-39-temas-repetitivos-no-primeiro-semestre-de-2026--confira-todas-as-teses-fixadas.aspx" target="_blank">STJ · Balanço dos 39 temas repetitivos do 1º semestre de 2026</a></div>
+          <div class="fonte-desc">Publicado em 29/07/2026. Reúne e confirma os Temas 1.157 e 1.307, entre outros, com data de julgamento e teses fixadas.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ibdp.org.br/2026/05/07/stj-decide-se-motoristas-e-cobradores-podem-ter-aposentadoria-especial-por-penosidade/" target="_blank">IBDP · STJ decide sobre penosidade de motoristas e cobradores (Tema 1.307)</a></div>
+          <div class="fonte-desc">Publicado em 07/05/2026, mesmo dia do julgamento. Traz a tese fixada na íntegra e a relatoria do min. Gurgel de Faria.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/170850" target="_blank">Senado Federal · PEC 14/2021 — Aposentadoria especial de ACS e ACE</a></div>
+          <div class="fonte-desc">Página oficial da matéria. Aprovada em primeiro e segundo turnos em 14/07/2026, por 73 votos a 1, com 1 abstenção. Segue para promulgação.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.trf4.jus.br/trf4/controlador.php?acao=noticia_visualizar&id_noticia=30004" target="_blank">TRF4 · TRU fixa competência da Vara Previdenciária para pensão de feminicídio</a></div>
+          <div class="fonte-desc">Julgado em 20/03/2026, publicado em 26/03/2026. Tese sobre competência em ações da pensão especial da Lei 14.717/2023.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.gov.br/inss/pt-br/centrais-de-conteudo/legislacao/portarias/2026" target="_blank">INSS · Portarias 2026 — Portaria MPS nº 1.092/2026</a></div>
+          <div class="fonte-desc">Fatores de atualização de julho/2026 para pecúlios, atrasados e cálculo de RMI, publicada em 13/07/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.trf2.jus.br/jf2/noticia-jf2/2026/plataforma-que-simplifica-calculos-judiciais-disponibilizada-para-todos-os" target="_blank">CNJ/TRF2 · Fábrica de Cálculos nacionalizada</a></div>
+          <div class="fonte-desc">Divulgado em 02/07/2026. Nacionalização da ferramenta de cálculo previdenciário do TRF3 via projeto Conecta, do Programa Justiça 4.0.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.tjro.jus.br/nugepnac/recurso-repetitivo/tema-1307-stj-afetado" target="_blank">NUGEPNAC/TJRO · Tema 1.307 STJ — Acórdão publicado</a></div>
+          <div class="fonte-desc">Registro processual do repetitivo, com comunicação aos tribunais em 03/06/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&tipo_pesquisa=T&cod_tema_inicial=1007&cod_tema_final=1007" target="_blank">STJ · Tema 1.007 — Aposentadoria híbrida sem atividade rural atual</a></div>
+          <div class="fonte-desc">Base jurisprudencial consolidada para a praça rural/híbrida, sem novidade neste recorte.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 007 · 31 de julho de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
