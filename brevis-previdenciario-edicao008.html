@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 008 · 7 de agosto de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--dourado-claro); border-color: var(--dourado-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(201,168,76,0.16); color: var(--dourado-claro); }
+  .indice-item strong { color: var(--dourado-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--cinza-sub); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf3 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-cjf  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,31,60,0.06); transition: box-shadow 0.18s, transform 0.18s; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(13,31,60,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-stj { background: linear-gradient(90deg, #5A2E7A, #8B5EA8); }
+  .bar-stf { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-tnu { background: linear-gradient(90deg, #2B5797, #6C97C9); }
+  .bar-inss { background: linear-gradient(90deg, #A8230E, #D9634A); }
+  .bar-cjf { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-trf4 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--azul-escuro); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EDE9DF; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cinza-sub); }
+  .top-card-fonte a { color: var(--azul-claro); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--dourado); scroll-margin-top: 16px; }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--dourado); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--azul-escuro); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: var(--cinza-texto); margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--cinza-sub); }
+  .panorama-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .numero-card { background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-meio) 100%); border-radius: 5px; padding: 32px; color: white; position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--dourado); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--branco); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(250,250,248,0.68); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(201,168,76,0.45); margin-top: 16px; letter-spacing: 1px; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico — <a href="#panel-01">Introdução</a>, <a href="#panel-02">Aposentadoria por Idade</a>, <a href="#panel-03">Tempo de Contribuição</a>, <a href="#panel-04">Benefícios por Incapacidade</a>, <a href="#panel-05">BPC/LOAS</a>, <a href="#panel-06">Salário-Maternidade</a>, <a href="#panel-07">Pensão por Morte</a>, <a href="#panel-08">Protocolo Administrativo</a> e <a href="#panel-09">Processo Judicial</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">7 de agosto de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">008</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">3 de junho a 4 de agosto · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">9–11 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Recorte de 03.06 a 04.08.2026</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">9 áreas cobertas · 6 movimentos · 5 ações imediatas</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 6</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário nº 008. Em 3 de junho de 2026, o STF concluiu o julgamento da ADI 6.309 e, por 6 votos a 5, derrubou a idade mínima que a Reforma da Previdência havia imposto à aposentadoria especial — quem já tem 15, 20 ou 25 anos de exposição a agentes nocivos volta a poder se aposentar só pelo tempo, sem esperar completar 55, 58 ou 60 anos. É a mudança mais relevante no tempo de contribuição desde 2019, e segue gerando desdobramentos práticos até agora.</p>
+      <p>No STJ, dois movimentos completam o quadro do período: o Tema 1.401 (retenção do FPM para quitar dívida previdenciária de municípios) teve sua vinculação reforçada em nota oficial de 03/08, e a Corte Especial extinguiu a punibilidade de um ex-governador por apropriação indébita previdenciária após quitação integral do débito — um lembrete valioso para a área criminal-previdenciária da banca.</p>
+      <p>E a Previdência segue registrando o custo social das apostas online: as concessões de auxílio-doença por ludopatia (CID F63.0) saltaram de 1 caso em junho/2023 para 62 em junho/2026 — alta de 2.300%. Vamos ao que importa.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 6 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 6 movimentos do período</span>
+    </div>
+
+    <div class="top-grid">
+
+      <!-- CARD 1 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 01 · TEMPO DE CONTRIBUIÇÃO</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADI 6.309</span>
+          </div>
+          <div class="top-card-titulo">STF derruba a idade mínima da aposentadoria especial por exposição a agentes nocivos</div>
+          <div class="top-card-corpo">
+            <p>Em 03/06/2026, por 6 votos a 5, o Plenário julgou inconstitucional a idade mínima (55, 58 ou 60 anos) que a Reforma de 2019 havia criado para a aposentadoria especial. O trabalhador exposto a agentes nocivos volta a poder se aposentar apenas com 15, 20 ou 25 anos de exposição comprovada — sem exigência de idade. Mantidas a nova forma de cálculo do valor e a vedação à conversão de tempo especial em comum após a Reforma.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Revise todos os casos de aposentadoria especial represados só por falta de idade mínima — muitos podem já ter direito adquirido ao benefício apenas pelo tempo de exposição.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Decisão de mérito — concluída</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.mixvale.com.br/2026/08/06/supremo-tribunal-federal-redefine-aposentadoria-especial-ao-eliminar-idade-minima-para-trabalhadores-expostos-a-riscos-em-2026/" target="_blank">STF · ADI 6.309 · julgada 03/06/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stj"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 02 · PROCESSO JUDICIAL / MUNICÍPIOS</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.401</span>
+          </div>
+          <div class="top-card-titulo">STJ afasta limites da Lei 9.639/1998 sobre bloqueio do FPM para quitar dívida previdenciária de município</div>
+          <div class="top-card-corpo">
+            <p>Julgado no primeiro semestre de 2026 (REsp 2.238.302 e REsp 2.177.031) e reforçado em nota oficial do STJ de 03/08/2026, o Tema 1.401 fixou que os limites de 9% da cota-parte e de 15% da receita corrente líquida (Lei 9.639/1998) não se aplicam aos bloqueios do Fundo de Participação dos Municípios feitos para quitar débitos previdenciários — a retenção tem fundamento constitucional próprio.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Atenção — clientes municipais</span>
+            Escritórios com atuação consultiva para prefeituras devem revisar a exposição a bloqueios de FPM por dívida previdenciária: o teto de 15% da RCL não protege mais o município nesses casos.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Consolidada — repetitivo vinculante</span>
+              <span class="status-pill status-desfavoravel">🔴 Restritiva aos municípios</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/03082026-Tribunal-afasta-aplicacao-dos-limites-da-Lei-9-6391998-aos-bloqueios-do-FPM-por-debitos-previdenciarios.aspx" target="_blank">STJ · Tema 1.401 · 03/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-inss"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 03 · BENEFÍCIOS POR INCAPACIDADE</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-inss">INSS</span>
+            <span class="badge badge-tema">CID F63.0</span>
+          </div>
+          <div class="top-card-titulo">Concessões de auxílio-doença por ludopatia (vício em apostas) sobem 2.300% em três anos</div>
+          <div class="top-card-corpo">
+            <p>Levantamento com dados do INSS mostra que os benefícios concedidos sob CID F63.0 (jogo patológico) saltaram de 1 caso em junho/2023 para 49 em março/2026, 50 em maio e 62 em junho/2026 — o maior nível da série. O benefício não decorre da ludopatia em si, mas da incapacidade laboral que ela pode gerar, atestada por perícia médica, com base no art. 59 da Lei 8.213/1991.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Orientação para a carteira</span>
+            Trate como incapacidade a comprovar em perícia, não como "novo benefício para apostadores" — a distinção evita frustração do cliente e indeferimento por má instrução do pedido.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-favoravel">🟢 Reconhecimento crescente</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://ieprev.com.br/noticias/concessoes-de-auxilio-doenca-por-vicio-em-apostas-disparam-no-inss" target="_blank">IEPREV · dados INSS · jun/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 04 · PROTOCOLO ADMINISTRATIVO</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Pet. 16.435</span>
+          </div>
+          <div class="top-card-titulo">Operação Sem Desconto avança: nova fase mira núcleo político ligado a esquema de descontos associativos no INSS</div>
+          <div class="top-card-corpo">
+            <p>Em 04/08/2026, o ministro André Mendonça autorizou, no âmbito da Petição 16.435, buscas e quebra de sigilo telefônico contra familiares, empresários e escritórios ligados a um senador apontado como possível beneficiário do esquema. A investigação apura lavagem de dinheiro tendo como crime antecedente corrupção passiva no INSS, no período de março/2020 a março/2025, quando ao menos 9 milhões de descontos associativos foram aplicados em benefícios, muitos sem consentimento do segurado.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso para a carteira</span>
+            Clientes com descontos associativos não autorizados no extrato do benefício têm respaldo crescente para pedir ressarcimento — há acordo homologado no STF prevendo devolução e suspensão de processos individuais equivalentes.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Investigação em curso</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://noticias.stf.jus.br/postsnoticias/stf-autoriza-buscas-e-quebra-de-sigilo-de-dados-telefonicos-em-investigacao-da-operacao-sem-desconto/" target="_blank">STF · Petição 16.435 · 04/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-trf4"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 05 · PROTOCOLO ADMINISTRATIVO / ERRO DO INSS</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-trf4">TRF4</span>
+            <span class="badge badge-inss">INSS</span>
+          </div>
+          <div class="top-card-titulo">Idosa "dada como morta" duas vezes pelo INSS será indenizada — erro persistiu mesmo após correção judicial</div>
+          <div class="top-card-corpo">
+            <p>A Justiça Federal de Londrina condenou o INSS a pagar R$ 15 mil de indenização a uma idosa de mais de 80 anos, com demência, que teve certidão de óbito emitida por engano em 2014. O erro já havia sido corrigido na Justiça Estadual em 2017, mas o INSS manteve a falha em seus sistemas e voltou a suspender os benefícios da segurada em 2023 — deixando-a dois meses sem renda.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso para a carteira</span>
+            Em casos de suspensão indevida por óbito equivocado, exija que o INSS comprove atualização do cadastro após decisão judicial prévia — cruzamento automatizado de dados não isenta a autarquia de checar informação já corrigida.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-favoravel">🟢 Favorável à segurada</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://conjur.com.br/2026-jul-30/idosa-que-teve-certidao-de-obito-emitida-em-vida-sera-indenizada-pelo-inss/" target="_blank">Conjur · TRF4/Londrina · 30/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-trf4"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 06 · PENSÃO POR MORTE</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-trf6">TRF6</span>
+            <span class="badge badge-inss">INSS</span>
+          </div>
+          <div class="top-card-titulo">TRF6 confirma: INSS é obrigado a analisar pedido de pensão especial por feminicídio, mesmo sem regulamentação própria</div>
+          <div class="top-card-corpo">
+            <p>A 3ª Turma do TRF6 manteve, em decisão de 31/07/2026, mandado de segurança que obriga o INSS a analisar requerimento de pensão especial da Lei 14.717/2023 para filho órfão de vítima de feminicídio. O pedido havia sido protocolado em novembro/2023 e seguia sem análise quando o mandado foi impetrado em maio/2024. O tribunal rejeitou o argumento do INSS de falta de regulamentação: a lei já traz todos os contornos necessários.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação para a carteira</span>
+            Este é um ângulo diferente do já tratado na edição 007 (INSS iniciando pagamentos retroativos): aqui o fato novo é a confirmação judicial do dever de analisar em prazo razoável quando o INSS trava o processo administrativo. Use o precedente em caso de silêncio da autarquia.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Mantida em 2ª instância</span>
+              <span class="status-pill status-favoravel">🟢 Favorável aos dependentes</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.ibdp.org.br/2026/07/31/trf6-mantem-decisao-que-obriga-o-inss-a-analisar-pedido-de-pensao-especial-para-filho-de-vitima-de-feminicidio/" target="_blank">IBDP · TRF6 · 31/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STF · ADI 6.309 · Julgada em 03/06/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">A maior mudança na aposentadoria especial desde a Reforma de 2019: a idade mínima caiu.</div>
+      <div class="decisao-body">
+        <p>Desde 2019, quem trabalhava exposto a agentes nocivos à saúde precisava não só comprovar 15, 20 ou 25 anos de exposição, mas também atingir uma idade mínima (55, 58 ou 60 anos, conforme o caso) para se aposentar de forma especial. Na prática, isso obrigava o trabalhador a continuar exposto justamente ao agente nocivo que justificava o benefício, só para completar a idade.</p>
+        <p>Em 03/06/2026, por 6 votos a 5, o Plenário do STF julgou procedente a ADI 6.309 e declarou inconstitucional essa exigência de idade mínima. A partir da decisão, volta a valer a lógica anterior à Reforma: o direito à aposentadoria especial se completa com o tempo de exposição comprovado, sem necessidade de idade mínima.</p>
+        <p>A decisão não devolve tudo ao regime antigo: o STF manteve a nova fórmula de cálculo do valor do benefício trazida pela Reforma, manteve a vedação à conversão de tempo especial em comum para períodos posteriores a 2019, e manteve a exigência de comprovação técnica da exposição a agentes nocivos (laudo, PPP, perícia).</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        É inconstitucional a exigência de idade mínima para a concessão de aposentadoria especial a segurados expostos a agentes nocivos à saúde, mantidas as demais regras de cálculo e comprovação técnica da exposição introduzidas pela Emenda Constitucional 103/2019.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Levante todos os clientes com pedido de aposentadoria especial parado só por falta de idade mínima — inclusive processos administrativos indeferidos ou judiciais suspensos aguardando esse requisito. Muitos já reúnem tempo suficiente e podem protocolar ou pedir revisão agora.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Decisão de mérito — concluída</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.mixvale.com.br/2026/08/06/supremo-tribunal-federal-redefine-aposentadoria-especial-ao-eliminar-idade-minima-para-trabalhadores-expostos-a-riscos-em-2026/" target="_blank">STF · ADI 6.309</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">STJ APn 1.101 · Quitação integral do débito extingue a punibilidade no crime de apropriação indébita previdenciária, mesmo com habitualidade</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Pagar a dívida, mesmo tarde e mesmo com reiteração da conduta, ainda encerra o processo criminal</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">A Corte Especial do STJ declarou extinta a punibilidade de um ex-governador e de um ex-secretário estadual, acusados de apropriação indébita previdenciária por deixarem de repassar ao INSS contribuições descontadas de servidores estaduais, em sete ocasiões distintas (continuidade delitiva). O fundamento: quitado integralmente o débito previdenciário, extingue-se a punibilidade do crime, entendimento já consolidado pelo STJ e pelo STF para tributos em geral e aplicado aqui à apropriação indébita previdenciária.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Base legal e paradigmas</span>
+        <div class="tese-bloco-texto">Art. 168-A do Código Penal (apropriação indébita previdenciária); jurisprudência consolidada do STJ e do STF sobre extinção da punibilidade pelo pagamento do tributo, a qualquer tempo. Julgado pela Corte Especial do STJ, relatoria do ministro Luiz Felipe Salomão, decisão unânime, divulgada em agosto/2026 (Ação Penal 1.101).</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como o STJ decidiu</span>
+        <div class="tese-bloco-texto">O colegiado considerou irrelevante, para fins de extinção da punibilidade, o fato de a omissão no repasse ter ocorrido em sete oportunidades distintas — o que poderia sugerir continuidade delitiva mais grave. Uma vez comprovada a quitação integral do débito relativo às contribuições descontadas dos servidores, a punibilidade se extingue independentemente da habitualidade da conduta.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Para clientes pessoa jurídica ou gestor público respondendo por apropriação indébita previdenciária, avalie a quitação integral do débito — inclusive parcelado e liquidado — como estratégia de extinção da punibilidade, mesmo em casos de reiteração da conduta ao longo do tempo. Documente a integralidade da quitação para instruir o pedido perante o juízo criminal.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-consolidada">✔ Consolidada — Corte Especial, decisão unânime</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área — as 9 frentes da banca</span>
+    </div>
+    <div class="section-intro">Um achado verificado para cada uma das áreas que o escritório cobre. Onde não houve decisão inédita neste recorte, trazemos a regra consolidada que continua valendo — marcado com clareza.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item" id="panel-01">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Introdução · Qualidade de Segurado</div>
+          <div class="panorama-titulo">Sem decisão inédita neste recorte — segue valendo a flexibilização da prova de desemprego</div>
+          <div class="panorama-texto">Continua em vigor a regra do STJ Tema 1.360 (16/07/2026, tratada na edição 006): qualquer meio de prova idôneo serve para estender o período de graça, mas a simples ausência de anotação na CTPS/CNIS não basta sozinha.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada</span><span class="panorama-fonte">stj.jus.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-02">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Aposentadoria por Idade · Urbana, Rural e Híbrida</div>
+          <div class="panorama-titulo">Sem novidade inédita neste recorte — o mapa consolidado que sustenta a maior parte da carteira do escritório continua valendo</div>
+          <div class="panorama-texto">Seguem firmes as três regras que são a base da praça rural/híbrida da casa: (1) STJ Tema 1.007 — não é preciso estar exercendo atividade rural no momento do requerimento da híbrida; (2) Súmula 149/STJ mitigada pela Súmula 577/STJ; (3) STJ Tema 642 — período rural pode ser descontínuo.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Jurisprudência consolidada</span><span class="panorama-fonte">STJ — Súmulas 149 e 577, Temas 1.007 e 642</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-03">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Tempo de Contribuição · Transição, Especial, Professor, PCD</div>
+          <div class="panorama-titulo">Idade mínima da aposentadoria especial cai (STF ADI 6.309) — e trabalho infantil ganha reconhecimento como tempo de contribuição em Maringá</div>
+          <div class="panorama-texto">Ver detalhe na Decisão do Dia (seção 03). Complementarmente, a Justiça Federal de Maringá/PR reconheceu, em decisão de 31/07/2026, o tempo de trabalho infantil (a partir dos 12 anos) de uma trabalhadora doméstica informal para fins de aposentadoria por tempo de contribuição, aplicando o Protocolo de Julgamento com Perspectiva de Gênero do CNJ diante da informalidade estrutural do trabalho doméstico.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável ao segurado</span><span class="panorama-fonte"><a href="https://www.ibdp.org.br/2026/07/31/justica-federal-reconhece-trabalho-infantil-e-mulher-garante-aposentadoria/" target="_blank">IBDP</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-04">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Benefícios por Incapacidade · Temporário, Permanente, Perícia</div>
+          <div class="panorama-titulo">Auxílio-doença por ludopatia (apostas online) dispara 2.300% em três anos</div>
+          <div class="panorama-texto">Dados do INSS mostram alta de 1 caso (jun/2023) para 62 casos (jun/2026) sob CID F63.0. Ver detalhe no Movimento 03 do Top 6.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Reconhecimento crescente</span><span class="panorama-fonte"><a href="https://ieprev.com.br/noticias/concessoes-de-auxilio-doenca-por-vicio-em-apostas-disparam-no-inss" target="_blank">IEPREV</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-05">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">BPC/LOAS</div>
+          <div class="panorama-titulo">TRF3 afasta cobrança de R$ 99 mil a idoso e condena INSS por inscrição indevida no Cadin</div>
+          <div class="panorama-texto">O TRF3 reconheceu a boa-fé de um idoso beneficiário de BPC concedido por erro administrativo do próprio INSS entre 2004 e 2006, afastou a cobrança de devolução e fixou indenização de R$ 5 mil por danos morais pela inscrição indevida no Cadin.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável ao segurado</span><span class="panorama-fonte"><a href="https://www.ibdp.org.br/2026/08/03/trf3-afasta-cobranca-indevida-de-beneficio-assistencial-a-idoso-e-condena-inss-a-indeniza-lo-por-inscricao-no-cadin/" target="_blank">IBDP</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-06">
+        <div class="panorama-num">06</div>
+        <div>
+          <div class="panorama-area">Salário-Maternidade</div>
+          <div class="panorama-titulo">Carência segue inexigível — regra consolidada, sem novidade no período</div>
+          <div class="panorama-texto">O STF julgou inconstitucional a exigência de carência para salário-maternidade (ADIs 2.110 e 2.111, 21/03/2024), incorporada pelo INSS via IN 188/2025. Sem decisão nova neste recorte.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada — regra vigente</span><span class="panorama-fonte">STF ADIs 2.110/2.111 · IN INSS 188/2025</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-07">
+        <div class="panorama-num">07</div>
+        <div>
+          <div class="panorama-area">Pensão por Morte</div>
+          <div class="panorama-titulo">TRF6 confirma dever do INSS de analisar pensão especial por feminicídio, mesmo sem regulamentação própria</div>
+          <div class="panorama-texto">Decisão de 31/07/2026 mantém mandado de segurança contra a inércia do INSS. Ver detalhe no Movimento 06 do Top 6.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável aos dependentes</span><span class="panorama-fonte"><a href="https://www.ibdp.org.br/2026/07/31/trf6-mantem-decisao-que-obriga-o-inss-a-analisar-pedido-de-pensao-especial-para-filho-de-vitima-de-feminicidio/" target="_blank">IBDP</a></span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-08">
+        <div class="panorama-num">08</div>
+        <div>
+          <div class="panorama-area">Protocolo Administrativo · Meu INSS, Procuração, Documentação</div>
+          <div class="panorama-titulo">Operação Sem Desconto avança para novo núcleo investigado; idosa é indenizada por falha reincidente de cadastro</div>
+          <div class="panorama-texto">Ver detalhe nos Movimentos 04 e 05 do Top 6 — dois lados do mesmo problema: falhas de dados e governança no sistema administrativo do INSS.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Em apuração / corrigido no caso concreto</span><span class="panorama-fonte">stf.jus.br · conjur.com.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-09">
+        <div class="panorama-num">09</div>
+        <div>
+          <div class="panorama-area">Processo Judicial · JEF, Recursos, Pagamento</div>
+          <div class="panorama-titulo">Quitação de débito extingue punibilidade em apropriação indébita previdenciária, mesmo com reiteração da conduta</div>
+          <div class="panorama-texto">STJ APn 1.101, Corte Especial. Ver detalhe na seção 04 (Tese Relevante). Some-se o Tema 1.401 (Movimento 02 do Top 6), sobre bloqueio do FPM para dívida previdenciária de municípios.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Consolidada</span><span class="panorama-fonte">stj.jus.br</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-trf3" style="flex-shrink:0;margin-top:2px;">TRF3</span>
+      <div>
+        <div class="radar-titulo">TRF3 mantém condenação de ex-servidora do INSS por fraude em aposentadorias rurais (Operação Lavoro)</div>
+        <div class="radar-texto">Decisão de 04/08/2026: a ex-servidora validava requerimentos com documentos adulterados, em esquema com advogado e sindicato rural em Naviraí/MS. Prejuízo apurado de R$ 23,2 mil em duas aposentadorias liberadas irregularmente. Reforça o padrão de fiscalização mais rígida sobre concessões rurais na região.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Regulamentação da ADI 6.309 ainda depende de orientação da AGU/INSS</div>
+        <div class="radar-texto">Até o fechamento desta edição, não havia ato normativo do INSS operacionalizando a queda da idade mínima. Acompanhe possíveis instruções normativas para saber se será necessário requerimento administrativo novo ou revisão de ofício.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Tema 1.370 segue afetado, ainda sem julgamento de mérito</div>
+        <div class="radar-texto">A discussão sobre um possível segundo prazo decadencial em pedido de revisão administrativa negado (REsp 2.205.049/RS) permanece com suspensão nacional, sem novidade neste recorte.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-inss" style="flex-shrink:0;margin-top:2px;">PLP 185</span>
+      <div>
+        <div class="radar-titulo">Aposentadoria especial de ACS/ACE aguarda votação na Câmara</div>
+        <div class="radar-texto">Aprovado no Senado em novembro/2025, o PLP 185/2024 — que cria regime específico de aposentadoria especial para agentes comunitários de saúde e de combate a endemias — segue para votação na Câmara dos Deputados em 2026.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">Aposentadoria especial sem idade mínima: revisão em massa de casos represados desde 2019</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>A queda da idade mínima na ADI 6.309 devolve elegibilidade imediata a um contingente relevante de trabalhadores que já tinham tempo de exposição suficiente, mas foram barrados só pela idade. É uma frente de revisão administrativa e judicial concreta, com prazo determinável e público identificável na carteira.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟢 Impacto Alto ·</span>
+        <span class="dinheiro-header-title">Aposentadoria Especial · ADI 6.309</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Público-alvo: segurados com 15, 20 ou 25 anos de exposição comprovada a agentes nocivos (PPP, laudo técnico, perícia), que tiveram requerimento indeferido ou processo suspenso só por não atingir a idade mínima da Reforma.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Levante indeferimentos administrativos recentes fundamentados exclusivamente em idade mínima — são os casos de revisão mais rápida</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Identifique ações judiciais suspensas aguardando desfecho da ADI 6.309 — podem ser reativadas imediatamente</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Monte a instrução técnica (PPP, laudo, perícia) antes de peticionar — a exigência de comprovação da exposição não caiu, só a idade</span>
+          </div>
+        </div>
+        <p style="margin-top:14px; font-weight:600; color:#2D1B6B;">É a maior janela de revisão de aposentadoria especial desde a Reforma — mapeie a carteira antes que o INSS regulamente o procedimento e defina prazos próprios.</p>
+        <span class="dinheiro-fonte">Fonte: STF · ADI 6.309 · julgada 03/06/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Cinco ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Levantar clientes com aposentadoria especial indeferida só por idade mínima</div>
+          <div class="amanha-texto">STF ADI 6.309: idade mínima caiu, tempo de exposição continua valendo como antes de 2019. Priorize casos com PPP/laudo já pronto.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Revisar exposição de clientes municipais a bloqueio de FPM por dívida previdenciária</div>
+          <div class="amanha-texto">STJ Tema 1.401: os limites da Lei 9.639/1998 não protegem mais o município nesses casos. Avalie impacto orçamentário para clientes do setor público.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Orientar clientes com pedido de auxílio-doença por ludopatia sobre a necessidade de perícia</div>
+          <div class="amanha-texto">O benefício depende de incapacidade laboral comprovada, não do diagnóstico isolado. Prepare o cliente para a perícia médica com documentação de tratamento.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Checar extratos de clientes aposentados em busca de descontos associativos não autorizados</div>
+          <div class="amanha-texto">Operação Sem Desconto segue avançando. Há acordo homologado no STF prevendo devolução de valores — oriente sobre o canal de ressarcimento disponível.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Mapear dependentes de vítimas de feminicídio com pedido de pensão especial parado no INSS</div>
+          <div class="amanha-texto">TRF6 confirma o dever do INSS de analisar em prazo razoável. Use mandado de segurança em caso de inércia prolongada da autarquia.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Seis perfis prioritários deste período. Cada critério é um filtro para aplicar agora na carteira.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Segurados com 15/20/25 anos de exposição a agentes nocivos, barrados só pela idade mínima</strong> — reabrir pedido administrativo ou reativar ação suspensa.
+            <span class="mapear-tese">→ Ação imediata · STF ADI 6.309</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Municípios com dívida previdenciária e bloqueio de FPM</strong> — reavaliar estratégia de negociação diante da tese do STJ.
+            <span class="mapear-tese">→ Atenção · STJ Tema 1.401</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Segurados afastados por ludopatia/vício em apostas</strong> — orientar sobre perícia e documentação de incapacidade laboral.
+            <span class="mapear-tese">→ Reconhecimento crescente · CID F63.0</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Aposentados com descontos associativos não reconhecidos no extrato</strong> — avaliar ressarcimento via acordo homologado no STF.
+            <span class="mapear-tese">→ Investigação em curso · Operação Sem Desconto</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Trabalhadoras domésticas informais com início de atividade na infância</strong> — avaliar reconhecimento de tempo de contribuição com perspectiva de gênero.
+            <span class="mapear-tese">→ Precedente TRF4 · Protocolo CNJ</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">06</div>
+          <div class="mapear-texto">
+            <strong>Dependentes menores de vítimas de feminicídio com pedido parado no INSS</strong> — usar mandado de segurança em caso de inércia.
+            <span class="mapear-tese">→ Confirmado em 2ª instância · TRF6</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">ADI 6.309 não dispensa a comprovação técnica da exposição</div>
+          <div class="atencao-texto">A idade mínima caiu, mas o segurado ainda precisa comprovar, com PPP, laudo técnico e/ou perícia, a exposição habitual e permanente ao agente nocivo. Não prometa concessão automática.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Ludopatia não é causa automática de benefício</div>
+          <div class="atencao-texto">O que gera direito ao auxílio-doença é a incapacidade laboral decorrente do transtorno, atestada em perícia — não o diagnóstico isolado de ludopatia.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Operação Sem Desconto ainda está em fase de investigação</div>
+          <div class="atencao-texto">As buscas de 04/08/2026 fazem parte de apuração em curso, sem conclusão sobre responsabilidade dos investigados. Trate como fato em andamento, não como condenação.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 1.370 STJ segue sem julgamento de mérito</div>
+          <div class="atencao-texto">A discussão sobre segundo prazo decadencial em revisão administrativa negada permanece sobrestada. Não afirme a clientes que há decisão de mérito.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado previdenciário do período</div>
+      <div class="numero-destaque">2.300<span class="numero-unidade">% de alta</span></div>
+      <div class="numero-titulo">nas concessões de auxílio-doença por ludopatia (CID F63.0) entre junho de 2023 e junho de 2026</div>
+      <div class="numero-texto">De 1 caso em junho/2023 para 62 em junho/2026 — com aceleração visível a partir da segunda metade de 2025, período de maior expansão das apostas esportivas online no país. O número reflete um efeito social novo e mensurável sobre o sistema previdenciário, ainda pouco discutido nos escritórios da área.</div>
+      <div class="numero-fonte">Fonte: dados INSS · IEPREV · jun/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Entre junho e agosto de 2026, o previdenciário voltou a discutir uma pergunta antiga com contornos novos: o que o corpo do trabalhador tem de suportar para que o Estado reconheça o direito ao descanso?</div>
+
+    <div class="mercado-corpo">
+      <p>A ADI 6.309 devolveu ao tempo de exposição — e não à idade — o papel central na aposentadoria especial, revertendo um dos pilares da Reforma de 2019. É a maior vitória do segurado no período, mas também a que exige mais trabalho técnico do advogado: sem comprovação da exposição, a idade mínima nunca foi, de fato, o único obstáculo.</p>
+
+      <p>Do outro lado, o crescimento de 2.300% nas concessões por ludopatia mostra a Previdência absorvendo um novo tipo de adoecimento — ligado a um fenômeno social recente, as apostas online — assim como absorveu, no passado, outros quadros de saúde mental antes pouco reconhecidos administrativamente.</p>
+
+      <p>No campo institucional, a Operação Sem Desconto e o Tema 1.401 do STJ mostram dois lados da relação entre o INSS e o dinheiro público: de um lado, a apuração de desvio de recursos de segurados via descontos associativos; do outro, o reforço do poder de cobrança da Previdência sobre municípios inadimplentes.</p>
+
+      <p>E, na ponta mais humana do período, o reconhecimento do trabalho infantil doméstico em Maringá e a confirmação do dever de análise da pensão por feminicídio no TRF6 mostram a Justiça aplicando perspectiva social e de gênero a situações que, por muito tempo, ficaram invisíveis para o sistema previdenciário tradicional.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      O recorte de junho a agosto de 2026 devolveu ao segurado um direito represado desde 2019 — mas também deixou claro que cada conquista recente (idade mínima, ludopatia, pensão por feminicídio) depende de prova técnica bem construída. A vitória jurisprudencial abre a porta; a instrução do processo é que decide se o cliente atravessa.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">A idade mínima caiu, mas a prova da exposição continua em pé. Todo direito reconquistado neste semestre ainda depende do mesmo trabalho de sempre: documentar, comprovar, instruir.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 008</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.mixvale.com.br/2026/08/06/supremo-tribunal-federal-redefine-aposentadoria-especial-ao-eliminar-idade-minima-para-trabalhadores-expostos-a-riscos-em-2026/" target="_blank">STF · ADI 6.309 — Idade mínima da aposentadoria especial declarada inconstitucional</a></div>
+          <div class="fonte-desc">Julgada em 03/06/2026, por 6 votos a 5. Reportagem consolidada de 06/08/2026 sobre os efeitos práticos da decisão.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/03082026-Tribunal-afasta-aplicacao-dos-limites-da-Lei-9-6391998-aos-bloqueios-do-FPM-por-debitos-previdenciarios.aspx" target="_blank">STJ · Tema 1.401 — Bloqueios do FPM por dívida previdenciária</a></div>
+          <div class="fonte-desc">Nota oficial de 03/08/2026, com base nos REsp 2.238.302 e REsp 2.177.031, julgados no 1º semestre de 2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://ieprev.com.br/noticias/concessoes-de-auxilio-doenca-por-vicio-em-apostas-disparam-no-inss" target="_blank">IEPREV · Concessões de auxílio-doença por vício em apostas disparam no INSS</a></div>
+          <div class="fonte-desc">Levantamento com dados do INSS sobre CID F63.0, atualizado com números de junho/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/postsnoticias/stf-autoriza-buscas-e-quebra-de-sigilo-de-dados-telefonicos-em-investigacao-da-operacao-sem-desconto/" target="_blank">STF · Operação Sem Desconto — Petição 16.435</a></div>
+          <div class="fonte-desc">Nova fase de buscas autorizada em 04/08/2026 pelo ministro André Mendonça.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conjur.com.br/2026-jul-30/idosa-que-teve-certidao-de-obito-emitida-em-vida-sera-indenizada-pelo-inss/" target="_blank">Conjur · Idosa "dada como morta" será indenizada pelo INSS</a></div>
+          <div class="fonte-desc">Decisão da Justiça Federal de Londrina, divulgada em 30/07/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ibdp.org.br/2026/07/31/trf6-mantem-decisao-que-obriga-o-inss-a-analisar-pedido-de-pensao-especial-para-filho-de-vitima-de-feminicidio/" target="_blank">IBDP · TRF6 confirma dever do INSS de analisar pensão por feminicídio</a></div>
+          <div class="fonte-desc">Decisão de 31/07/2026, 3ª Turma do TRF6.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ibdp.org.br/2026/08/03/trf3-afasta-cobranca-indevida-de-beneficio-assistencial-a-idoso-e-condena-inss-a-indeniza-lo-por-inscricao-no-cadin/" target="_blank">IBDP · TRF3 afasta cobrança indevida de BPC e condena INSS por Cadin</a></div>
+          <div class="fonte-desc">Decisão divulgada em 03/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ibdp.org.br/2026/07/31/justica-federal-reconhece-trabalho-infantil-e-mulher-garante-aposentadoria/" target="_blank">IBDP · Justiça Federal de Maringá reconhece trabalho infantil como tempo de contribuição</a></div>
+          <div class="fonte-desc">Decisão divulgada em 31/07/2026, com aplicação do Protocolo de Julgamento com Perspectiva de Gênero do CNJ.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">09</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.mixvale.com.br/2026/08/04/trf-3-mantem-condenacao-de-ex-servidora-do-inss-em-esquema-de-aposentadorias-irregulares/" target="_blank">TRF3 · Condenação de ex-servidora do INSS mantida (Operação Lavoro)</a></div>
+          <div class="fonte-desc">Decisão de 04/08/2026.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 008 · 7 de agosto de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
