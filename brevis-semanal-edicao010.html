@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Semanal — Edição nº 010 · 11 de agosto de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --creme: #FBF8F1;
+    --creme-forte: #F0E9D8;
+    --accent: #c8371a;
+    --accent-claro: #E8C6BC;
+    --accent-sutil: #FBEAE5;
+    --azul: #1a4c8c;
+    --azul-claro: #4D7AB8;
+    --verde: #1a6b42;
+    --verde-claro: #E8F5EE;
+    --marrom: #7a4a00;
+    --roxo: #5c2d82;
+    --muted: #7a7670;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #2E1811; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--paper); box-shadow: 0 0 90px rgba(0,0,0,0.55); }
+  .back-bar { background: var(--ink); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.75); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+  .back-link:hover { color: var(--accent-claro); }
+  .header { background: var(--ink); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.22); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--paper); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--accent); }
+  .header-sub { font-size: 12px; color: rgba(247,244,238,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(200,55,26,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--accent-claro); border-color: var(--accent-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(200,55,26,0.22); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(200,55,26,0.65); }
+  .header-meta-value { font-size: 12.5px; color: rgba(247,244,238,0.88); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--accent) 0%, #8B2410 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--paper); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--paper); border-radius: 50%; opacity: 0.5; }
+  .indice { background: var(--ink); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,198,188,0.7); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(200,55,26,0.2); color: var(--accent-claro); }
+  .indice-item strong { color: var(--accent-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--accent), transparent); margin: 0 48px; opacity: 0.25; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: #2A2622; }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--accent-sutil); border-left: 4px solid var(--accent); padding: 30px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--ink); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-civ { background: #EBF0FB; color: var(--azul); }
+  .badge-trib { background: #E8F5EE; color: var(--verde); }
+  .badge-trab { background: #FFF3E0; color: var(--marrom); }
+  .badge-hold { background: #F5EFFF; color: var(--roxo); }
+  .badge-crim { background: #FDF0EE; color: var(--accent); }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-stj  { background: #F0EBF5; color: var(--roxo); }
+  .badge-tst  { background: #FFF3E0; color: var(--marrom); }
+  .badge-carf { background: #E8F5EE; color: var(--verde); }
+  .badge-tema { background: #F5EFFF; color: var(--roxo); }
+  .badge-fam  { background: #FDECF3; color: #A8104A; }
+  .badge-leg  { background: #E6F0FF; color: #1A3A8B; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: var(--verde); }
+  .status-atencao     { background: var(--accent-sutil); color: var(--accent); }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(15,14,12,0.06); transition: box-shadow 0.18s, transform 0.18s; scroll-margin-top: 16px; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(15,14,12,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-trib { background: linear-gradient(90deg, #1a6b42, #4FA875); }
+  .bar-trab { background: linear-gradient(90deg, #7a4a00, #C9973F); }
+  .bar-civ  { background: linear-gradient(90deg, #1a4c8c, #6C97C9); }
+  .bar-hold { background: linear-gradient(90deg, #5c2d82, #A583C9); }
+  .bar-crim { background: linear-gradient(90deg, #c8371a, #D9634A); }
+  .bar-stf  { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-leg  { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: #2A2622; margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #16371F; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--accent-sutil); border-left: 3px solid var(--accent); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EEE7D8; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); }
+  .top-card-fonte a { color: var(--azul); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--ink); border-radius: 6px; padding: 30px 34px; color: var(--paper); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.12); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.18); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(200,55,26,0.22); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--paper); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(247,244,238,0.82); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(200,55,26,0.25); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--accent-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--accent); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(247,244,238,0.88); border-left: 2px solid var(--azul-claro); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #8FB4E8; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .decisao-fonte a { color: var(--accent-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--creme-forte); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: #2A2622; }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DED5BE; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--accent); }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--accent); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: #2A2622; margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--muted); }
+  .panorama-fonte a { color: var(--azul); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EEE7D8; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul); opacity: 0.3; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .mapear-box { background: var(--ink); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(247,244,238,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.045); border-radius: 3px; border-left: 2px solid var(--accent); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent-claro); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(247,244,238,0.85); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(200,55,26,0.7); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--accent-sutil); border: 1px solid #F0C5B8; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--accent); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .numero-card { background: linear-gradient(135deg, var(--ink) 0%, #2A231C 100%); border-radius: 5px; padding: 32px; color: var(--paper); position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--accent); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--paper); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(247,244,238,0.7); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(200,55,26,0.55); margin-top: 16px; letter-spacing: 1px; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--ink); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: #2A2622; }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--creme-forte); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--ink); font-weight: 500; border-left: 3px solid var(--azul); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E0D9C6; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--accent); opacity: 0.24; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--ink); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--muted); line-height: 1.55; }
+  .footer { background: var(--ink); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .footer-back-link:hover { color: var(--accent-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--accent); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(247,244,238,0.32); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(200,55,26,0.14); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(247,244,238,0.26); line-height: 1.7; font-style: italic; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Jurídica Geral · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Semanal</span></div>
+    <div class="header-sub">Radar jurídico amplo — <a href="#card-civel">Cível</a>, <a href="#card-tributario">Tributário</a>, <a href="#card-criminal">Criminal</a>, <a href="#card-trabalhista">Trabalhista</a> e <a href="#card-constitucional">Constitucional</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">11 de agosto de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">010</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">30 de julho a 7 de agosto · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">9–11 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Semanal</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Últimos 12 dias</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">5 áreas cobertas · 8 movimentos · 5 ações imediatas</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 8</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Semanal nº 010. A primeira semana de agosto foi de STF pedindo vista para reabrir dois debates que pareciam consolidados de formas diferentes — jogos de azar/bets e a privatização da estatal de dados do Paraná — e de um ministro, Flávio Dino, aparecendo dos dois lados da notícia: pedindo vista no Tema 924 e mandando a Polícia Federal investigar irregularidades em emendas Pix apontadas pelo TCU.</p>
+      <p>No cível, o STJ validou uma sentença de pensão alimentícia que já prevê o que fazer se o alimentante ficar desempregado. No tributário, a CNI foi ao Supremo contra a lei que restringe crédito de IPI, PIS e Cofins após reoneração, e outro processo discute os limites do mandado de segurança para compensação tributária. No trabalhista, o CSJT ampliou as regras de comunicação de casos de assédio eleitoral e lançou um portal para reinserção de egressos do sistema prisional. E no criminal, o STJ afetou um novo tema repetitivo sobre execução penal — mas atenção à data real da afetação, que não é desta semana.</p>
+      <p>Um item foi descartado nesta curadoria por já ter sido publicado na edição anterior do Brevis Previdenciário (STJ Tema 1.157) — mantemos o critério de não duplicar conteúdo entre as duas linhas do boletim.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 9 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 8 movimentos do período</span>
+    </div>
+
+    <div class="top-grid">
+
+      <div class="top-card" id="card-civel">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 01 · CÍVEL</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-fam">Pensão Alimentícia</span>
+          </div>
+          <div class="top-card-titulo">STJ admite que sentença fixe valores distintos de pensão alimentícia conforme a situação profissional do alimentante, inclusive percentual sobre o salário mínimo para eventual desemprego</div>
+          <div class="top-card-corpo">
+            <p>A 3ª Turma do STJ, em decisão noticiada em 07/08/2026, considerou válida sentença que fixou 20% do salário do alimentante para pensão alimentícia enquanto ele estiver empregado, e 54% do salário mínimo caso fique desempregado ou em situação informal. A Corte reformou acórdão do TJSC que havia anulado essa estrutura, entendendo que a obrigação alimentar persiste mesmo diante de mudança na situação profissional — e que prever isso de antemão evita nova ação revisional a cada oscilação de renda.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso na petição</span>
+            Modelo replicável em ações de alimentos e revisionais: pedir a fixação de percentuais escalonados conforme cenários de emprego/desemprego do alimentante, reduzindo a necessidade de nova demanda judicial no futuro.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.conjur.com.br" target="_blank">STJ · 3ª Turma · noticiado 07/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-tributario">
+        <div class="top-card-bar bar-trib"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 02 · TRIBUTÁRIO</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADI 8002</span>
+          </div>
+          <div class="top-card-titulo">CNI questiona no STF a lei que restringe aproveitamento de créditos de IPI, PIS e Cofins após "reoneração"</div>
+          <div class="top-card-corpo">
+            <p>A Confederação Nacional da Indústria ajuizou, em 30/07/2026, a ADI 8002 contra a LC 224/2025, que limita o aproveitamento de créditos de IPI, PIS e Cofins em operações que sofreram reoneração tributária. A ação foi distribuída à Min. Cármen Lúcia e ganhou ampla cobertura na imprensa especializada em 06/08/2026. O STF ainda não analisou o mérito — a CNI questiona a constitucionalidade da restrição, não há qualquer decisão sobre o tema até o fechamento desta edição.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Ainda é ajuizamento, não julgamento</span>
+            Trate como questionamento em curso — não afirme a clientes que a lei foi declarada inconstitucional. O impacto imediato é a possibilidade de arguir a inconstitucionalidade em casos concretos, aguardando o desfecho da ADI.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Ação ajuizada — sem julgamento de mérito</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.contabeis.com.br" target="_blank">CNI · ADI 8002 · protocolada 30/07/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card">
+        <div class="top-card-bar bar-trib"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 03 · TRIBUTÁRIO</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ARE 1.525.254</span>
+          </div>
+          <div class="top-card-titulo">STF retoma, e suspende de novo, debate sobre os limites do mandado de segurança para reconhecimento do direito à compensação tributária</div>
+          <div class="top-card-corpo">
+            <p>O julgamento do ARE 1.525.254 começou em 26/06/2026 e foi suspenso por pedido de vista do Min. Dias Toffoli. O caso discute os limites do mandado de segurança para reconhecimento do direito à compensação tributária — tema distinto, mas correlato, do Tema 1.262 (que trata da restituição administrativa de indébito reconhecido judicialmente e do regime de precatórios). A própria PGFN diferencia expressamente as duas teses.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Cuidado de enquadramento</span>
+            Não afirme que o Tema 1.262 "se estende automaticamente" à compensação tributária — o STF ainda está definindo o alcance da questão, sem data certa para retomada.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Suspenso — pedido de vista</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.gov.br/pgfn" target="_blank">STF · ARE 1.525.254 · vista em 26/06/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-criminal">
+        <div class="top-card-bar bar-crim"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 04 · CRIMINAL</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Tema 924</span>
+          </div>
+          <div class="top-card-titulo">Dino pede vista no Tema 924 (jogos de azar) para julgar em conjunto com as ADIs das bets — Fux já votou pela recepção da lei de 1941</div>
+          <div class="top-card-corpo">
+            <p>No RE 966177 (Tema 924 de repercussão geral), o Min. Luiz Fux votou pela recepção constitucional do art. 50 da Lei de Contravenções Penais, que criminaliza a exploração e o estabelecimento de jogos de azar — voto restrito a esse dispositivo específico, não uma validação genérica de toda a lei de 1941. Em 06/08/2026, o Min. Flávio Dino pediu vista para julgar o tema em conjunto com as ADIs 7721 e 7723, sobre regulação das bets, antes de fixar uma tese unificada. O processo fica suspenso por até 90 dias e afeta 2.728 processos sobrestados em todo o país.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Monitoramento</span>
+            Processos criminais sobrestados por este tema seguem aguardando — o adiamento é estratégico (unificar com bets), não um sinal sobre o resultado final do julgamento.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Suspenso — pedido de vista, até 90 dias</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://noticias.stf.jus.br" target="_blank">STF · Tema 924 · RE 966177 · vista 06/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card">
+        <div class="top-card-bar bar-crim"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 05 · CRIMINAL / EXECUÇÃO PENAL</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.457</span>
+          </div>
+          <div class="top-card-titulo">STJ vai definir a data-base para benefícios da execução penal em caso de prisão descontínua</div>
+          <div class="top-card-corpo">
+            <p>A Terceira Seção do STJ afetou o REsp 2.266.131 ao rito dos repetitivos como Tema 1.457, sob relatoria do Min. Rogerio Schietti Cruz, para definir se a data-base de benefícios da execução penal deve corresponder à prisão preventiva original ou ao retorno à prisão para cumprimento da pena definitiva, em casos de descontinuidade. A afetação ocorreu em 16/06/2026 — o STJ voltou a dar destaque ao tema em nota publicada em 07/08/2026, o que motivou a inclusão nesta edição.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso na petição</span>
+            Relevante para a carteira criminal com clientes que tiveram prisão preventiva intercalada com período em liberdade — aguardar a fixação da tese antes de peticionar com base em uma das duas interpretações.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Repetitivo afetado — sem tese fixada</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/07082026-Tribunal-vai-definir-data-base-para-beneficios-da-execucao-penal-em-caso-de-prisao-descontinua.aspx" target="_blank">STJ · Tema 1.457 · afetado 16/06/2026, noticiado 07/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-trabalhista">
+        <div class="top-card-bar bar-trab"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 06 · TRABALHISTA</div>
+            <span class="impacto-badge">🟡 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tst">CSJT</span>
+            <span class="badge badge-tema">Resolução 452/2026</span>
+          </div>
+          <div class="top-card-titulo">CSJT amplia as regras de comunicação de casos de assédio eleitoral identificados em processos trabalhistas</div>
+          <div class="top-card-corpo">
+            <p>A Resolução CSJT nº 452/2026, divulgada em 04/08/2026, atualiza a Resolução 355/2023 e passa a obrigar os juízes do trabalho a comunicar de ofício ao Ministério Público do Trabalho e ao Ministério Público Eleitoral qualquer ação trabalhista que apresente indícios de assédio eleitoral, independentemente de pedido das partes. A norma também cria monitoramento administrativo mensal dos casos.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Relevante para o ano eleitoral: empregadores com ações trabalhistas em curso que envolvam qualquer alegação de discriminação por convicção política devem esperar comunicação automática ao MPT/MPE a partir de agora.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Norma em vigor</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.csjt.jus.br" target="_blank">CSJT · Resolução 452/2026 · 04/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-constitucional">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 07 · CONSTITUCIONAL / ADMINISTRATIVO</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Emendas Pix</span>
+          </div>
+          <div class="top-card-titulo">Dino manda a Polícia Federal investigar indícios de crime em emendas Pix, após auditoria do TCU apontar irregularidades em 82% da amostra</div>
+          <div class="top-card-corpo">
+            <p>São três movimentos distintos, e vale separá-los com precisão: (1) achado da auditoria — o TCU fiscalizou uma amostra de R$ 198 milhões em emendas parlamentares tipo Pix e apontou irregularidades (fraudes em licitação, pagamento sem comprovação, superfaturamento, obras não executadas) em 82% dos casos, com prejuízo estimado em R$ 55,3 milhões; (2) determinação judicial — em 07/08/2026, o Min. Flávio Dino, do STF, determinou o envio dessa auditoria à Polícia Federal; (3) investigação — a PF passa a apurar indícios de crimes contra a administração pública e improbidade envolvendo diversos parlamentares, sem que haja, até agora, indiciamento ou denúncia.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Fase de apuração</span>
+            Ainda não há indiciamento, denúncia ou condenação — é determinação de investigação a partir de auditoria do TCU. Trate valores como "apontados pela auditoria", não como dano definitivamente comprovado.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Investigação determinada — sem denúncia</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.otempo.com.br/politica/judiciario/2026/8/7/dino-envia-a-pf-auditoria-que-aponta-prejuizo-de-r-55-3-milhoes-com-emendas-pix" target="_blank">O Tempo · STF · 07/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 08 · CONSTITUCIONAL / DADOS</div>
+            <span class="impacto-badge">🟡 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADI 7896</span>
+          </div>
+          <div class="top-card-titulo">Moraes pede vista e suspende, pela segunda vez, o julgamento sobre a privatização da Celepar</div>
+          <div class="top-card-corpo">
+            <p>Em 07/08/2026, o Min. Alexandre de Moraes pediu vista e suspendeu o julgamento da ADI 7896, que discute a privatização da Celepar (estatal de tecnologia da informação do Paraná) e o risco à proteção de dados pessoais e sensíveis administrados pela companhia. O relator do caso é o Min. Flávio Dino, cuja liminar — que impede o avanço da desestatização até o cumprimento de exigências de proteção de dados — segue integralmente em vigor. Moraes tem até 90 dias para devolver o processo; caberá ao presidente Edson Fachin marcar a retomada.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Em construção</span>
+            Não há decisão de mérito. A liminar de Dino permanece o único efeito prático em vigor — a privatização segue paralisada, mas o Plenário ainda não decidiu a ação principal.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Suspenso — pedido de vista, até 90 dias</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.cnnbrasil.com.br/politica/moraes-pede-vista-e-suspende-julgamento-sobre-privatizacao-da-celepar/" target="_blank">CNN Brasil · STF · 07/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STJ · 3ª Turma · noticiado 07/08/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">Pensão alimentícia com "gatilho" para o desemprego: o STJ valida a cláusula que antecipa a crise</div>
+      <div class="decisao-body">
+        <p>O caso girava em torno de uma sentença de alimentos que já previa dois cenários: 20% do salário do alimentante enquanto ele estivesse empregado, e 54% do salário mínimo caso ficasse desempregado ou passasse a exercer atividade informal. O Tribunal de Justiça de Santa Catarina havia derrubado essa estrutura, entendendo que a pensão deveria ser fixada em valor único, sujeito a ação revisional em caso de mudança de circunstâncias.</p>
+        <p>A 3ª Turma do STJ reformou o acórdão catarinense. Para a Corte, a obrigação alimentar não desaparece com o desemprego do alimentante — ela apenas precisa se adaptar à nova capacidade contributiva. Prever esse ajuste diretamente na sentença, com percentuais objetivos para cada cenário, é mais eficiente do que obrigar o alimentado a entrar com nova ação toda vez que a situação profissional do alimentante mudar.</p>
+        <p>A decisão tem apelo prático imediato: reduz a litigiosidade futura em ações de alimentos e dá previsibilidade a ambas as partes — o alimentante sabe exatamente o que deve em cada cenário, e o alimentado não fica à mercê da demora de uma ação revisional.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        É válida a sentença de alimentos que fixa percentuais distintos conforme a situação profissional futura do alimentante, inclusive prevendo percentual sobre o salário mínimo para hipótese de desemprego ou trabalho informal — a obrigação alimentar persiste, apenas se adapta à capacidade contributiva.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Em novas ações de alimentos ou revisionais, considere pedir a fixação de percentuais escalonados por cenário de renda do alimentante — o precedente do STJ dá respaldo direto a essa estratégia de redação.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Julgado</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao alimentado</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: STJ · 3ª Turma · noticiado 07/08/2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">A privatização da Celepar volta a travar no STF — segunda suspensão do mesmo julgamento em 2026</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">ADI 7896: proteção de dados como limite à desestatização de empresa pública de TI</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">PT e PSOL ajuizaram a ADI 7896 contra lei estadual de 2024 que autoriza a privatização da Celepar, companhia paranaense de tecnologia da informação responsável por sistemas que administram dados pessoais sensíveis e informações de segurança pública. Os autores argumentam que a desestatização, sem garantias adequadas, pode comprometer a proteção de dados, a continuidade de serviços públicos essenciais e a soberania informacional do Estado.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Fato novo do período</span>
+        <div class="tese-bloco-texto">Em 07/08/2026, o Min. Alexandre de Moraes pediu vista e suspendeu o julgamento pela segunda vez em 2026. O relator, Min. Flávio Dino, já havia concedido liminar em fevereiro condicionando qualquer avanço da desestatização ao cumprimento de exigências de proteção de dados — essa liminar segue em vigor e é, na prática, o que mantém a privatização paralisada.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como está a tramitação</span>
+        <div class="tese-bloco-texto">Moraes tem até 90 dias, pelas regras internas do STF, para devolver os autos. Depois disso, cabe ao presidente da Corte, Min. Edson Fachin, decidir quando o julgamento retorna ao Plenário. Não há data prevista.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Para clientes com interesse na desestatização de empresas públicas de tecnologia ou dados (Paraná ou outros entes), usar este caso como referência de que o STF está disposto a travar processos de privatização até que existam garantias concretas de proteção de dados sensíveis — vale antecipar essa exigência em qualquer modelagem de venda.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Em construção — suspenso por pedido de vista desde 07/08/2026, sem data de retomada</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área</span>
+    </div>
+    <div class="section-intro">Um achado verificado para cada área que o escritório cobre fora do previdenciário. Onde a movimentação mais relevante já apareceu no Top 8, trazemos aqui o ângulo prático para a rotina do escritório.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Cível</div>
+          <div class="panorama-titulo">STJ valida pensão alimentícia com percentuais escalonados por cenário de renda</div>
+          <div class="panorama-texto">Ver Decisão do Dia (seção 03) — modelo replicável para reduzir litigiosidade futura em ações de alimentos.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STJ · 3ª Turma</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Tributário</div>
+          <div class="panorama-titulo">CNI questiona restrição a créditos de IPI/PIS/Cofins; STF ainda define limites do mandado de segurança para compensação</div>
+          <div class="panorama-texto">Ver Movimentos 02 e 03 do Top 8. Dois processos em fase inicial ou suspensa — nenhum com decisão de mérito ainda.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Em definição</span><span class="panorama-fonte">STF · ADI 8002 · ARE 1.525.254</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Trabalhista</div>
+          <div class="panorama-titulo">CSJT amplia as regras de comunicação de casos de assédio eleitoral identificados em ações trabalhistas</div>
+          <div class="panorama-texto">Ver Movimento 06 do Top 8 — norma em vigor, com efeito imediato sobre processos em curso, relevante em ano eleitoral.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Em vigor</span><span class="panorama-fonte">CSJT · Resolução 452/2026</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Criminal</div>
+          <div class="panorama-titulo">STF suspende Tema 924 (jogos de azar) para unificar com bets; STJ afeta novo repetitivo sobre execução penal</div>
+          <div class="panorama-texto">Ver Movimentos 04 e 05 do Top 8 — ambos em construção, sem tese fixada, mas com alto potencial de impacto na carteira criminal.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Em construção</span><span class="panorama-fonte">STF · STJ</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">Constitucional / Administrativo</div>
+          <div class="panorama-titulo">Emendas Pix vão à Polícia Federal; privatização da Celepar trava de novo no STF</div>
+          <div class="panorama-texto">Ver Movimento 07 do Top 8 e Tese Relevante (seção 04) — dois casos de alto perfil político-institucional, ambos ainda em fase de apuração/tramitação, sem desfecho definitivo.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Em apuração/tramitação</span><span class="panorama-fonte">STF</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Agosto começou com dois pedidos de vista de peso na mesma semana</div>
+        <div class="radar-texto">Tema 924 (jogos de azar/bets) e ADI 7896 (Celepar) foram suspensos em 06 e 07/08, respectivamente — ambos com prazo de até 90 dias para retomada. Vale monitorar a devolução dos autos.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Tema 1.457 é lembrete de que "notícia recente" nem sempre significa "decisão recente"</div>
+        <div class="radar-texto">A afetação ocorreu em 16/06/2026, mas voltou a ganhar cobertura em 07/08 — cheque sempre a data do ato processual, não apenas a data da matéria jornalística.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tst" style="flex-shrink:0;margin-top:2px;">CSJT</span>
+      <div>
+        <div class="radar-titulo">Ano eleitoral aumenta o peso da fiscalização trabalhista sobre assédio eleitoral</div>
+        <div class="radar-texto">Com a Resolução 452/2026 em vigor, escritórios com clientes empregadores devem reforçar compliance interno sobre manifestações político-partidárias no ambiente de trabalho.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">ADI 8002: a disputa bilionária sobre créditos de IPI, PIS e Cofins que a CNI levou ao Supremo</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>A LC 224/2025 restringe o aproveitamento de créditos tributários após "reoneração" — mudança que afeta diretamente o fluxo de caixa de empresas industriais. A ADI 8002 é o veículo processual para reverter essa restrição por via de controle concentrado, com efeito potencial sobre toda a base de contribuintes industriais do país.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟢 Impacto Alto ·</span>
+        <span class="dinheiro-header-title">Créditos de IPI/PIS/Cofins · ADI 8002</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Aplicável a clientes industriais que sofreram restrição de aproveitamento de créditos tributários após operações de reoneração desde a vigência da LC 224/2025.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Mapear clientes industriais impactados pela restrição de crédito da LC 224/2025</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Avaliar ações individuais para discutir a mesma inconstitucionalidade, sem esperar o desfecho da ADI 8002</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Monitorar a distribuição à Min. Cármen Lúcia para identificar o momento de pedido de liminar ou informações</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: CNI · ADI 8002 · protocolada 30/07/2026, distribuída à Min. Cármen Lúcia</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>5 ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Revisar minutas de ações de alimentos para incluir percentuais escalonados por cenário de renda</div>
+          <div class="amanha-texto">Usar o precedente do STJ (Decisão do Dia) como fundamento para reduzir litigiosidade futura.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Mapear clientes industriais afetados pela restrição de créditos da LC 224/2025</div>
+          <div class="amanha-texto">Avaliar viabilidade de ação individual em paralelo à ADI 8002 da CNI.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Avisar clientes empregadores sobre a nova regra de comunicação de assédio eleitoral</div>
+          <div class="amanha-texto">Resolução CSJT 452/2026 já está em vigor — reforçar compliance interno em ano eleitoral.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-texto">Checar processos criminais sobrestados pelo Tema 924 (jogos de azar/bets)</div>
+          <div class="amanha-texto">Suspensão por até 90 dias — informar clientes sobre o novo prazo, sem prometer data de retomada.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Revisar prisões com histórico de descontinuidade para eventual pedido futuro sob o Tema 1.457</div>
+          <div class="amanha-texto">Repetitivo ainda sem tese fixada — mapear casos, mas aguardar o julgamento antes de peticionar.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">5 perfis prioritários deste período.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Alimentantes e alimentados em ações de revisão de pensão recorrentes</strong> — propor cláusula de percentuais escalonados por cenário de renda.
+            <span class="mapear-tese">→ Redação preventiva · STJ, 3ª Turma</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Empresas industriais com créditos de IPI/PIS/Cofins restringidos pela LC 224/2025</strong> — avaliar ação individual paralela à ADI 8002.
+            <span class="mapear-tese">→ Contencioso tributário · STF, ADI 8002</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Empregadores com processos trabalhistas sensíveis a discurso político</strong> — reforçar compliance diante da nova regra de comunicação ao MPT/MPE.
+            <span class="mapear-tese">→ Compliance eleitoral-trabalhista · CSJT Resolução 452/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Réus/apenados com processos sobrestados pelo Tema 924</strong> — monitorar a suspensão de até 90 dias antes de peticionar.
+            <span class="mapear-tese">→ Monitoramento de pauta · STF, Tema 924</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Entes públicos ou investidores interessados em desestatização de empresas de dados/TI</strong> — antecipar exigências de proteção de dados à luz do caso Celepar.
+            <span class="mapear-tese">→ Modelagem preventiva · STF, ADI 7896</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 1.457 (STJ) foi afetado em 16/06/2026, não em 07/08/2026</div>
+          <div class="atencao-texto">A notícia de destaque do STJ é de 07/08, mas o ato processual de afetação é anterior. Sempre cite a data real do ato, não a data da cobertura jornalística.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Não confunda o Tema 1.262 com a discussão do ARE 1.525.254</div>
+          <div class="atencao-texto">São teses relacionadas, mas distintas: uma trata de restituição administrativa/precatórios, a outra dos limites do mandado de segurança para compensação tributária. A própria PGFN as diferencia.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Emendas Pix: valores do TCU ainda são apontamento de auditoria, não dano definitivamente comprovado</div>
+          <div class="atencao-texto">Separe sempre três etapas ao comunicar a clientes: achados da auditoria, determinação do ministro, investigação da Polícia Federal — são estágios diferentes de apuração.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado do período</div>
+      <div class="numero-destaque">2.728</div>
+      <div class="numero-titulo">processos ficam sobrestados em todo o país com a suspensão do Tema 924 (jogos de azar) no STF</div>
+      <div class="numero-texto">O pedido de vista do Min. Flávio Dino, em 06/08/2026, paralisa por até 90 dias o julgamento que discute a recepção constitucional da lei que criminaliza jogos de azar — e, com ele, milhares de processos que aguardam a definição da tese, agora também conectada ao debate sobre regulação das bets.</div>
+      <div class="numero-fonte">Fonte: STF · Tema 924 · RE 966177</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">A primeira semana de agosto foi marcada por pedidos de vista — o instrumento processual que compra tempo virou o protagonista da pauta.</div>
+
+    <div class="mercado-corpo">
+      <p>No STF, dois julgamentos de alto perfil pararam na mesma semana por pedido de vista: o Tema 924, sobre jogos de azar, e a ADI 7896, sobre a privatização da Celepar. Em ambos os casos, a suspensão não é um sinal sobre o resultado final — é tempo que os ministros reservam para aprofundar a análise antes de votar, especialmente quando há temas conexos em jogo (as ADIs das bets, no primeiro caso; a proteção de dados sensíveis, no segundo).</p>
+
+      <p>No STJ, o destaque cível da semana — a validação de pensão alimentícia com percentuais escalonados — mostra a Corte priorizando soluções que reduzem litigiosidade futura. Já o novo repetitivo sobre execução penal (Tema 1.457) é um lembrete útil de checagem editorial: nem toda notícia recente trata de um ato processual recente.</p>
+
+      <p>E o par constitucional-administrativo da semana mostra Flávio Dino em posição dupla: relator que segura a privatização da Celepar com sua liminar, e ministro que aciona a Polícia Federal para investigar irregularidades em emendas parlamentares — dois papéis institucionais diferentes, no mesmo noticiário.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Resumo prático: nada nesta edição está definitivamente fechado — nem o Tema 924, nem o Tema 1.457, nem a Celepar, nem a apuração das emendas Pix. É uma semana de mapear exposição e aguardar retomada de pauta, não de aplicar tese pronta.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Um pedido de vista não é uma resposta — é a promessa de uma resposta mais tarde. O trabalho de quem acompanha é não confundir o silêncio do tribunal com uma decisão.</div>
+    <div class="frase-autor">— Curadoria Brevis Semanal · Edição 010</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.jurisprudenciaia.com.br" target="_blank">STJ · 3ª Turma · pensão alimentícia com percentuais escalonados</a></div>
+          <div class="fonte-desc">Decisão noticiada em 07/08/2026, reforma acórdão do TJSC.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.contabeis.com.br" target="_blank">CNI ajuíza ADI 8002 contra restrição de créditos de IPI/PIS/Cofins</a></div>
+          <div class="fonte-desc">Ação protocolada em 30/07/2026, distribuída à Min. Cármen Lúcia.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br" target="_blank">STF · Tema 924 · Dino pede vista no julgamento sobre jogos de azar</a></div>
+          <div class="fonte-desc">RE 966177, vista concedida em 06/08/2026, conexão com ADIs das bets.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/07082026-Tribunal-vai-definir-data-base-para-beneficios-da-execucao-penal-em-caso-de-prisao-descontinua.aspx" target="_blank">STJ · Tema 1.457 · data-base de benefícios da execução penal</a></div>
+          <div class="fonte-desc">Afetação em 16/06/2026, nota de destaque publicada em 07/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.csjt.jus.br" target="_blank">CSJT · Resolução 452/2026 · comunicação de assédio eleitoral</a></div>
+          <div class="fonte-desc">Divulgada em 04/08/2026, atualiza a Resolução 355/2023.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.otempo.com.br/politica/judiciario/2026/8/7/dino-envia-a-pf-auditoria-que-aponta-prejuizo-de-r-55-3-milhoes-com-emendas-pix" target="_blank">O Tempo · Dino manda PF investigar emendas Pix</a></div>
+          <div class="fonte-desc">Decisão de 07/08/2026, a partir de auditoria do TCU.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.cnnbrasil.com.br/politica/moraes-pede-vista-e-suspende-julgamento-sobre-privatizacao-da-celepar/" target="_blank">CNN Brasil · Moraes pede vista e suspende julgamento da Celepar</a></div>
+          <div class="fonte-desc">STF, ADI 7896, decisão de 07/08/2026.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Semanal</div>
+    <div class="footer-sub">Radar jurídico amplo · Edição nº 010 · 11 de agosto de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
