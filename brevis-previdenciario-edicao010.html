@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 010 · 23 de agosto de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--dourado-claro); border-color: var(--dourado-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(201,168,76,0.16); color: var(--dourado-claro); }
+  .indice-item strong { color: var(--dourado-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--cinza-sub); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf3 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-cjf  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,31,60,0.06); transition: box-shadow 0.18s, transform 0.18s; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(13,31,60,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-stj { background: linear-gradient(90deg, #5A2E7A, #8B5EA8); }
+  .bar-stf { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-tnu { background: linear-gradient(90deg, #2B5797, #6C97C9); }
+  .bar-inss { background: linear-gradient(90deg, #A8230E, #D9634A); }
+  .bar-cjf { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-trf4 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-trf3 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--azul-escuro); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EDE9DF; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cinza-sub); }
+  .top-card-fonte a { color: var(--azul-claro); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--dourado); scroll-margin-top: 16px; }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--dourado); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--azul-escuro); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: var(--cinza-texto); margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--cinza-sub); }
+  .panorama-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .numero-card { background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-meio) 100%); border-radius: 5px; padding: 32px; color: white; position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--dourado); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--branco); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(250,250,248,0.68); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(201,168,76,0.45); margin-top: 16px; letter-spacing: 1px; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico — <a href="#panel-01">Revisão de Benefício</a>, <a href="#panel-02">BPC sob Perspectiva de Gênero</a>, <a href="#panel-03">Acordo Internacional</a> e <a href="#panel-04">Pagamento de RPVs</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">23 de agosto de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">010</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">12 a 23 de agosto · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">6–8 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Destaque: CJF publica acórdão do Tema 384 da TNU</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">4 movimentos verificados</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 4</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário nº 010. A edição anterior havia flagrado, com ressalva, uma notícia sobre o Tema 384 da TNU — a tese sobre complementação de contribuições recolhidas com alíquota reduzida — porque o acórdão ainda não estava indexado no CJF. Nesta edição fechamos essa pendência: o CJF publicou o acórdão em 19/08/2026 e o tema já consta oficialmente como julgado, com a tese integral disponível na própria página do CJF. Trazemos o quadro completo na Decisão do Dia.</p>
+      <p>Do lado assistencial, o TRF3 concedeu BPC a uma mulher com fibromialgia aplicando o Protocolo de Julgamento com Perspectiva de Gênero do CNJ — afastando o argumento de que conseguir fazer afazeres domésticos descaracteriza, isoladamente, o impedimento de longo prazo. É a Tese Relevante desta semana: um precedente favorável, mas específico ao caso, não uma tese geral sobre fibromialgia.</p>
+      <p>Também verificamos uma decisão da Justiça Federal do Paraná que afastou regra do acordo previdenciário Brasil-Portugal para garantir o piso constitucional a uma aposentada, e o CJF liberou R$ 321,4 milhões em RPVs previdenciárias e assistenciais para a 3ª Região (dentro de um repasse total de R$ 417,7 milhões ao TRF3) — vale a pena checar no portal do tribunal se há valor do seu cliente nesse lote. Vamos ao que importa.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 4 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 4 movimentos do período</span>
+    </div>
+    <div class="section-intro">Dos 10 itens levantados na pesquisa inicial, 6 foram descartados nesta apuração por duplicidade, ausência de confirmação em fonte primária ou inconsistência da fonte. Preferimos publicar quatro movimentos confirmados a preencher a edição com notícias frágeis.</div>
+
+    <div class="top-grid">
+
+      <!-- CARD 1 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-tnu"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 01 · REVISÃO DE BENEFÍCIO / CONTRIBUINTE INDIVIDUAL</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tnu">TNU</span>
+            <span class="badge badge-tema">Tema 384</span>
+          </div>
+          <div class="top-card-titulo">TNU confirma quando a complementação de contribuição preserva os efeitos financeiros desde a DER</div>
+          <div class="top-card-corpo">
+            <p>A edição nº 009 havia noticiado essa tese com ressalva, por falta de indexação oficial no CJF. O CJF já publicou o acórdão, em 19/08/2026, e o Tema 384 consta oficialmente como julgado: a complementação de contribuições recolhidas tempestivamente com alíquota reduzida (5% ou 11%) por contribuinte individual, facultativo ou MEI garante a fixação dos efeitos financeiros do benefício na própria DER quando ocorre no curso do processo administrativo — inclusive na fase recursal no CRPS — ou quando a falta de complementação decorrer de conduta não colaborativa do INSS.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Se o cliente só complementou depois de intimado e após o encerramento do processo administrativo, os efeitos só valem a partir do novo requerimento — confira em qual das duas situações cada caso se encaixa e se os efeitos financeiros (DIB/RMI, conforme o caso) foram fixados corretamente.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — acórdão publicado no CJF em 19/08/2026</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado, com condição</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-384" target="_blank">CJF · Tema 384 · acórdão publicado 19/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-trf3"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 02 · BPC/LOAS / PERSPECTIVA DE GÊNERO</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-trf3">TRF3</span>
+            <span class="badge badge-tema">BPC/LOAS</span>
+          </div>
+          <div class="top-card-titulo">TRF3 concede BPC a mulher com fibromialgia aplicando perspectiva de gênero</div>
+          <div class="top-card-corpo">
+            <p>A 7ª Turma do TRF3 (Apelação Cível 5237820-27.2026.4.03.9999, relatora Desembargadora Federal Inês Virgínia, julgamento de 14/08/2026) reformou sentença e determinou a concessão de BPC a uma segurada de 52 anos com fibromialgia, diabetes e hipertensão. O INSS havia negado o benefício sob o argumento de que ela conseguia realizar afazeres domésticos — a Turma afastou esse critério isoladamente considerado, aplicando o Protocolo para Julgamento com Perspectiva de Gênero do CNJ, com retroativos desde janeiro de 2023.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Revise indeferimentos administrativos ou sentenças desfavoráveis que usaram "capacidade para afazeres domésticos" como fundamento isolado para negar BPC a mulheres com doenças crônicas.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Decisão de Turma — ainda cabe recurso</span>
+              <span class="status-pill status-favoravel">🟢 Precedente favorável, sem caráter vinculante</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://web.trf3.jus.br/noticias/Noticiar/ExibirNoticia/446138-trf3-determina-concessao-de-bpc-a-mulher-com-fibromialgia" target="_blank">TRF3 · Apelação Cível 5237820-27.2026 · 14/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-trf4"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 03 · CÁLCULO DE BENEFÍCIO / ACORDO INTERNACIONAL</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-trf4">TRF4</span>
+            <span class="badge badge-tema">Acordo Brasil-Portugal</span>
+          </div>
+          <div class="top-card-titulo">Justiça Federal do Paraná afasta regra do acordo Brasil-Portugal que reduzia benefício abaixo do salário mínimo</div>
+          <div class="top-card-corpo">
+            <p>A 8ª Vara Federal de Londrina (JFPR) determinou que o INSS revise o cálculo de uma aposentadoria concedida com base no acordo de seguridade social Brasil-Portugal. A segurada, com cerca de 12 anos de contribuição no Brasil e 3 em Portugal, recebia apenas a cota-parte proporcional brasileira (R$ 1.137,92), abaixo do piso nacional. O juízo afastou a regra de proporcionalidade do acordo internacional por violar a garantia constitucional do salário mínimo (art. 201, §2º, CF), com diferenças retroativas a setembro de 2024.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Confirmar antes de replicar</span>
+            É decisão de 1º grau e a fonte não especifica o número do decreto do acordo aplicável — confirme o acordo internacional exato de cada caso concreto antes de usar esta tese em outra situação (o rateio varia conforme o país e o tratado).
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Decisão de 1º grau — cabe recurso</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.trf4.jus.br/trf4/controlador.php?acao=noticia_visualizar&id_noticia=30406" target="_blank">TRF4 · JFPR/Londrina · 20/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-trf3"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 04 · PAGAMENTO DE BENEFÍCIOS / RPV</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-trf3">TRF3 / CJF</span>
+            <span class="badge badge-tema">RPV</span>
+          </div>
+          <div class="top-card-titulo">CJF libera R$ 321,4 milhões em RPVs previdenciárias e assistenciais para SP e MS</div>
+          <div class="top-card-corpo">
+            <p>O Conselho da Justiça Federal repassou R$ 417.750.018,84 ao TRF3 para pagamento de RPVs (Requisições de Pequeno Valor) de todas as naturezas autuadas em julho de 2026, nas Seções Judiciárias de São Paulo e Mato Grosso do Sul. Desse total, R$ 321.378.909,70 correspondem especificamente a 10.534 RPVs previdenciárias e assistenciais, beneficiando 14.101 pessoas. Em nível nacional, o lote geral de RPVs somou R$ 3,31 bilhões para 220.110 processos.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            O CJF informa que repassou o valor ao TRF3 — a disponibilidade efetiva para saque deve ser confirmada no portal do tribunal. Escritórios com atuação na 3ª Região devem consultar se há RPV de cliente autuada em julho/2026 nesse lote.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Valor já repassado pelo CJF — confirmar saque no portal do TRF3</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://web.trf3.jus.br/noticias-sjms/Noticiar/ExibirNoticia/1368-cjf-libera-r-417-milhoes-para-pagamento-de-rpvs-na" target="_blank">TRF3 · Liberação de RPVs · 21/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        TNU · Tema 384 · Julgado — acórdão publicado no CJF em 19/08/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">TNU confirma quando a complementação de contribuição preserva os efeitos financeiros desde a DER</div>
+      <div class="decisao-body">
+        <p>Contribuintes individuais, facultativos e MEIs que recolhem pela alíquota reduzida (5% ou 11%, art. 21, §3º, da Lei 8.212/91) só têm direito a determinados benefícios — como aposentadoria por tempo de contribuição — se complementarem a diferença até 20%. A dúvida que chegou à TNU: quando essa complementação acontece durante a tramitação do processo (inclusive na fase recursal no CRPS), o benefício deve produzir efeitos financeiros desde a Data de Entrada do Requerimento (DER) original, ou só a partir da complementação?</p>
+        <p>A edição nº 009 já havia trazido essa informação, citando o IBDP — que atuou como amicus curiae no processo PUIL 5003886-26.2022.4.04.7202/SC — como fonte de que a TNU teria concluído o julgamento em 06/08/2026 de forma favorável ao segurado, mas com a ressalva de que o CJF ainda não indexava o resultado. Nesta edição, a pendência está resolvida: o CJF publicou o acórdão em 19/08/2026 e disponibiliza a tese integral em sua própria página oficial, com julgamento concluído em 06/08/2026 (relator para o acórdão: Juiz Federal André Dias Fernandes).</p>
+        <p>A tese fixada distingue dois cenários: quando a complementação ocorre no curso do processo administrativo ou quando o INSS deixa de oportunizá-la ao segurado, os efeitos financeiros retroagem à DER. Quando o segurado é regularmente intimado a complementar e só o faz depois de encerrado o processo, sem ter sido essa a causa do atraso, os efeitos financeiros passam a ser fixados na data de um novo requerimento administrativo.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        Tema 384 (PUIL 5003886-26.2022.4.04.7202/SC): a complementação de contribuições recolhidas tempestivamente sob alíquota reduzida garante efeitos financeiros desde a DER quando ocorrer no curso do processo administrativo, inclusive em fase recursal no CRPS, ou quando a ausência de complementação decorrer de conduta não colaborativa do INSS; caso a complementação só ocorra após o encerramento do processo, sem que essa demora seja atribuível ao INSS, os efeitos financeiros contam da data do novo requerimento.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Levante clientes contribuintes individuais, facultativos ou MEIs que complementaram alíquota reduzida e confira se os efeitos financeiros do benefício (DIB/RMI, conforme o caso) foram fixados corretamente à luz da tese — e se a complementação ocorreu dentro ou fora do processo administrativo.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Julgado — acórdão publicado no CJF em 19/08/2026</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-384" target="_blank">CJF</a> · TNU Tema 384</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">BPC/LOAS sob perspectiva de gênero: "dona de casa" deixa de ser argumento isolado para negar o benefício</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">TRF3 aplica o Protocolo do CNJ para afastar critério que penalizava mulheres com doenças crônicas na avaliação do impedimento de longo prazo</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">O BPC/LOAS exige comprovação de impedimento de longo prazo (2 anos ou mais) de natureza física, mental, intelectual ou sensorial, associado a critério de miserabilidade. Um argumento recorrente do INSS e de laudos sociais para negar o benefício a mulheres é afirmar que, se a segurada consegue realizar afazeres domésticos, não haveria impedimento suficiente. O TRF3 afastou esse critério isoladamente considerado no caso de uma mulher com fibromialgia, diabetes e hipertensão.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Base legal e institucional</span>
+        <div class="tese-bloco-texto">A decisão aplica o Protocolo para Julgamento com Perspectiva de Gênero, instituído pelo CNJ, à avaliação biopsicossocial exigida pela Lei 8.742/93 (LOAS) e pelo Decreto 6.214/2007. O acórdão também cita expressamente a Lei 15.176/2025, que instituiu a Política Nacional de Proteção dos Direitos da Pessoa com Fibromialgia. A lógica da decisão: reduzir a avaliação de deficiência à capacidade de fazer tarefas domésticas ignora o contexto social de "economia do cuidado" — o trabalho doméstico não remunerado historicamente atribuído a mulheres — e não reflete, sozinho, a real capacidade laboral ou o grau de limitação da segurada.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como o tribunal decidiu neste caso</span>
+        <div class="tese-bloco-texto">A 7ª Turma do TRF3 (Apelação Cível 5237820-27.2026.4.03.9999, relatora Desembargadora Federal Inês Virgínia) reformou, por unanimidade, sentença que havia negado o BPC, determinando a implantação do benefício com retroativos desde janeiro de 2023. A perícia reconheceu incapacidade para atividade laboral remunerada e impedimento de longo prazo superior a dois anos, somados à vulnerabilidade socioeconômica comprovada da segurada. É decisão de segunda instância — ainda cabem embargos de declaração ou recurso especial/extraordinário, então não deve ser tratada como jurisprudência pacificada em todo o país. Importante: não se trata de precedente segundo o qual fibromialgia, por si só, gera direito ao BPC — o caso reúne incapacidade laboral, impedimento de longo prazo e miserabilidade, todos comprovados no laudo biopsicossocial.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Revise casos de clientes mulheres com doenças crônicas (fibromialgia, doenças autoimunes, transtornos que geram dor ou fadiga crônica) que tiveram BPC negado administrativamente ou judicialmente com fundamento isolado em "capacidade para atividades domésticas". Use o precedente e o Protocolo do CNJ como argumento adicional em recursos ou novos pedidos — sempre reunindo laudo biopsicossocial atualizado que comprove incapacidade laboral, impedimento de longo prazo e miserabilidade, não apenas o diagnóstico.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Decisão de Turma — cabe recurso</span>
+        <span class="status-pill status-favoravel">🟢 Precedente favorável, sem caráter vinculante</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área — as frentes cobertas nesta edição</span>
+    </div>
+    <div class="section-intro">Dos 10 itens levantados na pesquisa inicial, 6 foram descartados nesta apuração por duplicidade, ausência de confirmação em fonte primária ou inconsistência da fonte. Preferimos publicar quatro movimentos confirmados a preencher a edição com notícias frágeis.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item" id="panel-01">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Revisão de Benefício · Contribuinte Individual</div>
+          <div class="panorama-titulo">TNU confirma efeitos financeiros da complementação de alíquota na própria DER, sob condição</div>
+          <div class="panorama-texto">Tema 384, julgado em 06/08/2026, acórdão publicado pelo CJF em 19/08/2026. Ver Decisão do Dia e Movimento 01.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável, com condição</span><span class="panorama-fonte">cjf.jus.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-02">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">BPC/LOAS · Perspectiva de Gênero</div>
+          <div class="panorama-titulo">TRF3 afasta "capacidade para afazeres domésticos" como critério isolado de negativa</div>
+          <div class="panorama-texto">Apelação Cível 5237820-27.2026.4.03.9999, julgada em 14/08/2026 — caso específico, não tese geral sobre fibromialgia. Ver detalhe na Tese Relevante e no Movimento 02.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Decisão de Turma — cabe recurso</span><span class="panorama-fonte">web.trf3.jus.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-03">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Cálculo de Benefício · Acordo Internacional</div>
+          <div class="panorama-titulo">JFPR afasta rateio do acordo Brasil-Portugal que reduzia benefício abaixo do mínimo</div>
+          <div class="panorama-texto">Decisão de 1º grau da 8ª Vara Federal de Londrina, 20/08/2026. Ver detalhe no Movimento 03.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Decisão de 1º grau — cabe recurso</span><span class="panorama-fonte">trf4.jus.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-04">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Pagamento de Benefícios · RPV</div>
+          <div class="panorama-titulo">CJF libera R$ 321,4 milhões em RPVs previdenciárias e assistenciais para SP e MS</div>
+          <div class="panorama-texto">10.534 processos autuados em julho/2026 na 3ª Região, dentro de um repasse total de R$ 417,7 milhões ao TRF3. Ver detalhe no Movimento 04 e em Dinheiro na Mesa.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Repassado pelo CJF — confirmar saque no portal</span><span class="panorama-fonte">web.trf3.jus.br</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Tema 1.370 (decadência para pedido de revisão administrativa) permanece afetado, sem julgamento de mérito</div>
+        <div class="radar-texto">Afetado pela 1ª Seção em agosto de 2025, discute se o prazo decadencial de 10 anos para revisão também se conta a partir do indeferimento do pedido de revisão administrativa. A página oficial do STJ confirma que o tema segue apenas "afetado" — não informe a clientes que já existe posição definida.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-trf4" style="flex-shrink:0;margin-top:2px;">TRF4</span>
+      <div>
+        <div class="radar-titulo">Decisão sobre acordo Brasil-Portugal é de 1º grau — acompanhar eventual recurso do INSS</div>
+        <div class="radar-texto">A 8ª Vara Federal de Londrina não especifica o decreto do acordo aplicável ao caso. Fique atento a um possível recurso do INSS e à confirmação do acordo internacional exato antes de replicar a tese para outros países.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">R$ 321,4 milhões em RPVs previdenciárias e assistenciais repassados à 3ª Região — hora de consultar o portal</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>Diferente de uma tese em construção, este é dinheiro que o CJF já repassou ao TRF3. Escritórios com processos previdenciários ou assistenciais na Justiça Federal de São Paulo ou do Mato Grosso do Sul devem conferir agora, no portal do tribunal, quais clientes têm RPV nesse lote e se já há disponibilidade para saque.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟢 Impacto Alto ·</span>
+        <span class="dinheiro-header-title">Pagamento de Benefícios · RPVs de julho/2026</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Público-alvo: clientes com ação previdenciária ou assistencial julgada procedente na 3ª Região (Seções Judiciárias de São Paulo e Mato Grosso do Sul), com RPV expedida e autuada em julho de 2026.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Consulte no portal do TRF3 se há RPV do cliente incluída no lote de 10.534 processos previdenciários/assistenciais deste repasse (R$ 321,4 milhões, 14.101 pessoas beneficiadas)</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Verifique a disponibilidade efetiva para saque antes de prometer prazo ao cliente — o CJF informa o repasse ao tribunal, mas a liberação para levantamento é confirmada no sistema do TRF3</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Assim que confirmado o depósito, providencie o alvará e o desconto de honorários contratuais conforme o combinado</span>
+          </div>
+        </div>
+        <p style="margin-top:14px; font-weight:600; color:#2D1B6B;">O repasse total ao TRF3 (todas as naturezas) foi de R$ 417,7 milhões, e o lote geral de RPVs no país somou R$ 3,31 bilhões para 220.110 processos — vale replicar a checagem para clientes com processos em outras regiões, junto ao TRF competente.</p>
+        <span class="dinheiro-fonte">Fonte: TRF3/CJF · liberação divulgada em 21/08/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Cinco ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Revisar clientes que complementaram alíquota reduzida</div>
+          <div class="amanha-texto">TNU Tema 384 (confirmado): verifique se a DIB reflete a tese — retroação à DER se a complementação ocorreu no processo administrativo.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Levantar indeferimentos de BPC de clientes mulheres com doenças crônicas</div>
+          <div class="amanha-texto">TRF3: use a perspectiva de gênero como argumento adicional quando "capacidade para afazeres domésticos" foi o fundamento da negativa.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Consultar RPVs previdenciárias no portal do TRF3</div>
+          <div class="amanha-texto">R$ 321,4 milhões repassados pelo CJF para 10.534 processos previdenciários/assistenciais autuados em julho/2026 em SP e MS — confirme a disponibilidade para saque.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Mapear clientes com benefício calculado por acordo internacional</div>
+          <div class="amanha-texto">Confirme se algum cliente com tempo de contribuição em outro país recebe valor abaixo do salário mínimo por rateio proporcional — e qual o acordo bilateral aplicável ao caso.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Não anunciar decisão sobre o Tema 1.370 do STJ</div>
+          <div class="amanha-texto">O julgamento sobre decadência para revisão administrativa segue em andamento, sem data prevista de conclusão.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Quatro perfis prioritários deste período. Cada critério é um filtro para aplicar agora na carteira.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Contribuintes individuais, facultativos ou MEIs que complementaram alíquota reduzida (5% ou 11%) para 20%</strong> — conferir se a DIB do benefício está correta.
+            <span class="mapear-tese">→ Favorável, com condição · TNU Tema 384</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Mulheres com doenças crônicas (fibromialgia, doenças autoimunes) com BPC negado por "capacidade para afazeres domésticos"</strong> — avaliar recurso ou novo pedido com perspectiva de gênero.
+            <span class="mapear-tese">→ Decisão de Turma · TRF3</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Clientes com benefício calculado por totalização de períodos Brasil-Portugal, sem benefício português informado, cuja parcela paga pelo Brasil fique abaixo do salário mínimo</strong> — avaliar revisão para complementação ao piso constitucional.
+            <span class="mapear-tese">→ Decisão de 1º grau · TRF4/JFPR</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Clientes com ação previdenciária/assistencial julgada procedente na 3ª Região, com RPV autuada em julho/2026</strong> — consultar no portal do TRF3 se já há disponibilidade para saque.
+            <span class="mapear-tese">→ Repassado pelo CJF · TRF3</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Retroação à DER no Tema 384 depende de qual das duas hipóteses se aplica</div>
+          <div class="atencao-texto">Só há retroação se a complementação ocorreu durante o processo administrativo ou por falha do INSS em oportunizá-la. Complementação feita após o encerramento, sem essa causa, produz efeitos apenas a partir do novo requerimento — não prometa retroação automática.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Decisão de BPC do TRF3 é de Turma — ainda cabe recurso</div>
+          <div class="atencao-texto">Não trate a tese de perspectiva de gênero como jurisprudência pacificada em todo o país. Use como argumento adicional, não como garantia de resultado.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Confirme o acordo internacional específico antes de replicar a tese do TRF4</div>
+          <div class="atencao-texto">A fonte não identifica o número do decreto do acordo Brasil-Portugal aplicável ao caso. O rateio proporcional varia conforme o país e o tratado — verifique o acordo exato de cada cliente antes de peticionar.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 1.370 do STJ (decadência) permanece apenas afetado, sem julgamento de mérito</div>
+          <div class="atencao-texto">A afetação é de agosto de 2025. Não afirme a clientes que há posição definida sobre a contagem do prazo decadencial a partir do indeferimento do pedido de revisão administrativa.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">R$ 417,7 milhões é o total de RPVs ao TRF3 — não confunda com o valor previdenciário</div>
+          <div class="atencao-texto">Do repasse total, R$ 321,4 milhões são especificamente RPVs previdenciárias e assistenciais (10.534 processos). Use o valor correto ao comunicar clientes ou colegas.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado previdenciário do período</div>
+      <div class="numero-destaque">321,4<span class="numero-unidade"> mi</span></div>
+      <div class="numero-titulo">é o valor em RPVs previdenciárias e assistenciais repassado pelo CJF à 3ª Região no lote de julho/2026</div>
+      <div class="numero-texto">O valor beneficia 14.101 pessoas em 10.534 processos previdenciários/assistenciais em São Paulo e Mato Grosso do Sul — dentro de um repasse total de R$ 417,7 milhões ao TRF3 (todas as naturezas). Em nível nacional, o lote geral de RPVs somou R$ 3,31 bilhões para 220.110 processos. Vale checar com o TRF competente se há repasse equivalente para clientes fora de São Paulo e Mato Grosso do Sul.</div>
+      <div class="numero-fonte">Fonte: TRF3 · repasse do CJF divulgado em 21/08/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Os quatro movimentos desta edição têm fundamentos jurídicos distintos, mas dividem uma preocupação recorrente: a correta identificação dos deveres administrativos e dos critérios usados para definir o direito ao benefício.</div>
+
+    <div class="mercado-corpo">
+      <p>No Tema 384, a TNU delimitou com precisão quando o INSS tem responsabilidade no processo de complementação de contribuições — se o órgão não oportuniza a correção ao segurado, os efeitos financeiros do benefício retroagem à DER. No BPC, o TRF3 afastou, no caso concreto analisado, um critério isolado (capacidade para afazeres domésticos) que não refletia sozinho a real limitação da segurada — sem, no entanto, criar uma tese geral de que qualquer diagnóstico crônico gera direito automático ao benefício.</p>
+
+      <p>Já a decisão da JFPR sobre o acordo Brasil-Portugal reforça um limite que a Justiça Federal já vem aplicando em outros contextos: nenhuma fórmula de cálculo, nem mesmo prevista em tratado internacional, pode resultar em benefício abaixo do piso constitucional do salário mínimo — ainda que seja preciso confirmar o acordo específico de cada caso antes de replicar o argumento.</p>
+
+      <p>E o repasse de R$ 321,4 milhões em RPVs previdenciárias só na 3ª Região (dentro de R$ 3,31 bilhões liberados no país inteiro) é um lembrete prático: parte considerável do trabalho previdenciário, depois de anos de disputa sobre tese e direito, termina numa etapa simples — mas que exige atenção operacional — de checagem de portal e levantamento de valores.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Nenhum dos quatro movimentos desta edição permite generalização ampla — cada um vale pelo que prova, no seu próprio recorte (complementação de contribuição, avaliação biopsicossocial, cálculo por acordo internacional, ou repasse orçamentário). Documentar com precisão o enquadramento de cada cliente em cada tese é o que decide o resultado.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Entre a regra escrita e o benefício concedido, há sempre uma pergunta sobre quem tinha o dever de agir — e não agiu. Identificar essa lacuna é o que transforma um indeferimento em uma revisão.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 010</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/turma-nacional-de-uniformizacao/temas-representativos/tema-384" target="_blank">CJF · Tema 384 da TNU — página oficial</a></div>
+          <div class="fonte-desc">Julgado em 06/08/2026, acórdão publicado no DJEN em 19/08/2026. PUIL 5003886-26.2022.4.04.7202/SC.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/462704/tnu-define-quando-complementacao-garante-beneficio-desde-a-der" target="_blank">Migalhas · TNU define quando complementação garante benefício desde a DER</a></div>
+          <div class="fonte-desc">Matéria de 22/08/2026 sobre o Tema 384 da TNU.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://web.trf3.jus.br/noticias/Noticiar/ExibirNoticia/446138-trf3-determina-concessao-de-bpc-a-mulher-com-fibromialgia" target="_blank">TRF3 · Determina concessão de BPC a mulher com fibromialgia</a></div>
+          <div class="fonte-desc">Apelação Cível 5237820-27.2026.4.03.9999, 7ª Turma, julgada em 14/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.trf4.jus.br/trf4/controlador.php?acao=noticia_visualizar&id_noticia=30406" target="_blank">TRF4 · Justiça afasta regra de acordo Brasil-Portugal e assegura salário mínimo a aposentada</a></div>
+          <div class="fonte-desc">Decisão da 8ª Vara Federal de Londrina (JFPR), divulgada em 20/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://web.trf3.jus.br/noticias-sjms/Noticiar/ExibirNoticia/1368-cjf-libera-r-417-milhoes-para-pagamento-de-rpvs-na" target="_blank">TRF3 · CJF libera R$ 417 milhões para pagamento de RPVs</a></div>
+          <div class="fonte-desc">Divulgado em 21/08/2026. Do total repassado ao TRF3, R$ 321,4 milhões são RPVs previdenciárias/assistenciais (10.534 processos, SP e MS).</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 010 · 23 de agosto de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
