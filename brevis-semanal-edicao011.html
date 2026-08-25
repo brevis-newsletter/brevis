@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Semanal — Edição nº 011 · 25 de agosto de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --creme: #FBF8F1;
+    --creme-forte: #F0E9D8;
+    --accent: #c8371a;
+    --accent-claro: #E8C6BC;
+    --accent-sutil: #FBEAE5;
+    --azul: #1a4c8c;
+    --azul-claro: #4D7AB8;
+    --verde: #1a6b42;
+    --verde-claro: #E8F5EE;
+    --marrom: #7a4a00;
+    --roxo: #5c2d82;
+    --muted: #7a7670;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #2E1811; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--paper); box-shadow: 0 0 90px rgba(0,0,0,0.55); }
+  .back-bar { background: var(--ink); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.75); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+  .back-link:hover { color: var(--accent-claro); }
+  .header { background: var(--ink); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.22); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--paper); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--accent); }
+  .header-sub { font-size: 12px; color: rgba(247,244,238,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(200,55,26,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--accent-claro); border-color: var(--accent-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(200,55,26,0.22); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(200,55,26,0.65); }
+  .header-meta-value { font-size: 12.5px; color: rgba(247,244,238,0.88); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--accent) 0%, #8B2410 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--paper); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--paper); border-radius: 50%; opacity: 0.5; }
+  .indice { background: var(--ink); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,198,188,0.7); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(200,55,26,0.2); color: var(--accent-claro); }
+  .indice-item strong { color: var(--accent-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--accent), transparent); margin: 0 48px; opacity: 0.25; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: #2A2622; }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--accent-sutil); border-left: 4px solid var(--accent); padding: 30px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--ink); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-civ { background: #EBF0FB; color: var(--azul); }
+  .badge-trib { background: #E8F5EE; color: var(--verde); }
+  .badge-trab { background: #FFF3E0; color: var(--marrom); }
+  .badge-hold { background: #F5EFFF; color: var(--roxo); }
+  .badge-crim { background: #FDF0EE; color: var(--accent); }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-stj  { background: #F0EBF5; color: var(--roxo); }
+  .badge-tst  { background: #FFF3E0; color: var(--marrom); }
+  .badge-carf { background: #E8F5EE; color: var(--verde); }
+  .badge-tema { background: #F5EFFF; color: var(--roxo); }
+  .badge-fam  { background: #FDECF3; color: #A8104A; }
+  .badge-leg  { background: #E6F0FF; color: #1A3A8B; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: var(--verde); }
+  .status-atencao     { background: var(--accent-sutil); color: var(--accent); }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(15,14,12,0.06); transition: box-shadow 0.18s, transform 0.18s; scroll-margin-top: 16px; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(15,14,12,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-trib { background: linear-gradient(90deg, #1a6b42, #4FA875); }
+  .bar-trab { background: linear-gradient(90deg, #7a4a00, #C9973F); }
+  .bar-civ  { background: linear-gradient(90deg, #1a4c8c, #6C97C9); }
+  .bar-hold { background: linear-gradient(90deg, #5c2d82, #A583C9); }
+  .bar-crim { background: linear-gradient(90deg, #c8371a, #D9634A); }
+  .bar-stf  { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-leg  { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: #2A2622; margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #16371F; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--accent-sutil); border-left: 3px solid var(--accent); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EEE7D8; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); }
+  .top-card-fonte a { color: var(--azul); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--ink); border-radius: 6px; padding: 30px 34px; color: var(--paper); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.12); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.18); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(200,55,26,0.22); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--paper); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(247,244,238,0.82); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(200,55,26,0.25); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--accent-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--accent); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(247,244,238,0.88); border-left: 2px solid var(--azul-claro); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #8FB4E8; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .decisao-fonte a { color: var(--accent-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--creme-forte); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: #2A2622; }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DED5BE; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--accent); }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--accent); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: #2A2622; margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--muted); }
+  .panorama-fonte a { color: var(--azul); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EEE7D8; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul); opacity: 0.3; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .mapear-box { background: var(--ink); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(247,244,238,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.045); border-radius: 3px; border-left: 2px solid var(--accent); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent-claro); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(247,244,238,0.85); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(200,55,26,0.7); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--accent-sutil); border: 1px solid #F0C5B8; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--accent); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .numero-card { background: linear-gradient(135deg, var(--ink) 0%, #2A231C 100%); border-radius: 5px; padding: 32px; color: var(--paper); position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--accent); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--paper); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(247,244,238,0.7); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(200,55,26,0.55); margin-top: 16px; letter-spacing: 1px; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--ink); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: #2A2622; }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--creme-forte); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--ink); font-weight: 500; border-left: 3px solid var(--azul); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E0D9C6; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--accent); opacity: 0.24; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--ink); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--muted); line-height: 1.55; }
+  .footer { background: var(--ink); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .footer-back-link:hover { color: var(--accent-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--accent); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(247,244,238,0.32); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(200,55,26,0.14); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(247,244,238,0.26); line-height: 1.7; font-style: italic; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Jurídica Geral · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Semanal</span></div>
+    <div class="header-sub">Radar jurídico amplo — <a href="#card-trabalhista">Trabalhista</a>, <a href="#card-constitucional">Constitucional</a>, <a href="#card-regulatorio">Regulatório</a>, <a href="#card-civel">Cível</a>, <a href="#card-tributario">Tributário</a>, <a href="#card-penal">Penal</a> e <a href="#card-familia">Família</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">25 de agosto de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">011</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">3 a 25 de agosto · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">9–12 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Semanal</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">3 a 25 de agosto</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">7 áreas cobertas · 15 movimentos · 15 ações imediatas</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 15</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Semanal nº 011. O critério de inclusão é notícia ou ato divulgado entre 3 e 25 de agosto — por isso um julgado mais antigo (como o HC 1.070.513, decidido em abril) aparece aqui: a notícia oficial só saiu dentro desta janela. Ampliamos o período depois da curadoria inicial (3 a 17/08) para trazer mais uma rodada de julgados até hoje, e cada item novo passou pelo mesmo crivo de verificação em fonte primária dos demais. O destaque da semana é duplo: o TST redesenhando a competência para ações de saque do FGTS (Justiça do Trabalho só julga o que decorrer do fim ou suspensão do contrato) e o STJ aprovando a Emenda Regimental 55, que a partir de 3/09 exige que todo recurso especial demonstre relevância da questão federal — sob pena de sequer ser conhecido.</p>
+      <p>No constitucional, o STF referendou o prazo de 24 meses dado ao Congresso para legislar sobre mineração em terras indígenas, afastou restrição que impedia pessoas autistas e com deficiência intelectual de nível 1 de acessar alíquota zero de IBS/CBS na compra de veículos adaptados, e — já em 19/08 — fixou tese vinculante no Tema 1.412 estendendo as medidas protetivas da Lei Maria da Penha a qualquer contexto de violência de gênero, dentro ou fora do lar. No regulatório, a Anvisa assinou minuta de RDC para proibir termos como "não tóxico" e "ecológico" em rótulos de saneantes, e o CARF instituiu um sistema próprio de integridade e antissuborno alinhado às normas ISO. Ampliamos também a cobertura com mais quatro julgados do STJ: a Primeira Seção afastou a prescrição contra o Estado numa ação sobre os "Crimes de Maio" de 2006, a Sexta Turma decidiu que prisão em flagrante em Estado diverso da morada dos filhos não impede domiciliar para mãe, a Terceira Turma validou a dupla métrica de pensão alimentícia numa mesma sentença, e a 3ª Turma negou o reconhecimento de união estável post mortem — numa disputa de herança entre companheira sobrevivente e herdeiros — mantendo a qualificação como "namoro qualificado" mesmo havendo filho em comum e noivado. Fecham a lista o TST mantendo a reversão de justa causa de um comissário que recusou vacina com justificativa médica, o STJ confirmando que poderes extrajudiciais numa procuração não limitam a cláusula ad judicia, o STJ blindando decisões transitadas em julgado contra rescisórias baseadas em tese repetitiva posterior (Tema 1.299), e o TST/CSJT comunicando um acesso indevido ao sistema do DEJT.</p>
+      <p>Itens descartados nesta edição após checagem: um suposto julgamento de mérito do STF sobre IPTU por área do imóvel (Tema 1.455) que na verdade segue suspenso, sem decisão de mérito; um repetitivo do STJ sobre honorários da Fazenda (Tema 1.454) cuja afetação é de maio/junho, não desta semana; um julgado sobre celular que tínhamos atribuído ao processo errado, misturando dois precedentes distintos do STJ; e, nesta segunda rodada, quatro textos que uma busca ampla trouxe como "notícia" mas que, na fonte, são artigos de opinião ou colunas de especialista, não cobertura de fato jurídico datado: sobre sobreaviso por hiperconectividade/WhatsApp, sobre cláusulas de vesting em sociedades, sobre planejamento de saída fiscal para os EUA, e sobre a tendência de votos do STF a favor do modelo Buser de fretamento colaborativo (esse último vale monitorar — há julgamento de mérito previsto para 26/08, e pode virar Decisão do Dia na próxima edição). Também ficaram de fora, já na curadoria inicial, um caso de exigir contas contra sócio-administrador, um julgado sobre pronúncia por "ouvir dizer", um caso de aluguel de motocicleta e um julgado do TST envolvendo o Grêmio sem data confirmada.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 5 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 15 movimentos do período</span>
+    </div>
+
+    <div class="top-grid">
+
+      <div class="top-card" id="card-trabalhista">
+        <div class="top-card-bar bar-trab"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 01 · TRABALHISTA / PROCESSUAL</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tst">TST</span>
+            <span class="badge badge-tema">Tema 32</span>
+          </div>
+          <div class="top-card-titulo">TST redefine competência sobre saques do FGTS: Justiça do Trabalho só julga o que decorrer do fim do contrato</div>
+          <div class="top-card-corpo">
+            <p>Em julgamento de incidente de recursos repetitivos (Tema 32), concluído em Plenário na sexta-feira, 07/08/2026 (relator Min. Cláudio Mascarenhas Brandão; notícia oficial publicada em 12/08/2026), o TST decidiu que a Justiça do Trabalho só é competente para julgar pedidos de saque do FGTS quando a liberação decorrer do fim ou da suspensão do contrato de trabalho. Saques motivados por doença grave, aposentadoria, financiamento habitacional ou calamidade pública passam a ser de competência da Justiça Comum (estadual ou federal).</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Reveja o protocolo de novas ações de saque de FGTS: mapeie o motivo do saque antes de escolher a Justiça, sob pena de extinção por incompetência absoluta.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — repetitivo, 07/08/2026</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.tst.jus.br/-/justica-do-trabalho-deve-julgar-pedidos-de-saque-do-fgts-relacionados-ao-contrato-de-trabalho" target="_blank">TST · Tema 32 · julgado 07/08, noticiado 12/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-constitucional">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 02 · CONSTITUCIONAL / AMBIENTAL</div>
+            <span class="impacto-badge">🟡 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">MI 7516</span>
+          </div>
+          <div class="top-card-titulo">Congresso tem 24 meses para legislar sobre mineração em terras indígenas, decide o Plenário do STF</div>
+          <div class="top-card-corpo">
+            <p>O Plenário do STF referendou, em 13/08/2026, a liminar do Min. Flávio Dino no Mandado de Injunção 7516, ajuizado pela Coordenação das Organizações Indígenas do povo Cinta Larga (PATJAMAAJ). A Corte reconheceu omissão legislativa de 37 anos sobre a exploração mineral em terras indígenas e fixou prazo de 24 meses para o Congresso Nacional editar lei regulamentadora. Enquanto isso, Dino fixou condições provisórias: autorização das comunidades e participação delas nos resultados financeiros.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Regime provisório, não liberação geral</span>
+            A decisão não abre a mineração em terras indígenas — mantém a atividade condicionada aos requisitos constitucionais e cria uma janela de 24 meses de maior insegurança jurídica para projetos que tangenciem áreas em demarcação.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Regime provisório — Congresso tem até 24 meses</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://noticias.stf.jus.br/postsnoticias/congresso-tem-24-meses-para-editar-lei-sobre-mineracao-em-terras-indigenas-decide-stf/" target="_blank">Notícias STF · MI 7516 · referendado 13/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-regulatorio">
+        <div class="top-card-bar bar-leg"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 03 · REGULATÓRIO / CONSUMERISTA</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-leg">Anvisa</span>
+            <span class="badge badge-leg">Minuta de RDC</span>
+          </div>
+          <div class="top-card-titulo">Anvisa propõe proibir "não tóxico" e "ecológico" em rótulos de produtos saneantes</div>
+          <div class="top-card-corpo">
+            <p>A Diretoria Colegiada da Anvisa assinou, em 14/08/2026, minuta de RDC que altera a Resolução 989/2025 sobre produtos saneantes. O novo art. 39 proíbe expressamente no rótulo indicações como "não tóxico para humanos e animais domésticos", "ecológico", "contém todos os ingredientes naturais", "entre os produtos menos tóxicos conhecidos" e "livre de contaminação". Em contrapartida, a minuta cria a figura da "versão" (art. 4º, XVII) — produtos idênticos que variam só em fragrância ou cor podem ser regularizados sob o mesmo número de registro.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Avise clientes das indústrias química e de limpeza para revisar rotulagem — a minuta prevê prazos de 60 a 360 dias para escoamento de rótulos já aprovados, a depender do tipo de alteração.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Minuta assinada — aguarda publicação definitiva</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.gov.br/anvisa/pt-br/assuntos/regulamentacao/agenda-regulatoria/minutas-previas/rop-2026/sei_4431589_minuta_de_resolucao_da_diretoria_colegiada_2-7b.pdf/@@display-file/file" target="_blank">Anvisa · Minuta de RDC · assinada 14/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card">
+        <div class="top-card-bar bar-trab"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 04 · TRABALHISTA</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tst">TST</span>
+            <span class="badge badge-trab">Justa Causa</span>
+          </div>
+          <div class="top-card-titulo">TST mantém reversão de justa causa de comissário de bordo que recusou vacina com justificativa médica</div>
+          <div class="top-card-corpo">
+            <p>Em decisão unânime publicada em 17/08/2026, a 5ª Turma do TST manteve a reversão da justa causa aplicada pela GOL a um comissário de bordo que recusou a vacina contra a covid-19. A Corte reconheceu que a recusa injustificada pode configurar insubordinação (art. 482, "h", da CLT), mas preservou a premissa fática fixada pelo TRT da 1ª Região de que havia atestado médico válido — questão que não pode ser reexaminada em recurso de revista por força da Súmula 126 do TST.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Oriente clientes empregadores a avaliar com cautela atestados médicos antes de aplicar dispensa por recusa de imunização — rejeitar o documento com base em convicção própria sobre o médico signatário é o tipo de conduta que o TST não chancelou.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/462491/tst-reverte-justa-causa-de-comissario-que-recusou-vacina-contra-covid-19" target="_blank">Migalhas · TST-RRAg 0100133-02.2022.5.01.0010 · 17/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-civel">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 05 · CÍVEL / PROCESSUAL</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-civ">Procuração</span>
+          </div>
+          <div class="top-card-titulo">Poderes para atuação extrajudicial em procuração não limitam a cláusula ad judicia, decide STJ</div>
+          <div class="top-card-corpo">
+            <p>A 3ª Turma do STJ, sob relatoria da Min. Nancy Andrighi, decidiu por unanimidade, em nota publicada em 12/08/2026, que a inclusão de poderes específicos para atuação extrajudicial num instrumento de mandato não restringe nem invalida a cláusula geral ad judicia conferida no mesmo documento. O caso (REsp 2.259.176) envolvia a representação processual de uma operadora de plano de saúde, cuja regularidade foi confirmada, afastando a exigência de intimação pessoal da empresa.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso na petição</span>
+            Argumento direto contra decisões que neguem representação nos autos por entender que a menção a poderes extrajudiciais ("ad judicia et extra") limitaria o escopo processual da procuração.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/12082026-Poderes-para-atuacao-extrajudicial-nao-limitam-procuracao-geral-para-o-foro.aspx" target="_blank">STJ · 3ª Turma · 12/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-tributario">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 06 · TRIBUTÁRIO / CONSTITUCIONAL</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADIs 7779 e 7790</span>
+          </div>
+          <div class="top-card-titulo">STF afasta restrição e garante alíquota zero de IBS/CBS a autistas e pessoas com deficiência intelectual na compra de veículos</div>
+          <div class="top-card-corpo">
+            <p>O Plenário do STF julgou, por unanimidade, em 03/08/2026 (primeira sessão após o recesso), as ADIs 7779 e 7790, afastando a exigência que restringia o benefício de alíquota zero de IBS/CBS na compra de veículos adaptados a pessoas com deficiência intelectual e autistas classificados apenas no nível 1 de suporte. A Corte entendeu que a limitação criava discriminação incompatível com a Convenção sobre os Direitos das Pessoas com Deficiência.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Oriente famílias e clientes com laudo de TEA nível 1 a reunir a documentação médica atualizada — o precedente fortalece a pretensão desse grupo ao benefício e deve ser considerado em eventuais negativas administrativas.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://noticias.stf.jus.br/postsnoticias/stf-afasta-restricao-para-aliquota-zero-na-compra-de-veiculos-por-pessoas-autistas-e-com-deficiencia-intelectual/" target="_blank">Notícias STF · ADIs 7779/7790 · 03/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-crimesdemaio">
+        <div class="top-card-bar bar-hold"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 07 · CONSTITUCIONAL / CÍVEL</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-hold">Responsabilidade do Estado</span>
+          </div>
+          <div class="top-card-titulo">STJ afasta prescrição contra o Estado em ação sobre os "Crimes de Maio" de 2006</div>
+          <div class="top-card-corpo">
+            <p>A Primeira Seção do STJ decidiu, por maioria, em 12/08/2026 (relator Min. Teodoro Silva Santos), que o prazo prescricional de cinco anos do Decreto 20.910/1932 não se aplica a ações civis públicas que buscam reparação contra o Estado por graves violações de direitos humanos — no caso, os "Crimes de Maio" de 2006 em São Paulo. Os autos retornam à Justiça paulista para análise do mérito e dos pedidos indenizatórios (REsp 2.172.497).</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Tese central para responsabilidade civil do Estado: a gravidade da violação e o controle de convencionalidade afastam o rigor do prazo quinquenal, destravando ações indenizatórias que o poder público tentava barrar via prescrição.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — Primeira Seção</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/12082026-STJ-afasta-prescricao-em-acao-indenizatoria-sobre-os-Crimes-de-Maio--pedidos-serao-analisados-na-Justica-paulista.aspx" target="_blank">STJ · Primeira Seção · REsp 2.172.497 · 12/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-penal">
+        <div class="top-card-bar bar-crim"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 08 · PENAL / PROCESSO PENAL</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-crim">Prisão Domiciliar</span>
+          </div>
+          <div class="top-card-titulo">Prisão em flagrante em Estado diverso da morada dos filhos não impede domiciliar para mãe, decide STJ</div>
+          <div class="top-card-corpo">
+            <p>A Sexta Turma do STJ, por maioria, decidiu em 14/04/2026 (relator originário Min. Antonio Saldanha Palheiro; voto condutor do acórdão, Min. Og Fernandes; notícia oficial só publicada em 14/08/2026) que o fato de a mulher ter sido presa em Estado diferente de onde residem os filhos menores de 12 anos não afasta, por si só, a prisão domiciliar do art. 318, V, do CPP. A ausência física momentânea não equivale a abandono nem afasta a presunção legal de imprescindibilidade dos cuidados maternos (HC 1.070.513).</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Precedente direto para audiências de custódia e habeas corpus: juízos que negam a domiciliar só pela distância geográfica da prisão passam a contrariar entendimento expresso do STJ.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — 14/04, noticiado 14/08/2026</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/14082026-Prisao-em-flagrante-de-mae-em-estado-diverso-da-morada-dos-filhos-nao-impede-concessao-de-regime-domiciliar.aspx" target="_blank">STJ · Sexta Turma · HC 1.070.513 · julgado 14/04, noticiado 14/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-familia">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 09 · FAMÍLIA / PROCESSO CIVIL</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-fam">Pensão Alimentícia</span>
+          </div>
+          <div class="top-card-titulo">Juiz pode fixar, na mesma sentença, dois critérios de pensão — um sobre salário, outro sobre salário-mínimo</div>
+          <div class="top-card-corpo">
+            <p>A Terceira Turma do STJ, relatora Min. Nancy Andrighi, decidiu em 07/08/2026 que é válido fixar, desde logo, critério alternativo de pensão alimentícia em percentual do salário-mínimo para a hipótese de desemprego ou informalidade futura do alimentante, ao lado do percentual sobre a renda formal. A Corte reformou acórdão do TJ/SC que havia afastado essa previsão por considerá-la condicionada a evento futuro incerto.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso na petição</span>
+            Peticionar pedindo a fixação da dupla métrica em toda ação de alimentos ou revisional — evita que o alimentando fique desamparado sem precisar ajuizar nova ação se o pagador perder o emprego formal.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — Terceira Turma</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/07082026-Juiz-pode-fixar-percentual-do-salario-minimo-como-valor-da-pensao-para-o-caso-de-desemprego-do-alimentante.aspx" target="_blank">STJ · Terceira Turma · 07/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-tributario-2">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 10 · CÍVEL / PROCESSUAL</div>
+            <span class="impacto-badge">🔴 Impacto Altíssimo</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Emenda Regimental 55</span>
+          </div>
+          <div class="top-card-titulo">STJ aprova Emenda Regimental 55: todo recurso especial vai precisar demonstrar relevância, sob pena de nem ser conhecido</div>
+          <div class="top-card-corpo">
+            <p>A Emenda Regimental 55 do STJ, publicada em 25/08/2026 e com vigência a partir de 3/09/2026, torna obrigatório que o recorrente demonstre, "em tópico específico e fundamentado" do recurso especial, que a controvérsia possui relevância econômica, política, social ou jurídica que ultrapassa os interesses das partes — inclusive nas hipóteses em que já exista presunção legal de relevância. A regra vale para recursos contra acórdãos publicados após a entrada em vigor.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Risco de inadmissão liminar</span>
+            Peças-modelo de REsp sem o tópico de relevância ficam obsoletas a partir de 3/09 — recurso sem essa demonstração pode ser simplesmente não conhecido.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-atencao">⚠ Vigência a partir de 03/09/2026</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/463107/stj-novas-regras-de-relevancia-entram-em-vigor-no-dia-3" target="_blank">Migalhas · Emenda Regimental 55 · publicada 25/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-familia-2">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 11 · CÍVEL / FAMÍLIA</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-fam">Namoro Qualificado</span>
+          </div>
+          <div class="top-card-titulo">Sem união estável post mortem: STJ nega herança à companheira sobrevivente e mantém "namoro qualificado" mesmo com filho e noivado</div>
+          <div class="top-card-corpo">
+            <p>A 3ª Turma do STJ decidiu, por 3 votos a 2, em 18/08/2026 (REsp 2.227.076), afastar o reconhecimento de união estável post mortem entre a companheira sobrevivente e o falecido — disputa movida contra os herdeiros dele, com reflexo direto na sucessão. Mesmo havendo filho em comum, noivado, convivência duradoura, auxílio material e inclusão como beneficiária em seguro de vida, a Corte manteve a conclusão das instâncias ordinárias de que o relacionamento configurou "namoro qualificado" — a relatora, Min. Nancy Andrighi, ficou vencida junto com a Min. Daniela Teixeira. A maioria, capitaneada pelo Min. Ricardo Villas Bôas Cueva, entendeu que faltou o elemento subjetivo: "a existência de uma família efetivamente constituída durante a convivência", sendo o noivado um projeto futuro, não uma família já formada.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Caso sucessório, não é regra geral sobre "contrato de namoro"</span>
+            O precedente eleva o rigor probatório em disputas de herança envolvendo companheira(o) sobrevivente contra herdeiros — a prova exigida é a intenção atual, e não futura, de constituir família. Não trate como um guia genérico de partilha entre vivos: o placar apertado (3x2) mostra que a linha divisória é fática, caso a caso.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — maioria 3x2</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/462635/mesmo-com-filho-e-noivado-stj-nega-uniao-estavel-e-reconhece-namoro" target="_blank">Migalhas · STJ · REsp 2.227.076 · post mortem · 18/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-tributario-3">
+        <div class="top-card-bar bar-trib"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 12 · TRIBUTÁRIO / PROCESSUAL</div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.299</span>
+          </div>
+          <div class="top-card-titulo">STJ veda ação rescisória para reabrir casos já julgados à luz de tese repetitiva fixada depois</div>
+          <div class="top-card-corpo">
+            <p>A 1ª Seção do STJ, relatora Min. Regina Helena Costa, decidiu em 20/08/2026 (EREsps 1.910.729 e 1.431.163, Tema 1.299) que não cabe ação rescisória para desconstituir decisões sobre o reajuste de 28,86% da RAV de auditores fiscais que adotaram interpretação juridicamente possível à época, quando a matéria ainda era controvertida nos tribunais — mesmo após o STJ pacificar o tema de forma diversa no Tema 548 (2013). A Corte aplicou a Súmula 343 do STF, que impede rescisória sobre decisão fundada em interpretação controvertida ao tempo do julgamento.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Blinda execuções e sentenças já transitadas em julgado contra tentativas da Fazenda de reabrir casos com base em jurisprudência unificada depois — vale como precedente de segurança jurídica em qualquer discussão tributária semelhante, não só na RAV.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — Primeira Seção</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/462887/stj-mantem-veto-a-rescisoria-para-adequar-tese-posterior" target="_blank">Migalhas · STJ · Tema 1.299 · 20/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-tributario-4">
+        <div class="top-card-bar bar-trib"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 13 · TRIBUTÁRIO / COMPLIANCE</div>
+            <span class="impacto-badge">🟡 Impacto Baixo</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-carf">CARF</span>
+            <span class="badge badge-leg">Portaria 2.303</span>
+          </div>
+          <div class="top-card-titulo">CARF institui sistema próprio de integridade e antissuborno alinhado a normas ISO</div>
+          <div class="top-card-corpo">
+            <p>A Portaria CARF/MF nº 2.303, de 3/08/2026 (DOU de 4/08/2026), instituiu o Sistema Integrado de Gestão do CARF (SIGES), reunindo um Sistema de Gestão da Qualidade (conforme ABNT NBR ISO 9001:2015), um Sistema de Gestão Antissuborno (conforme ABNT NBR ISO 37001:2025) e um Programa de Integridade próprio do órgão.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Bancas tributárias com atuação recorrente no CARF devem se preparar para maior formalismo em pedidos, prazos e comunicação com conselheiros — e para exigir o mesmo padrão de compliance de contrapartes no processo administrativo.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Vigente</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.contabeis.com.br/noticias/78573/carf-institui-sistema-integrado-de-gestao-veja-regras-do-siges/" target="_blank">Portaria CARF/MF 2.303/2026 · DOU 04/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-trabalhista-2">
+        <div class="top-card-bar bar-trab"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 14 · TRABALHISTA / TECNOLOGIA</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tst">TST</span>
+            <span class="badge badge-trab">Segurança da Informação</span>
+          </div>
+          <div class="top-card-titulo">DEJT sofre acesso indevido: CSJT bloqueia sistema, aciona Polícia Federal e ANPD</div>
+          <div class="top-card-corpo">
+            <p>O DEJT ficou indisponível a partir de 18/08/2026 (a última publicação regular foi em 17/08), após acesso indevido ao sistema detectado naquele dia. Em 20/08/2026, o CSJT editou o Ato CSJT.GP nº 93, autorizando o uso temporário do Diário de Justiça Eletrônico Nacional (DJEN) para divulgação de pautas de julgamento enquanto o DEJT não é normalizado. Em comunicado de 23/08/2026, o CSJT confirmou publicamente o acesso indevido, informou que o bloqueio do sistema foi feito assim que o incidente foi identificado, e que a Polícia Federal e a Agência Nacional de Proteção de Dados foram acionadas para apurar o caso.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Consultar o DJEN e verificar prazos do período</span>
+            Escritórios devem consultar o DJEN para pautas de julgamento enquanto durar a substituição, verificar eventual prejuízo na comunicação de atos publicados no DEJT a partir de 18/08 e, se identificado, avaliar a medida processual adequada para preservação ou restituição do prazo.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-atencao">⚠ Em apuração — PF e ANPD acionadas</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.tst.jus.br/-/justica-do-trabalho-informa-acesso-indevido-ao-dejt" target="_blank">TST/CSJT · acesso indevido ao DEJT · indisponível desde 18/08, Ato CSJT.GP nº 93 de 20/08, comunicado 23/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-constitucional-2">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 15 · CONSTITUCIONAL / PENAL</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Tema 1.412</span>
+          </div>
+          <div class="top-card-titulo">STF estende medidas protetivas da Lei Maria da Penha para violência de gênero fora do ambiente doméstico</div>
+          <div class="top-card-corpo">
+            <p>O Plenário do STF julgou, por unanimidade, em 19/08/2026, o Tema 1.412 de repercussão geral (ARE 1.537.713/MG, relator Min. Edson Fachin), fixando a tese de que "as medidas protetivas de urgência previstas na Lei 11.340/2006 aplicam-se a toda forma de violência contra a mulher baseada no gênero, independentemente de sua ocorrência no âmbito doméstico, familiar ou em relação íntima de afeto". A Corte também definiu que o juízo materialmente incompetente para o caso deve apreciar o pedido de urgência e depois remeter ao juízo competente — sem ampliar automaticamente a competência das Varas Especializadas.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Não é reescrita do art. 5º da Lei 11.340</span>
+            A decisão amplia o alcance das medidas protetivas de urgência a contextos comunitários, profissionais e institucionais — não redefine o conceito de "violência doméstica e familiar" do art. 5º da lei. Evite comunicar a clientes que "toda violência de gênero virou caso de Vara de Violência Doméstica": o que muda é o acesso à proteção urgente, não necessariamente a competência de mérito.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — repercussão geral, unânime</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://conjur.com.br/2026-ago-19/stf-amplia-medidas-protetivas-da-lei-maria-da-penha-para-fora-do-ambiente-domestico/" target="_blank">ConJur · Tema 1.412 · ARE 1.537.713/MG · 19/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        TST · Plenário · Tema 32 · julgado 07/08, noticiado 12/08/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">FGTS tem dois caminhos agora: o motivo do saque decide se o processo vai para a Justiça do Trabalho ou para a Justiça Comum</div>
+      <div class="decisao-body">
+        <p>O TST revisou o entendimento sobre a competência para pedidos de liberação de saldo de FGTS no julgamento do Tema 32 dos recursos repetitivos, concluído em Plenário na sexta-feira, 07/08/2026, sob relatoria do Min. Cláudio Mascarenhas Brandão.</p>
+        <p>A nova tese distingue dois grupos: pedidos de saque decorrentes do fim ou da suspensão do contrato de trabalho continuam na Justiça do Trabalho. Todas as demais hipóteses previstas na Lei 8.036/1990 — doença grave, aposentadoria, financiamento habitacional, calamidade pública, entre outras — passam a ser de competência da Justiça Comum, estadual ou federal conforme o caso. Processos que já tinham sentença de mérito na Justiça do Trabalho ficam preservados lá, como regra de transição.</p>
+        <p>Na prática, escritórios que atuam nessa frente precisam revisar o fluxo de triagem de novos casos: escolher a Justiça errada agora é risco concreto de extinção do processo por incompetência absoluta, com perda de tempo processual para o cliente.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        A Justiça do Trabalho é competente para julgar pedidos de movimentação da conta vinculada do FGTS apenas quando a liberação decorrer do fim ou da suspensão do contrato de trabalho; as demais hipóteses de saque são de competência da Justiça Comum.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Auditar ações de FGTS em andamento e em fase de protocolo: identificar o motivo do saque de cada cliente e redirecionar para a Justiça correta antes de peticionar.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Julgado — repetitivo</span>
+        <span class="status-pill status-atencao">⚠ Exige triagem processual imediata</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: TST · Tema 32 · julgado 07/08/2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">37 anos de omissão: como o STF usou o mandado de injunção para destravar (parcialmente) a mineração em terras indígenas</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">MI 7516: STF enfrenta omissão legislativa de 37 anos e estabelece regime provisório para mineração em terras indígenas</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a origem do caso</span>
+        <div class="tese-bloco-texto">A Constituição de 1988 (art. 176, §1º, e art. 231, §3º) já previa que a exploração de recursos minerais em terras indígenas dependeria de lei específica autorizando a atividade, com participação das comunidades nos resultados. Essa lei nunca foi editada. A Coordenação das Organizações Indígenas do povo Cinta Larga (PATJAMAAJ) ajuizou o Mandado de Injunção 7516 para forçar o Judiciário a suprir essa omissão, diante do avanço de garimpo ilegal e da atuação de organizações criminosas em terras não regulamentadas.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que o STF decidiu em 13/08/2026</span>
+        <div class="tese-bloco-texto">O Plenário referendou a liminar do relator, Min. Flávio Dino, reconhecendo a mora legislativa de 37 anos e fixando prazo de 24 meses para o Congresso Nacional editar a lei regulamentadora. Até lá — ou até a sanção da lei —, Dino estabeleceu condições provisórias para qualquer atividade de mineração em terras indígenas: autorização expressa das comunidades afetadas e participação delas nos resultados financeiros da exploração.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que a decisão não faz</span>
+        <div class="tese-bloco-texto">A decisão não autoriza, por si só, nenhum projeto de mineração em terras indígenas — a atividade continua condicionada aos requisitos constitucionais e às condições provisórias fixadas por Dino. O ministro também destacou que a ausência de regras contribuiu para o avanço de garimpo ilegal, narcogarimpo e atuação de facções criminosas nessas áreas, o que reforça o caráter protetivo, não liberador, da decisão.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Para clientes do setor de mineração e direito ambiental, o recado é de cautela redobrada nos próximos 24 meses: qualquer projeto que tangencie terra indígena demarcada ou em processo de demarcação deve considerar as condições provisórias do STF como piso mínimo de compliance, não como teto — a lei do Congresso pode vir mais restritiva.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Regime provisório — Congresso tem até 24 meses (a partir de 13/08/2026) para legislar</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área</span>
+    </div>
+    <div class="section-intro">Os principais movimentos do período, organizados por área de atuação, com o ângulo prático para a rotina do escritório.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Trabalhista / Processual</div>
+          <div class="panorama-titulo">TST redivide a competência sobre saques de FGTS entre Justiça do Trabalho e Justiça Comum</div>
+          <div class="panorama-texto">Ver Decisão do Dia (seção 03) — repetitivo julgado, com regra de transição para processos já sentenciados.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">TST · Tema 32</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Constitucional / Ambiental</div>
+          <div class="panorama-titulo">STF dá 24 meses ao Congresso para regulamentar mineração em terras indígenas</div>
+          <div class="panorama-texto">Ver Movimento 02 do Top 15 e Tese Relevante (seção 04) — regime provisório em vigor, sem liberação genérica da atividade.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Regime provisório</span><span class="panorama-fonte">STF · MI 7516</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Regulatório / Consumerista</div>
+          <div class="panorama-titulo">Anvisa propõe vedar termos como "ecológico" e "não tóxico" em rótulos de saneantes</div>
+          <div class="panorama-texto">Ver Movimento 03 do Top 15 — minuta assinada, ainda pendente de publicação definitiva no Diário Oficial.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Minuta</span><span class="panorama-fonte">Anvisa</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Trabalhista</div>
+          <div class="panorama-titulo">TST mantém reversão de justa causa de comissário que recusou vacina com justificativa médica</div>
+          <div class="panorama-texto">Ver Movimento 04 do Top 15 — julgado, com efeito direto sobre políticas de vacinação corporativa.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">TST · 5ª Turma</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">Cível / Processual</div>
+          <div class="panorama-titulo">STJ confirma que poderes extrajudiciais em procuração não limitam a cláusula ad judicia</div>
+          <div class="panorama-texto">Ver Movimento 05 do Top 15 — julgado, útil para contestar despachos que neguem representação processual.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STJ · 3ª Turma</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">06</div>
+        <div>
+          <div class="panorama-area">Tributário / Constitucional</div>
+          <div class="panorama-titulo">STF garante alíquota zero de IBS/CBS a autistas e pessoas com deficiência intelectual na compra de veículos</div>
+          <div class="panorama-texto">Ver Movimento 06 do Top 15 — julgado, afasta restrição por nível de suporte na classificação do TEA.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STF · ADIs 7779/7790</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">07</div>
+        <div>
+          <div class="panorama-area">Constitucional / Cível</div>
+          <div class="panorama-titulo">STJ afasta prescrição contra o Estado em ação sobre os "Crimes de Maio" de 2006</div>
+          <div class="panorama-texto">Ver Movimento 07 do Top 15 — retorno dos autos à Justiça paulista para análise do mérito indenizatório.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STJ · Primeira Seção</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">08</div>
+        <div>
+          <div class="panorama-area">Penal / Processo Penal</div>
+          <div class="panorama-titulo">Prisão em Estado diverso da morada dos filhos não impede domiciliar para mãe</div>
+          <div class="panorama-texto">Ver Movimento 08 do Top 15 — ausência física momentânea não afasta presunção de imprescindibilidade materna.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STJ · Sexta Turma</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">09</div>
+        <div>
+          <div class="panorama-area">Família / Processo Civil</div>
+          <div class="panorama-titulo">STJ valida dupla métrica de pensão alimentícia (salário e salário-mínimo) na mesma sentença</div>
+          <div class="panorama-texto">Ver Movimento 09 do Top 15 — evita nova ação judicial em caso de desemprego futuro do alimentante.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STJ · Terceira Turma</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">10</div>
+        <div>
+          <div class="panorama-area">Cível / Processual</div>
+          <div class="panorama-titulo">STJ aprova Emenda Regimental 55: REsp sem tópico de relevância arrisca inadmissão</div>
+          <div class="panorama-texto">Ver Movimento 10 do Top 15 — vigência a partir de 03/09/2026, aplicável a acórdãos publicados após essa data.</div>
+          <div class="panorama-footer"><span class="status-pill status-atencao">⚠ Vigência futura</span><span class="panorama-fonte">STJ · Emenda Regimental 55</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">11</div>
+        <div>
+          <div class="panorama-area">Cível / Família</div>
+          <div class="panorama-titulo">STJ nega união estável post mortem e mantém "namoro qualificado" em disputa de herança</div>
+          <div class="panorama-texto">Ver Movimento 11 do Top 15 — companheira sobrevivente x herdeiros; julgado por maioria apertada (3x2), relatora vencida.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STJ · 3ª Turma</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">12</div>
+        <div>
+          <div class="panorama-area">Tributário / Processual</div>
+          <div class="panorama-titulo">STJ veda rescisória para reabrir casos julgados sob tese depois superada (Tema 1.299)</div>
+          <div class="panorama-texto">Ver Movimento 12 do Top 15 — reforça segurança jurídica de decisões transitadas em julgado.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STJ · Primeira Seção</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">13</div>
+        <div>
+          <div class="panorama-area">Tributário / Compliance</div>
+          <div class="panorama-titulo">CARF institui sistema próprio de integridade e antissuborno (SIGES)</div>
+          <div class="panorama-texto">Ver Movimento 13 do Top 15 — alinhado às normas ISO 9001 e ISO 37001.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Vigente</span><span class="panorama-fonte">CARF · Portaria 2.303/2026</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">14</div>
+        <div>
+          <div class="panorama-area">Trabalhista / Tecnologia</div>
+          <div class="panorama-titulo">DEJT sofre acesso indevido; CSJT bloqueia sistema e aciona PF e ANPD</div>
+          <div class="panorama-texto">Ver Movimento 14 do Top 15 — indisponível desde 18/08; pautas foram para o DJEN via Ato CSJT.GP nº 93.</div>
+          <div class="panorama-footer"><span class="status-pill status-atencao">⚠ Em apuração</span><span class="panorama-fonte">TST/CSJT</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">15</div>
+        <div>
+          <div class="panorama-area">Constitucional / Penal</div>
+          <div class="panorama-titulo">STF estende medidas protetivas da Lei Maria da Penha a violência de gênero fora do lar (Tema 1.412)</div>
+          <div class="panorama-texto">Ver Movimento 15 do Top 15 — amplia acesso à proteção urgente, sem redefinir o art. 5º da Lei 11.340.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STF · Tema 1.412</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tst" style="flex-shrink:0;margin-top:2px;">TST</span>
+      <div>
+        <div class="radar-titulo">O julgamento do Tema 32 (FGTS) foi em 07/08, mas a notícia oficial só saiu em 12/08/2026</div>
+        <div class="radar-texto">Sempre confira a data do acórdão/sessão de julgamento, não a data de publicação da matéria — o próprio texto do TST cita "na última sexta-feira (7)" ao divulgar a decisão cinco dias depois.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Tema 1.455 (IPTU por área do imóvel) segue suspenso, sem julgamento de mérito</div>
+        <div class="radar-texto">Repercussão geral reconhecida em 18/04/2026, com suspensão nacional dos processos desde 04/05/2026 — mérito ainda não julgado. Vale monitorar para uma futura edição, mas não é fato desta semana.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-leg" style="flex-shrink:0;margin-top:2px;">Anvisa</span>
+      <div>
+        <div class="radar-titulo">Minuta de RDC sobre saneantes ainda não é norma vigente</div>
+        <div class="radar-texto">O documento assinado em 14/08 é uma minuta de resolução — falta a deliberação final em reunião de Diretoria Colegiada e a publicação no Diário Oficial da União para entrar em vigor.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-leg" style="flex-shrink:0;margin-top:2px;">Curadoria</span>
+      <div>
+        <div class="radar-titulo">Coluna de opinião não é notícia — quatro textos ficaram de fora por esse motivo</div>
+        <div class="radar-texto">Uma busca ampla no período trouxe artigos publicados nas seções de opinião do Migalhas ("Migalhas de Peso") e do Jota ("Opinião e Análise") como se fossem cobertura factual. São análises úteis de especialistas, mas não registram um fato jurídico datado — por isso não entraram como "movimento" desta edição.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Fique de olho: julgamento sobre o modelo Buser de fretamento colaborativo tem data prevista para 26/08</div>
+        <div class="radar-texto">Levantamento citado pela curadoria indica 7 dos 10 ministros já sinalizados a favor da abertura do transporte por aplicativo — leitura de tendência, não fato decidido. Ainda não é decisão — mérito pendente de julgamento; candidato a Decisão do Dia da próxima edição.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">Tema 32: escolher a Justiça errada agora significa perder tempo (e dinheiro) do cliente na fila do FGTS</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>O efeito financeiro do Tema 32 é indireto, mas real: cada ação de saque de FGTS protocolada na Justiça errada corre risco de extinção por incompetência absoluta, obrigando o cliente a recomeçar o processo — com o dinheiro represado por mais tempo. Para escritórios com volume relevante de ações dessa natureza, o ajuste de fluxo agora evita prejuízo de honorários e de reputação.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟢 Impacto Médio ·</span>
+        <span class="dinheiro-header-title">Triagem de ações de FGTS · TST Tema 32</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Aplicável a qualquer escritório com carteira de ações de liberação de saldo de FGTS por motivos diversos do fim de contrato de trabalho (doença grave, aposentadoria, financiamento habitacional, calamidade pública).</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Auditar processos em andamento na Justiça do Trabalho que discutem saque por motivo distinto de rescisão contratual</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Redirecionar novas ações para a Justiça Comum conforme o motivo do saque, evitando extinção por incompetência</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Comunicar clientes com processos em curso sobre a regra de transição (sentença de mérito já proferida permanece na Justiça do Trabalho)</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: TST · Tema 32 · julgado 07/08/2026</span>
+      </div>
+    </div>
+
+    <div class="dinheiro-card" style="margin-top:14px;">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🔴 Risco de perda de recurso ·</span>
+        <span class="dinheiro-header-title">Filtro de relevância · STJ, Emenda Regimental 55</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>A partir de 3/09, toda peça de recurso especial precisa de um tópico próprio e fundamentado sobre relevância — isso não é ajuste cosmético, é uma nova competência técnica que separa escritórios. Quem já adaptar o fluxo agora sai na frente.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Criar checklist e modelo de tópico de relevância para uso padrão em todo REsp do escritório</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Revisar recursos em fase de elaboração contra acórdãos publicados perto de 3/09 — a data de publicação do acórdão recorrido é o marco que ativa a exigência</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Oferecer a clientes recorrentes uma "auditoria de relevância" nos recursos pendentes de interposição</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: STJ · Emenda Regimental 55 · publicada 25/08/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>15 ações para começar agora.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Auditar ações de FGTS em curso e redirecionar conforme o motivo do saque</div>
+          <div class="amanha-texto">Aplicar o Tema 32 do TST: fim/suspensão de contrato vai para a Justiça do Trabalho, demais hipóteses para a Justiça Comum.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Avisar clientes do setor de mineração sobre as condições provisórias do MI 7516</div>
+          <div class="amanha-texto">Qualquer projeto próximo a terra indígena deve considerar autorização das comunidades e participação nos resultados como exigência mínima atual.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Alertar clientes das indústrias química e de limpeza sobre a minuta de RDC da Anvisa</div>
+          <div class="amanha-texto">Iniciar levantamento de rótulos com termos como "não tóxico" ou "ecológico" antes da publicação definitiva da norma.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Orientar RHs de clientes sobre a avaliação de atestados médicos em políticas de vacinação obrigatória</div>
+          <div class="amanha-texto">Usar o caso da GOL (TST) como referência: rejeitar atestado por convicção própria sobre o médico é conduta arriscada.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Revisar modelos de procuração do escritório para confirmar cláusula ad judicia et extra</div>
+          <div class="amanha-texto">Usar a decisão do STJ para contestar eventuais despachos que neguem representação por conta de poderes extrajudiciais expressos.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">6</div>
+        <div>
+          <div class="amanha-titulo">Mapear clientes com laudo de TEA nível 1 interessados em veículo adaptado com alíquota zero</div>
+          <div class="amanha-texto">Reunir documentação médica atualizada para usar o precedente do STF (ADIs 7779/7790) contra negativas da Receita.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">7</div>
+        <div>
+          <div class="amanha-titulo">Revisar teses de responsabilidade civil do Estado com prescrição já reconhecida</div>
+          <div class="amanha-texto">Usar o precedente do STJ (Crimes de Maio) para reavaliar casos em que a prescrição quinquenal foi utilizada como fundamento de encerramento, verificando se o precedente é juridicamente aplicável.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">8</div>
+        <div>
+          <div class="amanha-titulo">Instruir defesas criminais com o precedente sobre prisão domiciliar de mães em Estado diverso</div>
+          <div class="amanha-texto">Citar o HC 1.070.513 em audiências de custódia e pedidos de substituição de prisão preventiva.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">9</div>
+        <div>
+          <div class="amanha-titulo">Incluir a dupla métrica de pensão alimentícia em novas ações e revisionais</div>
+          <div class="amanha-texto">Peticionar pedindo percentual sobre renda formal e percentual sobre salário-mínimo para a hipótese de desemprego futuro, com base no precedente da Min. Nancy Andrighi.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">10</div>
+        <div>
+          <div class="amanha-titulo">Começar o checklist de "tópico de relevância" para recursos especiais</div>
+          <div class="amanha-texto">Adaptar minutas-padrão de REsp à Emenda Regimental 55 antes da vigência em 3/09/2026 — inadmissão é o risco de não fazer isso a tempo.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">11</div>
+        <div>
+          <div class="amanha-titulo">Revisar teses de reconhecimento de união estável post mortem em inventários e ações de herança</div>
+          <div class="amanha-texto">Usar o precedente do "namoro qualificado" (REsp 2.227.076) para calibrar a prova exigida em disputas entre companheiro(a) sobrevivente e herdeiros — o filho em comum e o noivado, isoladamente, não bastam.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">12</div>
+        <div>
+          <div class="amanha-titulo">Identificar sentenças e execuções tributárias já transitadas em julgado sob risco de rescisória oportunista</div>
+          <div class="amanha-texto">Usar o Tema 1.299 do STJ e a Súmula 343 do STF para barrar tentativas de reabertura baseadas em jurisprudência unificada depois do trânsito em julgado.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">13</div>
+        <div>
+          <div class="amanha-titulo">Atualizar rotina de acompanhamento de processos administrativos no CARF conforme o novo SIGES</div>
+          <div class="amanha-texto">Mapear exigências de integridade e antissuborno da Portaria 2.303/2026 que possam afetar prazos e comunicação com conselheiros.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">14</div>
+        <div>
+          <div class="amanha-titulo">Checar se clientes com prazo processual no DEJT a partir de 18/08 foram afetados pelo incidente de segurança</div>
+          <div class="amanha-texto">Consultar o DJEN para pautas de julgamento (Ato CSJT.GP nº 93) e o portal oficial de comunicação da Justiça do Trabalho e, se identificado prejuízo, avaliar a medida processual adequada para preservação ou restituição do prazo.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">15</div>
+        <div>
+          <div class="amanha-titulo">Revisar orientação a clientes sobre o alcance do Tema 1.412 (Lei Maria da Penha)</div>
+          <div class="amanha-texto">Explicar que a decisão amplia o acesso a medidas protetivas de urgência para qualquer contexto de violência de gênero, sem redefinir por si só a competência das Varas de Violência Doméstica.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">15 perfis prioritários deste período.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Trabalhadores e ex-empregados com pedidos de saque de FGTS por motivo distinto de rescisão contratual</strong> — reorientar novas ações para a Justiça Comum.
+            <span class="mapear-tese">→ Redirecionamento processual · TST, Tema 32</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Empresas de mineração com projetos próximos a terras indígenas demarcadas ou em demarcação</strong> — reforçar compliance conforme as condições provisórias do MI 7516.
+            <span class="mapear-tese">→ Direito ambiental / minerário · STF, MI 7516</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Indústrias químicas e de produtos de limpeza com rótulos que usam termos como "ecológico" ou "não tóxico"</strong> — antecipar adequação de rotulagem.
+            <span class="mapear-tese">→ Compliance regulatório · Anvisa, minuta de RDC</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Empregadores com políticas de vacinação obrigatória e dispensas por recusa de imunização</strong> — revisar critérios de avaliação de atestados médicos apresentados por empregados.
+            <span class="mapear-tese">→ Consultivo trabalhista · TST, 5ª Turma</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Clientes com processos em que a representação foi questionada por procuração com poderes extrajudiciais</strong> — usar o precedente do STJ para reafirmar a validade da cláusula ad judicia.
+            <span class="mapear-tese">→ Regularização processual · STJ, 3ª Turma</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">06</div>
+          <div class="mapear-texto">
+            <strong>Famílias com filhos autistas (nível 1) ou com deficiência intelectual buscando veículo adaptado</strong> — orientar sobre a alíquota zero de IBS/CBS após o precedente do STF.
+            <span class="mapear-tese">→ Direito tributário / pessoa com deficiência · STF, ADIs 7779/7790</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">07</div>
+          <div class="mapear-texto">
+            <strong>Vítimas ou familiares de graves violações de direitos humanos com ações barradas por prescrição</strong> — reavaliar viabilidade de reabertura à luz do precedente sobre os Crimes de Maio.
+            <span class="mapear-tese">→ Responsabilidade civil do Estado · STJ, Primeira Seção</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">08</div>
+          <div class="mapear-texto">
+            <strong>Clientes com familiares presas preventivamente longe da residência dos filhos menores</strong> — instruir pedido de prisão domiciliar com o novo precedente da Sexta Turma.
+            <span class="mapear-tese">→ Direito penal / execução penal · STJ, HC 1.070.513</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">09</div>
+          <div class="mapear-texto">
+            <strong>Clientes em ações de alimentos ou revisionais sem previsão de critério alternativo de pensão</strong> — incluir a dupla métrica (renda formal + salário-mínimo) na petição.
+            <span class="mapear-tese">→ Direito de família · STJ, 3ª Turma</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">10</div>
+          <div class="mapear-texto">
+            <strong>Toda a carteira contenciosa com recursos especiais em fase de elaboração</strong> — padronizar o tópico de relevância antes da vigência da Emenda Regimental 55 em 3/09.
+            <span class="mapear-tese">→ Adequação processual · STJ, Emenda Regimental 55</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">11</div>
+          <div class="mapear-texto">
+            <strong>Companheiros(as) sobreviventes em disputa de herança com os herdeiros do falecido</strong> — avaliar se há prova de intenção atual (não apenas futura) de constituir família antes de ajuizar ação de reconhecimento de união estável post mortem.
+            <span class="mapear-tese">→ Direito de família / sucessório · STJ, REsp 2.227.076</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">12</div>
+          <div class="mapear-texto">
+            <strong>Clientes com sentenças tributárias transitadas em julgado potencialmente sujeitas a tentativa de rescisória pela Fazenda</strong> — usar o Tema 1.299 e a Súmula 343/STF como defesa.
+            <span class="mapear-tese">→ Contencioso tributário · STJ, Primeira Seção</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">13</div>
+          <div class="mapear-texto">
+            <strong>Empresas com processos administrativos em curso no CARF</strong> — mapear exigências de integridade e compliance do novo SIGES.
+            <span class="mapear-tese">→ Contencioso administrativo tributário · CARF, Portaria 2.303/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">14</div>
+          <div class="mapear-texto">
+            <strong>Clientes com prazos processuais trabalhistas correndo a partir de 18/08/2026</strong> — checar se houve falha de intimação por conta do incidente no DEJT e consultar o DJEN para pautas do período.
+            <span class="mapear-tese">→ Gestão de prazos · TST/CSJT</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">15</div>
+          <div class="mapear-texto">
+            <strong>Vítimas de violência de gênero em contextos fora do lar (trabalho, comunidade, ambiente digital)</strong> — orientar sobre acesso a medidas protetivas de urgência à luz do Tema 1.412.
+            <span class="mapear-tese">→ Direito penal / proteção à mulher · STF, Tema 1.412</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O Tema 32 (FGTS) foi julgado em 07/08, não em 12 ou 13/08/2026</div>
+          <div class="atencao-texto">Ao citar o caso para clientes, use a data real da sessão de julgamento — a notícia oficial do TST só circulou cinco dias depois.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O MI 7516 não libera mineração em terras indígenas — mantém regime condicionado</div>
+          <div class="atencao-texto">Evite comunicar a clientes do setor mineral que "o STF abriu terras indígenas à mineração". O que existe é um prazo para o Congresso legislar e um regime provisório restritivo enquanto isso não ocorre.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">A minuta da Anvisa sobre saneantes ainda não é norma vigente</div>
+          <div class="atencao-texto">Trate como "proposta assinada" até a publicação definitiva no Diário Oficial da União — não recomende readequação de rótulos como obrigação já em vigor.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">A Emenda Regimental 55 do STJ só vale a partir de 3/09/2026 — não é regra retroativa</div>
+          <div class="atencao-texto">Aplica-se a recursos especiais contra acórdãos publicados após a vigência. Não crie pânico sobre recursos já protocolados ou sobre acórdãos anteriores a essa data.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O Tema 1.412 do STF não redefine "violência doméstica" — amplia o acesso à proteção urgente</div>
+          <div class="atencao-texto">Não afirme a clientes que a competência de toda violência de gênero migrou para as Varas de Violência Doméstica. O que a tese garante é que o juízo, mesmo o incompetente, aprecie a medida protetiva urgente e depois remeta ao foro correto.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado do período</div>
+      <div class="numero-destaque">24</div>
+      <div class="numero-titulo">meses é o prazo dado pelo STF ao Congresso Nacional para legislar sobre mineração em terras indígenas</div>
+      <div class="numero-texto">A omissão legislativa reconhecida pelo Plenário do STF no MI 7516 já dura 37 anos desde a Constituição de 1988. Enquanto o prazo corre, vale o regime provisório fixado pelo Min. Flávio Dino: autorização das comunidades indígenas e participação delas nos resultados financeiros de qualquer atividade mineral.</div>
+      <div class="numero-fonte">Fonte: Notícias STF · MI 7516 · referendado 13/08/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Duas lições atravessaram esta edição: data de julgamento raramente é data de notícia, e nem todo link com "STJ" ou "STF" no título é, de fato, notícia.</div>
+
+    <div class="mercado-corpo">
+      <p>O caso mais didático da primeira lição foi o Tema 32 do TST: julgado numa sexta-feira, só ganhou nota oficial cinco dias depois. O incidente do DEJT repetiu o padrão em versão mais extrema e em três tempos: sistema indisponível desde 18/08, ato normativo emergencial (Ato CSJT.GP nº 93) só em 20/08 e comunicado público confirmando o acesso indevido apenas em 23/08 — cinco dias de defasagem entre o fato e a transparência institucional plena, que qualquer escritório precisa considerar ao checar prazos daquele período. A própria Emenda Regimental 55 tem um tipo semelhante de defasagem: aprovada internamente antes, só publicada em 25/08, com vigência ainda futura (3/09) — três datas diferentes para o mesmo ato normativo.</p>
+
+      <p>A segunda lição veio de uma pesquisa ampla que trouxe dez candidatos a notícia para o período de 18 a 23/08, dos quais quatro eram, na origem, artigos de opinião assinados por especialistas — publicados nas seções de coluna do Migalhas e do Jota, não nas de cobertura factual. Todos foram excluídos após checagem de fonte, mesmo sendo textos tecnicamente corretos e úteis: o Brevis só entra como "movimento" com fato jurídico datado, não com análise de tendência.</p>
+
+      <p>No que efetivamente fechou como notícia verificada nesta janela, o padrão seguiu técnico e de aplicação imediata: FGTS, procuração ad judicia, justa causa por recusa vacinal, namoro qualificado, rescisória tributária e o próprio filtro de relevância do STJ — a maioria já pode ser citada diretamente em petição. A exceção segue sendo o par regulatório em construção (MI 7516 e a minuta da Anvisa), e agora também o Tema 1.412, que embora julgado, exige cautela na forma de comunicar seu alcance real a clientes.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Resumo prático: 11 dos 15 itens desta edição já são julgamento concluído ou norma vigente e podem ser usados diretamente na petição ou no aconselhamento. Três exigem acompanhamento por ainda estarem em construção ou com vigência futura — MI 7516, a minuta da Anvisa e a Emenda Regimental 55 (vigência 3/09, não invoque para recursos anteriores) — e um está em apuração por incidente de segurança: o acesso indevido ao DEJT.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">A data da notícia não é a data do fato — e essa diferença de dias pode ser a diferença entre uma tese sólida e um erro de curadoria.</div>
+    <div class="frase-autor">— Curadoria Brevis Semanal · Edição 011</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.tst.jus.br/-/justica-do-trabalho-deve-julgar-pedidos-de-saque-do-fgts-relacionados-ao-contrato-de-trabalho" target="_blank">TST · Tema 32 · competência sobre saques do FGTS</a></div>
+          <div class="fonte-desc">Julgado em Plenário em 07/08/2026, notícia oficial publicada em 12/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/postsnoticias/congresso-tem-24-meses-para-editar-lei-sobre-mineracao-em-terras-indigenas-decide-stf/" target="_blank">Notícias STF · MI 7516 · mineração em terras indígenas</a></div>
+          <div class="fonte-desc">Liminar de Flávio Dino referendada pelo Plenário em 13/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.gov.br/anvisa/pt-br/assuntos/regulamentacao/agenda-regulatoria/minutas-previas/rop-2026/sei_4431589_minuta_de_resolucao_da_diretoria_colegiada_2-7b.pdf/@@display-file/file" target="_blank">Anvisa · Minuta de RDC · saneantes e vedação a "greenwashing"</a></div>
+          <div class="fonte-desc">Documento assinado eletronicamente em 14/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/462491/tst-reverte-justa-causa-de-comissario-que-recusou-vacina-contra-covid-19" target="_blank">Migalhas · TST reverte justa causa de comissário que recusou vacina</a></div>
+          <div class="fonte-desc">TST-RRAg 0100133-02.2022.5.01.0010, 5ª Turma, publicado em 17/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/12082026-Poderes-para-atuacao-extrajudicial-nao-limitam-procuracao-geral-para-o-foro.aspx" target="_blank">STJ · Poderes extrajudiciais não limitam procuração geral para o foro</a></div>
+          <div class="fonte-desc">3ª Turma, relatora Min. Nancy Andrighi, publicado em 12/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/postsnoticias/stf-afasta-restricao-para-aliquota-zero-na-compra-de-veiculos-por-pessoas-autistas-e-com-deficiencia-intelectual/" target="_blank">Notícias STF · Alíquota zero de IBS/CBS para autistas e deficientes intelectuais</a></div>
+          <div class="fonte-desc">ADIs 7779 e 7790, Plenário, julgadas em 03/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/12082026-STJ-afasta-prescricao-em-acao-indenizatoria-sobre-os-Crimes-de-Maio--pedidos-serao-analisados-na-Justica-paulista.aspx" target="_blank">STJ · Prescrição afastada em ação sobre os Crimes de Maio</a></div>
+          <div class="fonte-desc">Primeira Seção, relator Min. Teodoro Silva Santos, REsp 2.172.497, 12/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/14082026-Prisao-em-flagrante-de-mae-em-estado-diverso-da-morada-dos-filhos-nao-impede-concessao-de-regime-domiciliar.aspx" target="_blank">STJ · Prisão em flagrante em Estado diverso não impede domiciliar</a></div>
+          <div class="fonte-desc">Sexta Turma, HC 1.070.513, julgado em 14/04/2026, notícia oficial publicada em 14/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">09</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/07082026-Juiz-pode-fixar-percentual-do-salario-minimo-como-valor-da-pensao-para-o-caso-de-desemprego-do-alimentante.aspx" target="_blank">STJ · Juiz pode fixar percentual do salário-mínimo como pensão em caso de desemprego</a></div>
+          <div class="fonte-desc">Terceira Turma, relatora Min. Nancy Andrighi, 07/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">10</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/463107/stj-novas-regras-de-relevancia-entram-em-vigor-no-dia-3" target="_blank">Migalhas · STJ aprova Emenda Regimental 55 (filtro de relevância)</a></div>
+          <div class="fonte-desc">Publicada em 25/08/2026, vigência a partir de 03/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">11</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/462635/mesmo-com-filho-e-noivado-stj-nega-uniao-estavel-e-reconhece-namoro" target="_blank">Migalhas · STJ nega união estável post mortem e reconhece namoro qualificado</a></div>
+          <div class="fonte-desc">3ª Turma, REsp 2.227.076, disputa entre companheira sobrevivente e herdeiros, julgado 18/08/2026 por 3x2, relatora Min. Nancy Andrighi vencida.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">12</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/462887/stj-mantem-veto-a-rescisoria-para-adequar-tese-posterior" target="_blank">Migalhas · STJ mantém veto à rescisória para adequar tese posterior</a></div>
+          <div class="fonte-desc">Primeira Seção, Tema 1.299, relatora Min. Regina Helena Costa, 20/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">13</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.contabeis.com.br/noticias/78573/carf-institui-sistema-integrado-de-gestao-veja-regras-do-siges/" target="_blank">CARF institui Sistema Integrado de Gestão (SIGES)</a></div>
+          <div class="fonte-desc">Portaria CARF/MF nº 2.303/2026, DOU de 04/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">14</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.tst.jus.br/-/justica-do-trabalho-informa-acesso-indevido-ao-dejt" target="_blank">TST/CSJT · Justiça do Trabalho informa acesso indevido ao DEJT</a></div>
+          <div class="fonte-desc">Sistema indisponível desde 18/08/2026, Ato CSJT.GP nº 93 (uso do DJEN) em 20/08, comunicado oficial confirmando o acesso indevido em 23/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">15</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conjur.com.br/2026-ago-19/stf-amplia-medidas-protetivas-da-lei-maria-da-penha-para-fora-do-ambiente-domestico/" target="_blank">ConJur · STF amplia medidas protetivas da Lei Maria da Penha</a></div>
+          <div class="fonte-desc">Tema 1.412, ARE 1.537.713/MG, relator Min. Edson Fachin, julgado 19/08/2026.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Semanal</div>
+    <div class="footer-sub">Radar jurídico amplo · Edição nº 011 · 25 de agosto de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
