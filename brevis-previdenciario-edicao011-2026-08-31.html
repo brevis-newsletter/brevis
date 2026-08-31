@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 011 · 31 de agosto de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--dourado-claro); border-color: var(--dourado-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(201,168,76,0.16); color: var(--dourado-claro); }
+  .indice-item strong { color: var(--dourado-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--cinza-sub); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf3 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-cjf  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .badge-cn   { background: #EBF0FB; color: #1A3A6B; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,31,60,0.06); transition: box-shadow 0.18s, transform 0.18s; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(13,31,60,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-stj { background: linear-gradient(90deg, #5A2E7A, #8B5EA8); }
+  .bar-stf { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-tnu { background: linear-gradient(90deg, #2B5797, #6C97C9); }
+  .bar-inss { background: linear-gradient(90deg, #A8230E, #D9634A); }
+  .bar-cjf { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-trf4 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-trf3 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-cn { background: linear-gradient(90deg, #1A3A6B, #6C97C9); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--azul-escuro); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EDE9DF; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cinza-sub); }
+  .top-card-fonte a { color: var(--azul-claro); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--dourado); scroll-margin-top: 16px; }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--dourado); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--azul-escuro); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: var(--cinza-texto); margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--cinza-sub); }
+  .panorama-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico — <a href="#panel-01">Teto de Juros do Consignado</a>, <a href="#panel-02">Divisor Mínimo Pós-Reforma</a>, <a href="#panel-04">R$ 2,75 bi em RPVs</a> e <a href="#panel-05">Aposentadoria Especial no Congresso</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">31 de agosto de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">011</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">11 a 28 de agosto · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">7–9 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Destaque: STF confirma teto de juros do consignado do INSS</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">5 movimentos verificados</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 5</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar de Tribunais</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Curiosidade Previdenciária</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário nº 011, e a segunda metade de agosto teve um fio condutor claro: o crédito consignado. O STF encerrou, em 28/08/2026, o julgamento da ADI 7.759 — movida pela Associação Brasileira de Bancos contra a competência do INSS e do CNPS para fixar teto de juros no consignado de aposentados, pensionistas e beneficiários do BPC. Por unanimidade, o relator Min. Nunes Marques manteve a competência do INSS. É a Decisão do Dia. No mesmo pacote, o INSS publicou em 19/08 a Instrução Normativa nº 213, reforçando a portabilidade do consignado com verificação de identidade (biométrica ou por login gov.br) e prazo de 20 dias.</p>
+      <p>Do lado do cálculo de benefício, a 2ª Turma do STJ decidiu, em 18/08/2026 (REsp 2.193.427), afastar o "divisor mínimo" da Lei 9.876/99 para segurados que já tinham completado a carência antes de julho de 1994, mas se aposentaram sob as regras da EC 103/2019 — é a Tese Relevante desta edição, com potencial para abrir uma nova frente de análise revisional na carteira.</p>
+      <p>Também confirmamos que o CJF liberou, em 24/08/2026, R$ 2,75 bilhões em RPVs previdenciárias e assistenciais em todo o país (173 mil beneficiários) — vale checar o portal do TRF competente. E, no Congresso, a Câmara aprovou em 12/08/2026 urgência para o PLP 42/2023, que reverte pontos endurecidos pela Reforma de 2019 na aposentadoria especial, incluindo a redução da idade mínima hoje exigida — ainda pendente de votação no Plenário. Vamos ao que importa.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 5 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 5 movimentos do período</span>
+    </div>
+    <div class="section-intro">A pesquisa desta quinzena levantou candidatos adicionais — entre eles uma tese sobre decadência de revisão administrativa (Tema 1.370 do STJ) e normativas administrativas do INSS/MPS — que não resistiram à verificação em fonte primária: a maior parte era notícia de 2025 recirculando com data trocada para 2026, ou não teve confirmação independente. Preferimos publicar cinco movimentos confirmados a preencher a edição com itens frágeis.</div>
+
+    <div class="top-grid">
+
+      <!-- CARD 1 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 01 · CRÉDITO CONSIGNADO / COMPETÊNCIA REGULATÓRIA</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADI 7.759</span>
+          </div>
+          <div class="top-card-titulo">STF confirma, por unanimidade, que INSS e CNPS podem fixar teto de juros no consignado</div>
+          <div class="top-card-corpo">
+            <p>A Associação Brasileira de Bancos (ABBC) ajuizou a ADI 7.759 sustentando que definir teto de juros para empréstimo consignado seria matéria de competência exclusiva do Conselho Monetário Nacional e do Banco Central, não do INSS e do Conselho Nacional de Previdência Social (CNPS). O julgamento em plenário virtual começou em 21/08/2026 e terminou em 28/08/2026: todos os ministros acompanharam o voto do relator, Min. Nunes Marques, pela improcedência da ação — o teto fixado pelo INSS/CNPS com base no art. 6º, §1º, VI, da Lei 10.820/2003 foi mantido.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Oriente clientes com consignado ativo de que o teto de juros do INSS segue valendo — é argumento sólido contra qualquer tentativa de reprecificação ou cobrança de encargos acima do limite fixado pelo CNPS.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — decisão unânime, controle concentrado de constitucionalidade</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/463482/stf-inss-e-cnps-podem-fixar-teto-de-juros-do-consignado-a-aposentados" target="_blank">Migalhas · ADI 7.759 · concluído 28/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stj"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 02 · CÁLCULO DE BENEFÍCIO / REGRA DE TRANSIÇÃO</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">REsp 2.193.427</span>
+          </div>
+          <div class="top-card-titulo">STJ afasta divisor mínimo para quem já tinha carência completa antes de julho de 1994</div>
+          <div class="top-card-corpo">
+            <p>A 2ª Turma do STJ, sob relatoria da Min. Maria Thereza de Assis Moura, julgou em 18/08/2026 que o "divisor mínimo" criado pelo art. 3º, §2º, da Lei 9.876/99 não deve ser aplicado, cumulativamente com a regra de cálculo da EC 103/2019, a segurados que já haviam preenchido os requisitos de carência e tempo de contribuição antes de julho de 1994 — mesmo que a concessão do benefício tenha ocorrido só depois da Reforma da Previdência. A Turma determinou a revisão da renda mensal inicial e o pagamento das diferenças em atraso.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Levante clientes que se aposentaram sob a EC 103/2019 e confira se, antes de julho de 1994, já reuniam carência e tempo de contribuição suficientes — esses são os casos prioritários para análise revisional, à luz do precedente (decisão de Turma, ainda não vinculante).
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Decisão de Turma — ainda não é repetitivo</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/462669/stj-afasta-divisor-minimo-em-aposentadoria-concedida-apos-reforma" target="_blank">Migalhas · REsp 2.193.427 · 18/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-inss"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 03 · CRÉDITO CONSIGNADO / PROCEDIMENTO</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-inss">INSS</span>
+            <span class="badge badge-tema">IN PRES/INSS 213</span>
+          </div>
+          <div class="top-card-titulo">INSS disciplina a portabilidade de empréstimos consignados com biometria e prazo de 20 dias</div>
+          <div class="top-card-corpo">
+            <p>Assinada em 17/08/2026 por Ana Cristina Viana Silveira e publicada no DOU nº 156-A em 19/08/2026, a Instrução Normativa PRES/INSS nº 213 altera a IN nº 138/2022 e passa a exigir Termo de Autorização de Portabilidade — formalizado via aplicativo Meu INSS, com verificação de vivacidade biométrica facial ou, alternativamente, login gov.br com confirmação de dados bancários. A instituição financeira receptora tem até 20 dias, contados da autorização do titular, para confirmar a operação, sob pena de cancelamento automático; operações contratadas devem ser depositadas em até 7 dias úteis.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Atenção operacional</span>
+            O bloqueio de 90 dias para novo consignado em benefícios concedidos após 1º/04/2019 permanece — a norma não cria bloqueio novo, mas reforça o procedimento e os prazos de confirmação da portabilidade.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Norma vigente — publicada em 19/08/2026</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://idprevidenciario.com.br/instrucao-normativa-pres-inss-no-213-de-17-de-agosto-de-2026/" target="_blank">ID Previdenciário · IN PRES/INSS 213 · 17/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-cjf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 04 · PAGAMENTO DE BENEFÍCIOS / RPV</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-cjf">CJF</span>
+            <span class="badge badge-tema">RPV Nacional</span>
+          </div>
+          <div class="top-card-titulo">CJF libera R$ 2,75 bilhões em RPVs previdenciárias e assistenciais em todo o país</div>
+          <div class="top-card-corpo">
+            <p>O Conselho da Justiça Federal divulgou, em 24/08/2026, a liberação de R$ 3.310.954.173,24 em Requisições de Pequeno Valor autuadas em julho de 2026, distribuídas pelas 6 regiões da Justiça Federal — 220.110 processos e 280.193 beneficiários no total. Desse montante, R$ 2.745.257.735,10 correspondem especificamente a matérias previdenciárias e assistenciais (revisões de aposentadoria, auxílio-doença, pensões e outros benefícios), em 125.963 processos que somam 173.283 beneficiários. O TRF da 1ª Região recebeu o maior volume (R$ 1,08 bilhão).</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Consulte no portal do TRF competente se há RPV de cliente com processo previdenciário/assistencial autuado em julho/2026 — a liberação é nacional, então vale checar em qualquer região.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Valor já liberado pelo CJF — confirmar saque no portal do TRF</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.cjf.jus.br/cjf/noticias/2026/agosto/cjf-libera-o-pagamento-de-rpvs-a-mais-de-280-mil-beneficiarias-os" target="_blank">CJF · Liberação de RPVs · 24/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-cn"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 05 · APOSENTADORIA ESPECIAL / TRAMITAÇÃO LEGISLATIVA</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-cn">CÂMARA DOS DEPUTADOS</span>
+            <span class="badge badge-tema">PLP 42/2023</span>
+          </div>
+          <div class="top-card-titulo">Câmara aprova urgência para PLP que devolve pontos da aposentadoria especial retirados pela EC 103/2019</div>
+          <div class="top-card-corpo">
+            <p>Um dia após o IBDP apresentar propostas técnicas em seminário conjunto das Comissões de Trabalho e de Finanças e Tributação da Câmara (11/08/2026) — alertando que 95,5% das aposentadorias especiais concedidas hoje decorrem de decisão judicial —, o Plenário da Câmara aprovou, em 12/08/2026, requerimento de urgência para o PLP 42/2023. O projeto ataca três pontos da Reforma de 2019: reduz a idade mínima hoje exigida para aposentadoria especial (dos atuais 55, 58 ou 60 anos, conforme o grau de exposição a agentes nocivos, para patamares entre 40 e 48 anos), reverte a redução do valor inicial conforme o tempo de contribuição, e revoga a impossibilidade de considerar de forma diferenciada o tempo especial não convertido em outra modalidade de aposentadoria.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Ainda não é lei</span>
+            A aprovação da urgência apenas permite votação direta em Plenário, sem passar por comissões — até o fechamento desta edição, o PLP ainda não havia sido votado no mérito.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Em tramitação — urgência aprovada, sem votação de mérito</span>
+              <span class="status-pill status-favoravel">🟢 Potencialmente favorável ao segurado, se aprovado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://anffasindical.org.br/camara-aprova-urgencia-para-plp-da-aposentadoria-especial-apos-seminario-com-anffa-sindical-e-demais-entidades-sindicais/" target="_blank">Anffa Sindical · urgência aprovada 12/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STF · ADI 7.759 · Julgado — decisão unânime concluída em 28/08/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">STF mantém a competência do INSS e do CNPS para fixar teto de juros no crédito consignado</div>
+      <div class="decisao-body">
+        <p>O crédito consignado é a principal porta de endividamento de aposentados, pensionistas e beneficiários do BPC: o desconto ocorre direto na folha do benefício, o que praticamente elimina o risco de inadimplência para o banco. Desde 2003 (Lei 10.820), o INSS e o CNPS regulamentam limites de juros e de comprometimento de renda para essa modalidade — um mecanismo de proteção que a Associação Brasileira de Bancos (ABBC) resolveu contestar na ADI 7.759, sustentando que fixar teto de juros seria matéria de política monetária, de competência exclusiva do Conselho Monetário Nacional e do Banco Central.</p>
+        <p>O julgamento correu no plenário virtual entre 21 e 28 de agosto de 2026. O relator, Min. Nunes Marques, votou pela improcedência da ação: a seu ver, disciplinar o teto de juros do consignado não é formular política monetária ou de crédito nacional, mas sim regular uma modalidade específica de crédito ligada à administração de um benefício previdenciário — prerrogativa que a Lei 10.820/2003 atribui legitimamente ao INSS e ao CNPS. Todos os demais ministros acompanharam o voto, resultando em decisão unânime.</p>
+        <p>Por se tratar de controle concentrado de constitucionalidade, a decisão tem eficácia contra todos e efeito vinculante nos termos da Constituição e da Lei 9.868/1999, entendimento consolidado na prática do STF mesmo antes do trânsito em julgado formal da decisão de mérito. Na prática, o resultado consolida a competência do INSS e do CNPS para disciplinar os limites do consignado e esvazia, por ora, a tese central sustentada pelo setor bancário nesta ação.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        ADI 7.759: é constitucional a competência do INSS e do CNPS, com base no art. 6º, §1º, VI, da Lei 10.820/2003, para fixar limites de juros e de comprometimento de renda no crédito consignado de aposentados, pensionistas e beneficiários do BPC — não há invasão da competência do CMN ou do Banco Central.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Se algum cliente relatar proposta de renegociação de consignado com encargos acima do teto do CNPS, ou recusa de instituição em respeitar o limite, cite a ADI 7.759 como fundamento — a competência do INSS para fixar o teto está judicialmente consolidada.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Julgado — decisão unânime em controle concentrado</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.migalhas.com.br/quentes/463482/stf-inss-e-cnps-podem-fixar-teto-de-juros-do-consignado-a-aposentados" target="_blank">Migalhas</a> · STF ADI 7.759</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">Divisor mínimo pós-reforma: quando a EC 103/2019 não pode ser somada à trava da Lei 9.876/99</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">STJ afasta a aplicação cumulativa do divisor mínimo para segurados que já tinham carência antes de julho de 1994</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">O "divisor mínimo" (art. 3º, §2º, da Lei 9.876/99) é uma trava criada em 1999 para impedir que segurados com poucas contribuições após julho de 1994 inflassem artificialmente a renda mensal inicial: a soma dos salários de contribuição deve ser dividida por, no mínimo, 60% do número de meses decorridos entre julho de 1994 e a data do requerimento. A Reforma da Previdência de 2019 (EC 103) trouxe uma regra de transição própria, com média aritmética simples considerando 100% dos salários de contribuição. A controvérsia: o INSS vinha aplicando as duas regras juntas — a nova fórmula da EC 103 somada ao antigo divisor mínimo — mesmo para quem já tinha completado a carência antes de 1994, um bis in idem que reduzia artificialmente o valor do benefício.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Base legal</span>
+        <div class="tese-bloco-texto">Art. 3º, §2º, da Lei 9.876/1999 (divisor mínimo) em confronto com as regras de transição da Emenda Constitucional 103/2019 e com a Lei 14.331/2022, que instituiu posteriormente um divisor fixo de 108 meses para outras hipóteses de transição.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como o STJ decidiu neste caso</span>
+        <div class="tese-bloco-texto">A 2ª Turma do STJ (REsp 2.193.427, relatora Min. Maria Thereza de Assis Moura, julgado em 18/08/2026) considerou que, para o segurado que já preenchia os requisitos de carência e tempo de contribuição antes de julho de 1994, aplicar cumulativamente o antigo divisor mínimo sobre a nova regra de cálculo da EC 103/2019 é incompatível com a finalidade original do instituto — criado justamente para tratar de quem contribuiu pouco após o Plano Real, não de quem já tinha direito adquirido a requisitos anteriores a ele. O Tribunal determinou a revisão da renda mensal inicial e o pagamento de diferenças retroativas. É decisão de Turma, com efeito direto apenas ao processo julgado — ainda não é tese repetitiva vinculante para todo o país.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que esperar</span>
+        <div class="tese-bloco-texto">Dado o potencial impacto orçamentário — a tese pode alcançar todo segurado aposentado sob a EC 103/2019 que já tinha carência anterior a 1994 —, é esperável que a Procuradoria-Geral Federal busque a afetação do tema à 1ª Seção do STJ, pela sistemática dos recursos repetitivos, para tentar reverter ou modular os efeitos da tese. Até lá, o REsp 2.193.427 vale como precedente persuasivo, não vinculante, e cada ação deve reunir prova documental de que a carência estava completa antes de julho de 1994.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Decisão de Turma — sem afetação a repetitivo até o momento</span>
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área — as frentes cobertas nesta edição</span>
+    </div>
+    <div class="section-intro">Os cinco movimentos confirmados desta quinzena, lado a lado.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item" id="panel-01">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Crédito Consignado · Competência Regulatória</div>
+          <div class="panorama-titulo">STF mantém teto de juros do consignado fixado pelo INSS/CNPS</div>
+          <div class="panorama-texto">ADI 7.759, julgamento unânime concluído em 28/08/2026. Ver Decisão do Dia e Movimento 01.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável ao segurado</span><span class="panorama-fonte">migalhas.com.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-02">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Cálculo de Benefício · Regra de Transição</div>
+          <div class="panorama-titulo">STJ afasta divisor mínimo para quem já tinha carência antes de jul/1994</div>
+          <div class="panorama-texto">REsp 2.193.427, 2ª Turma, julgado em 18/08/2026 — decisão de Turma, ainda não repetitivo. Ver detalhe na Tese Relevante e no Movimento 02.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Decisão de Turma</span><span class="panorama-fonte">migalhas.com.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-03">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Crédito Consignado · Procedimento</div>
+          <div class="panorama-titulo">INSS disciplina portabilidade do consignado com biometria e prazo de 20 dias</div>
+          <div class="panorama-texto">IN PRES/INSS nº 213/2026, assinada em 17/08 e publicada em 19/08/2026. Ver detalhe no Movimento 03.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Norma vigente</span><span class="panorama-fonte">idprevidenciario.com.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-04">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Pagamento de Benefícios · RPV</div>
+          <div class="panorama-titulo">CJF libera R$ 2,75 bilhões em RPVs previdenciárias e assistenciais no país inteiro</div>
+          <div class="panorama-texto">125.963 processos, 173.283 beneficiários, divulgado em 24/08/2026. Ver detalhe no Movimento 04 e em Dinheiro na Mesa.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Liberado pelo CJF</span><span class="panorama-fonte">cjf.jus.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-05">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">Aposentadoria Especial · Tramitação Legislativa</div>
+          <div class="panorama-titulo">Câmara aprova urgência para PLP 42/2023, que reverte restrições da EC 103/2019</div>
+          <div class="panorama-texto">Urgência aprovada em 12/08/2026, após seminário com participação do IBDP em 11/08 — ainda sem votação de mérito. Ver detalhe no Movimento 05.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Em tramitação</span><span class="panorama-fonte">anffasindical.org.br</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR DE TRIBUNAIS -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tnu" style="flex-shrink:0;margin-top:2px;">TNU</span>
+      <div>
+        <div class="radar-titulo">Sem movimentação própria da TNU neste recorte de 18 a 31 de agosto</div>
+        <div class="radar-texto">O Tema 384 (complementação de contribuição com alíquota reduzida), destaque da edição nº 010, segue sendo comentado pela imprensa jurídica nesta quinzena — mas é o mesmo julgamento de 06/08/2026 já coberto, sem fato novo.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Alerta de verificação: Tema 1.370 não é fato novo de 2026</div>
+        <div class="radar-texto">O Tema 1.370 (se o indeferimento de pedido administrativo de revisão abre novo prazo decadencial de 10 anos) foi afetado pela 1ª Seção em 12/08/2025, com acórdão publicado no DJEN em 19/08/2025 — não em 2026. Ao menos um artigo jurídico circulou nesta quinzena com data de agosto de 2026, como se fosse uma nova sessão de julgamento. Verificamos na numeração oficial do acórdão de afetação: é o mesmo evento de 2025. O tema segue afetado, sem julgamento de mérito, e os recursos e ações no tema seguem sobrestados.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">R$ 2,75 bilhões em RPVs previdenciárias e assistenciais liberados em todo o país — hora de consultar o portal</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>Diferente de uma tese em construção, este é dinheiro que o CJF já liberou. Como a liberação é nacional — abrangendo as 6 regiões da Justiça Federal —, vale a checagem para clientes de qualquer estado, não só de uma região específica.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟢 Impacto Alto ·</span>
+        <span class="dinheiro-header-title">Pagamento de Benefícios · RPVs de julho/2026</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Público-alvo: clientes com ação previdenciária ou assistencial julgada procedente em qualquer região da Justiça Federal, com RPV expedida e autuada em julho de 2026 — revisões de aposentadoria, auxílio-doença, pensões e outros benefícios.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Consulte no portal do TRF competente se há RPV do cliente incluída no lote de 125.963 processos previdenciários/assistenciais deste repasse (R$ 2,75 bilhões, 173.283 pessoas beneficiadas)</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Verifique a disponibilidade efetiva para saque antes de prometer prazo ao cliente — o CJF informa a liberação, mas a confirmação para levantamento é feita no sistema do TRF</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Assim que confirmado o depósito, providencie o alvará e o desconto de honorários contratuais conforme o combinado</span>
+          </div>
+        </div>
+        <p style="margin-top:14px; font-weight:600; color:#2D1B6B;">O total liberado pelo CJF em todas as naturezas processuais foi de R$ 3,31 bilhões, para 220.110 processos e 280.193 beneficiários em todo o país — o TRF da 1ª Região recebeu o maior volume (R$ 1,08 bilhão).</p>
+        <span class="dinheiro-fonte">Fonte: CJF · liberação divulgada em 24/08/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Cinco ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Levantar clientes aposentados sob a EC 103/2019 com carência pré-1994</div>
+          <div class="amanha-texto">REsp 2.193.427: confira se o INSS aplicou o divisor mínimo da Lei 9.876/99 cumulativamente com a regra de cálculo da reforma — se sim, avalie ação revisional.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Avisar clientes com consignado ativo sobre a decisão do STF</div>
+          <div class="amanha-texto">ADI 7.759: o teto de juros fixado pelo INSS/CNPS está confirmado — útil para contestar qualquer cobrança ou renegociação acima do limite.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Consultar RPVs previdenciárias no portal do TRF competente</div>
+          <div class="amanha-texto">R$ 2,75 bilhões liberados pelo CJF para 125.963 processos previdenciários/assistenciais autuados em julho/2026, em todo o país — confirme a disponibilidade para saque.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-texto" style="margin-top:0;"></div>
+          <div class="amanha-titulo">Acompanhar a tramitação do PLP 42/2023 sem prometer aprovação</div>
+          <div class="amanha-texto">A urgência foi aprovada, mas o projeto ainda não foi votado no mérito — não anuncie a clientes que a redução da idade mínima na aposentadoria especial já está garantida.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Cobrar prazo de 20 dias em portabilidades de consignado paradas</div>
+          <div class="amanha-texto">IN PRES/INSS 213/2026: se a instituição financeira receptora não confirmar a portabilidade em até 20 dias da autorização do titular, o cancelamento é automático — oriente o cliente a guardar o comprovante com a data exata.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Cinco perfis prioritários deste período. Cada critério é um filtro para aplicar agora na carteira.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Aposentados sob a EC 103/2019 que já tinham carência e tempo de contribuição completos antes de julho de 1994</strong> — verificar se o divisor mínimo foi aplicado indevidamente no cálculo da RMI.
+            <span class="mapear-tese">→ Favorável, decisão de Turma · STJ REsp 2.193.427</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Clientes com consignado ativo que relataram cobrança de juros acima do teto do CNPS ou pressão para renegociação</strong> — orientar com base na decisão do STF.
+            <span class="mapear-tese">→ Favorável, decisão unânime · STF ADI 7.759</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Clientes com pedido de portabilidade de consignado parado ou sem resposta da instituição financeira receptora</strong> — cobrar o prazo de 20 dias da nova IN 213/2026.
+            <span class="mapear-tese">→ Norma vigente · INSS IN PRES/INSS 213</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Clientes com ação previdenciária/assistencial julgada procedente, com RPV autuada em julho/2026, em qualquer região</strong> — consultar no portal do TRF competente se já há disponibilidade para saque.
+            <span class="mapear-tese">→ Liberado pelo CJF · Nacional</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Clientes com pedido de aposentadoria especial negado por idade mínima após a EC 103/2019</strong> — mapear para eventual ação judicial ou, se o PLP 42/2023 avançar, para revisão administrativa futura.
+            <span class="mapear-tese">→ Em tramitação · PLP 42/2023, Câmara dos Deputados</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">REsp 2.193.427 é decisão de Turma — não trate como tese pacificada</div>
+          <div class="atencao-texto">Não é recurso repetitivo. Serve como precedente persuasivo, mas cada ação deve reunir prova documental de que a carência estava completa antes de julho de 1994, e o INSS ou a PGF podem buscar reverter a tese em instâncias superiores.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">ADI 7.759 vale para consignado do INSS — não confunda com outras linhas de crédito</div>
+          <div class="atencao-texto">A decisão trata especificamente do teto de juros do consignado vinculado a benefícios do INSS/RGPS, com base na Lei 10.820/2003. Não se aplica automaticamente a consignados de servidores públicos (RPPS) ou a outras modalidades de crédito com desconto em folha fora desse escopo.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Prazo de 20 dias da IN 213/2026 corre da autorização do titular, não do pedido</div>
+          <div class="atencao-texto">Se a instituição financeira receptora não confirmar a operação de portabilidade dentro desse prazo, o cancelamento é automático — oriente o cliente a guardar o comprovante de autorização via Meu INSS com a data exata.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">R$ 3,31 bilhões é o total geral de RPVs — não confunda com o valor previdenciário</div>
+          <div class="atencao-texto">Do total liberado, R$ 2,75 bilhões são especificamente RPVs previdenciárias e assistenciais (125.963 processos). Use o valor correto ao comunicar clientes ou colegas.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Aprovação de urgência do PLP 42/2023 não é aprovação do projeto</div>
+          <div class="atencao-texto">A urgência apenas dispensa a passagem por comissões, permitindo votação direta em Plenário. O mérito — redução da idade mínima na aposentadoria especial — ainda não foi votado.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 CURIOSIDADE PREVIDENCIÁRIA -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Curiosidade previdenciária</span>
+    </div>
+    <div class="section-body">
+      <p>O "divisor mínimo", protagonista da Tese Relevante desta edição, nasceu junto com o fator previdenciário, na mesma Lei 9.876, de 26 de novembro de 1999 — uma das reformas mais controversas da história do RGPS. À época, o legislador temia que segurados com poucas contribuições depois de julho de 1994 (quando o Plano Real estabilizou os salários de contribuição) pudessem inflar artificialmente sua renda mensal inicial recolhendo valores altos por pouco tempo. A solução foi obrigar que a média dos salários de contribuição fosse dividida por, no mínimo, 60% dos meses decorridos entre julho de 1994 e o pedido do benefício — mesmo que o segurado tivesse contribuído por menos tempo que isso. Passados 27 anos, a regra criada para conter um tipo de manobra segue gerando disputa judicial, agora por um motivo quase oposto: aplicá-la sem distinção pode penalizar justamente quem contribuiu regularmente desde antes da própria lei existir.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Os cinco movimentos desta edição giram em torno de uma mesma tensão: até onde vai a proteção do segurado sobre o próprio benefício — seja no valor calculado, seja no crédito tomado com base nele, seja no acesso original ao direito.</div>
+
+    <div class="mercado-corpo">
+      <p>Na ADI 7.759, o STF reforçou que o benefício previdenciário não é uma garantia bancária qualquer: por ser verba de natureza alimentar, o Estado pode — e deve — limitar o custo do crédito consignado para impedir que a segurança do desconto em folha se converta em mecanismo de superendividamento do segurado. É uma derrota clara para o setor bancário, complementada pela nova IN do INSS sobre portabilidade, que fecha pela via administrativa uma lacuna que facilitava fraude e atraso.</p>
+
+      <p>No REsp 2.193.427, o STJ tratou do outro lado da mesma moeda: o valor do próprio benefício. Ao afastar a aplicação cumulativa do divisor mínimo para quem já tinha direito adquirido a requisitos antes de 1994, a Corte lembrou que regras de transição criadas para resolver um problema específico não podem ser somadas, sem critério, a normas posteriores — sob pena de prejudicar exatamente quem a regra original não pretendia atingir.</p>
+
+      <p>Já no Congresso, a movimentação em torno do PLP 42/2023 mostra o Legislativo tentando corrigir, pela via política, o que a EC 103/2019 endureceu na aposentadoria especial — num contexto em que, segundo o próprio IBDP, mais de 95% das concessões hoje dependem da Justiça. E o repasse de R$ 2,75 bilhões em RPVs previdenciárias em todo o país é o lembrete de sempre: parte considerável do trabalho previdenciário termina numa etapa simples, mas que exige atenção operacional, de checagem de portal e levantamento de valores.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Nenhum dos cinco movimentos desta edição é definitivo: o divisor mínimo ainda pode ser afetado a repetitivo, o PLP 42/2023 ainda não foi votado no mérito, e a nova IN de portabilidade ainda não tem histórico de aplicação prática. Acompanhar a evolução de cada um vale mais do que tratá-los como capítulo encerrado.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">O benefício previdenciário nasce para sustentar quem já contribuiu; regulá-lo bem, inclusive no crédito que se toma sobre ele, é impedir que a proteção construída ao longo de uma vida de trabalho seja consumida em poucos meses de juros.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 011</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/463175/stf-julga-se-inss-pode-fixar-teto-de-juros-do-consignado-a-aposentados" target="_blank">Migalhas · STF julga se INSS pode fixar teto de juros do consignado</a></div>
+          <div class="fonte-desc">Início do julgamento da ADI 7.759 no plenário virtual, 21/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/463482/stf-inss-e-cnps-podem-fixar-teto-de-juros-do-consignado-a-aposentados" target="_blank">Migalhas · STF: INSS e CNPS podem fixar teto de juros do consignado</a></div>
+          <div class="fonte-desc">Conclusão unânime da ADI 7.759, 28/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/462669/stj-afasta-divisor-minimo-em-aposentadoria-concedida-apos-reforma" target="_blank">Migalhas · STJ afasta divisor mínimo em aposentadoria concedida após reforma</a></div>
+          <div class="fonte-desc">REsp 2.193.427, 2ª Turma, julgado em 18/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://idprevidenciario.com.br/instrucao-normativa-pres-inss-no-213-de-17-de-agosto-de-2026/" target="_blank">ID Previdenciário · Instrução Normativa PRES/INSS nº 213/2026</a></div>
+          <div class="fonte-desc">Portabilidade de empréstimos consignados, assinada 17/08 e publicada 19/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.cjf.jus.br/cjf/noticias/2026/agosto/cjf-libera-o-pagamento-de-rpvs-a-mais-de-280-mil-beneficiarias-os" target="_blank">CJF · Libera o pagamento de RPVs a mais de 280 mil beneficiários</a></div>
+          <div class="fonte-desc">Divulgado em 24/08/2026. R$ 2,75 bilhões específicos de matéria previdenciária/assistencial, dentro de um total nacional de R$ 3,31 bilhões.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://anffasindical.org.br/camara-aprova-urgencia-para-plp-da-aposentadoria-especial-apos-seminario-com-anffa-sindical-e-demais-entidades-sindicais/" target="_blank">Anffa Sindical · Câmara aprova urgência para PLP da aposentadoria especial</a></div>
+          <div class="fonte-desc">Urgência para o PLP 42/2023 aprovada em 12/08/2026, após seminário na Câmara com participação do IBDP.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ieprev.com.br/noticias/stj-afeta-tema-repetitivo-1370-sobre-decadencia-em-revisoes-previdenciarias" target="_blank">IEPREV · STJ afeta Tema Repetitivo 1.370 sobre decadência em revisões previdenciárias</a></div>
+          <div class="fonte-desc">Confirma a data real de afetação do Tema 1.370: agosto de 2025, não 2026 — referência usada nesta edição para a nota do Radar de Tribunais.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 011 · 31 de agosto de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
