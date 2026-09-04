@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Semanal — Edição nº 012 · 04 de setembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --creme: #FBF8F1;
+    --creme-forte: #F0E9D8;
+    --accent: #c8371a;
+    --accent-claro: #E8C6BC;
+    --accent-sutil: #FBEAE5;
+    --azul: #1a4c8c;
+    --azul-claro: #4D7AB8;
+    --verde: #1a6b42;
+    --verde-claro: #E8F5EE;
+    --marrom: #7a4a00;
+    --roxo: #5c2d82;
+    --muted: #7a7670;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #2E1811; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--paper); box-shadow: 0 0 90px rgba(0,0,0,0.55); }
+  .back-bar { background: var(--ink); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.75); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+  .back-link:hover { color: var(--accent-claro); }
+  .header { background: var(--ink); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.22); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--paper); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--accent); }
+  .header-sub { font-size: 12px; color: rgba(247,244,238,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(200,55,26,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--accent-claro); border-color: var(--accent-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(200,55,26,0.22); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(200,55,26,0.65); }
+  .header-meta-value { font-size: 12.5px; color: rgba(247,244,238,0.88); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--accent) 0%, #8B2410 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--paper); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--paper); border-radius: 50%; opacity: 0.5; }
+  .indice { background: var(--ink); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,198,188,0.7); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(200,55,26,0.2); color: var(--accent-claro); }
+  .indice-item strong { color: var(--accent-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--accent), transparent); margin: 0 48px; opacity: 0.25; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: #2A2622; }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--accent-sutil); border-left: 4px solid var(--accent); padding: 30px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--ink); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-civ { background: #EBF0FB; color: var(--azul); }
+  .badge-trib { background: #E8F5EE; color: var(--verde); }
+  .badge-trab { background: #FFF3E0; color: var(--marrom); }
+  .badge-hold { background: #F5EFFF; color: var(--roxo); }
+  .badge-crim { background: #FDF0EE; color: var(--accent); }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-stj  { background: #F0EBF5; color: var(--roxo); }
+  .badge-tst  { background: #FFF3E0; color: var(--marrom); }
+  .badge-carf { background: #E8F5EE; color: var(--verde); }
+  .badge-tema { background: #F5EFFF; color: var(--roxo); }
+  .badge-fam  { background: #FDECF3; color: #A8104A; }
+  .badge-leg  { background: #E6F0FF; color: #1A3A8B; }
+  .badge-prev { background: #FDF6E3; color: #8B5E00; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: var(--verde); }
+  .status-atencao     { background: var(--accent-sutil); color: var(--accent); }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(15,14,12,0.06); transition: box-shadow 0.18s, transform 0.18s; scroll-margin-top: 16px; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(15,14,12,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-trib { background: linear-gradient(90deg, #1a6b42, #4FA875); }
+  .bar-trab { background: linear-gradient(90deg, #7a4a00, #C9973F); }
+  .bar-civ  { background: linear-gradient(90deg, #1a4c8c, #6C97C9); }
+  .bar-hold { background: linear-gradient(90deg, #5c2d82, #A583C9); }
+  .bar-crim { background: linear-gradient(90deg, #c8371a, #D9634A); }
+  .bar-stf  { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-leg  { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-prev { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: #2A2622; margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #16371F; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--accent-sutil); border-left: 3px solid var(--accent); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EEE7D8; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); }
+  .top-card-fonte a { color: var(--azul); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--ink); border-radius: 6px; padding: 30px 34px; color: var(--paper); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.12); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.18); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(200,55,26,0.22); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--paper); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(247,244,238,0.82); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(200,55,26,0.25); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--accent-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--accent); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(247,244,238,0.88); border-left: 2px solid var(--azul-claro); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #8FB4E8; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .decisao-fonte a { color: var(--accent-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--creme-forte); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: #2A2622; }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DED5BE; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--accent); }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--accent); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: #2A2622; margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--muted); }
+  .panorama-fonte a { color: var(--azul); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EEE7D8; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul); opacity: 0.3; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .mapear-box { background: var(--ink); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(247,244,238,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.045); border-radius: 3px; border-left: 2px solid var(--accent); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent-claro); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(247,244,238,0.85); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(200,55,26,0.7); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--accent-sutil); border: 1px solid #F0C5B8; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--accent); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .numero-card { background: linear-gradient(135deg, var(--ink) 0%, #2A231C 100%); border-radius: 5px; padding: 32px; color: var(--paper); position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--accent); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--paper); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(247,244,238,0.7); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(200,55,26,0.55); margin-top: 16px; letter-spacing: 1px; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--ink); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: #2A2622; }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--creme-forte); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--ink); font-weight: 500; border-left: 3px solid var(--azul); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E0D9C6; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--accent); opacity: 0.24; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--ink); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--muted); line-height: 1.55; }
+  .footer { background: var(--ink); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .footer-back-link:hover { color: var(--accent-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--accent); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(247,244,238,0.32); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(200,55,26,0.14); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(247,244,238,0.26); line-height: 1.7; font-style: italic; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Jurídica Geral · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Semanal</span></div>
+    <div class="header-sub">Radar jurídico amplo — <a href="#card-trabalhista">Trabalhista</a>, <a href="#card-previdenciario">Previdenciário</a>, <a href="#card-civel">Cível</a>, <a href="#card-tributario">Tributário</a>, <a href="#card-holding">Holding</a> e <a href="#card-destaque">Destaque</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">04 de setembro de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">012</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">31 de agosto a 3 de setembro · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">6–8 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Semanal</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">31/08 a 03/09</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">6 áreas cobertas · 8 movimentos · 8 ações imediatas</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 8</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Semanal nº 012. O critério de inclusão é notícia ou ato divulgado entre 31 de agosto e 3 de setembro de 2026. O destaque da semana é o STF fixando, na ADC 80, o parâmetro de R$ 5 mil para a presunção de hipossuficiência na Justiça do Trabalho — não é uma vedação de acesso, é uma inversão do ônus da prova acima desse valor, indexado à faixa de isenção do Imposto de Renda, não a salário-mínimo. No mesmo dia (3/09), entrou em vigor a Emenda Regimental 55 do STJ: todo recurso especial passa a precisar de um tópico próprio demonstrando a relevância da questão federal, sob pena de nem ser conhecido.</p>
+      <p>No previdenciário, a Câmara dos Deputados aprovou projeto que reduz o tempo mínimo de atividade militar para aposentadoria integral de policiais e bombeiros militares — ainda depende do Senado. No tributário, a Receita Federal sinalizou 2028 como meta de obrigatoriedade do split payment da reforma tributária (sem ato conjunto formal publicado até agora) e o CARF cancelou R$ 2,2 bilhões em autuações contra a B3 por tributação de variação cambial. Em holding e patrimonial, o STF suspendeu — por pedido de vista do Min. Gilmar Mendes — o julgamento sobre a imunidade de ITBI na integralização de imóveis ao capital de empresas com atividade preponderantemente imobiliária (Tema 1.348), com placar parcial de 3x0 favorável ao contribuinte antes da suspensão. E no destaque livre, o Min. André Mendonça decidiu levar ao Plenário do STF a decisão sobre se o Min. Alexandre de Moraes deve ser formalmente incluído numa investigação ligada ao caso do Banco Master.</p>
+      <p>Itens descartados nesta edição após checagem: uma notícia recirculando sobre impenhorabilidade de imóvel de espólio como bem de família, que é, na verdade, a mesma decisão do STJ de junho de 2025 (REsp 2.111.839/RS) republicada com data trocada — o mesmo padrão de reciclagem já flagrado no Tema 1.370; um terceiro item previdenciário que não conseguimos confirmar em fonte primária dentro do prazo (Tema 384 da TNU, com pedido de vista pendente, e os Informativos de Jurisprudência do STJ nº 898 e 899, cujo conteúdo integral não foi possível acessar); e referências à pauta futura do STF/STJ sobre Funrural e PIS/Cofins de seguradoras, que só têm sessão marcada, não julgamento concluído, dentro desta janela.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 8 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 8 movimentos do período</span>
+    </div>
+
+    <div class="top-grid">
+
+      <div class="top-card" id="card-trabalhista">
+        <div class="top-card-bar bar-trab"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 01 · TRABALHISTA / PROCESSUAL</div>
+            <span class="impacto-badge">🔴 Impacto Altíssimo</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADC 80</span>
+          </div>
+          <div class="top-card-titulo">STF fixa R$ 5 mil como parâmetro de renda para gratuidade automática na Justiça do Trabalho</div>
+          <div class="top-card-corpo">
+            <p>O Plenário do STF concluiu, em 03/09/2026 (quinta-feira), o julgamento da ADC 80, ajuizada pela Consif (Confederação Nacional do Sistema Financeiro) contra a Súmula 463 do TST e os §§3º-4º do art. 790 da CLT. Por 7 votos a 2, prevaleceu a divergência aberta pelo Min. Gilmar Mendes: quem recebe até R$ 5 mil tem presunção relativa de hipossuficiência para obter gratuidade de justiça; quem ganha acima disso não fica impedido de pedir o benefício, mas precisa comprovar documentalmente a impossibilidade de arcar com as custas. O relator, Min. Edson Fachin, ficou vencido junto com a Min. Cármen Lúcia.</p>
+            <p>O valor não é fixo nem vinculado a salário-mínimo ou ao teto do RGPS — o STF indexou o parâmetro à faixa de isenção do Imposto de Renda, com atualização automática (ou por IPCA, na ausência de reajuste anual). É continuação da ADI 5.766 (2021-2022), que tratou de honorários de sucumbência e periciais cobrados de beneficiários da gratuidade — a ADC 80 trata do critério de acesso em si.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Ação imediata na carteira</span>
+            Clientes com ação trabalhista em curso que recebem acima de R$ 5 mil e ainda não comprovaram hipossuficiência documentalmente podem ter a gratuidade questionada a partir de agora — reúna a documentação antes que a parte contrária suscite o tema.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — Plenário, 7x2</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://conjur.com.br/2026-set-03/stf-fixa-renda-de-r-5-mil-como-parametro-para-concessao-de-justica-gratuita/" target="_blank">ConJur · ADC 80 · julgado 03/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-previdenciario">
+        <div class="top-card-bar bar-prev"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 02 · PREVIDENCIÁRIO / MILITAR</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-leg">Câmara dos Deputados</span>
+            <span class="badge badge-prev">Aposentadoria Militar</span>
+          </div>
+          <div class="top-card-titulo">Câmara aprova redução do tempo mínimo para aposentadoria integral de PMs e bombeiros militares</div>
+          <div class="top-card-corpo">
+            <p>O Plenário da Câmara dos Deputados aprovou, em 01/09/2026, projeto de lei que reduz o tempo mínimo de atividade estritamente militar exigido para aposentadoria integral de policiais e bombeiros militares estaduais — de 30 para 25 anos para homens, e de 32 para 22 anos para mulheres —, passando a admitir que até 10 anos de atividade fora da farda sejam computados no tempo total de serviço.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Ainda não é lei — depende do Senado</span>
+            Não oriente clientes militares como se a regra já estivesse valendo. O projeto segue para o Senado Federal e depois para sanção presidencial antes de produzir qualquer efeito prático.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Aprovado na Câmara — aguarda Senado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.dgabc.com.br/Noticia/4344597/camara-aprova-projeto-que-facilita-aposentadoria-integral-para-policiais-e-bombeiros" target="_blank">Diário do Grande ABC · Câmara dos Deputados · 01–02/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-civel">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 03 · CÍVEL / PROCESSUAL</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Emenda Regimental 55</span>
+          </div>
+          <div class="top-card-titulo">Filtro de relevância do STJ entra em vigor: recurso especial sem esse tópico pode nem ser conhecido</div>
+          <div class="top-card-corpo">
+            <p>A Emenda Regimental 55 do STJ, que regulamenta a Lei 15.484/2026, entrou em vigor em 03/09/2026. Todo recurso especial passa a precisar demonstrar, em tópico próprio e fundamentado, a relevância econômica, política, social ou jurídica da questão federal discutida — inclusive nas hipóteses em que já existe presunção legal de relevância. A regra vale para recursos contra acórdãos publicados a partir dessa data.</p>
+            <p>O presidente do STJ e os ministros relatores podem rejeitar liminarmente recursos sem essa demonstração. Não confundir com a exigência de "resumo estruturado" da Emenda Regimental 53/2026, que ainda não entrou em vigor — depende de portaria da presidência do STJ formalizando ajustes tecnológicos no peticionamento eletrônico.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Risco de inadmissão liminar</span>
+            Toda petição-modelo de recurso especial do escritório precisa ser revisada agora — a ausência do tópico de relevância é motivo suficiente para o recurso nem ser conhecido, a partir de hoje.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-atencao">⚠ Vigente desde 03/09/2026</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/463107/stj-novas-regras-de-relevancia-entram-em-vigor-no-dia-3" target="_blank">Migalhas · Emenda Regimental 55 · vigência 03/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-tributario">
+        <div class="top-card-bar bar-trib"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 04 · TRIBUTÁRIO / REGULATÓRIO</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-leg">Receita Federal</span>
+            <span class="badge badge-tema">Split Payment</span>
+          </div>
+          <div class="top-card-titulo">Receita sinaliza 2028 como meta para obrigatoriedade do split payment — mas regra formal ainda não saiu</div>
+          <div class="top-card-corpo">
+            <p>Representantes da Receita Federal declararam publicamente, em 30/08/2026 (repercutido amplamente em 31/08 e 02/09), que a meta de obrigatoriedade geral do split payment — mecanismo que separa automaticamente o valor de IBS/CBS no momento do pagamento — é 2028. Não há, porém, lei complementar ou decreto novo: o fundamento é o art. 35, §2º, da LC 214/2025, que prevê um ato conjunto do Comitê Gestor do IBS e da Receita Federal para definir a implementação gradual — esse ato ainda não foi publicado.</p>
+            <p>O cronograma indicado é: 2027, adoção facultativa e gradual em operações B2B (começando por transferência eletrônica e Pix estático); 2028, meta de obrigatoriedade, condicionada à adaptação de mais de 200 instituições financeiras e meios de pagamento. Até lá, empresas seguem emitindo notas e recolhendo IBS/CBS por DARF mensal.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Trate como planejamento preventivo, não como obrigação legal já fixada: oriente clientes com alto volume de vendas parceladas, margens reduzidas ou ciclos financeiros longos a mapear o impacto no caixa a partir de 2027/2028, sem tratar a data como lei.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Meta declarada — falta ato conjunto formal</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.infomoney.com.br/business/receita-preve-obrigatoriedade-do-split-payment-para-2028-saiba-o-que-falta/" target="_blank">InfoMoney · Split payment · 30/08/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-tributario-2">
+        <div class="top-card-bar bar-trib"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 05 · TRIBUTÁRIO / CONTENCIOSO</div>
+            <span class="impacto-badge">🟢 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-carf">CARF</span>
+            <span class="badge badge-trib">Variação Cambial</span>
+          </div>
+          <div class="top-card-titulo">CARF cancela R$ 2,2 bilhões em autuações contra a B3 sobre variação cambial</div>
+          <div class="top-card-corpo">
+            <p>A Câmara Superior de Recursos Fiscais do CARF cancelou definitivamente, em 01/09/2026, autuações fiscais de aproximadamente R$ 2,2 bilhões contra a B3, relacionadas à tributação de variação cambial sobre investimento e venda de participação no CME Group.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Precedente relevante para qualquer contencioso sobre tributação de variação cambial em operações societárias ou investimentos no exterior — vale mapear clientes com autuações semelhantes em curso.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-atencao">⚠ Número do processo não confirmado — checar no e-CARF</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.ledware.com.br/2026/09/02/carf-cancela-22-bilhoes-autuacoes-b3/" target="_blank">Ledware · CARF cancela autuações contra a B3 · 01/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-trabalhista-2">
+        <div class="top-card-bar bar-trab"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 06 · TRABALHISTA</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-trab">TRT-1</span>
+            <span class="badge badge-trab">Dispensa Discriminatória</span>
+          </div>
+          <div class="top-card-titulo">Justiça do Trabalho inverte ônus da prova em dispensa de bancária com doença grave</div>
+          <div class="top-card-corpo">
+            <p>A 39ª Vara do Trabalho do Rio de Janeiro (TRT-1) anulou, em sentença de 02/09/2026 (processo 0101188-15.2025.5.01.0064, juiz Renan Rigueira Carneiro Leão), a dispensa de uma gerente bancária de 68 anos com meningioma e cardiomiopatia, determinou sua reintegração e fixou R$ 200 mil por danos morais — aplicando a presunção de dispensa discriminatória em caso de doença grave, com ônus da prova invertido para o empregador.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Sentença de 1ª instância, sujeita a recurso</span>
+            Ainda não é entendimento consolidado de tribunal superior — use como indicativo de tendência para orientar clientes empregadores em desligamentos envolvendo empregados com doença grave, com essa ressalva.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Sentença de 1º grau — sujeita a recurso</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://conjur.com.br/2026-set-02/empresa-deve-comprovar-que-dispensa-de-trabalhador-nao-foi-discriminatoria/" target="_blank">ConJur · TRT-1 · 02/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-holding">
+        <div class="top-card-bar bar-hold"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 07 · HOLDING / PATRIMONIAL</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Tema 1.348</span>
+          </div>
+          <div class="top-card-titulo">STF suspende julgamento sobre imunidade de ITBI em holdings imobiliárias</div>
+          <div class="top-card-corpo">
+            <p>O Plenário do STF realizou, em 02–03/09/2026, sustentações orais no RE 1.495.108 (Tema 1.348, relator Min. Edson Fachin), que discute se a imunidade de ITBI na integralização de imóveis ao capital social se aplica mesmo quando a atividade preponderante da empresa é imobiliária. O julgamento foi suspenso por pedido de vista do Min. Gilmar Mendes, sem tese fixada — o placar parcial informado é de 3x0 favorável ao contribuinte.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Julgamento suspenso — sem tese fixada</span>
+            Não oriente holdings patrimoniais como se a imunidade já estivesse garantida em qualquer cenário — o julgamento está suspenso, e o impacto estimado em receita municipal (R$ 1,169 bi, segundo a Abrasf) mostra a pressão para o desfecho mudar.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Suspenso — pedido de vista</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/463768/stf-julga-imunidade-de-itbi-em-capital-social-de-imobiliarias" target="_blank">Migalhas · Tema 1.348 · 02/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-destaque">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 08 · DESTAQUE LIVRE / INSTITUCIONAL</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Pet 16.662</span>
+          </div>
+          <div class="top-card-titulo">Caso Master: Mendonça manda ao Plenário decidir se Moraes deve ser incluído em investigação</div>
+          <div class="top-card-corpo">
+            <p>O Min. André Mendonça, relator do inquérito que apura suposta rede de influência ligada a Daniel Vorcaro (ex-controlador do Banco Master), decidiu em 01/09/2026 (Pet 16.662) levar ao Plenário do STF, em sessão pública, novos elementos da Polícia Federal para que o colegiado decida se o Min. Alexandre de Moraes deve ser formalmente incluído na investigação. Mendonça também retirou o sigilo da petição.</p>
+            <p>É uma decisão sobre publicidade processual e sobre quem decide investigar um colega de Corte — não um julgamento de mérito sobre a conduta de Moraes. Nos dias seguintes (02 e 03/09), ministros evitaram se pronunciar publicamente sobre o caso em sessão plenária.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Leitura institucional</span>
+            Acompanhe o desfecho sem antecipar conclusão — o Plenário ainda vai decidir apenas se abre ou não a investigação contra Moraes, questão inédita de controle entre pares dentro do próprio STF.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Pendente de decisão do Plenário</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://conjur.com.br/2026-set-01/mendonca-manda-stf-analisar-em-plenario-novos-indicios-sobre-rede-de-influencia-de-vorcaro/" target="_blank">ConJur · Caso Master · Pet 16.662 · 01/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STF · Plenário · ADC 80 · julgado 03/09/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">R$ 5 mil vira parâmetro de renda para gratuidade de justiça na Justiça do Trabalho — mas não é uma barreira de acesso</div>
+      <div class="decisao-body">
+        <p>O Plenário do STF concluiu, em 03/09/2026, o julgamento da ADC 80, ajuizada pela Consif (Confederação Nacional do Sistema Financeiro) contra a Súmula 463 do TST e os §§3º-4º do art. 790 da CLT — dispositivos que, desde a Reforma Trabalhista de 2017, admitiam a autodeclaração de pobreza como prova suficiente de hipossuficiência.</p>
+        <p>Por 7 votos a 2, prevaleceu a divergência do Min. Gilmar Mendes: quem recebe até R$ 5 mil tem presunção relativa de hipossuficiência para obter a gratuidade — o juiz ainda pode negar o benefício se identificar patrimônio ou renda incompatível. Quem ganha acima de R$ 5 mil não está impedido de pedir gratuidade, mas o ônus da prova se inverte: precisa demonstrar documentalmente a impossibilidade de arcar com as custas. O relator, Min. Edson Fachin, ficou vencido com a Min. Cármen Lúcia.</p>
+        <p>O valor de R$ 5 mil não é fixo nem indexado a salário-mínimo ou ao teto do RGPS — o STF vinculou o parâmetro à faixa de isenção do Imposto de Renda, com atualização automática (ou por IPCA, na ausência de reajuste anual). Na prática, escritórios que atuam na Justiça do Trabalho precisam revisar a triagem de novos casos e a instrução de ações em curso envolvendo clientes com renda próxima ou acima desse patamar.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        Quem recebe até R$ 5 mil (valor indexado à faixa de isenção do IR) tem presunção relativa de hipossuficiência para gratuidade de justiça na Justiça do Trabalho; quem ganha acima disso pode obter o benefício, mas precisa comprovar documentalmente a impossibilidade de arcar com as custas processuais.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Auditar ações trabalhistas em curso com clientes de renda acima de R$ 5 mil: reunir desde já a documentação de hipossuficiência, antes que a parte contrária suscite o tema.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Julgado — Plenário, 7x2</span>
+        <span class="status-pill status-atencao">⚠ Presunção relativa, não vedação absoluta</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: ConJur · ADC 80 · julgado 03/09/2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">Emenda Regimental 55: o STJ importa, por via regimental, a lógica da repercussão geral para o recurso especial</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Emenda Regimental 55/STJ: o novo requisito de "relevância da questão federal" no recurso especial</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a origem da mudança</span>
+        <div class="tese-bloco-texto">A Lei 15.484/2026 alterou o CPC para permitir que o STJ exija, como requisito de admissibilidade do recurso especial, a demonstração de relevância da questão federal discutida — nos moldes do que já existe para a repercussão geral no recurso extraordinário ao STF. A Emenda Regimental 55 é o ato interno pelo qual o próprio STJ regulamenta e operacionaliza essa exigência.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que passa a valer a partir de 03/09/2026</span>
+        <div class="tese-bloco-texto">Todo recurso especial precisa trazer um tópico próprio e fundamentado demonstrando relevância econômica, política, social ou jurídica que ultrapasse os interesses das partes — inclusive nas hipóteses em que já existe presunção legal de relevância. O presidente do STJ e os ministros relatores podem rejeitar liminarmente o recurso que não cumprir essa exigência. Reconhecida a relevância, o processamento segue por um de dois caminhos: formação de precedente qualificado ou julgamento restrito à controvérsia apresentada.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que a mudança não faz</span>
+        <div class="tese-bloco-texto">Não é retroativa — só se aplica a recursos contra acórdãos publicados a partir de 03/09/2026. Não elimina as demais hipóteses de cabimento do recurso especial (violação de lei federal, divergência jurisprudencial); cria um requisito formal adicional, não substitui os já existentes. E não se confunde com a exigência de "resumo estruturado" da Emenda Regimental 53/2026, que ainda não entrou em vigor por depender de portaria da presidência do STJ sobre ajustes no peticionamento eletrônico.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Revisar imediatamente as minutas-padrão de recurso especial do escritório para incluir o tópico de relevância; treinar a equipe na fundamentação desse requisito; e, para recursos em fase de elaboração contra acórdãos publicados perto de 03/09, confirmar a data exata de publicação do acórdão recorrido — é ela que ativa a exigência.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-atencao">⚠ Vigente desde 03/09/2026 — aplica-se a acórdãos publicados a partir dessa data</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área</span>
+    </div>
+    <div class="section-intro">Os principais movimentos do período, organizados por área de atuação, com o ângulo prático para a rotina do escritório.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Trabalhista / Processual</div>
+          <div class="panorama-titulo">STF fixa R$ 5 mil como parâmetro de renda para gratuidade de justiça trabalhista</div>
+          <div class="panorama-texto">Ver Decisão do Dia (seção 03) — presunção relativa, indexada ao IR, não é vedação de acesso.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">STF · ADC 80</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Previdenciário / Militar</div>
+          <div class="panorama-titulo">Câmara aprova redução do tempo mínimo para aposentadoria integral de PMs e bombeiros militares</div>
+          <div class="panorama-texto">Ver Movimento 02 do Top 8 — aprovado só na Câmara, ainda depende do Senado e de sanção presidencial.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Aguarda Senado</span><span class="panorama-fonte">Câmara dos Deputados</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Cível / Processual</div>
+          <div class="panorama-titulo">Filtro de relevância do STJ entra em vigor para todo recurso especial</div>
+          <div class="panorama-texto">Ver Movimento 03 do Top 8 e Tese Relevante (seção 04) — vigência a partir de 03/09/2026.</div>
+          <div class="panorama-footer"><span class="status-pill status-atencao">⚠ Vigente</span><span class="panorama-fonte">STJ · Emenda Regimental 55</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Tributário / Regulatório</div>
+          <div class="panorama-titulo">Receita sinaliza 2028 como meta de obrigatoriedade do split payment</div>
+          <div class="panorama-texto">Ver Movimento 04 do Top 8 — meta declarada, sem ato conjunto formal ainda publicado.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Meta declarada</span><span class="panorama-fonte">Receita Federal</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">Tributário / Contencioso</div>
+          <div class="panorama-titulo">CARF cancela R$ 2,2 bilhões em autuações contra a B3 sobre variação cambial</div>
+          <div class="panorama-texto">Ver Movimento 05 do Top 8 — precedente útil para contencioso semelhante; confirmar número do processo no e-CARF.</div>
+          <div class="panorama-footer"><span class="status-pill status-atencao">⚠ A confirmar</span><span class="panorama-fonte">CARF · Câmara Superior</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">06</div>
+        <div>
+          <div class="panorama-area">Trabalhista</div>
+          <div class="panorama-titulo">Justiça do Trabalho inverte ônus da prova em dispensa de bancária com doença grave</div>
+          <div class="panorama-texto">Ver Movimento 06 do Top 8 — sentença de 1ª instância (TRT-1), sujeita a recurso.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ 1ª instância</span><span class="panorama-fonte">TRT-1</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">07</div>
+        <div>
+          <div class="panorama-area">Holding / Patrimonial</div>
+          <div class="panorama-titulo">STF suspende julgamento sobre imunidade de ITBI em holdings imobiliárias</div>
+          <div class="panorama-texto">Ver Movimento 07 do Top 8 — Tema 1.348, sustentações orais realizadas, julgamento suspenso por pedido de vista.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Suspenso</span><span class="panorama-fonte">STF · Tema 1.348</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">08</div>
+        <div>
+          <div class="panorama-area">Destaque Livre / Institucional</div>
+          <div class="panorama-titulo">Caso Master: Mendonça leva ao Plenário decisão sobre investigar Moraes</div>
+          <div class="panorama-texto">Ver Movimento 08 do Top 8 — decisão sobre abrir ou não investigação, não julgamento de mérito.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Pendente</span><span class="panorama-fonte">STF · Pet 16.662</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Número exato do processo da ADC 80 ainda não confirmado em fonte oficial do STF</div>
+        <div class="radar-texto">O número veio de cobertura jornalística (ConJur, Migalhas) — o acesso automatizado ao portal.stf.jus.br foi bloqueado durante a apuração. Confirme diretamente no site do STF antes de citar o processo em petição.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-leg" style="flex-shrink:0;margin-top:2px;">Receita</span>
+      <div>
+        <div class="radar-titulo">Split payment 2028 é meta declarada, não norma publicada</div>
+        <div class="radar-texto">Não há lei complementar nem decreto fixando 2028 — o ato conjunto do Comitê Gestor do IBS e da Receita Federal, previsto na LC 214/2025, ainda não saiu.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Tema 1.348 (ITBI em holdings) segue suspenso, sem tese fixada</div>
+        <div class="radar-texto">Sustentações orais ocorreram em 02–03/09, mas o julgamento foi suspenso por pedido de vista do Min. Gilmar Mendes — o placar parcial de 3x0 não é decisão final.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-leg" style="flex-shrink:0;margin-top:2px;">Curadoria</span>
+      <div>
+        <div class="radar-titulo">Notícia reciclada identificada e excluída: bem de família de espólio</div>
+        <div class="radar-texto">Uma matéria de 01/09/2026 sobre impenhorabilidade de imóvel de espólio (REsp 2.111.839/RS) é, na verdade, a mesma decisão do STJ noticiada originalmente em junho de 2025 — mesmo padrão de reciclagem já flagrado no Tema 1.370.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-carf" style="flex-shrink:0;margin-top:2px;">CARF</span>
+      <div>
+        <div class="radar-titulo">CARF–B3: número do processo administrativo não confirmado</div>
+        <div class="radar-texto">A cobertura consultada não traz o número do processo nem a composição da turma julgadora — confirme no e-CARF antes de citar o caso como precedente formal.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">R$ 2,2 bilhões cancelados no CARF e um novo cronograma de caixa para 2027–2028</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>Dois movimentos desta edição têm dimensão financeira direta: o cancelamento bilionário de autuações no CARF, que pode virar precedente para outros contribuintes, e o cronograma do split payment, que muda o planejamento de caixa de empresas com ciclos financeiros mais longos — mesmo antes de virar obrigação legal.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🔴 R$ 2,2 bilhões ·</span>
+        <span class="dinheiro-header-title">CARF cancela autuações contra a B3 · variação cambial</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Precedente relevante para qualquer contencioso tributário envolvendo variação cambial sobre investimentos societários ou vendas de participação no exterior.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Mapear clientes com autuações fiscais semelhantes sobre variação cambial em operações societárias</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Confirmar o número do processo e a composição da turma no e-CARF antes de citar o precedente</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Usar o caso como argumento em defesas administrativas que envolvam o mesmo fundamento</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: Ledware · CARF · 01/09/2026</span>
+      </div>
+    </div>
+
+    <div class="dinheiro-card" style="margin-top:14px;">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟡 Planejamento de caixa ·</span>
+        <span class="dinheiro-header-title">Split payment · meta de 2028 da Receita Federal</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Ainda que não seja obrigação legal fixada, o split payment muda o fluxo de caixa de empresas com margens reduzidas, estoques elevados ou vendas parceladas — vale começar o planejamento agora.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Mapear clientes com ciclos financeiros longos (varejo, marketplaces, postos de combustíveis, telecom) mais sensíveis ao mecanismo</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Acompanhar a publicação do ato conjunto do Comitê Gestor do IBS e da Receita Federal antes de comunicar qualquer prazo como definitivo</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Apresentar o modelo alternativo de restituição acelerada (RAD) como opção intermediária até a obrigatoriedade</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: InfoMoney · Split payment · 30/08/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>8 ações para começar agora.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Auditar ações trabalhistas com clientes de renda acima de R$ 5 mil</div>
+          <div class="amanha-texto">Reunir documentação de hipossuficiência antes que a parte contrária suscite a ADC 80 para questionar a gratuidade já concedida.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Aguardar a tramitação no Senado antes de orientar clientes militares</div>
+          <div class="amanha-texto">O projeto de redução do tempo mínimo para aposentadoria integral de PMs e bombeiros ainda não é lei.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Adaptar minutas de recurso especial ao tópico de relevância</div>
+          <div class="amanha-texto">Incluir fundamentação de relevância econômica, política, social ou jurídica em todo REsp contra acórdão publicado a partir de 3/09.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Mapear clientes sensíveis ao split payment sem tratar 2028 como data legal fixada</div>
+          <div class="amanha-texto">Priorizar clientes com margens reduzidas, estoques elevados ou vendas parceladas para planejamento antecipado de caixa.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Confirmar o número do processo CARF–B3 e avaliar clientes com autuações semelhantes</div>
+          <div class="amanha-texto">Buscar no e-CARF antes de citar formalmente o precedente em petições ou pareceres.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">6</div>
+        <div>
+          <div class="amanha-titulo">Usar o precedente do TRT-1 sobre dispensa discriminatória com a ressalva de instância</div>
+          <div class="amanha-texto">Citar como indicativo de tendência em processos de desligamento envolvendo empregados com doença grave — não como jurisprudência consolidada.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">7</div>
+        <div>
+          <div class="amanha-titulo">Aguardar o desfecho do Tema 1.348 antes de fechar orientação definitiva sobre ITBI em holdings</div>
+          <div class="amanha-texto">O julgamento está suspenso por pedido de vista — sem tese fixada, ainda que o placar parcial seja favorável ao contribuinte.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">8</div>
+        <div>
+          <div class="amanha-titulo">Evitar comentário público precipitado sobre o Caso Master</div>
+          <div class="amanha-texto">Acompanhar a decisão do Plenário sobre abrir ou não investigação contra Moraes, sem antecipar conclusão.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">8 perfis prioritários deste período.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Clientes com ação trabalhista em curso e renda acima de R$ 5 mil</strong> — reunir prova documental de hipossuficiência.
+            <span class="mapear-tese">→ Gratuidade de justiça · STF, ADC 80</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Militares estaduais (PM/bombeiros) próximos do tempo mínimo de aposentadoria</strong> — orientar apenas após a tramitação no Senado.
+            <span class="mapear-tese">→ Previdenciário militar · Câmara dos Deputados</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Toda a carteira contenciosa com recursos especiais em fase de elaboração</strong> — padronizar o tópico de relevância antes de peticionar.
+            <span class="mapear-tese">→ Adequação processual · STJ, Emenda Regimental 55</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Empresas com margens reduzidas, estoques elevados ou vendas parceladas</strong> — iniciar planejamento de caixa para o split payment.
+            <span class="mapear-tese">→ Planejamento tributário · Receita Federal</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Empresas com autuações fiscais sobre variação cambial em operações no exterior</strong> — avaliar aplicabilidade do precedente do CARF–B3.
+            <span class="mapear-tese">→ Contencioso tributário · CARF</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">06</div>
+          <div class="mapear-texto">
+            <strong>Empregadores em processo de desligamento de empregados com doença grave</strong> — revisar critérios de prova à luz da inversão do ônus.
+            <span class="mapear-tese">→ Consultivo trabalhista · TRT-1</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">07</div>
+          <div class="mapear-texto">
+            <strong>Holdings patrimoniais e imobiliárias com integralização de imóveis planejada</strong> — aguardar o desfecho do Tema 1.348 antes de fechar orientação.
+            <span class="mapear-tese">→ Planejamento patrimonial · STF, Tema 1.348</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">08</div>
+          <div class="mapear-texto">
+            <strong>Clientes que perguntarem sobre o Caso Master</strong> — orientar com neutralidade institucional, sem antecipar o resultado do Plenário.
+            <span class="mapear-tese">→ Comunicação institucional · STF, Pet 16.662</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O parâmetro de R$ 5 mil da ADC 80 é presunção relativa, não vedação</div>
+          <div class="atencao-texto">Não comunique a clientes que "quem ganha mais de R$ 5 mil perdeu o direito à gratuidade" — o benefício continua acessível mediante prova documental. O valor também não é fixo nem ligado a salário-mínimo: é indexado à faixa de isenção do IR.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">A Emenda Regimental 55 do STJ não é retroativa</div>
+          <div class="atencao-texto">Aplica-se apenas a recursos especiais contra acórdãos publicados a partir de 03/09/2026 — não crie alarme sobre recursos já protocolados ou acórdãos anteriores a essa data.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Split payment 2028 é meta declarada pela Receita, não lei nem decreto</div>
+          <div class="atencao-texto">Falta a publicação do ato conjunto do Comitê Gestor do IBS e da Receita Federal previsto na LC 214/2025 — não trate 2028 como data legalmente cravada em comunicação com clientes.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O Tema 1.348 do STF (ITBI em holdings) está suspenso, não decidido</div>
+          <div class="atencao-texto">O placar parcial de 3x0 não é resultado final — o pedido de vista do Min. Gilmar Mendes pode mudar o desfecho. Não anuncie a imunidade como garantida.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O PL de aposentadoria de PMs e bombeiros ainda não é lei</div>
+          <div class="atencao-texto">Depende de aprovação no Senado e sanção presidencial — orientar clientes militares como se a regra já valesse é erro de comunicação, não só de prudência.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O Caso Master é decisão sobre abrir investigação, não julgamento de mérito</div>
+          <div class="atencao-texto">Trate o tema com neutralidade institucional em qualquer comunicação — o Plenário ainda vai decidir apenas se inclui ou não o Min. Alexandre de Moraes na apuração.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado do período</div>
+      <div class="numero-destaque">R$ 2,2 <span class="numero-unidade">BI</span></div>
+      <div class="numero-titulo">em autuações fiscais contra a B3 foram canceladas pela Câmara Superior do CARF</div>
+      <div class="numero-texto">O valor se refere a tributação de variação cambial sobre investimento e venda de participação no CME Group, decisão de 01/09/2026. O número do processo administrativo ainda não foi confirmado em fonte oficial — a cifra por si só já é o maior valor discutido nesta edição, e um bom indicativo do porte dos contenciosos que tramitam no CARF sobre operações societárias no exterior.</div>
+      <div class="numero-fonte">Fonte: Ledware · CARF · 01/09/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Meta declarada não é norma publicada, e julgamento suspenso não é decisão — duas distinções que atravessaram esta edição inteira.</div>
+
+    <div class="mercado-corpo">
+      <p>O split payment ilustra bem a primeira armadilha: a Receita Federal nomeou "2028" como meta de obrigatoriedade, mas não existe lei complementar nem decreto fixando essa data — falta o ato conjunto do Comitê Gestor do IBS e da própria Receita, previsto desde a LC 214/2025. Comunicar isso como "prazo adiado" ou "nova regra" seria impreciso: é uma meta declarada publicamente, ainda sem status normativo definitivo.</p>
+
+      <p>A segunda armadilha apareceu no Tema 1.348 do STF sobre ITBI em holdings imobiliárias: houve sustentação oral, houve placar parcial favorável ao contribuinte (3x0) — mas o julgamento foi suspenso por pedido de vista, e nada disso é tese fixada. Tratar um placar parcial como resultado final é o tipo de erro que pode levar um escritório a comunicar uma vitória que ainda não existe — o mesmo cuidado que já levou a curadoria a excluir, nesta e em edições anteriores, notícias recicladas com data trocada (como a de bem de família de espólio, na verdade de junho de 2025).</p>
+
+      <p>No que efetivamente fechou como fato consumado nesta janela, o padrão foi mais direto: a ADC 80 e a Emenda Regimental 55 do STJ são julgamento concluído e norma vigente, respectivamente, e já podem ser citadas diretamente em petição. O CARF-B3 também é decisão definitiva, mas ainda carece de confirmação documental (número do processo). Os demais — PL militar, Tema 1.348 e Caso Master — seguem em aberto, e o texto desta edição foi escrito para deixar isso claro em cada menção, não só uma vez no rodapé.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Resumo prático: 3 dos 8 itens desta edição já são decisão concluída ou norma vigente e podem ser usados diretamente na petição ou no aconselhamento (ADC 80, Emenda Regimental 55, CARF-B3 — este último com uma ressalva documental). Um é sentença de 1º grau, sujeita a recurso (TRT-1). Os outros quatro exigem acompanhamento por ainda estarem em tramitação, suspensos ou pendentes de decisão — PL de aposentadoria militar, split payment, Tema 1.348 do STF e o Caso Master.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Escrevo justiça com J minúsculo para não significar somente acesso ao Poder Judiciário.</div>
+    <div class="frase-autor">— Kazuo Watanabe, jurista, em entrevista à ConJur (09/06/2019)</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conjur.com.br/2026-set-03/stf-fixa-renda-de-r-5-mil-como-parametro-para-concessao-de-justica-gratuita/" target="_blank">ConJur · STF fixa renda de R$ 5 mil como parâmetro para gratuidade de justiça</a></div>
+          <div class="fonte-desc">ADC 80, Plenário, julgado em 03/09/2026, 7x2, relator Min. Edson Fachin vencido.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.dgabc.com.br/Noticia/4344597/camara-aprova-projeto-que-facilita-aposentadoria-integral-para-policiais-e-bombeiros" target="_blank">Diário do Grande ABC · Câmara aprova projeto de aposentadoria de PMs e bombeiros</a></div>
+          <div class="fonte-desc">Aprovado em Plenário em 01/09/2026 — segue para o Senado.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/463107/stj-novas-regras-de-relevancia-entram-em-vigor-no-dia-3" target="_blank">Migalhas · STJ: novas regras de relevância entram em vigor no dia 3</a></div>
+          <div class="fonte-desc">Emenda Regimental 55, vigência a partir de 03/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.infomoney.com.br/business/receita-preve-obrigatoriedade-do-split-payment-para-2028-saiba-o-que-falta/" target="_blank">InfoMoney · Receita prevê obrigatoriedade do split payment para 2028</a></div>
+          <div class="fonte-desc">Declarações da Receita Federal, repercutidas em 30-31/08/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ledware.com.br/2026/09/02/carf-cancela-22-bilhoes-autuacoes-b3/" target="_blank">Ledware · CARF cancela R$ 2,2 bilhões em autuações contra a B3</a></div>
+          <div class="fonte-desc">Câmara Superior de Recursos Fiscais, decisão de 01/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conjur.com.br/2026-set-02/empresa-deve-comprovar-que-dispensa-de-trabalhador-nao-foi-discriminatoria/" target="_blank">ConJur · Empresa deve comprovar que dispensa não foi discriminatória</a></div>
+          <div class="fonte-desc">TRT-1, 39ª Vara do Trabalho do Rio, sentença de 02/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/463768/stf-julga-imunidade-de-itbi-em-capital-social-de-imobiliarias" target="_blank">Migalhas · STF julga imunidade de ITBI em capital social de imobiliárias</a></div>
+          <div class="fonte-desc">Tema 1.348, RE 1.495.108, sustentações orais em 02-03/09/2026, julgamento suspenso.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conjur.com.br/2026-set-01/mendonca-manda-stf-analisar-em-plenario-novos-indicios-sobre-rede-de-influencia-de-vorcaro/" target="_blank">ConJur · Cabe ao Plenário decidir se Alexandre deve ser investigado no caso Master</a></div>
+          <div class="fonte-desc">Pet 16.662, decisão do Min. André Mendonça em 01/09/2026.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Semanal</div>
+    <div class="footer-sub">Radar jurídico amplo · Edição nº 012 · 04 de setembro de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
