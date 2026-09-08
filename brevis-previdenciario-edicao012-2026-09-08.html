@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 012 · 8 de setembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--dourado-claro); border-color: var(--dourado-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(201,168,76,0.16); color: var(--dourado-claro); }
+  .indice-item strong { color: var(--dourado-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--cinza-sub); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf3 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-cjf  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .badge-cn   { background: #EBF0FB; color: #1A3A6B; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,31,60,0.06); transition: box-shadow 0.18s, transform 0.18s; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(13,31,60,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-stj { background: linear-gradient(90deg, #5A2E7A, #8B5EA8); }
+  .bar-stf { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-tnu { background: linear-gradient(90deg, #2B5797, #6C97C9); }
+  .bar-inss { background: linear-gradient(90deg, #A8230E, #D9634A); }
+  .bar-cjf { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-trf4 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-trf3 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-cn { background: linear-gradient(90deg, #1A3A6B, #6C97C9); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--azul-escuro); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EDE9DF; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cinza-sub); }
+  .top-card-fonte a { color: var(--azul-claro); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--dourado); scroll-margin-top: 16px; }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--dourado); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--azul-escuro); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: var(--cinza-texto); margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--cinza-sub); }
+  .panorama-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico — <a href="#panel-01">Lula e a fila do INSS</a>, <a href="#panel-03">Síndrome de Tourette no BPC</a>, <a href="#panel-04">Justiça gratuita na ADC 80</a> e <a href="#sec-06">o caso do Informativo 899</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">8 de setembro de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">012</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">31 de agosto a 7 de setembro · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">7–9 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Destaque: Lula anuncia fim da fila acima de 45 dias no INSS</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">5 movimentos verificados</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 5</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar de Tribunais</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Curiosidade Previdenciária</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário nº 012, e a primeira semana de setembro trouxe o que pedimos há tempo: uma boa notícia protagonizada pelo próprio governo — mas com um contraponto que a advocacia previdenciarista já está levantando, e que ponderamos nesta edição. Em 3/9/2026, no Palácio do Planalto, o presidente Luiz Inácio Lula da Silva anunciou que o estoque de requerimentos do INSS com espera acima de 45 dias — o prazo máximo previsto na Lei 9.784/99 — foi zerado: restam cerca de 300 mil pedidos em análise, todos dentro do prazo legal, com tempo médio de resposta caído para 34 dias. Não é a fila zerada por completo, mas é a eliminação do atraso que mais gera judicialização por mandado de segurança — e Lula, ladeado pelo ministro Wolney Queiroz, emendou com a frase que deve render manchete: "Eu tenho uma sina com a Previdência Social". O outro lado da mesma estatística, porém, incomoda parte da categoria: dados oficiais mostram que os indeferimentos do INSS subiram cerca de 70% em 2026 frente a 2025, com o 1º semestre fechando em quase 50,5% de negativas — e advogados previdenciaristas já vêm questionando publicamente se a fila está caindo à custa da qualidade das análises. Detalhamos essa crítica, com nome e fonte, logo abaixo.</p>
+      <p>A engrenagem por trás do anúncio também é rastreável: a Portaria Conjunta MPS/MGI/CC nº 34/2026 (assinada 5/8, publicada em edição extra do DOU em 2/9) reordenou as prioridades do Programa de Gerenciamento de Benefícios, colocando à frente da fila as análises documentais via ATESTMED e as perícias com mais de 30 dias de atraso. Já a Lei nº 15.492/2026, sancionada em 2/9 e publicada no DOU em 3/9, instituiu a Política Nacional de Proteção à Síndrome de Tourette e deve facilitar o reconhecimento da condição como deficiência para fins de BPC/LOAS — outra frente de avanço de direitos nesta quinzena.</p>
+      <p>No Supremo, a Decisão do Dia é a ADC 80: em 3/9, o Plenário fixou renda de até R$ 5 mil como critério objetivo de presunção de hipossuficiência para justiça gratuita em todo o Judiciário — decisão que já apareceu na Brevis Semanal nº 012 pelo ângulo trabalhista/geral; aqui aprofundamos o que ela muda especificamente no contencioso previdenciário. E fechamos com um alerta de apuração: identificamos, em fontes que estavam circulando esta semana, uma atribuição equivocada ao Informativo de Jurisprudência nº 899 do STJ — verificamos diretamente e o precedente daquele informativo não tem relação com o RGPS. Vamos ao que importa.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 5 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 5 movimentos do período</span>
+    </div>
+    <div class="section-intro">A pesquisa desta quinzena — feita com apoio de pesquisa aprofundada e validada de forma independente em fontes primárias — levantou vários candidatos que não resistiram à verificação cruzada: um suposto julgado do STJ sobre responsabilidade civil do INSS (na verdade sobre outro tema, ver Radar de Tribunais), duas teses da TNU sem número de processo ou Tema localizável, e uma portaria sobre gravidez de alto risco cuja repercussão é desta semana mas cuja publicação é de 24/7/2026 — já coberta em edição anterior. Preferimos publicar cinco movimentos confirmados a preencher a edição com itens frágeis.</div>
+
+    <div class="top-grid">
+
+      <!-- CARD 1 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-inss"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 01 · GESTÃO DE FILAS / ANÚNCIO PRESIDENCIAL</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-inss">GOVERNO FEDERAL</span>
+            <span class="badge badge-inss">INSS</span>
+          </div>
+          <div class="top-card-titulo">Lula anuncia zeramento do estoque de requerimentos do INSS acima de 45 dias</div>
+          <div class="top-card-corpo">
+            <p>Em cerimônia no Palácio do Planalto em 3/9/2026, o presidente Lula, ao lado do ministro da Previdência Social, Wolney Queiroz, anunciou que os pedidos de benefício que aguardavam análise além do prazo legal de 45 dias (Lei 9.784/99) foram eliminados: restam cerca de 300 mil requerimentos em análise, todos dentro do prazo, com tempo médio de resposta reduzido para aproximadamente 34 dias — e redução de 76% no tempo de espera por perícia. O governo atribui o resultado a cinco medidas, entre elas a nomeação de 2.510 novos servidores, teleatendimento, priorização do ATESTMED, bônus de produtividade e mutirões. Lula emendou com relatos pessoais de sua atuação na Previdência desde os anos 1970 e a frase "Eu tenho uma sina com a Previdência Social".</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Para clientes com pedido pendente há mais de 45 dias, é o momento de cobrar posicionamento formal do INSS — o próprio governo confirma que esse estoque específico foi zerado. Mas não anuncie "fila zerada" de forma genérica: o que foi eliminado é o atraso acima do prazo legal, não a fila como um todo.
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ O outro lado da notícia: crítica da advocacia previdenciarista</span>
+            Dados do próprio INSS mostram que os indeferimentos subiram cerca de 70% em 2026 frente a 2025 (média mensal de 395 mil para 668,6 mil pedidos negados), com junho/2026 fechando em 938,2 mil negativas contra 792,5 mil concessões — e o 1º semestre em 4,3 milhões de indeferimentos ante 4,2 milhões de concessões (50,5% de negativas). A advogada previdenciarista Jéssica Matias afirma que "um crescimento dessa proporção gera questionamentos sobre a qualidade das análises que estão sendo realizadas"; o advogado Eliseu Mariano nota que negativas "fundamentadas em interpretações excessivamente restritivas" tendem a aumentar a pressão sobre o Judiciário. Ou seja: parte da redução da fila pode estar vindo de mais indeferimento, não só de mais concessão — comunique isso ao cliente antes de comemorar o anúncio.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Anúncio oficial — confirmado em múltiplas fontes</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+              <span class="status-pill status-desfavoravel">🔴 Contraponto da advocacia</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.poder360.com.br/poder-governo/eu-tenho-uma-sina-com-a-previdencia-social-diz-lula/" target="_blank">Poder360 · Pronunciamento presidencial · 3/9/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-inss"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 02 · GESTÃO DE BENEFÍCIOS / ATESTMED</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-inss">MPS/MGI</span>
+            <span class="badge badge-tema">Portaria Conjunta 34/2026</span>
+          </div>
+          <div class="top-card-titulo">Portaria Conjunta MPS/MGI/CC nº 34/2026 prioriza ATESTMED e perícias atrasadas no PGB</div>
+          <div class="top-card-corpo">
+            <p>Assinada em 5/8/2026 e publicada em edição extra do DOU em 2/9/2026 (Seção 1, pág. 4), a norma altera a Portaria Conjunta nº 20/2025 e reordena as prioridades do Programa de Gerenciamento de Benefícios (PGB): em primeiro lugar, perícias em unidades sem oferta regular ou com agendamento superior a 30 dias, ou com prazo judicial expirado; em seguida, análises documentais via ATESTMED para auxílio por incapacidade temporária; depois, reavaliações e revisões de benefícios assistenciais e previdenciários em hipóteses específicas; por último, os demais serviços de análise documental. É a engrenagem administrativa por trás do anúncio de redução de filas feito por Lula três dias antes da publicação.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Clientes com pedido de auxílio por incapacidade parado há mais de 30 dias, ou com perícia sem agendamento em sua região, agora têm base normativa expressa para cobrar prioridade — cite a Portaria nº 34/2026 no protocolo administrativo.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Norma vigente — publicada em 2/9/2026</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.okai.com.br/legislacao/portaria-conjunta-mps-mgi-cc-n-34-de-05-08-2026" target="_blank">Okai · Portaria Conjunta MPS/MGI/CC nº 34/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-cn"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 03 · BPC/LOAS · RECONHECIMENTO DE DEFICIÊNCIA</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-cn">LEI 15.492/2026</span>
+          </div>
+          <div class="top-card-titulo">Nova lei sobre Síndrome de Tourette deve facilitar o reconhecimento de deficiência para o BPC/LOAS</div>
+          <div class="top-card-corpo">
+            <p>Sancionada em 2/9/2026 e publicada no DOU (Seção 1) em 3/9/2026, a Lei nº 15.492 institui a Política Nacional de Proteção dos Direitos da Pessoa com Síndrome de Tourette. A norma estabelece que a pessoa com Tourette será considerada pessoa com deficiência para todos os efeitos legais quando os sintomas comprometerem significativamente sua funcionalidade e participação social, mediante avaliação biopsicossocial — o mesmo modelo de avaliação usado pelo INSS para o Benefício de Prestação Continuada (art. 20, §2º, da Lei 8.742/93). Historicamente, peritos e assistentes sociais tendiam a classificar os tiques motores e vocais da síndrome como transitórios ou de grau leve, dificultando a concessão do BPC.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Revisite indeferimentos de BPC/LOAS por Síndrome de Tourette anteriores ao reconhecimento legal — a nova lei fornece fundamento hermenêutico reforçado para pedido de reconsideração administrativa ou ação judicial.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Lei sancionada 2/9, publicada 3/9/2026</span>
+              <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://legis.senado.leg.br/norma/patrimonio?tipo=LEI&numero=15492&ano=2026" target="_blank">Legis Senado · Lei nº 15.492/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 04 · ACESSO À JUSTIÇA / JUSTIÇA GRATUITA</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADC 80</span>
+          </div>
+          <div class="top-card-titulo">STF fixa renda de R$ 5 mil como critério objetivo de justiça gratuita — com reflexo direto nos JEFs previdenciários</div>
+          <div class="top-card-corpo">
+            <p>O Plenário concluiu, em 3/9/2026, o julgamento da ADC 80: quem recebe até R$ 5 mil por mês tem presunção relativa de hipossuficiência para gratuidade de justiça automática; acima disso, precisa comprovar concretamente a insuficiência de recursos. O critério vale para todos os ramos do Judiciário, com ressalvas específicas para os Juizados Especiais. <strong>Este movimento já foi coberto na Brevis Semanal nº 012 (4/9/2026)</strong> pelo ângulo trabalhista/geral — aqui tratamos apenas do recorte previdenciário, aprofundado na Tese Relevante desta edição.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Correção de relatoria</span>
+            O relator originário foi o Min. Edson Fachin, que ficou vencido (junto com a Min. Cármen Lúcia). O voto vencedor — e redator para o acórdão — foi do Min. Gilmar Mendes. Não trate Gilmar Mendes como "relator" do caso.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — modulação prospectiva</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://noticias.stf.jus.br/" target="_blank">Notícias STF · ADC 80 · 3/9/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 05 · PREVIDÊNCIA COMPLEMENTAR / TANGENCIAL TRIBUTÁRIO</div>
+            </div>
+            <span class="impacto-badge">⚪ Impacto Tangencial</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Repercussão Geral</span>
+          </div>
+          <div class="top-card-titulo">STF afasta PIS/Cofins sobre reservas técnicas de seguradoras — reflexo na previdência complementar</div>
+          <div class="top-card-corpo">
+            <p>Em repercussão geral julgada em 2/9/2026, sob relatoria do Min. Luiz Fux, o STF definiu que os rendimentos de aplicações financeiras das reservas técnicas mantidas por seguradoras — por imposição da Susep, como garantia de solvência — não integram a base de cálculo do PIS e da Cofins sobre o faturamento, por não decorrerem de atividade empresarial típica. O tema é essencialmente tributário, mas protege indiretamente a saúde atuarial de fundos que sustentam planos de previdência complementar aberta e seguros de vida vinculados à aposentadoria privada — por isso entra aqui como nota tangencial, não como movimento previdenciário central.</p>
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Julgado — repercussão geral</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://noticias.stf.jus.br/" target="_blank">Notícias STF · Repercussão Geral · 2/9/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STF · ADC 80 · Julgado em 3/9/2026 — voto vencedor do Min. Gilmar Mendes
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">STF fixa critério objetivo de R$ 5 mil para justiça gratuita em todo o Judiciário</div>
+      <div class="decisao-body">
+        <p>A ADC 80 nasceu de uma disputa trabalhista: a Confederação Nacional do Sistema Financeiro (Consif) queria pacificar a aplicação da Reforma Trabalhista de 2017, que restringia a gratuidade automática de justiça a quem recebesse até 40% do teto do RGPS — hoje, cerca de R$ 3.390. Juízes vinham ignorando esse limite e aplicando a regra mais permissiva do CPC, que basta a mera declaração de pobreza da parte.</p>
+        <p>O Plenário concluiu o julgamento em 3/9/2026. O relator originário, Min. Edson Fachin, ficou vencido — junto com a Min. Cármen Lúcia. O voto que prevaleceu foi o do Min. Gilmar Mendes, que ficou como redator do acórdão: para ele, o patamar de 40% do teto do RGPS estava defasado, e o critério mais adequado para presumir hipossuficiência é a faixa de isenção do Imposto de Renda, hoje em R$ 5 mil. O Plenário foi além da disputa trabalhista original e estendeu esse parâmetro, provisoriamente, a todo o Poder Judiciário — até que o Legislativo edite regra uniforme. O voto do Min. Cristiano Zanin ficou consignado: mesmo com renda inferior a R$ 5 mil, o juiz pode negar a gratuidade se houver patrimônio incompatível (imóveis, veículos de luxo, investimentos). A decisão tem modulação prospectiva: aplica-se apenas a processos ajuizados a partir da publicação da ata de julgamento.</p>
+        <p>Para o contencioso previdenciário — que corre majoritariamente nos Juizados Especiais Federais — o efeito é ambivalente. A maioria dos segurados do INSS (aposentados por salário mínimo, beneficiários de BPC, requerentes de auxílio-doença) ganha uma blindagem automática contra indeferimentos rigorosos de gratuidade, já que renda inferior a R$ 5 mil agora garante o benefício de forma presumida. Mas quem recebe próximo do teto previdenciário — sobretudo em ações revisionais de teto — perde a possibilidade de usar a mera "declaração de pobreza" e passa a ter o ônus de comprovar documentalmente gastos, despesas médicas e insuficiência real de recursos.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        ADC 80: há presunção relativa de hipossuficiência, para fins de gratuidade de justiça em todo o Poder Judiciário, para quem recebe renda mensal de até R$ 5 mil; acima desse valor, a gratuidade exige comprovação concreta de insuficiência de recursos, ressalvada a possibilidade de o juiz negar o benefício mesmo a quem recebe menos, se houver patrimônio incompatível.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Para clientes com renda até R$ 5 mil em ação previdenciária, a gratuidade agora tem respaldo objetivo direto — dispense provas adicionais. Para ações revisionais de teto, prepare desde já a comprovação documental de insuficiência de recursos (despesas médicas, contas, dependentes) antes de pedir a gratuidade.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Julgado — modulação prospectiva</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://noticias.stf.jus.br/" target="_blank">Notícias STF</a> · STF ADC 80</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">O fim da "declaração de pobreza" automática e o que isso muda nas ações revisionais de teto do RGPS</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">ADC 80: o recorte previdenciário-específico de uma decisão que, à primeira vista, parecia só trabalhista</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Por que este ângulo não é repetição da Brevis Semanal</span>
+        <div class="tese-bloco-texto">A Brevis Semanal nº 012 já cobriu a ADC 80 do ponto de vista geral: origem trabalhista, critério do teto de R$ 5 mil, extensão a todo o Judiciário. Aqui, o recorte é outro — o que essa mudança de critério significa especificamente para quem litiga contra o INSS, sobretudo nas ações revisionais de teto (pedidos de reajuste de aposentadorias e pensões calculadas próximas ao teto do RGPS), que respondem por uma fatia relevante do contencioso previdenciário nos Juizados Especiais Federais.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese</span>
+        <div class="tese-bloco-texto">Antes da ADC 80, bastava ao segurado firmar declaração de pobreza (art. 99, §3º, do CPC) para obter gratuidade de justiça, independentemente da renda. Agora, apenas quem recebe até R$ 5 mil mensais mantém essa presunção automática. Para quem recebe mais — o perfil típico de quem busca revisão de benefício próximo do teto — a gratuidade deixa de ser presumida e passa a exigir prova concreta de insuficiência de recursos: comprovantes de despesas médicas, contas correntes, dependentes e outros gastos fixos.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Impacto prático no escritório</span>
+        <div class="tese-bloco-texto">Ações revisionais de teto que hoje tramitam apenas com a declaração de pobreza anexada podem ser questionadas pelo INSS ou impugnadas de ofício pelo juízo, a partir da publicação da ata de julgamento (a modulação é prospectiva — processos já ajuizados antes disso não são afetados). Para novas ações, o dossiê de gratuidade precisa ser reforçado desde a petição inicial: extrato bancário dos últimos meses, comprovantes de despesas de saúde, e — quando aplicável — demonstração de que o valor recebido, mesmo perto do teto, não corresponde a padrão de vida incompatível com hipossuficiência.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que esperar</span>
+        <div class="tese-bloco-texto">Como a decisão determina a extensão do critério "provisoriamente" até que o Congresso legisle de forma uniforme, é esperável pressão do setor da advocacia previdenciarista por uma regra específica que não penalize aposentados de renda intermediária que buscam apenas corrigir um cálculo — sem necessariamente ostentar patrimônio incompatível com a gratuidade.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-consolidada">✔ Julgado — efeito vinculante, modulação prospectiva</span>
+        <span class="status-pill status-desfavoravel">🔴 Atenção — mais oneroso para revisionais de teto</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área — as frentes cobertas nesta edição</span>
+    </div>
+    <div class="section-intro">Os cinco movimentos confirmados desta quinzena, lado a lado.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item" id="panel-01">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Gestão de Filas · Anúncio Presidencial</div>
+          <div class="panorama-titulo">Lula anuncia zeramento do estoque de requerimentos acima de 45 dias</div>
+          <div class="panorama-texto">Pronunciamento em 3/9/2026 no Palácio do Planalto. Ver Movimento 01.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável ao segurado</span><span class="panorama-fonte">poder360.com.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-02">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Gestão de Benefícios · ATESTMED</div>
+          <div class="panorama-titulo">Portaria Conjunta nº 34/2026 prioriza perícias atrasadas e análises documentais</div>
+          <div class="panorama-texto">Assinada 5/8, publicada 2/9/2026 — mecanismo administrativo por trás da redução de filas. Ver Movimento 02.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Norma vigente</span><span class="panorama-fonte">okai.com.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-03">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">BPC/LOAS · Reconhecimento de Deficiência</div>
+          <div class="panorama-titulo">Lei nº 15.492/2026 reconhece Síndrome de Tourette como deficiência</div>
+          <div class="panorama-texto">Sancionada 2/9, publicada 3/9/2026 — reforça critério biopsicossocial do BPC. Ver Movimento 03.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">🟢 Favorável ao segurado</span><span class="panorama-fonte">legis.senado.leg.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-04">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Acesso à Justiça · Justiça Gratuita</div>
+          <div class="panorama-titulo">STF fixa critério de R$ 5 mil na ADC 80 — impacto nas revisionais de teto</div>
+          <div class="panorama-texto">Julgado em 3/9/2026, já coberto na Brevis Semanal sob o ângulo geral. Ver Decisão do Dia e Tese Relevante.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">noticias.stf.jus.br</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item" id="panel-05">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">Previdência Complementar · Tangencial Tributário</div>
+          <div class="panorama-titulo">STF afasta PIS/Cofins sobre reservas técnicas de seguradoras</div>
+          <div class="panorama-texto">Repercussão geral julgada em 2/9/2026 — nota tangencial de interesse para clientes de previdência complementar. Ver Movimento 05.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Julgado</span><span class="panorama-fonte">noticias.stf.jus.br</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR DE TRIBUNAIS -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Alerta de verificação: Informativo de Jurisprudência nº 899 do STJ não trata de RGPS</div>
+        <div class="radar-texto">Circulou nesta semana a informação de que o Informativo nº 899 do STJ (1/9/2026) traria um precedente sobre responsabilidade civil do INSS por cancelamento indevido de benefício. Verificamos diretamente na fonte primária — duas vezes, de forma independente — e isso não procede. O Informativo 899 traz a Proposta de Afetação de Recurso Especial (ProAfR) nos REsp 2.258.325/CE e 2.254.394/CE, afetados em 25/8/2026 e publicados no DJEN em 31/8/2026, delimitando o Tema 1.472: se a demora injustificada da Administração na análise de requerimento de aposentadoria gera dever de indenizar o <strong>servidor público</strong> por danos materiais — matéria de Direito Administrativo, sem relação com benefícios do RGPS. O informativo também trata de gorjetas na base do Simples Nacional (Tema 1.473) e de execução penal. Não usamos este informativo como fonte previdenciária nesta edição.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tnu" style="flex-shrink:0;margin-top:2px;">TNU</span>
+      <div>
+        <div class="radar-titulo">Duas teses atribuídas à TNU nesta semana não puderam ser confirmadas com número de processo</div>
+        <div class="radar-texto">Circularam nesta quinzena referências a uma reafirmação sobre critério de incapacidade para auxílio-doença (atividade habitual) e a outra sobre reafirmação da DER — ambas citadas apenas por número de documento genérico do sistema e-proc, sem Tema ou processo localizável em fonte primária. Diante da falta de rastreabilidade, e do padrão já visto nesta quinzena de teses antigas recirculando com nova data, optamos por não publicar esses dois itens até nova verificação.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">ADI 6.309 (idade mínima na aposentadoria especial) segue sem julgamento de mérito</div>
+        <div class="radar-texto">Portais voltaram a noticiar como decisão desta semana a inconstitucionalidade da idade mínima na aposentadoria especial. É reciclagem: o julgamento foi iniciado e interrompido por pedido de vista em anos anteriores (Informativo STF 1.220), sem conclusão de mérito na semana de 31/8 a 7/9/2026.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-inss" style="flex-shrink:0;margin-top:2px;">INSS</span>
+      <div>
+        <div class="radar-titulo">Portaria sobre gravidez de alto risco: repercussão desta semana, mas fato de julho</div>
+        <div class="radar-texto">A dispensa de carência para gestação de alto risco (Portaria Interministerial MPS/MS nº 15/2026) voltou a ganhar destaque em blogs e portais jurídicos nesta semana, mas a publicação oficial é de 24/7/2026 — e o tema já havia sido coberto pela Brevis Previdenciário na edição nº 009 (13/8/2026). Não é fato novo.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">Não houve liberação de RPV nesta quinzena — mas há um sinal financeiro que merece atenção do escritório</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>Diferente da edição anterior, não identificamos novo lote de RPVs previdenciárias liberado pelo CJF neste recorte. O sinal financeiro relevante desta quinzena é outro, e tem dois lados: a mesma aceleração que zerou o estoque de requerimentos atrasados veio acompanhada, segundo dados oficiais do próprio INSS, de alta expressiva nos indeferimentos — média mensal de negativas subindo de 395 mil (jan-mai/2025) para 668,6 mil (jan-mai/2026), alta de cerca de 70%. Em junho/2026 isoladamente, foram 938,2 mil pedidos negados contra 792,5 mil concedidos; no 1º semestre de 2026, o total fechou em 4,3 milhões de indeferimentos ante 4,2 milhões de concessões — uma taxa de negativas de 50,5%. A advogada previdenciarista Jéssica Matias resume a preocupação da categoria: "um crescimento dessa proporção gera questionamentos sobre a qualidade das análises que estão sendo realizadas". Já o advogado Eliseu Mariano alerta que negativas "fundamentadas em interpretações excessivamente restritivas" tendem a aumentar a pressão sobre o Judiciário.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟡 Sinal de Negócio ·</span>
+        <span class="dinheiro-header-title">Mudança no perfil do contencioso previdenciário</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Público-alvo: escritórios que hoje dependem de Mandado de Segurança contra a mora do INSS como principal instrumento de contencioso.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Com o estoque de requerimentos atrasados zerado, o interesse de agir em Mandados de Segurança por mora tende a esvaziar — reavalie a carteira de processos desse tipo ainda em curso</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Em contrapartida, a alta de indeferimentos — quase metade das análises do 1º semestre de 2026 — abre uma frente de Ações Ordinárias e processos nos JEFs para contestar o mérito das negativas, sobretudo em benefícios por incapacidade, que exigem mais dilação probatória (perícia judicial, prova documental robusta)</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Reoriente a captação e o fluxo interno do escritório: menos ações de "obrigação de decidir", mais ações revisionais de mérito — um tipo de causa que tende a exigir mais trabalho técnico, e por isso comporta honorários mais robustos</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: Correio Braziliense, "Fila do INSS cai, mas número de negativas dispara em 2026" (dados oficiais + entrevistas com Jéssica Matias e Eliseu Mariano) · dados de gestão do INSS/MPS divulgados em 3/9/2026 (Poder360)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Cinco ações. Execute nas próximas 24 horas.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Cobrar posicionamento em pedidos parados há mais de 45 dias</div>
+          <div class="amanha-texto">O governo confirma que esse estoque específico foi zerado — se um cliente ainda estiver nessa situação, é caso de reclamação formal ou Ouvidoria antes de partir para medida judicial.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Invocar a Portaria nº 34/2026 em pedidos de auxílio-incapacidade parados</div>
+          <div class="amanha-texto">Perícias com mais de 30 dias de atraso ou análises documentais via ATESTMED têm prioridade normativa expressa — cite a portaria no requerimento.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-texto" style="margin-top:0;"></div>
+          <div class="amanha-titulo">Revisitar indeferimentos de BPC por Tourette à luz da Lei 15.492/2026</div>
+          <div class="amanha-texto">A nova lei reforça o enquadramento como deficiência para fins de avaliação biopsicossocial — bom momento para pedido de reconsideração administrativa.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Reforçar o dossiê de gratuidade em novas ações revisionais de teto</div>
+          <div class="amanha-texto">ADC 80: para clientes com renda acima de R$ 5 mil, junte comprovantes de despesas e insuficiência de recursos desde a petição inicial — não confie apenas na declaração de pobreza.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Não repetir a atribuição equivocada do Informativo STJ 899 a temas de RGPS</div>
+          <div class="amanha-texto">Se um cliente ou colega mencionar essa notícia, esclareça: o precedente é sobre mora administrativa em aposentadoria de servidor público (Tema 1.472), não sobre responsabilidade civil do INSS.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Cinco perfis prioritários deste período. Cada critério é um filtro para aplicar agora na carteira.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Clientes com requerimento pendente no INSS há mais de 45 dias</strong> — o governo confirma que esse estoque foi zerado; se persistir, é caso de Ouvidoria ou medida judicial imediata.
+            <span class="mapear-tese">→ Anúncio oficial · Governo Federal, 3/9/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Clientes com pedido de auxílio por incapacidade parado ou sem perícia agendada há mais de 30 dias</strong> — cobrar prioridade com base na Portaria Conjunta nº 34/2026.
+            <span class="mapear-tese">→ Norma vigente · MPS/MGI/CC nº 34/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Clientes com BPC/LOAS indeferido por Síndrome de Tourette</strong> — revisitar à luz do novo reconhecimento legal como deficiência.
+            <span class="mapear-tese">→ Favorável · Lei nº 15.492/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Clientes com ação revisional de teto em preparação, renda acima de R$ 5 mil</strong> — reforçar o dossiê de gratuidade de justiça com prova documental de insuficiência de recursos.
+            <span class="mapear-tese">→ Atenção · STF ADC 80</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Clientes com Mandado de Segurança em curso apenas por mora do INSS</strong> — reavaliar se o interesse de agir persiste diante do estoque de atrasos zerado; considerar conversão em ação de mérito se houver indeferimento.
+            <span class="mapear-tese">→ Sinal de negócio · Ver Dinheiro na Mesa</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">"Fila zerada" é resumo político, não fato técnico literal</div>
+          <div class="atencao-texto">O que o governo eliminou foi o estoque de requerimentos com espera acima do prazo legal de 45 dias. Ainda há cerca de 300 mil pedidos em análise — dentro do prazo. Ao comunicar clientes, use a formulação precisa para não gerar expectativa equivocada.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">ADC 80: não chame Gilmar Mendes de "relator" do caso</div>
+          <div class="atencao-texto">O relator originário foi o Min. Edson Fachin, que ficou vencido. O voto vencedor — e redator para o acórdão — foi do Min. Gilmar Mendes. É um erro comum de atribuição que já vimos circular.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Lei nº 15.492/2026: data da lei é 2/9, publicação no DOU é 3/9/2026</div>
+          <div class="atencao-texto">Não trate as duas datas como sinônimas ao citar a norma em petições ou comunicações internas.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Informativo STJ nº 899 não trata de responsabilidade civil do INSS</div>
+          <div class="atencao-texto">Verificamos duas vezes, em fontes independentes: o precedente do informativo (Tema 1.472) é sobre mora administrativa em aposentadoria de servidor público, não sobre benefícios do RGPS. Não cite este informativo como fundamento previdenciário.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-texto" style="margin-top:0;"></div>
+          <div class="atencao-titulo">ADC 80 já foi coberta na Brevis Semanal nº 012 — não duplique a explicação genérica com o cliente</div>
+          <div class="atencao-texto">Ao comunicar clientes que recebem as duas verticais, use este recorte previdenciário-específico (impacto nas revisionais de teto), não repita o resumo geral já enviado na Semanal.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Não comunique o anúncio de Lula sem mencionar a crítica sobre indeferimentos</div>
+          <div class="atencao-texto">Parte da advocacia previdenciarista já questiona publicamente se a queda da fila está sendo obtida à custa de mais negativas (indeferimentos +70% em 2026, 50,5% de negativas no 1º semestre). Ao repassar a boa notícia a clientes ou à imprensa, inclua esse contraponto — está detalhado no Movimento 01 e em Dinheiro na Mesa.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 CURIOSIDADE PREVIDENCIÁRIA -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Curiosidade previdenciária</span>
+    </div>
+    <div class="section-body">
+      <p>O prazo de 45 dias que o governo diz ter zerado nesta semana não é uma meta interna do INSS — é uma obrigação legal que existe desde 1999, no art. 41-A da Lei 8.213/91 combinado com o art. 49 da Lei 9.784/99 (Lei do Processo Administrativo Federal), que fixa em regra geral 30 dias — prorrogáveis — para a Administração decidir requerimentos, prazo que a jurisprudência previdenciária consolidou em 45 dias como parâmetro de mora administrativa a partir de precedentes reiterados do STJ e, mais recentemente, do Tema 1.066 do STF. Foi justamente o descumprimento sistemático desse prazo, ao longo de quase uma década de fila crescente, que transformou o Mandado de Segurança contra a mora do INSS em um dos instrumentos mais usados da advocacia previdenciarista — a ponto de hoje, com o prazo sendo cumprido, esse tipo de ação começar a perder sentido. É um raro caso em que a normalização da burocracia é, ela mesma, a notícia.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Os cinco movimentos desta edição contam a mesma história por ângulos diferentes: um Estado que, ao acelerar a máquina, também está redistribuindo onde mora o litígio previdenciário.</div>
+
+    <div class="mercado-corpo">
+      <p>O anúncio de Lula não é isolado — é a ponta visível de um esforço administrativo concreto, com a Portaria Conjunta nº 34/2026 reorganizando prioridades internas do INSS em torno do ATESTMED e das perícias atrasadas. O resultado, segundo os próprios dados do governo, tem duplo efeito: menos mora, mais indeferimento. Isso significa que o contencioso previdenciário não vai encolher — vai mudar de natureza, migrando de ações que apenas cobram uma resposta do INSS para ações que discutem o mérito de respostas já dadas, e negativas.</p>
+
+      <p>Em paralelo, a expansão de direitos segue seu curso: a Lei 15.492/2026 amplia o reconhecimento de deficiência para fins de BPC, e a ADC 80 — apesar de vir de uma disputa trabalhista — redesenha o acesso à Justiça para quem depende do RGPS, protegendo a maioria dos segurados de baixa renda e, ao mesmo tempo, elevando o custo de entrada para quem litiga por revisão de benefícios mais altos.</p>
+
+      <p>E o episódio do Informativo STJ nº 899 é um lembrete institucional: mesmo com apoio de pesquisa aprofundada por inteligência artificial e verificação cruzada em múltiplas fontes, a checagem direta na fonte primária continua sendo o único jeito de evitar que um erro de atribuição vire fundamento de petição.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Nenhum dos cinco movimentos desta edição é definitivo: o próprio governo reconhece que ainda há 300 mil requerimentos em análise, a ADC 80 tem modulação prospectiva a acompanhar, e o efeito da Lei 15.492/2026 sobre o BPC ainda depende de como o INSS vai aplicá-la na prática pericial.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Reduzir a fila é dever administrativo; não transformar a fila em régua para negar direito é dever de justiça. As duas coisas só valem juntas.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 012</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.poder360.com.br/poder-governo/eu-tenho-uma-sina-com-a-previdencia-social-diz-lula/" target="_blank">Poder360 · "Eu tenho uma sina com a Previdência Social", diz Lula</a></div>
+          <div class="fonte-desc">Pronunciamento presidencial sobre a redução da fila do INSS, 3/9/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www1.folha.uol.com.br/" target="_blank">Folha de S.Paulo · Lula anuncia que governo zerou fila do INSS</a></div>
+          <div class="fonte-desc">Cobertura complementar do anúncio de 3/9/2026, com dados de redução do tempo médio de espera.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.okai.com.br/legislacao/portaria-conjunta-mps-mgi-cc-n-34-de-05-08-2026" target="_blank">Okai · Portaria Conjunta MPS/MGI/CC nº 34, de 5/8/2026</a></div>
+          <div class="fonte-desc">Priorização de perícias e do ATESTMED no Programa de Gerenciamento de Benefícios, publicada 2/9/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://legis.senado.leg.br/norma/patrimonio?tipo=LEI&numero=15492&ano=2026" target="_blank">Legis Senado · Lei nº 15.492/2026</a></div>
+          <div class="fonte-desc">Política Nacional de Proteção aos Direitos da Pessoa com Síndrome de Tourette, sancionada 2/9 e publicada 3/9/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/" target="_blank">Notícias STF · STF define critérios para concessão da justiça gratuita em todo o Judiciário</a></div>
+          <div class="fonte-desc">Julgamento da ADC 80, concluído em 3/9/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/" target="_blank">Notícias STF · PIS/Cofins não incidem sobre rendimentos de reservas técnicas de seguradoras</a></div>
+          <div class="fonte-desc">Repercussão geral julgada em 2/9/2026, relator Min. Luiz Fux.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://scon.stj.jus.br/jurisprudencia/externo/informativo/" target="_blank">STJ · Informativo de Jurisprudência nº 899, de 1/9/2026</a></div>
+          <div class="fonte-desc">Fonte primária usada para a verificação e correção do Radar de Tribunais: ProAfR nos REsp 2.258.325/CE e 2.254.394/CE, Tema 1.472, sobre mora administrativa em aposentadoria de servidor público — sem relação com o RGPS.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.correiobraziliense.com.br/economia/2026/08/7476247-fila-do-inss-cai-mas-numero-de-negativas-dispara-em-2026.html" target="_blank">Correio Braziliense · Fila do INSS cai, mas número de negativas dispara em 2026</a></div>
+          <div class="fonte-desc">Dados oficiais de indeferimentos (jan-mai/2025 vs. jan-mai/2026, junho/2026 e 1º semestre/2026) e entrevistas com as advogadas e advogados previdenciaristas Jéssica Matias e Eliseu Mariano — base do contraponto crítico ao anúncio presidencial, usado no Movimento 01 e em Dinheiro na Mesa.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">09</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.bramanteprevidencia.adv.br/pedidos-negados-pelo-inss-aumentam-70-em-2026" target="_blank">Bramante Previdência · Pedidos negados pelo INSS aumentam 70% em 2026</a></div>
+          <div class="fonte-desc">Confirmação independente, por escritório de advocacia previdenciarista, do percentual de alta nos indeferimentos citado no Movimento 01.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">10</div>
+        <div>
+          <div class="fonte-titulo">Verificação cruzada independente</div>
+          <div class="fonte-desc">Esta edição foi apurada com apoio de pesquisa aprofundada (Google Gemini Deep Research) e validada de forma independente (ChatGPT), com checagem adicional em fonte primária pela curadoria antes da publicação de cada item — inclusive a correção da atribuição do Informativo STJ nº 899, inicialmente sugerida de forma equivocada e revertida após nova verificação, e a inclusão do contraponto crítico da advocacia previdenciarista ao anúncio presidencial, apurado por pesquisa direta na web após pedido de Jean Barbosa para ponderar a notícia.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 012 · 8 de setembro de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
