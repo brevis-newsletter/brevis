@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Semanal — Edição nº 013 · 15 de setembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --creme: #FBF8F1;
+    --creme-forte: #F0E9D8;
+    --accent: #c8371a;
+    --accent-claro: #E8C6BC;
+    --accent-sutil: #FBEAE5;
+    --azul: #1a4c8c;
+    --azul-claro: #4D7AB8;
+    --verde: #1a6b42;
+    --verde-claro: #E8F5EE;
+    --marrom: #7a4a00;
+    --roxo: #5c2d82;
+    --muted: #7a7670;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #2E1811; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--paper); box-shadow: 0 0 90px rgba(0,0,0,0.55); }
+  .back-bar { background: var(--ink); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.75); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+  .back-link:hover { color: var(--accent-claro); }
+  .header { background: var(--ink); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.22); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--paper); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--accent); }
+  .header-sub { font-size: 12px; color: rgba(247,244,238,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(200,55,26,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--accent-claro); border-color: var(--accent-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(200,55,26,0.22); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(200,55,26,0.65); }
+  .header-meta-value { font-size: 12.5px; color: rgba(247,244,238,0.88); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--accent) 0%, #8B2410 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--paper); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--paper); border-radius: 50%; opacity: 0.5; }
+  .indice { background: var(--ink); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,198,188,0.7); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(200,55,26,0.2); color: var(--accent-claro); }
+  .indice-item strong { color: var(--accent-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--accent), transparent); margin: 0 48px; opacity: 0.25; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: #2A2622; }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--accent-sutil); border-left: 4px solid var(--accent); padding: 30px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--ink); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-civ { background: #EBF0FB; color: var(--azul); }
+  .badge-trib { background: #E8F5EE; color: var(--verde); }
+  .badge-trab { background: #FFF3E0; color: var(--marrom); }
+  .badge-hold { background: #F5EFFF; color: var(--roxo); }
+  .badge-crim { background: #FDF0EE; color: var(--accent); }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-stj  { background: #F0EBF5; color: var(--roxo); }
+  .badge-tst  { background: #FFF3E0; color: var(--marrom); }
+  .badge-carf { background: #E8F5EE; color: var(--verde); }
+  .badge-tema { background: #F5EFFF; color: var(--roxo); }
+  .badge-fam  { background: #FDECF3; color: #A8104A; }
+  .badge-leg  { background: #E6F0FF; color: #1A3A8B; }
+  .badge-prev { background: #FDF6E3; color: #8B5E00; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: var(--verde); }
+  .status-atencao     { background: var(--accent-sutil); color: var(--accent); }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(15,14,12,0.06); transition: box-shadow 0.18s, transform 0.18s; scroll-margin-top: 16px; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(15,14,12,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-trib { background: linear-gradient(90deg, #1a6b42, #4FA875); }
+  .bar-trab { background: linear-gradient(90deg, #7a4a00, #C9973F); }
+  .bar-civ  { background: linear-gradient(90deg, #1a4c8c, #6C97C9); }
+  .bar-hold { background: linear-gradient(90deg, #5c2d82, #A583C9); }
+  .bar-crim { background: linear-gradient(90deg, #c8371a, #D9634A); }
+  .bar-stf  { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-leg  { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-prev { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: #2A2622; margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #16371F; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--accent-sutil); border-left: 3px solid var(--accent); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EEE7D8; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); }
+  .top-card-fonte a { color: var(--azul); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--ink); border-radius: 6px; padding: 30px 34px; color: var(--paper); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.12); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.18); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(200,55,26,0.22); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--paper); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(247,244,238,0.82); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(200,55,26,0.25); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--accent-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--accent); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(247,244,238,0.88); border-left: 2px solid var(--azul-claro); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #8FB4E8; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .decisao-fonte a { color: var(--accent-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--creme-forte); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: #2A2622; }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DED5BE; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--accent); }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--accent); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: #2A2622; margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--muted); }
+  .panorama-fonte a { color: var(--azul); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EEE7D8; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul); opacity: 0.3; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .mapear-box { background: var(--ink); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(247,244,238,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.045); border-radius: 3px; border-left: 2px solid var(--accent); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent-claro); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(247,244,238,0.85); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(200,55,26,0.7); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--accent-sutil); border: 1px solid #F0C5B8; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--accent); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .numero-card { background: linear-gradient(135deg, var(--ink) 0%, #2A231C 100%); border-radius: 5px; padding: 32px; color: var(--paper); position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--accent); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--paper); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(247,244,238,0.7); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(200,55,26,0.55); margin-top: 16px; letter-spacing: 1px; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--ink); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: #2A2622; }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--creme-forte); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--ink); font-weight: 500; border-left: 3px solid var(--azul); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E0D9C6; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--accent); opacity: 0.24; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--ink); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .assunto-momento { background: var(--ink); padding: 34px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; position: relative; overflow: hidden; }
+  .assunto-momento::before { content: ''; position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.16); }
+  .assunto-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .assunto-titulo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--paper); margin-bottom: 22px; line-height: 1.32; max-width: 560px; }
+  .assunto-bloco { margin-bottom: 18px; }
+  .assunto-bloco:last-child { margin-bottom: 0; }
+  .assunto-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-claro); display: block; margin-bottom: 6px; }
+  .assunto-bloco-texto { font-size: 13.5px; line-height: 1.75; color: rgba(247,244,238,0.85); }
+  .assunto-comentar { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 16px 20px; border-left: 2px solid var(--accent-claro); font-style: italic; color: rgba(247,244,238,0.92); font-size: 13.5px; line-height: 1.7; }
+  .assunto-meta { margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .assunto-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .assunto-fonte a { color: var(--accent-claro); text-decoration: none; }
+  .assunto-fonte a:hover { text-decoration: underline; }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--muted); line-height: 1.55; }
+  .footer { background: var(--ink); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .footer-back-link:hover { color: var(--accent-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--accent); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(247,244,238,0.32); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(200,55,26,0.14); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(247,244,238,0.26); line-height: 1.7; font-style: italic; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .assunto-momento { padding: 26px 24px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Jurídica Geral · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Semanal</span></div>
+    <div class="header-sub">Radar jurídico amplo — <a href="#card-tributario">Tributário</a>, <a href="#card-trabalhista">Trabalhista</a>, <a href="#card-eleitoral">Eleitoral</a>, <a href="#card-civel">Cível</a> e <a href="#card-destaque">Institucional</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">15 de setembro de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">013</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">4 a 15 de setembro · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">5–7 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Semanal</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">04/09 a 15/09</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">5 áreas cobertas · 5 movimentos · 5 ações imediatas</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 5</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Semanal nº 013, período de 4 a 15 de setembro. A LC 236/2026 muda o jogo do contencioso fiscal, o TST manda segurar 80% do efetivo dos Correios em greve, a Lei da Ficha Limpa volta à estaca zero no STF — e tem o assunto do momento logo abaixo. Os 5 movimentos da semana, cada um com fonte e ação prática, vêm na sequência.</p>
+    </div>
+  </div>
+
+  <!-- ASSUNTO DO MOMENTO -->
+  <div class="assunto-momento" id="sec-assunto-momento">
+    <div class="assunto-eyebrow">🔥 Assunto do momento
+      <div class="decisao-eyebrow-line"></div>
+    </div>
+    <div class="assunto-titulo">Por que o STF julga hoje se pode investigar um dos seus próprios ministros — e por que isso não é o relator quem decide</div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O que está bombando</span>
+      <div class="assunto-bloco-texto">Nesta terça, 15/09/2026, às 10h, o Plenário do STF está reunido em sessão extraordinária presencial para decidir se a investigação envolvendo o Min. Alexandre de Moraes e o ex-controlador do Banco Master, Daniel Vorcaro, pode avançar. Esplanada fechada, cobertura ao vivo, o país inteiro comentando — mas o julgamento em si não decide se Moraes é culpado de nada: só se o procedimento que produziu as provas contra ele é válido.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O gancho jurídico</span>
+      <div class="assunto-bloco-texto">O motivo de o caso ir ao Plenário — e não a um único relator, como é a regra em praticamente qualquer outro inquérito — é uma regra regimental pouco conhecida: quando o investigado é ministro do próprio STF, quem decide é o colegiado, não um colega isolado. Foi essa mesma regra que tirou a relatoria do Min. André Mendonça (que já havia autorizado a produção do relatório da PF hoje sob análise) e a levou ao Min. Edson Fachin, presidente da Corte, em 12/09. Na prática: o STF criou, para si mesmo, uma trava que nenhum outro tribunal do país tem — nenhum juiz de primeiro grau decide sozinho se investiga outro juiz da mesma vara.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">Curiosidade</span>
+      <div class="assunto-bloco-texto">O relatório da Polícia Federal que está sob análise foi produzido em apenas 72 horas — um prazo curtíssimo para um documento que reúne 52 mensagens, R$ 22,8 milhões em contratos e seis encontros presenciais ao longo de quase um ano e meio. É justamente a velocidade da produção do relatório, mais do que o conteúdo em si, que alimenta um dos três cenários em disputa hoje: a possibilidade de o próprio Plenário anular o relatório por vício de forma, antes mesmo de entrar no mérito do que ele diz.</div>
+    </div>
+
+    <div class="assunto-comentar">
+      "Pra comentar": vale lembrar que nem o STF decide sozinho se investiga um dos seus — é o Plenário inteiro que vota, sessão pública, sem exceção pra ninguém. É uma trava que a maioria dos tribunais do país não tem para seus próprios membros.
+    </div>
+
+    <div class="assunto-meta">
+      <span class="status-pill status-construcao">⚠ Em julgamento — sem resultado até o fechamento desta edição</span>
+      <div class="assunto-fonte" style="margin-left:auto">Fonte: ConJur · Pet 16.662 · sessão 15/09/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 6 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 5 movimentos do período</span>
+    </div>
+
+    <div class="top-grid">
+
+      <div class="top-card" id="card-tributario">
+        <div class="top-card-bar bar-trib"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 01 · TRIBUTÁRIO / PROCESSUAL</div>
+            <span class="impacto-badge">🔴 Impacto Altíssimo</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-leg">LC 236/2026</span>
+            <span class="badge badge-trib">CTN</span>
+          </div>
+          <div class="top-card-titulo">Entra em vigor a LC 236/2026: primeiro capítulo do CTN sobre processo administrativo fiscal nacional</div>
+          <div class="top-card-corpo">
+            <p>A Lei Complementar 236/2026 foi publicada no DOU e entrou em vigor em 04/09/2026, sancionada com vetos (Mensagem nº 743/2026). Ela acrescenta ao CTN um Capítulo II inteiramente novo — arts. 208-A a 208-J — criando, pela primeira vez, normas gerais de processo administrativo fiscal aplicáveis a União, Estados, Distrito Federal e Municípios, que hoje seguem ritos próprios e fragmentados.</p>
+            <p>Entre as mudanças: prazo de 20 dias úteis para impugnação e recursos, com suspensão automática da exigibilidade do crédito tributário desde a impugnação, sem necessidade de depósito ou garantia; duplo grau obrigatório de julgamento para municípios com mais de 100 mil habitantes; vedação a recurso hierárquico contra decisão administrativa favorável ao contribuinte; e, no art. 208-G, a obrigação de a administração tributária observar decisões do STF e do STJ proferidas em repercussão geral, recursos repetitivos e controle concentrado — não pode mais lavrar autuação contrária a jurisprudência vinculante favorável ao contribuinte.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Revisar desde já minutas de impugnação e recurso administrativo para incorporar os novos prazos e, principalmente, para invocar o art. 208-G em casos com tese vinculante do STF/STJ favorável ao cliente — é fundamento novo e direto para afastar autuações.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Em vigor desde 04/09/2026</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://conjur.com.br/2026-set-13/lc-236-unifica-contencioso-e-redefine-relacao-entre-fisco-e-contribuinte/" target="_blank">ConJur · LC 236/2026 · vigência 04/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-trabalhista">
+        <div class="top-card-bar bar-trab"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 02 · TRABALHISTA / GREVE</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tst">TST</span>
+            <span class="badge badge-trab">Correios</span>
+          </div>
+          <div class="top-card-titulo">Presidente do TST manda manter 80% do efetivo dos Correios em greve, sob multa de R$ 100 mil por dia</div>
+          <div class="top-card-corpo">
+            <p>O presidente do TST, Min. Vieira de Mello Filho, decidiu em 12/09/2026 (sábado) determinar que os sindicatos mantenham 80% dos trabalhadores dos Correios em atividade durante a greve deflagrada pela categoria, sob multa de R$ 100 mil por dia de descumprimento, por sindicato. A decisão só ganhou ampla cobertura de imprensa em 14 e 15/09 — mais um caso, nesta edição, de data de julgamento diferente da data de notícia.</p>
+            <p>É medida liminar, tomada monocraticamente pela Presidência antes do julgamento de mérito do dissídio coletivo pela Seção de Dissídios Coletivos (SDC) do TST, que ainda vai analisar a abusividade ou não da greve.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Decisão liminar — mérito ainda não julgado</span>
+            Não trate como julgamento definitivo sobre a legalidade da greve: é medida de manutenção de serviço essencial, tomada antes do exame de mérito pela SDC.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Liminar — julgado 12/09, mérito pendente</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.tst.jus.br/en/-/tst-determina-manutencao-de-80-do-efetivo-dos-correios-durante-greve-e-fixa-multa-de-r-100-mil-por-dia-em-caso-de-descumprimento" target="_blank">TST · decisão 12/09/2026 · noticiada 14–15/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-eleitoral">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 03 · ELEITORAL / CONSTITUCIONAL</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADI 7.881</span>
+          </div>
+          <div class="top-card-titulo">Ficha Limpa: Gilmar Mendes vota para validar mudanças na lei, mas Dino pede destaque e leva o caso ao plenário físico</div>
+          <div class="top-card-corpo">
+            <p>Na ADI 7.881, que discute a constitucionalidade de alterações promovidas pela LC 219/2025 na Lei da Ficha Limpa (entre elas um teto de 12 anos de inelegibilidade para condenações sucessivas por improbidade), a relatora Min. Cármen Lúcia havia votado pela inconstitucionalidade de parte das mudanças. Em 11/09/2026, o Min. Gilmar Mendes devolveu vista e divergiu, votando pela validade da maior parte das alterações, com ressalva quanto a um ponto sobre condenações criminais. O placar parcial no plenário virtual ficou em 2x1 (Cármen Lúcia e Luiz Fux pela inconstitucionalidade parcial, Gilmar Mendes pela validade).</p>
+            <p>Antes da conclusão da votação virtual, o Min. Flávio Dino pediu destaque — mecanismo que retira o processo do plenário virtual e reinicia a apreciação em sessão presencial, sem data marcada até o fechamento desta edição.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Julgamento reiniciado — sem placar válido</span>
+            O destaque de Dino zera a votação virtual: não cite o placar parcial de 11/09 como indicativo do resultado final, e não oriente clientes sobre as regras da Ficha Limpa como se já estivessem definidas às vésperas do ciclo eleitoral.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Destacado para o plenário físico — sem data</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/464403/as-vesperas-da-eleicao-stf-segue-sem-definir-regras-da-ficha-limpa" target="_blank">Migalhas · ADI 7.881 · voto Gilmar Mendes 11/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-civel">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 04 · CÍVEL / CONSUMIDOR</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-civ">TJ-SP</span>
+            <span class="badge badge-civ">Plano de Saúde</span>
+          </div>
+          <div class="top-card-titulo">TJ-SP obriga plano de saúde a custear tratamento multidisciplinar de criança com paralisia cerebral</div>
+          <div class="top-card-corpo">
+            <p>A 5ª Câmara de Direito Privado do TJ-SP (relator Des. Erickson Gavazza Marques, processo 4061728-66.2026.8.26.0000), em decisão noticiada em 06/09/2026, reformou decisão de 1ª instância e determinou que um plano de saúde custeie, a uma criança de 4 anos com paralisia cerebral (tetraparaparesia espástica, GMFCS nível 3), duas sessões semanais de psicoterapia, protocolo de gessamento seriado e cadeira de rodas manual adaptada, sob multa diária de R$ 1 mil, limitada a R$ 50 mil.</p>
+            <p>O colegiado priorizou o direito à saúde e à vida sobre limitações contratuais, destacando que o relatório médico já atestava a necessidade do tratamento.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Precedente útil para ações de obrigação de fazer contra planos de saúde que neguem cobertura multidisciplinar a pacientes com relatório médico atestando necessidade — mapear clientes em situação semelhante.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-favoravel">✔ Julgado — Turma reformou 1ª instância</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://conjur.com.br/2026-set-06/tj-sp-determina-que-plano-de-saude-cubra-tratamento-para-paralisia-cerebral/" target="_blank">ConJur · TJ-SP · noticiado 06/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-destaque">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 05 · DESTAQUE LIVRE / INSTITUCIONAL</div>
+            <span class="impacto-badge">🟢 Impacto Baixo</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-leg">Governo Federal</span>
+            <span class="badge badge-tema">Reforma do Judiciário</span>
+          </div>
+          <div class="top-card-titulo">Lula fala em discutir reforma do Judiciário "no próximo ano" — sem proposta detalhada</div>
+          <div class="top-card-corpo">
+            <p>Em cerimônia no Palácio do Planalto, em 04/09/2026, o presidente Luiz Inácio Lula da Silva declarou: "Tenho certeza de que faremos no próximo ano uma discussão profunda no sistema Judiciário para que o povo possa continuar acreditando na Justiça." A fala não veio acompanhada de anteprojeto, minuta ou cronograma legislativo.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Leitura institucional</span>
+            Trate como sinalização política, não como pauta legislativa em curso — não há texto, prazo nem rito definidos até o momento.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Fala institucional — sem proposta formal</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.poder360.com.br/poder-governo/lula-diz-que-no-proximo-ano-discutira-reforma-no-judiciario/" target="_blank">Poder360 · Lula · 04/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        Congresso Nacional · LC 236/2026 · em vigor desde 04/09/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">O CTN ganha, pela primeira vez, um processo administrativo fiscal nacional — e o Fisco passa a estar preso às teses vinculantes do STF/STJ</div>
+      <div class="decisao-body">
+        <p>A Lei Complementar 236/2026 foi publicada no Diário Oficial da União e entrou em vigor em 04/09/2026, sancionada com vetos pela Presidência da República (Mensagem nº 743/2026, ao Senado). Ela insere no CTN um Capítulo II totalmente novo — arts. 208-A a 208-J — criando normas gerais de processo administrativo fiscal aplicáveis simultaneamente à União, aos Estados, ao Distrito Federal e aos Municípios, que até então seguiam ritos próprios e fragmentados, sem qualquer padrão nacional.</p>
+        <p>Entre as mudanças de maior impacto prático: prazo de 20 dias úteis para impugnações e recursos administrativos; suspensão automática da exigibilidade do crédito tributário a partir da impugnação, sem exigência de depósito ou garantia; duplo grau de julgamento obrigatório para Municípios com mais de 100 mil habitantes; vedação a recurso hierárquico de autoridade do Executivo contra decisão administrativa favorável ao contribuinte; e suspensão automática de prazos entre 20 de dezembro e 20 de janeiro.</p>
+        <p>O ponto de maior alcance para o contencioso é o art. 208-G: a administração tributária fica obrigada a observar as decisões do STF e do STJ proferidas em repercussão geral, recursos repetitivos e controle concentrado de constitucionalidade — não pode lavrar, nem manter, autuação fiscal que contrarie jurisprudência vinculante favorável ao contribuinte já consolidada nessas hipóteses.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        A partir de 04/09/2026, todo processo administrativo fiscal no Brasil — federal, estadual ou municipal — segue as normas gerais do novo Capítulo II do CTN (arts. 208-A a 208-J), inclusive a vedação a autuações contrárias a teses vinculantes do STF e do STJ (art. 208-G).
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Revisar impugnações e recursos administrativos em andamento para adequar prazos ao novo rito e, principalmente, para citar expressamente o art. 208-G em qualquer caso com tese vinculante do STF/STJ favorável ao cliente — é fundamento direto para afastar ou anular autuação.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Em vigor — sancionada com vetos</span>
+        <span class="status-pill status-atencao">⚠ Estados e Municípios têm 2 anos para adequar legislação local</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: ConJur · LC 236/2026 · vigência 04/09/2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">Art. 208-G do CTN: quando uma autuação fiscal passa a ser nula por contrariar tese vinculante</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">LC 236/2026, art. 208-G do CTN: o limite novo à autuação fiscal quando já existe tese vinculante do STF/STJ</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a origem da mudança</span>
+        <div class="tese-bloco-texto">A LC 236/2026 insere no CTN o Capítulo II ("Processo Administrativo Fiscal", arts. 208-A a 208-J), unificando pela primeira vez as normas gerais aplicáveis a União, Estados, Distrito Federal e Municípios. Dentro desse capítulo, o art. 208-G trata especificamente da vinculação da administração tributária às decisões do Judiciário.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que passa a valer a partir de 04/09/2026</span>
+        <div class="tese-bloco-texto">A administração tributária — federal, estadual, distrital ou municipal — deve observar as decisões do STF e do STJ proferidas em repercussão geral, recursos repetitivos e ações de controle concentrado de constitucionalidade. Na prática, isso significa que uma autuação fiscal lavrada em contrariedade a uma tese vinculante já fixada e favorável ao contribuinte passa a ter um fundamento de nulidade expresso em lei complementar, e não apenas em construção doutrinária ou jurisprudencial.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que a mudança não faz</span>
+        <div class="tese-bloco-texto">Não abrange qualquer decisão do STF ou do STJ — só as proferidas nos regimes de efeito vinculante ou repetitivo (repercussão geral, recursos repetitivos, controle concentrado). Decisão de turma, decisão monocrática ou tese ainda não transitada em julgado não estão automaticamente cobertas pelo art. 208-G. E não dispensa o contribuinte de acompanhar a legislação local: Estados e Municípios têm até dois anos para adaptar suas normas ao novo capítulo do CTN.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Mapear, na carteira do escritório, quais clientes têm autuações fiscais em curso — administrativas ou já em execução fiscal — sobre matérias com tese vinculante do STF ou do STJ favorável ao contribuinte, e peticionar expressamente com base no art. 208-G do CTN. Revisar também minutas-padrão de impugnação e recurso administrativo para incorporar os novos prazos (20 dias úteis) e a suspensão automática de exigibilidade a partir da impugnação.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-atencao">⚠ Vigente desde 04/09/2026 — Estados e Municípios têm até 2 anos para adequar legislação local</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área</span>
+    </div>
+    <div class="section-intro">Os principais movimentos do período, organizados por área de atuação, com o ângulo prático para a rotina do escritório.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Tributário / Processual</div>
+          <div class="panorama-titulo">LC 236/2026 cria processo administrativo fiscal nacional e vincula o Fisco às teses do STF/STJ</div>
+          <div class="panorama-texto">Ver Decisão do Dia (seção 03) e Tese Relevante (seção 04) — em vigor desde 04/09/2026.</div>
+          <div class="panorama-footer"><span class="status-pill status-consolidada">✔ Em vigor</span><span class="panorama-fonte">LC 236/2026</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Trabalhista / Greve</div>
+          <div class="panorama-titulo">TST manda manter 80% do efetivo dos Correios em greve, sob multa de R$ 100 mil/dia</div>
+          <div class="panorama-texto">Ver Movimento 02 do Top 5 — liminar da Presidência do TST, julgada 12/09, mérito do dissídio ainda pendente.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Liminar</span><span class="panorama-fonte">TST</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Eleitoral / Constitucional</div>
+          <div class="panorama-titulo">Ficha Limpa: Gilmar Mendes vota, mas Dino pede destaque e zera a votação</div>
+          <div class="panorama-texto">Ver Movimento 03 do Top 5 — ADI 7.881 vai ao plenário físico, sem data marcada.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Destacado</span><span class="panorama-fonte">STF · ADI 7.881</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Cível / Consumidor</div>
+          <div class="panorama-titulo">TJ-SP obriga plano de saúde a custear tratamento multidisciplinar de criança com paralisia cerebral</div>
+          <div class="panorama-texto">Ver Movimento 04 do Top 5 — precedente útil para obrigação de fazer contra planos de saúde.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">✔ Julgado</span><span class="panorama-fonte">TJ-SP</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">Destaque Livre / Institucional</div>
+          <div class="panorama-titulo">Lula fala em discutir reforma do Judiciário "no próximo ano"</div>
+          <div class="panorama-texto">Ver Movimento 05 do Top 5 — sinalização política, sem proposta formal até o momento.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Sem proposta formal</span><span class="panorama-fonte">Governo Federal</span></div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Tema 843 (créditos presumidos de ICMS na base do PIS/Cofins) fica de fora desta edição</div>
+        <div class="radar-texto">Circulam notícias sobre nova retirada de pauta, mas não foi possível confirmar, com segurança, se o episódio ocorreu dentro da janela de 4 a 15/09 ou se as fontes reciclam a retirada de pauta já ocorrida em fevereiro/2026 — fique de olho na próxima edição.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-leg" style="flex-shrink:0;margin-top:2px;">Curadoria</span>
+      <div>
+        <div class="radar-titulo">Nenhum movimento novo confirmado em Holding / Planejamento Patrimonial neste período</div>
+        <div class="radar-texto">Os candidatos localizados eram conteúdo evergreen sobre holding familiar e ITCMD, ou duplicavam o Tema 1.348 do STF (ITBI em holdings imobiliárias), já coberto na edição nº 012 — a vertical volta na próxima edição.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">Curadoria</span>
+      <div>
+        <div class="radar-titulo">Um candidato previdenciário ficou de fora por pertencer à outra linha editorial</div>
+        <div class="radar-texto">O Tema 1.124 do STJ (efeitos financeiros de complementação de prova ao INSS) é próprio do Brevis Previdenciário, não deste boletim — cruzamos contra o histórico das duas linhas antes de descartar.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">TIT-SP aplica retroatividade benigna da LC 236/2026 e limita multa de ITCMD a 75%</div>
+        <div class="radar-texto">Primeira aplicação prática identificada da nova lei em contencioso de ITCMD em São Paulo — vale acompanhar se outros tribunais administrativos estaduais seguem o mesmo entendimento.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tst" style="flex-shrink:0;margin-top:2px;">TST</span>
+      <div>
+        <div class="radar-titulo">Julgamento de mérito do dissídio coletivo dos Correios ainda não tem data confirmada</div>
+        <div class="radar-texto">A liminar de 12/09 sobre o efetivo mínimo é medida provisória — a SDC do TST ainda vai decidir se a greve foi ou não abusiva.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Resultado da sessão de hoje (15/09) sobre o Caso Master não estava disponível no fechamento</div>
+        <div class="radar-texto">A sessão extraordinária presencial do Plenário sobre a Pet 16.662 começou às 10h de 15/09/2026 — acompanhe o desfecho diretamente no site do STF antes de repassar qualquer resultado a clientes.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">R$ 100 mil por dia de multa nos Correios e um novo fundamento de nulidade tributária</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>Dois movimentos desta edição têm dimensão financeira direta para a carteira: a multa diária fixada pelo TST contra os sindicatos dos Correios em caso de descumprimento da liminar, e o novo art. 208-G do CTN, que dá ao contribuinte um fundamento direto — e inédito em lei complementar — para afastar autuações fiscais contrárias a teses vinculantes do STF e do STJ.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟡 R$ 100 mil/dia ·</span>
+        <span class="dinheiro-header-title">TST · multa por descumprimento da liminar dos Correios</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>A multa recai sobre cada sindicato que não mantiver 80% do efetivo em atividade durante a greve — dimensão relevante para clientes com interesse direto ou indireto na prestação do serviço postal.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Acompanhar a data de julgamento do mérito do dissídio coletivo pela SDC do TST</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Não tratar a liminar como decisão final sobre a abusividade da greve</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: TST · decisão 12/09/2026</span>
+      </div>
+    </div>
+
+    <div class="dinheiro-card" style="margin-top:14px;">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🔴 Fundamento novo ·</span>
+        <span class="dinheiro-header-title">Art. 208-G do CTN · nulidade de autuação contrária a tese vinculante</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Todo cliente com autuação fiscal em curso sobre matéria já pacificada em repercussão geral, recurso repetitivo ou controle concentrado a seu favor ganha, a partir de 04/09/2026, um fundamento direto de lei complementar para pedir a nulidade.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Levantar, na carteira, todas as autuações fiscais em curso e cruzar com teses vinculantes do STF/STJ já fixadas</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Peticionar expressamente com base no art. 208-G, citando o julgado vinculante aplicável</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Monitorar a adequação da legislação local (Estados e Municípios têm até 2 anos)</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: ConJur · LC 236/2026 · vigência 04/09/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>5 ações para começar agora.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Levantar autuações fiscais em curso e cruzar com teses vinculantes do STF/STJ</div>
+          <div class="amanha-texto">Peticionar com base no art. 208-G do CTN (LC 236/2026) em qualquer caso com tese já pacificada a favor do contribuinte.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Adequar minutas de impugnação e recurso administrativo fiscal ao novo rito da LC 236/2026</div>
+          <div class="amanha-texto">Novo prazo de 20 dias úteis e suspensão automática de exigibilidade a partir da impugnação, sem depósito ou garantia.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Não tratar a liminar do TST sobre os Correios como decisão final sobre a greve</div>
+          <div class="amanha-texto">É medida de manutenção de serviço essencial — o mérito sobre a abusividade da greve ainda será julgado pela SDC.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Aguardar a sessão presencial da ADI 7.881 antes de orientar sobre regras da Ficha Limpa</div>
+          <div class="amanha-texto">O destaque do Min. Flávio Dino zerou a votação virtual — o placar de 11/09 não vale como indicativo do resultado final.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Usar o precedente do TJ-SP sobre paralisia cerebral em ações contra planos de saúde</div>
+          <div class="amanha-texto">Aplicável a casos com relatório médico atestando necessidade de tratamento multidisciplinar não coberto pelo plano.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">5 perfis prioritários deste período.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Empresas com autuações fiscais em curso sobre matéria com tese vinculante do STF/STJ favorável</strong> — avaliar nulidade com base no art. 208-G do CTN.
+            <span class="mapear-tese">→ Contencioso tributário · LC 236/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Clientes com interesse direto ou indireto na prestação de serviço postal</strong> — acompanhar o desfecho do dissídio coletivo dos Correios.
+            <span class="mapear-tese">→ Consultivo trabalhista · TST</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Clientes com candidaturas ou mandatos sob risco de inelegibilidade em julgamento</strong> — orientar com cautela até a sessão presencial da ADI 7.881.
+            <span class="mapear-tese">→ Eleitoral · STF, ADI 7.881</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Beneficiários de plano de saúde com negativa de cobertura multidisciplinar</strong> — avaliar ação de obrigação de fazer com o precedente do TJ-SP.
+            <span class="mapear-tese">→ Consumidor · TJ-SP</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Clientes que perguntarem sobre a reforma do Judiciário anunciada por Lula</strong> — orientar que é fala institucional, sem proposta formal em tramitação.
+            <span class="mapear-tese">→ Comunicação institucional · Governo Federal</span>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O art. 208-G do CTN só cobre decisões vinculantes, não qualquer julgado do STF/STJ</div>
+          <div class="atencao-texto">Abrange apenas repercussão geral, recursos repetitivos e controle concentrado de constitucionalidade — decisão de turma ou monocrática não está automaticamente coberta.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">A liminar do TST sobre os Correios não julgou a abusividade da greve</div>
+          <div class="atencao-texto">É medida de manutenção de 80% do efetivo, tomada monocraticamente pela Presidência — o mérito ainda será apreciado pela SDC.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O placar de 11/09 na ADI 7.881 não vale mais — o destaque de Dino zerou a votação</div>
+          <div class="atencao-texto">Não cite "2x1" ou o voto de Gilmar Mendes como indicativo do resultado final: a apreciação recomeça do zero em sessão presencial, sem data marcada.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">A fala de Lula sobre reforma do Judiciário não é projeto de lei</div>
+          <div class="atencao-texto">Não há anteprojeto, minuta ou cronograma legislativo publicado até o momento — trate como sinalização política, não como pauta em tramitação.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O Tema 843 do STF (créditos presumidos de ICMS) não entra nesta edição por falta de confirmação</div>
+          <div class="atencao-texto">Não cite uma suposta retirada de pauta de setembro/2026 sem verificar diretamente no andamento processual do STF — há risco de reciclagem da retirada de pauta de fevereiro/2026.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O julgamento do Caso Master (Pet 16.662) ainda não tem resultado — não repasse boatos</div>
+          <div class="atencao-texto">A sessão do Plenário começou às 10h de hoje (15/09/2026) e não havia decisão até o fechamento desta edição. Qualquer resultado deve ser confirmado diretamente no site do STF antes de ser comunicado a clientes.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado do período</div>
+      <div class="numero-destaque">10 <span class="numero-unidade">ARTIGOS</span></div>
+      <div class="numero-titulo">novos foram inseridos no CTN pela LC 236/2026, criando o primeiro processo administrativo fiscal nacional do país</div>
+      <div class="numero-texto">Os arts. 208-A a 208-J passam a valer, de uma só vez, para União, Estados, Distrito Federal e Municípios — que até 03/09/2026 seguiam ritos próprios e fragmentados, sem qualquer padrão comum de prazos, recursos ou vinculação a decisões do Judiciário. Estados e Municípios têm até dois anos para adequar sua legislação local ao novo capítulo.</div>
+      <div class="numero-fonte">Fonte: ConJur · LC 236/2026 · vigência 04/09/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Data do julgamento não é data da notícia, e placar parcial zerado por destaque não é resultado — duas distinções que atravessaram esta edição inteira.</div>
+
+    <div class="mercado-corpo">
+      <p>A decisão do TST sobre os Correios ilustra bem a primeira armadilha: foi tomada em 12/09, um sábado, mas só ganhou cobertura ampla da imprensa em 14 e 15/09 — quem cita a data errada em petição comete um erro fácil de evitar, bastando checar a fonte primária em vez da data de indexação da matéria. É o mesmo cuidado que levou esta curadoria, em edições anteriores, a descartar notícias recicladas republicadas com data trocada.</p>
+
+      <p>A segunda armadilha apareceu na ADI 7.881 sobre a Ficha Limpa: houve voto divergente do Min. Gilmar Mendes em 11/09, formando um placar parcial de 2x1 no plenário virtual — mas o pedido de destaque do Min. Flávio Dino, feito na sequência, não é só uma pausa. Ele retira o processo do virtual e reinicia a apreciação em sessão presencial, o que zera qualquer placar formado até ali. Tratar aquele 2x1 como indicativo do resultado final seria o tipo de erro que pode levar um escritório a comunicar uma tendência que juridicamente não existe mais.</p>
+
+      <p>No que efetivamente fechou como fato consumado nesta janela, o padrão foi mais direto: a LC 236/2026 está em vigor e pode ser citada diretamente em petição administrativa fiscal, e o TJ-SP já decidiu, em segunda instância, o caso da paralisia cerebral. A liminar do TST é medida provisória, sujeita a novo exame de mérito pela SDC. Os demais — ADI 7.881 e a fala de Lula sobre reforma do Judiciário — seguem em aberto, e o texto desta edição foi escrito para deixar isso claro em cada menção, não só uma vez no rodapé. Fora da contagem de movimentos, vale o mesmo cuidado redobrado para o Assunto do Momento desta edição: o julgamento do Caso Master está em curso no exato momento em que fechamos, e nada do que aparece aqui deve ser lido como resultado.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Resumo prático: 2 dos 5 movimentos desta edição já são norma vigente ou decisão de 2ª instância e podem ser usados diretamente na petição ou no aconselhamento (LC 236/2026 e o caso do TJ-SP). Um é liminar, sujeita a novo exame de mérito (TST/Correios). Os outros dois exigem acompanhamento por ainda estarem sem data ou sem proposta formal — a ADI 7.881 no STF e a reforma do Judiciário anunciada por Lula.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">A justiça atrasada não é justiça, senão injustiça qualificada e manifesta.</div>
+    <div class="frase-autor">— Rui Barbosa, jurista, em "Oração aos Moços" (1920)</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conjur.com.br/2026-set-13/lc-236-unifica-contencioso-e-redefine-relacao-entre-fisco-e-contribuinte/" target="_blank">ConJur · LC 236 unifica contencioso e redefine relação entre Fisco e contribuinte</a></div>
+          <div class="fonte-desc">Lei Complementar 236/2026, em vigor desde 04/09/2026, sancionada com vetos (Mensagem 743).</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conjur.com.br/2026-set-09/temos-um-processo-administrativo-fiscal-nacional-primeiros-comentarios-a-lc-236-2026/" target="_blank">ConJur · "Temos um processo administrativo fiscal nacional" — primeiros comentários à LC 236/2026</a></div>
+          <div class="fonte-desc">Análise dos arts. 208-A a 208-J do CTN, publicada em 09/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.tst.jus.br/en/-/tst-determina-manutencao-de-80-do-efetivo-dos-correios-durante-greve-e-fixa-multa-de-r-100-mil-por-dia-em-caso-de-descumprimento" target="_blank">TST · TST determina manutenção de 80% do efetivo dos Correios durante greve</a></div>
+          <div class="fonte-desc">Decisão da Presidência (Min. Vieira de Mello Filho) de 12/09/2026, noticiada em 14–15/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/464403/as-vesperas-da-eleicao-stf-segue-sem-definir-regras-da-ficha-limpa" target="_blank">Migalhas · Às vésperas da eleição, STF segue sem definir regras da Ficha Limpa</a></div>
+          <div class="fonte-desc">ADI 7.881, voto do Min. Gilmar Mendes em 11/09/2026 e destaque do Min. Flávio Dino.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.metropoles.com/brasil/justica-brasil/dino-pede-destaque-e-lei-da-ficha-limpa-ira-ao-plenario-fisico-do-stf" target="_blank">Metrópoles · Dino pede destaque, e Lei da Ficha Limpa irá ao plenário físico do STF</a></div>
+          <div class="fonte-desc">ADI 7.881, pedido de destaque em 11/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conjur.com.br/2026-set-06/tj-sp-determina-que-plano-de-saude-cubra-tratamento-para-paralisia-cerebral/" target="_blank">ConJur · TJ-SP determina que plano de saúde cubra tratamento para paralisia cerebral</a></div>
+          <div class="fonte-desc">5ª Câmara de Direito Privado, processo 4061728-66.2026.8.26.0000, noticiado em 06/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.poder360.com.br/poder-governo/lula-diz-que-no-proximo-ano-discutira-reforma-no-judiciario/" target="_blank">Poder360 · Lula diz que, no próximo ano, discutirá reforma no Judiciário</a></div>
+          <div class="fonte-desc">Declaração no Palácio do Planalto em 04/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://conjur.com.br/2026-set-15/stf-nesta-terca-cenarios-possiveis-para-o-julgamento-da-pet-16-662/" target="_blank">ConJur · STF nesta terça: cenários possíveis para o julgamento da Pet 16.662</a></div>
+          <div class="fonte-desc">Caso Master, sessão extraordinária presencial de 15/09/2026, relatoria com o Min. Edson Fachin desde 12/09.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Semanal</div>
+    <div class="footer-sub">Radar jurídico amplo · Edição nº 013 · 15 de setembro de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
