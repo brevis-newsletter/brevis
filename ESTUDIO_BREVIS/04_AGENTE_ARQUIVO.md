@@ -81,7 +81,19 @@ Este arquivo é o registro histórico do Brevis. Use-o para:
 
 ---
 
-## 3. TEMAS JÁ COBERTOS — CONTROLE DE REPETIÇÃO
+## 3. BREVIS ESPECIAL — EDIÇÕES PUBLICADAS
+
+Edições avulsas, fora da numeração regular do Semanal e do Previdenciário. Cada uma é dedicada a um único caso de grande repercussão pública, quando o volume de desdobramentos justifica um tratamento à parte — sem viés, com painel plural de vozes.
+
+| Data | Arquivo | Caso | Principais elementos |
+|------|---------|------|----------------------|
+| 16/09/2026 | brevis-especial-caso-master-2026-09-16.html | Caso Master (STF, Pet 16.662 e Pet 16.704) — se cabe investigar o Min. Alexandre de Moraes por sua relação com Daniel Vorcaro (Banco Master), e a conduta do Min. André Mendonça ao afastar diretores da PF | Reportagem completa da sessão do Plenário de 15/09/2026 (linha do tempo, mapa processual, falas de cada ministro em plenário — Fachin, Gilmar Mendes, Mendonça, Moraes, Dino, Fux, Cármen Lúcia, Gonet —, mecanismo jurídico do pedido de vista, painel plural de vozes, cobertura da imprensa nacional e internacional). Identidade visual própria (branco/vermelho/preto, inspirada no G1). Fontes: gravação integral da sessão (STF/TV Justiça), JN/g1, CNN Brasil/Waack, ConJur, Migalhas, Poder360, Diário Carioca, Reuters, Washington Post, El País, Le Monde, RFI, Al Jazeera, La Nación, Clarín, Bloomberg. Segunda opinião externa (Gemini e ChatGPT) antes da publicação. Notebook público do NotebookLM com fontes e podcast em áudio linkado na própria edição. |
+
+**Próxima edição Especial:** sem numeração — cada uma é avulsa, aberta por decisão editorial quando um caso justificar.
+
+---
+
+## 4. TEMAS JÁ COBERTOS — CONTROLE DE REPETIÇÃO
 
 ### Previdenciário
 - [ ] Revisão da Vida Toda (STF — encerrada definitivamente) — coberta
@@ -105,7 +117,7 @@ Este arquivo é o registro histórico do Brevis. Use-o para:
 
 ---
 
-## 4. DECISÕES EDITORIAIS REGISTRADAS
+## 5. DECISÕES EDITORIAIS REGISTRADAS
 
 | Data | Decisão | Status |
 |------|---------|--------|
@@ -122,7 +134,7 @@ Este arquivo é o registro histórico do Brevis. Use-o para:
 
 ---
 
-## 5. TEMAS A COBRIR NAS PRÓXIMAS EDIÇÕES
+## 6. TEMAS A COBRIR NAS PRÓXIMAS EDIÇÕES
 
 > Use esta seção para registrar pautas futuras identificadas.
 
@@ -132,7 +144,7 @@ Este arquivo é o registro histórico do Brevis. Use-o para:
 
 ---
 
-## 6. ESTRUTURA DA PASTA BREVIS (para referência)
+## 7. ESTRUTURA DA PASTA BREVIS (para referência)
 
 ```
 BREVIS/
