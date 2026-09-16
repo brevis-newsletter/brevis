@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Especial — Caso Master no STF</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --papel: #FEFCF9;
+    --papel-alt: #F8F1E7;
+    --tinta: #241F1A;
+    --quote-ink: #2E2620;
+    --vermelho: #C0221D;
+    --vermelho-escuro: #8F1815;
+    --cinza-sub: #6E6459;
+    --linha: #E9E0D2;
+    --cinza-fundo: #F4EEE3;
+    --fonte-cor: #9C5B52;
+    --quote-bg: #FBF1EA;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#E7E0D2; font-family:'DM Sans',sans-serif; color:var(--tinta); -webkit-font-smoothing:antialiased; }
+  .wrapper { max-width:760px; margin:0 auto; background:var(--papel); box-shadow:0 0 60px rgba(60,40,20,.14); }
+
+  .top-bar { background:var(--vermelho); padding:12px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .top-bar-brand { font-family:'Playfair Display',serif; font-size:18px; font-weight:900; color:#fff; letter-spacing:-0.5px; }
+  .top-bar-tag { font-family:'DM Mono',monospace; font-size:9.5px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.85); }
+
+  .header { background:var(--papel); padding:44px 48px 28px; border-bottom:1px solid var(--linha); }
+  .eyebrow { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--vermelho); font-weight:700; margin-bottom:16px; }
+  .titulo { font-family:'Playfair Display',serif; font-size:34px; font-weight:900; color:var(--tinta); line-height:1.15; letter-spacing:-0.6px; margin-bottom:14px; }
+  .subt { font-size:15px; color:#3E362E; line-height:1.65; max-width:620px; margin-bottom:22px; }
+  .byline { font-size:12.5px; color:var(--cinza-sub); border-top:1px solid var(--linha); padding-top:14px; }
+  .byline strong { color:var(--vermelho); font-weight:600; }
+  .meta-row { display:flex; gap:28px; margin-top:16px; flex-wrap:wrap; }
+  .meta-item { display:flex; flex-direction:column; gap:3px; }
+  .meta-label { font-family:'DM Mono',monospace; font-size:8.5px; letter-spacing:2px; text-transform:uppercase; color:var(--cinza-sub); }
+  .meta-val { font-size:12.5px; color:var(--tinta); font-weight:600; }
+
+  .section { padding:34px 48px; border-bottom:1px solid var(--linha); background:var(--papel); }
+  .section.alt { background:var(--papel-alt); }
+  .sec-label { font-family:'DM Mono',monospace; font-size:9.5px; letter-spacing:2.5px; text-transform:uppercase; color:var(--vermelho); font-weight:700; margin-bottom:14px; }
+  .sec-title { font-family:'Playfair Display',serif; font-size:23px; font-weight:700; color:var(--tinta); margin-bottom:16px; line-height:1.3; }
+  .sec-sub { font-size:13px; color:var(--cinza-sub); margin-bottom:20px; line-height:1.6; font-style:italic; }
+  .body-txt { font-size:14.5px; line-height:1.85; color:#332B23; margin-bottom:14px; }
+  .body-txt:last-child { margin-bottom:0; }
+  .body-txt strong { color:var(--tinta); font-weight:600; }
+  .body-txt a { color:var(--vermelho-escuro); }
+
+  /* nota de transparência */
+  .nota { background:var(--cinza-fundo); border:1px solid var(--linha); border-left:4px solid var(--vermelho-escuro); padding:16px 20px; margin:18px 0; font-size:13px; line-height:1.7; color:#3E362E; }
+  .nota strong { color:var(--tinta); }
+  .nota a { color:var(--vermelho-escuro); }
+
+  /* linha do tempo */
+  .tl { margin-top:8px; }
+  .tl-item { display:flex; gap:18px; padding:14px 0; border-top:1px solid var(--linha); }
+  .tl-item:first-child { border-top:none; }
+  .tl-date { font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:var(--vermelho-escuro); min-width:96px; padding-top:2px; }
+  .tl-txt { font-size:13.5px; line-height:1.7; color:#332B23; }
+  .tl-txt strong { color:var(--tinta); }
+
+  /* quote card */
+  .quote-card { background:var(--quote-bg); border-left:4px solid var(--vermelho); padding:22px 26px; margin:18px 0; border-radius:0 3px 3px 0; }
+  .quote-name { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:1.2px; text-transform:uppercase; color:var(--vermelho-escuro); font-weight:700; margin-bottom:10px; }
+  .quote-name span { color:var(--cinza-sub); font-weight:400; text-transform:none; letter-spacing:0; }
+  .quote-txt { font-family:'Playfair Display',serif; font-style:italic; font-size:16.5px; color:var(--quote-ink); line-height:1.55; }
+  .quote-src { font-family:'DM Mono',monospace; font-size:10.5px; color:var(--fonte-cor); margin-top:14px; line-height:1.7; padding-top:10px; border-top:1px solid rgba(143,24,21,.14); font-weight:500; }
+
+  .tag-flag { display:inline-block; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; font-weight:700; padding:3px 9px; border-radius:3px; margin-bottom:10px; }
+  .tag-flag.hist { background:#EFE4D6; color:var(--vermelho-escuro); }
+
+  /* imprensa grid */
+  .imp-item { padding:16px 0; border-top:1px solid var(--linha); }
+  .imp-item:first-child { border-top:none; }
+  .imp-nome { font-family:'DM Mono',monospace; font-size:11px; font-weight:700; color:var(--vermelho-escuro); letter-spacing:0.5px; margin-bottom:6px; }
+  .imp-txt { font-size:13.5px; line-height:1.75; color:#332B23; }
+  .imp-txt em { font-style:italic; color:#3E362E; }
+
+  /* fontes */
+  .fontes-list { font-size:12.5px; line-height:2; color:#3E362E; }
+  .fontes-list a { color:var(--vermelho-escuro); text-decoration:none; border-bottom:1px solid rgba(192,34,29,.3); }
+
+  .footer { padding:30px 48px 40px; background:var(--tinta); }
+  .footer-txt { font-size:11.5px; color:rgba(255,255,255,.6); line-height:1.8; }
+  .footer-brand { font-family:'Playfair Display',serif; font-size:16px; font-weight:900; color:#fff; margin-bottom:10px; }
+
+  @media (max-width:600px) {
+    .top-bar, .header, .section, .footer { padding-left:22px; padding-right:22px; }
+    .titulo { font-size:26px; }
+    .meta-row { gap:18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="top-bar">
+    <span class="top-bar-brand">BREVIS ESPECIAL</span>
+    <span class="top-bar-tag">Edição avulsa · fora da numeração regular</span>
+  </div>
+
+  <div class="header">
+    <div class="eyebrow">Caso Master · STF · Pet 16.662 e Pet 16.704</div>
+    <div class="titulo">Seis horas, nenhum veredicto: por dentro da sessão que expôs a fratura do Supremo</div>
+    <div class="subt">A reportagem completa do dia em que o STF discutiu, ao vivo, se pode investigar um de seus próprios ministros — com a fala de cada um em plenário, o que ficou provado, o que ainda é hipótese, e o que juristas e a imprensa nacional e internacional dizem sobre o caso.</div>
+    <div class="byline">Curadoria <strong>Jean Barbosa</strong> · Maximiano Advogados · Brevis Especial · 16 de setembro de 2026</div>
+    <div class="meta-row">
+      <div class="meta-item"><span class="meta-label">Status do caso</span><span class="meta-val">Julgamento suspenso — pedido de vista de Dino</span></div>
+      <div class="meta-item"><span class="meta-label">Prazo regimental</span><span class="meta-val">Até 90 dias (EC 58/22)</span></div>
+      <div class="meta-item"><span class="meta-label">Leitura</span><span class="meta-val">22–26 minutos</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">Antes de começar</div>
+    <div class="sec-title">O que esta edição é — e o que ela não é</div>
+    <div class="body-txt">Este é um <strong>Brevis Especial</strong>: uma edição avulsa, fora da numeração regular do Semanal e do Previdenciário, dedicada a um único caso porque o volume de desdobramentos e a repercussão pública justificam um tratamento à parte.</div>
+    <div class="body-txt">Não é uma peça de opinião. Não vamos dizer se Alexandre de Moraes deve ou não ser investigado, nem se André Mendonça agiu certo ou errado. Reunimos, com atribuição e data em cada citação, o que ministros disseram em plenário, o que juristas de leituras diferentes têm escrito e falado, e como a imprensa nacional e internacional está enquadrando o caso.</div>
+    <div class="body-txt">Toda citação abaixo tem fonte identificada. Quando um trecho foi capturado por completo na cobertura consultada, ele aparece entre aspas, como fala literal. Quando a extração automática do material-fonte cortou a frase no meio, optamos por parafrasear — sem aspas fechadas — em vez de arriscar uma citação literal imprecisa; é a mesma régua de precisão que aplicamos à distinção entre "julgado" e "noticiado" em toda a redação.</div>
+    <div class="nota"><strong>Para ir além do texto:</strong> toda a apuração usada nesta edição — a gravação da sessão, as coberturas e os documentos consultados — está reunida em um notebook público do NotebookLM (Google). Você pode consultar as fontes originais e conversar diretamente com o material em <a href="https://notebook.google.com/notebook/75cc0e4b-cbb4-4ad5-bd7b-7de7bc32bacf" target="_blank" rel="noopener">notebook.google.com/notebook/75cc0e4b-cbb4-4ad5-bd7b-7de7bc32bacf</a>. Preferir ouvir? Também preparamos um <a href="https://notebook.google.com/notebook/c51c1f77-e374-4bc3-935b-e58e23f3e610/artifact/fa01afac-707c-4b44-a34b-41b6730569dc" target="_blank" rel="noopener">episódio em áudio (podcast) comentando o caso</a>, gerado a partir do mesmo material.</div>
+  </div>
+
+  <div class="section alt">
+    <div class="sec-label">O dia em uma imagem</div>
+    <div class="sec-title">Um tribunal julgando a si mesmo, ao vivo, por seis horas</div>
+    <div class="body-txt">Em 15 de setembro de 2026, o Plenário do Supremo Tribunal Federal se reuniu por cerca de seis horas para decidir se autoriza a investigação de um de seus próprios ministros, Alexandre de Moraes — e terminou sem decidir. Houve declarações de impedimento logo na abertura, um decano chamando um colega de "leviano" e comparando sua conduta a "afastar o comandante do Exército", um ministro investigado anunciando que tinha testemunhas contra outro ministro, uma acusação de que existe "uma PF paralela" monitorando a própria Corte, e uma ministra pedindo desculpas ao povo brasileiro em meio a lágrimas de frustração institucional. No fim, um placar apertado de 4 a 3 sobre uma questão processual — não sobre o mérito — e um pedido de vista que empurrou tudo para dezembro, depois das eleições municipais de outubro.</div>
+    <div class="body-txt">O que se segue é a reconstituição dessa sessão e do que a antecedeu, com a fala de cada ministro, atribuída e datada, e o contexto jurídico necessário para entender por que aquela sala explodiu daquele jeito.</div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">Como chegamos aqui</div>
+    <div class="sec-title">Do colapso do Banco Master ao gabinete de Moraes</div>
+    <div class="body-txt">A origem do caso não está em Brasília — está no sistema financeiro. Em 18 de novembro de 2025, o Banco Central decretou a liquidação do Banco Master, no âmbito da <strong>Operação Compliance Zero</strong>, que apura uma fraude bancária estimada em R$ 17 bilhões. O processo foi distribuído, em fevereiro de 2026, ao ministro André Mendonça, que autorizou fases ostensivas da operação e, em março, referendou — com o restante da Segunda Turma, por unanimidade — as prisões preventivas do núcleo do banco, incluindo o controlador Daniel Vorcaro. Até esse ponto, era um grande caso financeiro seguindo o rito convencional.</div>
+    <div class="body-txt">O ponto de virada veio da perícia no celular de Vorcaro: a Polícia Federal recuperou <strong>52 mensagens</strong> trocadas com o ministro Alexandre de Moraes entre outubro e novembro de 2025. O conteúdo, segundo a reportagem, mostra Vorcaro buscando orientação e tentando agendar encontros para tratar da investigação; em uma delas, datada de 15/11/2025 — dois dias antes de ser preso —, ele pergunta a Moraes: <em>"Acha que 2ª já tenho que estar fora?"</em>, numa referência a deixar o país, e no dia seguinte insiste: <em>"Você acha que existe alguma chance disso acontecer amanhã de manhã?"</em>. As respostas de Moraes ao longo da troca não foram integralmente recuperadas pela perícia. Como se trata de um ministro do STF, protegido por prerrogativa de foro, Mendonça não podia simplesmente deixar a PF seguir investigando essa ponta dentro do inquérito do banco — e separou a matéria na <strong>Pet 16.662</strong>, processo autônomo dedicado exclusivamente às suspeitas envolvendo Moraes.</div>
+    <div class="body-txt">A tensão escalou em 8 de setembro de 2026, quando Mendonça, já na condição de relator, determinou o afastamento de dois diretores da Polícia Federal e suspendeu o envio de relatórios de inteligência ao STF — decisão que atingia diretamente o gabinete de Moraes. A justificativa técnica era a de que a PF estava produzindo relatórios sobre ministros sem autorização judicial prévia, criando o que Mendonça chamaria, mais tarde, de "monitoramento ilegal". Um dia depois, Flávio Dino suspendeu parte dos efeitos dessa decisão por liminar própria. Em 1º de setembro — cronologicamente anterior a tudo isso, mas cujos efeitos só se tornaram públicos nesse período —, o procurador-geral da República, Paulo Gonet, já havia se manifestado nos autos da Pet 16.662 pedindo sua extinção, por entender nula a apuração conduzida por Mendonça; no mesmo dia, Mendonça retirou o sigilo do relatório de 218 páginas da PF sobre o celular de Vorcaro, tornando públicas as 52 mensagens. Diante do impasse, o presidente do STF, Edson Fachin, avocou o caso em 12 de setembro, com base no art. 13, I do RISTF — que atribui à Presidência o dever de "velar pelas prerrogativas do Tribunal" —, assumindo a relatoria da Pet 16.662 e criando uma terceira petição, a <strong>Pet 16.704</strong>, para apurar separadamente se a própria conduta de Mendonça ao afastar os diretores da PF foi legal.</div>
+
+    <div class="tl" style="margin-top:24px;">
+      <div class="tl-item"><div class="tl-date">18/11/2025</div><div class="tl-txt">Banco Central decreta a liquidação do Banco Master; deflagrada a 1ª fase da <strong>Operação Compliance Zero</strong>.</div></div>
+      <div class="tl-item"><div class="tl-date">14/01/2026</div><div class="tl-txt">2ª fase: bloqueio de ativos via Sisbajud contra Daniel Vorcaro e ligados.</div></div>
+      <div class="tl-item"><div class="tl-date">27/02/2026</div><div class="tl-txt">Caso é distribuído a André Mendonça; PF pede novas cautelares.</div></div>
+      <div class="tl-item"><div class="tl-date">04/03/2026</div><div class="tl-txt">3ª fase: quatro prisões preventivas, incluindo Vorcaro.</div></div>
+      <div class="tl-item"><div class="tl-date">20/03/2026</div><div class="tl-txt">Segunda Turma referenda, por unanimidade, as cautelares.</div></div>
+      <div class="tl-item"><div class="tl-date">01/09/2026</div><div class="tl-txt">Gonet pede extinção da Pet 16.662; Mendonça retira o sigilo do relatório de 218 páginas da PF, tornando públicas as 52 mensagens Vorcaro–Moraes.</div></div>
+      <div class="tl-item"><div class="tl-date">08/09/2026</div><div class="tl-txt">Mendonça afasta dois diretores da PF e suspende relatórios de inteligência ao STF.</div></div>
+      <div class="tl-item"><div class="tl-date">09/09/2026</div><div class="tl-txt">Dino suspende parte dos efeitos da decisão de Mendonça, em liminar própria.</div></div>
+      <div class="tl-item"><div class="tl-date">12/09/2026</div><div class="tl-txt">Fachin avoca o caso (art. 13, I do RISTF) e cria a Pet 16.704.</div></div>
+      <div class="tl-item"><div class="tl-date">15/09/2026</div><div class="tl-txt">Sessão do Plenário. Placar de 4 a 3 sobre questão preliminar; Dino pede vista antes do mérito.</div></div>
+      <div class="tl-item"><div class="tl-date">23/09/2026</div><div class="tl-txt">Sessão marcada para a Pet 16.704 — conduta de Mendonça.</div></div>
+    </div>
+  </div>
+
+  <div class="section alt">
+    <div class="sec-label">Mapa processual</div>
+    <div class="sec-title">As duas petições, lado a lado</div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-date">Pet 16.662</div><div class="tl-txt"><strong>Objeto:</strong> se cabe investigar Alexandre de Moraes por sua relação com Daniel Vorcaro. <strong>Relator original:</strong> André Mendonça. <strong>Relator atual:</strong> Edson Fachin (desde 12/09). <strong>Situação:</strong> julgamento suspenso — pedido de vista de Flávio Dino. <strong>Posição da PGR:</strong> pediu extinção, por entender nula a apuração feita por Mendonça.</div></div>
+      <div class="tl-item"><div class="tl-date">Pet 16.704</div><div class="tl-txt"><strong>Objeto:</strong> a conduta de André Mendonça — o afastamento de diretores da PF e a suspensão de relatórios de inteligência, em 08/09. <strong>Relator:</strong> Edson Fachin. <strong>Situação:</strong> aguardando sessão marcada para 23/09.</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">Dentro do plenário</div>
+    <div class="sec-title">A abertura: o que Fachin definiu — e por que ele invocou o passado</div>
+    <div class="sec-sub">A partir daqui, reconstituímos a sessão do dia 15 com base na gravação integral (STF/TV Justiça), na cobertura em vídeo do Jornal Nacional/g1 (repórter Rafael Godoi) e na análise da CNN Brasil (William Waack). Trechos entre aspas são falas capturadas por completo; trechos sem aspas são paráfrase de conteúdo que a extração não recuperou palavra por palavra.</div>
+    <div class="body-txt">Ao apresentar o caso ao Plenário, Fachin definiu que a sessão deveria decidir sobre dois pontos: a abertura ou não de investigação contra Alexandre de Moraes, e o pedido de nulidade apresentado pela PGR contra a apuração conduzida por Mendonça. Ele fez questão de frisar que essa etapa "não faz juízo de responsabilidade penal" — ou seja, mesmo que o Plenário autorizasse a investigação, isso não equivaleria a nenhum juízo de culpa antecipado.</div>
+    <div class="quote-card">
+      <div class="quote-name">Edson Fachin <span>· presidente do STF, discurso de abertura da sessão</span></div>
+      <div class="quote-txt">"Este colegiado tem diante de si o dever de conduzir este tribunal por um período difícil de sua história. [...] Não temos o direito de entregar às gerações futuras um Supremo Tribunal Federal menor do que aquele que recebemos. [...] Não se julgam pessoas, julgam-se fatos e questões jurídicas. [...] O país olha para esta corte; a história também olhará para este momento. Hoje não prestamos contas apenas aos nossos contemporâneos — prestamos contas àqueles que nos antecederam e às gerações que nos sucederão. Essa instituição não nos pertence."</div>
+      <div class="quote-src">Fonte: JN/g1 (Rafael Godoi) · 15/09/2026 · pronunciamento formal de abertura da sessão extraordinária presencial</div>
+    </div>
+    <div class="body-txt">A gravação integral mostra que esse apelo veio ainda mais reforçado: Fachin evocou nominalmente ministros do passado que, segundo ele, "conheceram a violência do arbítrio" — Victor Nunes Leal e Ribeiro da Costa, presidente do STF durante o golpe de 1964 — para lembrar que a Corte já atravessou "crises, autoritarismos, ameaças e incompreensões" e que, em alguns momentos, pagou um preço por permanecer fiel à sua missão constitucional. Ele fechou a fala com um princípio sobre divergência interna: a divergência faz parte da jurisdição — o que não pode fazer parte dela é a perda da medida institucional.</div>
+  </div>
+
+  <div class="section alt">
+    <div class="sec-title">Impedimentos abrem a sessão</div>
+    <div class="body-txt">Antes de qualquer debate sobre o mérito, dois ministros se retiraram do julgamento. O primeiro foi <strong>Nunes Marques</strong>, que citou a necessidade de preservar a neutralidade da Presidência do TSE a poucos dias das eleições — e aproveitou para rebater diretamente as insinuações que circulavam sobre seu filho, o advogado Kevin Marques, mencionado em mensagens atribuídas ao ex-diretor jurídico do Banco Master, Luiz Rennó, que citavam repasses mensais de R$ 500 mil via a empresa Consult Inteligência Tributária. Kevin Marques nega qualquer vínculo com o banco e diz ter recebido R$ 281.600 da Consult por serviços tributários.</div>
+    <div class="quote-card">
+      <div class="quote-name">Nunes Marques <span>· ao declarar impedimento</span></div>
+      <div class="quote-txt">"Meu filho nunca prestou nenhum serviço ao banco e nunca foi remunerado pelo banco. [...] Se eu me sentisse desconfortável ou cooptado de alguma forma, jamais teria votado pela confirmação da prisão de Daniel Vorcaro, do seu pai e de outras pessoas envolvidas. [...] Não adianta se especular de outra forma, porque contra fatos não existem argumentos. [...] É bom que se registre: eu nunca troquei nenhuma mensagem com Daniel Vorcaro. Na condição de presidente do TSE, eu não me sinto confortável para participar desse julgamento."</div>
+      <div class="quote-src">Fonte: JN/g1 (Rafael Godoi) · 15/09/2026 · declaração de impedimento no início da sessão</div>
+    </div>
+    <div class="body-txt"><strong>Dias Toffoli</strong> se declarou suspeito "por foro íntimo, para preservação da corte". Segundo a gravação, essa postura tem origem em fevereiro de 2026, quando — por sugestão do próprio Flávio Dino, em conversa informal — Toffoli já havia se afastado voluntariamente de um episódio anterior ligado ao Banco Master, arquivado com trânsito em julgado; ele optou por manter a mesma coerência agora. <strong>Luiz Fux</strong>, citado por Dino em meio a rumores de mensagens vazadas envolvendo seu filho, Rodrigo Fux, foi ao microfone: <em>"Mensagem comigo não tem. Não tem, não senhor. [...] Na minha vida nunca tive relação com [isso]. Vossa Excelência tá se baseando nesses inquéritos que surgem do nada."</em></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">O confronto Gilmar Mendes × André Mendonça</div>
+    <div class="body-txt">A questão de ordem apresentada pelo decano Gilmar Mendes — contra o afastamento dos diretores da PF e contra a própria avocação do caso por Fachin — foi o estopim do embate mais duro da sessão. Mendes classificou a decisão de Mendonça sobre a PF como um "vexame" institucional e não poupou adjetivos ao se referir ao colega.</div>
+    <div class="quote-card">
+      <div class="quote-name">Gilmar Mendes <span>· decano do STF, sustentação da questão de ordem</span></div>
+      <div class="quote-txt">"Com a experiência de velho magistrado de tantos anos, eu sabia que algo ia acontecer que isso não poderia ocorrer [...]. Qualquer cidadão que tenha um mínimo de noção do que significa a Polícia Federal — que é um órgão armado, submetido à hierarquia — não faria afastamento de um diretor-geral da polícia. É como afastar o diretor-presidente da Nasa ou tirar o comandante do exército. Não se faz." Sobre o viés da apuração: "É evidente [...] que há um inequívoco viés político-eleitoral na forma como o tema foi conduzido nos autos desta [Pet.] 16.662 — com toda a sinceridade, escolha de data, 7 de setembro, todo esse cenário envolvendo esta corte em campanha eleitoral [...]. Isto não se faz. Pessoas decentes não fazem isso." E sobre a reação de Mendonça ao PGR: "É impressionante, presidente, que uma pessoa da estatura do Paulo Gonet sofra esse tipo de ilação. Isto sim é leviandade."</div>
+      <div class="quote-src">Fonte: JN/g1 (Rafael Godoi) e Análise/CNN Brasil (Waack) · 15/09/2026 · segundo a análise da CNN, Mendes chegou a chamar Mendonça de "mafioso, leviano, irresponsável" e "capaz de qualquer desfaçatez", e sugeriu que ele deveria "se algemar antes de fazer esse tipo de coisa"</div>
+    </div>
+    <div class="body-txt">Mendonça respondeu no mesmo tom, exigiu respeito e negou ter determinado a abertura de investigação contra Moraes — segundo ele, apenas solicitou à PF informações sobre a rede de influência de Vorcaro, depois de identificar potenciais menções a autoridades nas mensagens periciadas, entre elas o procurador-geral Gonet e o diretor-geral da PF, Andrei Rodrigues, citados nas anotações como "Paulo" e "Andrei". Mendonça fundamentou sua atuação no precedente do STF sobre o "Juiz das Garantias" (art. 3º-B do CPP), afirmando ter apenas cumprido o dever de requisitar contexto, sem juízo de valor sobre a idoneidade do PGR, e sustentou que sua conduta e a de Moraes tratam de "situações fáticas e jurídicas totalmente distintas".</div>
+    <div class="quote-card">
+      <div class="quote-name">André Mendonça <span>· ministro, ao reagir aos ataques de Gilmar Mendes</span></div>
+      <div class="quote-txt">"Vossa Excelência tá sendo leviano, ministro. De leviano, indevida, leviano, leviano. [...] Não aponte o dedo, não tá falando com qualquer um. Respeite esse tribunal. Quem não se dá respeito não merece respeito." E, justificando o afastamento de diretores da PF: "Eu sou ministro há 16 anos. Eu nunca vi a Polícia Federal peitar um ministro do Supremo Tribunal. [...] Nós temos hoje uma PF paralela — uma PF paralela com monitoramento de ministros. Não pense que Vossa Excelência está salvo, ministro."</div>
+      <div class="quote-src">Fonte: JN/g1 (Rafael Godoi) · 15/09/2026 · resposta no plenário</div>
+    </div>
+  </div>
+
+  <div class="section alt">
+    <div class="sec-title">Moraes × Mendonça: acusações diretas, lado a lado</div>
+    <div class="body-txt">O ápice da sessão foi o confronto entre os dois ministros diretamente investigados — sentados lado a lado no plenário, mantendo o costume protocolar da Corte mesmo em ambiente de tensão aberta. Moraes negou qualquer irregularidade e foi além: acusou Mendonça de ter solicitado a policiais e advogados que tentassem incluí-lo em acordos de delação premiada, afirmando ter testemunhas da acusação — e chegou a articular, na própria sessão, um processo formal contra Mendonça no tribunal, não apenas uma fala de plenário.</div>
+    <div class="quote-card">
+      <div class="quote-name">Alexandre de Moraes <span>· em confronto direto com André Mendonça</span></div>
+      <div class="quote-txt">"Não há como julgar hoje sem julgar terça-feira. Porque eu pergunto: quem tem medo da Polícia Federal, presidente? Quem tem medo da Polícia Federal não... [...] Vamos trazer aqui, presidente, vamos chamar aqui testemunhas que eu vou indicar. [...] Eu tenho testemunhas de que o ministro André, em reunião, disse: 'isso é mentira'." Sobre o relatório de inteligência usado contra ele: "O relatório de inteligência não é prova e não é meio de obtenção de prova. [...] Não há nenhuma mensagem que se refere a Paulo e a Andrei. Há um texto de notas no bloco de notas que, por ilação, se afere que virou mensagem."</div>
+      <div class="quote-src">Fonte: JN/g1 (Rafael Godoi) e Análise/CNN Brasil (Waack) · 15/09/2026</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">O bloco de votação e o placar de 4 a 3</div>
+    <div class="body-txt">Antes de qualquer voto sobre o mérito — autorizar ou não a investigação contra Moraes —, o Plenário votou apenas a questão de ordem proposta por Gilmar Mendes para unificar o julgamento da Pet 16.662 com a Pet 16.704. A análise da CNN Brasil (Waack) descreveu a formação de um bloco a favor da unificação — chamado, informalmente e apenas na leitura jornalística da cobertura (não é um termo processual do STF), de <em>"quatrivirato"</em> — composto por Gilmar Mendes, Alexandre de Moraes, Flávio Dino e Cristiano Zanin, articulado em torno dessa questão de ordem. Do lado da manutenção dos processos separados, votaram Edson Fachin (relator), André Mendonça, Luiz Fux e Cármen Lúcia.</div>
+    <div class="nota"><strong>Nota de transparência (verificação cruzada):</strong> reconciliando CNN Brasil, Folha de S.Paulo e Terra (todos de 15/09), o placar final foi <strong>4 votos a 3</strong> contrários à unificação — ou seja, a favor de manter os julgamentos de Moraes e de Mendonça separados. É importante notar que a composição do bloco favorável à unificação, descrita pela análise da CNN, difere do prognóstico inicial: Flávio Dino não chegou a ser contado nesse placar final porque pediu vista antes de a votação se encerrar, interrompendo o julgamento da própria questão de ordem. Tratamos essa votação como preliminar e inconclusa quanto ao mérito, não como uma decisão sobre autorizar ou não a investigação — que não chegou a ser votada.</div>
+  </div>
+
+  <div class="section alt">
+    <div class="sec-title">As últimas falas antes da suspensão</div>
+    <div class="body-txt">Já perto do encerramento, três falas resumem o tom final da sessão. Luiz Fux, ao acompanhar o voto de Fachin, tentou reduzir a temperatura: <em>"Não há causas penais em jogo neste momento, não há inquérito instalado. O que houve foi uma informação levada à Presidência sobre uma divergência entre dois ministros. [...] Acompanho integralmente o voto do presidente Edson Fachin."</em> O procurador-geral Paulo Gonet, em manifestação oral no próprio plenário — além da manifestação já protocolada nos autos —, fez questão de esclarecer sua relação com Vorcaro: <em>"Não existe nem tive relacionamento de proximidade com o senhor Daniel Vorcaro. O único encontro que tive com ele ocorreu na presença de várias autoridades em abril de 2024. [...] De fato, o resultado da análise policial aponta apenas mensagens sem nenhuma relevância jurídica. A atuação do Ministério Público foi e é precisa e correta."</em></div>
+    <div class="quote-card">
+      <div class="quote-name">Cármen Lúcia <span>· em declaração emocionada antes de votar</span></div>
+      <div class="quote-txt">"Eu estou nesta sessão, como talvez muitos de meus colegas, em estado de profunda consternação e tristeza. [...] Eu me sinto — e estou falando apenas por mim — um pouco até envergonhada, presidente, de que, no momento em que o Brasil está [em eleição], o Poder Judiciário existe para tranquilizar o povo e nós geramos intranquilidade. [...] Acho que houve uma espetacularização destes casos, desta sessão. [...] Eu peço desculpa ao povo brasileiro."</div>
+      <div class="quote-src">Fonte: JN/g1 (Rafael Godoi) e Análise/CNN Brasil (Waack) · 15/09/2026 · segundo a análise da CNN, ela também contou uma anedota pessoal — um passageiro em um voo a chamou de "mulher avulsa" — para reforçar que não sofre pressão externa: "Não sofri e não sofro pressão nenhuma, nem de dentro nem de fora"; e usou a expressão "mal-estar cívico" para descrever o efeito do episódio na população</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">O que significa, na prática</div>
+    <div class="sec-title">O pedido de vista, o prazo, e o mecanismo por trás de tudo</div>
+    <div class="body-txt"><strong>O que diz o Regimento Interno.</strong> A regra geral do RISTF atribui ao relator competência para determinar a instauração de inquérito contra autoridades com foro no próprio Supremo, sem exigir, por si só, deliberação colegiada prévia. A ADI 5.331 tratou da investigação criminal de magistrados estaduais — um precedente próximo, mas que não trata diretamente de ministros do próprio STF.</div>
+    <div class="body-txt"><strong>Por que foi ao Plenário e por que a relatoria mudou de mãos.</strong> Mendonça criou a Pet 16.662 como processo autônomo com base no art. 5º, I do RISTF, ao identificar que a apuração policial havia alcançado indícios de envolvimento de Moraes. Fachin, por sua vez, avocou o caso em 12/09 com base no art. 13, I do RISTF — o dever de "velar pelas prerrogativas do Tribunal" —, separando-o do processo espelho sobre a conduta de Mendonça.</div>
+    <div class="body-txt"><strong>O pedido de vista de Dino.</strong> Antes que a votação avançasse, Flávio Dino interrompeu o julgamento pedindo vista dos autos — não sem antes questionar a própria condução de Fachin: <em>"Essa situação que está posta deriva da condução de Vossa Excelência"</em> e <em>"a 15 dias de uma eleição, o tribunal se expõe a isso"</em>, ao que Fachin respondeu que administrava os apartes "na medida do possível" (esse mesmo atrito sobre quem controla a palavra já havia aparecido minutos antes, quando Dino pediu um aparte durante a fala de Toffoli e Fachin tentou disciplinar a prática). Sobre a avocação em si, Dino foi direto: <em>"Se nós aceitamos a avocatória, presidente, nós estaremos abrindo uma avenida de autoritarismo, de despotismo, de tirania nos tribunais que ninguém vai controlar."</em> E, no momento do próprio pedido de vista: <em>"Nós estamos em termos que degradam a imagem [do tribunal]. [...] Nas próximas semanas, Vossa Excelência está condenado a marcar dezenas de sessões iguais a esta."</em> Segundo a análise da CNN, Dino também afirmou que o Judiciário nunca enfrentou tantos casos de corrupção simultaneamente e previu que o Supremo permaneceria nesse estado "degradante" por meses.</div>
+    <div class="body-txt"><strong>Desde a Emenda Regimental 58/22</strong>, o ministro que pede vista tem até <strong>90 dias corridos</strong>, contados da publicação da ata, para devolver os autos — período em que o julgamento fica suspenso. Se o prazo se esgota sem devolução, os autos são <strong>automaticamente liberados</strong> para a continuidade do julgamento, independentemente de nova manifestação do ministro. Não houve, portanto, conclusão da votação sobre autorizar ou não a investigação contra Moraes — apenas o placar parcial de 4 a 3 sobre a questão preliminar.</div>
+  </div>
+
+  <div class="section alt">
+    <div class="sec-label">Painel plural</div>
+    <div class="sec-title">O que dizem ministros, a PGR e juristas — em suas próprias palavras</div>
+    <div class="sec-sub">Citações reais, atribuídas e datadas, organizadas por tipo de posição — institucional, jurídica, ou crítica/opinativa — para que o leitor calibre o peso de cada uma.</div>
+
+    <div class="tag-flag hist">Posições institucionais</div>
+
+    <div class="quote-card">
+      <div class="quote-name">Alexandre de Moraes <span>· ministro investigado, em manifestação nos autos</span></div>
+      <div class="quote-txt">"Inconstitucional e ilegal" — classificação dada à investigação aberta a seu respeito, negando favorecimento a Vorcaro e apontando motivação "político-eleitoral" e de "vingança" por trás do pedido.</div>
+      <div class="quote-src">Fonte: cobertura consolidada de veículos (Gazeta do Povo/GNI Notícias, Portal Terra da Luz e outros) · 14–15/09/2026</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-name">Paulo Gonet <span>· procurador-geral da República, manifestação na Pet 16.662</span></div>
+      <div class="quote-txt">"Não importa o grau de investigação que a providência constitui, é inegável que houve imersão em elementos dos autos para buscar indicativos de envolvimento do ministro Alexandre de Moraes em ilícitos" — e, sobre a apuração conduzida por Mendonça: "sendo nula a ordem e o seu resultado, cabe ao relator reconhecê-lo e extinguir a Petição".</div>
+      <div class="quote-src">Fonte: ConJur, manifestação protocolada nos autos · 01/09/2026 · Importante: a posição da PGR é processual — questiona a validade de como a apuração foi conduzida por Mendonça, não afirma que as suspeitas contra Moraes são infundadas.</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-name">Leonardo Lamachia <span>· presidente da OAB/RS</span></div>
+      <div class="quote-txt">Posição institucional cobrando isenção do procurador-geral da República e o cumprimento do devido processo legal na apuração dos fatos envolvendo Moraes.</div>
+      <div class="quote-src">Fonte: OAB/RS (nota institucional) · 08/09/2026</div>
+    </div>
+
+    <div class="tag-flag hist" style="margin-top:8px;">Posições jurídicas</div>
+
+    <div class="quote-card">
+      <div class="quote-name">Gilmar Mendes <span>· decano do STF</span></div>
+      <div class="quote-txt">Criticou a petição que deu origem ao caso por "carecer de definição quanto à sua própria natureza processual" e não conter pedido formal de decisão — protocolada, segundo ele, sem representação da autoridade policial.</div>
+      <div class="quote-src">Fonte: ConJur, "Para entender o caso Banco Master/Vorcaro no STF — Pet 16.662" · 13/09/2026</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-name">Pedro Estevam Serrano <span>· professor de Direito Constitucional, PUC-SP</span></div>
+      <div class="quote-txt">"Existem indícios que merecem ser apurados. Acho que caberia uma investigação." — sobre Moraes. Sobre a divulgação do relatório usado contra Mendonça: "A retirada do sigilo daquele relatório foi uma decisão ilegal e inusual."</div>
+      <div class="quote-src">Fonte: Agência Pública · setembro/2026</div>
+    </div>
+
+    <div class="tag-flag hist" style="margin-top:8px;">Críticas e interpretações (imprensa opinativa)</div>
+
+    <div class="quote-card">
+      <div class="quote-name">Flávio Gordon <span>· colunista, Revista Oeste</span></div>
+      <div class="quote-txt">"Não cabe ao ministro relator escolher quais os documentos acessíveis ao colegiado."</div>
+      <div class="quote-src">Fonte: Revista Oeste (colunista de linha editorial crítica a Moraes) · 12/09/2026</div>
+    </div>
+
+    <div class="body-txt" style="margin-top:16px;"><strong>Nota sobre o painel:</strong> a manifestação da PGR é a peça institucional mais relevante para equilibrar este painel — mostra contestação real ao procedimento da investigação, sem que isso signifique uma defesa de mérito de Moraes. Fora dela, não localizamos, nesta semana, uma voz institucional defendendo o mérito da conduta de Moraes ou do STF como instituição; registramos essa lacuna como um dado, não como conclusão.</div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">A grande imprensa nacional</div>
+    <div class="sec-title">Globo, Folha e Estadão convergem mais do que divergem</div>
+    <div class="body-txt">Nos editoriais consultados de O Globo, Folha de S.Paulo e Estadão, não identificamos defesa do arquivamento imediato da apuração. As três publicações sustentaram, com fundamentos e graus de intensidade diferentes, a necessidade de algum tipo de apuração — o que é um dado sobre a amostra que consultamos, não uma varredura exaustiva de todo o jornalismo nacional.</div>
+    <div class="imp-item">
+      <div class="imp-nome">O GLOBO · 15/09/2026</div>
+      <div class="imp-txt">Editorial argumenta que <em>"o Supremo enfrenta uma decisão que pode afetar a credibilidade da instituição"</em>, defendendo a instauração da investigação sob a premissa de que nenhuma autoridade está acima da lei.</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-nome">ESTADÃO · 14–15/09/2026</div>
+      <div class="imp-txt">Posição editorial mais dura: <em>"o que está em jogo é a integridade do Supremo e a disposição de seus integrantes"</em> — chegou a defender o afastamento temporário de Moraes das funções durante a apuração.</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-nome">FOLHA DE S.PAULO · 14/09/2026</div>
+      <div class="imp-txt">Também defende a investigação, mas amplia o argumento para uma reforma institucional mais ampla: <em>"o STF está diante de uma decisão que pode definir a relação da Corte com o princípio republicano"</em>, incluindo propostas como mandato fixo para ministros.</div>
+    </div>
+    <div class="body-txt" style="margin-top:16px;">Vale notar: a manifestação da PGR pedindo a extinção da Pet 16.662 mostra que existe, sim, contestação institucional relevante — só que ela questiona o procedimento da apuração, não o mérito das suspeitas. Isso é diferente de uma linha editorial defendendo o arquivamento do caso, que não encontramos na amostra consultada.</div>
+  </div>
+
+  <div class="section alt">
+    <div class="sec-label">A repercussão internacional</div>
+    <div class="sec-title">Como a imprensa fora do Brasil está cobrindo o caso</div>
+    <div class="imp-item">
+      <div class="imp-nome">REUTERS (Ricardo Brito) · 15/09/2026</div>
+      <div class="imp-txt">Cobertura factual: descreve o adiamento como um momento "politicamente explosivo" às vésperas da corrida presidencial de outubro, cita o contrato de US$ 24 milhões entre um escritório ligado à mulher de Moraes e o banco liquidado, e registra a resposta do ministro classificando a investigação como "motivada político e eleitoralmente, como uma forma de vingança".</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-nome">WASHINGTON POST</div>
+      <div class="imp-txt">Manchete traduzida: <em>"Juiz brasileiro que prendeu Bolsonaro agora está sob fogo cruzado por supostos vínculos com banqueiro descredibilizado"</em> — nota a pressão por renúncia e cita o envolvimento de outros parlamentares, incluindo o senador Flávio Bolsonaro, no caso Master.</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-nome">EL PAÍS (Espanha)</div>
+      <div class="imp-txt"><em>"Se agitou de maneira extrema com o estopim de uma guerra aberta dentro do Supremo Tribunal"</em> — descreve a contradição entre a imagem pública de Moraes como defensor da democracia contra o golpismo e sua condição atual de investigado.</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-nome">LE MONDE (França)</div>
+      <div class="imp-txt"><em>"Uma simples troca de mensagens abalou uma das instituições democráticas mais robustas do Brasil"</em> — alerta que as revelações podem ser só o início do envolvimento de outras figuras relevantes no caso Master.</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-nome">RFI (Rádio França Internacional)</div>
+      <div class="imp-txt">Análise destaca que a forma como as mensagens vieram a público importou tanto quanto o conteúdo em si, dando "nova dimensão" ao caso Banco Master.</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-nome">AL JAZEERA (Catar)</div>
+      <div class="imp-txt">Enquadra a disputa em torno de dois nomes: Moraes, que supervisionou a condenação de Bolsonaro, e Mendonça, indicado ao STF pelo próprio Bolsonaro.</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-nome">LA NACIÓN e CLARÍN (Argentina)</div>
+      <div class="imp-txt">Cobrem o conflito interno da Corte e as acusações mútuas de conduta irregular entre os próprios ministros.</div>
+    </div>
+    <div class="imp-item">
+      <div class="imp-nome">BLOOMBERG</div>
+      <div class="imp-txt">Cobertura factual e contínua desde fevereiro de 2026, acompanhando a Operação Compliance Zero e, em setembro, descrevendo o caso Banco Master como fator que "aprofunda a crise do Supremo do Brasil".</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">O que vem a seguir</div>
+    <div class="sec-title">Os próximos marcos</div>
+    <div class="body-txt">A <strong>Pet 16.704</strong> — o processo espelho sobre a conduta de Mendonça, incluindo o afastamento dos diretores da PF — está pautada para 23/09. O relógio do pedido de vista de Dino corre até meados de dezembro (90 dias corridos a partir da publicação da ata), mas nada impede que ele devolva os autos antes disso.</div>
+    <div class="body-txt">O calendário eleitoral é parte do contexto que a própria imprensa internacional destacou: o julgamento final sobre investigar ou não Moraes pode ficar para depois do primeiro turno de outubro, com Flávio Bolsonaro concorrendo à Presidência contra Lula. Isso não é uma previsão de resultado — é um dado de calendário que qualquer advogado acompanhando o caso deveria ter mapeado.</div>
+  </div>
+
+  <div class="section alt" style="border-bottom:none;">
+    <div class="sec-label">Fontes</div>
+    <div class="fontes-list">
+      1. STF/TV Justiça — gravação integral da 27ª Sessão Extraordinária do Plenário, 15/09/2026<br>
+      2. Jornal Nacional/g1 (repórter Rafael Godoi) — cobertura em vídeo da sessão de 15/09/2026<br>
+      3. CNN Brasil — Análise de William Waack, "Caos no STF deixa Corte maculada à beira da eleição", 15/09/2026<br>
+      4. CNN Brasil — "Sessão histórica do STF tem bate-boca e indefinição sobre futuro de Moraes", 15/09/2026 (placar 4 a 3)<br>
+      5. Terra — cobertura ao vivo da sessão de 15/09, "STF tem 4 votos contra e 3 a favor para unir julgamento de Moraes e Mendonça; Dino pede vista"<br>
+      6. Folha de S.Paulo — cobertura da sessão de 15/09 (placar 4 a 3, voto de Dino não computado)<br>
+      7. ConJur — "Para entender o caso Banco Master/Vorcaro no STF — Pet 16.662", 13/09/2026<br>
+      8. ConJur — "PGR diz que investigação sobre Alexandre é nula e pede extinção", 01/09/2026, e manifestação oficial de Gonet na Pet 16.662<br>
+      9. Migalhas — "Após ordem de Fachin, Mendonça envia Pet 16.662 à Presidência do STF" (base regimental: art. 5º, I e art. 13, I do RISTF)<br>
+      10. Migalhas — "Dino critica avocatória de processos por Fachin e alerta para avenida de autoritarismo", 15/09/2026<br>
+      11. Migalhas — "STF impõe prazo de 90 dias para a devolução de pedidos de vista"<br>
+      12. Poder360 — "Vorcaro perguntou a Moraes se deveria fugir 2 dias antes da prisão", 01/09/2026 (conteúdo das 52 mensagens)<br>
+      13. Diário Carioca — sobre Nunes Marques, o filho Kevin Marques e os repasses via Consult Inteligência Tributária, 15/09/2026<br>
+      14. Agência Pública — entrevista com Pedro Estevam Serrano (PUC-SP), setembro/2026<br>
+      15. Revista Oeste — coluna de Flávio Gordon, 12/09/2026<br>
+      16. OAB/RS — nota institucional de Leonardo Lamachia, 08/09/2026<br>
+      17. Bloomberg — "Caso Banco Master profundiza crisis del Supremo de Brasil", 04/09/2026<br>
+      18. Washington Post, El País, Le Monde, RFI, Al Jazeera, La Nación e Clarín — via síntese CNN Brasil da repercussão internacional<br>
+      19. Agenda do Poder — síntese das posições editoriais de O Globo, Estadão e Folha de S.Paulo, 14–15/09/2026 (amostra consultada, não varredura exaustiva)<br>
+      20. Notebook do NotebookLM "Brevis - podcast" — organização das fontes acima, incluindo a gravação integral da sessão, disponível para consulta pública em notebook.google.com/notebook/75cc0e4b-cbb4-4ad5-bd7b-7de7bc32bacf<br>
+      20b. Episódio em áudio (Resumo em Áudio/NotebookLM) comentando o Caso Master, gerado a partir do mesmo material — disponível em notebook.google.com/notebook/c51c1f77-e374-4bc3-935b-e58e23f3e610/artifact/fa01afac-707c-4b44-a34b-41b6730569dc<br>
+      21. Verificação cruzada independente conduzida pela redação do Brevis, cotejando as fontes acima entre si e submetendo o rascunho a segunda opinião externa (Gemini e ChatGPT) antes da publicação (§11 do manual editorial da casa)
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">Brevis</div>
+    <div class="footer-txt">Brevis Especial é uma edição avulsa, sem numeração, publicada fora do calendário regular do Brevis Semanal e do Brevis Previdenciário. Este material tem finalidade informativa e não representa posicionamento institucional do escritório sobre o mérito de nenhuma das investigações em curso.</div>
+  </div>
+
+</div>
+</body>
+</html>
