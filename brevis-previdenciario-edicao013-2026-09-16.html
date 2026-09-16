@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 013 · 16 de setembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--dourado-claro); border-color: var(--dourado-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(201,168,76,0.16); color: var(--dourado-claro); }
+  .indice-item strong { color: var(--dourado-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--cinza-sub); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf3 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-cjf  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .badge-cn   { background: #EBF0FB; color: #1A3A6B; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,31,60,0.06); transition: box-shadow 0.18s, transform 0.18s; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(13,31,60,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-stj { background: linear-gradient(90deg, #5A2E7A, #8B5EA8); }
+  .bar-stf { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-tnu { background: linear-gradient(90deg, #2B5797, #6C97C9); }
+  .bar-inss { background: linear-gradient(90deg, #A8230E, #D9634A); }
+  .bar-cjf { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-trf4 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-trf3 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-cn { background: linear-gradient(90deg, #1A3A6B, #6C97C9); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--azul-escuro); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EDE9DF; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cinza-sub); }
+  .top-card-fonte a { color: var(--azul-claro); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--dourado); scroll-margin-top: 16px; }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--dourado); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--azul-escuro); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: var(--cinza-texto); margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--cinza-sub); }
+  .panorama-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+  .assunto-momento { background: var(--azul-escuro); padding: 34px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; position: relative; overflow: hidden; }
+  .assunto-momento::before { content: ''; position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.16); }
+  .assunto-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .assunto-titulo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--branco); margin-bottom: 22px; line-height: 1.32; max-width: 560px; }
+  .assunto-bloco { margin-bottom: 18px; }
+  .assunto-bloco:last-child { margin-bottom: 0; }
+  .assunto-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dourado-claro); display: block; margin-bottom: 6px; }
+  .assunto-bloco-texto { font-size: 13.5px; line-height: 1.75; color: rgba(250,250,248,0.85); }
+  .assunto-comentar { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 16px 20px; border-left: 2px solid var(--dourado-claro); font-style: italic; color: rgba(250,250,248,0.92); font-size: 13.5px; line-height: 1.7; }
+  .assunto-meta { margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .assunto-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .assunto-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .assunto-fonte a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+    .assunto-momento { padding: 26px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico — <a href="#sec-assunto-momento">Operação Sem Desconto</a>, <a href="#sec-03">Tema 1.124 do STJ</a> e <a href="#sec-04">o PLP 42/2023 de volta à pauta</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">16 de setembro de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">013</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">8 a 16 de setembro · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">7–9 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Destaque: STF flexibiliza prisões da Operação Sem Desconto</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">2 movimentos verificados</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Movimentos do Período</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> TNU em Destaque</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar de Tribunais</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> Como Usar</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Oportunidades / Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Curiosidade Previdenciária</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Frase do Dia</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário nº 013, período de 8 a 16 de setembro. O STJ esclareceu, em embargos de declaração, um ponto sensível do Tema 1.124 sobre efeitos financeiros de benefícios com prova nova; a Câmara voltou a ser pressionada a votar o PLP 42/2023, da aposentadoria especial; e o assunto do momento — a soltura de um ex-procurador-geral do INSS na Operação Sem Desconto — foge do figurino, mas ensina algo real sobre prisão preventiva. Descartamos, depois de apuração, três itens que pareciam novidade e não eram — o Radar de Tribunais explica cada caso.</p>
+    </div>
+  </div>
+
+  <!-- ASSUNTO DO MOMENTO -->
+  <div class="assunto-momento" id="sec-assunto-momento">
+    <div class="assunto-eyebrow">🔥 Assunto do momento</div>
+    <div class="assunto-titulo">Por que o ministro Mendonça soltou o ex-procurador-geral do INSS — e o que isso ensina sobre prisão preventiva</div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O que está bombando</span>
+      <div class="assunto-bloco-texto">Em decisão assinada na noite de terça-feira, 8/9/2026, o Min. André Mendonça, do STF, substituiu a prisão preventiva por medidas cautelares diversas para Virgílio Antônio Ribeiro de Oliveira Filho — ex-procurador-geral do INSS, preso desde novembro de 2024 na Operação Sem Desconto, que apura desvio de cerca de R$ 11,9 milhões em descontos associativos sobre benefícios do INSS. Ele passa a usar tornozeleira eletrônica. Na mesma decisão, o contador Samuel Bomfim Júnior recebeu tratamento semelhante, e dois nomes de maior repercussão política — o ex-ministro da Previdência José Carlos Oliveira e o ex-secretário de Inovação Pedro Corrêa Neto — tiveram o monitoramento eletrônico revogado por completo. A notícia circulou amplamente fora do meio jurídico por envolver um ex-ministro de governo anterior e por reacender o debate sobre o tamanho do rombo que o esquema de descontos causou a milhões de aposentados.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O gancho jurídico</span>
+      <div class="assunto-bloco-texto">A fundamentação do ministro é um resumo didático do regime de cautelares do Código de Processo Penal: prisão preventiva (art. 312, CPP) só se sustenta enquanto persistir um risco concreto e atual — para a ordem pública, a instrução criminal ou a aplicação da lei penal. Segundo a decisão, "o fim da fase investigativa reduz o risco que justificaria a manutenção da prisão preventiva" — ou seja, com o inquérito da Operação Sem Desconto essencialmente concluído, o risco de que os investigados destruam provas ou atrapalhem a apuração deixa de existir na mesma intensidade, o que abre caminho para medidas cautelares diversas da prisão (art. 319, CPP), como monitoramento eletrônico e proibição de contato entre os investigados — sem que isso signifique absolvição, arquivamento ou qualquer juízo sobre o mérito da acusação.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">Curiosidade</span>
+      <div class="assunto-bloco-texto">O ex-procurador-geral do INSS ficou preso preventivamente por quase dois anos — tempo suficiente para que a maioria dos réus em ações penais no país já tivesse sido julgada, condenada ou absolvida. É um lembrete de como a prisão preventiva, pensada para durar semanas ou poucos meses, tende a se prolongar em investigações complexas de fraude institucional — e de como o próprio decurso do tempo, mais do que qualquer fato novo, pode ser o argumento decisivo para a soltura.</div>
+    </div>
+
+    <div class="assunto-comentar">
+      "Pra comentar": o ex-procurador que deveria defender o INSS em juízo virou um dos investigados por fraudá-lo por dentro — e mesmo nesse cenário, o STF aplicou a regra que vale para qualquer preso preventivo: sem risco atual e concreto, não há prisão que se sustente só pela gravidade do que se apura.
+    </div>
+
+    <div class="assunto-meta">
+      <span class="status-pill status-consolidada">✔ Decisão monocrática — 8/9/2026</span>
+      <div class="assunto-fonte" style="margin-left:auto">Fonte: Jornal do Brasil · decisão do Min. André Mendonça, STF</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 MOVIMENTOS DO PERÍODO -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Movimentos verificados do período</span>
+    </div>
+    <div class="section-intro">A apuração desta quinzena — feita com apoio de pesquisa aprofundada e revalidada de forma independente em fonte primária, item a item — descartou mais candidatos do que confirmou: uma tese da TNU sobre aeronautas de maio de 2025 recirculando como se fosse desta semana, uma liberação de RPV de janeiro de 2026 com a mesma reciclagem de data, e uma notícia sobre o Tema 1.124 do STJ que na verdade tratava do adiamento de uma sessão de 2025. Preferimos publicar dois movimentos confirmados a preencher a edição com itens frágeis — os descartes completos estão no Radar de Tribunais.</div>
+
+    <div class="top-grid">
+
+      <!-- CARD 1 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stj"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 01 · EFEITOS FINANCEIROS DE BENEFÍCIO · DIB</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stj">STJ</span>
+            <span class="badge badge-tema">Tema 1.124</span>
+          </div>
+          <div class="top-card-titulo">STJ julga embargos de declaração e esclarece regra sobre data de início do benefício com prova nova</div>
+          <div class="top-card-corpo">
+            <p>O acórdão original do Tema 1.124 (recursos repetitivos) foi publicado pela Primeira Seção do STJ em 6/11/2025. Nesta quinzena — em 9 ou 10/9/2026, conforme a fonte (não localizamos a data exata em publicação oficial do STJ até o fechamento desta edição, ver Atenção Operacional) — a mesma Seção julgou embargos de declaração opostos pelo IBDP, sob relatoria atribuída ao Min. Paulo Sérgio Domingues em fontes secundárias, esclarecendo dois pontos: (1) o segurado precisa levar ao INSS requerimento com "documentação minimamente suficiente" para caracterizar interesse de agir judicial, e o INSS tem o dever de intimar para complementação quando a documentação for insuficiente; (2) se os requisitos do benefício já existiam no requerimento administrativo, a Data de Início do Benefício (DIB) retroage a essa data — mas se a prova só pôde ser produzida em juízo, por impossibilidade material anterior, a DIB é fixada na data da citação válida, respeitada a prescrição quinquenal.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Em ações de revisão ou concessão de benefício em que a prova decisiva só foi juntada no processo judicial, o embargo de declaração agora dá margem mais clara para negociar a DIB na citação — e não mais, por padrão, apenas na data do laudo ou da perícia. Revise minutas de petição inicial que hoje pedem a DIB no requerimento administrativo sem lastro documental suficiente naquele momento.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Consolidada — recurso repetitivo, efeito vinculante</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.ieprev.com.br/noticias/stj-publica-acordao-do-tema-1124-confira-tese-fixada-e-julgamento-na-integra" target="_blank">IEPREV · Tema 1.124 do STJ</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-cn"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 02 · TEMPO ESPECIAL · TRAMITAÇÃO LEGISLATIVA</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-cn">CÂMARA DOS DEPUTADOS</span>
+            <span class="badge badge-tema">PLP 42/2023</span>
+          </div>
+          <div class="top-card-titulo">Três requerimentos pedem inclusão do PLP 42/2023 direto na pauta do Plenário</div>
+          <div class="top-card-corpo">
+            <p>O PLP 42/2023 — que reduz (não elimina) a idade mínima hoje exigida para a aposentadoria especial, hoje fixada em 55/58/60 anos, para faixas entre 40 e 48 anos conforme o grau de exposição a agentes nocivos — teve a urgência de tramitação aprovada em 12/8/2026 (fato já coberto na edição nº 011). Nesta quinzena, três deputados de partidos diferentes — Lídice da Mata (PSB/BA) e Coronel Ulysses (União/AC) em 11/9, e o Delegado Marcelo Freitas (União/MG) em 14/9/2026 — protocolaram requerimentos separados pedindo a inclusão do projeto na Ordem do Dia para votação imediata. O projeto segue, porém, sem relator designado na Comissão de Constituição e Justiça (CCJC); a relatoria já concluída na Comissão de Finanças e Tributação, favorável com emendas, é da deputada Erika Kokay (PT-DF), com parecer de 27/4/2026.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Ainda não há texto aprovado nem data de votação confirmada — trate como sinalização de mobilização política, não como mudança de regra em vigor. Para clientes que perguntam sobre o tema, a orientação segue a mesma da edição nº 011: aguardar aprovação e regulamentação antes de qualquer requerimento administrativo baseado nas novas idades mínimas.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Em construção — sem relator na CCJC</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2350914" target="_blank">Câmara dos Deputados · Ficha de tramitação · PLP 42/2023</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STJ · Tema 1.124 · Embargos de declaração julgados em 9–10/9/2026 — acórdão-base de 6/11/2025
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">STJ esclarece quando a DIB retroage ao requerimento administrativo e quando ela nasce só na citação</div>
+      <div class="decisao-body">
+        <p>O Tema 1.124 nasceu de uma dúvida recorrente nas Turmas Recursais e TRFs: quando o INSS nega um benefício por falta de prova, e o segurado só consegue reunir a documentação completa (laudo técnico, prova testemunhal, perícia) já no curso do processo judicial, a partir de quando o benefício deve ser pago — da data do requerimento administrativo original, ou só da data em que a prova ficou disponível? A Primeira Seção fixou a tese em 6/11/2025; nesta quinzena, o julgamento dos embargos de declaração opostos pelo Instituto Brasileiro de Direito Previdenciário (IBDP) reafirmou e detalhou os dois eixos da tese, sem alterar a conclusão de mérito.</p>
+        <p>Primeiro eixo: existe interesse de agir judicial quando o segurado levou ao INSS, no requerimento administrativo, documentação minimamente suficiente para uma análise — e o INSS, mesmo diante de documentação insuficiente, tem o dever de intimar o segurado para complementá-la antes de indeferir. Segundo eixo: se os requisitos do benefício já existiam no momento do requerimento administrativo, a DIB retroage a essa data, ainda que a prova documental só tenha sido apresentada depois; mas se a prova só pôde ser produzida em juízo — por impossibilidade material anterior, não por desídia do segurado —, a DIB passa a ser fixada na data da citação válida do INSS no processo, respeitada a prescrição quinquenal das parcelas anteriores ao ajuizamento.</p>
+        <p>Na prática previdenciária, essa distinção é o divisor entre uma ação que recupera todos os atrasados desde o requerimento administrativo e uma que só garante o pagamento a partir da citação — uma diferença que, em processos de anos de tramitação, pode representar a maior parte do valor da causa.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        Tema 1.124/STJ: há interesse de agir judicial quando a documentação minimamente suficiente foi apresentada ao INSS no requerimento administrativo; a DIB retroage a essa data quando os requisitos já existiam então, mas é fixada na citação válida quando a prova só pôde ser produzida no curso do processo judicial, respeitada a prescrição quinquenal.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Ao redigir a petição inicial, documente com precisão em que momento cada prova ficou disponível — é esse detalhe, e não apenas a data do requerimento administrativo, que vai decidir a partir de quando o cliente recebe os atrasados.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Consolidada — recurso repetitivo</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.ieprev.com.br/noticias/stj-publica-acordao-do-tema-1124-confira-tese-fixada-e-julgamento-na-integra" target="_blank">IEPREV</a> · STJ Tema 1.124</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">PLP 42/2023: por que "aprovação de urgência" e "pedido de inclusão em pauta" não são a mesma coisa</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">O PLP 42/2023 ganhou pressão política nesta quinzena — mas ainda não tem texto votado, nem data certa</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese em discussão</span>
+        <div class="tese-bloco-texto">O projeto reduz — não elimina — a idade mínima hoje exigida na aposentadoria especial: em vez de 55, 58 ou 60 anos (conforme o tempo de contribuição em atividade especial), o texto em tramitação prevê faixas de 40 a 48 anos, escalonadas pelo grau de exposição a agentes nocivos. A relatoria na Comissão de Finanças e Tributação, da deputada Erika Kokay (PT-DF), já apresentou parecer favorável com emendas em 27/4/2026. A urgência de tramitação — que permite pular a análise sequencial pelas comissões temáticas — foi aprovada em 12/8/2026.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que mudou nesta quinzena</span>
+        <div class="tese-bloco-texto">Entre 11 e 14/9/2026, três deputados de bancadas distintas — sinal de que o tema atravessa o espectro político — protocolaram requerimentos individuais pedindo a inclusão do projeto na Ordem do Dia do Plenário para votação imediata. Isso não significa que o projeto será votado: um requerimento de inclusão em pauta é um pedido formal, sujeito à decisão da Mesa Diretora e ao acordo de líderes partidários — não é, por si só, uma convocação de sessão. O projeto também segue sem relator designado na Comissão de Constituição e Justiça (CCJC), etapa ainda pendente antes de qualquer votação em Plenário no rito de urgência.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Impacto prático no escritório</span>
+        <div class="tese-bloco-texto">Para clientes que exercem atividade sujeita a agentes nocivos e perguntam se já podem requerer a aposentadoria pelas novas idades mínimas: a resposta continua sendo não. Nenhuma das idades hoje em vigor (55/58/60 anos) foi alterada — o PLP segue em tramitação, sem aprovação de mérito em nenhuma casa legislativa. O que mudou é a temperatura política em torno do tema, não a regra aplicável.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que esperar</span>
+        <div class="tese-bloco-texto">Com três requerimentos de inclusão em pauta em quatro dias, é razoável monitorar a Ordem do Dia da Câmara nas próximas semanas — mas sem prometer a clientes um prazo de aprovação, dado que a CCJC ainda não designou relator e o rito de urgência não dispensa essa etapa.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Em construção — sem votação de mérito</span>
+        <span class="status-pill status-favoravel">🟢 Tendência favorável ao segurado, se aprovado</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 TNU EM DESTAQUE -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">TNU em destaque · e um ponto de conhecimento</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 22px;">
+      <p>Não identificamos, nesta janela de 8 a 16/9/2026, julgamento novo da Turma Nacional de Uniformização com número de Tema localizável em fonte primária. O único candidato que a pesquisa inicial apontou — o Tema 337, sobre aposentadoria especial de aeronautas e exposição à pressão hipobárica — foi verificado e descartado: a TNU julgou esse tema em 14/5/2025, mais de um ano antes do período desta edição; a tese fixada (que, após a Lei nº 9.032/1995, a exposição à pressão hipobárica não basta, isoladamente, para caracterizar atividade especial, exigindo laudo técnico conclusivo) segue válida e pode ser citada como referência consolidada, mas não é fato novo desta quinzena.</p>
+    </div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Não é notícia da quinzena — é conhecimento útil: um caso em que a falha foi do próprio INSS, não do segurado</div>
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O caso</span>
+        <div class="tese-bloco-texto">O Conselho de Recursos da Previdência Social (CRPS), em recurso administrativo julgado em 5/5/2026 (Processo 44233.233797/2025-28), determinou que o INSS emitisse guias de ajuste no CNIS de uma segurada após constatar que contribuições de abril a junho de 2021 haviam sido excluídas do cadastro por pendências administrativas internas (marcações "PREM-FVIN" e "PREM-BLOQ-EC103") — não por qualquer omissão da própria segurada.</div>
+      </div>
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que resolveu o caso</span>
+        <div class="tese-bloco-texto">A segurada apresentou Declaração de Tempo de Contribuição (DTC) do próprio empregador, e o CRPS aplicou o entendimento (com base no Regimento Interno do órgão, arts. 77 a 80 da Portaria MPS nº 125/2026) de que "o CNIS é um importante banco de dados, mas não é absoluto" — documento idôneo pode corrigir falha administrativa, e a falha não pode ser imputada ao segurado.</div>
+      </div>
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Por que trazer isso agora</span>
+        <div class="tese-bloco-texto">É um precedente de maio/2026, não desta quinzena — trazemos como conhecimento aplicável, não como fato novo. Vale como roteiro para qualquer caso em que o cliente tenha vínculo "sumido" ou marcado com pendência no CNIS sem explicação clara: antes de presumir que falta documentar o próprio segurado, vale checar se a origem é uma pendência administrativa interna do INSS — nesse caso, DTC do empregador (ou prova equivalente) tende a resolver por via administrativa, sem precisar judicializar.</div>
+      </div>
+      <div class="tese-footer">
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+        <span class="status-pill status-consolidada">✔ Precedente administrativo — CRPS, 5/5/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR DE TRIBUNAIS -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tnu" style="flex-shrink:0;margin-top:2px;">TNU</span>
+      <div>
+        <div class="radar-titulo">Tema 337 (aeronautas) recirculou nesta semana, mas é julgamento de maio de 2025</div>
+        <div class="radar-texto">Verificamos em fonte especializada (IEPREV) que a TNU julgou o Tema 337 em 14/5/2025, não nesta quinzena. Descartado como movimento novo — ver TNU em Destaque.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-cjf" style="flex-shrink:0;margin-top:2px;">CJF / Justiça Federal</span>
+      <div>
+        <div class="radar-titulo">Lote de RPV de "R$ 2,3 bilhões" é notícia reciclada de janeiro de 2026</div>
+        <div class="radar-texto">Uma matéria amplamente compartilhada nesta semana descreve uma liberação de RPVs do INSS no valor de R$ 2,3 bilhões, atribuindo-a genericamente a "2026". Verificamos na fonte primária do próprio texto: a autorização é de 7/1/2026, referente a RPVs autuadas em novembro de 2025, para cerca de 152,3 mil segurados. Não é lote novo desta quinzena — e não há, até o fechamento desta edição, um lote de RPV do INSS confirmado com data distinta da liberação de R$ 3,31 bi já coberta na edição nº 011 (24/8/2026). Ver Dinheiro na Mesa.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Uma segunda matéria sobre o Tema 1.124 tratava do adiamento da sessão em 2025, não do julgamento atual</div>
+        <div class="radar-texto">Um artigo datado de fevereiro de 2025 anunciava que o Tema 1.124 "seria julgado em março" daquele ano — não tem relação com os embargos de declaração julgados nesta quinzena (Movimento 01 e Decisão do Dia). Mantivemos separados os dois momentos do mesmo tema para não confundir "julgado" com "pautado".</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Operação Sem Desconto: fase de agosto (ed. 008) e a decisão de 8/9 são episódios distintos da mesma operação</div>
+        <div class="radar-texto">A Brevis Previdenciário nº 008 (7/8/2026) já havia registrado uma "nova fase" da Operação Sem Desconto em 4/8. O que tratamos como Assunto do Momento nesta edição é um episódio posterior e diferente — a flexibilização de prisões preventivas em 8/9/2026 —, não uma repetição do mesmo fato.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">Sem lote de RPV novo confirmado nesta quinzena — o sinal financeiro está na regra de DIB do Tema 1.124</div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟣 Sinal de Negócio ·</span>
+        <span class="dinheiro-header-title">Recalcular o valor da causa em ações com prova produzida em juízo</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Público-alvo: escritórios com carteira relevante de ações de concessão ou revisão de benefício em que a prova decisiva (perícia, laudo técnico, prova testemunhal) só foi produzida no curso do processo judicial.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Revise processos em andamento: se a documentação já era suficiente no requerimento administrativo, a tese do Tema 1.124 sustenta pedido de DIB retroativa a essa data — reforce esse ponto em réplica ou alegações finais</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Nos casos em que a prova só existiu depois — por impossibilidade material anterior —, ajuste a expectativa do cliente: a DIB tende a ser fixada na citação, não no requerimento administrativo</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Em novas petições iniciais, documente explicitamente a data em que cada prova ficou disponível — esse registro passa a ser decisivo para a tese aplicável, não apenas um detalhe cronológico</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: IEPREV · Tema 1.124 do STJ, acórdão-base de 6/11/2025 e embargos de declaração de 9–10/9/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 COMO USAR -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">Como usar — passo a passo</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Como aplicar a tese do Tema 1.124 na petição inicial de uma ação de concessão ou revisão de benefício:</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Reconstitua a linha do tempo probatória do caso</div>
+          <div class="amanha-texto">Liste, com data, cada documento e prova apresentados: o que já constava no requerimento administrativo e o que só surgiu depois, no processo judicial.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Classifique a origem da prova nova</div>
+          <div class="amanha-texto">Distinga se a prova só surgiu em juízo por impossibilidade material anterior (ex.: perícia que só pôde ser feita depois) ou se poderia ter sido reunida antes — só o primeiro caso afasta a retroação ao requerimento administrativo.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Formule o pedido de DIB de forma condicionada</div>
+          <div class="amanha-texto">Peça a retroação ao requerimento administrativo como pedido principal, fundamentado no Tema 1.124, e a citação como pedido subsidiário — antecipando a tese que o juízo pode aplicar.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Cite o embargo de declaração, não só o acórdão original</div>
+          <div class="amanha-texto">O esclarecimento de 9–10/9/2026 detalha os dois eixos da tese — cite-o para evitar que o INSS ou o juízo apliquem uma leitura incompleta do acórdão-base de 6/11/2025.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 OPORTUNIDADES / CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Oportunidades e clientes para mapear</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Três perfis prioritários deste período.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Processos de concessão ou revisão de benefício com prova produzida em juízo</strong> — recalcular a DIB pretendida à luz do Tema 1.124 e revisar o valor estimado da causa.
+            <span class="mapear-tese">→ Consolidada · STJ Tema 1.124</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Clientes que exercem atividade sujeita a agentes nocivos, perguntando sobre o PLP 42/2023</strong> — orientar que a regra hoje em vigor (55/58/60 anos) segue inalterada; monitorar a Ordem do Dia da Câmara, sem prometer prazo.
+            <span class="mapear-tese">→ Em construção · PLP 42/2023</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Clientes ou colegas que perguntarem sobre a Operação Sem Desconto</strong> — esclarecer que a soltura de investigados por medidas cautelares diversas não é absolvição nem arquivamento; é aplicação do regime geral do CPC/CPP sobre necessidade atual do risco.
+            <span class="mapear-tese">→ Assunto do momento · STF, 8/9/2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Data exata dos embargos de declaração do Tema 1.124 não confirmada em fonte oficial</div>
+          <div class="atencao-texto">Fontes secundárias divergem entre 9 e 10/9/2026, e as tentativas de acesso direto ao portal do STJ (scon.stj.jus.br, processo.stj.jus.br) retornaram erro de acesso. Antes de citar a data em petição, confirme diretamente no andamento processual do caso ou no Informativo de Jurisprudência do STJ da semana correspondente.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Relatoria do Tema 1.124 atribuída ao Min. Paulo Sérgio Domingues não confirmada em fonte primária</div>
+          <div class="atencao-texto">A atribuição vem de fontes secundárias consistentes entre si, mas não foi possível confirmar diretamente no site do STJ até o fechamento desta edição. Trate como informação a confirmar, não como fato definitivo, ao citar o nome do relator em petição.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Requerimento de inclusão em pauta não é aprovação, nem convocação de sessão</div>
+          <div class="atencao-texto">Os três requerimentos sobre o PLP 42/2023 (11 e 14/9/2026) são pedidos formais à Mesa Diretora — não garantem data de votação nem indicam que o projeto será aprovado. Comunique a clientes como "sinalização de mobilização", não como fato consumado.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Não trate a soltura de investigados na Operação Sem Desconto como encerramento do caso</div>
+          <div class="atencao-texto">A substituição da prisão preventiva por medidas cautelares diversas não afeta o mérito da investigação nem indica arquivamento — é uma reavaliação da necessidade atual da prisão, prevista no regime geral do CPP.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 CURIOSIDADE PREVIDENCIÁRIA -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Curiosidade previdenciária</span>
+    </div>
+    <div class="section-body">
+      <p>A Operação Sem Desconto não é a primeira grande investigação de fraude envolvendo o próprio INSS — o instituto já foi alvo de outras operações da Polícia Federal, como a Operação Lavoro (fraude em aposentadorias rurais) e episódios de fraude em BPC/LOAS, registrados em edições anteriores desta newsletter. O que diferencia a Sem Desconto é o alvo: descontos associativos e de empréstimo consignado descontados diretamente da folha de pagamento de aposentados e pensionistas, um mecanismo que, por desconto automático, é justamente o que deveria ser mais simples de fiscalizar — e que, segundo a apuração da PF, funcionou por anos sem que o próprio órgão que deveria proteger o segurado percebesse, ou impedisse, o desvio.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 FRASE DO DIA -->
+  <div class="frase-section" id="sec-12">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Prisão preventiva não é pena antecipada — é medida excepcional que dura enquanto durar o risco. Quando o risco muda, a medida também precisa mudar, mesmo que o caso continue sério.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 013</div>
+  </div>
+
+  <!-- 13 FONTES -->
+  <div class="section" id="sec-13">
+    <div class="section-tag">
+      <span class="section-num">13</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.jb.com.br/brasil/justica/2026/09/1060867-stf-manda-soltar-ex-procurador-geral-do-inss-investigado-na-operacao-sem-desconto.html" target="_blank">Jornal do Brasil · STF manda soltar ex-procurador-geral do INSS investigado na Operação Sem Desconto</a></div>
+          <div class="fonte-desc">Decisão do Min. André Mendonça, assinada 8/9/2026 — base do Assunto do Momento.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ieprev.com.br/noticias/stj-publica-acordao-do-tema-1124-confira-tese-fixada-e-julgamento-na-integra" target="_blank">IEPREV · STJ publica acórdão do Tema 1.124, confira tese fixada e julgamento na íntegra</a></div>
+          <div class="fonte-desc">Acórdão-base (6/11/2025) e embargos de declaração (9–10/9/2026) — base do Movimento 01 e da Decisão do Dia.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.tribunadosertao.com.br/financas/2026/09/10/976339-stj-limita-pagamento-de-atrasados-do-inss-e-libera-concessao-de-beneficios-por-robos" target="_blank">Tribuna do Sertão · STJ limita pagamento de atrasados do INSS e libera concessão de benefícios por robôs</a></div>
+          <div class="fonte-desc">Cobertura complementar sobre os embargos de declaração do Tema 1.124, com data de julgamento em 9/9/2026 (Ag. O Globo como fonte primária citada).</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2350914" target="_blank">Câmara dos Deputados · Ficha de tramitação do PLP 42/2023</a></div>
+          <div class="fonte-desc">Fonte oficial dos três requerimentos de inclusão em pauta (11 e 14/9/2026) — base do Movimento 02 e da Tese Relevante.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ieprev.com.br/noticias/tnu-define-tese-sobre-aposentadoria-especial-de-aeronautas-no-tema-337" target="_blank">IEPREV · TNU define tese sobre aposentadoria especial de aeronautas no Tema 337</a></div>
+          <div class="fonte-desc">Usada para confirmar e descartar a data do julgamento (14/5/2025) — ver TNU em Destaque e Radar de Tribunais.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://previdenciarista.com/blog/falha-no-cnis-nao-impede-aposentadoria-decide-crps/" target="_blank">Previdenciarista · Falha no CNIS não impede aposentadoria, decide CRPS</a></div>
+          <div class="fonte-desc">Precedente administrativo de 5/5/2026 (Processo 44233.233797/2025-28) — usado como ponto de conhecimento na seção TNU em Destaque, não como fato desta quinzena.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo">Verificação cruzada independente</div>
+          <div class="fonte-desc">Esta edição foi apurada com apoio de pesquisa aprofundada (Google Gemini Deep Research) e revalidada item a item em fonte primária ou secundária qualificada pela curadoria antes da publicação — três candidatos sugeridos inicialmente (Tema 337 da TNU, lote de RPV de "R$ 2,3 bi" e uma segunda referência ao Tema 1.124) foram identificados como notícia reciclada ou mal atribuída e descartados, conforme detalhado no Radar de Tribunais.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 013 · 16 de setembro de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
