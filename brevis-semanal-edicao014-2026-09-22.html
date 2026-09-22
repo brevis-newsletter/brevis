@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Semanal — Edição nº 014 · 22 de setembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f7f4ee;
+    --creme: #FBF8F1;
+    --creme-forte: #F0E9D8;
+    --accent: #c8371a;
+    --accent-claro: #E8C6BC;
+    --accent-sutil: #FBEAE5;
+    --azul: #1a4c8c;
+    --azul-claro: #4D7AB8;
+    --verde: #1a6b42;
+    --verde-claro: #E8F5EE;
+    --marrom: #7a4a00;
+    --roxo: #5c2d82;
+    --muted: #7a7670;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #2E1811; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--paper); box-shadow: 0 0 90px rgba(0,0,0,0.55); }
+  .back-bar { background: var(--ink); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.75); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+  .back-link:hover { color: var(--accent-claro); }
+  .header { background: var(--ink); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.22); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--paper); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--accent); }
+  .header-sub { font-size: 12px; color: rgba(247,244,238,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(200,55,26,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--accent-claro); border-color: var(--accent-claro); }
+  .podcast-btn { display: inline-flex; align-items: center; gap: 9px; background: linear-gradient(90deg, var(--accent) 0%, #8B2410 100%); color: var(--paper); font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.2px; padding: 11px 20px; border-radius: 30px; text-decoration: none; margin-bottom: 28px; box-shadow: 0 4px 14px rgba(0,0,0,0.3); transition: opacity 0.15s, transform 0.15s; }
+  .podcast-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+  .podcast-btn-icon { font-size: 14px; }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(200,55,26,0.22); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(200,55,26,0.65); }
+  .header-meta-value { font-size: 12.5px; color: rgba(247,244,238,0.88); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--accent) 0%, #8B2410 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--paper); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--paper); border-radius: 50%; opacity: 0.5; }
+  .indice { background: var(--ink); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,198,188,0.7); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(200,55,26,0.2); color: var(--accent-claro); }
+  .indice-item strong { color: var(--accent-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--accent), transparent); margin: 0 48px; opacity: 0.25; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: #2A2622; }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--accent-sutil); border-left: 4px solid var(--accent); padding: 30px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--ink); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-civ { background: #EBF0FB; color: var(--azul); }
+  .badge-trib { background: #E8F5EE; color: var(--verde); }
+  .badge-trab { background: #FFF3E0; color: var(--marrom); }
+  .badge-hold { background: #F5EFFF; color: var(--roxo); }
+  .badge-crim { background: #FDF0EE; color: var(--accent); }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-stj  { background: #F0EBF5; color: var(--roxo); }
+  .badge-tst  { background: #FFF3E0; color: var(--marrom); }
+  .badge-carf { background: #E8F5EE; color: var(--verde); }
+  .badge-tema { background: #F5EFFF; color: var(--roxo); }
+  .badge-fam  { background: #FDECF3; color: #A8104A; }
+  .badge-leg  { background: #E6F0FF; color: #1A3A8B; }
+  .badge-prev { background: #FDF6E3; color: #8B5E00; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: var(--verde); }
+  .status-atencao     { background: var(--accent-sutil); color: var(--accent); }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(15,14,12,0.06); transition: box-shadow 0.18s, transform 0.18s; scroll-margin-top: 16px; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(15,14,12,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-trib { background: linear-gradient(90deg, #1a6b42, #4FA875); }
+  .bar-trab { background: linear-gradient(90deg, #7a4a00, #C9973F); }
+  .bar-civ  { background: linear-gradient(90deg, #1a4c8c, #6C97C9); }
+  .bar-hold { background: linear-gradient(90deg, #5c2d82, #A583C9); }
+  .bar-crim { background: linear-gradient(90deg, #c8371a, #D9634A); }
+  .bar-stf  { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-leg  { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-prev { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--ink); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: #2A2622; margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #16371F; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--accent-sutil); border-left: 3px solid var(--accent); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EEE7D8; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); }
+  .top-card-fonte a { color: var(--azul); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--ink); border-radius: 6px; padding: 30px 34px; color: var(--paper); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.12); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.18); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(200,55,26,0.22); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--paper); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(247,244,238,0.82); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(200,55,26,0.25); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--accent-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--accent); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(247,244,238,0.88); border-left: 2px solid var(--azul-claro); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #8FB4E8; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .decisao-fonte a { color: var(--accent-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--creme-forte); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: #2A2622; }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DED5BE; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--accent); }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--accent); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: #2A2622; margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--muted); }
+  .panorama-fonte a { color: var(--azul); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EEE7D8; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul); opacity: 0.3; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+  .mapear-box { background: var(--ink); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(247,244,238,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.045); border-radius: 3px; border-left: 2px solid var(--accent); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent-claro); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(247,244,238,0.85); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(200,55,26,0.7); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--accent-sutil); border: 1px solid #F0C5B8; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--accent); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .numero-card { background: linear-gradient(135deg, var(--ink) 0%, #2A231C 100%); border-radius: 5px; padding: 32px; color: var(--paper); position: relative; overflow: hidden; text-align: center; }
+  .numero-card::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.14); }
+  .numero-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-claro); opacity: 0.9; margin-bottom: 18px; }
+  .numero-destaque { font-family: 'Playfair Display', serif; font-size: 66px; font-weight: 900; color: var(--accent); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+  .numero-unidade { font-size: 20px; opacity: 0.55; font-weight: 300; letter-spacing: 2px; }
+  .numero-titulo { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--paper); margin-bottom: 14px; line-height: 1.3; }
+  .numero-texto { font-size: 13px; line-height: 1.72; color: rgba(247,244,238,0.7); max-width: 520px; margin: 0 auto; }
+  .numero-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(200,55,26,0.55); margin-top: 16px; letter-spacing: 1px; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--ink); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: #2A2622; }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--creme-forte); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--ink); font-weight: 500; border-left: 3px solid var(--azul); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E0D9C6; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--accent); opacity: 0.24; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--ink); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .assunto-momento { background: var(--ink); padding: 34px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; position: relative; overflow: hidden; }
+  .assunto-momento::before { content: ''; position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(200,55,26,0.16); }
+  .assunto-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .assunto-titulo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--paper); margin-bottom: 22px; line-height: 1.32; max-width: 560px; }
+  .assunto-bloco { margin-bottom: 18px; }
+  .assunto-bloco:last-child { margin-bottom: 0; }
+  .assunto-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-claro); display: block; margin-bottom: 6px; }
+  .assunto-bloco-texto { font-size: 13.5px; line-height: 1.75; color: rgba(247,244,238,0.85); }
+  .assunto-comentar { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 16px 20px; border-left: 2px solid var(--accent-claro); font-style: italic; color: rgba(247,244,238,0.92); font-size: 13.5px; line-height: 1.7; }
+  .assunto-meta { margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .assunto-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .assunto-fonte a { color: var(--accent-claro); text-decoration: none; }
+  .assunto-fonte a:hover { text-decoration: underline; }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E3DBC8; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--muted); line-height: 1.55; }
+  .footer { background: var(--ink); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,198,188,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .footer-back-link:hover { color: var(--accent-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--accent); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(247,244,238,0.32); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(200,55,26,0.14); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(247,244,238,0.26); line-height: 1.7; font-style: italic; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .assunto-momento { padding: 26px 24px; }
+    .mapear-box { padding: 20px 22px; }
+    .numero-destaque { font-size: 48px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Jurídica Geral · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Semanal</span></div>
+    <div class="header-sub">Radar jurídico amplo — <a href="#card-constitucional">Constitucional</a>, <a href="#card-tributario">Tributário/Holding</a>, <a href="#card-civel">Cível</a>, <a href="#card-criminal">Criminal</a> e <a href="#card-destaque">Institucional</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">22 de setembro de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">014</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">16 a 22 de setembro · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">5–7 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Semanal</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">16/09 a 22/09</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">5 áreas cobertas · 5 movimentos · 6 ações imediatas</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Top 5</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> Panorama por Área</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> O que fazer amanhã</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Número do Direito</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Movimento de Mercado</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Frase Final</a>
+    <a href="#sec-14" class="indice-item"><strong>14</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Semanal nº 014, período de 16 a 22 de setembro. O STF modula os efeitos de uma inconstitucionalidade e dá cinco anos de transição num caso de amianto, avança — mas não conclui — o julgamento que decide o ITBI de holdings imobiliárias, e adia sem nova data a sessão que examinaria a conduta do Min. André Mendonça no Caso Master. A greve dos Correios, que já dura duas semanas, é o assunto do momento logo abaixo. O previdenciário fica reservado para a edição de quinta-feira. Os 5 movimentos do período, cada um com fonte e ação prática, vêm na sequência.</p>
+    </div>
+  </div>
+
+  <!-- ASSUNTO DO MOMENTO -->
+  <div class="assunto-momento" id="sec-assunto-momento">
+    <div class="assunto-eyebrow">🔥 Assunto do momento
+      <div class="decisao-eyebrow-line"></div>
+    </div>
+    <div class="assunto-titulo">A greve dos Correios entra na 3ª semana — e o TST acaba de suspender o julgamento que decidiria se ela é abusiva</div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O que está bombando</span>
+      <div class="assunto-bloco-texto">A greve nacional dos Correios, deflagrada em 10/09/2026 e aprovada em 35 assembleias estaduais, já afeta entregas em todo o país. Na segunda-feira (21/09), o TST reuniu a Seção de Dissídios Coletivos para decidir se a paralisação é ou não abusiva — decisão que poderia liberar a empresa a descontar os dias parados e multar sindicatos. No meio da sessão, o presidente do TST, Min. Vieira de Mello Filho, suspendeu o julgamento depois que os Correios apresentaram documentos de última hora pedindo a declaração de abusividade, com multa de R$ 200 mil aos representantes dos trabalhadores. Nova sessão: quinta-feira (24/09), às 15h30.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O gancho jurídico</span>
+      <div class="assunto-bloco-texto">O que está em jogo tecnicamente é a "abusividade da greve", conceito da Lei 7.783/89 (Lei de Greve): uma paralisação legal e comunicada com antecedência pode, ainda assim, ser declarada abusiva se descumprir regras específicas — no caso dos Correios, por serem serviço essencial, a lei exige a manutenção de um percentual mínimo do efetivo em atividade (o TST já havia fixado esse percentual em 80%, em decisão liminar de 12/09). Se a greve for declarada abusiva, os dias parados podem ser descontados do salário e a categoria perde parte da proteção contra represálias; se não for (como recomendou a relatora do processo, Min. Maria de Nazaré Medeiros Rocha), os trabalhadores têm direito a compensar os dias parados, sem desconto.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">Curiosidade</span>
+      <div class="assunto-bloco-texto">A origem do impasse não é só salário: a proposta dos Correios de deixar de ser a mantenedora do plano de saúde dos funcionários — transferindo o risco financeiro para os próprios trabalhadores e aposentados — pesa tanto quanto o valor do reajuste (4,35%, já aceito por ambos os lados) na decisão de manter a greve. É um desenho de conflito cada vez mais comum em estatais e ex-estatais: o impasse real não está no aumento, está em quem banca o risco do benefício.</div>
+    </div>
+
+    <div class="assunto-comentar">
+      "Pra comentar": greve "abusiva" não quer dizer greve "ilegal" — é uma categoria própria da Lei 7.783/89, e a diferença entre uma coisa e outra decide, sozinha, se o trabalhador recebe ou perde o salário dos dias parados.
+    </div>
+
+    <div class="assunto-meta">
+      <span class="status-pill status-construcao">⚠ Julgamento suspenso — nova sessão em 24/09/2026</span>
+      <div class="assunto-fonte" style="margin-left:auto">Fonte: Metrópoles · TST/SDC · sessão suspensa 21/09/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 TOP 4 -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Top 5 movimentos do período</span>
+    </div>
+
+    <div class="top-grid">
+
+      <div class="top-card" id="card-constitucional">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 01 · CONSTITUCIONAL / AMBIENTAL</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADIn 6.200</span>
+          </div>
+          <div class="top-card-titulo">STF derruba lei goiana que autorizava exportação de amianto crisotila, mas dá 5 anos de transição</div>
+          <div class="top-card-corpo">
+            <p>Em julgamento no plenário virtual encerrado em 18/09/2026 e publicado em 21/09/2026, o STF declarou, por unanimidade, inconstitucional lei do Estado de Goiás que autorizava a extração de amianto crisotila destinada à exportação — atividade concentrada no município de Minaçu/GO — por entender que os riscos à saúde e ao meio ambiente do amianto valem independentemente do destino do minério. Quanto à modulação dos efeitos, proposta pelo Min. Gilmar Mendes para conceder um prazo de transição de cinco anos, a contar da publicação, o STF aprovou o prazo por oito votos a três — quórum qualificado de dois terços exigido pelo art. 27 da Lei 9.868/99. Os três votos vencidos divergiam apenas quanto ao prazo, defendendo eficácia imediata da proibição.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Empresas ligadas à extração, beneficiamento ou exportação de amianto crisotila em Goiás têm cinco anos, a partir de 21/09/2026, para encerrar ou reconverter a atividade — mapear contratos e licenças com vencimento nesse horizonte.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-favoravel">✔ Julgado — mérito concluído, com modulação de efeitos</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/464912/stf-da-prazo-de-cinco-anos-para-fim-da-exploracao-de-amianto" target="_blank">Migalhas · ADIn 6.200 · publicado 21/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-tributario">
+        <div class="top-card-bar bar-hold"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 02 · TRIBUTÁRIO / HOLDING</div>
+            <span class="impacto-badge">🔴 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-hold">Holding</span>
+            <span class="badge badge-tema">Tema 1.348</span>
+          </div>
+          <div class="top-card-titulo">ITBI em holdings imobiliárias: placar sobe para 5x2 a favor da imunidade incondicional, mas Moraes pede vista e trava o julgamento</div>
+          <div class="top-card-corpo">
+            <p>No Tema 1.348 (RE 1.495.108), sobre a imunidade de ITBI na integralização de imóveis ao capital social de empresas — inclusive holdings imobiliárias —, a sessão de 16/09/2026 somou os votos dos ministros Cristiano Zanin, André Mendonça, Nunes Marques e Luiz Fux ao do relator, Min. Edson Fachin, todos pela imunidade incondicional, independentemente da atividade preponderante da empresa. Ficaram vencidos, até aqui, os ministros Gilmar Mendes e Flávio Dino, que defendem excluir da imunidade as empresas cuja atividade preponderante seja a compra e venda ou locação de imóveis.</p>
+            <p>Antes da conclusão, o Min. Alexandre de Moraes pediu vista, suspendendo o julgamento novamente — sem data marcada para retomada.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Placar parcial — não é resultado final</span>
+            5x2 é maioria formada, mas o julgamento segue suspenso pelo pedido de vista de Moraes: não oriente clientes que já integralizaram imóveis em holding como se a tese estivesse fixada — o resultado só vale após a conclusão.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Suspenso — pedido de vista de Alexandre de Moraes</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://noticias.stf.jus.br/postsnoticias/stf-avanca-em-julgamento-sobre-imunidade-de-itbi-para-integralizacao-de-capital-social-de-imobiliarias/" target="_blank">STF Notícias · Tema 1.348 · sessão 16/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-civel">
+        <div class="top-card-bar bar-civ"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 03 · CÍVEL / CONSUMIDOR</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-civ">TJ-PI</span>
+            <span class="badge badge-civ">Consumidor</span>
+          </div>
+          <div class="top-card-titulo">TJ-PI anula condenação de R$ 18 milhões contra a Toyota por cerceamento de defesa e manda reabrir a instrução</div>
+          <div class="top-card-corpo">
+            <p>As Câmaras Reunidas Cíveis do TJ-PI (relator Des. Manoel de Sousa Dourado, com divergência aberta pelo Des. Ricardo Gentil) anularam sentença de primeira instância que condenava a Toyota a pagar mais de R$ 18 milhões em danos materiais e morais a uma concessionária (Nordeste Veículos), por suposto defeito em uma picape vendida em 2005. O colegiado reconheceu cerceamento de defesa: pedidos da montadora para produção de provas — perícia técnica e oitiva de testemunhas — não haviam sido adequadamente apreciados antes da sentença original. A decisão foi noticiada pelo Migalhas em 21/09/2026; o acórdão ainda não havia sido disponibilizado até o fechamento desta edição, então a data exata da sessão de julgamento segue em apuração.</p>
+            <p>A condenação anulada havia sido proferida por juiz posteriormente aposentado compulsoriamente pelo CNJ, em 2017, após processo disciplinar. Com a anulação, o processo volta à primeira instância para reabertura da fase de provas e nova sentença, com observância do contraditório e da ampla defesa.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Uso operacional</span>
+            Precedente útil para nulidade de sentença por cerceamento de defesa quando pedidos de produção de prova relevantes (perícia, testemunhas) não foram enfrentados pelo juízo — sobretudo em processos de longa tramitação, com decisão do magistrado original posta em xeque.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-atencao">⚠ Anulada — retorna à 1ª instância</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/464913/tj-pi-anula-condenacao-de-r-18-mi-contra-toyota-e-reabre-instrucao" target="_blank">Migalhas · TJ-PI · noticiado em 21/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-criminal">
+        <div class="top-card-bar bar-crim"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 04 · CRIMINAL</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-crim">1ª Turma</span>
+          </div>
+          <div class="top-card-titulo">1ª Turma do STF rejeita recurso e mantém, por unanimidade, condenação de Eduardo Bolsonaro por coação no curso do processo</div>
+          <div class="top-card-corpo">
+            <p>Em julgamento virtual encerrado em 18/09/2026, a 1ª Turma do STF rejeitou o recurso da defesa e manteve, por 4 votos a 0 (relator Min. Alexandre de Moraes, acompanhado pelos ministros Flávio Dino, Cristiano Zanin e Cármen Lúcia), a condenação de Eduardo Bolsonaro pelo crime de coação no curso do processo — condenação originalmente fixada em julgamento anterior e agora confirmada pela Turma nesta fase recursal. Segundo a acusação acolhida pela Turma, ele articulou a imposição de tarifas dos Estados Unidos contra exportações brasileiras como forma de pressionar o desfecho do processo que condenou seu pai, Jair Bolsonaro, no caso da trama golpista. A pena mantida é de quatro anos e dois meses de prisão, além de inelegibilidade.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Decisão de Turma — ainda cabe recurso</span>
+            É condenação de órgão fracionário (1ª Turma), não do Plenário, e ainda está sujeita a embargos de declaração e outros recursos cabíveis — não trate como trânsito em julgado.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Julgado em Turma — recorrível</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/stf-tem-maioria-para-manter-condenacao-de-eduardo-bolsonaro" target="_blank">Agência Brasil · STF/1ª Turma · concluído 18/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-card" id="card-destaque">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div class="top-card-numero">MOVIMENTO 05 · DESTAQUE LIVRE / INSTITUCIONAL</div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">Pet 16.704</span>
+          </div>
+          <div class="top-card-titulo">Fachin adia sem nova data o julgamento sobre a conduta do Min. André Mendonça no Caso Master</div>
+          <div class="top-card-corpo">
+            <p>A sessão que examinaria a Pet 16.704 — sobre a conduta do Min. André Mendonça ao afastar diretores da Polícia Federal e suspender relatórios de inteligência ao STF, episódio já retratado no Brevis Especial de 16/09 — estava marcada para 23/09/2026. Em despacho de 17/09/2026, o presidente do STF, Min. Edson Fachin, adiou a sessão sem estabelecer nova data, sob o argumento de que a questão de ordem discutida na sessão de 15/09 sobre a Pet 16.662 (Caso Master/Moraes) — inclusive quanto à regularidade da própria relatoria — tem relação direta com o processo de Mendonça, e precisa ser resolvida antes.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Sem data — não anuncie julgamento iminente</span>
+            Não trate a Pet 16.704 como pauta confirmada para qualquer data futura enquanto o STF não resolver a questão de ordem pendente da Pet 16.662.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Adiada — sem nova data (despacho 17/09/2026)</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.migalhas.com.br/quentes/464758/stf-fachin-adia-julgamento-de-acao-que-liga-mendonca-a-master" target="_blank">Migalhas · Pet 16.704 · despacho 17/09/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STF · ADIn 6.200 · publicado 21/09/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">Inconstitucional, mas com prazo: o STF usa modulação de efeitos para equilibrar saúde pública e economia de um único município</div>
+      <div class="decisao-body">
+        <p>O STF julgou procedente a ADIn 6.200, movida contra lei do Estado de Goiás que autorizava a extração de amianto crisotila destinada exclusivamente à exportação — atividade que sustenta boa parte da economia do município de Minaçu/GO. O julgamento, em plenário virtual, correu entre 11 e 18/09/2026, com resultado publicado em 21/09/2026.</p>
+        <p>Por unanimidade, o Plenário reconheceu que o amianto crisotila representa risco à saúde e ao meio ambiente independentemente de a produção ser voltada ao mercado interno ou à exportação. Já quanto à modulação de efeitos proposta pelo Min. Gilmar Mendes — em vez de determinar o fim imediato da atividade, dar cinco anos de transição a partir da publicação —, o STF aprovou o prazo por oito votos a três, atingindo o quórum qualificado de dois terços exigido pelo art. 27 da Lei 9.868/99. Os três votos vencidos divergiam apenas quanto ao prazo, defendendo eficácia imediata da inconstitucionalidade, sem transição.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        A lei estadual que autorizava a extração de amianto crisotila para exportação é inconstitucional — mas a proibição só produz efeitos a partir de 21/09/2031, cinco anos após a publicação do acórdão.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Mapear clientes com atividade de extração, beneficiamento ou exportação de amianto crisotila em Goiás e orientar sobre o horizonte de encerramento em cinco anos — inclusive para fins de planejamento de reconversão de atividade e de eventuais contratos e licenças com vencimento nesse período.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-favoravel">✔ Mérito julgado — inconstitucionalidade reconhecida</span>
+        <span class="status-pill status-atencao">⚠ Efeitos modulados — só produzem efeito a partir de 21/09/2031</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: Migalhas · ADIn 6.200 · publicado 21/09/2026</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">Modulação de efeitos: quando o STF diz que uma lei é inconstitucional, mas ainda não pode deixar de valer</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Modulação de efeitos (art. 27 da Lei 9.868/99): o instrumento por trás do prazo de 5 anos do caso do amianto</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que é</span>
+        <div class="tese-bloco-texto">A modulação de efeitos é o mecanismo, previsto no art. 27 da Lei 9.868/99, que permite ao STF, por razões de segurança jurídica ou de excepcional interesse social, restringir os efeitos de uma declaração de inconstitucionalidade ou decidir que ela só valha a partir de um momento futuro — em vez do efeito retroativo (ex tunc) que normalmente decorre da inconstitucionalidade. Exige quórum qualificado de dois terços dos ministros.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Como apareceu no caso do amianto</span>
+        <div class="tese-bloco-texto">O STF não teve dúvida sobre a inconstitucionalidade da lei goiana em si — o debate real estava em quando a proibição passaria a valer. A maioria entendeu que decretar o fim imediato da atividade destruiria, de uma hora para outra, a base econômica de um município inteiro sem tempo de reconversão, e por isso fixou uma janela de cinco anos. É a mesma lógica usada em outros casos de grande impacto econômico ou social — mais frequente do que a maioria dos advogados percebe fora da área de direito constitucional.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Por que isso interessa além do caso concreto</span>
+        <div class="tese-bloco-texto">Qualquer cliente afetado por uma inconstitucionalidade recém-declarada deve verificar, antes de agir, se houve modulação de efeitos — e, se houve, qual é o marco temporal exato. Ignorar esse detalhe pode levar a orientar um cliente a interromper uma atividade que, tecnicamente, ainda é lícita por mais um período de transição, ou a deixar de exercer um direito que só nasce depois do prazo modulado.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que fazer agora</span>
+        <div class="tese-bloco-texto">Ao identificar uma inconstitucionalidade relevante para a carteira do escritório, checar sempre se o acórdão contém modulação de efeitos — e não presumir efeito imediato só porque a lei foi declarada inconstitucional.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-atencao">⚠ Mecanismo de aplicação geral — não exclusivo do caso do amianto</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 PANORAMA POR ÁREA -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">Panorama por área</span>
+    </div>
+    <div class="section-intro">Os principais movimentos do período, organizados por área de atuação, com o ângulo prático para a rotina do escritório.</div>
+
+    <div class="panorama-grid">
+
+      <div class="panorama-item">
+        <div class="panorama-num">01</div>
+        <div>
+          <div class="panorama-area">Constitucional / Ambiental</div>
+          <div class="panorama-titulo">STF derruba lei do amianto em Goiás, mas dá 5 anos de transição</div>
+          <div class="panorama-texto">Ver Decisão do Dia (seção 03) e Tese Relevante (seção 04) — publicado 21/09/2026.</div>
+          <div class="panorama-footer"><span class="status-pill status-favoravel">✔ Julgado</span><span class="panorama-fonte">STF · ADIn 6.200</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">02</div>
+        <div>
+          <div class="panorama-area">Tributário / Holding</div>
+          <div class="panorama-titulo">ITBI em holdings imobiliárias: 5x2 pró-contribuinte, mas Moraes pede vista</div>
+          <div class="panorama-texto">Ver Movimento 02 do Top 5 — Tema 1.348, sessão de 16/09, suspenso novamente.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Suspenso</span><span class="panorama-fonte">STF · Tema 1.348</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">03</div>
+        <div>
+          <div class="panorama-area">Cível / Consumidor</div>
+          <div class="panorama-titulo">TJ-PI anula condenação de R$ 18 milhões contra a Toyota por cerceamento de defesa</div>
+          <div class="panorama-texto">Ver Movimento 03 do Top 5 — noticiado em 21/09/2026 (acórdão ainda não disponibilizado), processo volta à 1ª instância para reabertura da instrução.</div>
+          <div class="panorama-footer"><span class="status-pill status-atencao">⚠ Anulada</span><span class="panorama-fonte">TJ-PI</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">04</div>
+        <div>
+          <div class="panorama-area">Criminal</div>
+          <div class="panorama-titulo">1ª Turma do STF rejeita recurso e mantém condenação de Eduardo Bolsonaro por coação no curso do processo</div>
+          <div class="panorama-texto">Ver Movimento 04 do Top 5 — julgamento virtual concluído em 18/09/2026, por 4x0, ainda recorrível.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Recorrível</span><span class="panorama-fonte">STF · 1ª Turma</span></div>
+        </div>
+      </div>
+
+      <div class="panorama-item">
+        <div class="panorama-num">05</div>
+        <div>
+          <div class="panorama-area">Destaque Livre / Institucional</div>
+          <div class="panorama-titulo">Fachin adia sem nova data a sessão sobre a conduta do Min. Mendonça</div>
+          <div class="panorama-texto">Ver Movimento 05 do Top 5 — Pet 16.704, despacho de 17/09/2026, continuação do Caso Master.</div>
+          <div class="panorama-footer"><span class="status-pill status-construcao">⚠ Adiada</span><span class="panorama-fonte">STF · Pet 16.704</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tst" style="flex-shrink:0;margin-top:2px;">TST</span>
+      <div>
+        <div class="radar-titulo">Dissídio coletivo dos Correios: julgamento suspenso, nova sessão em 24/09/2026</div>
+        <div class="radar-texto">Ver Assunto do Momento — a SDC do TST ainda vai decidir se a greve é abusiva; a suspensão de 21/09 não deve ser lida como sinal de qual lado prevalecerá.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">ADI 7.881 (Ficha Limpa) segue sem data para o plenário físico</div>
+        <div class="radar-texto">O destaque pedido pelo Min. Flávio Dino em 11/09 (ver edição nº 013) continua sem sessão marcada até o fechamento desta edição — nenhuma novidade processual confirmada neste período.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">Tema 843 (créditos presumidos de ICMS na base do PIS/Cofins) segue fora desta edição</div>
+        <div class="radar-texto">Mesma situação da edição anterior: não foi possível confirmar em fonte oficial uma sessão de julgamento dentro da janela 16–22/09 — continuamos acompanhando antes de publicar qualquer resultado.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-prev" style="flex-shrink:0;margin-top:2px;">Curadoria</span>
+      <div>
+        <div class="radar-titulo">Previdenciário fica reservado para o Brevis Previdenciário de quinta-feira</div>
+        <div class="radar-texto">O lote de RPVs do CJF (R$ 2,68 bi em benefícios previdenciários e assistenciais, divulgado em 21/09/2026) foi apurado nesta edição, mas por decisão do Jean fica de fora do Semanal — entra na próxima edição do Brevis Previdenciário.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">Curadoria</span>
+      <div>
+        <div class="radar-titulo">Um candidato previdenciário foi descartado por falta de identificação processual</div>
+        <div class="radar-texto">Circulou nesta semana uma notícia sobre o STJ limitando o pagamento de atrasados do INSS quando o segurado recorre à Justiça antes da análise administrativa (relator citado: Min. Paulo Sérgio Domingues) — mas nenhuma das fontes secundárias apuradas trazia número de REsp, Tema ou data exata de julgamento. Preferimos deixar de fora a publicar um dado que não conseguimos confirmar em fonte primária.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">A multa de R$ 200 mil que travou o julgamento dos Correios</div>
+
+    <div class="section-body" style="margin-bottom: 18px;">
+      <p>O movimento com dimensão financeira mais direta desta edição é a multa que os Correios pedem contra representantes sindicais no dissídio coletivo da greve — pedido que, por si só, foi o que levou à suspensão do julgamento em 21/09.</p>
+    </div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🔴 R$ 200 mil ·</span>
+        <span class="dinheiro-header-title">TST · multa pedida pelos Correios contra representantes sindicais</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>O pedido de multa por eventual descumprimento, apresentado pelos Correios na sessão de 21/09, foi o motivo direto da suspensão do julgamento do dissídio coletivo — sinal de que a disputa entrou em fase mais dura, com risco financeiro direto à liderança sindical.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Acompanhar a nova sessão marcada para 24/09/2026, às 15h30</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Não presumir, até lá, se a greve será ou não declarada abusiva</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: Metrópoles · TST/SDC · 21/09/2026</span>
+      </div>
+    </div>
+
+    <div class="dinheiro-card" style="margin-top: 14px;">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🔴 R$ 18 milhões ·</span>
+        <span class="dinheiro-header-title">TJ-PI · condenação contra a Toyota anulada por cerceamento de defesa</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>A sentença que condenava a Toyota a mais de R$ 18 milhões em danos materiais e morais foi anulada pelas Câmaras Reunidas Cíveis do TJ-PI — o valor não desaparece da disputa, mas volta a depender de uma instrução completa, com perícia e testemunhas, antes de qualquer nova sentença.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Não tratar o valor de R$ 18 milhões como definitivo — a anulação reabre a fase de provas</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Útil como precedente de nulidade por cerceamento de defesa em processos de longa tramitação</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: Migalhas · TJ-PI · noticiado em 21/09/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 O QUE FAZER AMANHÃ -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">O que fazer amanhã no escritório</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>6 ações para começar agora.</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Mapear clientes com holding imobiliária que integralizou imóveis recentemente</div>
+          <div class="amanha-texto">O Tema 1.348 do STF segue suspenso (vista de Moraes) — orientar sobre o placar parcial de 5x2, sem tratá-lo como resultado definitivo.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Acompanhar a nova sessão do TST sobre o dissídio dos Correios em 24/09</div>
+          <div class="amanha-texto">Relevante para clientes com interesse direto ou indireto na prestação do serviço postal.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Checar se algum cliente atua com extração ou beneficiamento de amianto crisotila</div>
+          <div class="amanha-texto">Prazo de transição de cinco anos, a contar de 21/09/2026, antes do encerramento obrigatório da atividade em Goiás.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Não anunciar data de julgamento para a Pet 16.704 (conduta do Min. Mendonça)</div>
+          <div class="amanha-texto">A sessão de 23/09 foi adiada sem nova data — aguardar a resolução da questão de ordem pendente na Pet 16.662.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Revisar processos antigos com pedidos de prova (perícia, testemunhas) não apreciados pelo juízo</div>
+          <div class="amanha-texto">O precedente do TJ-PI (caso Toyota) é útil para pedir nulidade por cerceamento de defesa em sentenças de longa tramitação.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">6</div>
+        <div>
+          <div class="amanha-titulo">Não tratar a condenação de Eduardo Bolsonaro como definitiva</div>
+          <div class="amanha-texto">É decisão de 1ª Turma do STF, ainda sujeita a recurso — evitar comunicar a clientes ou à imprensa como trânsito em julgado.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Clientes para mapear hoje</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">5 perfis prioritários deste período.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Clientes com holding imobiliária que integralizaram imóveis ao capital social</strong> — acompanhar o desfecho do Tema 1.348, ainda suspenso.
+            <span class="mapear-tese">→ Tributário/Holding · STF, Tema 1.348</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Clientes com interesse direto ou indireto na prestação de serviço postal</strong> — acompanhar a nova sessão do TST em 24/09.
+            <span class="mapear-tese">→ Consultivo trabalhista · TST/SDC</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Empresas com atividade de extração, beneficiamento ou exportação de amianto crisotila em Goiás</strong> — orientar sobre o prazo de transição de cinco anos.
+            <span class="mapear-tese">→ Ambiental/Constitucional · STF, ADIn 6.200</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Clientes com sentenças antigas que ignoraram pedidos de perícia ou oitiva de testemunhas</strong> — usar o precedente do TJ-PI (caso Toyota) para pedir nulidade por cerceamento de defesa.
+            <span class="mapear-tese">→ Cível/Consumidor · TJ-PI</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Clientes acompanhando o desdobramento do caso Eduardo Bolsonaro</strong> — orientar que a condenação da 1ª Turma ainda cabe recurso, não é decisão definitiva.
+            <span class="mapear-tese">→ Criminal · STF, 1ª Turma</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O placar de 5x2 no Tema 1.348 não é resultado final</div>
+          <div class="atencao-texto">O pedido de vista de Alexandre de Moraes suspende o julgamento novamente — trate como maioria formada, não como tese fixada.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">A suspensão do julgamento dos Correios em 21/09 não é vitória de nenhum lado</div>
+          <div class="atencao-texto">Foi motivada pela necessidade de dar tempo às partes de analisar documentação apresentada de última hora — a SDC ainda vai decidir a abusividade da greve em 24/09.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O prazo de 5 anos do caso do amianto só começa a contar de 21/09/2026</div>
+          <div class="atencao-texto">Não confundir a data do julgamento (11–18/09) com a data de início da contagem do prazo de transição, que é a da publicação.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Não há data marcada para a Pet 16.704 (conduta do Min. Mendonça)</div>
+          <div class="atencao-texto">O adiamento de 17/09 é indefinido, condicionado à resolução de uma questão de ordem pendente na Pet 16.662 — não repasse boatos de data a clientes.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">O item sobre atrasados do INSS julgados pelo STJ ficou fora desta edição por falta de fonte primária</div>
+          <div class="atencao-texto">Não cite o suposto julgado (relator Min. Paulo Sérgio Domingues) até que seja possível localizar o número do processo ou Tema em fonte oficial.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">A condenação de Eduardo Bolsonaro não é decisão do Plenário do STF</div>
+          <div class="atencao-texto">Foi julgada pela 1ª Turma, por unanimidade, e ainda está sujeita a embargos de declaração e outros recursos — evitar tratar como trânsito em julgado.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 NÚMERO DO DIREITO -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Número do direito</span>
+    </div>
+    <div class="numero-card">
+      <div class="numero-eyebrow">Dado do período</div>
+      <div class="numero-destaque">5 <span class="numero-unidade">ANOS</span></div>
+      <div class="numero-titulo">é o prazo de transição que o STF deu para o fim da exploração de amianto crisotila em Goiás, mesmo declarando a lei que autorizava a atividade inconstitucional</div>
+      <div class="numero-texto">A contagem começa em 21/09/2026, data da publicação do acórdão da ADIn 6.200 — até lá, a atividade de extração e exportação continua lícita no município de Minaçu/GO, mesmo com a inconstitucionalidade já reconhecida pelo Plenário.</div>
+      <div class="numero-fonte">Fonte: Migalhas · ADIn 6.200 · publicado 21/09/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 MOVIMENTO DE MERCADO -->
+  <div class="section" id="sec-12">
+    <div class="section-tag">
+      <span class="section-num">12</span>
+      <span class="section-label">Movimento de mercado</span>
+    </div>
+
+    <div class="mercado-intro">Um pedido de vista suspende, uma anulação devolve o processo à estaca zero, e uma condenação de Turma não é a última palavra — esta edição reúne cinco formas diferentes de "decisão que ainda não fechou o caso".</div>
+
+    <div class="mercado-corpo">
+      <p>O Tema 1.348 (ITBI em holdings) mostra bem por que "maioria formada" e "julgamento concluído" não são sinônimos: cinco ministros já votaram no mesmo sentido, mas o pedido de vista de Alexandre de Moraes interrompe a sessão até ele devolver os autos — sem prazo automático de retomada, diferente do que ocorre quando o pedido é de destaque (que, como no caso da Ficha Limpa na edição anterior, zera qualquer votação e reinicia do zero em sessão presencial).</p>
+
+      <p>Na área cível, o caso Toyota no TJ-PI ilustra um terceiro tipo de "não fechado": a anulação por cerceamento de defesa não decide quem tem razão no mérito — apenas manda refazer a instrução processual. O valor de R$ 18 milhões que estava em jogo permanece em disputa, mas sem sentença válida até que a prova seja reaberta. Já no Criminal, a condenação de Eduardo Bolsonaro pela 1ª Turma do STF é unânime e tecnicamente concluída no colegiado — mas, por ser decisão de órgão fracionário, ainda comporta recurso, e por isso convive com a mesma cautela de linguagem que já aplicamos ao Tema 1.348: maioria (ou unanimidade) formada não é sinônimo de última palavra.</p>
+
+      <p>No que efetivamente fechou como fato consumado nesta janela, o padrão mais direto segue sendo a ADIn 6.200 sobre o amianto, com mérito julgado e efeitos modulados mas certos. Os demais quatro movimentos — Tema 1.348, o caso Toyota, a condenação de Eduardo Bolsonaro e a Pet 16.704 — seguem em aberto, cada um com seu próprio tipo de pendência, e o texto desta edição foi escrito para deixar essa distinção clara em cada menção.</p>
+    </div>
+
+    <div class="mercado-destaque">
+      Resumo prático: 1 dos 5 movimentos desta edição já é fato consumado e pode ser usado diretamente no aconselhamento (ADIn 6.200). Os outros quatro exigem acompanhamento, cada um por um motivo distinto: o Tema 1.348 tem maioria formada mas segue suspenso por vista; o caso Toyota foi anulado e volta à 1ª instância; a condenação de Eduardo Bolsonaro é unânime na Turma, mas ainda recorrível; e a Pet 16.704 não tem sequer nova data. Fora da contagem de movimentos, o dissídio dos Correios (Assunto do Momento) tem data certa de retomada — 24/09 — e vale a pena já reservar esse dia na agenda de acompanhamento.
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 13 FRASE FINAL -->
+  <div class="frase-section" id="sec-13">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">As reformas que se fazem pela lei valem mais do que as que se fazem pela força, porque são obra do tempo, e o tempo é o maior de todos os reformadores.</div>
+    <div class="frase-autor">— Rui Barbosa, jurista</div>
+  </div>
+
+  <!-- 14 FONTES -->
+  <div class="section" id="sec-14">
+    <div class="section-tag">
+      <span class="section-num">14</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/464912/stf-da-prazo-de-cinco-anos-para-fim-da-exploracao-de-amianto" target="_blank">Migalhas · STF dá prazo de cinco anos para fim da exploração de amianto</a></div>
+          <div class="fonte-desc">ADIn 6.200, julgamento em plenário virtual (11–18/09/2026), publicado em 21/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/postsnoticias/stf-avanca-em-julgamento-sobre-imunidade-de-itbi-para-integralizacao-de-capital-social-de-imobiliarias/" target="_blank">STF Notícias · STF avança em julgamento sobre imunidade de ITBI para integralização de capital social de imobiliárias</a></div>
+          <div class="fonte-desc">Tema 1.348 (RE 1.495.108), sessão de 16/09/2026, placar 5x2, suspenso por vista do Min. Alexandre de Moraes.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/464913/tj-pi-anula-condenacao-de-r-18-mi-contra-toyota-e-reabre-instrucao" target="_blank">Migalhas · TJ-PI anula condenação de R$ 18 mi contra Toyota e reabre instrução</a></div>
+          <div class="fonte-desc">Câmaras Reunidas Cíveis do TJ-PI, anulação por cerceamento de defesa, noticiada em 21/09/2026 (acórdão ainda não disponibilizado).</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/stf-tem-maioria-para-manter-condenacao-de-eduardo-bolsonaro" target="_blank">Agência Brasil · STF tem maioria para manter condenação de Eduardo Bolsonaro</a></div>
+          <div class="fonte-desc">1ª Turma do STF rejeita recurso e mantém condenação, julgamento virtual concluído em 18/09/2026, 4x0.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/464758/stf-fachin-adia-julgamento-de-acao-que-liga-mendonca-a-master" target="_blank">Migalhas · STF: Fachin adia julgamento de ação que liga Mendonça a Master</a></div>
+          <div class="fonte-desc">Pet 16.704, despacho de adiamento de 17/09/2026, sem nova data.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.congressoemfoco.com.br/noticia/122359/fachin-adia-sessao-do-stf-que-julgaria-atuacao-de-mendonca-no-master" target="_blank">Congresso em Foco · Fachin adia sessão do STF que julgaria atuação de Mendonça no Master</a></div>
+          <div class="fonte-desc">Confirmação independente do adiamento da Pet 16.704, 17/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.metropoles.com/brasil/economia-br/tst-suspende-julgamento-de-dissidio-dos-correios-e-greve-continua" target="_blank">Metrópoles · TST suspende julgamento de dissídio dos Correios e greve continua</a></div>
+          <div class="fonte-desc">Sessão da SDC suspensa em 21/09/2026, nova sessão marcada para 24/09/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://alertagov.com.br/2026/09/greve-nos-correios-entenda-o-que-motivou-a-paralisacao-por-tempo-indeterminado-da-categoria/" target="_blank">Alerta Gov · Greve nos Correios: entenda o que motivou a paralisação por tempo indeterminado</a></div>
+          <div class="fonte-desc">Início da greve em 10/09/2026, reivindicações sobre plano de saúde e benefícios.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Semanal</div>
+    <div class="footer-sub">Radar jurídico amplo · Edição nº 014 · 22 de setembro de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
