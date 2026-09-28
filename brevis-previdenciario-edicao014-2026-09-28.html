@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 014 · 28 de setembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--dourado-claro); border-color: var(--dourado-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(201,168,76,0.16); color: var(--dourado-claro); }
+  .indice-item strong { color: var(--dourado-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--cinza-sub); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf3 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-cjf  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .badge-cn   { background: #EBF0FB; color: #1A3A6B; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,31,60,0.06); transition: box-shadow 0.18s, transform 0.18s; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(13,31,60,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-stj { background: linear-gradient(90deg, #5A2E7A, #8B5EA8); }
+  .bar-stf { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-tnu { background: linear-gradient(90deg, #2B5797, #6C97C9); }
+  .bar-inss { background: linear-gradient(90deg, #A8230E, #D9634A); }
+  .bar-cjf { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-trf4 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-trf3 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-cn { background: linear-gradient(90deg, #1A3A6B, #6C97C9); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--azul-escuro); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EDE9DF; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cinza-sub); }
+  .top-card-fonte a { color: var(--azul-claro); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--dourado); scroll-margin-top: 16px; }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--dourado); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--azul-escuro); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: var(--cinza-texto); margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--cinza-sub); }
+  .panorama-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+  .assunto-momento { background: var(--azul-escuro); padding: 34px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; position: relative; overflow: hidden; }
+  .assunto-momento::before { content: ''; position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.16); }
+  .assunto-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .assunto-titulo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--branco); margin-bottom: 22px; line-height: 1.32; max-width: 560px; }
+  .assunto-bloco { margin-bottom: 18px; }
+  .assunto-bloco:last-child { margin-bottom: 0; }
+  .assunto-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dourado-claro); display: block; margin-bottom: 6px; }
+  .assunto-bloco-texto { font-size: 13.5px; line-height: 1.75; color: rgba(250,250,248,0.85); }
+  .assunto-comentar { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 16px 20px; border-left: 2px solid var(--dourado-claro); font-style: italic; color: rgba(250,250,248,0.92); font-size: 13.5px; line-height: 1.7; }
+  .assunto-meta { margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .assunto-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .assunto-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .assunto-fonte a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+    .assunto-momento { padding: 26px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico — <a href="#sec-assunto-momento">prova de vida nas urnas</a>, <a href="#sec-03">R$ 2,68 bi em RPVs liberados pelo CJF</a> e <a href="#sec-04">a TNU perto de fechar o Tema 389</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">28 de setembro de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">014</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">16 a 28 de setembro · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">7–9 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Destaque: CJF libera R$ 2,68 bi em RPVs previdenciárias e assistenciais</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">3 movimentos verificados</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-assunto-momento" class="indice-item"><strong>🔥</strong> Assunto do Momento</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Movimentos do Período</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> TNU em Destaque</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar de Tribunais</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> Como Usar</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Oportunidades / Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Curiosidade Previdenciária</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Frase do Dia</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário nº 014, período de 16 a 28 de setembro. O CJF liberou, em 21/9/2026, mais um lote nacional de RPVs — R$ 2,68 bilhões especificamente previdenciários e assistenciais, distinto do lote de R$ 2,75 bi já coberto na edição nº 011; a TNU chegou a um placar parcial de 4 a 1 no Tema 389, sobre o cálculo da aposentadoria por incapacidade da pessoa com deficiência, antes de um pedido de vista suspender o julgamento; e a Câmara avançou com o PL 1.599/2026, que atualiza a Lei 8.213/91 para tirar do papel a carência de 10 contribuições do salário-maternidade — regra que o STF já havia derrubado em 2024, mas que a lei, na letra fria, ainda não refletia. O assunto do momento foge do figurino de tribunal — é a eleição de outubro —, mas carrega um gancho jurídico real: o comparecimento às urnas agora conta, automaticamente, como prova de vida no INSS.</p>
+      <p>Esta apuração também descartou mais candidatos do que confirmou. Encerramos, com apoio de pesquisa direta e verificação cruzada nas duas linhas editoriais (Semanal e Previdenciário), quatro itens que circularam esta quinzena como se fossem novidade e não eram — o Radar de Tribunais detalha cada um.</p>
+    </div>
+  </div>
+
+  <!-- ASSUNTO DO MOMENTO -->
+  <div class="assunto-momento" id="sec-assunto-momento">
+    <div class="assunto-eyebrow">🔥 Assunto do momento</div>
+    <div class="assunto-titulo">O que votar em outubro tem a ver com a Prova de Vida do seu cliente aposentado</div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O que está bombando</span>
+      <div class="assunto-bloco-texto">Com a eleição de outubro de 2026 dominando a conversa fora do meio jurídico, o Ministério da Previdência Social divulgou, em 18/9/2026 — poucas semanas antes do pleito —, que o comparecimento às urnas volta a valer, automaticamente, como verificação da Prova de Vida anual no INSS. O programa cobre cerca de 40 milhões de beneficiários ativos (aposentadorias, pensões por morte e benefícios assistenciais). Como referência do alcance do mecanismo, o Ministério citou que um processamento eleitoral anterior já havia atualizado, dessa forma, mais de 20,9 milhões de registros de Prova de Vida sem que o segurado precisasse ir a uma agência ou correspondente bancário — e a expectativa é repetir esse volume na eleição de outubro.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O gancho jurídico</span>
+      <div class="assunto-bloco-texto">A base legal não é nova — vem da Lei nº 13.846/2019, que substituiu a exigência de comparecimento presencial obrigatório por um modelo de busca ativa de dados pelo próprio INSS, e da Portaria PRES/INSS nº 1.408/2022, que incluiu o comparecimento eleitoral entre os critérios aceitos de verificação. O que a divulgação de 18/9/2026 faz é reforçar, na véspera do pleito de outubro, que esse cruzamento eletrônico com a Justiça Eleitoral acontecerá de forma automática — sem requerimento do segurado — e que, apenas por votar em outubro, boa parte da base de beneficiários deve cumprir a obrigação anual sem qualquer providência adicional. Isso não dispensará, porém, quem não comparecer às urnas (por justificativa eleitoral, isenção ou ausência) de verificar sua situação por outro meio: aplicativo Meu INSS, Central 135 ou correspondentes bancários seguem sendo as vias alternativas.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">Curiosidade</span>
+      <div class="assunto-bloco-texto">A Prova de Vida já foi sinônimo de fila de banco — até poucos anos atrás, era comum aposentados relatarem dificuldade de locomoção para cumprir a exigência presencial dentro do prazo, sob risco de bloqueio do benefício. A migração para um modelo de busca ativa de dados (INSS cruzando informações com Justiça Eleitoral, cartórios, Receita Federal e outras bases) inverteu essa lógica: hoje, o segurado só precisa agir quando o sistema não encontra evidência de que ele está vivo — não mais como regra geral.</div>
+    </div>
+
+    <div class="assunto-comentar">
+      "Pra comentar": o dado eleitoral que todo mundo vai comentar em outubro por causa da disputa política também é, silenciosamente, o dado que mantém milhões de benefícios do INSS ativos sem que ninguém precise sair de casa — um lembrete de como a máquina administrativa por trás da Previdência muitas vezes trabalha em segundo plano, sem manchete própria.
+    </div>
+
+    <div class="assunto-meta">
+      <span class="status-pill status-consolidada">✔ Regra vigente — Lei 13.846/2019 e Portaria PRES/INSS 1.408/2022</span>
+      <div class="assunto-fonte" style="margin-left:auto">Fonte: Ministério da Previdência Social, 18/9/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 MOVIMENTOS DO PERÍODO -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Movimentos verificados do período</span>
+    </div>
+    <div class="section-intro">Nesta quinzena, a apuração descartou mais candidatos do que confirmou — a "Revisão da Vida Toda" recirculando como se fosse fato novo (já encerrada e já coberta), uma leva de matérias sobre o REsp 2.193.427 (divisor mínimo) reciclando a decisão de agosto já registrada na edição nº 011, e uma nova tentativa de reapresentar o Tema 384 da TNU (complementação de contribuições), também já coberto nas edições 009 e 010. Preferimos publicar três movimentos genuinamente novos e bem verificados a preencher a edição com itens reciclados — os descartes completos estão no Radar de Tribunais.</div>
+
+    <div class="top-grid">
+
+      <!-- CARD 1 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-cjf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 01 · REPASSE FINANCEIRO · RPV</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-cjf">CJF</span>
+          </div>
+          <div class="top-card-titulo">CJF libera R$ 3,22 bi em RPVs às seis Regiões da Justiça Federal — R$ 2,68 bi são especificamente previdenciários e assistenciais</div>
+          <div class="top-card-corpo">
+            <p>O Conselho da Justiça Federal (CJF) divulgou, em 21/9/2026, a liberação de R$ 3.222.358.325,64 em Requisições de Pequeno Valor (RPVs) a todas as seis Regiões da Justiça Federal, somando 218.651 processos e 278.063 beneficiários em todas as naturezas de ação. Do total, R$ 2.680.570.086,68 (126.387 processos, 173.819 beneficiários) correspondem especificamente a ações previdenciárias e assistenciais — aposentadorias, pensões por morte, benefícios assistenciais e revisões de benefício. É um lote distinto do já coberto na edição nº 011 (24/8/2026, R$ 2,75 bi previdenciário/assistencial) — mesma natureza de repasse, datas e valores diferentes.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Oriente clientes com cumprimento de sentença ou execução de RPV pendente a consultar o andamento processual no portal do respectivo TRF (por CPF ou número do processo) — o repasse do CJF ao Tribunal não significa pagamento imediato ao beneficiário; cada Região organiza seu próprio calendário de depósito.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Repasse efetivado — 21/9/2026</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.cjf.jus.br/cjf/noticias/2026/setembro/cjf-libera-o-pagamento-de-rpvs-a-mais-de-278-mil-beneficiarios-as" target="_blank">CJF · Conselho da Justiça Federal</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-tnu"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 02 · APOSENTADORIA POR INCAPACIDADE · PCD</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tnu">TNU</span>
+            <span class="badge badge-tema">Tema 389</span>
+          </div>
+          <div class="top-card-titulo">TNU forma maioria parcial de 4 a 1 pela regra mais favorável no cálculo da aposentadoria por incapacidade da pessoa com deficiência — mas pedido de vista suspende o julgamento</div>
+          <div class="top-card-corpo">
+            <p>Em sessão de 24/9/2026, sob relatoria da Juíza Federal Marina Vasques Duarte, a Turma Nacional de Uniformização formou maioria parcial de 4 votos a 1 no Tema 389 — que discute se o cálculo do salário de benefício da aposentadoria por incapacidade concedida à pessoa com deficiência segue a regra geral do art. 26 da EC 103/2019 (100% das contribuições desde julho/1994) ou a regra mais favorável do art. 29 da Lei 8.213/91 (média dos 80% maiores salários de contribuição). A maioria parcial mantém a regra dos 80% maiores salários; o Juiz Federal Fábio de Souza Silva divergiu, votando pela aplicação da regra geral pós-reforma. Antes da conclusão, a Juíza Federal Monique Marchioli Leite pediu vista, suspendendo o julgamento.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Ainda não é tese fixada</span>
+            O placar de 4x1 é parcial — o julgamento está suspenso até o retorno do voto-vista. Não prometa a clientes a aplicação da regra dos 80% maiores salários como fato consumado; trate como tendência favorável a ser monitorada, não como uniformização concluída.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Julgamento suspenso — pedido de vista</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.ibdp.org.br/2026/09/24/tnu-tem-maioria-parcial-pela-manutencao-de-calculo-mais-favoravel-na-aposentadoria-da-pessoa-com-deficiencia/" target="_blank">IBDP · TNU Tema 389</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-cn"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 03 · SALÁRIO-MATERNIDADE · TRAMITAÇÃO LEGISLATIVA</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-cn">CÂMARA DOS DEPUTADOS</span>
+            <span class="badge badge-tema">PL 1.599/2026</span>
+          </div>
+          <div class="top-card-titulo">Câmara avança com projeto que apaga da Lei 8.213/91 a carência de 10 contribuições do salário-maternidade</div>
+          <div class="top-card-corpo">
+            <p>O PL 1.599/2026, da deputada Laura Carneiro (PSD-RJ), atualiza a Lei 8.213/91 para eliminar formalmente a exigência de 10 contribuições mensais como carência do salário-maternidade para contribuintes individuais, facultativas e seguradas especiais (rurais). Em 21/9/2026, a relatora na Comissão de Previdência, Assistência Social, Infância, Adolescência e Família, deputada Rogéria Santos, apresentou parecer favorável com substitutivo, deixando o projeto pronto para votação nessa comissão. A mudança é, na prática, uma atualização de texto — o STF já havia declarado inconstitucional a exigência de carência para essas seguradas em 2024 (ADIs 2.110 e 2.111), e o INSS já aplica a dispensa desde a Instrução Normativa INSS/PRES nº 188/2025. O projeto ainda precisa passar pelas Comissões de Finanças e Tributação e de Constituição e Justiça antes de seguir ao Senado.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Não é preciso esperar a lei para orientar clientes seguradas especiais, contribuintes individuais ou facultativas: a dispensa da carência já é aplicada administrativamente pelo INSS desde a IN 188/2025. O PL apenas alinha o texto legal à prática já vigente — útil para fundamentar recursos administrativos que ainda citem a carência como óbice.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Em construção — pronto para votação na Comissão de Previdência</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://previdenciarista.com/blog/salario-maternidade-sem-carencia-ja-vale-entenda-o-pl-1-599-2026/" target="_blank">Previdenciarista · PL 1.599/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        CJF · Repasse nacional de RPVs divulgado em 21/9/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">R$ 2,68 bilhões em atrasados previdenciários e assistenciais chegam às seis Regiões da Justiça Federal</div>
+      <div class="decisao-body">
+        <p>O CJF centraliza, a cada divulgação periódica, o repasse de recursos para pagamento de Requisições de Pequeno Valor (RPVs) autuadas nos Tribunais Regionais Federais. Na divulgação de 21/9/2026, o total nacional chegou a R$ 3.222.358.325,64, distribuído entre 218.651 processos e 278.063 beneficiários — de todas as naturezas de ação contra a União e autarquias federais. O recorte previdenciário e assistencial (aposentadorias, pensões por morte, benefícios assistenciais e revisões) responde pela maior fatia: R$ 2.680.570.086,68, em 126.387 processos e 173.819 beneficiários.</p>
+        <p>A distribuição por Região mostra a 1ª Região (que cobre o Distrito Federal e boa parte do Centro-Oeste, Norte e parte do Nordeste) à frente em volume: R$ 877,2 milhões previdenciários/assistenciais na 1ª Região, R$ 191,3 milhões na 2ª (RJ/ES), R$ 328,1 milhões na 3ª (SP/MS), R$ 556,0 milhões na 4ª (RS/SC/PR), R$ 453,8 milhões na 5ª (Nordeste) e R$ 274,1 milhões na 6ª Região (MG, instalada em 2024). Cada Tribunal Regional organiza, a partir do repasse do CJF, seu próprio calendário de depósito aos beneficiários — o repasse nacional não equivale a pagamento imediato e uniforme em todo o país.</p>
+        <p>É um lote distinto do já registrado na edição nº 011 desta newsletter (24/8/2026: R$ 2,75 bi previdenciário/assistencial, 125.963 processos, 173.283 beneficiários) — os números são próximos o bastante para gerar confusão, mas correspondem a divulgações e datas de repasse diferentes (ver Atenção Operacional).</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        CJF, divulgação de 21/9/2026: R$ 3,22 bi em RPVs repassados às seis Regiões da Justiça Federal, dos quais R$ 2,68 bi (126.387 processos, 173.819 beneficiários) são especificamente previdenciários e assistenciais.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Levante, na carteira do escritório, os processos com RPV previdenciária expedida e ainda não paga — o repasse já ocorreu nacionalmente, e cabe checar o calendário específico de cada TRF para orientar o cliente sobre prazo estimado de depósito.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-consolidada">✔ Repasse efetivado — CJF, 21/9/2026</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.cjf.jus.br/cjf/noticias/2026/setembro/cjf-libera-o-pagamento-de-rpvs-a-mais-de-278-mil-beneficiarios-as" target="_blank">CJF</a> · confirmado via IBDP</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">Tema 389 da TNU: por que "maioria parcial de 4x1" ainda não é uma tese que se possa citar como fixada</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">A TNU já formou maioria parcial de 4x1 sobre o cálculo da aposentadoria por incapacidade da pessoa com deficiência — mas ainda não concluiu o julgamento</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese em discussão</span>
+        <div class="tese-bloco-texto">O Tema 389 pergunta se, na aposentadoria por incapacidade concedida à pessoa com deficiência, o salário de benefício deve seguir a regra geral do art. 26 da EC 103/2019 (100% da média de todas as contribuições desde julho/1994) ou a regra específica, mais favorável ao segurado, do art. 29 da Lei 8.213/91 combinado com a LC 142/2013 (média dos 80% maiores salários de contribuição). A diferença entre os dois métodos pode significar um benefício mensal sensivelmente maior sob a segunda regra, especialmente para quem teve contribuições irregulares ao longo da vida laboral.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que aconteceu nesta quinzena</span>
+        <div class="tese-bloco-texto">Em sessão de 24/9/2026, quatro dos cinco votos já proferidos formaram maioria pela manutenção da regra mais favorável (80% maiores salários) — voto condutor da relatora, Juíza Federal Marina Vasques Duarte. O Juiz Federal Fábio de Souza Silva divergiu, entendendo aplicável a regra geral da reforma (100% das contribuições). Antes de o colegiado completar a votação, a Juíza Federal Monique Marchioli Leite pediu vista, o que suspende o julgamento até a devolução do processo e a manifestação dos demais julgadores.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Impacto prático no escritório</span>
+        <div class="tese-bloco-texto">Para clientes com aposentadoria por incapacidade já concedida ou em trâmite administrativo/judicial em que a condição de pessoa com deficiência esteja documentada, o placar parcial é um indicativo forte de tendência — mas não uma tese vinculante. Nenhuma decisão deve ser tomada, nem promessa feita ao cliente, com base em "a TNU já decidiu": o processo está formalmente suspenso.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que esperar</span>
+        <div class="tese-bloco-texto">O julgamento permanece formalmente suspenso até a devolução do voto-vista pela Juíza Federal Monique Marchioli Leite e a manifestação dos demais julgadores. Monitore a pauta da TNU e o repositório de temas do CJF para a data de retomada, tratando o placar parcial como tendência a confirmar — não como resultado.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Em construção — julgamento suspenso por pedido de vista</span>
+        <span class="status-pill status-favoravel">🟢 Tendência favorável ao segurado (4x1 parcial)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 TNU EM DESTAQUE -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">TNU em destaque · e um ponto de conhecimento</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 22px;">
+      <p>O Tema 389 (Movimento 02 e Tese Relevante desta edição) é o próprio destaque da TNU nesta quinzena — sessão de 24/9/2026, placar parcial de 4x1, julgamento suspenso por pedido de vista da Juíza Federal Monique Marchioli Leite. Não tratamos aqui de um segundo tema, para não duplicar o que já foi coberto acima; em vez disso, trazemos um ponto de conhecimento que ajuda a situar o Tema 389 dentro de um padrão maior de decisões da TNU sobre cálculo de benefício.</p>
+    </div>
+
+    <div class="tese-card">
+      <div class="tese-nome">Não é notícia da quinzena — é conhecimento útil: a TNU já vinha sinalizando preferência pela regra mais favorável em casos de contribuição irregular</div>
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O precedente de referência</span>
+        <div class="tese-bloco-texto">O Tema 384 da TNU, julgado em 6/8/2026 e já registrado nas edições nº 009 e nº 010 desta newsletter, fixou que a complementação de contribuições recolhidas com alíquota reduzida (5% ou 11%) preserva os efeitos financeiros na Data de Entrada do Requerimento (DER) quando a complementação ocorre no curso do processo administrativo, ou quando a ausência de complementação decorre de atuação não colaborativa do próprio INSS.</div>
+      </div>
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Por que trazer isso agora</span>
+        <div class="tese-bloco-texto">O Tema 384 não é fato novo desta quinzena — é pano de fundo. Mas ele mostra um padrão: em ambos os casos (Tema 384 e o placar parcial do Tema 389), a TNU tem inclinado suas decisões para não penalizar o segurado por falhas de contribuição ou de cálculo que não lhe são inteiramente imputáveis, preferindo a interpretação mais favorável quando a lei permite mais de uma leitura razoável. Vale como contexto ao orientar clientes sobre a chance de o Tema 389 se consolidar no mesmo sentido do placar parcial já formado.</div>
+      </div>
+      <div class="tese-footer">
+        <span class="status-pill status-favoravel">🟢 Favorável ao segurado</span>
+        <span class="status-pill status-consolidada">✔ Tema 384 — julgado e consolidado, 6/8/2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR DE TRIBUNAIS -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">"Revisão da Vida Toda" recirculou nesta quinzena como se fosse novidade — o caso já está definitivamente encerrado</div>
+        <div class="radar-texto">Uma leva de matérias publicadas entre 14 e 17/9/2026 anunciava que o STF "encerrou" ou "vetou" a revisão da vida toda (Tema 1.102/RE 1.276.977) "em decisão definitiva". Verificação cruzada com o arquivo editorial (`04_AGENTE_ARQUIVO.md`) mostrou que esse tema já consta como encerrado e coberto em edições anteriores da linha Previdenciário — o STF já havia, inclusive, decidido que segurados não precisam devolver valores recebidos com base na tese superada. As matérias de setembro/2026 são reapresentações do mesmo desfecho, não um novo capítulo. Descartado como movimento.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">"STJ afasta divisor mínimo" (matérias de 22 e 25/9) é a mesma decisão de agosto, já coberta na edição nº 011</div>
+        <div class="radar-texto">Diversos portais publicaram, em 22 e 25/9/2026, matérias sobre o STJ afastar o divisor mínimo da Lei 9.876/99 para segurados com carência completa antes de julho/1994. Verificação em fonte quase primária (Migalhas) confirmou tratar-se do mesmo REsp 2.193.427, 2ª Turma, relatora Min. Maria Thereza de Assis Moura, julgado em 18/8/2026 — já registrado como Tese Relevante da edição nº 011 (31/8/2026). Não há decisão nova; é cobertura reciclada do mesmo julgado, com datas de publicação mais recentes. Descartado como movimento.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tnu" style="flex-shrink:0;margin-top:2px;">TNU</span>
+      <div>
+        <div class="radar-titulo">Tema 384 (complementação de alíquota) voltou a circular como "novidade" — já é tese fixada desde agosto</div>
+        <div class="radar-texto">A pesquisa inicial apontou o Tema 384 da TNU como candidato a movimento desta quinzena. Cruzamento com as edições nº 009 e nº 010 (Brevis Previdenciário) confirmou que o tema já foi julgado (6/8/2026) e já teve o acórdão publicado (19/8/2026) — ambos fatos já cobertos. Usado nesta edição apenas como ponto de conhecimento de apoio ao Tema 389 (ver TNU em Destaque), não como fato novo.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-inss" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Item sobre limitação de atrasados quando o segurado recorre à Justiça antes da análise administrativa segue sem confirmação em fonte primária</div>
+        <div class="radar-texto">O mesmo item avaliado e descartado na edição nº 014 do Brevis Semanal — decisão atribuída ao Min. Paulo Sérgio Domingues, sobre limitar o pagamento de atrasados quando o segurado judicializa sem documentação suficiente na via administrativa — voltou a circular nesta quinzena, ainda sem número de REsp ou Tema localizável em fonte primária do STJ. A publicação mais recente localizada é de 10/9/2026, fora do período desta edição. Mantido fora da contagem de movimentos até confirmação em fonte oficial.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-cn" style="flex-shrink:0;margin-top:2px;">Câmara dos Deputados</span>
+      <div>
+        <div class="radar-titulo">PLP 42/2023 segue sem relator na CCJC — sem novidade de mérito desde a edição nº 013</div>
+        <div class="radar-texto">Uma matéria de 23/9/2026 voltou a tratar do PLP 42/2023 (redução da idade mínima da aposentadoria especial). Verificação confirmou que o status é o mesmo já registrado na edição nº 013 (16/9/2026): urgência aprovada em 12/8/2026, mas o projeto segue aguardando designação de relator na Comissão de Constituição e Justiça e Cidadania (CCJC). Sem votação de mérito em nenhuma casa legislativa. Não tratado como movimento novo.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">R$ 2,68 bi em RPVs já repassados às seis Regiões — hora de checar a carteira, não de esperar por um novo lote</div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟣 Sinal de Negócio ·</span>
+        <span class="dinheiro-header-title">Varredura ativa de processos com RPV previdenciária expedida</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Público-alvo: escritórios com carteira de execuções/cumprimentos de sentença previdenciários já sentenciados favoravelmente, aguardando expedição ou pagamento de RPV em qualquer uma das seis Regiões da Justiça Federal.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Cruze a carteira do escritório com o repasse por Região: 1ª (R$ 877,2 mi), 2ª (R$ 191,3 mi), 3ª (R$ 328,1 mi), 4ª (R$ 556,0 mi), 5ª (R$ 453,8 mi) e 6ª (R$ 274,1 mi) — todos os valores já especificamente previdenciários/assistenciais</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Para clientes com RPV pendente, consulte o portal do TRF competente por CPF ou número do processo antes de prometer prazo — cada Região define seu próprio calendário de depósito a partir do repasse nacional do CJF</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Não confunda este lote (21/9/2026) com o da edição nº 011 (24/8/2026) ao orientar o cliente sobre se o pagamento já ocorreu — são repasses distintos, e um cliente pode ter sido contemplado em um, no outro, em ambos ou em nenhum</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: CJF, divulgação de 21/9/2026, confirmada via IBDP</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 COMO USAR -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">Como usar — passo a passo</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Como orientar a carteira sobre o repasse de RPVs, a prova de vida automática e o Tema 389 da TNU nesta quinzena:</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Levante os processos com RPV previdenciária expedida e não paga</div>
+          <div class="amanha-texto">Separe por Região da Justiça Federal e confira, no portal de cada TRF, se o processo está entre os contemplados no repasse de 21/9/2026.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Oriente clientes mais velhos ou com mobilidade reduzida sobre a Prova de Vida via urnas</div>
+          <div class="amanha-texto">Para quem for votar em outubro, a verificação ocorrerá automaticamente. Para quem não comparecer às urnas (justificativa, isenção, ausência), reforce desde já que a checagem deve ser feita por outro meio — Meu INSS, Central 135 ou correspondente bancário — antes do prazo anual vencer.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Sinalize o Tema 389 da TNU aos clientes com aposentadoria por incapacidade de pessoa com deficiência</div>
+          <div class="amanha-texto">Informe que há uma tendência favorável (placar parcial 4x1) sem tratá-la como decidida — evite requerimentos de revisão fundamentados apenas nesse placar até a conclusão do julgamento.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Para seguradas rurais, individuais ou facultativas sem 10 contribuições, cite a IN 188/2025 — não o PL 1.599/2026</div>
+          <div class="amanha-texto">A dispensa da carência já é exigível hoje, com base nas ADIs 2.110/2.111 do STF e na IN INSS/PRES nº 188/2025. O PL 1.599/2026 apenas atualizará o texto da Lei 8.213/91 no futuro — não é ele que sustenta o requerimento administrativo agora.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Não cite como fato novo os itens já descartados nesta edição</div>
+          <div class="amanha-texto">Revisão da vida toda, divisor mínimo (REsp 2.193.427) e Tema 384 da TNU já foram encerrados/publicados em edições anteriores — cite-os apenas com a data correta do julgado original, nunca com a data da matéria recente que os reapresentou.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 OPORTUNIDADES / CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Oportunidades e clientes para mapear</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Três perfis prioritários deste período.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Clientes com cumprimento de sentença ou RPV previdenciária pendente em qualquer das seis Regiões da Justiça Federal</strong> — checar se o processo está entre os contemplados no repasse de 21/9/2026 e informar prazo estimado conforme o calendário do TRF competente.
+            <span class="mapear-tese">→ Repasse efetivado · CJF, 21/9/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Clientes com aposentadoria por incapacidade concedida à pessoa com deficiência, com contribuições irregulares ao longo da vida laboral</strong> — monitorar a retomada do julgamento do Tema 389 da TNU antes de orientar sobre pedido de revisão do cálculo do benefício.
+            <span class="mapear-tese">→ Em construção · TNU Tema 389, placar parcial 4x1</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Beneficiários idosos ou com mobilidade reduzida que não devem comparecer às urnas em outubro</strong> — orientar, desde já, que sem o comparecimento eleitoral a Prova de Vida anual segue precisando de verificação por outro meio (Meu INSS, Central 135 ou correspondente bancário) antes do prazo vencer.
+            <span class="mapear-tese">→ Assunto do momento · Ministério da Previdência, 18/9/2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Não confunda o lote de RPV de 21/9/2026 com o de 24/8/2026 (edição nº 011)</div>
+          <div class="atencao-texto">Os valores são próximos (R$ 2,68 bi vs. R$ 2,75 bi previdenciário/assistencial) e o formato da divulgação do CJF é idêntico — mas são repasses distintos, com datas, número de processos e beneficiários diferentes. Cite sempre a data da divulgação junto com o valor ao orientar clientes.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 389 da TNU está formalmente suspenso — placar parcial não é tese fixada</div>
+          <div class="atencao-texto">O julgamento de 24/9/2026 foi interrompido por pedido de vista antes da conclusão. Qualquer petição ou orientação a cliente deve tratar o placar de 4x1 como tendência, não como precedente vinculante já uniformizado.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">A Prova de Vida via urnas não dispensará quem não comparecer à eleição de outubro</div>
+          <div class="atencao-texto">O comparecimento eleitoral é um dos critérios aceitos de verificação, não o único e não obrigatório para a Prova de Vida em si. Clientes que não votarem (justificativa, isenção, ausência) precisarão confirmar a verificação por outro canal para evitar bloqueio do benefício.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">PLP 42/2023 segue sem relator na CCJC — nenhuma idade mínima mudou</div>
+          <div class="atencao-texto">Apesar da pressão política recorrente, as idades hoje exigidas na aposentadoria especial (55/58/60 anos) permanecem em vigor. Não oriente clientes a requerer o benefício com base nas idades reduzidas do projeto, que ainda não foi aprovado em nenhuma casa legislativa.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">PL 1.599/2026 (carência do salário-maternidade) ainda não é lei — mas a dispensa já vale na prática</div>
+          <div class="atencao-texto">Não afirme a clientes que "a lei mudou": o projeto segue em tramitação, pendente de votação em três comissões antes do Senado. O que já vale, desde 2024/2025, é a dispensa administrativa da carência por força de decisão do STF (ADIs 2.110 e 2.111) e da IN INSS/PRES nº 188/2025 — cite essas fontes, não o PL, para fundamentar requerimentos hoje.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 CURIOSIDADE PREVIDENCIÁRIA -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Curiosidade previdenciária</span>
+    </div>
+    <div class="section-body">
+      <p>A Prova de Vida do INSS já foi motivo de fila em banco, viagem de segurados rurais até a cidade mais próxima e, em casos extremos, suspensão de benefício por simples impossibilidade de locomoção do idoso até uma agência. A virada de chave começou com a Lei nº 13.846/2019, que criou o Programa Especial para Análise de Benefícios com Indícios de Irregularidade (Pente-Fino) e, paralelamente, autorizou o INSS a substituir a exigência presencial por cruzamento eletrônico de dados — voto em eleição, emissão de documentos, movimentação bancária, entre outros indícios de que o segurado está vivo. Hoje, a exceção é o segurado ter que ir a algum lugar; a regra é o próprio Estado, silenciosamente, confirmar que ele continua ali.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 FRASE DO DIA -->
+  <div class="frase-section" id="sec-12">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Uma tese com placar de 4 a 1 ainda não é uma tese — é uma tendência esperando o último voto. Na advocacia previdenciária, a diferença entre as duas pode custar o processo do cliente.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 014</div>
+  </div>
+
+  <!-- 13 FONTES -->
+  <div class="section" id="sec-13">
+    <div class="section-tag">
+      <span class="section-num">13</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.cjf.jus.br/cjf/noticias/2026/setembro/cjf-libera-o-pagamento-de-rpvs-a-mais-de-278-mil-beneficiarios-as" target="_blank">CJF · Conselho da Justiça Federal — divulgação de RPVs, 21/9/2026</a></div>
+          <div class="fonte-desc">Fonte oficial do repasse de R$ 3,22 bi (R$ 2,68 bi previdenciário/assistencial) — base do Movimento 01, Decisão do Dia e Dinheiro na Mesa.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ibdp.org.br/2026/09/21/cjf-libera-o-pagamento-de-rpvs-a-mais-de-278-mil-beneficiariosas/" target="_blank">IBDP · Instituto Brasileiro de Direito Previdenciário — confirmação e detalhamento por Região</a></div>
+          <div class="fonte-desc">Usada para confirmar o valor previdenciário/assistencial e o detalhamento por TRF, com link direto à notícia oficial do CJF.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ibdp.org.br/2026/09/24/tnu-tem-maioria-parcial-pela-manutencao-de-calculo-mais-favoravel-na-aposentadoria-da-pessoa-com-deficiencia/" target="_blank">IBDP · TNU tem maioria parcial pela manutenção de cálculo mais favorável — Tema 389</a></div>
+          <div class="fonte-desc">Base do Movimento 02, Tese Relevante e TNU em Destaque — sessão de 24/9/2026, placar parcial e pedido de vista.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.gov.br/previdencia/pt-br/noticias/2026/setembro/comparecimento-as-urnas-vale-como-prova-de-vida-automatica-no-inss" target="_blank">Ministério da Previdência Social · Comparecimento às urnas vale como Prova de Vida automática no INSS</a></div>
+          <div class="fonte-desc">Publicação oficial de 18/9/2026 — base do Assunto do Momento.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.migalhas.com.br/quentes/462669/stj-afasta-divisor-minimo-em-aposentadoria-concedida-apos-reforma-da-previdencia" target="_blank">Migalhas · STJ afasta divisor mínimo em aposentadoria concedida após reforma</a></div>
+          <div class="fonte-desc">Usada para confirmar que as matérias de 22 e 25/9/2026 sobre o divisor mínimo tratam do mesmo REsp 2.193.427 (julgado 18/8/2026) já coberto na edição nº 011 — ver Radar de Tribunais.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/postsnoticias/segurados-nao-precisam-devolver-valores-recebidos-do-inss-com-base-na-tese-da-revisao-da-vida-toda-decide-stf/" target="_blank">Notícias STF · Segurados não precisam devolver valores da "revisão da vida toda"</a></div>
+          <div class="fonte-desc">Usada para confirmar que o tema já está definitivamente encerrado, descartando as matérias de 14–17/9/2026 como reciclagem — ver Radar de Tribunais.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://previdenciarista.com/blog/salario-maternidade-sem-carencia-ja-vale-entenda-o-pl-1-599-2026/" target="_blank">Previdenciarista · PL 1.599/2026 — carência do salário-maternidade</a></div>
+          <div class="fonte-desc">Parecer favorável com substitutivo da relatora, deputada Rogéria Santos, apresentado em 21/9/2026 — base do Movimento 03.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo">Verificação cruzada independente</div>
+          <div class="fonte-desc">Esta edição foi apurada com apoio de pesquisa direta (WebSearch/WebFetch) e revalidada item a item em fonte primária ou secundária qualificada antes da publicação. O Radar de Tribunais registra cinco itens revisados nesta quinzena: quatro foram identificados como notícia reciclada ou não confirmável e descartados como movimento — "Revisão da Vida Toda" (STF, já encerrada), divisor mínimo (REsp 2.193.427, já coberto na ed. 011), Tema 384 da TNU (já coberto nas ed. 009/010) e o item sobre limitação de atrasados atribuído ao Min. Paulo Sérgio Domingues (sem REsp/Tema confirmável em fonte primária, mesmo descarte já aplicado na edição nº 014 do Brevis Semanal); o quinto, sobre o PLP 42/2023, não é descarte — é apenas confirmação de que não há novidade de mérito desde a edição nº 013.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 014 · 28 de setembro de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
