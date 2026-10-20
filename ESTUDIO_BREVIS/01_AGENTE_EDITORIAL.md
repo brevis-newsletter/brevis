@@ -1,5 +1,5 @@
 # AGENTE EDITORIAL — BREVIS NEWSLETTER
-### Identidade, Tom e Regras Gerais · Atualizado em: 31/03/2026
+### Identidade, Tom e Regras Gerais · Atualizado em: 20/10/2026
 
 ---
 
@@ -205,6 +205,20 @@ Esta seção existe para que o padrão de rigor do Brevis melhore edição após
 
 **"Notícia reciclada" precisa cruzar as DUAS linhas editoriais, não só a linha em apuração:** ao ampliar a janela de busca (ex. de ~72h para 10 dias) para achar itens extras, um agente de pesquisa propôs a ADI 7.759 (STF, teto de juros do consignado do INSS) como item "novo" de previdenciário para o Brevis Semanal nº 012 — o fato era real e bem verificado, mas já tinha sido publicado como Destaque/Decisão do Dia da edição nº 011 do **Brevis Previdenciário** dias antes. A checagem de reciclagem rodada até aqui só cruzava contra o histórico da própria linha editorial (Semanal com Semanal, Previdenciário com Previdenciário) — foi o Jean, na revisão, quem pegou a duplicidade entre linhas. Regra daqui pra frente: qualquer item "novo" — principalmente quando vem de uma janela de busca ampliada — precisa ser cruzado contra o arquivo de AMBAS as linhas editoriais (`04_AGENTE_ARQUIVO.md`, seções 1 e 2) antes de entrar na edição, não só contra a linha que está sendo fechada.
 
+**Chatbot (ChatGPT/Gemini) como auditor: use para achar dúvidas, nunca como árbitro (lição de 20/10/2026, Semanal 015):** na rodada de validação, o Gemini e o ChatGPT apontaram como "erro" itens que estavam certos, porque se apoiaram em informação desatualizada (o placar parcial do Tema 1.348 de setembro tratado como se fosse o resultado final; o teto de 2x do art. 444 da CLT confundido com os 2,5x do teto do RGPS da EC 141) e disseram não conseguir confirmar fatos que estavam em fonte oficial. Mas também acertaram um ponto que passou pela apuração: o Tema 1.230 do STJ foi julgado em setembro e só divulgado pelo STJ em 9/10. Procedimento: tratar cada apontamento como pista, reverificar na fonte e decidir com base nela; registrar o que foi aceito e o que foi rejeitado.
+
+**Divulgação oficial tardia pode disfarçar julgamento antigo:** a notícia do STJ de 9/10/2026 sobre o Tema 1.230 não informa a data da sessão; reportagens de 17/09 já noticiavam a decisão. Antes de tratar item como "do período", procurar a primeira notícia do mesmo fato (busca com data e tema) e citar "julgado em X, divulgado em Y". Se a data do julgamento não puder ser confirmada, dizer isso no cartão.
+
+**Promulgação ≠ publicação ≠ início de vigência:** na EC 141/2026 (fim da 6x1), o texto fala em prazos contados da publicação, e parte da imprensa projetou 15/12/2026 contando da promulgação (16/10). Quando a data do DOU não estiver confirmada, escrever exatamente isso, citar a projeção da imprensa como projeção e mandar conferir no DOU. Conferir também as exceções (terceirizados públicos, empregados de diploma superior com salário alto, servidores): são elas que mudam a orientação ao cliente.
+
+**Fontes que divergem entre si: dizer que divergem.** No caso dos Correios (TST, 24/09/2026), uma fonte falava em compensação por mutirões de fim de semana e outra apenas em "dias a compensar", sem tratar de desconto em folha. O texto publicado deve registrar a divergência e mandar aguardar o acórdão, em vez de escolher a versão mais conveniente. O mesmo vale para números que mudam entre edições (reajuste de 4,35% na edição 014 contra 4,09% na 015): registrar a diferença.
+
+**Placar e tema: usar o resultado mais recente e conferir o título contra o corpo.** O Tema 1.348 apareceu como 5x2 (edição 014), 6x2 parcial e 9x2 concluído em 19/10. Antes de escrever o placar, buscar a notícia mais recente. Quando só o título de uma fonte traz o placar final e o corpo nomeia menos ministros, marcar "confirmado pelo título".
+
+**Evitar overclaim nos conselhos práticos:** o revisor independente barrou "encerre ações" (Tema 1.016, tese ainda sem acórdão), "locação e compra e venda" (Tema 1.348, sem fonte) e "o desconto depende do tribunal" (Correios, sem fonte). Regra: o "O que fazer na carteira" só pode ir até onde a fonte vai; quando o acórdão não saiu, o primeiro passo é "reavalie/aguarde a tese final", nunca "ajuíze em massa" ou "encerre".
+
+**Edição em arquivo gerado por script: conferir o fim do arquivo.** Em 20/10/2026, uma substituição com `find` que retornou -1 truncou o rodapé e o script do Semanal 015 antes da publicação; só a contagem de `<div>` abertos e fechados e uma captura de tela completa denunciaram. Antes de subir qualquer HTML: contar `<div`/`</div>`, conferir que existem `<footer>`, `<script>` e `</html>`, e olhar a captura da página inteira.
+
 ---
 
 ## 12. ASSUNTO DO MOMENTO (bloco opcional, só quando houver tema forte)
@@ -235,4 +249,43 @@ Se só (a) sem (b), ou só (b) sem (a), o item não vira Assunto do Momento — 
 
 ---
 
-*Estúdio Brevis · Agente Editorial · v1.0 · 31/03/2026 · Seção 11 adicionada em 23/08/2026, ampliada em 25/08/2026 e 04/09/2026 · Seção 12 adicionada em 15/09/2026*
+## 13. DUPLA VERIFICAÇÃO OBRIGATÓRIA (determinação do Jean em 20/10/2026)
+
+> "Essas notícias são sérias; a gente não pode errar. Sempre faça uma dupla verificação."
+
+**Nenhuma edição (Semanal, Previdenciário ou Especial) vai ao ar sem as duas camadas abaixo concluídas e registradas.** Se alguma camada não puder ser feita (ferramenta fora do ar, falta de acesso), a edição não é publicada: o Claude avisa o Jean, explica o que faltou e espera a decisão dele.
+
+**Camada 1 — Verificação própria, fato por fato, na fonte.** Cada número de processo, tema, data, relator, placar, valor e prazo é conferido em fonte primária ou quase primária (STF, STJ, TST, TNU, CJF, Planalto, Senado, Câmara, DOU quando acessível; na falta, notícia oficial do tribunal; só então Migalhas /quentes/, IBDP, IEPREV, Lex, escritórios). Regras de §8 e §11 valem aqui.
+
+**Camada 2 — Verificação independente por agente verificador + auditoria externa.**
+- **Agente verificador (Claude, contexto limpo):** um agente que não participou da redação lê o HTML pronto e confere cada afirmação na web, usando o roteiro de `05_AGENTE_VERIFICADOR.md`. Devolve CONFIRMADO / CORRIGIR / NÃO VERIFICÁVEL, com URL. Não edita arquivos.
+- **Auditoria externa:** o resumo dos fatos é enviado ao ChatGPT e ao Gemini (ver técnica em §11 e no roteiro do verificador). Eles servem para levantar dúvidas, não para decidir.
+- **Decisão:** cada apontamento é reverificado na fonte antes de aceitar (regra-mãe de §11). Itens CORRIGIR confirmados são aplicados; itens NÃO VERIFICÁVEIS ficam com ressalva visível no cartão ou saem da edição.
+
+**Quando os dois lados discordam:** vale a fonte, não a maioria de IAs. Se nem a fonte decidir, a edição diz que não há confirmação.
+
+**Registro:** ao fim de cada edição, anotar em `04_AGENTE_ARQUIVO.md` (nota de correção editorial) o que a verificação pegou, o que foi rejeitado e as lições novas, e passar as lições recorrentes para §11.
+
+**Checagem de reciclagem:** todo item é cruzado com o arquivo das DUAS linhas (§11, lição de 04/09/2026) e com as edições recentes, incluindo o radar.
+
+**Rótulos de transparência nos cartões:** todo cartão leva uma pill de status ("Julgamento concluído — acórdão a publicar", "Embargos ainda possíveis", "Acórdão não localizado") e as ressalvas aparecem no corpo do cartão, não escondidas no "Entenda os detalhes".
+
+---
+
+## 14. LAYOUT V2 (em uso desde 20/10/2026)
+
+Aprovado pelo Jean em 20/10/2026 (Previdenciário 015) e replicado no Semanal 015. Motivo: o layout anterior obrigava a rolar muito e misturava, no fim da página, atenção operacional, oportunidades, passo a passo e fontes, que pareciam a mesma coisa. Arquivos-modelo: `brevis-previdenciario-edicao015-2026-10-20.html` (paleta azul/dourado) e `brevis-semanal-edicao015-2026-10-20.html` (paleta tinta/vermelho). O Semanal usa as variáveis de cor do §4 (fundo #f7f4ee, tinta #0f0e0c, destaque #c8371a, azul #1a4c8c).
+
+**Ordem dos componentes:** barra "← Voltar para o arquivo de edições" (link para `index.html`); cabeçalho compacto com data, edição, período e tempo de leitura; navegação fixa (Resumo, Em alta, Movimentos, Radar, Painel de ação, Curiosidade); bloco "Em 30 segundos" (um item por movimento, clicável, com etiqueta do órgão e bolinha de impacto); card "Assunto do momento" (quando houver; mesmos 4 blocos de §12, agora condensados no card); filtros por chips; cartões de movimento que abrem; radar em grade de 2 colunas; painel de ação em abas; curiosidade em bloco escuro; rodapé.
+
+**Cartão de movimento:** etiqueta do órgão/tema, impacto (alto/médio), título, "fato" em 2 a 3 linhas, caixa verde "O que fazer na carteira" (caixa âmbar quando for cautela), detalhes recolhíveis, pill de status e fontes no rodapé do cartão.
+
+**Painel de ação:** quatro abas, cada uma com uma função só. Passo a passo (caixas de marcar com contador), Clientes para mapear, Cuidados, Fontes (com a nota de verificação). Isso substitui as seções "Atenção operacional", "Oportunidades" e "Como usar".
+
+**Regras de uso:** manter 4 a 6 movimentos; o radar recebe o que não virou movimento (acompanhamentos, pautas, itens que ficaram de fora e por quê); itens de linhas editoriais diferentes referenciam a outra linha em vez de repetir. Edições anteriores (até Semanal 014 e Previdenciário 014) permanecem no layout antigo; não reformatar o histórico sem pedido.
+
+**Checagem técnica antes de publicar:** contagem de `<div>` abertos e fechados, presença de `<footer>`, `<script>` e `</html>`, captura de tela da página inteira, teste dos filtros e do contador do painel.
+
+---
+
+*Estúdio Brevis · Agente Editorial · v1.0 · 31/03/2026 · Seção 11 adicionada em 23/08/2026, ampliada em 25/08/2026 e 04/09/2026 · Seção 12 adicionada em 15/09/2026 · Lições de 20/10/2026 em §11, §13 (dupla verificação) e §14 (layout v2) adicionadas em 20/10/2026*
