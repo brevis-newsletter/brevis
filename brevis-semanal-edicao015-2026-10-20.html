@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Brevis Semanal nº 015 — 20/10/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--azul-escuro:#0f0e0c;--azul-meio:#2E1811;--azul-claro:#1a4c8c;--dourado:#c8371a;--dourado-claro:#E8C6BC;--branco:#f7f4ee;--cinza-claro:#F0E9D8;--texto:#3A3A3A;--sub:#777;--alerta:#A8230E;--alerta-claro:#FDF0EE;--verde:#1A5E3A;--verde-claro:#EAF5EE;--ambar:#B45309;--ambar-claro:#FFF3E0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#2E1811;font-family:'DM Sans',sans-serif;color:var(--texto);-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;background:var(--branco);min-height:100vh;box-shadow:0 0 80px rgba(0,0,0,.5)}
+.mono{font-family:'DM Mono',monospace}
+/* topo compacto */
+.top{background:var(--azul-escuro);padding:26px 32px 22px;color:var(--branco);position:relative;overflow:hidden}
+.top:after{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border:1px solid rgba(200,55,26,.2);border-radius:50%}
+.eyebrow{font:500 9px 'DM Mono',monospace;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);opacity:.85}
+.top h1{font:900 32px 'Playfair Display',serif;letter-spacing:-.6px;margin:8px 0 4px}
+.top h1 span{color:var(--dourado)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(250,250,248,.7);margin-top:10px}
+.meta b{color:var(--dourado-claro);font:500 9px 'DM Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;display:block;opacity:.8}
+/* nav fixa */
+.nav{position:sticky;top:0;z-index:20;background:var(--azul-meio);display:flex;gap:2px;padding:8px 20px;overflow-x:auto;border-bottom:2px solid var(--dourado)}
+.nav a{font:500 10px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:rgba(232,198,188,.75);text-decoration:none;padding:7px 12px;border-radius:4px;white-space:nowrap}
+.nav a:hover,.nav a.on{background:rgba(200,55,26,.18);color:var(--dourado-claro)}
+section{padding:28px 32px;scroll-margin-top:50px}
+h2.sec{font:700 11px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul-claro);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2.sec:after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--dourado),transparent);opacity:.4}
+/* 30 segundos */
+.quick{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:6px 0;margin:22px 32px 0}
+.quick h3{font:500 10px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);padding:14px 20px 8px}
+.q{display:flex;gap:12px;align-items:flex-start;padding:11px 20px;border-top:1px solid rgba(200,55,26,.13);text-decoration:none;color:inherit;cursor:pointer}
+.q:hover{background:rgba(200,55,26,.08)}
+.q .n{font:500 11px 'DM Mono',monospace;color:var(--dourado);width:20px;padding-top:2px}
+.q .t{flex:1;font-size:14px;line-height:1.4}
+.q .t small{display:block;color:rgba(250,250,248,.5);font-size:11.5px;margin-top:2px}
+.tag{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:12px;white-space:nowrap}
+.t-stf{background:#F5E8C0;color:#8B5E00}.t-tst{background:#FBEAE5;color:#a02a12}.t-pgfn{background:#E8F5EE;color:#1a6b42}.t-trib{background:#E8F5EE;color:#1a6b42}.t-inss{background:#FDE0DA;color:#A8230E}.t-tnu{background:#DCE8F7;color:#2B5797}.t-cjf{background:#D9E2F7;color:#1A3A8B}.t-cn{background:#D9E6F3;color:#1A3A6B}.t-stj{background:#E8DBF0;color:#5A2E7A}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.d-alto{background:#1A5E3A}.d-medio{background:#c8a14a}
+/* em alta */
+.hot{margin:18px 32px 0;border:1px solid var(--dourado);border-left:5px solid var(--dourado);background:linear-gradient(135deg,#FBEAE5,#fff);border-radius:8px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hot .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--ambar)}
+.hot h3{font:700 19px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.25;margin:6px 0}
+.hot p{font-size:13px;line-height:1.6}
+.hot .nums{display:flex;flex-direction:column;gap:6px;text-align:center}
+.hot .nums div{background:var(--azul-escuro);color:var(--dourado-claro);border-radius:8px;padding:8px 14px;font:700 20px 'Playfair Display',serif}
+.hot .nums small{display:block;font:400 8.5px 'DM Mono',monospace;letter-spacing:1px;color:rgba(250,250,248,.6);text-transform:uppercase}
+@media(max-width:640px){.hot{grid-template-columns:1fr}.hot .nums{flex-direction:row;justify-content:center}}
+/* filtros */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid #D8D2C2;background:#fff;border-radius:20px;padding:6px 14px;font:500 11px 'DM Sans',sans-serif;cursor:pointer;color:var(--texto)}
+.chip.on{background:var(--azul-meio);color:var(--dourado-claro);border-color:var(--azul-meio)}
+/* cards */
+.card{border:1px solid #E4DFD2;border-radius:10px;margin-bottom:14px;background:#fff;overflow:hidden;border-left:5px solid var(--azul-claro)}
+.card.stf{border-left-color:#c8a14a}.card.tst{border-left-color:#c8371a}.card.pgfn{border-left-color:#1a6b42}.card.inss{border-left-color:#D9634A}.card.cjf{border-left-color:#4D6FC9}.card.tnu{border-left-color:#6C97C9}.card.stj{border-left-color:#8B5EA8}.card.cn{border-left-color:#6C97C9}
+.card.hide{display:none}
+.ch{padding:16px 18px 6px}
+.ch .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;font:500 9px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--sub)}
+.ch h3{font:700 17px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3}
+.fato{padding:6px 18px 4px;font-size:13.5px;line-height:1.6}
+.acao{margin:10px 18px;background:var(--verde-claro);border-left:3px solid var(--verde);border-radius:6px;padding:10px 14px;font-size:13px;line-height:1.55}
+.acao b{display:block;font:500 9px 'DM Mono',monospace;letter-spacing:2px;text-transform:uppercase;color:var(--verde);margin-bottom:3px}
+.acao.warn{background:var(--ambar-claro);border-color:var(--ambar)}.acao.warn b{color:var(--ambar)}
+.more{display:none;padding:2px 18px 14px;font-size:13px;line-height:1.7;color:#4a4a4a}
+.more p{margin-bottom:10px}
+.card.open .more{display:block}
+.cf{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-top:1px solid #EFEBE0;background:#FBFAF6;gap:10px;flex-wrap:wrap}
+.pill{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:12px}
+.p-ok{background:var(--verde-claro);color:var(--verde)}.p-wait{background:var(--ambar-claro);color:var(--ambar)}
+.btn{border:0;background:none;color:var(--azul-claro);font:600 12px 'DM Sans',sans-serif;cursor:pointer;padding:4px 0}
+.btn:hover{color:var(--azul-escuro)}
+.fonte{font-size:11px;color:var(--sub)}
+.fonte a{color:var(--azul-claro)}
+/* radar */
+.radar{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.radar{grid-template-columns:1fr}}
+.rd{border:1px solid #E4DFD2;border-radius:10px;padding:14px 16px;background:#fff;font-size:12.5px;line-height:1.55}
+.rd .tag{margin-bottom:8px;display:inline-block}
+.rd h4{font:700 14px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3;margin-bottom:6px}
+.rd.full{grid-column:1/-1}
+/* painel de acao */
+.tabs{display:flex;gap:4px;border-bottom:2px solid #E4DFD2;margin-bottom:16px;overflow-x:auto}
+.tab{background:none;border:0;padding:11px 16px;font:600 12.5px 'DM Sans',sans-serif;color:var(--sub);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tab.on{color:var(--azul-escuro);border-bottom-color:var(--dourado)}
+.panel{display:none}.panel.on{display:block}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E4DFD2;border-radius:8px;margin-bottom:8px;background:#fff;font-size:13px;line-height:1.55}
+.chk input{margin-top:4px;accent-color:var(--azul-meio);width:16px;height:16px;flex-shrink:0}
+.chk.done{opacity:.5;text-decoration:line-through}
+.chk .ref{font:500 9px 'DM Mono',monospace;color:var(--azul-claro);text-decoration:none;white-space:nowrap;margin-left:auto;padding-left:8px}
+.prog{font:500 11px 'DM Mono',monospace;color:var(--sub);margin-bottom:10px}
+.src{display:flex;gap:10px;font-size:12.5px;line-height:1.5;padding:9px 0;border-bottom:1px solid #EFEBE0}
+.src b{font:500 10px 'DM Mono',monospace;color:var(--dourado);min-width:22px}
+.src a{color:var(--azul-claro);text-decoration:none;font-weight:500}
+.curio{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:20px 22px;font-size:13.5px;line-height:1.7}
+.curio .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px}
+footer{background:var(--azul-escuro);color:rgba(250,250,248,.5);text-align:center;padding:24px;font-size:11px;line-height:1.7}
+footer b{display:block;font:900 18px 'Playfair Display',serif;color:var(--branco);margin-bottom:4px}
+.proto{background:#2E1811;color:#E8C6BC;font:500 10px 'DM Mono',monospace;letter-spacing:1.5px;text-align:left;padding:10px 32px}
+</style></head>
+<body>
+<div class="wrap">
+<div class="proto"><a href="index.html" style="color:inherit;text-decoration:none">← VOLTAR PARA O ARQUIVO DE EDIÇÕES</a></div>
+<div class="top">
+  <div class="eyebrow">Brevis · Vertical Jurídica Geral · Curadoria Jean Barbosa</div>
+  <h1>Brevis <span>Semanal</span></h1>
+  <div class="meta"><div><b>Data</b>20 de outubro de 2026</div><div><b>Edição</b>015</div><div><b>Período</b>23/09 a 20/10</div><div><b>Leitura</b>2 min (resumo) · 9 min (completa)</div></div>
+</div>
+<nav class="nav" id="nav">
+  <a href="#resumo" class="on">Resumo</a><a href="#alta">Em alta</a><a href="#movs">Movimentos</a><a href="#radar">Radar</a><a href="#acao">Painel de ação</a><a href="#curio">Curiosidade</a>
+</nav>
+
+<div class="quick" id="resumo">
+  <h3>Em 30 segundos — toque para ir ao detalhe</h3>
+  <a class="q" href="#m1"><span class="n">01</span><span class="t"><span class="dot d-alto"></span>STF fecha o Tema 1.348 em 9 a 2: ITBI não incide na integralização de imóveis em holding imobiliária<small>RE 1.495.108 · concluído em 19/10 · limite: valor do capital</small></span><span class="tag t-stf">STF</span></a>
+  <a class="q" href="#m2"><span class="n">02</span><span class="t"><span class="dot d-alto"></span>STF: créditos presumidos de ICMS ficam fora da base do PIS/Cofins<small>Tema 843 · RE 835.818 · 7/10 · embargos e modulação ainda possíveis</small></span><span class="tag t-trib">Tributário</span></a>
+  <a class="q" href="#m3"><span class="n">03</span><span class="t"><span class="dot d-medio"></span>Depósito judicial: correção segue os índices da lei da época, sem expurgos (7 a 2)<small>Tema 1.016 · RE 1.141.156 · 14/10 · valores já levantados preservados</small></span><span class="tag t-stf">STF</span></a>
+  <a class="q" href="#m4"><span class="n">04</span><span class="t"><span class="dot d-medio"></span>STJ define critérios para penhorar salário em dívidas não alimentares<small>Tema 1.230 · Corte Especial · unânime · julgado em setembro, divulgado em 9/10</small></span><span class="tag t-stj">STJ</span></a>
+  <a class="q" href="#m5"><span class="n">05</span><span class="t"><span class="dot d-medio"></span>TST rejeita abusividade da greve dos Correios (24/09)<small>Fecha o assunto da edição 014 · acórdão ainda não localizado</small></span><span class="tag t-tst">TST</span></a>
+  <a class="q" href="#m6"><span class="n">06</span><span class="t"><span class="dot d-alto"></span>PGFN abre transação de FGTS e contribuições da LC 110 até 29/01/2027<small>Edital PGDAU 12/2026 · descontos de até 65% (70% para alguns públicos)</small></span><span class="tag t-pgfn">PGFN</span></a>
+</div>
+
+<div class="hot" id="alta">
+  <div>
+    <div class="k">🔥 Assunto do momento</div>
+    <h3>Fim da escala 6x1: promulgada a EC 141/2026, com 5x2 e jornada de 42h em 60 dias</h3>
+    <p><b>O que está bombando.</b> Promulgada em 16/10 (aprovação no Senado em 14/10, 75 a 1 nos dois turnos). A escala 6x1 dá lugar à 5x2, sem redução salarial. <b>O gancho jurídico.</b> Depois de 60 dias da publicação: dois repousos semanais remunerados e limite de 42h; 14 meses depois da publicação, 40h. Cláusulas coletivas incompatíveis perdem validade em 60 dias; jornadas já de até 40h não são reduzidas. As regras de duração e controle de jornada não se aplicam a empregados com diploma superior que ganham ao menos 2,5 vezes o teto do RGPS (mantidos o repouso semanal e a negociação coletiva); servidores públicos não são afetados. <b>Atenção ao relógio:</b> o texto da emenda conta os prazos da publicação, cuja data do DOU não confirmamos; parte da imprensa projeta o início do regime em 15/12/2026 (60 dias da promulgação). Terceirizados da administração pública teriam 12 meses, a partir do aditamento contratual (segundo a imprensa). Confira no DOU.</p>
+  </div>
+  <div class="nums"><div>5x2<small>nova escala</small></div><div>42h → 40h<small>60 dias · 14 meses</small></div></div>
+</div>
+
+<section id="movs">
+  <h2 class="sec">Movimentos verificados</h2>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">Todos</button><button class="chip" data-f="alto">Impacto alto</button><button class="chip" data-f="stf">STF</button><button class="chip" data-f="trib">Tributário</button><button class="chip" data-f="stj">STJ</button><button class="chip" data-f="trab">Trabalhista</button>
+  </div>
+
+  <article class="card stf" id="m1" data-tags="all alto stf trib">
+    <div class="ch"><div class="row"><span class="tag t-stf">STF · Tema 1.348</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 01</span></div><h3>ITBI e holding: STF conclui em 9 a 2 que a imunidade alcança a integralização de imóveis em imobiliárias, nos limites do capital</h3></div>
+    <div class="fato">Plenário Virtual concluído em 19/10/2026 (RE 1.495.108, relator Min. Fachin). Vencidos Gilmar Mendes e Flávio Dino. É o desfecho do julgamento que a edição 014 trazia em 5 a 2, parado por vista.</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Revise integralizações de imóveis em holdings imobiliárias em que o município cobrou ITBI e avalie restituição ou defesa — mas o acórdão ainda não foi publicado e cabem embargos: não ajuíze em massa antes da tese final.</div>
+    <div class="more"><p>Pelo que apuramos, a restrição da atividade preponderante fica apenas para fusão, incorporação, cisão e extinção. A imunidade se limita ao valor do capital integralizado (Tema 796); o excedente é tributável. Os municípios podem provar simulação ou fraude.</p><p>Ainda cabem embargos de declaração. Acompanhe a publicação do acórdão e a tese final antes de protocolar pedidos em massa.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Julgamento concluído — acórdão a publicar</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.migalhas.com.br/quentes/466801/stf-empresas-imobiliarias-tem-imunidade-de-itbi-ao-integralizar-capital">Migalhas</a> · <a href="https://tributarionosbastidores.com.br/2026/10/stf-forma-maioria-sobre-imunidade-de-itbi-na-integralizacao-de-imoveis-de-imobiliarias/amp/">Tributário nos Bastidores</a></span></div>
+  </article>
+
+  <article class="card stf" id="m2" data-tags="all alto stf trib">
+    <div class="ch"><div class="row"><span class="tag t-trib">STF · Tema 843</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 02</span></div><h3>Créditos presumidos de ICMS não entram na base do PIS e da Cofins</h3></div>
+    <div class="fato">Plenário, 7/10/2026, RE 835.818. A tese afirma incompatível com a Constituição incluir créditos presumidos de ICMS na base das duas contribuições. Os ministros não analisaram modulação.</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Identifique clientes com benefício fiscal estadual que recolheram PIS/Cofins sobre o crédito presumido e calcule o indébito dos últimos cinco anos. Ajuste o planejamento atual da base de cálculo.</div>
+    <div class="more"><p>A Fazenda Nacional ainda pode opor embargos de declaração, inclusive pedindo modulação. As fontes consultadas não informam placar nem relator, e o texto fala em créditos presumidos, não em crédito outorgado: confira o enquadramento do benefício de cada cliente antes de ajuizar.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Embargos e modulação ainda possíveis</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.mayerbrown.com/pt/insights/publications/2026/10/general-repercussion-theme-no-843-stf-rules-that-icms-presumed-credits-must-be-excluded-from-pis-and-cofins-tax-basis">Mayer Brown</a> · <a href="https://cesconbarrieu.com.br/minuto-tributario-semana-5-a-9-de-outubro-de-2026/">Cescon Barrieu</a></span></div>
+  </article>
+
+  <article class="card stf" id="m3" data-tags="all stf">
+    <div class="ch"><div class="row"><span class="tag t-stf">STF · Tema 1.016</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 03</span></div><h3>Depósitos judiciais: correção segue os índices da lei vigente na época, sem expurgos de planos econômicos</h3></div>
+    <div class="fato">Plenário, 14/10/2026, RE 1.141.156. Placar de 7 a 2: divergência aberta por Flávio Dino; vencidos o relator Fachin e Nunes Marques. Fux impedido.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Reavalie ações que buscam diferenças de expurgos sobre depósito judicial. Quem já levantou valores não precisa devolver, mas quem recebeu sem expurgos não pode pedir depois.</div>
+    <div class="more"><p>A tese trata a relação entre depositante e instituição depositária como estatutária, afirma que não há direito adquirido a índice específico e que o Judiciário não pode trocar o índice legal por outro. Vale para depósitos judiciais em geral.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Julgado — valores já levantados preservados</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://noticias.stf.jus.br/postsnoticias/correcao-monetaria-de-depositos-judiciais-deve-seguir-indices-previstos-na-legislacao-da-epoca-decide-stf/">Notícias STF</a></span></div>
+  </article>
+
+  <article class="card stj" id="m4" data-tags="all stj">
+    <div class="ch"><div class="row"><span class="tag t-stj">STJ · Tema 1.230</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 04</span></div><h3>Penhora de salário em dívida não alimentar: Corte Especial fixa critérios e flexibiliza a impenhorabilidade</h3></div>
+    <div class="fato">Recurso repetitivo julgado pela Corte Especial, por unanimidade, relator Min. Raul Araújo (REsp 1.894.973 como paradigma); julgado em setembro (reportagens de 17/09 já o noticiavam; outras fontes citam sessão em 15/09 e publicação no DJEN em 21/09), com divulgação oficial do STJ em 9/10/2026. Atenção: é julgamento anterior ao período, aqui registrado pela divulgação. Recursos suspensos voltam a andar.</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Credor: exaure os demais meios antes de pedir a penhora do salário. Devedor: prepare prova de subsistência, pois o ônus é dele.</div>
+    <div class="more"><p>Pelos critérios noticiados, a penhora de parte do salário em dívidas não alimentares só é possível depois de esgotados outros meios, e cabe ao devedor demonstrar que a medida compromete a subsistência. Leia o acórdão e a tese final para confirmar o percentual e as condições antes de aplicar.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Repetitivo julgado — data exata da sessão a confirmar</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/09102026-Em-repetitivo--Corte-Especial-define-criterios-para-penhora-de-salario-por-dividas-nao-alimentares.aspx">Notícias STJ</a></span></div>
+  </article>
+
+  <article class="card tst" id="m5" data-tags="all trab">
+    <div class="ch"><div class="row"><span class="tag t-tst">TST · SDC</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 05</span></div><h3>Greve dos Correios: TST rejeita a abusividade, nega a multa e a categoria volta ao trabalho em 25/09</h3></div>
+    <div class="fato">Na quinta-feira, 24/09, a maioria da SDC rejeitou o pedido dos Correios. Relatora: desembargadora convocada Maria de Nazaré Rocha. O reajuste fixado é de 4,09%. A edição 014 citava 4,35% como valor aceito; as matérias deste fechamento falam em 4,09%.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Greve declarada não abusiva; compensação dos dias por mutirões (Lex). Desconto em folha não foi informado pelas fontes: aguarde o acórdão antes de orientar clientes.</div>
+    <div class="more"><p>Segundo o Lex, foram vencidos quanto à abusividade a ministra Maria Cristina Peduzzi e os ministros Ives Gandra Martins Filho e Guilherme Caputo Bastos, e a compensação dos dias parados foi autorizada de forma excepcional, por mutirões de fim de semana. Outra matéria diz apenas que os dias devem ser compensados. As fontes divergem nesse ponto.</p><p>O plano de saúde, causa central do conflito: a ECT deixa de ser a mantenedora e passa a oferecer subsídio por benefício de adesão facultativa, mantido o Plano Correios Saúde II até a implantação do novo modelo (segundo o Lex).</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Acórdão não localizado — compensação a confirmar</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.lex.com.br/tst-considera-greve-dos-correios-nao-abusiva-e-autoriza-compensacao-dos-dias-de-paralisacao/">Lex</a> · <a href="https://www.bnewssaopaulo.com.br/noticias/politica/correios-encerram-greve-de-15-dias-apos-julgamento-no-tst-veja-o-que-muda.html">BNews</a></span></div>
+  </article>
+
+  <article class="card pgfn" id="m6" data-tags="all alto trib">
+    <div class="ch"><div class="row"><span class="tag t-pgfn">PGFN · Dinheiro na mesa</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 06</span></div><h3>PGFN abre transação de dívidas de FGTS e da contribuição da LC 110, com adesão até 29/01/2027</h3></div>
+    <div class="fato">Edital PGDAU/PGFN/MF 12/2026, publicado em 13/10; adesão pelo Regularize, de 15/10/2026 a 29/01/2027. Dívidas de até R$ 45 milhões por devedor, inscritas até 17/07/2026 (pequeno valor: inscrição até 15/10/2025).</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Levante empregadores com FGTS inscrito em dívida ativa e compare a transação com as condições atuais. Atenção ao prazo: 29/01/2027, 19h.</div>
+    <div class="more"><p>Desconto de até 100% sobre os acréscimos elegíveis, limitado a 65% do valor de cada inscrição (70% para pessoas físicas, MEI, micro e pequenas empresas, cooperativas e instituições de ensino). Pequeno valor: até 50%. Não há desconto sobre valores devidos aos trabalhadores. Parcelamento de até 120 ou 145 prestações, com o FGTS rescisório priorizado nas 12 primeiras.</p><p>Em 29/09, a PGFN lançou a Portaria 2.970 (MEI de pequeno valor, até cinco salários mínimos, 50% de desconto, adesão desde 1º/10) e prorrogou o PGDAU 6/2026 e o Desenrola MEI até 29/01/2027.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Em vigor — adesão aberta</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://cesconbarrieu.com.br/pgfn-preve-descontos-de-ate-70-para-regularizacao-de-debitos-de-fgts-e-contribuicoes-sociais/">Cescon Barrieu</a> · <a href="https://www.canalrural.com.br/economia/pgfn-lanca-dois-editais-e-prorroga-tres-programas-de-renegociacao-de-dividas/">Canal Rural</a></span></div>
+  </article>
+</section>
+
+<section id="radar">
+  <h2 class="sec">Radar de tribunais</h2>
+  <div class="radar">
+    <div class="rd"><span class="tag t-stf">STF</span><h4>Funrural (ADI 4.395): concluído em 15/10</h4>Inconstitucional a cobrança antes de 2018 e a sub-rogação nesse período; constitucional depois da Lei 13.606/2018. Modulação não analisada. Detalhes no Brevis Previdenciário 015.</div>
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Tema 1.379: sem contribuição sobre stock options</h4>1ª Seção, 14/10. Acórdão não publicado: confira a tese final. Tratado no Previdenciário 015.</div>
+        <div class="rd"><span class="tag t-stf">STF</span><h4>Pauta de 28 e 29/10</h4>Constam o RE 1.384.562 (Tema 1.226) e a ADI 6.336. Pauta sujeita a mudança.</div>
+    <div class="rd"><span class="tag t-stf">STF</span><h4>Ficha Limpa (ADI 7.881) e Caso Master</h4>Não confirmamos fato processual novo no período; por isso ficam fora dos movimentos.</div>
+    <div class="rd full"><span class="tag t-cn">Curadoria</span><h4>O que deixamos de fora</h4>ADI 5.161 e outros itens que circularam sem fonte primária ou sem data confirmada. Preferimos não publicar o que não conseguimos checar.</div>
+  </div>
+</section>
+
+<section id="acao">
+  <h2 class="sec">Painel de ação — tudo que você precisa fazer, por movimento</h2>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-p="p1">✅ Passo a passo</button><button class="tab" data-p="p2">👥 Clientes para mapear</button><button class="tab" data-p="p3">⚠ Cuidados</button><button class="tab" data-p="p4">📚 Fontes</button>
+  </div>
+  <div class="panel on" id="p1">
+    <div class="prog" id="prog">0 de 6 feitos</div>
+    <label class="chk"><input type="checkbox"><span>Mapear contratos e acordos coletivos com escala 6x1 ou jornada acima de 42h; planejar a adaptação para 60 dias após a publicação.</span><a class="ref" href="#alta">EC 141 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Levantar holdings imobiliárias com ITBI recolhido na integralização de imóveis ao capital.</span><a class="ref" href="#m1">Mov. 01 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Calcular o indébito de PIS/Cofins sobre créditos presumidos de ICMS (cinco anos).</span><a class="ref" href="#m2">Mov. 02 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Revisar ações sobre expurgos em depósitos judiciais à luz do Tema 1.016.</span><a class="ref" href="#m3">Mov. 03 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Em execuções de dívida não alimentar, preparar o pedido ou a prova de subsistência conforme o lado.</span><a class="ref" href="#m4">Mov. 04 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Cruzar a lista de empregadores com FGTS inscrito em dívida ativa e marcar 29/01/2027.</span><a class="ref" href="#m6">Mov. 06 ↑</a></label>
+  </div>
+  <div class="panel" id="p2">
+    <div class="chk"><span><b>Empresas com jornada 6x1</b> (comércio, serviços, saúde, indústria) — adequação e revisão de convenções coletivas.</span><a class="ref" href="#alta">EC 141</a></div>
+    <div class="chk"><span><b>Holdings patrimoniais e imobiliárias</b> que pagaram ITBI na integralização.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Empresas com incentivo estadual de ICMS</b> (crédito presumido) que recolheram PIS/Cofins sobre ele.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Credores e devedores em cumprimento de sentença</b> contra pessoa física com salário.</span><a class="ref" href="#m4">Mov. 04</a></div>
+    <div class="chk"><span><b>Empregadores com FGTS e LC 110 em dívida ativa</b>, MEIs com débito pequeno.</span><a class="ref" href="#m6">Mov. 06</a></div>
+  </div>
+  <div class="panel" id="p3">
+    <div class="chk"><span><b>EC 141:</b> prazos contam da publicação (data do DOU não confirmada; imprensa projeta 15/12/2026); exceções para diploma superior com salário alto, servidores e terceirizados públicos (12 meses).</span><a class="ref" href="#alta">EC 141</a></div>
+    <div class="chk"><span><b>Tema 1.348:</b> acórdão e tese final ainda não publicados; imunidade limitada ao valor do capital.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Tema 843:</b> embargos e pedido de modulação possíveis; confirme se o benefício é crédito presumido.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Correios:</b> fontes divergem sobre a compensação; aguardar acórdão.</span><a class="ref" href="#m5">Mov. 05</a></div>
+    <div class="chk"><span><b>PGFN:</b> o desconto não incide sobre valores dos trabalhadores; leia o edital antes de aderir.</span><a class="ref" href="#m6">Mov. 06</a></div>
+  </div>
+  <div class="panel" id="p4">
+    <div class="src"><b>01</b><span><a href="https://www12.senado.leg.br/noticias/materias/2026/10/16/congresso-promulga-o-fim-da-escala-6x1-e-aposentadoria-de-agentes-de-saude">Senado — promulgação da EC 141/2026</a> · <a href="https://www.camara.leg.br/noticias/1311742-congresso-promulga-o-fim-da-escala-6x1-e-aposentadoria-especial-para-agentes-de-saude">Câmara</a></span></div>
+    <div class="src"><b>02</b><span><a href="https://www.migalhas.com.br/quentes/466801/stf-empresas-imobiliarias-tem-imunidade-de-itbi-ao-integralizar-capital">Migalhas — Tema 1.348</a> · <a href="https://tributarionosbastidores.com.br/2026/10/stf-forma-maioria-sobre-imunidade-de-itbi-na-integralizacao-de-imoveis-de-imobiliarias/amp/">Tributário nos Bastidores</a></span></div>
+    <div class="src"><b>03</b><span><a href="https://www.mayerbrown.com/pt/insights/publications/2026/10/general-repercussion-theme-no-843-stf-rules-that-icms-presumed-credits-must-be-excluded-from-pis-and-cofins-tax-basis">Mayer Brown — Tema 843</a> · <a href="https://cesconbarrieu.com.br/minuto-tributario-semana-5-a-9-de-outubro-de-2026/">Cescon Barrieu — Minuto Tributário</a></span></div>
+    <div class="src"><b>04</b><span><a href="https://noticias.stf.jus.br/postsnoticias/correcao-monetaria-de-depositos-judiciais-deve-seguir-indices-previstos-na-legislacao-da-epoca-decide-stf/">Notícias STF — Tema 1.016</a> · fonte oficial</span></div>
+    <div class="src"><b>05</b><span><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/09102026-Em-repetitivo--Corte-Especial-define-criterios-para-penhora-de-salario-por-dividas-nao-alimentares.aspx">Notícias STJ — Tema 1.230</a> · fonte oficial</span></div>
+    <div class="src"><b>06</b><span><a href="https://www.lex.com.br/tst-considera-greve-dos-correios-nao-abusiva-e-autoriza-compensacao-dos-dias-de-paralisacao/">Lex — TST e Correios</a> · <a href="https://www.bnewssaopaulo.com.br/noticias/politica/correios-encerram-greve-de-15-dias-apos-julgamento-no-tst-veja-o-que-muda.html">BNews</a></span></div>
+    <div class="src"><b>07</b><span><a href="https://cesconbarrieu.com.br/pgfn-preve-descontos-de-ate-70-para-regularizacao-de-debitos-de-fgts-e-contribuicoes-sociais/">Cescon Barrieu — Edital PGDAU 12/2026</a> · <a href="https://www.canalrural.com.br/economia/pgfn-lanca-dois-editais-e-prorroga-tres-programas-de-renegociacao-de-dividas/">Canal Rural — PGFN</a></span></div>
+    <div class="src"><b>08</b><span><a href="https://www.ibdp.org.br/2026/10/06/confira-destaques-da-pauta-do-plenario-para-outubro/">IBDP — pauta do STF de outubro</a> · <a href="https://noticias.stf.jus.br/postsnoticias/stf-considera-inconstitucional-cobranca-do-funrural-a-empresas-que-compram-producao-rural/">Notícias STF — Funrural</a></span></div>
+    <div class="src"><b>✓</b><span>Verificação: pesquisa em paralelo por área, revisores independentes, ChatGPT e Gemini. Itens de fonte única ou sem confirmação oficial estão sinalizados nos cartões. Briefing informativo; confira as fontes antes de aplicar.</span></div>
+  </div>
+</section>
+
+<section id="curio">
+  <div class="curio"><div class="k">💡 Curiosidade jurídica</div>As duas emendas constitucionais da semana, a EC 140 (aposentadoria especial dos agentes de saúde, tema do Brevis Previdenciário 015) e a EC 141 (fim da 6x1), foram promulgadas na mesma sessão do Congresso, em 16/10. A 141 escalona o efeito no tempo: 60 dias para o segundo repouso e as 42h, e 14 meses para as 40h, tudo contado da publicação, segundo o texto divulgado pelo Senado.</div>
+</section>
+
+<footer><b>Brevis Semanal</b>Edição nº 015 · 20 de outubro de 2026 · Curadoria Jean Barbosa<br>Briefing informativo; não constitui opinião legal. Verifique as fontes antes de aplicar qualquer tese.</footer>
+</div>
+<script>
+document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.card');c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Recolher ▴':'Entenda os detalhes ▾'})});
+document.getElementById('chips').addEventListener('click',function(e){var f=e.target.getAttribute('data-f');if(!f)return;document.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c===e.target)});document.querySelectorAll('.card').forEach(function(c){c.classList.toggle('hide',c.getAttribute('data-tags').split(' ').indexOf(f)<0)})});
+document.getElementById('tabs').addEventListener('click',function(e){var p=e.target.getAttribute('data-p');if(!p)return;document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t===e.target)});document.querySelectorAll('.panel').forEach(function(x){x.classList.toggle('on',x.id===p)})});
+document.querySelectorAll('#p1 input').forEach(function(i){i.addEventListener('change',function(){i.closest('.chk').classList.toggle('done',i.checked);var n=document.querySelectorAll('#p1 input:checked').length;document.getElementById('prog').textContent=n+' de 6 feitos'})});
+</script>
+</body>
+</html>
