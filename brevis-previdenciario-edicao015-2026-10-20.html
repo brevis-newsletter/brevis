@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 015 · 20 de outubro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-escuro: #0D1F3C;
+    --azul-meio: #1A3A6B;
+    --azul-claro: #2B5797;
+    --dourado: #C9A84C;
+    --dourado-claro: #E8CC7A;
+    --dourado-sutil: #F5E8C0;
+    --branco: #FAFAF8;
+    --cinza-claro: #F0EDE6;
+    --cinza-texto: #3A3A3A;
+    --cinza-sub: #777777;
+    --alerta: #A8230E;
+    --alerta-claro: #FDF0EE;
+    --verde: #1A5E3A;
+    --verde-claro: #EAF5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: #0A1826; font-family: 'DM Sans', sans-serif; color: var(--cinza-texto); -webkit-font-smoothing: antialiased; }
+  .wrapper { max-width: 720px; margin: 0 auto; background: var(--branco); box-shadow: 0 0 80px rgba(0,0,0,0.5); }
+  .back-bar { background: var(--azul-meio); padding: 10px 48px; }
+  .back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.7); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: color 0.15s; }
+  .back-link:hover { color: var(--dourado-claro); }
+  .header { background: var(--azul-escuro); padding: 44px 48px 34px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.1); }
+  .header::after { content: ''; position: absolute; top: -20px; right: -20px; width: 160px; height: 160px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.18); }
+  .header-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--dourado); opacity: 0.8; margin-bottom: 14px; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--branco); line-height: 1.0; letter-spacing: -0.8px; margin-bottom: 6px; }
+  .header-title span { color: var(--dourado); }
+  .header-sub { font-size: 12px; color: rgba(250,250,248,0.42); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 32px; }
+  .header-sub a { color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(201,168,76,0.55); transition: color 0.15s, border-color 0.15s; }
+  .header-sub a:hover { color: var(--dourado-claro); border-color: var(--dourado-claro); }
+  .header-meta { display: flex; gap: 32px; border-top: 1px solid rgba(201,168,76,0.18); padding-top: 20px; flex-wrap: wrap; }
+  .header-meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .header-meta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.5); }
+  .header-meta-value { font-size: 12.5px; color: rgba(250,250,248,0.85); font-weight: 500; }
+  .banner-especial { background: linear-gradient(90deg, var(--dourado) 0%, #A07830 100%); padding: 11px 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .banner-text { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-escuro); font-weight: 600; }
+  .banner-dot { width: 3px; height: 3px; background: var(--azul-escuro); border-radius: 50%; opacity: 0.4; }
+  .indice { background: var(--azul-meio); padding: 18px 48px; display: flex; flex-wrap: wrap; gap: 7px 4px; }
+  .indice-item { font-family: 'DM Mono', monospace; font-size: 9.5px; color: rgba(232,204,122,0.65); letter-spacing: 1px; white-space: nowrap; text-decoration: none; padding: 3px 6px; border-radius: 3px; transition: background 0.15s, color 0.15s; }
+  .indice-item:hover { background: rgba(201,168,76,0.16); color: var(--dourado-claro); }
+  .indice-item strong { color: var(--dourado-claro); }
+  .section-divider { height: 1px; background: linear-gradient(to right, var(--dourado), transparent); margin: 0 48px; opacity: 0.2; }
+  .section { padding: 36px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .section:last-child { border-bottom: none; }
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 500; letter-spacing: 1px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 500; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--azul-escuro); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.2px; }
+  .section-body { font-size: 14px; line-height: 1.78; color: var(--cinza-texto); }
+  .section-body p { margin-bottom: 13px; }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-intro { font-size: 13px; color: var(--cinza-sub); line-height: 1.65; margin-bottom: 20px; max-width: 560px; }
+  .abertura { background: var(--dourado-sutil); border-left: 4px solid var(--dourado); padding: 30px 48px; border-bottom: 1px solid #E8E4DA; scroll-margin-top: 16px; }
+  .abertura-bom-dia { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--azul-claro); margin-bottom: 10px; font-weight: 700; }
+  .abertura-texto { font-size: 14.5px; line-height: 1.82; color: var(--azul-escuro); }
+  .abertura-texto p { margin-bottom: 12px; }
+  .abertura-texto p:last-child { margin-bottom: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; font-weight: 600; }
+  .badge-tnu  { background: #EBF0FB; color: #2B5797; }
+  .badge-stj  { background: #F0EBF5; color: #5A2E7A; }
+  .badge-stf  { background: #FFF7E0; color: #8B5E00; }
+  .badge-trf4 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf6 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-trf3 { background: #E8F5EE; color: #1A5E3A; }
+  .badge-inss { background: #FDF0EE; color: #A8230E; }
+  .badge-cjf  { background: #E8F0FD; color: #1A3A8B; }
+  .badge-tema { background: #F5EFFF; color: #6A1B9A; }
+  .badge-cn   { background: #EBF0FB; color: #1A3A6B; }
+  .impacto-badge { font-size: 10.5px; font-weight: 600; }
+  .status-pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; white-space: nowrap; }
+  .status-construcao  { background: #FFF3E0; color: #B45309; }
+  .status-consolidada { background: var(--verde-claro); color: var(--verde); }
+  .status-favoravel   { background: #E8F5EE; color: #1A5E3A; }
+  .status-desfavoravel { background: #FDF0EE; color: #A8230E; }
+  .top-grid { display: flex; flex-direction: column; gap: 18px; }
+  .top-card { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(13,31,60,0.06); transition: box-shadow 0.18s, transform 0.18s; }
+  .top-card:hover { box-shadow: 0 6px 20px rgba(13,31,60,0.12); transform: translateY(-1px); }
+  .top-card-bar { height: 4px; width: 100%; }
+  .bar-stj { background: linear-gradient(90deg, #5A2E7A, #8B5EA8); }
+  .bar-stf { background: linear-gradient(90deg, #8B5E00, #C9A84C); }
+  .bar-tnu { background: linear-gradient(90deg, #2B5797, #6C97C9); }
+  .bar-inss { background: linear-gradient(90deg, #A8230E, #D9634A); }
+  .bar-cjf { background: linear-gradient(90deg, #1A3A8B, #4D6FC9); }
+  .bar-trf4 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-trf3 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-trf6 { background: linear-gradient(90deg, #1A5E3A, #4FA875); }
+  .bar-cn { background: linear-gradient(90deg, #1A3A6B, #6C97C9); }
+  .top-card-inner { padding: 24px 26px; }
+  .top-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+  .top-card-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .top-card-numero { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); font-weight: 600; letter-spacing: 1px; flex-shrink: 0; }
+  .top-card-titulo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--azul-escuro); line-height: 1.32; margin-bottom: 12px; }
+  .top-card-corpo { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); margin-bottom: 14px; }
+  .top-card-corpo p { margin-bottom: 9px; }
+  .top-card-corpo p:last-child { margin-bottom: 0; }
+  .top-card-impacto { background: var(--verde-claro); border-left: 3px solid var(--verde); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #1A3A2A; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: 4px; }
+  .top-card-impacto-alerta { background: var(--alerta-claro); border-left: 3px solid var(--alerta); padding: 11px 15px; border-radius: 0 5px 5px 0; font-size: 12.5px; line-height: 1.6; color: #5A1A10; font-weight: 500; margin-bottom: 12px; }
+  .top-card-impacto-alerta-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--alerta); display: block; margin-bottom: 4px; }
+  .top-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 14px; border-top: 1px solid #EDE9DF; }
+  .top-card-status { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .top-card-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cinza-sub); }
+  .top-card-fonte a { color: var(--azul-claro); text-decoration: none; font-weight: 500; }
+  .top-card-fonte a:hover { text-decoration: underline; }
+  .decisao-card { background: var(--azul-escuro); border-radius: 6px; padding: 30px 34px; color: var(--branco); position: relative; overflow: hidden; }
+  .decisao-card::before { content: ''; position: absolute; bottom: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.08); }
+  .decisao-card::after { content: ''; position: absolute; bottom: 10px; right: 10px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.14); }
+  .decisao-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .decisao-eyebrow-line { flex: 1; height: 1px; background: rgba(201,168,76,0.18); }
+  .decisao-titulo { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--branco); line-height: 1.3; margin-bottom: 18px; }
+  .decisao-body { font-size: 13.5px; line-height: 1.78; color: rgba(250,250,248,0.8); }
+  .decisao-body p { margin-bottom: 11px; }
+  .decisao-body p:last-child { margin-bottom: 0; }
+  .decisao-divider { border: none; border-top: 1px solid rgba(201,168,76,0.2); margin: 20px 0; }
+  .decisao-tese { font-family: 'DM Mono', monospace; font-size: 11.5px; line-height: 1.65; color: var(--dourado-claro); font-style: italic; padding-left: 16px; border-left: 2px solid var(--dourado); margin-bottom: 18px; }
+  .decisao-acao { background: rgba(255,255,255,0.055); border-radius: 4px; padding: 14px 18px; font-size: 13px; line-height: 1.65; color: rgba(250,250,248,0.85); border-left: 2px solid var(--alerta); }
+  .decisao-acao-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase; color: #FF8A80; display: block; margin-bottom: 5px; }
+  .decisao-meta { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .decisao-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); }
+  .decisao-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .decisao-fonte a:hover { text-decoration: underline; }
+  .tese-card { background: var(--cinza-claro); border-radius: 5px; padding: 26px 30px; border-left: 3px solid var(--azul-claro); }
+  .tese-nome { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--azul-escuro); margin-bottom: 20px; line-height: 1.35; }
+  .tese-bloco { margin-bottom: 16px; }
+  .tese-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--azul-claro); display: block; margin-bottom: 5px; }
+  .tese-bloco-texto { font-size: 13.5px; line-height: 1.72; color: var(--cinza-texto); }
+  .tese-footer { margin-top: 18px; padding-top: 14px; border-top: 1px solid #DDD9CF; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .panorama-grid { display: flex; flex-direction: column; gap: 10px; }
+  .panorama-item { background: var(--branco); border: 1px solid #E5E0D4; border-radius: 8px; padding: 16px 18px 16px 16px; display: flex; gap: 14px; align-items: flex-start; border-left: 4px solid var(--dourado); scroll-margin-top: 16px; }
+  .panorama-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--dourado); opacity: 0.4; line-height: 1; flex-shrink: 0; margin-top: 2px; min-width: 26px; }
+  .panorama-area { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul-claro); font-weight: 600; margin-bottom: 4px; }
+  .panorama-titulo { font-size: 13.5px; font-weight: 600; color: var(--azul-escuro); line-height: 1.4; margin-bottom: 5px; }
+  .panorama-texto { font-size: 12.5px; line-height: 1.62; color: var(--cinza-texto); margin-bottom: 6px; }
+  .panorama-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .panorama-fonte { font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--cinza-sub); }
+  .panorama-fonte a { color: var(--azul-claro); text-decoration: none; }
+  .panorama-fonte a:hover { text-decoration: underline; }
+  .radar-item { display: flex; gap: 16px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid #EDE9DF; }
+  .radar-item:first-child { padding-top: 0; }
+  .radar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .radar-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .radar-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .dinheiro-card { background: #F8F6FF; border: 1.5px solid #C9C0E8; border-radius: 5px; overflow: hidden; }
+  .dinheiro-header { background: #2D1B6B; padding: 14px 22px; display: flex; align-items: center; gap: 8px; }
+  .dinheiro-header-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .dinheiro-header-title { font-size: 13px; font-weight: 600; color: white; margin-left: 4px; }
+  .dinheiro-body { padding: 22px; }
+  .dinheiro-body p { font-size: 13.5px; line-height: 1.72; color: #2A1A5A; margin-bottom: 10px; }
+  .dinheiro-body p:last-child { margin-bottom: 0; }
+  .dinheiro-lista { margin: 14px 0; display: flex; flex-direction: column; gap: 7px; }
+  .dinheiro-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; color: #2A1A5A; }
+  .dinheiro-item-arrow { color: #7B5CE6; font-size: 12px; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .dinheiro-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: #7B5CE6; margin-top: 14px; display: block; }
+  .amanha-items { display: flex; flex-direction: column; gap: 10px; }
+  .amanha-item { display: flex; gap: 14px; align-items: flex-start; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; padding: 16px 18px; border-left: 3px solid var(--azul-claro); }
+  .amanha-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--azul-claro); opacity: 0.28; flex-shrink: 0; line-height: 1; margin-top: -1px; }
+  .amanha-titulo { font-size: 13px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 4px; line-height: 1.4; }
+  .amanha-texto { font-size: 12.5px; line-height: 1.65; color: var(--cinza-sub); }
+  .mapear-box { background: var(--azul-escuro); border-radius: 5px; padding: 26px 30px; }
+  .mapear-intro { font-size: 13px; color: rgba(250,250,248,0.55); margin-bottom: 18px; line-height: 1.6; }
+  .mapear-lista { display: flex; flex-direction: column; gap: 9px; }
+  .mapear-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; background: rgba(255,255,255,0.042); border-radius: 3px; border-left: 2px solid var(--dourado); }
+  .mapear-check { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 2px; }
+  .mapear-texto { font-size: 12.5px; color: rgba(250,250,248,0.82); line-height: 1.6; }
+  .mapear-tese { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: rgba(201,168,76,0.65); display: block; margin-top: 4px; }
+  .atencao-items { display: flex; flex-direction: column; gap: 10px; }
+  .atencao-item { background: var(--alerta-claro); border: 1px solid #F5C6C0; border-radius: 4px; padding: 14px 18px; display: flex; gap: 12px; align-items: flex-start; }
+  .atencao-icon { font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+  .atencao-titulo { font-size: 12.5px; font-weight: 600; color: var(--alerta); margin-bottom: 4px; line-height: 1.3; }
+  .atencao-texto { font-size: 12.5px; line-height: 1.65; color: #5A1A10; }
+  .mercado-intro { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; font-style: italic; color: var(--azul-escuro); border-left: 3px solid var(--dourado); padding-left: 16px; margin-bottom: 22px; line-height: 1.45; }
+  .mercado-corpo { font-size: 14px; line-height: 1.82; color: var(--cinza-texto); }
+  .mercado-corpo p { margin-bottom: 14px; }
+  .mercado-corpo p:last-child { margin-bottom: 0; }
+  .mercado-destaque { background: var(--cinza-claro); border-radius: 4px; padding: 18px 22px; margin-top: 20px; font-size: 13.5px; line-height: 1.72; color: var(--azul-escuro); font-weight: 500; border-left: 3px solid var(--azul-claro); }
+  .frase-section { padding: 40px 48px; border-bottom: 1px solid #E8E4DA; text-align: center; scroll-margin-top: 16px; }
+  .frase-ornamento { font-family: 'Playfair Display', serif; font-size: 60px; color: var(--dourado); opacity: 0.22; line-height: 0.8; margin-bottom: 18px; }
+  .frase-texto { font-family: 'Playfair Display', serif; font-size: 17.5px; font-style: italic; font-weight: 700; color: var(--azul-escuro); line-height: 1.55; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .frase-autor { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--cinza-sub); }
+  .fontes-lista { display: flex; flex-direction: column; gap: 10px; }
+  .fonte-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 16px; background: var(--branco); border: 1px solid #E0DCD2; border-radius: 4px; }
+  .fonte-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--dourado); flex-shrink: 0; margin-top: 1px; font-weight: 500; }
+  .fonte-titulo { font-size: 12.5px; font-weight: 600; color: var(--azul-escuro); margin-bottom: 2px; }
+  .fonte-titulo a { color: var(--azul-claro); text-decoration: none; }
+  .fonte-titulo a:hover { text-decoration: underline; }
+  .fonte-desc { font-size: 11.5px; color: var(--cinza-sub); line-height: 1.55; }
+  .footer { background: var(--azul-escuro); padding: 32px 48px; text-align: center; }
+  .footer-back { margin-bottom: 18px; }
+  .footer-back-link { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,204,122,0.55); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .footer-back-link:hover { color: var(--dourado-claro); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--dourado); margin-bottom: 4px; }
+  .footer-sub { font-size: 10.5px; color: rgba(250,250,248,0.3); font-weight: 300; letter-spacing: 0.5px; margin-bottom: 18px; }
+  .footer-divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 16px 0; }
+  .footer-disclaimer { font-size: 10px; color: rgba(250,250,248,0.24); line-height: 1.7; font-style: italic; }
+  .assunto-momento { background: var(--azul-escuro); padding: 34px 48px; border-bottom: 1px solid #E0D9C6; scroll-margin-top: 16px; position: relative; overflow: hidden; }
+  .assunto-momento::before { content: ''; position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.16); }
+  .assunto-eyebrow { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--dourado-claro); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .assunto-titulo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--branco); margin-bottom: 22px; line-height: 1.32; max-width: 560px; }
+  .assunto-bloco { margin-bottom: 18px; }
+  .assunto-bloco:last-child { margin-bottom: 0; }
+  .assunto-bloco-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dourado-claro); display: block; margin-bottom: 6px; }
+  .assunto-bloco-texto { font-size: 13.5px; line-height: 1.75; color: rgba(250,250,248,0.85); }
+  .assunto-comentar { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 16px 20px; border-left: 2px solid var(--dourado-claro); font-style: italic; color: rgba(250,250,248,0.92); font-size: 13.5px; line-height: 1.7; }
+  .assunto-meta { margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .assunto-fonte { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); }
+  .assunto-fonte a { color: var(--dourado-claro); text-decoration: none; }
+  .assunto-fonte a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    .back-bar { padding: 10px 24px; }
+    .header { padding: 30px 24px 26px; }
+    .header-title { font-size: 30px; }
+    .section { padding: 28px 24px; }
+    .abertura { padding: 24px; }
+    .indice { padding: 14px 24px; }
+    .banner-especial { padding: 10px 24px; }
+    .section-divider { margin: 0 24px; }
+    .footer { padding: 26px 24px; }
+    .frase-section { padding: 30px 24px; }
+    .decisao-card { padding: 22px 22px; }
+    .mapear-box { padding: 20px 22px; }
+    .header-meta { gap: 20px; }
+    .top-card-inner { padding: 20px; }
+    .panorama-item { flex-direction: column; gap: 6px; }
+    .assunto-momento { padding: 26px 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="back-bar">
+    <a href="index.html" class="back-link">← Voltar para o arquivo de edições</a>
+  </div>
+
+  <div class="header">
+    <div class="header-eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+    <div class="header-title">Brevis <span>Previde&shy;nciário</span></div>
+    <div class="header-sub">Radar estratégico — <a href="#sec-assunto-momento">a EC 140/2026 e a aposentadoria dos agentes de saúde</a>, <a href="#sec-02">salário-maternidade automático após 30 dias</a> e <a href="#sec-03">o acórdão da ADI 6.309 sobre idade mínima na aposentadoria especial</a></div>
+    <div class="header-meta">
+      <div class="header-meta-item">
+        <span class="header-meta-label">Data</span>
+        <span class="header-meta-value">20 de outubro de 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Edição</span>
+        <span class="header-meta-value">015</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Período</span>
+        <span class="header-meta-value">29 de setembro a 20 de outubro · 2026</span>
+      </div>
+      <div class="header-meta-item">
+        <span class="header-meta-label">Leitura</span>
+        <span class="header-meta-value">9–11 minutos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-especial">
+    <span class="banner-text">Brevis Previdenciário</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">Destaque: EC 140/2026 cria aposentadoria diferenciada para agentes de saúde</span>
+    <div class="banner-dot"></div>
+    <span class="banner-text">4 movimentos verificados + assunto do momento</span>
+  </div>
+
+  <div class="indice">
+    <a href="#sec-01" class="indice-item"><strong>01</strong> Abertura</a>
+    <a href="#sec-assunto-momento" class="indice-item"><strong>🔥</strong> Assunto do Momento</a>
+    <a href="#sec-02" class="indice-item"><strong>02</strong> Movimentos do Período</a>
+    <a href="#sec-03" class="indice-item"><strong>03</strong> Decisão do Dia</a>
+    <a href="#sec-04" class="indice-item"><strong>04</strong> Tese Relevante</a>
+    <a href="#sec-05" class="indice-item"><strong>05</strong> TNU e TRF6 em Destaque</a>
+    <a href="#sec-06" class="indice-item"><strong>06</strong> Radar de Tribunais</a>
+    <a href="#sec-07" class="indice-item"><strong>07</strong> Dinheiro na Mesa</a>
+    <a href="#sec-08" class="indice-item"><strong>08</strong> Como Usar</a>
+    <a href="#sec-09" class="indice-item"><strong>09</strong> Oportunidades / Clientes para mapear</a>
+    <a href="#sec-10" class="indice-item"><strong>10</strong> Atenção Operacional</a>
+    <a href="#sec-11" class="indice-item"><strong>11</strong> Curiosidade Previdenciária</a>
+    <a href="#sec-12" class="indice-item"><strong>12</strong> Frase do Dia</a>
+    <a href="#sec-13" class="indice-item"><strong>13</strong> Fontes</a>
+  </div>
+
+  <!-- 01 ABERTURA -->
+  <div class="abertura" id="sec-01">
+    <div class="abertura-bom-dia">Bom dia.</div>
+    <div class="abertura-texto">
+      <p>Este é o Brevis Previdenciário nº 015, período de 29 de setembro a 20 de outubro — três semanas desde a última edição. O Congresso promulgou, em 16/10/2026, a Emenda Constitucional nº 140, que cria aposentadoria diferenciada para agentes comunitários de saúde e de combate às endemias (e estende as regras aos agentes indígenas de saúde e de saneamento); o INSS e o Ministério da Previdência editaram a Portaria Conjunta nº 49, de 8/10/2026, publicada no DOU de 13/10, que manda conceder o salário-maternidade de forma automática e provisória quando a análise passa de 30 dias; o STF teve o acórdão da ADI 6.309 divulgado em 1/10 e publicado no DJe em 2/10, fixando por escrito a decisão de 3/6/2026 que derrubou a idade mínima da aposentadoria especial; o CJF editou a Resolução nº 995, de 6/10/2026, que exige crédito definitivo para expedir RPV e precatório; e a TNU afetou, em 30/9/2026, o Tema 399, sobre poeira de madeira como agente nocivo.</p>
+      <p>Como nas edições anteriores, a apuração também separou o que é fato novo do que é ruído. Não encontramos, nesta janela, retomada do Tema 389 da TNU nem do Tema 1.370 do STJ, e itens como o Funrural no STF e o PLP 42/2023 aparecem no Radar com o que foi e o que não foi possível confirmar em fonte oficial. Quando o fato não pôde ser conferido na origem, dizemos isso no próprio texto.</p>
+    </div>
+  </div>
+
+  <!-- ASSUNTO DO MOMENTO -->
+  <div class="assunto-momento" id="sec-assunto-momento">
+    <div class="assunto-eyebrow">🔥 Assunto do momento</div>
+    <div class="assunto-titulo">Emenda Constitucional 140/2026: agentes comunitários de saúde e de combate às endemias ganham aposentadoria diferenciada</div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O que está bombando</span>
+      <div class="assunto-bloco-texto">Em sessão solene do Congresso Nacional na sexta-feira, 16/10/2026, foi promulgada a Emenda Constitucional nº 140, que altera os arts. 40, 198 e 201 da Constituição para criar aposentadoria com requisitos diferenciados para os agentes comunitários de saúde (ACS) e agentes de combate às endemias (ACE), além de determinar a regularização do vínculo funcional da categoria. O art. 13 estende as mesmas regras constitucionais aos agentes indígenas de saúde e aos agentes indígenas de saneamento. É uma categoria numerosa, presente em praticamente todos os municípios, e a promulgação foi noticiada de forma ampla.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">O gancho jurídico</span>
+      <div class="assunto-bloco-texto">Segundo o texto da emenda, a regra permanente exige 57 anos de idade para mulheres e 60 para homens, com 25 anos de contribuição e de efetivo exercício na atividade. Há regra de transição com idade mínima escalonada, também com 25 anos de contribuição e de exercício: 50 anos (mulher) e 52 (homem) até 31/12/2030; 52 e 54 até 31/12/2035; 54 e 56 até 31/12/2040; e 57 e 60 a partir de 1/1/2041, com redução de um ano na idade para cada ano de contribuição além de 25, limitada a cinco anos. Uma segunda via de transição combina 60 anos (mulher) e 63 (homem), 15 anos de contribuição, 10 anos de exercício e soma de 83 pontos (mulher) ou 86 (homem). Os arts. 6º e 7º aplicam as mesmas faixas ao Regime Geral. O texto prevê integralidade e paridade, benefício extraordinário pago pela União aos agentes aposentados pelo RGPS, revisão dos proventos de quem já se aposentou até a promulgação (sem pagamentos retroativos) e a admissão em cargo efetivo, até 31/12/2028, dos agentes com vínculo temporário, indireto ou precário que tenham participado de seleção pública nos termos previstos.</div>
+    </div>
+
+    <div class="assunto-bloco">
+      <span class="assunto-bloco-label">Curiosidade</span>
+      <div class="assunto-bloco-texto">A emenda também veda a contratação temporária ou terceirizada desses agentes, salvo em emergência em saúde pública, e define a atividade como exclusiva de Estado. Computa ainda, para fins previdenciários, o período de afastamento por mandato classista e o tempo em readaptação por acidente de trabalho ou doença profissional — detalhes que costumam decidir casos concretos.</div>
+    </div>
+
+    <div class="assunto-comentar">
+      "Pra comentar": uma emenda constitucional não costuma nascer de uma decisão judicial, mas de uma categoria organizada que tramitou desde 2021 — a PEC 14/2021 — e que agora passa a ter regra própria de aposentadoria escrita na Constituição.
+    </div>
+
+    <div class="assunto-meta">
+      <span class="status-pill status-consolidada">✔ Emenda promulgada — EC 140/2026, 16/10/2026</span>
+      <div class="assunto-fonte" style="margin-left:auto">Fonte: Planalto (texto da EC 140) · Senado Federal, 19/10/2026</div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 MOVIMENTOS DO PERÍODO -->
+  <div class="section" id="sec-02">
+    <div class="section-tag">
+      <span class="section-num">02</span>
+      <span class="section-label">Movimentos verificados do período</span>
+    </div>
+    <div class="section-intro">Quatro movimentos passaram pela verificação desta edição: um ato conjunto do Ministério da Previdência e do INSS sobre salário-maternidade, o acórdão da ADI 6.309 no STF, uma resolução do CJF sobre expedição de RPV e precatório, e a afetação do Tema 399 pela TNU. A EC 140/2026 aparece no Assunto do Momento. Os pontos que não puderam ser confirmados em fonte oficial estão sinalizados em cada card e no Radar de Tribunais.</div>
+
+    <div class="top-grid">
+
+      <!-- CARD 1 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-inss"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 01 · SALÁRIO-MATERNIDADE · ATO NORMATIVO</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-inss">MPS / INSS</span>
+            <span class="badge badge-tema">Portaria Conjunta 49/2026</span>
+          </div>
+          <div class="top-card-titulo">Salário-maternidade passa a ser concedido automaticamente, de forma provisória, quando o INSS não decide em 30 dias</div>
+          <div class="top-card-corpo">
+            <p>A Portaria Conjunta MPS/INSS nº 49, de 8/10/2026, publicada no DOU de 13/10/2026 (edição extra), regulamenta a concessão automática e provisória do salário-maternidade quando a análise administrativa não termina no prazo do art. 73-A da Lei 8.213/91. O INSS deve concluir a análise do salário-maternidade pago diretamente em até 30 dias, contados do requerimento; para os pedidos pendentes quando a Lei 15.415/2026 foi publicada, a contagem começa em 26/5/2026. O tempo em que o processo fica suspenso por exigência a cumprir pelo requerente não conta. Vencido o prazo, o benefício é concedido automaticamente e em caráter provisório, com efeitos apenas financeiros até a conclusão da análise, e com revisão obrigatória dos requisitos legais.</p>
+            <p>Se faltarem dados de qualidade de segurada ou de salários de contribuição no CNIS, a concessão provisória é feita como segurada facultativa, com base no salário de contribuição mínimo. Confirmados os requisitos, a concessão se torna definitiva; não confirmados, é anulada desde o início e não produz efeitos previdenciários. Os valores recebidos não são devolvidos, salvo comprovada má-fé. A concessão automática não ocorre enquanto estiver sendo pago auxílio por incapacidade temporária, nem quando o pedido se basear no mesmo fato gerador de requerimento já decidido no mérito; se o prazo vencer durante o auxílio, o salário-maternidade automático é concedido pelo tempo restante após a cessação do auxílio.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Levante as clientes com requerimento de salário-maternidade pendente há mais de 30 dias (descontadas as suspensões por exigência) e verifique se a concessão provisória já foi implantada; se não foi, vale o requerimento administrativo citando a Portaria 49/2026 e o art. 73-A da Lei 8.213/91.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-consolidada">✔ Em vigor desde a publicação — DOU 13/10/2026</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.lex.com.br/portaria-conjunta-mps-e-inss-no-49-de-8-de-outubro-de-2026/" target="_blank">Lex · Portaria Conjunta MPS/INSS nº 49/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-stf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 02 · APOSENTADORIA ESPECIAL · ACÓRDÃO</div>
+            </div>
+            <span class="impacto-badge">🟢 Impacto Alto</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-stf">STF</span>
+            <span class="badge badge-tema">ADI 6.309</span>
+          </div>
+          <div class="top-card-titulo">STF publica o acórdão da ADI 6.309: exigência de idade mínima na aposentadoria especial é inconstitucional, por 6 a 5</div>
+          <div class="top-card-corpo">
+            <p>O STF divulgou em 1/10/2026 e publicou no DJe em 2/10/2026 o acórdão da ADI 6.309, cujo julgamento ocorreu em 3/6/2026. Por maioria — 6 votos a 5, segundo o IBDP —, o Tribunal declarou inconstitucional a exigência de idade mínima para a aposentadoria especial de trabalhadores expostos a agentes nocivos, introduzida pela EC 103/2019 (as idades de 55, 58 e 60 anos). Continuam valendo os 15, 20 ou 25 anos de exposição, conforme a atividade. Segundo o IBDP, foram mantidas a vedação à conversão de tempo especial em comum para períodos posteriores à EC 103 e a nova forma de cálculo da renda. O relator original, Min. Luís Roberto Barroso, votou pela constitucionalidade, e o voto prevalecente foi o do Min. André Mendonça, conforme a notícia do STF do dia do julgamento. Segundo o Previdenciarista, a decisão trata da regra permanente do Regime Geral; segurados de regimes próprios devem verificar o próprio caso.</p>
+            <p>O que é novo na janela desta edição é o acórdão: o mérito da decisão já era conhecido desde junho, mas somente com a publicação do acórdão ficam definidos o texto final, o prazo para embargos de declaração e a segurança para citar a decisão em petições. Segundo o IBDP, a decisão ainda pode ser objeto de embargos de declaração; não localizamos informação sobre modulação de efeitos nem sobre embargos já opostos.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Reveja os pedidos de aposentadoria especial indeferidos ou aguardando, em que o único óbice era a idade mínima da regra permanente da EC 103/2019, e cite o acórdão com data do julgamento (3/6/2026) e do DJe (2/10/2026). Confira, antes de protocolar, se o INSS já publicou orientação administrativa sobre o cumprimento da decisão — não localizamos uma até o fechamento desta edição.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Acórdão publicado — embargos de declaração ainda possíveis</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://www.ibdp.org.br/?p=20801" target="_blank">IBDP · STF publica acórdão da ADI 6.309</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-cjf"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 03 · EXECUÇÃO CONTRA O INSS · RPV E PRECATÓRIO</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-cjf">CJF</span>
+            <span class="badge badge-tema">Resolução CJF 995/2026</span>
+          </div>
+          <div class="top-card-titulo">CJF exige crédito definitivo para expedir RPV e precatório: impugnação ou embargos do INSS obrigam a aguardar o trânsito em julgado</div>
+          <div class="top-card-corpo">
+            <p>A Resolução CJF nº 995, de 6/10/2026, que alterou a Resolução CJF nº 983, de 18/3/2026, estabelece que a RPV ou o precatório só podem ser expedidos quando o crédito for líquido, certo e exigível em caráter definitivo. Segundo o IEPREV, havendo impugnação ou embargos do INSS, é preciso aguardar o trânsito em julgado definitivo da decisão que resolve a controvérsia; a norma veda a expedição em cumprimento provisório de sentença, mas permite requisitar a parcela incontroversa, e requisições irregulares podem ser canceladas, com restituição dos valores depositados. A resolução já está em vigor; o prazo de seis meses serve para adequação dos sistemas do CJF e dos TRFs.</p>
+            <p>A resolução estava na pauta da sessão do colegiado do CJF de 19/10/2026 (10h, presencial), para referendo (Procedimento Normativo 0003463-90.2026.4.90.8000). Não localizamos o resultado dessa sessão até o fechamento desta edição.</p>
+          </div>
+          <div class="top-card-impacto">
+            <span class="top-card-impacto-label">↗ Ação imediata na carteira</span>
+            Nos cumprimentos de sentença previdenciários em que o INSS impugnou o cálculo ou opôs embargos, separe a parcela incontroversa e avalie requisitá-la desde já; para o restante, ajuste a previsão de recebimento do cliente ao novo critério de trânsito em julgado.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Em vigor — referendo do colegiado pautado para 19/10, resultado não confirmado</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://ieprev.com.br/noticias/cjf-exige-transito-em-julgado-definitivo-para-expedicao-de-rpvs-e-precatorios-entenda-a-resolucao-no-9952026" target="_blank">IEPREV · Resolução CJF 995/2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="top-card">
+        <div class="top-card-bar bar-tnu"></div>
+        <div class="top-card-inner">
+          <div class="top-card-head">
+            <div>
+              <div class="top-card-numero">MOVIMENTO 04 · APOSENTADORIA ESPECIAL · AFETAÇÃO NA TNU</div>
+            </div>
+            <span class="impacto-badge">🟡 Impacto Médio</span>
+          </div>
+          <div class="top-card-badges" style="margin-bottom:10px;">
+            <span class="badge badge-tnu">TNU</span>
+            <span class="badge badge-tema">Tema 399</span>
+          </div>
+          <div class="top-card-titulo">TNU afeta o Tema 399 para decidir se a poeira de madeira é agente nocivo que dá direito à aposentadoria especial — ainda sem tese</div>
+          <div class="top-card-corpo">
+            <p>Em 30/9/2026, a Turma Nacional de Uniformização afetou o Tema 399, sob relatoria do Juiz Federal Rodrigo Rigamonte Fonseca, tendo como representativo o PEDILEF 5031713-65.2024.4.04.7000. A questão submetida é se a poeira de madeira é agente nocivo à saúde que justifique o reconhecimento de atividade especial e quais requisitos ou condições devem ser considerados para avaliar essa exposição. Não houve julgamento de mérito: o tema consta como afetado, sem tese firmada. A notícia é de 13/10/2026 e vem de fonte secundária (Previdenciarista); não conseguimos abrir a página oficial do tema para conferir, e não encontramos informação sobre suspensão nacional de processos.</p>
+          </div>
+          <div class="top-card-impacto-alerta">
+            <span class="top-card-impacto-alerta-label">⚠ Afetado não é decidido</span>
+            Não oriente clientes como se a poeira de madeira já tivesse sido reconhecida ou afastada como agente nocivo pela TNU. Trate o tema como pendente e acompanhe a pauta; confira no sistema da TNU se os processos individuais foram sobrestados.
+          </div>
+          <div class="top-card-footer">
+            <div class="top-card-status">
+              <span class="status-pill status-construcao">⚠ Tema afetado — sem tese firmada</span>
+            </div>
+            <div class="top-card-fonte"><a href="https://previdenciarista.com/blog/tnu-analisa-se-poeira-de-madeira-e-agente-nocivo-para-aposentadoria-especial/" target="_blank">Previdenciarista · TNU Tema 399</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 DECISÃO DO DIA -->
+  <div class="section" id="sec-03">
+    <div class="section-tag">
+      <span class="section-num">03</span>
+      <span class="section-label">Decisão do dia</span>
+    </div>
+
+    <div class="decisao-card">
+      <div class="decisao-eyebrow">
+        STF · ADI 6.309 · Acórdão publicado no DJe de 2/10/2026
+        <div class="decisao-eyebrow-line"></div>
+      </div>
+      <div class="decisao-titulo">Idade mínima na aposentadoria especial: o STF colocou no papel o que decidiu em 3 de junho</div>
+      <div class="decisao-body">
+        <p>A ADI 6.309 questiona regras da EC 103/2019 para a aposentadoria especial. O julgamento foi concluído em 3/6/2026 por 6 votos a 5, segundo o IBDP, e o acórdão foi divulgado em 1/10 e publicado no DJe em 2/10/2026. A maioria declarou inconstitucional a exigência de idade mínima — as idades de 55, 58 e 60 anos combinadas com o tempo de exposição de 15, 20 ou 25 anos. O fundamento que prevaleceu, na notícia do STF, é o de que exigir idade mínima de quem trabalha exposto a agentes nocivos transforma um benefício destinado a afastar o trabalhador do ambiente insalubre em um mecanismo que prolonga a exposição.</p>
+        <p>Segundo o IBDP, foram mantidas a vedação à conversão de tempo especial em tempo comum para períodos posteriores à EC 103/2019 e a nova forma de cálculo da renda da aposentadoria especial. O alcance descrito pelo Previdenciarista é o da regra permanente do RGPS; servidores de regimes próprios devem conferir o seu caso. A regra de pontos da transição não foi declarada inconstitucional, porque o STF não se manifestou expressamente sobre ela, segundo o Previdenciarista. O relator original, Min. Luís Roberto Barroso, votou pela constitucionalidade; o acórdão pode ainda ser alvo de embargos de declaração.</p>
+      </div>
+      <hr class="decisao-divider">
+      <div class="decisao-tese">
+        STF, ADI 6.309, julgada em 3/6/2026 (6 x 5), acórdão no DJe de 2/10/2026: exigência de idade mínima na aposentadoria especial da EC 103/2019 declarada inconstitucional; mantidas a vedação de conversão pós-reforma e a nova forma de cálculo.
+      </div>
+      <div class="decisao-acao">
+        <span class="decisao-acao-label">→ Ação imediata na carteira</span>
+        Separe os clientes com tempo especial suficiente (15, 20 ou 25 anos conforme a atividade) que foram barrados somente pela idade mínima, e prepare o requerimento ou a revisão citando o acórdão. Antes de ajuizar, verifique se o INSS orientou o cumprimento da decisão e se houve embargos.
+      </div>
+      <div class="decisao-meta">
+        <span class="status-pill status-construcao">⚠ Acórdão publicado — embargos ainda possíveis</span>
+        <div class="decisao-fonte" style="margin-left:auto">Fonte: <a href="https://www.ibdp.org.br/?p=20801" target="_blank">IBDP</a> · <a href="https://noticias.stf.jus.br/postsnoticias/stf-invalida-idade-minima-para-aposentadoria-especial-em-atividades-insalubres/" target="_blank">Notícias STF</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 TESE RELEVANTE -->
+  <div class="section" id="sec-04">
+    <div class="section-tag">
+      <span class="section-num">04</span>
+      <span class="section-label">Tese relevante do período</span>
+    </div>
+
+    <div class="section-title">Tema 399 da TNU: por que a afetação de um tema ainda não permite dizer que a poeira de madeira é, ou não é, agente nocivo</div>
+
+    <div class="tese-card">
+      <div class="tese-nome">A TNU afetou o tema e vai uniformizar o entendimento sobre a poeira de madeira na aposentadoria especial — mas ainda não decidiu</div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Qual é a tese em discussão</span>
+        <div class="tese-bloco-texto">A pergunta submetida é se a poeira de madeira é agente nocivo à saúde que justifique o reconhecimento de atividade especial e quais requisitos ou condições devem ser considerados para avaliar essa exposição. É o tipo de questão que atinge marceneiros, trabalhadores de serrarias e da indústria moveleira, em que a prova costuma depender de laudo técnico (PPP e LTCAT) e do enquadramento do agente.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que aconteceu nesta janela</span>
+        <div class="tese-bloco-texto">A afetação foi registrada em 30/9/2026, sob relatoria do Juiz Federal Rodrigo Rigamonte Fonseca, com o PEDILEF 5031713-65.2024.4.04.7000 como representativo. Não há julgamento de mérito, voto ou placar. A informação vem do Previdenciarista, com data de 13/10/2026; a página oficial do tema não pôde ser aberta na apuração.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Impacto prático no escritório</span>
+        <div class="tese-bloco-texto">Processos com a mesma controvérsia tendem a ser sobrestados na origem enquanto o tema não for julgado, mas isso depende de decisão de cada relator ou de determinação expressa da TNU, que não confirmamos. Não prometa ao cliente o reconhecimento da especialidade apenas pela afetação, e organize a prova técnica (PPP, LTCAT, laudos) desde já.</div>
+      </div>
+
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que esperar</span>
+        <div class="tese-bloco-texto">Acompanhe a pauta de sessões da TNU e a página do Tema 399 no sítio do CJF. Só a tese fixada, com acórdão publicado, deve ser citada como uniformização.</div>
+      </div>
+
+      <div class="tese-footer">
+        <span class="status-pill status-construcao">⚠ Em construção — tema afetado, sem julgamento</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 TNU E TRF6 EM DESTAQUE -->
+  <div class="section" id="sec-05">
+    <div class="section-tag">
+      <span class="section-num">05</span>
+      <span class="section-label">TNU e TRF6 em destaque · e um ponto de conhecimento</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 22px;">
+      <p>O Tema 389 da TNU (cálculo da aposentadoria por incapacidade da pessoa com deficiência, placar parcial de 4 a 1 em 24/9/2026, vista da Juíza Federal Monique Marchioli Leite) segue sem retomada noticiada: não localizamos, até 20/10/2026, registro de devolução da vista, de novo placar ou de tese. O destaque de jurisprudência regional desta edição é uma decisão da 2ª Turma do TRF6 sobre pensão especial para pessoa com hanseníase.</p>
+    </div>
+
+    <div class="tese-card">
+      <div class="tese-nome">TRF6 mantém pensão especial a homem com hanseníase internado em 1987 — caso concreto, não tese</div>
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">O que decidiu</span>
+        <div class="tese-bloco-texto">A 2ª Turma do TRF6, por unanimidade, em 16/9/2026, manteve pensão vitalícia a um homem internado compulsoriamente em 1987, aceitando o registro de tratamento de 1985 como prova de isolamento anterior ao marco legal (Processo 0054463-45.2015.4.01.3800, 4ª Vara Federal Cível de Belo Horizonte). O fundamento é o art. 1º da Lei 11.520/2007, com a redação da Lei 14.736/2023, cujo art. 2º, § 2º admite prova documental, testemunhal e, se necessário, pericial. O relator não foi informado na fonte. A decisão é anterior à janela desta edição; o TRF6 a divulgou em 14/10/2026 e o Previdenciarista em 15/10.</div>
+      </div>
+      <div class="tese-bloco">
+        <span class="tese-bloco-label">Por que importa</span>
+        <div class="tese-bloco-texto">Serve como apoio probatório em pedidos da pensão especial da Lei 11.520/2007: mostra que prontuário médico de tratamento anterior pode demonstrar a internação ou o isolamento. A própria matéria registra que a decisão não cria regra automática para todos os pedidos.</div>
+      </div>
+      <div class="tese-footer">
+        <span class="status-pill status-favoravel">🟢 Favorável ao requerente — caso individual</span>
+        <span class="status-pill status-construcao">⚠ Não é tese — decisão de uma turma em caso concreto</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 RADAR DE TRIBUNAIS -->
+  <div class="section" id="sec-06">
+    <div class="section-tag">
+      <span class="section-num">06</span>
+      <span class="section-label">Radar de tribunais</span>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Tema 1.379: contribuição previdenciária não incide no exercício de stock options, decide a 1ª Seção — assunto de custeio, não de benefício</div>
+        <div class="radar-texto">A 1ª Seção do STJ julgou, em 14/10/2026, o Tema 1.379, sob relatoria do Min. Sérgio Kukina. A tese, na descrição do escritório Mattos Filho, é a de que, no Stock Option Plan do art. 168, § 3º, da Lei 6.404/76, a operação tem natureza mercantil e não incidem contribuições previdenciárias patronais nem as destinadas a terceiros no exercício da opção de compra, porque a operação não remunera o trabalho. Segundo a mesma fonte, a decisão foi unânime e os acórdãos ainda não foram publicados; não encontramos informação sobre modulação. Interessa aos advogados que atuam em custeio empresarial. Não lemos a tese em fonte oficial do STJ; a página de Precedentes Qualificados do tribunal, consultada por um revisor, ainda exibia o tema como afetado. Confira o texto final quando o acórdão sair.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">ADI 4.395 (Funrural): STF conclui o julgamento em 15/10 e declara inconstitucional a cobrança de produtor rural pessoa física antes de 2018 — modulação não analisada</div>
+        <div class="radar-texto">Segundo a notícia oficial do STF de 15/10/2026, o Plenário concluiu o julgamento da ADI 4.395, iniciado em 2020 (relator original: Min. Gilmar Mendes; redator do acórdão: Min. Dias Toffoli, cujo "voto médio" prevaleceu). Foi considerada inconstitucional a contribuição do produtor rural pessoa física ao Funrural cobrada antes de 1º/1/2018, e também a regra da sub-rogação, que obrigava a empresa compradora a recolher a contribuição, nesse período; após a Lei 13.606/2018, a contribuição sobre a receita bruta e a sub-rogação foram consideradas constitucionais. O fundamento apontado é a legalidade tributária, porque a Lei 10.256/2001 não definiu todos os elementos da cobrança. O STF informa que não analisou os limites dos efeitos da decisão (modulação), que poderá ser examinada em embargos de declaração, e que o acórdão ainda será redigido. A notícia não traz o placar numérico; matérias secundárias relatam 6 a 5, o que não pudemos confirmar. É tema de custeio rural: não oriente pedido de restituição antes da publicação do acórdão e de eventual modulação.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stf" style="flex-shrink:0;margin-top:2px;">STF</span>
+      <div>
+        <div class="radar-titulo">O que vem aí: RE 1.384.562 (Tema 1.226) e ADI 6.336 pautados para 28 e 29/10</div>
+        <div class="radar-texto">Segundo a pauta divulgada pelo IBDP em 6/10/2026, o Plenário deve apreciar em 28 e 29/10 o RE 1.384.562 (Tema 1.226), sobre alíquotas progressivas da contribuição previdenciária de servidores públicos federais nos parâmetros da EC 103/2019, e a ADI 6.336, sobre a regra da EC 103/2019 que revogou a isenção parcial da contribuição sobre proventos de aposentados com doenças graves e incapacitantes. Pautas mudam; não há julgamento nem resultado até aqui.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-tnu" style="flex-shrink:0;margin-top:2px;">TNU</span>
+      <div>
+        <div class="radar-titulo">Tema 389 segue sem retomada noticiada desde o pedido de vista de 24/9</div>
+        <div class="radar-texto">Já coberto na edição nº 014 (placar parcial de 4 a 1 e vista da Juíza Federal Monique Marchioli Leite). Não localizamos, até 20/10/2026, notícia de retomada, de novo placar ou de tese fixada. Mantido como acompanhamento, sem novidade.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-stj" style="flex-shrink:0;margin-top:2px;">STJ</span>
+      <div>
+        <div class="radar-titulo">Tema 1.370 (a chamada "tese do 10+10") sem retomada localizada desde a vista regimental de setembro</div>
+        <div class="radar-texto">Já coberto na edição nº 014 (voto do relator, Min. Gurgel de Faria, em 10/9/2026, e pedido de vista regimental da Min. Regina Helena Costa). A matéria mais recente que localizamos, de 22/9/2026, ainda registra o julgamento suspenso, e não encontramos retomada, placar ou tese depois de 28/9. Se a 1ª Seção retomou o julgamento, a notícia não estava indexada; confira o andamento no sítio do STJ antes de orientar clientes.</div>
+      </div>
+    </div>
+
+    <div class="radar-item">
+      <span class="badge badge-cn" style="flex-shrink:0;margin-top:2px;">Câmara dos Deputados</span>
+      <div>
+        <div class="radar-titulo">PLP 42/2023 (aposentadoria especial): matéria de 29/9 fala em acelerar a votação, mas não localizamos fato novo em fonte oficial</div>
+        <div class="radar-texto">A urgência do PLP 42/2023 foi aprovada em 12/8/2026, conforme já registrado nesta newsletter. Uma matéria de 29/9/2026 sugere que a Câmara quer acelerar a votação até outubro, mas é fonte única e não oficial, e não localizamos votação de mérito. O texto em discussão prevê idades mínimas de 40, 45 ou 48 anos e renda de 100% do salário de benefício, segundo o Previdenciarista — é projeto, não lei. Na edição nº 014 afirmamos que o projeto aguardava relator na CCJC; não conseguimos reconfirmar essa informação em fonte oficial nesta edição, e ela não deve ser tratada como certa.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DINHEIRO NA MESA -->
+  <div class="section" id="sec-07">
+    <div class="section-tag">
+      <span class="section-num">07</span>
+      <span class="section-label">Dinheiro na mesa</span>
+    </div>
+
+    <div class="section-title">Salário-maternidade pendente há mais de 30 dias: a Portaria 49/2026 criou um gatilho de concessão automática</div>
+
+    <div class="dinheiro-card">
+      <div class="dinheiro-header">
+        <span class="dinheiro-header-label">🟣 Sinal de Negócio ·</span>
+        <span class="dinheiro-header-title">Varredura de requerimentos de salário-maternidade sem decisão do INSS</span>
+      </div>
+      <div class="dinheiro-body">
+        <p>Público-alvo: escritórios com clientes seguradas que protocolaram salário-maternidade pago diretamente pelo INSS e aguardam análise além do prazo legal.</p>
+        <div class="dinheiro-lista">
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Liste os requerimentos com mais de 30 dias de espera, descontados os períodos em que o processo ficou suspenso por exigência a cumprir; para pedidos já pendentes em 26/5/2026, a contagem começa nessa data</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Verifique no Meu INSS se a concessão provisória foi implantada; se não foi, formalize o pedido de cumprimento citando a Portaria Conjunta MPS/INSS nº 49/2026 e o art. 73-A da Lei 8.213/91</span>
+          </div>
+          <div class="dinheiro-item">
+            <span class="dinheiro-item-arrow">→</span>
+            <span>Avise a cliente de que a concessão é provisória e sujeita a revisão: se os requisitos não forem confirmados, o benefício é anulado desde o início, embora os valores só sejam devolvidos em caso de má-fé comprovada</span>
+          </div>
+        </div>
+        <span class="dinheiro-fonte">Fonte: Portaria Conjunta MPS/INSS nº 49/2026, DOU de 13/10/2026 (texto conferido via Lex)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 COMO USAR -->
+  <div class="section" id="sec-08">
+    <div class="section-tag">
+      <span class="section-num">08</span>
+      <span class="section-label">Como usar — passo a passo</span>
+    </div>
+    <div class="section-body" style="margin-bottom: 18px;"><p>Como orientar a carteira sobre a EC 140/2026, o salário-maternidade automático, o acórdão da ADI 6.309 e as novas regras de expedição de RPV nesta janela:</p></div>
+    <div class="amanha-items">
+
+      <div class="amanha-item">
+        <div class="amanha-num">1</div>
+        <div>
+          <div class="amanha-titulo">Levante os clientes agentes comunitários de saúde e de combate às endemias, em qualquer regime</div>
+          <div class="amanha-texto">Separe por regime (RGPS ou RPPS), idade, tempo de contribuição e de efetivo exercício, e compare com a regra permanente (57/60 anos, 25 de contribuição e de exercício) e com as transições escalonadas do texto promulgado.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">2</div>
+        <div>
+          <div class="amanha-titulo">Para quem já está aposentado, anote a revisão prevista no art. 9º, sem retroativos</div>
+          <div class="amanha-texto">O texto garante a revisão dos proventos dos aposentados até a promulgação, sem pagamentos retroativos; aguarde a forma de implantação antes de prometer valores ao cliente.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">3</div>
+        <div>
+          <div class="amanha-titulo">Cobre a concessão automática do salário-maternidade vencidos os 30 dias</div>
+          <div class="amanha-texto">Com base na Portaria 49/2026, verifique pedidos parados, desconte as suspensões por exigência e formalize o pedido de cumprimento quando a concessão provisória não tiver sido implantada.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">4</div>
+        <div>
+          <div class="amanha-titulo">Cite a ADI 6.309 com data do julgamento e do DJe, e avise que cabem embargos</div>
+          <div class="amanha-texto">O julgamento foi em 3/6/2026 e o acórdão saiu no DJe de 2/10/2026. Em petições, mencione as duas datas; ao cliente, explique que a decisão ainda pode ser objeto de embargos de declaração e que o INSS deve orientar seu cumprimento.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">5</div>
+        <div>
+          <div class="amanha-titulo">Nas execuções contra o INSS, separe a parcela incontroversa</div>
+          <div class="amanha-texto">Com a Resolução CJF 995/2026, havendo impugnação ou embargos do INSS a expedição do crédito controvertido aguarda o trânsito em julgado; a parcela incontroversa pode ser requisitada.</div>
+        </div>
+      </div>
+
+      <div class="amanha-item">
+        <div class="amanha-num">6</div>
+        <div>
+          <div class="amanha-titulo">Em casos de poeira de madeira, organize a prova técnica e não prometa o direito</div>
+          <div class="amanha-texto">O Tema 399 da TNU está afetado, sem tese. Reúna PPP, LTCAT e laudos, e trate o resultado como incerto até a uniformização.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 OPORTUNIDADES / CLIENTES PARA MAPEAR -->
+  <div class="section" id="sec-09">
+    <div class="section-tag">
+      <span class="section-num">09</span>
+      <span class="section-label">Oportunidades e clientes para mapear</span>
+    </div>
+
+    <div class="mapear-box">
+      <div class="mapear-intro">Cinco perfis prioritários deste período.</div>
+      <div class="mapear-lista">
+
+        <div class="mapear-item">
+          <div class="mapear-check">01</div>
+          <div class="mapear-texto">
+            <strong>Agentes comunitários de saúde, agentes de combate às endemias e agentes indígenas de saúde e de saneamento, no RGPS ou no RPPS</strong> — mapear idade, tempo de contribuição e de exercício e vínculo, para enquadrar na regra permanente ou nas transições da EC 140/2026.
+            <span class="mapear-tese">→ Emenda promulgada · EC 140/2026, 16/10/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">02</div>
+          <div class="mapear-texto">
+            <strong>Seguradas com salário-maternidade requerido há mais de 30 dias e sem decisão do INSS</strong> — conferir se a concessão provisória foi implantada e, se não, pedir o cumprimento da Portaria 49/2026.
+            <span class="mapear-tese">→ Em vigor · Portaria Conjunta MPS/INSS 49/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">03</div>
+          <div class="mapear-texto">
+            <strong>Segurados com 15, 20 ou 25 anos de tempo especial que foram barrados somente pela idade mínima da EC 103/2019</strong> — avaliar requerimento ou revisão com base no acórdão da ADI 6.309, conferindo antes embargos e orientação do INSS.
+            <span class="mapear-tese">→ Acórdão publicado · STF, ADI 6.309, DJe 2/10/2026</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">04</div>
+          <div class="mapear-texto">
+            <strong>Clientes com cumprimento de sentença em que o INSS impugnou o cálculo ou opôs embargos</strong> — separar a parcela incontroversa e ajustar a expectativa de recebimento do restante ao critério da Resolução CJF 995/2026.
+            <span class="mapear-tese">→ Em vigor · Resolução CJF 995/2026, referendo pautado em 19/10</span>
+          </div>
+        </div>
+
+        <div class="mapear-item">
+          <div class="mapear-check">05</div>
+          <div class="mapear-texto">
+            <strong>Marceneiros, trabalhadores de serrarias e da indústria moveleira com pedido de aposentadoria especial</strong> — reunir PPP, LTCAT e laudos e acompanhar a uniformização do Tema 399 antes de ajuizar.
+            <span class="mapear-tese">→ Em construção · TNU Tema 399, afetado em 30/9/2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 ATENÇÃO OPERACIONAL -->
+  <div class="section" id="sec-10">
+    <div class="section-tag">
+      <span class="section-num">10</span>
+      <span class="section-label">Atenção operacional</span>
+    </div>
+    <div class="atencao-items">
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">A concessão automática do salário-maternidade é provisória e tem exceções</div>
+          <div class="atencao-texto">Pelo texto da Portaria 49/2026, o benefício produz apenas efeitos financeiros até a análise, pode ser anulado desde o início se os requisitos não forem confirmados, não é concedido enquanto houver auxílio por incapacidade temporária em pagamento (se o prazo vencer nesse período, vale pelo tempo restante após a cessação do auxílio) nem quando o pedido repetir fato gerador já decidido no mérito, e a contagem dos 30 dias não corre durante exigência a cumprir. Os valores só são devolvidos em caso de má-fé comprovada.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">ADI 6.309: acórdão publicado não significa que o INSS já aplica a decisão</div>
+          <div class="atencao-texto">Não localizamos, até o fechamento desta edição, orientação administrativa do INSS para cumprimento do acórdão. A decisão pode ser alvo de embargos de declaração, e a vedação à conversão de tempo especial em comum pós-EC 103 e a nova forma de cálculo, segundo o IBDP, foram mantidas. Confira a situação antes de protocolar e antes de prometer prazo ao cliente. Não confunda a decisão com o PLP 42/2023, que é projeto de lei e não está em vigor.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">EC 140/2026: não misture regra permanente, transições e benefício extraordinário</div>
+          <div class="atencao-texto">O texto tem regra permanente (57/60 anos), duas vias de transição por idade escalonada ou por pontos e idade, e um benefício extraordinário pago pela União aos agentes aposentados pelo RGPS. A revisão de quem já se aposentou não gera pagamentos retroativos. A forma de implantação pelo INSS e pelos regimes próprios ainda deve ser acompanhada; as matérias que consultamos não tratam de regulamentação.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Resolução CJF 995/2026 está em vigor, mas o referendo do colegiado não teve resultado confirmado</div>
+          <div class="atencao-texto">A resolução foi pautada para referendo na sessão de 19/10/2026 do CJF, e não localizamos o desfecho. Até que haja notícia em contrário, trate-a como norma vigente, com seis meses para adequação dos sistemas, e confira a posição do TRF onde tramita cada execução.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Tema 399 da TNU está afetado, não julgado</div>
+          <div class="atencao-texto">Não existe tese firmada sobre a poeira de madeira. A fonte da afetação é secundária e não conseguimos confirmar suspensão nacional de processos. Evite petições e orientações que tratem o tema como decidido.</div>
+        </div>
+      </div>
+
+      <div class="atencao-item">
+        <div class="atencao-icon">⚠</div>
+        <div>
+          <div class="atencao-titulo">Decisão do TRF6 sobre hanseníase é de caso concreto — não cite como tese do Tribunal</div>
+          <div class="atencao-texto">A 2ª Turma decidiu um caso individual, e a própria matéria registra que a decisão não cria regra automática. Sirva-se dela como apoio probatório, indicando o número do processo.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 CURIOSIDADE PREVIDENCIÁRIA -->
+  <div class="section" id="sec-11">
+    <div class="section-tag">
+      <span class="section-num">11</span>
+      <span class="section-label">Curiosidade previdenciária</span>
+    </div>
+    <div class="section-body">
+      <p>Entre as regras da EC 140/2026, uma chama atenção pelo desenho: para os agentes aposentados pelo Regime Geral, o texto prevê um benefício extraordinário pago pela própria União, destinado a assegurar integralidade e paridade — ou seja, a igualdade do provento com a remuneração da ativa e com os mesmos reajustes. É uma engenharia incomum no RGPS, cujo benefício é, em regra, limitado ao teto do regime, e que ajuda a explicar por que a emenda também prevê repasses da União ao Fundo do Regime Geral e apoio financeiro a estados, ao Distrito Federal e aos municípios. É um ponto do texto promulgado; a forma como será operacionalizado ainda precisa ser acompanhada.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 12 FRASE DO DIA -->
+  <div class="frase-section" id="sec-12">
+    <div class="frase-ornamento">"</div>
+    <div class="frase-texto">Uma decisão só vira rotina quando o acórdão é publicado, os embargos passam e a administração cumpre. Entre uma coisa e outra, quem orienta o cliente precisa saber em que estágio está.</div>
+    <div class="frase-autor">— Curadoria Brevis Previdenciário · Edição 015</div>
+  </div>
+
+  <!-- 13 FONTES -->
+  <div class="section" id="sec-13">
+    <div class="section-tag">
+      <span class="section-num">13</span>
+      <span class="section-label">Fontes e leitura complementar</span>
+    </div>
+    <div class="fontes-lista">
+
+      <div class="fonte-item">
+        <div class="fonte-num">01</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc140.htm" target="_blank">Planalto · Emenda Constitucional nº 140, de 16/10/2026</a></div>
+          <div class="fonte-desc">Texto da emenda — base do Assunto do Momento, da Curiosidade e dos itens sobre agentes de saúde. Fonte primária; o próprio sítio informa que o texto não substitui a versão do DOU.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">02</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www12.senado.leg.br/tv/programas/noticias-1/2026/10/congresso-promulga-aposentadoria-especial-de-agentes-comunitarios-de-saude-e-combate-a-endemias" target="_blank">Senado Federal · Congresso promulga aposentadoria especial de agentes comunitários de saúde e de combate a endemias</a></div>
+          <div class="fonte-desc">Confirma o número da emenda (140/2026), a promulgação em sessão solene de 16/10/2026 e a extensão aos agentes indígenas. Notícia de 19/10/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">03</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://ieprev.com.br/noticias/congresso-promulga-aposentadoria-especial-para-agentes-comunitarios-de-saude-e-endemias" target="_blank">IEPREV · Congresso promulga aposentadoria especial para agentes comunitários de saúde e endemias</a></div>
+          <div class="fonte-desc">Leitura complementar sobre benefício extraordinário, integralidade e paridade.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">04</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.lex.com.br/portaria-conjunta-mps-e-inss-no-49-de-8-de-outubro-de-2026/" target="_blank">Lex · Portaria Conjunta MPS/INSS nº 49, de 8/10/2026</a></div>
+          <div class="fonte-desc">Cópia do texto da portaria, com publicação no DOU de 13/10/2026 (edição extra). Base do Movimento 01 e do Dinheiro na Mesa. A página do DOU não pôde ser aberta diretamente na apuração; o texto foi conferido na cópia da Lex.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">05</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ibdp.org.br/?p=20801" target="_blank">IBDP · STF publica acórdão que derruba idade mínima para aposentadoria especial</a></div>
+          <div class="fonte-desc">Base do Movimento 02 e da Decisão do Dia: placar de 6 a 5, acórdão divulgado em 1/10 e publicado no DJe em 2/10/2026, pontos mantidos e possibilidade de embargos.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">06</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/postsnoticias/stf-invalida-idade-minima-para-aposentadoria-especial-em-atividades-insalubres/" target="_blank">Notícias STF · STF invalida idade mínima para aposentadoria especial em atividades insalubres</a></div>
+          <div class="fonte-desc">Notícia oficial do julgamento de 3/6/2026: relator original (Min. Barroso), fundamento do voto de Mendonça e divergências. A notícia não informa o placar oficial; o placar de 6 a 5 vem do IBDP.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">07</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://ieprev.com.br/noticias/cjf-exige-transito-em-julgado-definitivo-para-expedicao-de-rpvs-e-precatorios-entenda-a-resolucao-no-9952026" target="_blank">IEPREV · CJF exige trânsito em julgado definitivo para expedição de RPVs e precatórios</a></div>
+          <div class="fonte-desc">Base do Movimento 03: conteúdo da Resolução CJF 995/2026 (6/10/2026) e sua vigência. Notícia de 7/10/2026.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">08</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.trf2.jus.br/jf2/noticia-jf2/2026/cjf-realizara-sessao-ordinaria-de-julgamento-em-19-de-outubro" target="_blank">JF2/TRF2 · CJF realizará sessão ordinária de julgamento em 19 de outubro</a></div>
+          <div class="fonte-desc">Confirma a pauta do colegiado do CJF de 19/10/2026 (10h), com referendo da Resolução 995/2026. Notícia de 18/10/2026; o resultado da sessão não foi localizado.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">09</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://previdenciarista.com/blog/tnu-analisa-se-poeira-de-madeira-e-agente-nocivo-para-aposentadoria-especial/" target="_blank">Previdenciarista · TNU analisa se poeira de madeira é agente nocivo para aposentadoria especial</a></div>
+          <div class="fonte-desc">Base do Movimento 04 e da Tese Relevante (Tema 399): afetação em 30/9/2026, relator e PEDILEF representativo. Fonte secundária; a página oficial do tema não foi aberta.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">10</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://previdenciarista.com/blog/justica-garante-pensao-vitalicia-a-homem-com-hanseniase-internado/" target="_blank">Previdenciarista · Justiça garante pensão vitalícia a homem com hanseníase internado</a></div>
+          <div class="fonte-desc">Base da nota sobre a decisão da 2ª Turma do TRF6 (16/9/2026), divulgada pelo TRF6 em 14/10/2026. Fonte secundária; relator não informado.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">11</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.mattosfilho.com.br/?p=123250" target="_blank">Mattos Filho · STJ afasta contribuição previdenciária sobre exercício de stock options</a></div>
+          <div class="fonte-desc">Base do item do Radar sobre o Tema 1.379 (julgado em 14/10/2026, relator Min. Sérgio Kukina). Fonte privada especializada; acórdão ainda não publicado.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">12</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://www.ibdp.org.br/2026/10/06/confira-destaques-da-pauta-do-plenario-para-outubro/" target="_blank">IBDP · Confira destaques da pauta do Plenário do STF para outubro</a></div>
+          <div class="fonte-desc">Base dos itens do Radar sobre a pauta de RE 1.384.562 (Tema 1.226) e ADI 6.336 (28 e 29/10) e da inclusão da ADI 4.395 (14 e 15/10). A página não informa os relatores.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">13</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://noticias.stf.jus.br/postsnoticias/stf-considera-inconstitucional-cobranca-do-funrural-a-empresas-que-compram-producao-rural/" target="_blank">Notícias STF · STF considera inconstitucional cobrança do Funrural antes de 2018</a></div>
+          <div class="fonte-desc">Notícia oficial de 15/10/2026 — base do item do Radar sobre a ADI 4.395: conclusão do julgamento, período, sub-rogação, ausência de modulação e acórdão ainda não publicado. Não traz placar numérico.</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">14</div>
+        <div>
+          <div class="fonte-titulo"><a href="https://previdenciarista.com/blog/aposentadoria-especial-camara-aprova-urgencia-para-votar-novas-regras/" target="_blank">Previdenciarista · Aposentadoria especial: Câmara aprova urgência para votar novas regras</a></div>
+          <div class="fonte-desc">Confirma a urgência do PLP 42/2023 em 12/8/2026 e o conteúdo do texto em discussão (idades de 40, 45 ou 48 anos e renda de 100%).</div>
+        </div>
+      </div>
+
+      <div class="fonte-item">
+        <div class="fonte-num">15</div>
+        <div>
+          <div class="fonte-titulo">Verificação cruzada independente</div>
+          <div class="fonte-desc">Esta edição foi apurada por quatro frentes de pesquisa em paralelo (STJ e STF; TNU, TRFs e CJF; INSS, Congresso e normas; portais previdenciaristas) e cada movimento foi reconferido em fonte direta ou quase direta sempre que o sítio oficial permitiu. Itens sem confirmação suficiente ficaram de fora dos movimentos e aparecem no Radar com a ressalva correspondente: a matéria de 29/9 sobre o PLP 42/2023, o referendo da Resolução CJF 995/2026, as retomadas dos Temas 389 (TNU) e 1.370 (STJ) e itens de fonte única como a Instrução Normativa PRES/INSS 212/2026 e decisões isoladas do CRPS, que não foram publicados. Os fatos de cada movimento passaram também por duas revisões independentes — dois revisores com acesso à web, em contexto separado do da redação, e o ChatGPT — e as ressalvas apontadas foram incorporadas ao texto.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-back">
+      <a href="index.html" class="footer-back-link">← Voltar para o arquivo de edições</a>
+    </div>
+    <div class="footer-logo">Brevis Previdenciário</div>
+    <div class="footer-sub">Radar estratégico · Edição nº 015 · 20 de outubro de 2026</div>
+    <hr class="footer-divider">
+    <div class="footer-disclaimer">
+      Curadoria: Jean Barbosa · Brevis Newsletter · brevis-newsletter.github.io/brevis<br>
+      Este boletim é um briefing informativo para fins de atualização jurídica. Não constitui opinião legal, consultoria advocatícia ou orientação processual específica.<br>
+      Verifique as fontes antes de aplicar qualquer tese. Teses em construção exigem acompanhamento da evolução jurisprudencial.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
