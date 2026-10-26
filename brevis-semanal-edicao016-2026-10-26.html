@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Brevis Semanal nº 016 — 26/10/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--azul-escuro:#0f0e0c;--azul-meio:#2E1811;--azul-claro:#1a4c8c;--dourado:#c8371a;--dourado-claro:#E8C6BC;--branco:#f7f4ee;--cinza-claro:#F0E9D8;--texto:#3A3A3A;--sub:#777;--alerta:#A8230E;--alerta-claro:#FDF0EE;--verde:#1A5E3A;--verde-claro:#EAF5EE;--ambar:#B45309;--ambar-claro:#FFF3E0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#2E1811;font-family:'DM Sans',sans-serif;color:var(--texto);-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;background:var(--branco);min-height:100vh;box-shadow:0 0 80px rgba(0,0,0,.5)}
+.mono{font-family:'DM Mono',monospace}
+/* topo compacto */
+.top{background:repeating-linear-gradient(135deg,rgba(247,244,238,.022) 0,rgba(247,244,238,.022) 1px,transparent 1px,transparent 9px),radial-gradient(circle at 85% 0%,#3a2118 0%,transparent 55%),#14100d;padding:26px 32px 22px;color:var(--branco);position:relative;overflow:hidden}
+.top:after{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border:1px solid rgba(200,55,26,.2);border-radius:50%}
+.eyebrow{font:500 9px 'DM Mono',monospace;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);opacity:.85}
+.top h1{font:900 32px 'Playfair Display',serif;letter-spacing:-.6px;margin:8px 0 4px}
+.top h1 span{color:var(--dourado)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(250,250,248,.7);margin-top:10px}
+.meta b{color:var(--dourado-claro);font:500 9px 'DM Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;display:block;opacity:.8}
+/* nav fixa */
+.nav{position:sticky;top:0;z-index:20;background:var(--azul-meio);display:flex;gap:2px;padding:8px 20px;overflow-x:auto;border-bottom:2px solid var(--dourado)}
+.nav a{font:500 10px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:rgba(232,198,188,.75);text-decoration:none;padding:7px 12px;border-radius:4px;white-space:nowrap}
+.nav a:hover,.nav a.on{background:rgba(200,55,26,.18);color:var(--dourado-claro)}
+section{padding:28px 32px;scroll-margin-top:50px}
+h2.sec{font:700 11px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul-claro);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2.sec:after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--dourado),transparent);opacity:.4}
+/* 30 segundos */
+.quick{background:repeating-linear-gradient(135deg,rgba(247,244,238,.022) 0,rgba(247,244,238,.022) 1px,transparent 1px,transparent 9px),radial-gradient(circle at 100% 0%,#3a2118 0%,transparent 60%),#1a1411;color:var(--branco);border-top:3px solid var(--dourado);border-radius:10px;padding:6px 0;margin:22px 32px 0}
+.quick h3{font:500 10px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);padding:14px 20px 8px}
+.q{display:flex;gap:12px;align-items:flex-start;padding:11px 20px;border-top:1px solid rgba(247,244,238,.09);text-decoration:none;color:inherit;cursor:pointer}
+.q:hover{background:rgba(247,244,238,.06)}
+.q .n{font:500 11px 'DM Mono',monospace;color:var(--dourado);width:20px;padding-top:2px}
+.q .t{flex:1;font-size:14px;line-height:1.4}
+.q .t small{display:block;color:rgba(247,244,238,.55);font-size:11.5px;margin-top:2px}
+.tag{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:12px;white-space:nowrap}
+.t-stf{background:#F5E8C0;color:#8B5E00}.t-tst{background:#FBEAE5;color:#a02a12}.t-pgfn{background:#E8F5EE;color:#1a6b42}.t-trib{background:#E8F5EE;color:#1a6b42}.t-inss{background:#FDE0DA;color:#A8230E}.t-tnu{background:#DCE8F7;color:#2B5797}.t-cjf{background:#D9E2F7;color:#1A3A8B}.t-cn{background:#D9E6F3;color:#1A3A6B}.t-stj{background:#E8DBF0;color:#5A2E7A}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.d-alto{background:#1A5E3A}.d-medio{background:#c8a14a}
+/* em alta */
+.hot{margin:18px 32px 0;border:1px solid var(--dourado);border-left:5px solid var(--dourado);background:linear-gradient(135deg,#FBEAE5,#fff);border-radius:8px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hot .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--ambar)}
+.hot h3{font:700 19px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.25;margin:6px 0}
+.hot p{font-size:13px;line-height:1.6}
+.hot .nums{display:flex;flex-direction:column;gap:6px;text-align:center}
+.hot .nums div{background:var(--azul-escuro);color:var(--dourado-claro);border-radius:8px;padding:8px 14px;font:700 20px 'Playfair Display',serif}
+.hot .nums small{display:block;font:400 8.5px 'DM Mono',monospace;letter-spacing:1px;color:rgba(250,250,248,.6);text-transform:uppercase}
+@media(max-width:640px){.hot{grid-template-columns:1fr}.hot .nums{flex-direction:row;justify-content:center}}
+/* filtros */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid #D8D2C2;background:#fff;border-radius:20px;padding:6px 14px;font:500 11px 'DM Sans',sans-serif;cursor:pointer;color:var(--texto)}
+.chip.on{background:var(--azul-meio);color:var(--dourado-claro);border-color:var(--azul-meio)}
+/* cards */
+.card{border:1px solid #DDD5C3;border-radius:12px;margin-bottom:34px;background:#fff;overflow:hidden;border-left:6px solid var(--azul-claro);box-shadow:0 8px 22px rgba(46,24,17,.12)}
+.card.stf{border-left-color:#c8a14a}.card.tst{border-left-color:#c8371a}.card.pgfn{border-left-color:#1a6b42}.card.inss{border-left-color:#D9634A}.card.cjf{border-left-color:#4D6FC9}.card.tnu{border-left-color:#6C97C9}.card.stj{border-left-color:#8B5EA8}.card.cn{border-left-color:#6C97C9}
+.card.hide{display:none}
+.ch{padding:16px 18px 12px;background:#FBF8F1;border-bottom:1px solid #EFE7D6}
+.ch .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;font:500 9px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--sub)}
+.ch h3{font:700 17px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3}
+.fato{padding:14px 18px 4px;font-size:13.5px;line-height:1.6}
+.acao{margin:10px 18px;background:var(--verde-claro);border-left:3px solid var(--verde);border-radius:6px;padding:10px 14px;font-size:13px;line-height:1.55}
+.acao b{display:block;font:500 9px 'DM Mono',monospace;letter-spacing:2px;text-transform:uppercase;color:var(--verde);margin-bottom:3px}
+.acao.warn{background:var(--ambar-claro);border-color:var(--ambar)}.acao.warn b{color:var(--ambar)}
+.more{display:none;padding:2px 18px 14px;font-size:13px;line-height:1.7;color:#4a4a4a}
+.more p{margin-bottom:10px}
+.card.open .more{display:block}
+.cf{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-top:1px solid #EFEBE0;background:#FBFAF6;gap:10px;flex-wrap:wrap}
+.pill{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:12px}
+.p-ok{background:var(--verde-claro);color:var(--verde)}.p-wait{background:var(--ambar-claro);color:var(--ambar)}
+.btn{border:0;background:none;color:var(--azul-claro);font:600 12px 'DM Sans',sans-serif;cursor:pointer;padding:4px 0}
+.btn:hover{color:var(--azul-escuro)}
+.fonte{font-size:11px;color:var(--sub)}
+.fonte a{color:var(--azul-claro)}
+/* radar */
+.radar{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.radar{grid-template-columns:1fr}}
+.rd{border:1px solid #E4DFD2;border-radius:10px;padding:14px 16px;background:#fff;font-size:12.5px;line-height:1.55}
+.rd .tag{margin-bottom:8px;display:inline-block}
+.rd h4{font:700 14px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3;margin-bottom:6px}
+.rd.full{grid-column:1/-1}
+/* painel de acao */
+.tabs{display:flex;gap:4px;border-bottom:2px solid #E4DFD2;margin-bottom:16px;overflow-x:auto}
+.tab{background:none;border:0;padding:11px 16px;font:600 12.5px 'DM Sans',sans-serif;color:var(--sub);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tab.on{color:var(--azul-escuro);border-bottom-color:var(--dourado)}
+.panel{display:none}.panel.on{display:block}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E4DFD2;border-radius:8px;margin-bottom:8px;background:#fff;font-size:13px;line-height:1.55}
+.chk input{margin-top:4px;accent-color:var(--azul-meio);width:16px;height:16px;flex-shrink:0}
+.chk.done{opacity:.5;text-decoration:line-through}
+.chk .ref{font:500 9px 'DM Mono',monospace;color:var(--azul-claro);text-decoration:none;white-space:nowrap;margin-left:auto;padding-left:8px}
+.prog{font:500 11px 'DM Mono',monospace;color:var(--sub);margin-bottom:10px}
+.src{display:flex;gap:10px;font-size:12.5px;line-height:1.5;padding:9px 0;border-bottom:1px solid #EFEBE0}
+.src b{font:500 10px 'DM Mono',monospace;color:var(--dourado);min-width:22px}
+.src a{color:var(--azul-claro);text-decoration:none;font-weight:500}
+.curio{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:20px 22px;font-size:13.5px;line-height:1.7}
+.curio .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px}
+footer{background:var(--azul-escuro);color:rgba(250,250,248,.5);text-align:center;padding:24px;font-size:11px;line-height:1.7}
+footer b{display:block;font:900 18px 'Playfair Display',serif;color:var(--branco);margin-bottom:4px}
+.proto{background:#2E1811;color:#E8C6BC;font:500 10px 'DM Mono',monospace;letter-spacing:1.5px;text-align:left;padding:10px 32px}
+</style></head>
+<body>
+<div class="wrap">
+<div class="proto"><a href="index.html" style="color:inherit;text-decoration:none">← VOLTAR PARA O ARQUIVO DE EDIÇÕES</a></div>
+<div class="top">
+  <div class="eyebrow">Brevis · Vertical Jurídica Geral · Curadoria Jean Barbosa</div>
+  <h1>Brevis <span>Semanal</span></h1>
+  <div class="meta"><div><b>Data</b>26 de outubro de 2026</div><div><b>Edição</b>016</div><div><b>Período</b>21/10 a 26/10</div><div><b>Leitura</b>2 min (resumo) · 8 min (completa)</div></div>
+</div>
+<nav class="nav" id="nav">
+  <a href="#resumo" class="on">Resumo</a><a href="#movs">Movimentos</a><a href="#radar">Radar</a><a href="#acao">Painel de ação</a><a href="#curio">Curiosidade</a>
+</nav>
+
+<div class="quick" id="resumo">
+  <h3>Em 30 segundos — toque para ir ao detalhe</h3>
+  <a class="q" href="#m1"><span class="n">01</span><span class="t"><span class="dot d-alto"></span>STF exclui o ISS da base do PIS/Cofins, por 6 a 5; modulação ficou para os embargos<small>Tema 118 · RE 592.616 · 21/10 · desempate de Fux · acórdão ainda não localizado</small></span><span class="tag t-stf">STF</span></a>
+  <a class="q" href="#m2"><span class="n">02</span><span class="t"><span class="dot d-alto"></span>STJ: VGBL em fase de acumulação não entra na partilha dos bens do segurado<small>Corte Especial · REsp 1.676.801 · por maioria · fonte única e acórdão não localizado</small></span><span class="tag t-stj">STJ</span></a>
+  <a class="q" href="#m3"><span class="n">03</span><span class="t"><span class="dot d-medio"></span>TST: empresa não pode custear o advogado do empregado em acordos de rescisão, em caso do MPT<small>7ª Turma · RR-266-88.2021.5.09.0126 · caso concreto · noticiado em 22/10</small></span><span class="tag t-tst">TST</span></a>
+  <a class="q" href="#m4"><span class="n">04</span><span class="t"><span class="dot d-medio"></span>STF mantém adicional de 2% de ICMS sobre TV por assinatura para fundo de pobreza (2011–2014)<small>ARE 1.493.655 · embargos · unânime · 22/10 · relator Flávio Dino</small></span><span class="tag t-trib">Tributário</span></a>
+  <a class="q" href="#m5"><span class="n">05</span><span class="t"><span class="dot d-medio"></span>STJ condena cinco por venda de decisões na Operação Faroeste, entre eles uma desembargadora<small>Corte Especial · APn 985 · unânime · 21/10 · relator Og Fernandes</small></span><span class="tag t-stj">STJ</span></a>
+  <a class="q" href="#radar"><span class="n">+</span><span class="t">No Radar: LC 238/2026 (MEI), EC 141 com data do DOU confirmada, Reclame Aqui (STJ), Plenário Virtual, Condor<small>Itens de acompanhamento</small></span><span class="tag t-cn">Radar</span></a>
+</div>
+
+<section id="movs">
+  <h2 class="sec">Movimentos verificados</h2>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">Todos</button><button class="chip" data-f="alto">Impacto alto</button><button class="chip" data-f="stf">STF</button><button class="chip" data-f="trib">Tributário</button><button class="chip" data-f="stj">STJ</button><button class="chip" data-f="trab">Trabalhista</button>
+  </div>
+
+  <article class="card stf" id="m1" data-tags="all alto stf trib">
+    <div class="ch"><div class="row"><span class="tag t-stf">STF · Tema 118</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 01</span></div><h3>STF decide, por 6 a 5, que o ISS não integra a base de cálculo do PIS e da Cofins</h3></div>
+    <div class="fato">Plenário, 21/10/2026, RE 592.616 (Viação Alvorada contra decisão do TRF4); relator originário, Min. Celso de Mello, já aposentado. O julgamento estava empatado em 5 a 5 e o Min. Luiz Fux desempatou. A modulação dos efeitos não foi decidida; segundo o Migalhas, a análise ficou para eventuais embargos de declaração.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Levante prestadores de serviço que incluíram o ISS na base do PIS/Cofins e estime o indébito. Avalie, cliente a cliente, se convém ajuizar já: a modulação está em aberto e, na proposta de Fux, apenas as ações e os processos administrativos pendentes na data da ata seriam ressalvados (proposta, não decisão). Não há acórdão para confirmar o alcance.</div>
+    <div class="more"><p>A tese noticiada pelo Migalhas diz que o ISS é "simples ingresso financeiro" que apenas transita pela contabilidade do contribuinte e, por isso, não entra na base (art. 195, I, "b", da Constituição). É a mesma lógica do Tema 69, a "tese do século" do ICMS.</p><p>Placar nominal, segundo o Migalhas: pela exclusão, Celso de Mello, Rosa Weber, Lewandowski, André Mendonça, Cármen Lúcia e Fux; pela inclusão, Toffoli, Gilmar Mendes, Barroso, Alexandre de Moraes e Fachin. A notícia do STF (podcast de 24/10) confirma apenas que a maioria excluiu o ISS; os nomes vêm da fonte secundária. Fux propôs efeitos a partir da ata, ressalvadas as ações e os processos administrativos pendentes; a proposta não foi decidida.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Modulação em aberto — acórdão não localizado</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.migalhas.com.br/quentes/466972/stf-segue-logica-da-tese-do-seculo-e-exclui-iss-do-pis-cofins">Migalhas</a> · <a href="https://noticias.stf.jus.br/postsnoticias/supremo-na-semana-comenta-exclusao-do-iss-da-base-de-calculo-do-pis-e-da-cofins/">Notícias STF</a></span></div>
+  </article>
+
+  <article class="card stj" id="m2" data-tags="all alto stj">
+    <div class="ch"><div class="row"><span class="tag t-stj">STJ · Corte Especial</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 02</span></div><h3>VGBL em fase de acumulação não integra a partilha dos bens do segurado, decide a Corte Especial do STJ</h3></div>
+    <div class="fato">REsp 1.676.801, julgamento virtual da Corte Especial, relator Min. Moura Ribeiro, por maioria. O julgamento foi retomado em 4/02/2026, com voto do relator e pedido de vista da Min. Isabel Gallotti (IBDFAM, 12/02); a data da conclusão não foi informada. A notícia é do Conjur, de 24/10/2026, lida em republicação; não localizamos notícia do STJ nem o acórdão.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>No planejamento sucessório, anote que a Corte Especial tratou o VGBL em acumulação como fora da partilha. Aguarde o acórdão para confirmar o alcance e os limites antes de orientar clientes, inclusive quanto à legítima.</div>
+    <div class="more"><p>Segundo a reportagem, acompanharam o relator os ministros Francisco Falcão, Humberto Martins, Maria Thereza de Assis Moura, Og Fernandes, Luis Felipe Salomão, Ricardo Villas Bôas Cueva e Mauro Campbell. A divergência foi aberta pela ministra Isabel Gallotti, vencida ao lado de João Otávio de Noronha, Benedito Gonçalves, Raul Araújo e Antonio Carlos Ferreira. A reportagem fala só em "maioria"; somando os nomes citados, seriam 8 a 5.</p><p>Em fevereiro, uma advogada do IBDFAM alertou que excluir o VGBL da partilha pode facilitar a elisão da legítima, e que a não incidência de imposto não impede que o bem seja considerado no inventário. A reportagem de outubro não traz tese formal; segundo ela, o caso chegou à Corte Especial afetado pela 3ª Turma.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Fonte única — data da conclusão e acórdão não localizados</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://conjur.com.br/2026-out-24/vgbl-em-acumulacao-nao-integra-partilha-aos-herdeiros-decide-stj/">Conjur</a> · <a href="https://grupoportaldenoticias.com.br/vgbl-em-acumulacao-nao-integra-partilha-dos-bens-do-segurado/">republicação</a> · <a href="https://ibdfam.org.br/noticias/13623/STJ+analisa+se+valores+de+VGBL+em+fase+de+acumula%C3%A7%C3%A3o+integram+a+partilha+de+bens">IBDFAM (fev/2026)</a></span></div>
+  </article>
+
+  <article class="card tst" id="m3" data-tags="all trab">
+    <div class="ch"><div class="row"><span class="tag t-tst">TST · 7ª Turma</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 03</span></div><h3>TST: empresa de transporte não pode custear advogado do empregado em acordos extrajudiciais de rescisão</h3></div>
+    <div class="fato">RR-266-88.2021.5.09.0126, 7ª Turma, relator Min. Cláudio Brandão, unânime; notícia de 22/10/2026, sem data da sessão. Ação civil pública do MPT contra uma empresa de transporte do Paraná; o juízo de Francisco Beltrão e o TRT-9 tinham negado o pedido.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Revise seus modelos de acordo extrajudicial de rescisão: a Turma barrou, naquele caso, advogado pago pela empresa, parcelamento das verbas fora do prazo da CLT e quitação geral do contrato. É caso concreto, sem tese geral; leia o acórdão antes de generalizar.</div>
+    <div class="more"><p>A decisão obriga a empresa a observar os prazos e as condições legais de pagamento, a identificar cada parcela do acordo e a excluir cláusulas de quitação integral. A multa é de R$ 10 mil por acordo em descumprimento, revertida ao Fundo de Defesa de Direitos Difusos.</p><p>Segundo o MPT, os valores acordados eram os já devidos na rescisão e no FGTS, sem concessão adicional. A empresa sustentou que a maioria dos acordos havia sido homologada pela Justiça do Trabalho.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Caso concreto — data do julgamento não informada</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.migalhas.com.br/quentes/467015/tst-empresa-nao-pode-pagar-advogado-do-empregado-em-acordo">Migalhas</a></span></div>
+  </article>
+
+  <article class="card stf" id="m4" data-tags="all stf trib">
+    <div class="ch"><div class="row"><span class="tag t-trib">STF · ICMS</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 04</span></div><h3>STF reafirma que a essencialidade das telecomunicações não retroage e mantém adicional de ICMS para fundo de pobreza</h3></div>
+    <div class="fato">Plenário, 22/10/2026, embargos de declaração no ARE 1.493.655, relator Min. Flávio Dino, por unanimidade. Mantida a cobrança do adicional de 2% de ICMS do Mato Grosso do Sul sobre TV por assinatura (SKY), de 2011 a 2014. A LC 194/2022 não afeta períodos anteriores à sua vigência.</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Em discussões sobre o adicional estadual de ICMS para fundos de combate à pobreza em fatos anteriores à LC 194/2022, o STF reafirmou que a essencialidade das telecomunicações não retroage. Esta decisão não trata de períodos posteriores: não generalize para eles.</div>
+    <div class="more"><p>A SKY alegava que o Tema 745, que reconheceu a essencialidade dos serviços de telecomunicações, impediria o adicional. O relator respondeu que o Tema 1.305 valida os adicionais estaduais para esses fundos e que a essencialidade não afasta a cobrança do período anterior à LC 194/2022. O STF já havia afirmado esse entendimento; não se trata de tese nova.</p><p>Para períodos posteriores, o Rota da Jurisprudência registra que o Plenário, na ADI 7.815 (Mato Grosso, relatora Cármen Lúcia, julgada em 15/09), suspendeu a eficácia do adicional de 2% sobre serviços de telecomunicação a partir da vigência da LC 194/2022. Fonte secundária; confira o acórdão.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Julgado em embargos — unânime</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://noticias.stf.jus.br/postsnoticias/supremo-mantem-cobranca-de-adicional-de-icms-sobre-empresa-de-tv-por-assinatura-para-fundo-de-combate-a-pobreza/">Notícias STF</a> · <a href="https://rotadajurisprudencia.com.br/2026/09/stf-suspende-adicional-de-icms-para-fundo-de-combate-a-pobreza-em-mato-grosso/">Rota da Jurisprudência</a></span></div>
+  </article>
+
+  <article class="card stj" id="m5" data-tags="all stj">
+    <div class="ch"><div class="row"><span class="tag t-stj">STJ · APn 985</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 05</span></div><h3>Operação Faroeste: Corte Especial condena desembargadora, juiz aposentado e três particulares por venda de decisões na Bahia</h3></div>
+    <div class="fato">Corte Especial, 21/10/2026, relator Min. Og Fernandes, por unanimidade: primeiro julgamento de mérito de ação penal da Faroeste. A desembargadora Maria do Socorro Barreto Santiago foi condenada a 14 anos e 11 meses e o juiz aposentado Sérgio Humberto de Quadros Sampaio a 15 anos e 8 meses, por corrupção passiva e lavagem, com perda do cargo; regime inicial fechado.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>O efeito direto na carteira é limitado. Quem tem causas fundiárias no oeste baiano deve acompanhar eventuais desdobramentos sobre decisões ligadas ao esquema: a notícia do STJ não trata desse ponto.</div>
+    <div class="more"><p>Também foram condenados, por corrupção ativa e lavagem, Adailton Maturino dos Santos (21 anos e 7 meses), Geciane Souza Maturino dos Santos (16 anos e 4 meses) e o advogado Ricardo Augusto Três (10 anos e 9 meses), em regime inicial fechado. Três réus foram absolvidos por insuficiência de provas. Para o juiz aposentado, a sanção foi convertida em cassação da aposentadoria compulsória.</p><p>O pedido do MPF de indenização solidária por dano moral coletivo não foi acolhido.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Julgamento concluído — acórdão não localizado</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/21102026-Operacao-Faroeste-Corte-Especial-condena-magistrados-por-venda-de-decisoes-judiciais-na-Bahia.aspx">Notícias STJ</a></span></div>
+  </article>
+</section>
+
+<section id="radar">
+  <h2 class="sec">Radar de tribunais</h2>
+  <div class="radar">
+    <div class="rd full"><span class="tag t-cn">Legislação</span><h4>LC 238/2026: novo teto do MEI e remissão de dívidas com a União</h4>Sancionada em 21/10 (DOU, edição extra). Teto de R$ 110 mil em 2027 e R$ 140 mil a partir de 2028, condicionado à previsão da renúncia nas leis orçamentárias de 2027 a 2029. Remissão de créditos da União de MEI até 13/10/2026, com adimplência por seis meses e desistência das ações. A PGFN ainda regulamentará. Movimento completo no Brevis Previdenciário 016.</div>
+    <div class="rd"><span class="tag t-cn">Planalto</span><h4>EC 141: DOU de 16/10 confirmado</h4>O texto no Planalto indica publicação no DOU de 16/10/2026, edição extra. Isso resolve a ressalva da edição 015: a emenda conta dois meses da publicação para o segundo repouso e as 42h, e um ano depois disso para as 40h. Confira a contagem exata no DOU.</div>
+    <div class="rd"><span class="tag t-stf">STF</span><h4>Plenário Virtual até 3/11</h4>Sessão de 23/10 a 3/11 (prorrogada pelo ponto facultativo de 30/10 e por Finados): ADI 7.222 (piso da enfermagem, mérito), ADI 7.918 (ICMS Verde/AL), ADPF 1.090 (precatórios da Cedae), ADI 7.937 e ADI 7.560.</div>
+    <div class="rd"><span class="tag t-stf">STF</span><h4>ADI 7.324 (embargos): prazo de dez anos nas contas de luz</h4>Julgado em 22/10, segundo o Migalhas: o prazo de dez anos para destinar às tarifas valores recuperados conta da efetiva restituição ou da homologação da compensação (relator Alexandre de Moraes), embargos da Abradee acolhidos em parte por maioria, vencidos Mendonça e Fux. O STF cita o julgamento no podcast de 24/10; texto oficial não localizado.</div>
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Reclame Aqui (REsp 2.225.111)</h4>Julgado pela 3ª Turma em 1/9/2026 (Informativo 902, segundo o Dizer o Direito), relator Villas Bôas Cueva; o STJ divulgou a notícia em 23/10. A plataforma não responde automaticamente por reclamações de consumidores; vale o art. 19 do Marco Civil e o Tema 987 do STF. Caso concreto, fora do período.</div>
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Operação Condor (HDE 8.001)</h4>Corte Especial, sessão virtual encerrada em 21/10 (julgamento iniciado em abril): homologada, por maioria, a sentença italiana contra ex-oficial uruguaio; prisão perpétua convertida em 30 anos, com execução imediata no Brasil. Noticiado pelo STJ em 26/10.</div>
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Tema 1.364: sem crédito de PIS/Cofins sobre o ICMS da aquisição</h4>Julgado em 14/10 pela 1ª Seção, registrado no Informativo 906 (20/10); fica fora do período e entra só como acompanhamento. Acórdão a conferir.</div>
+    <div class="rd"><span class="tag t-stf">STF</span><h4>Pauta de 28 e 29/10</h4>Seguem na pauta o RE 1.384.562 (Tema 1.226) e a ADI 6.336. Pauta sujeita a mudança.</div>
+    <div class="rd full"><span class="tag t-cn">Curadoria</span><h4>O que deixamos de fora</h4>A divulgação de 22 a 25/10 sobre o Tema 1.124 do STJ (INSS e complementação de prova) refere-se a embargos já tratados no Brevis Previdenciário 013; não é fato novo. Também ficaram de fora itens de fonte única e sem data de julgamento (por exemplo, modulação do piso dos professores temporários e decisões de ministros divulgadas sem número de processo conferível).</div>
+  </div>
+</section>
+
+<section id="acao">
+  <h2 class="sec">Painel de ação — tudo que você precisa fazer, por movimento</h2>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-p="p1">✅ Passo a passo</button><button class="tab" data-p="p2">👥 Clientes para mapear</button><button class="tab" data-p="p3">⚠ Cuidados</button><button class="tab" data-p="p4">📚 Fontes</button>
+  </div>
+  <div class="panel on" id="p1">
+    <div class="prog" id="prog">0 de 5 feitos</div>
+    <label class="chk"><input type="checkbox"><span>Levantar prestadores de serviço que incluíram o ISS na base do PIS/Cofins e estimar o indébito; acompanhar acórdão e embargos antes de ajuizar.</span><a class="ref" href="#m1">Mov. 01 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Anotar a decisão sobre VGBL nos casos de planejamento sucessório e aguardar o acórdão.</span><a class="ref" href="#m2">Mov. 02 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Revisar modelos de acordo extrajudicial de rescisão (advogado, prazos e quitação).</span><a class="ref" href="#m3">Mov. 03 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Conferir adicionais estaduais de ICMS em telecom, separando períodos anteriores e posteriores à LC 194/2022.</span><a class="ref" href="#m4">Mov. 04 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Anotar o marco de 13/10/2026 e a regulamentação da PGFN para clientes MEI (LC 238).</span><a class="ref" href="#radar">Radar ↑</a></label>
+  </div>
+  <div class="panel" id="p2">
+    <div class="chk"><span><b>Empresas prestadoras de serviço</b> (regimes cumulativo e não cumulativo) que recolheram PIS/Cofins sobre o ISS.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Famílias e empresários com VGBL</b> no planejamento patrimonial e sucessório.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Empregadores que usam acordos extrajudiciais</b> de rescisão.</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>Operadoras de telecom e contribuintes de adicional estadual de ICMS</b> com discussão sobre fatos antigos.</span><a class="ref" href="#m4">Mov. 04</a></div>
+    <div class="chk"><span><b>MEIs com dívida federal até 13/10/2026.</b></span><a class="ref" href="#radar">Radar</a></div>
+  </div>
+  <div class="panel" id="p3">
+    <div class="chk"><span><b>Tema 118:</b> placar nominal vem de fonte secundária; modulação em aberto; acórdão não localizado.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>VGBL:</b> fonte única (Conjur), sem data de julgamento, sem tese formal e sem acórdão localizado.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>TST:</b> caso concreto de ação civil pública; não é tese geral; data do julgamento não informada.</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>LC 238:</b> a baixa dos créditos depende de requerimento e de desistência das ações; a PGFN ainda vai regulamentar.</span><a class="ref" href="#radar">Radar</a></div>
+  </div>
+  <div class="panel" id="p4">
+    <div class="src"><b>01</b><span><a href="https://www.migalhas.com.br/quentes/466972/stf-segue-logica-da-tese-do-seculo-e-exclui-iss-do-pis-cofins">Migalhas — Tema 118</a> · <a href="https://noticias.stf.jus.br/postsnoticias/supremo-na-semana-comenta-exclusao-do-iss-da-base-de-calculo-do-pis-e-da-cofins/">Notícias STF — Supremo na Semana nº 207</a></span></div>
+    <div class="src"><b>02</b><span><a href="https://conjur.com.br/2026-out-24/vgbl-em-acumulacao-nao-integra-partilha-aos-herdeiros-decide-stj/">Conjur — VGBL</a> · <a href="https://grupoportaldenoticias.com.br/vgbl-em-acumulacao-nao-integra-partilha-dos-bens-do-segurado/">Grupo Portal de Notícias (republicação)</a></span></div>
+    <div class="src"><b>03</b><span><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/23102026-Site-Reclame-Aqui-nao-pode-ser-automaticamente-responsabilizado-por-avaliacoes-negativas-de-consumidores-.aspx">Notícias STJ — Reclame Aqui</a> · fonte oficial</span></div>
+    <div class="src"><b>04</b><span><a href="https://www.migalhas.com.br/quentes/467015/tst-empresa-nao-pode-pagar-advogado-do-empregado-em-acordo">Migalhas — TST, RR-266-88.2021.5.09.0126</a></span></div>
+    <div class="src"><b>05</b><span><a href="https://noticias.stf.jus.br/postsnoticias/supremo-mantem-cobranca-de-adicional-de-icms-sobre-empresa-de-tv-por-assinatura-para-fundo-de-combate-a-pobreza/">Notícias STF — ARE 1.493.655</a> · fonte oficial</span></div>
+    <div class="src"><b>06</b><span><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/21102026-Operacao-Faroeste-Corte-Especial-condena-magistrados-por-venda-de-decisoes-judiciais-na-Bahia.aspx">Notícias STJ — Operação Faroeste</a> · <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/26102026-Condenado-por-crimes-da-Operacao-Condor-cumprira-pena-no-Brasil--prisao-perpetua-e-convertida-em-pena-de-30-anos.aspx">Operação Condor</a></span></div>
+    <div class="src"><b>07</b><span><a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp238.htm">Planalto — LC 238/2026</a> · <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc141.htm">Planalto — EC 141/2026</a></span></div>
+    <div class="src"><b>08</b><span><a href="https://noticias.stf.jus.br/postsnoticias/confira-os-destaques-do-plenario-virtual-desta-semana-5/">Notícias STF — Plenário Virtual de 23/10 a 3/11</a> · <a href="https://www.migalhas.com.br/quentes/467006/stf-esclarece-marco-inicial-para-devolucao-de-tributos-na-conta-de-luz">Migalhas — ADI 7.324</a></span></div>
+    <div class="src"><b>✓</b><span>Verificação: conferência própria nas fontes, agente verificador independente, ChatGPT e Gemini; apontamentos reverificados na fonte. Itens de fonte única ou sem confirmação oficial estão sinalizados nos cartões. Briefing informativo; confira as fontes antes de aplicar.</span></div>
+  </div>
+</section>
+
+<section id="curio">
+  <div class="curio"><div class="k">💡 Curiosidade jurídica</div>Segundo o Migalhas, quatro dos onze votos do Tema 118 vieram de ministros que já deixaram o Supremo: Celso de Mello, Rosa Weber, Ricardo Lewandowski e Luís Roberto Barroso, cujos votos foram contabilizados no placar. Com o empate em 5 a 5, coube ao Min. Luiz Fux desempatar, aplicando ao ISS a lógica que o Tribunal já havia adotado para o ICMS em 2017.</div>
+</section>
+
+<footer><b>Brevis Semanal</b>Edição nº 016 · 26 de outubro de 2026 · Curadoria Jean Barbosa<br>Briefing informativo; não constitui opinião legal. Verifique as fontes antes de aplicar qualquer tese.</footer>
+</div>
+<script>
+document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.card');c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Recolher ▴':'Entenda os detalhes ▾'})});
+document.getElementById('chips').addEventListener('click',function(e){var f=e.target.getAttribute('data-f');if(!f)return;document.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c===e.target)});document.querySelectorAll('.card').forEach(function(c){c.classList.toggle('hide',c.getAttribute('data-tags').split(' ').indexOf(f)<0)})});
+document.getElementById('tabs').addEventListener('click',function(e){var p=e.target.getAttribute('data-p');if(!p)return;document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t===e.target)});document.querySelectorAll('.panel').forEach(function(x){x.classList.toggle('on',x.id===p)})});
+document.querySelectorAll('#p1 input').forEach(function(i){i.addEventListener('change',function(){i.closest('.chk').classList.toggle('done',i.checked);var n=document.querySelectorAll('#p1 input:checked').length;document.getElementById('prog').textContent=n+' de 5 feitos'})});
+</script>
+</body>
+</html>
