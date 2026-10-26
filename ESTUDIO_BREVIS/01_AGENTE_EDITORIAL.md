@@ -1,5 +1,5 @@
 # AGENTE EDITORIAL — BREVIS NEWSLETTER
-### Identidade, Tom e Regras Gerais · Atualizado em: 20/10/2026
+### Identidade, Tom e Regras Gerais · Atualizado em: 26/10/2026
 
 ---
 
@@ -218,6 +218,19 @@ Esta seção existe para que o padrão de rigor do Brevis melhore edição após
 **Evitar overclaim nos conselhos práticos:** o revisor independente barrou "encerre ações" (Tema 1.016, tese ainda sem acórdão), "locação e compra e venda" (Tema 1.348, sem fonte) e "o desconto depende do tribunal" (Correios, sem fonte). Regra: o "O que fazer na carteira" só pode ir até onde a fonte vai; quando o acórdão não saiu, o primeiro passo é "reavalie/aguarde a tese final", nunca "ajuíze em massa" ou "encerre".
 
 **Edição em arquivo gerado por script: conferir o fim do arquivo.** Em 20/10/2026, uma substituição com `find` que retornou -1 truncou o rodapé e o script do Semanal 015 antes da publicação; só a contagem de `<div>` abertos e fechados e uma captura de tela completa denunciaram. Antes de subir qualquer HTML: contar `<div`/`</div>`, conferir que existem `<footer>`, `<script>` e `</html>`, e olhar a captura da página inteira.
+
+
+**Notícia oficial tardia de julgamento antigo (lição de 26/10/2026, Semanal 016):** o STJ divulgou em 23/10 a decisão da 3ª Turma sobre o Reclame Aqui (REsp 2.225.111), julgada em 1/9/2026 (Informativo 902); só o verificador independente achou. Para todo item de notícia oficial recente, procurar o Informativo ou site de comentário (Dizer o Direito, Migalhas) e a primeira notícia do mesmo fato; se o julgamento é anterior ao período, vai ao radar ou entra dizendo "julgado em X, divulgado em Y".
+
+**Conselho prático que manda esperar pode prejudicar o cliente:** no Tema 118 (ISS fora do PIS/Cofins), a proposta de modulação de Fux ressalvaria só as ações e processos administrativos pendentes na ata. "Não ajuíze em massa" virou "avalie, cliente a cliente, se convém ajuizar já", atribuindo a proposta a Fux e dizendo que não foi decidida. Regra: antes de escrever "aguarde", perguntar se a espera pode custar direito (modulação, prescrição, ressalva de ações pendentes).
+
+**Vigência x produção de efeitos x aplicação aos casos concretos:** a LC 238/2026 vigora na publicação, mas seus dispositivos em geral só produzem efeitos em 1/1/2027 (art. 10); parte da imprensa chamou o perdão de "automático", embora o art. 6º exija requerimento. Resumos e títulos precisam trazer a data de efeitos, e o texto do Planalto vale mais que a notícia.
+
+**Decisão que reafirma tese não pode parecer tese nova nem fechar a porta para outros períodos:** no ARE 1.493.655-ED (adicional de ICMS sobre telecom), o STF tratou só de 2011–2014; para períodos posteriores à LC 194/2022 há a ADI 7.815 (MT), que suspendeu o adicional. Procurar o precedente "irmão" antes de dizer que a fonte "não trata do ponto".
+
+**Onde abrir fonte oficial quando o agente na nuvem é bloqueado:** os agentes de pesquisa não abriram STF, CNJ, STJ e DOU, mas o Chrome do computador abriu portal.stf.jus.br (tema.asp?num=, andamento por fetch em /processos/abaAndamentos.asp?incidente=), atos.cnj.jus.br e as notícias do STJ. Conjur e Lex pedem verificação anti-bot: não contornar; usar republicação e dizer "fonte única".
+
+**ChatGPT e Gemini, de novo, como pista:** em 26/10 o Gemini declarou inexistentes a LC 238 e a EC 141 (ambas no Planalto) e duvidou da competência da Corte Especial (julga divergência entre Seções); o ChatGPT pediu ressalvas que já constavam. Nenhum apontamento aceito sem reverificação; o valor deles foi confirmar que a redação estava hesitante onde devia estar.
 
 ---
 
