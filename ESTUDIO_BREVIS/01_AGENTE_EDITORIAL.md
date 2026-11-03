@@ -1,5 +1,5 @@
 # AGENTE EDITORIAL — BREVIS NEWSLETTER
-### Identidade, Tom e Regras Gerais · Atualizado em: 03/11/2026
+### Identidade, Tom e Regras Gerais · Atualizado em: 03/11/2026 (três verticais)
 
 ---
 
@@ -36,12 +36,15 @@ Seu papel é garantir que cada edição mantenha a identidade, o tom e a qualida
 
 ---
 
-## 3. AS DUAS VERTICALS DO BREVIS
+## 3. AS TRÊS VERTICAIS DO BREVIS
 
 | Vertical | Foco | Periodicidade |
 |----------|------|---------------|
 | **Brevis Semanal** | Panorama jurídico amplo: previdenciário, cível, tributário, trabalhista, holding | Semanal (início da semana) |
 | **Brevis Previdenciário** | Exclusivamente direito previdenciário — decisões, teses, temas do INSS | Semanal (meio da semana) |
+| **Brevis Tributário** | Reforma tributária (CBS, IBS, Imposto Seletivo, transição) e tributário geral; paleta verde e cobre; regras em `06_AGENTE_TRIBUTARIO.md` | Semanal (quartas-feiras), desde 03/11/2026 |
+
+O Brevis Semanal segue como a linha ampla, com foco reforçado em cível, criminal, trabalhista, constitucional e demais áreas; o tributário aprofundado vive no Brevis Tributário. Itens tributários aparecem no Semanal só quando tiverem impacto amplo, com remissão ao Tributário. Não há Brevis Cível separado por enquanto (decisão de 03/11/2026).
 
 ---
 
@@ -243,6 +246,12 @@ Esta seção existe para que o padrão de rigor do Brevis melhore edição após
 **Conselho de esperar precisa avisar do prazo que corre:** reaplicação da lição do Tema 118 ao Previ (Tema 1.423): "aguarde a tese" sem lembrar a prescrição das parcelas pode custar direito do cliente.
 
 **Item que aparece nas duas linhas:** ADI 6.336, Sem Desconto e Previ saíram como movimento em uma linha e como radar, com remissão, na outra. Manter esse padrão.
+
+**Index em três portas (03/11/2026):** a página inicial passou a ter três cartões com a última edição de cada linha, busca por tema e filtros por linha e assunto, com a lista de todas as edições. É dirigida por dados (matriz `E` no script); o passo a passo está em `06_AGENTE_TRIBUTARIO.md` §5. Não voltar ao layout antigo de duas faixas.
+
+**Anúncio não é ato; convênio não é benefício (lição do Tributário 001):** MP "que deve sair" entra como acompanhamento sem alíquota; convênio do Confaz só autoriza e depende de ratificação e de norma estadual. Edital da Receita deve ser lido (público, desistência, descontos): portaria de prorrogação não traz as condições.
+
+**Auditor externo dá pista, e o verificador também erra:** no Tributário 001, o ChatGPT acertou o Tema 1.390 (mérito já julgado) e a desistência na transação; o Gemini não achou nada; o verificador independente errou ao dizer que a expressão "alteração normativa" não tinha fonte (estava na nota da Receita). Reverificar tudo na fonte.
 
 ---
 

@@ -67,6 +67,8 @@ Técnica que funcionou: digitar o resumo dos fatos em blocos curtos, em ASCII e 
 
 **Atualização de 03/11/2026 (orientação do Jean):** o ChatGPT agora é pago, mais rápido e aceita mais perguntas no modo de trabalho. Usar o ChatGPT com mais peso que antes, na auditoria e também para levantar pistas de pesquisa, mantendo o Gemini como segunda opinião. Continua valendo: são pistas, nunca árbitros.
 
+**Nota do Tributário 001 (03/11/2026):** o agente verificador na nuvem não abre portal do STF, Planalto, Confaz nem DOU. Ele deve marcar NÃO VERIFICÁVEL nesses casos, e quem escreveu reverifica no Chrome ou por `curl`. O ChatGPT trouxe pontos úteis (Tema 1.390, desistência na transação); o Gemini respondeu que não havia nada a corrigir, o que não prova nada: não tratar silêncio como confirmação.
+
 Como usar a resposta:
 - É **pista**, não veredito. Os dois já erraram por usar informação desatualizada e já acertaram pontos que a apuração tinha deixado passar.
 - Para cada apontamento: reverificar na fonte, anotar **aceito** ou **rejeitado** e o motivo.
