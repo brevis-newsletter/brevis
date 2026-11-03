@@ -1,5 +1,5 @@
 # AGENTE VERIFICADOR — BREVIS NEWSLETTER
-### Roteiro da dupla verificação · Criado em: 20/10/2026
+### Roteiro da dupla verificação · Criado em: 20/10/2026 · Atualizado em: 03/11/2026
 
 > "Essas notícias são sérias, a gente não pode errar. Sempre faça uma dupla verificação." — Jean Barbosa, 20/10/2026
 
@@ -64,6 +64,8 @@ Observação de método: o WebFetch resume a página com um modelo menor e pode 
 ## 4. Auditoria externa (ChatGPT e Gemini)
 
 Técnica que funcionou: digitar o resumo dos fatos em blocos curtos, em ASCII e sem acento, no ChatGPT (`chatgpt.com`) e no Gemini (`gemini.google.com/app`), terminar com "Liste somente o que estiver errado ou duvidoso", enviar e esperar a resposta (o Gemini pode levar mais de um minuto). Ler com a extração de texto da página.
+
+**Atualização de 03/11/2026 (orientação do Jean):** o ChatGPT agora é pago, mais rápido e aceita mais perguntas no modo de trabalho. Usar o ChatGPT com mais peso que antes, na auditoria e também para levantar pistas de pesquisa, mantendo o Gemini como segunda opinião. Continua valendo: são pistas, nunca árbitros.
 
 Como usar a resposta:
 - É **pista**, não veredito. Os dois já erraram por usar informação desatualizada e já acertaram pontos que a apuração tinha deixado passar.

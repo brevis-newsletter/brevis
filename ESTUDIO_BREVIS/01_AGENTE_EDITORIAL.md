@@ -1,5 +1,5 @@
 # AGENTE EDITORIAL — BREVIS NEWSLETTER
-### Identidade, Tom e Regras Gerais · Atualizado em: 26/10/2026
+### Identidade, Tom e Regras Gerais · Atualizado em: 03/11/2026
 
 ---
 
@@ -231,6 +231,18 @@ Esta seção existe para que o padrão de rigor do Brevis melhore edição após
 **Onde abrir fonte oficial quando o agente na nuvem é bloqueado:** os agentes de pesquisa não abriram STF, CNJ, STJ e DOU, mas o Chrome do computador abriu portal.stf.jus.br (tema.asp?num=, andamento por fetch em /processos/abaAndamentos.asp?incidente=), atos.cnj.jus.br e as notícias do STJ. Conjur e Lex pedem verificação anti-bot: não contornar; usar republicação e dizer "fonte única".
 
 **ChatGPT e Gemini, de novo, como pista:** em 26/10 o Gemini declarou inexistentes a LC 238 e a EC 141 (ambas no Planalto) e duvidou da competência da Corte Especial (julga divergência entre Seções); o ChatGPT pediu ressalvas que já constavam. Nenhum apontamento aceito sem reverificação; o valor deles foi confirmar que a redação estava hesitante onde devia estar.
+
+**Orientação do Jean em 03/11/2026: usar mais o ChatGPT, inclusive na pesquisa.** O Jean passou a pagar o ChatGPT, que ficou mais rápido e aceita mais perguntas no modo de trabalho. Antes, a auditoria externa usava mais o Gemini. A partir da edição 018, usar o ChatGPT também para levantar pistas de pesquisa (o que saiu na semana, onde está o texto oficial), além da auditoria, sem abandonar o Gemini. Vale a regra de sempre: resposta de IA é pista, não fonte; cada achado é confirmado em fonte oficial antes de entrar no texto.
+
+**Orçamento de busca na web é compartilhado pelo turno (Semanal 017 e Previdenciário 017):** os agentes de pesquisa e o redator dividem o mesmo limite de buscas, e ele acabou antes da verificação. Não contornar. Priorizar itens com fonte primária cuja URL já se conhece (STF, TST, STJ, Planalto, Receita, gov.br) e abrir essas páginas direto; item sem fonte oficial aberta vai para o radar ou para "O que deixamos de fora". Planalto, STJ e TST abrem no Chrome do computador mesmo quando o WebFetch do agente é bloqueado: ler o texto ali.
+
+**Vigência calculada deve ser dita como calculada:** no Decreto 13.135/2026 (SAC), a vigência de 2/11 vem de contar o prazo do art. 25 a partir do DOU de 13/10. Escrever "entra em vigor em" com a ressalva "contagem nossa", não "vale desde".
+
+**Placar que a nota oficial não traz:** na ADI 6.336, a nota do STF listava os votos nominais, mas não o placar; o 7x3 foi contado voto a voto e o texto diz isso. A mesma nota dizia "quarta (29)" para 29/10, que foi quinta: quando a nota oficial erra o dia da semana, citar a data do calendário e registrar a divergência.
+
+**Conselho de esperar precisa avisar do prazo que corre:** reaplicação da lição do Tema 118 ao Previ (Tema 1.423): "aguarde a tese" sem lembrar a prescrição das parcelas pode custar direito do cliente.
+
+**Item que aparece nas duas linhas:** ADI 6.336, Sem Desconto e Previ saíram como movimento em uma linha e como radar, com remissão, na outra. Manter esse padrão.
 
 ---
 
