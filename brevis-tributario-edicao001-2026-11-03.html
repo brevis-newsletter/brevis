@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Tributário — Edição nº 001 · 3 de novembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--azul-escuro:#0C2A20;--azul-meio:#1C4A39;--azul-claro:#2F7D5F;--dourado:#B8742F;--dourado-claro:#E8B882;--branco:#FAFAF8;--cinza-claro:#F0EDE6;--texto:#3A3A3A;--sub:#777;--alerta:#A8230E;--alerta-claro:#FDF0EE;--verde:#1A5E3A;--verde-claro:#EAF5EE;--ambar:#B45309;--ambar-claro:#FFF3E0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#08170F;font-family:'DM Sans',sans-serif;color:var(--texto);-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;background:var(--branco);min-height:100vh;box-shadow:0 0 80px rgba(0,0,0,.5)}
+.mono{font-family:'DM Mono',monospace}
+/* topo compacto */
+.top{background:var(--azul-escuro);padding:26px 32px 22px;color:var(--branco);position:relative;overflow:hidden}
+.top:after{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border:1px solid rgba(184,116,47,.2);border-radius:50%}
+.eyebrow{font:500 9px 'DM Mono',monospace;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);opacity:.85}
+.top h1{font:900 32px 'Playfair Display',serif;letter-spacing:-.6px;margin:8px 0 4px}
+.top h1 span{color:var(--dourado)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(250,250,248,.7);margin-top:10px}
+.meta b{color:var(--dourado-claro);font:500 9px 'DM Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;display:block;opacity:.8}
+/* nav fixa */
+.nav{position:sticky;top:0;z-index:20;background:var(--azul-meio);display:flex;gap:2px;padding:8px 20px;overflow-x:auto;border-bottom:2px solid var(--dourado)}
+.nav a{font:500 10px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:rgba(232,204,122,.75);text-decoration:none;padding:7px 12px;border-radius:4px;white-space:nowrap}
+.nav a:hover,.nav a.on{background:rgba(184,116,47,.18);color:var(--dourado-claro)}
+section{padding:28px 32px;scroll-margin-top:50px}
+h2.sec{font:700 11px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul-claro);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2.sec:after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--dourado),transparent);opacity:.4}
+/* 30 segundos */
+.quick{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:6px 0;margin:22px 32px 0}
+.quick h3{font:500 10px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);padding:14px 20px 8px}
+.q{display:flex;gap:12px;align-items:flex-start;padding:11px 20px;border-top:1px solid rgba(184,116,47,.13);text-decoration:none;color:inherit;cursor:pointer}
+.q:hover{background:rgba(184,116,47,.08)}
+.q .n{font:500 11px 'DM Mono',monospace;color:var(--dourado);width:20px;padding-top:2px}
+.q .t{flex:1;font-size:14px;line-height:1.4}
+.q .t small{display:block;color:rgba(250,250,248,.5);font-size:11.5px;margin-top:2px}
+.tag{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:12px;white-space:nowrap}
+.t-stf{background:#F5E8C0;color:#8B5E00}.t-inss{background:#FDE0DA;color:#A8230E}.t-tnu{background:#DCE8F7;color:#2F7D5F}.t-cjf{background:#D9E2F7;color:#1A3A8B}.t-cn{background:#D9E6F3;color:#1C4A39}.t-stj{background:#E8DBF0;color:#5A2E7A}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.d-alto{background:#1A5E3A}.d-medio{background:#B8742F}
+/* em alta */
+.hot{margin:18px 32px 0;border:1px solid var(--dourado);border-left:5px solid var(--dourado);background:linear-gradient(135deg,#FFF8EF,#fff);border-radius:8px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hot .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--ambar)}
+.hot h3{font:700 19px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.25;margin:6px 0}
+.hot p{font-size:13px;line-height:1.6}
+.hot .nums{display:flex;flex-direction:column;gap:6px;text-align:center}
+.hot .nums div{background:var(--azul-escuro);color:var(--dourado-claro);border-radius:8px;padding:8px 14px;font:700 20px 'Playfair Display',serif}
+.hot .nums small{display:block;font:400 8.5px 'DM Mono',monospace;letter-spacing:1px;color:rgba(250,250,248,.6);text-transform:uppercase}
+@media(max-width:640px){.hot{grid-template-columns:1fr}.hot .nums{flex-direction:row;justify-content:center}}
+/* filtros */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid #D8D2C2;background:#fff;border-radius:20px;padding:6px 14px;font:500 11px 'DM Sans',sans-serif;cursor:pointer;color:var(--texto)}
+.chip.on{background:var(--azul-meio);color:var(--dourado-claro);border-color:var(--azul-meio)}
+/* cards */
+.card{border:1px solid #DDD7C8;border-radius:12px;margin-bottom:34px;background:#fff;overflow:hidden;border-left:6px solid var(--azul-claro);box-shadow:0 8px 22px rgba(12,42,32,.12)}
+.card.stf{border-left-color:var(--dourado)}.card.inss{border-left-color:#D9634A}.card.cjf{border-left-color:#3E8F73}.card.tnu{border-left-color:#6FAE91}.card.stj{border-left-color:#8B5EA8}.card.cn{border-left-color:#6FAE91}
+.card.hide{display:none}
+.ch{padding:16px 18px 12px;background:#FAF8F2;border-bottom:1px solid #EEE9DC}
+.ch .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;font:500 9px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--sub)}
+.ch h3{font:700 17px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3}
+.fato{padding:14px 18px 4px;font-size:13.5px;line-height:1.6}
+.acao{margin:10px 18px;background:var(--verde-claro);border-left:3px solid var(--verde);border-radius:6px;padding:10px 14px;font-size:13px;line-height:1.55}
+.acao b{display:block;font:500 9px 'DM Mono',monospace;letter-spacing:2px;text-transform:uppercase;color:var(--verde);margin-bottom:3px}
+.acao.warn{background:var(--ambar-claro);border-color:var(--ambar)}.acao.warn b{color:var(--ambar)}
+.more{display:none;padding:2px 18px 14px;font-size:13px;line-height:1.7;color:#4a4a4a}
+.more p{margin-bottom:10px}
+.card.open .more{display:block}
+.cf{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-top:1px solid #EFEBE0;background:#FBFAF6;gap:10px;flex-wrap:wrap}
+.pill{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:12px}
+.p-ok{background:var(--verde-claro);color:var(--verde)}.p-wait{background:var(--ambar-claro);color:var(--ambar)}
+.btn{border:0;background:none;color:var(--azul-claro);font:600 12px 'DM Sans',sans-serif;cursor:pointer;padding:4px 0}
+.btn:hover{color:var(--azul-escuro)}
+.fonte{font-size:11px;color:var(--sub)}
+.fonte a{color:var(--azul-claro)}
+/* radar */
+.radar{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.radar{grid-template-columns:1fr}}
+.rd{border:1px solid #E4DFD2;border-radius:10px;padding:14px 16px;background:#fff;font-size:12.5px;line-height:1.55}
+.rd .tag{margin-bottom:8px;display:inline-block}
+.rd h4{font:700 14px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3;margin-bottom:6px}
+.rd.full{grid-column:1/-1}
+/* painel de acao */
+.tabs{display:flex;gap:4px;border-bottom:2px solid #E4DFD2;margin-bottom:16px;overflow-x:auto}
+.tab{background:none;border:0;padding:11px 16px;font:600 12.5px 'DM Sans',sans-serif;color:var(--sub);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tab.on{color:var(--azul-escuro);border-bottom-color:var(--dourado)}
+.panel{display:none}.panel.on{display:block}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E4DFD2;border-radius:8px;margin-bottom:8px;background:#fff;font-size:13px;line-height:1.55}
+.chk input{margin-top:4px;accent-color:var(--azul-meio);width:16px;height:16px;flex-shrink:0}
+.chk.done{opacity:.5;text-decoration:line-through}
+.chk .ref{font:500 9px 'DM Mono',monospace;color:var(--azul-claro);text-decoration:none;white-space:nowrap;margin-left:auto;padding-left:8px}
+.prog{font:500 11px 'DM Mono',monospace;color:var(--sub);margin-bottom:10px}
+.src{display:flex;gap:10px;font-size:12.5px;line-height:1.5;padding:9px 0;border-bottom:1px solid #EFEBE0}
+.src b{font:500 10px 'DM Mono',monospace;color:var(--dourado);min-width:22px}
+.src a{color:var(--azul-claro);text-decoration:none;font-weight:500}
+.curio{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:20px 22px;font-size:13.5px;line-height:1.7}
+.curio .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px}
+footer{background:var(--azul-escuro);color:rgba(250,250,248,.5);text-align:center;padding:24px;font-size:11px;line-height:1.7}
+footer b{display:block;font:900 18px 'Playfair Display',serif;color:var(--branco);margin-bottom:4px}
+.proto{background:#1C4A39;color:#E8B882;font:500 10px 'DM Mono',monospace;letter-spacing:1.5px;text-align:left;padding:10px 32px}
+.t-trib{background:#E3F1EA;color:#1A5E3A}.t-rfb{background:#F8E9D8;color:#8A4B12}.t-cgibs{background:#E1EEF3;color:#1D5A73}.t-conf{background:#EFE6F5;color:#5A2E7A}.t-gov{background:#FBEAD5;color:#8A4B12}.card.rfb{border-left-color:#B8742F}.card.cgibs{border-left-color:#1D7C9E}.card.conf{border-left-color:#8B5EA8}.card.gov{border-left-color:#D9964A}.card.trib{border-left-color:#3E8F73}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="proto"><a href="index.html" style="color:inherit;text-decoration:none">← VOLTAR PARA O ARQUIVO DE EDIÇÕES</a></div>
+<div class="top">
+  <div class="eyebrow">Brevis · Vertical Tributária · Reforma e tributário geral · Curadoria Jean Barbosa</div>
+  <h1>Brevis <span>Tributário</span></h1>
+  <div class="meta"><div><b>Data</b>3 de novembro de 2026</div><div><b>Edição</b>001</div><div><b>Período</b>20/10 a 03/11</div><div><b>Leitura</b>2 min (resumo) · 9 min (completa)</div></div>
+</div>
+<nav class="nav" id="nav">
+  <a href="#resumo" class="on">Resumo</a><a href="#movs">Movimentos</a><a href="#radar">Radar</a><a href="#acao">Painel de ação</a><a href="#curio">Curiosidade</a>
+</nav>
+
+<div class="quick" id="resumo">
+  <h3>Em 30 segundos — toque para ir ao detalhe</h3>
+  <a class="q" href="#m1"><span class="n">01</span><span class="t"><span class="dot d-alto"></span>STF suspende, com vista de Moraes, o julgamento do prazo para pedir de volta tributo declarado inconstitucional (5 a 2 parcial)<small>ADPF 248 · Plenário Virtual 16 a 23/10 · sem tese</small></span><span class="tag t-stf">STF</span></a>
+  <a class="q" href="#m2"><span class="n">02</span><span class="t"><span class="dot d-alto"></span>Governo anuncia MP com as alíquotas do Imposto Seletivo; texto não localizado até 3/11<small>Reforma · Fazenda · cobrança a partir de 2027, segundo o ministro</small></span><span class="tag t-gov">Reforma</span></a>
+  <a class="q" href="#m3"><span class="n">03</span><span class="t"><span class="dot d-alto"></span>Senado: CAE terá Braga como relator da alíquota da CBS e audiências a partir de 11/11<small>Projeto de resolução · limite de 15/12 segundo a imprensa · sem votação vale o cálculo do TCU</small></span><span class="tag t-trib">Reforma</span></a>
+  <a class="q" href="#m4"><span class="n">04</span><span class="t"><span class="dot d-medio"></span>Receita e Comitê Gestor criam 25 grupos de trabalho para a reforma (Ato Técnico Conjunto nº 9)<small>Ato de 20/10 · DOU · regulamentação e sistemas</small></span><span class="tag t-cgibs">CGIBS</span></a>
+  <a class="q" href="#m5"><span class="n">05</span><span class="t"><span class="dot d-alto"></span>Receita prorroga até 30/12 a adesão à transação no contencioso administrativo (Editais 9 e 10)<small>Portaria RFB 742/2026 · DOU 29/10 · adesão implica desistir dos recursos</small></span><span class="tag t-rfb">Receita</span></a>
+  <a class="q" href="#m6"><span class="n">06</span><span class="t"><span class="dot d-medio"></span>Confaz publica cinco convênios de ICMS; quatro foram ratificados em 28/10 (122, 123, 124 e 126)<small>Convênios 122 a 126/2026 · Ato Declaratório 26 · parcelamento e redução de multas</small></span><span class="tag t-conf">Confaz</span></a>
+</div>
+
+<section id="movs">
+  <h2 class="sec">Movimentos verificados</h2>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">Todos</button><button class="chip" data-f="alto">Impacto alto</button><button class="chip" data-f="reforma">Reforma</button><button class="chip" data-f="stf">STF</button><button class="chip" data-f="fisco">Fisco e ICMS</button>
+  </div>
+
+  <article class="card stf" id="m1" data-tags="all alto stf">
+    <div class="ch"><div class="row"><span class="tag t-stf">STF · ADPF 248</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 01</span></div><h3>STF suspende, com vista de Moraes, o julgamento sobre o prazo para pedir de volta tributo declarado inconstitucional; placar parcial é de 5 a 2</h3></div>
+    <div class="fato">Plenário Virtual, sessão de 16 a 23/10/2026, ADPF 248 (CNC). O relator original, Lewandowski (aposentado), julgava parcialmente procedente o pedido: a mudança de jurisprudência do STJ nos EREsp 435.835/SC, sobre o início do prazo da ação de repetição de indébito de tributo declarado inconstitucional pelo STF, não pode retroagir para alcançar pretensões que não eram tidas por prescritas quando a ação foi ajuizada. Acompanharam o relator Toffoli, Fux, Mendonça e Fachin. Gilmar Mendes, em voto-vista, julgou improcedentes os pedidos, com Flávio Dino. Cármen Lúcia declarou suspeição; Zanin, sucessor do relator, não vota. Moraes pediu vista em 23/10.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Ainda não há tese: o placar é parcial e depende do voto-vista de Moraes. Mapeie clientes com pedidos de restituição de tributo declarado inconstitucional pelo STF e confira, caso a caso, a data do ajuizamento e se o prazo estava correndo. Avalie, caso a caso, se convém ajuizar sem esperar o fim do julgamento: com o prazo correndo, esperar pode custar a pretensão.</div>
+    <div class="more"><p>O andamento do STF registra só o sentido de cada voto, sem os fundamentos do voto-vista de Gilmar Mendes; por isso o texto não detalha a divergência. O placar de 5 a 2 aparece na imprensa jurídica e confere com a decisão registrada no portal (relator mais quatro ministros, contra dois).</p><p>O processo é antigo: foi distribuído em fevereiro de 2012 e teve quatro distribuições de relatoria. Em 2023 foi destacado por Moraes; em maio de 2026, Gilmar pediu vista; agora, nova vista, de Moraes. A ata da sessão foi divulgada em 27/10. Não há modulação nem data de retomada no andamento.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Julgamento suspenso — sem tese; vista de Moraes</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://portal.stf.jus.br/processos/detalhe.asp?incidente=4194597">Portal do STF — ADPF 248</a> · fonte oficial · <a href="https://pradvogados.com.br/2026/10/27/desfechos-e-pautas-dos-principais-julgamentos-tributarios-nos-tribunais-superiores-104/">Pimentel e Rohenkohl (27/10)</a> · fonte secundária</span></div>
+  </article>
+
+  <article class="card gov" id="m2" data-tags="all alto reforma">
+    <div class="ch"><div class="row"><span class="tag t-gov">Reforma · Imposto Seletivo</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 02</span></div><h3>Governo anuncia medida provisória com as alíquotas do Imposto Seletivo; o texto não foi localizado até 3/11</h3></div>
+    <div class="fato">Em 27/10/2026, o ministro da Fazenda, Dario Durigan, disse que o governo deve enviar ao Congresso, "provavelmente esta semana", uma MP com as alíquotas do Imposto Seletivo, cobrado a partir de 2027. A Agência Brasil lista como alvos do imposto cigarros, bebidas alcoólicas, refrigerantes, alguns veículos, extração de bens minerais, loterias, apostas e fantasy sports. O ministro já havia dito que enviaria a proposta após o segundo turno, realizado em 25/10. Na checagem de 3/11, não localizamos a MP publicada.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Não planeje preço, contrato ou pedido de enquadramento com base em alíquota anunciada: ela só existe quando a MP for publicada. Liste clientes dos setores citados e acompanhe o DOU; avalie, depois do texto, enquadramento, cláusulas contratuais de repasse e o calendário de vigência.</div>
+    <div class="more"><p>Reportagens falam em alíquotas específicas, em estimativa de arrecadação, em cobrança só a partir de fevereiro de 2027, por causa da noventena, e em uma PEC para manter o IPI sobre esses produtos até o Imposto Seletivo entrar em vigor. Não confirmamos esses pontos em fonte oficial e eles não entram como fato.</p><p>Uma MP produz efeitos desde a publicação, mas precisa ser convertida em lei pelo Congresso. Esta edição não analisa o texto, que ainda não saiu.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Anúncio do ministro — MP não localizada em 3/11</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/governo-enviara-mp-do-imposto-seletivo-e-renova-subvencao-ao-diesel">Agência Brasil (27/10)</a> · fonte jornalística oficial</span></div>
+  </article>
+
+  <article class="card trib" id="m3" data-tags="all alto reforma">
+    <div class="ch"><div class="row"><span class="tag t-trib">Reforma · CBS no Senado</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 03</span></div><h3>Senado: Braga será relator da alíquota da CBS na CAE, com audiências a partir de 11/11</h3></div>
+    <div class="fato">O presidente da CAE, Renan Calheiros, informou em 31/10 que o senador Eduardo Braga (MDB-AM) será o relator do projeto de resolução que fixará a alíquota de referência da CBS. As audiências públicas começam em 11/11, com convite ao ministro da Fazenda, ao presidente do TCU e a tributaristas. O texto precisa ser aprovado neste ano para valer em 2027; se o Senado não aprovar a tempo, valerá a alíquota calculada pelo TCU, de 11,3468%. Segundo ConJur e Congresso em Foco, o limite seria 15/12, e a União ainda poderia fixar outra alíquota por lei específica.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Quem tem cliente sensível à alíquota (importadores, atacado, serviços, setores com carga elevada) pode preparar subsídios técnicos para as audiências. Não trate 11,3% como alíquota definitiva: o Senado ainda decide. Veja o Brevis Semanal 017 para o cálculo do TCU.</div>
+    <div class="more"><p>O anúncio de Braga vem de notícia da Agência Estado e do post de Calheiros nela citado (também InfoMoney e Congresso em Foco); não abrimos a página oficial da CAE. O número do projeto de resolução não foi informado, e não localizamos o dispositivo legal exato do prazo de 15/12.</p><p>O fallback para o cálculo do TCU consta de ConJur, InfoMoney e Congresso em Foco, não da nota da Agência Brasil sobre o TCU. Ficaram fora os pedidos de entidades empresariais pela rejeição da alíquota.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Em tramitação — fonte jornalística</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://acritica.net/economia/cae-senado-eduardo-braga-relator-cbs-aliquota-11-novembro/">A Crítica / Agência Estado (31/10)</a> · <a href="https://www.infomoney.com.br/politica/eduardo-braga-relator-aliquota-cbs-senado/">InfoMoney</a> · <a href="https://conjur.com.br/2026-out-28/tcu-propoe-aliquota-de-referencia-da-cbs-em-113-para-2027/">ConJur (28/10)</a> · <a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/tcu-aprova-calculo-da-aliquota-de-referencia-da-cbs-em-113">Agência Brasil — TCU</a> · fontes jornalísticas</span></div>
+  </article>
+
+  <article class="card cgibs" id="m4" data-tags="all reforma">
+    <div class="ch"><div class="row"><span class="tag t-cgibs">Reforma · Receita e CGIBS</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 04</span></div><h3>Receita e Comitê Gestor do IBS criam 25 grupos de trabalho para a implementação da reforma</h3></div>
+    <div class="fato">O Ato Técnico Conjunto RFB/CGIBS nº 9, de 20/10/2026, instituiu 25 Grupos de Trabalho Interinstitucionais e duas instâncias de coordenação, uma normativa e outra operacional, para tratar de regulamentação, regimes específicos, administração tributária, sistemas e procedimentos. Cada grupo terá, em regra, oito titulares com voto (quatro da Receita e quatro da Diretoria Executiva do Comitê Gestor), e as decisões exigem dois terços. O ato prevê também o compartilhamento de dados fiscais, cadastrais e tributários. Entra em vigor na publicação no DOU e produz efeitos até 31/03/2027 (art. 17), ou seja, é uma estrutura transitória.</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Não cria obrigação para o contribuinte, mas indica onde sairão os próximos atos conjuntos. Acompanhe os grupos de regimes específicos, ressarcimento e sistemas, se o cliente for desses setores, e não trate nenhum tema como regulamentado só porque há um grupo para ele.</div>
+    <div class="more"><p>O texto do ato foi lido no PDF do CGIBS (oito titulares por instância, quatro de cada lado; deliberação por dois terços; vigência na publicação). A data de publicação no DOU não foi confirmada no próprio DOU: o Portal Reforma Tributária fala em 26/10; a CBIC (30/10) não informa a data. O ato foi assinado em 20/10.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Texto do ato lido (PDF do CGIBS); data do DOU não confirmada</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.cgibs.gov.br/upload/arquivos/202610/26090508-20261019-atc-rfb-cgibs-nba-9-2026-assinado-29-as-261026-090221.pdf">CGIBS — texto do Ato Técnico Conjunto nº 9</a> · fonte oficial · <a href="https://cbic.org.br/receita-federal-e-comite-gestor-do-ibs-criam-25-grupos-de-trabalho-para-coordenar-a-implementacao-da-reforma-tributaria/">CBIC (30/10)</a> · <a href="https://www.reformatributaria.com/comite-gestor-do-ibs-reforma-tributaria/receita-e-comite-gestor-aceleram-reforma-tributaria-com-criacao-de-25-grupos-de-trabalho/">Portal Reforma Tributária (26/10)</a> · secundárias</span></div>
+  </article>
+
+  <article class="card rfb" id="m5" data-tags="all alto fisco">
+    <div class="ch"><div class="row"><span class="tag t-rfb">Receita · Transação</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 05</span></div><h3>Receita prorroga até 30/12 a adesão à transação em contencioso administrativo fiscal</h3></div>
+    <div class="fato">A Portaria RFB nº 742, de 27/10/2026, publicada no DOU de 29/10 (Seção 1, página 30), prorroga para 30/12/2026 o prazo de adesão aos Editais de Transação RFB nº 9 e nº 10, de 13/07/2026: até 23h59 para o Edital 9 e até 20h59 para o Edital 10, horário de Brasília. O prazo anterior terminava em 30/10, segundo o Felsberg. Pelo Cescon Barrieu, o Edital 9 trata de contenciosos de até R$ 50 milhões e o Edital 10, de créditos de pequeno valor, limitados a 60 salários mínimos por processo administrativo; segundo o Felsberg, o Edital 10 se destina a pessoas físicas, MEI, empresários individuais, microempresas e empresas de pequeno porte. Pelo texto do Edital 9 (item 3.1), a adesão implica desistência das impugnações e recursos, administrativos e judiciais, relativos aos débitos incluídos na transação e renúncia às alegações de direito em que se fundam.</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Faça a lista de clientes com autos no CARF e nas delegacias de julgamento e confira em qual edital cada um se enquadra (o Edital 10 tem público restrito). Compare desconto, entrada e prazo com o custo e o risco de continuar discutindo. Lembre que a adesão implica desistir das impugnações e recursos sobre os débitos incluídos e renunciar às alegações de direito (Edital 9, item 3.1); leia as condições e vedações antes de orientar.</div>
+    <div class="more"><p>O texto da portaria foi lido em transcrição do DOU (Legismap). O Edital 9 foi lido na versão da Receita (item 6): para créditos irrecuperáveis ou de difícil recuperação, a redução pode chegar a 100% de juros, multas e encargos, limitada a 65% do total de cada crédito (70% para pessoas naturais, microempresas, empresas de pequeno porte, cooperativas e outros), com entrada de 5% ou 10% e até 115 prestações (135 no caso dos beneficiados pelo limite de 70%), com uso de prejuízo fiscal e base negativa em até 30% do saldo na opção 2. O Edital 10 não foi lido; o Felsberg o resume.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Portaria e Edital 9 lidos; Edital 10 não lido</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://legismap.com.br/leis-e-normas/portaria-rfb-n-742-de-27-10-2026">Legismap — Portaria RFB 742/2026 (DOU 29/10)</a> · <a href="https://rotadajurisprudencia.com.br/wp-content/uploads/2026/10/ET-RFB-no-9-2026.pdf">Edital de Transação RFB 9/2026 (cópia da versão da Receita)</a> · <a href="https://cesconbarrieu.com.br/minuto-tributario-semana-26-a-30-de-outubro-de-2026/">Cescon Barrieu</a> · <a href="https://www.felsberg.com.br/editais-rfb-9-10-2026-transacao-tributaria/">Felsberg</a> · fonte oficial transcrita e fontes secundárias</span></div>
+  </article>
+
+  <article class="card conf" id="m6" data-tags="all fisco">
+    <div class="ch"><div class="row"><span class="tag t-conf">Confaz · ICMS</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 06</span></div><h3>Confaz publica cinco convênios de ICMS sobre parcelamento e redução de multas; quatro foram ratificados em 28/10</h3></div>
+    <div class="fato">O Despacho Confaz nº 49, de 23/10/2026, publicado no DOU de 26/10, trouxe os Convênios ICMS 122 a 126/2026, aprovados na 435ª reunião extraordinária. O 122 altera o Convênio 139/2018, que autorizou Acre e Rondônia; o 123 inclui o Paraná no Convênio 119/2026, que autoriza remissão e anistia de débitos não inscritos em dívida ativa; o 124 autoriza Minas Gerais a instituir plano de regularização; o 125 altera o Convênio 79/2020 (segundo o Portal Reforma Tributária, com cláusulas que tratam do Mato Grosso do Sul); o 126 autoriza o Pará a instituir parcelamento com redução de juros e multas. O Ato Declaratório Confaz nº 26, de 28/10 (DOU de 29/10), ratificou os Convênios 122, 123, 124 e 126, com efeitos a partir de 29/10.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Convênio só autoriza; o benefício depende da lei ou do decreto do Estado. Para clientes com ICMS em MG, PA, PR ou SP (e nos Estados do Convênio 139/2018), confira se o Estado já regulamentou, qual o prazo de adesão, se o débito entra (inscrito, ajuizado) e se há exigência de desistência. Fonte secundária cita prazos em dezembro (MG até 23/12; PA, primeira parcela até 15/12): confira na lei estadual. Não prometa desconto antes de ler a norma.</div>
+    <div class="more"><p>O Convênio 125 não aparece entre os ratificados pelo Ato Declaratório 26; não localizamos ratificação posterior. O texto do 123 cita a Lei Complementar 236/2026 como motivo das alterações. O Ato Declaratório 26 foi lido em transcrição do DOU.</p><p>Prazos, percentuais e condições de cada Estado não constam dos resumos dos convênios e não foram verificados; os números citados em fonte secundária (reduções de multa, prazos de dezembro) devem ser conferidos na lei estadual.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Convênios ratificados — falta a norma de cada Estado</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://substituicaotributaria.com/SST/substituicao-tributaria/noticia/26/10/2026/confaz-publica-convenios-icms">ST — Despacho 49 (DOU 26/10)</a> · <a href="https://substituicaotributaria.com/SST/substituicao-tributaria/noticia/29/10/2026/ratificados-convenios-icms-">ST — Ato Declaratório 26 (DOU 29/10)</a> · fontes especializadas com transcrição do DOU</span></div>
+  </article>
+</section>
+
+<section id="radar">
+  <h2 class="sec">Radar de tribunais e atos</h2>
+  <div class="radar">
+    <div class="rd"><span class="tag t-stf">STF</span><h4>ADI 7324: embargos definem repasse em 10 anos às tarifas</h4>Em 22/10, o STF acolheu em parte os embargos da Abradee na ADI 7324 (relator Alexandre de Moraes): o prazo de 10 anos para as distribuidoras devolverem aos consumidores o que recuperaram de PIS/Cofins sobre ICMS conta da data em que recuperaram o valor ou em que a compensação foi definitivamente homologada. Se já passaram mais de 10 anos, a obrigação de devolver está prescrita, segundo o STF. Placar não divulgado (<a href="https://noticias.stf.jus.br/postsnoticias/stf-define-inicio-do-prazo-de-dez-anos-para-devolucao-de-cobrancas-indevidas-na-conta-de-luz/">Notícias do STF</a>).</div>
+    <div class="rd"><span class="tag t-stf">STF</span><h4>Plenário Virtual até 3/11: Cofins-Importação e ICMS Verde</h4>Tema 1.496 (RE 1.538.549, relator Fachin): adicional de 1% da Cofins-Importação após a MP 794/2017 revogar a MP 774/2017; placar parcial de 3 a 0 pela repercussão geral. ADI 7918 (relator Zanin): 7 a 0 pela validade da revogação do ICMS Verde em Alagoas. Resultados finais não verificados; fonte: Pimentel e Rohenkohl.</div>
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Pauta tributária de novembro</h4>Segundo o Cescon Barrieu: 4/11, embargos de declaração no Tema 1.079 (modulação do teto de 20 salários mínimos nas contribuições a terceiros); 5/11, 1ª Seção retoma os EREsp 2.215.482 e 2.182.950 (créditos de PIS/Cofins em insumos com alíquota zero; vista de Regina Helena Costa); 11/11, Temas 1.372 (ICMS-Difal fora da base do PIS/Cofins, embargos), 1.412 (bonificações de fornecedores), 1.334 (vale-transporte em dinheiro no FGTS), 1.369 e 1.014; 18/11, agravo interno do contribuinte no Tema 1.390, em recurso que busca modulação de efeitos (o mérito do tema já foi julgado antes). Datas de pauta podem mudar.</div>
+    <div class="rd"><span class="tag t-rfb">Receita</span><h4>Cooperativas: Receita e CGIBS discutem estender a opção até 30/11</h4>A Receita informou em 29/10 que discute com o CGIBS ampliar até 30/11 o prazo de opção das cooperativas pelo regime específico de CBS e IBS; segundo a nota, o novo prazo deverá ser formalizado por alteração normativa. Fontes secundárias dão 31/10 como o prazo original. Não localizamos o ato de prorrogação: se cooperativa cliente ainda não optou, confirme o prazo vigente agora.</div>
+    <div class="rd"><span class="tag t-trib">Reforma</span><h4>Opção pelo regime regular de IBS/CBS no Simples</h4>A Receita informou em 29/10 mais de 1 milhão de optantes, com prazo até 30/10. Acompanhamento do item do Brevis Semanal 017, que traz os números e o prazo de cancelamento.</div>
+    <div class="rd"><span class="tag t-stf">Justiça Federal</span><h4>Liminares sobre a retenção de 10% de IRRF em dividendos</h4>Fontes secundárias (APET, 23/10; TAGD, 26/10) citam decisões sobre a retenção linear na fonte da Lei 15.270/2025: pelo menos duas, uma da 4ª Vara Federal do DF e outra do TRF4 (segunda instância, anterior ao período), apenas limitam a retenção à alíquota anual projetada; a de Barueri afasta a obrigação de reter; a de Osasco não teve o alcance detalhado. Não abrimos as decisões; trate como pista, não como tendência.</div>
+    <div class="rd full"><span class="tag t-cn">Curadoria</span><h4>O que deixamos de fora, e por quê</h4>Ficaram fora, por fonte única ou sem texto oficial aberto: alíquotas e arrecadação do Imposto Seletivo e a "PEC do IPI" (reportagens), cronograma do split payment e das notas técnicas de NF-e (matérias especializadas, sem ato lido), decisões de CARF citadas só em newsletter, a Solução de Consulta Cosit 206/2026 (IRPF e moléstia grave; só notícia) e a notícia de "imposto mínimo acima de R$ 600 mil", que não conseguimos abrir. Não localizamos decisão nova de STJ ou TCU sobre a reforma além do que já saiu no Brevis Semanal 017.</div>
+  </div>
+</section>
+
+<section id="acao">
+  <h2 class="sec">Painel de ação — tudo que você precisa fazer, por movimento</h2>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-p="p1">✅ Passo a passo</button><button class="tab" data-p="p2">👥 Clientes para mapear</button><button class="tab" data-p="p3">⚠ Cuidados</button><button class="tab" data-p="p4">📚 Fontes</button>
+  </div>
+  <div class="panel on" id="p1">
+    <div class="prog" id="prog">0 de 6 feitos</div>
+    <label class="chk"><input type="checkbox"><span>Levantar clientes com pedidos de restituição de tributo declarado inconstitucional e conferir a data de ajuizamento e o risco de prescrição.</span><a class="ref" href="#m1">Mov. 01 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Listar clientes dos setores citados para o Imposto Seletivo e vigiar o DOU até a MP sair.</span><a class="ref" href="#m2">Mov. 02 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Decidir se algum cliente deve levar subsídios às audiências da CAE a partir de 11/11.</span><a class="ref" href="#m3">Mov. 03 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Comparar, para clientes com passivo no CARF, as condições dos Editais RFB 9 e 10 com o risco do litígio, antes de 30/12.</span><a class="ref" href="#m5">Mov. 05 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Conferir, para clientes com ICMS em MG, PA, PR ou SP, se o Estado já regulamentou o programa autorizado pelo Confaz e os prazos de dezembro.</span><a class="ref" href="#m6">Mov. 06 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Marcar na agenda as pautas do STJ de 4, 5, 11 e 18/11 que afetam clientes.</span><a class="ref" href="#radar">Radar ↑</a></label>
+  </div>
+  <div class="panel" id="p2">
+    <div class="chk"><span><b>Contribuintes que pagaram tributo depois declarado inconstitucional</b> e têm pedido de restituição em curso ou por ajuizar.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Fabricantes e importadores</b> de cigarros, bebidas, refrigerantes, veículos, mineração e apostas.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Empresas sensíveis à alíquota da CBS</b> que queiram participar do debate no Senado.</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>Empresas com autos no CARF</b> ou crédito de pequeno valor em contencioso administrativo.</span><a class="ref" href="#m5">Mov. 05</a></div>
+    <div class="chk"><span><b>Contribuintes de ICMS</b> com débito em MG, PA, PR, SP ou nos Estados do Convênio 139/2018.</span><a class="ref" href="#m6">Mov. 06</a></div>
+  </div>
+  <div class="panel" id="p3">
+    <div class="chk"><span><b>ADPF 248:</b> julgamento suspenso, sem tese; o placar é parcial e pode mudar com a vista.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>MP do Imposto Seletivo:</b> é anúncio; não há texto nem alíquota confirmados.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>CBS no Senado:</b> fonte jornalística; o 11,3% é o cálculo do TCU, não a alíquota final.</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>Transação RFB:</b> a adesão implica desistir dos recursos sobre os débitos incluídos e renunciar às alegações de direito (Edital 9, item 3.1); o Edital 10 tem público restrito e não foi lido.</span><a class="ref" href="#m5">Mov. 05</a></div>
+    <div class="chk"><span><b>Confaz:</b> convênio autoriza, não concede; o Convênio 125 não consta como ratificado.</span><a class="ref" href="#m6">Mov. 06</a></div>
+  </div>
+  <div class="panel" id="p4">
+    <div class="src"><b>01</b><span><a href="https://portal.stf.jus.br/processos/detalhe.asp?incidente=4194597">Portal do STF — ADPF 248</a> · fonte oficial · <a href="https://pradvogados.com.br/2026/10/27/desfechos-e-pautas-dos-principais-julgamentos-tributarios-nos-tribunais-superiores-104/">Pimentel e Rohenkohl</a> · secundária</span></div>
+    <div class="src"><b>02</b><span><a href="https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/governo-enviara-mp-do-imposto-seletivo-e-renova-subvencao-ao-diesel">Agência Brasil — MP do Imposto Seletivo</a> · fonte jornalística</span></div>
+    <div class="src"><b>03</b><span><a href="https://acritica.net/economia/cae-senado-eduardo-braga-relator-cbs-aliquota-11-novembro/">A Crítica / Agência Estado — CAE e CBS</a> · fonte jornalística</span></div>
+    <div class="src"><b>04</b><span><a href="https://www.cgibs.gov.br/upload/arquivos/202610/26090508-20261019-atc-rfb-cgibs-nba-9-2026-assinado-29-as-261026-090221.pdf">CGIBS — Ato Técnico Conjunto nº 9 (PDF)</a> · fonte oficial · <a href="https://cbic.org.br/receita-federal-e-comite-gestor-do-ibs-criam-25-grupos-de-trabalho-para-coordenar-a-implementacao-da-reforma-tributaria/">CBIC</a> · <a href="https://www.reformatributaria.com/comite-gestor-do-ibs-reforma-tributaria/receita-e-comite-gestor-aceleram-reforma-tributaria-com-criacao-de-25-grupos-de-trabalho/">Portal Reforma Tributária</a> · secundárias</span></div>
+    <div class="src"><b>05</b><span><a href="https://legismap.com.br/leis-e-normas/portaria-rfb-n-742-de-27-10-2026">Legismap — Portaria RFB 742/2026</a> · transcrição do DOU · <a href="https://cesconbarrieu.com.br/minuto-tributario-semana-26-a-30-de-outubro-de-2026/">Cescon Barrieu</a> · <a href="https://www.gov.br/receitafederal/pt-br/assuntos/noticias">Notícias da Receita Federal</a> · radar</span></div>
+    <div class="src"><b>06</b><span><a href="https://substituicaotributaria.com/SST/substituicao-tributaria/noticia/26/10/2026/confaz-publica-convenios-icms">Despacho Confaz 49</a> · <a href="https://substituicaotributaria.com/SST/substituicao-tributaria/noticia/29/10/2026/ratificados-convenios-icms-">Ato Declaratório Confaz 26</a> · transcrições do DOU</span></div>
+    <div class="src"><b>✓</b><span>Verificação: conferência própria nas fontes abertas (portal do STF, STF Notícias, texto do ato do CGIBS, DOU transcrito, notícias da Receita Federal), agente verificador independente, ChatGPT e Gemini. Itens de fonte jornalística ou sem texto oficial lido estão sinalizados. Briefing informativo; confira as fontes antes de aplicar.</span></div>
+  </div>
+</section>
+
+<section id="curio">
+  <div class="curio"><div class="k">💡 Curiosidade tributária</div>A ADPF 248 foi distribuída em fevereiro de 2012 e teve quatro distribuições de relatoria: Toffoli, Cármen Lúcia, Barroso e Lewandowski, este último aposentado. Hoje o sucessor dele, Zanin, nem vota, e a ação espera o voto-vista de Moraes depois de duas vistas em seis meses.</div>
+</section>
+
+<footer><b>Brevis Tributário</b>Edição nº 001 · 3 de novembro de 2026 · Curadoria Jean Barbosa<br>Briefing informativo; não constitui opinião legal. Verifique as fontes antes de aplicar qualquer tese.</footer>
+</div>
+<script>
+document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.card');c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Recolher ▴':'Entenda os detalhes ▾'})});
+document.getElementById('chips').addEventListener('click',function(e){var f=e.target.getAttribute('data-f');if(!f)return;document.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c===e.target)});document.querySelectorAll('.card').forEach(function(c){c.classList.toggle('hide',c.getAttribute('data-tags').split(' ').indexOf(f)<0)})});
+document.getElementById('tabs').addEventListener('click',function(e){var p=e.target.getAttribute('data-p');if(!p)return;document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t===e.target)});document.querySelectorAll('.panel').forEach(function(x){x.classList.toggle('on',x.id===p)})});
+document.querySelectorAll('#p1 input').forEach(function(i){i.addEventListener('change',function(){i.closest('.chk').classList.toggle('done',i.checked);var n=document.querySelectorAll('#p1 input:checked').length;document.getElementById('prog').textContent=n+' de 6 feitos'})});
+</script>
+</body>
+</html>

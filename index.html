@@ -6,539 +6,185 @@
 <title>BREVIS — Arquivo de Edições</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink:       #0f0e0c;
-    --paper:     #f7f4ee;
-    --muted:     #7a7670;
-    --rule:      #d6d0c4;
-    --red:       #c8371a;
-    --red-pale:  #fdf1ee;
-    --blue:      #1F4E79;
-    --blue-mid:  #2C6AA0;
-    --gold:      #C8A24A;
-    --gold-pale: #f5edda;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-    min-height: 100vh;
-  }
-  .wrapper { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
-
-  /* ─── MASTHEAD ─── */
-  .masthead { border-bottom: 3px double var(--ink); padding: 44px 0 24px; text-align: center; }
-  .masthead-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-  .masthead-logo { font-family: 'Playfair Display', serif; font-size: 68px; font-weight: 900; letter-spacing: -3px; line-height: 1; color: var(--ink); }
-  .masthead-logo span { color: var(--red); }
-  .masthead-tagline { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
-  .masthead-meta { display: flex; justify-content: center; gap: 28px; margin-top: 14px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
-  .masthead-meta span { padding: 0 2px; }
-  .masthead-meta span:not(:last-child)::after { content: ' ·'; margin-left: 14px; color: var(--rule); }
-
-  /* ─── LINHA EDITORIAL ─── */
-  .line-header { display: flex; align-items: center; gap: 12px; margin: 44px 0 20px; }
-  .line-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); flex-shrink: 0; }
-  .line-title { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
-  .line-rule { flex: 1; height: 1px; background: var(--rule); }
-  .line-badge { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; flex-shrink: 0; }
-  .badge-geral { background: var(--red-pale); color: var(--red); border: 1px solid #f0c0b0; }
-  .badge-prev  { background: var(--gold-pale); color: var(--blue); border: 1px solid #d8c080; }
-
-  /* ─── DESCRIÇÃO ─── */
-  .line-desc { font-size: 13.5px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; padding-left: 2px; }
-  .line-desc strong { color: var(--ink); font-weight: 600; }
-
-  /* ─── GRADE ─── */
-  .editions-grid { display: flex; flex-direction: column; gap: 12px; }
-
-  /* ─── CARD DESTAQUE ─── */
-  .card-featured { border: 1px solid var(--rule); padding: 22px 24px; text-decoration: none; color: inherit; display: block; transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s; position: relative; background: white; }
-  .card-featured:hover { border-color: #a8a098; box-shadow: 0 3px 14px rgba(0,0,0,0.08); transform: translateY(-1px); }
-  .card-featured.geral { border-left: 4px solid var(--red); }
-  .card-featured.prev  { border-left: 4px solid var(--gold); }
-
-  .card-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-  .card-label-new { background: var(--red); color: white; padding: 2px 7px; border-radius: 2px; font-size: 8.5px; letter-spacing: 0.15em; }
-  .card-label-new.gold { background: var(--gold); }
-  .card-label-edition { color: var(--muted); }
-  .card-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; color: var(--ink); }
-  .card-summary { font-size: 13.5px; line-height: 1.65; color: #4a4844; margin-bottom: 12px; }
-  .card-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-  .card-date { font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--muted); letter-spacing: 0.06em; }
-  .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-  .tag { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 8px; border-radius: 2px; letter-spacing: 0.1em; text-transform: uppercase; color: white; }
-  .tag-red    { background: var(--red); }
-  .tag-blue   { background: var(--blue-mid); }
-  .tag-gold   { background: var(--gold); }
-  .tag-green  { background: #1a6b42; }
-  .tag-purple { background: #5c2d82; }
-  .tag-gray   { background: #7a7670; }
-  .tag-navy   { background: #0D1F3C; }
-  .tag-teal   { background: #0e7490; }
-
-  .card-arrow { position: absolute; top: 22px; right: 20px; font-family: 'DM Mono', monospace; font-size: 13px; color: var(--rule); transition: color 0.18s, transform 0.18s; }
-  .card-featured:hover .card-arrow { color: var(--muted); transform: translateX(4px); }
-
-  /* ─── DESTAQUES DA EDIÇÃO ATUAL ─── */
-  .card-destaques { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 5px; }
-  .card-destaque-item { display: flex; gap: 8px; align-items: baseline; font-size: 12.5px; color: #3a3834; line-height: 1.5; }
-  .card-destaque-dot { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--red); flex-shrink: 0; }
-
-  /* ─── CARD LISTA ─── */
-  .card-list { display: flex; gap: 14px; align-items: flex-start; border-bottom: 1px solid var(--rule); padding: 14px 0; text-decoration: none; color: inherit; transition: opacity 0.15s; }
-  .card-list:last-child { border-bottom: none; }
-  .card-list:hover { opacity: 0.72; }
-  .card-list-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); flex-shrink: 0; min-width: 28px; margin-top: 3px; }
-  .card-list-body { flex: 1; }
-  .card-list-title { font-family: 'Playfair Display', serif; font-size: 15.5px; font-weight: 700; line-height: 1.3; color: var(--ink); margin-bottom: 4px; }
-  .card-list-meta { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 0.05em; }
-  .card-list-arrow { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--rule); flex-shrink: 0; margin-top: 3px; transition: transform 0.15s; }
-  .card-list:hover .card-list-arrow { transform: translateX(3px); }
-
-  /* ─── SEPARADOR ─── */
-  .section-divider { height: 1px; background: linear-gradient(to right, transparent, var(--rule), transparent); margin: 10px 0; }
-
-  /* ─── FOOTER ─── */
-  .footer { margin-top: 56px; padding-top: 20px; border-top: 3px double var(--ink); text-align: center; }
-  .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--ink); letter-spacing: -1px; }
-  .footer-logo span { color: var(--red); }
-  .footer-tagline { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
-  .footer-text { font-size: 12px; color: var(--muted); margin-top: 8px; font-family: 'DM Mono', monospace; letter-spacing: 0.05em; }
-
-  /* ─── ATALHOS RÁPIDOS ─── */
-  .quicknav { display: flex; gap: 12px; justify-content: center; margin: 24px 0 4px; flex-wrap: wrap; }
-  .quicknav-btn { display: flex; flex-direction: column; gap: 2px; text-decoration: none; padding: 14px 22px; border-radius: 6px; min-width: 200px; text-align: center; transition: transform 0.15s, box-shadow 0.15s; }
-  .quicknav-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.14); }
-  .quicknav-btn.geral { background: var(--red); }
-  .quicknav-btn.prev { background: var(--blue); }
-  .quicknav-label { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.75); }
-  .quicknav-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: white; }
-  .quicknav-date { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.65); letter-spacing: 0.04em; margin-top: 2px; }
-
-    .badge-especial { background: #111; color: #fff; border: 1px solid #111; }
-  .card-featured.especial { border-left: 4px solid #111; }
-  .card-label-new.black { background: #111; }
-
-  @media (max-width: 520px) {
-    .quicknav { flex-direction: column; align-items: stretch; }
-    .quicknav-btn { min-width: 0; }
-    .masthead-logo { font-size: 48px; }
-    .card-arrow { display: none; }
-    .masthead-meta { flex-direction: column; gap: 4px; }
-    .masthead-meta span::after { display: none; }
-  }
+:root{--ink:#0f0e0c;--paper:#f7f4ee;--muted:#6f6b64;--rule:#d6d0c4;--red:#c8371a;--red-pale:#fdf1ee;--navy:#1F4E79;--gold:#C8A24A;--gold-pale:#f5edda;--green:#1C4A39;--copper:#B8742F;--green-pale:#e8f2ec;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.65;min-height:100vh}
+.wrapper{max-width:1040px;margin:0 auto;padding:0 24px 80px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--copper);outline-offset:2px}
+/* masthead */
+.masthead{border-bottom:3px double var(--ink);padding:40px 0 22px;text-align:center}
+.eyebrow{font:400 10px 'DM Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.logo{font:900 64px 'Playfair Display',serif;letter-spacing:-3px;line-height:1}
+.logo span{color:var(--red)}
+.tagline{font:400 11px 'DM Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.asof{font:400 11px 'DM Mono',monospace;color:var(--muted);margin-top:12px;letter-spacing:.06em}
+/* titulos de secao */
+.h{display:flex;align-items:center;gap:12px;margin:38px 0 16px}
+.h h2{font:500 10.5px 'DM Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.h i{flex:1;height:1px;background:var(--rule)}
+/* portas */
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.door{display:flex;flex-direction:column;gap:8px;background:var(--white);border:1px solid var(--rule);border-top:5px solid var(--ink);border-radius:10px;padding:20px 20px 16px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.door:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.12)}
+.door.geral{border-top-color:var(--red)}.door.prev{border-top-color:var(--navy)}.door.trib{border-top-color:var(--copper)}
+.door-top{display:flex;justify-content:space-between;align-items:center}
+.door-label{font:500 10px 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase}
+.door.geral .door-label{color:var(--red)}.door.prev .door-label{color:var(--navy)}.door.trib .door-label{color:var(--copper)}
+.door-new{display:none;font:500 9px 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding:2px 8px;border-radius:10px;background:var(--ink)}
+.door-new.on{display:inline-block}
+.door.geral .door-new{background:var(--red)}.door.prev .door-new{background:var(--navy)}.door.trib .door-new{background:var(--copper)}
+.door-ed{font:400 10.5px 'DM Mono',monospace;color:var(--muted);letter-spacing:.04em}
+.door-title{font:700 19px 'Playfair Display',serif;line-height:1.28}
+.door-sum{font-size:13px;line-height:1.6;color:#4a4844;flex:1}
+.door-tags{display:flex;flex-wrap:wrap;gap:6px}
+.dtag{font:400 9.5px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:12px;background:var(--paper);border:1px solid var(--rule);color:#555}
+.door-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule);padding-top:10px;margin-top:4px;font:400 10px 'DM Mono',monospace;color:var(--muted);letter-spacing:.06em}
+.door-go{font-weight:500;color:var(--ink)}
+/* busca */
+.finder{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:18px 20px}
+.search{position:relative}
+.search input{width:100%;font:400 16px 'DM Sans',sans-serif;padding:13px 16px 13px 44px;border:2px solid var(--rule);border-radius:10px;background:var(--paper);color:var(--ink)}
+.search input:focus{border-color:var(--ink);outline:none;background:#fff}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:20px;height:20px;stroke:var(--muted)}
+.search kbd{position:absolute;right:14px;top:50%;transform:translateY(-50%);font:400 11px 'DM Mono',monospace;color:var(--muted);border:1px solid var(--rule);border-radius:4px;padding:1px 7px}
+.fl{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+.fl b{font:500 9.5px 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.chip{font:500 12px 'DM Sans',sans-serif;border:1px solid var(--rule);background:#fff;border-radius:20px;padding:6px 14px;cursor:pointer;color:var(--ink);transition:all .12s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.geral[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
+.chip.prev[aria-pressed="true"]{background:var(--navy);border-color:var(--navy)}
+.chip.trib[aria-pressed="true"]{background:var(--copper);border-color:var(--copper)}
+.count{font:400 11px 'DM Mono',monospace;color:var(--muted);margin:16px 2px 4px;letter-spacing:.05em}
+/* lista */
+.list{display:flex;flex-direction:column}
+.ed{display:grid;grid-template-columns:92px 1fr 20px;gap:14px;align-items:start;padding:15px 4px;border-bottom:1px solid var(--rule);text-decoration:none;transition:background .12s}
+.ed:hover{background:rgba(0,0,0,.035)}
+.ed-side{display:flex;flex-direction:column;gap:5px}
+.badge{display:inline-block;width:fit-content;font:500 9px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:3px;color:#fff;background:var(--ink)}
+.badge.geral{background:var(--red)}.badge.prev{background:var(--navy)}.badge.trib{background:var(--copper)}
+.ed-date{font:400 10.5px 'DM Mono',monospace;color:var(--muted)}
+.ed-title{font:700 16px 'Playfair Display',serif;line-height:1.3;margin-bottom:4px}
+.ed-meta{font:400 10.5px 'DM Mono',monospace;color:var(--muted);letter-spacing:.04em}
+.ed-meta mark,.ed-title mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:2px}
+.ed-arrow{font:400 13px 'DM Mono',monospace;color:var(--rule);margin-top:4px}
+.ed:hover .ed-arrow{color:var(--ink)}
+.more{display:block;margin:20px auto 0;font:500 13px 'DM Sans',sans-serif;border:2px solid var(--ink);background:#fff;border-radius:24px;padding:10px 26px;cursor:pointer}
+.more:hover{background:var(--ink);color:#fff}
+.empty{padding:40px 10px;text-align:center;color:var(--muted)}
+.empty b{display:block;font:700 18px 'Playfair Display',serif;color:var(--ink);margin-bottom:4px}
+/* proxima */
+.note{margin-top:26px;border:1px dashed var(--rule);border-radius:10px;padding:14px 18px;font-size:13px;color:#4a4844;background:rgba(255,255,255,.5)}
+.note b{font:500 10px 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);display:block;margin-bottom:2px}
+.footer{margin-top:56px;padding-top:20px;border-top:3px double var(--ink);text-align:center}
+.footer-logo{font:900 22px 'Playfair Display',serif;letter-spacing:-1px}
+.footer-logo span{color:var(--red)}
+.footer-tagline{font:400 10px 'DM Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.footer-text{font:400 12px 'DM Mono',monospace;color:var(--muted);margin-top:8px;letter-spacing:.05em}
+@media(max-width:900px){.doors{grid-template-columns:1fr}.door-title{font-size:18px}}
+@media(max-width:560px){.wrapper{padding:0 16px 60px}.logo{font-size:48px}.ed{grid-template-columns:1fr 16px}.ed-side{flex-direction:row;align-items:center;gap:10px;grid-column:1/3}.ed-arrow{display:none}.search kbd{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <div class="wrapper">
 
-  <!-- MASTHEAD -->
   <header class="masthead">
-    <div class="masthead-eyebrow">Curadoria jurídica · Jean Barbosa</div>
-    <div class="masthead-logo">BREVI<span>S</span></div>
-    <div class="masthead-tagline">Radar jurídico estratégico · Todas as edições</div>
-    <div class="masthead-meta">
-      <span>Três linhas editoriais</span>
-      <span>Jurídico Geral · Previdenciário · Especial</span>
-    </div>
+    <div class="eyebrow">Curadoria jurídica · Jean Barbosa</div>
+    <div class="logo">BREVI<span>S</span></div>
+    <div class="tagline">Radar jurídico estratégico · Todas as edições</div>
+    <div class="asof">Atualizado em 3 de novembro de 2026</div>
   </header>
 
-  <!-- ATALHOS RÁPIDOS — ir direto para a última edição de cada linha -->
-  <div class="quicknav">
-    <a href="brevis-semanal-edicao017-2026-11-03.html" class="quicknav-btn geral">
-      <span class="quicknav-label">Última edição · Jurídico Geral</span>
-      <span class="quicknav-title">Brevis Semanal nº 017 →</span>
-      <span class="quicknav-date">Atualizado em 3 de novembro de 2026</span>
+  <div class="h"><h2>Última edição de cada linha</h2><i></i></div>
+  <section class="doors" aria-label="Últimas edições por linha editorial">
+    <a href="brevis-semanal-edicao017-2026-11-03.html" class="door geral" data-line="geral">
+      <div class="door-top"><span class="door-label">Jurídico Geral</span><span class="door-new" data-date="2026-11-03">Nova</span></div>
+      <div class="door-ed">Edição nº 017 · 3 de novembro de 2026</div>
+      <div class="door-title">Cível, criminal, trabalhista, constitucional e o que mais mexe com a carteira</div>
+      <div class="door-sum">Previ no STF (Tema 1.423) com placar provisório de 5 a 3, TCU e a alíquota da CBS, decreto do SAC em vigor, IBS/CBS no Simples, teses do TST e paternidade registral no STJ.</div>
+      <div class="door-tags"><span class="dtag">Cível</span><span class="dtag">Criminal</span><span class="dtag">Trabalhista</span><span class="dtag">Constitucional</span></div>
+      <div class="door-foot"><span>Semanal</span><span class="door-go">Ler a edição →</span></div>
     </a>
-    <a href="brevis-previdenciario-edicao017-2026-11-03.html" class="quicknav-btn prev">
-      <span class="quicknav-label">Última edição · Previdenciário</span>
-      <span class="quicknav-title">Brevis Previdenciário nº 017 →</span>
-      <span class="quicknav-date">Atualizado em 3 de novembro de 2026</span>
+    <a href="brevis-previdenciario-edicao017-2026-11-03.html" class="door prev" data-line="prev">
+      <div class="door-top"><span class="door-label">Previdenciário</span><span class="door-new" data-date="2026-11-03">Nova</span></div>
+      <div class="door-ed">Edição nº 017 · 3 de novembro de 2026</div>
+      <div class="door-title">INSS, regimes próprios, TNU, STJ e STF para carteiras previdenciárias</div>
+      <div class="door-sum">STF valida o fim do duplo teto para servidor aposentado com doença incapacitante (7 a 3), fila do INSS em números e a Operação Sem Desconto volta à relatoria de Mendonça.</div>
+      <div class="door-tags"><span class="dtag">INSS</span><span class="dtag">RPPS</span><span class="dtag">BPC</span><span class="dtag">TNU</span></div>
+      <div class="door-foot"><span>Semanal</span><span class="door-go">Ler a edição →</span></div>
     </a>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       LINHA 1 — BREVIS · JURÍDICO GERAL
-  ════════════════════════════════════════════ -->
-  <div class="line-header">
-    <span class="line-num">01</span>
-    <span class="line-title">Brevis · Jurídico Geral</span>
-    <div class="line-rule"></div>
-    <span class="line-badge badge-geral">Jurídico Geral</span>
-  </div>
-
-  <p class="line-desc">
-    <strong>Cobertura multidisciplinar.</strong> STJ, STF, TST e regulatório — as decisões mais relevantes com impacto prático para advogados de todas as áreas. Foco em aplicabilidade e geração de honorários.
-  </p>
-
-  <div class="editions-grid">
-
-    <!-- Edição 017 — DESTAQUE ATUAL -->
-    <a href="brevis-semanal-edicao017-2026-11-03.html" class="card-featured geral">
-      <div class="card-label">
-        <span class="card-label-new">Edição Atual</span>
-        <span class="card-label-edition">Edição nº 017 · 3 de novembro de 2026</span>
-      </div>
-      <div class="card-summary">STF tem placar provisório de 5 a 3 no Tema 1.423 (Previ), com julgamento suspenso e votos ainda pendentes; TCU fixa em 11,3% a alíquota de referência da CBS, a depender de resolução do Senado; Decreto 13.135/2026 regulamenta o SAC; Receita informa mais de 1 milhão de optantes pelo regime regular de IBS/CBS no Simples; TST decide os Temas 316 e 317; STJ (4ª Turma) julga paternidade registral. No Radar: ADI 6.336, PEC 18/2025, ADI 8.027 (apostas) e o piso da enfermagem.</div>
+    <a href="brevis-tributario-edicao001-2026-11-03.html" class="door trib" data-line="trib">
+      <div class="door-top"><span class="door-label">Tributário · Reforma</span><span class="door-new" data-date="2026-11-03">Nova</span></div>
+      <div class="door-ed">Edição nº 001 · 3 de novembro de 2026</div>
+      <div class="door-title">Reforma tributária, regras de transição e tributário geral</div>
+      <div class="door-sum">ADPF 248 suspensa no STF, MP do Imposto Seletivo anunciada, CBS no Senado, 25 grupos de trabalho da Receita e do Comitê Gestor, transação até 30/12 e convênios de ICMS.</div>
+      <div class="door-tags"><span class="dtag">CBS e IBS</span><span class="dtag">Transição</span><span class="dtag">STF e STJ</span><span class="dtag">Fisco</span></div>
+      <div class="door-foot"><span>Quartas-feiras</span><span class="door-go">Ler a edição →</span></div>
     </a>
+  </section>
 
-    <!-- Edições anteriores -->
-    <div class="editions-grid" style="margin-top: 4px;">
-
-      <a href="brevis-semanal-edicao016-2026-10-26.html" class="card-list">
-        <span class="card-list-num">016</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STF exclui o ISS da base do PIS/Cofins por 6 a 5 (Tema 118), STJ decide que o VGBL em acumulação não entra na partilha, TST barra pagamento de advogado do empregado em acordos de rescisão e STJ condena cinco por venda de decisões na Operação Faroeste.</div>
-          <div class="card-list-meta">26 de outubro de 2026 · Tributário · Cível · Trabalhista · Constitucional</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-semanal-edicao015-2026-10-20.html" class="card-list">
-        <span class="card-list-num">015</span>
-        <div class="card-list-body">
-          <div class="card-list-title">Fim da escala 6x1 (EC 141) como assunto do momento, STF conclui o Tema 1.348 (ITBI de holdings) em 9 a 2, decide os Temas 843 e 1.016, STJ define penhora de salário (Tema 1.230) e PGFN abre transação de FGTS.</div>
-          <div class="card-list-meta">20 de outubro de 2026 · Trabalhista · Tributário · Constitucional · Cível</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-semanal-edicao014-2026-09-22.html" class="card-list">
-        <span class="card-list-num">014</span>
-        <div class="card-list-body">
-          <div class="card-list-title">ADIn 6.200 (amianto), Tema 1.348 em 5x2 com vista de Moraes, Toyota no TJ-PI e a greve dos Correios como assunto do momento.</div>
-          <div class="card-list-meta">22 de setembro de 2026 · Constitucional · Tributário · Trabalhista · Institucional</div>
-        </div>
-      </a>
-
-      <a href="brevis-semanal-edicao013-2026-09-15.html" class="card-list">
-        <span class="card-list-num">013</span>
-        <div class="card-list-body">
-          <div class="card-list-title">Semana com o Caso Master, Tema 1.348 (ITBI de holdings) e o "assunto do momento" jurídico da semana.</div>
-          <div class="card-list-meta">15 de setembro de 2026 · Constitucional · Tributário · Institucional</div>
-        </div>
-      </a>
-
-      <a href="brevis-semanal-edicao012-2026-09-04.html" class="card-list">
-        <span class="card-list-num">012</span>
-        <div class="card-list-body">
-          <div class="card-list-title">Receita Federal sinaliza 2028 como meta para o split payment, CARF cancela R$ 2,2 bi em autuações contra a B3 e Receita, e TST fixa tópico de relevância em recurso especial.</div>
-          <div class="card-list-meta">4 de setembro de 2026 · Tributário · Trabalhista</div>
-        </div>
-      </a>
-
-      <a href="brevis-semanal-edicao011.html" class="card-list">
-        <span class="card-list-num">011</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STJ aprova Emenda Regimental 55 (filtro de relevância), TST redesenha competência do FGTS, STF estende Lei Maria da Penha e mais 12 movimentos verificados de 3 a 25 de agosto</div>
-          <div class="card-list-meta">25 de agosto de 2026 · Cível · Tributário · Trabalhista · Constitucional</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-semanal-edicao009.html" class="card-list">
-        <span class="card-list-num">009</span>
-        <div class="card-list-body">
-          <div class="card-list-title">TST autoriza desconto parcial de dias de greve, IVA dual projeta 27,91%, STJ protege bem de família de alto valor e lei torna hediondos crimes sexuais digitais contra crianças</div>
-          <div class="card-list-meta">7 de agosto de 2026 · Trabalhista · Tributário · Cível · Criminal</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-semanal-edicao008.html" class="card-list">
-        <span class="card-list-num">008</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STF amplia responsabilidade de plataformas digitais, STJ trava crédito de PIS/Cofins e ICMS-Difal, TST fixa 40 teses vinculantes e janela do ITCMD progressivo se fecha</div>
-          <div class="card-list-meta">26 de julho de 2026 · Cível · Tributário · Trabalhista · Holding</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-edicao007.html" class="card-list">
-        <span class="card-list-num">007</span>
-        <div class="card-list-body">
-          <div class="card-list-title">TEA com reembolso retroativo, ITCMD acelerando nos Estados, transação tributária com desconto real e Direito à Desconexão na prática</div>
-          <div class="card-list-meta">2 de maio de 2026 · Cível · Tributário · Trabalhista · Digital</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-semanal-edicao006.html" class="card-list">
-        <span class="card-list-num">006</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STJ consolida remessa necessária e TEA, TST expande assédio moral político, FGTS em contratos de experiência e ITCMD progressivo</div>
-          <div class="card-list-meta">31 de março de 2026 · Civil · Trabalhista · Tributário · Família</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-semanal-edicao005.html" class="card-list">
-        <span class="card-list-num">005</span>
-        <div class="card-list-body">
-          <div class="card-list-title">PIX sob coação, adimplemento substancial em planos de saúde, ITBI no STF e NR-01 com riscos psicossociais</div>
-          <div class="card-list-meta">24 de março de 2026 · Civil · Tributário · Trabalhista</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="edicao-004.html" class="card-list">
-        <span class="card-list-num">004</span>
-        <div class="card-list-body">
-          <div class="card-list-title">AP 2670 no STF, outorga conjugal no STJ e pejotização aguardando julgamento</div>
-          <div class="card-list-meta">13 de março de 2026 · Civil · Previdenciário · Trabalhista</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="edicao-002.html" class="card-list">
-        <span class="card-list-num">002</span>
-        <div class="card-list-body">
-          <div class="card-list-title">Radar jurídico da semana de 11 de março</div>
-          <div class="card-list-meta">11 de março de 2026 · Multidisciplinar</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="edicao-001.html" class="card-list">
-        <span class="card-list-num">001</span>
-        <div class="card-list-body">
-          <div class="card-list-title">Primeira edição — Radar jurídico de lançamento</div>
-          <div class="card-list-meta">10 de março de 2026 · Edição inaugural</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
+  <div class="h"><h2>Procurar nas edições</h2><i></i></div>
+  <section class="finder" aria-label="Busca e filtros">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Busque por tema, tribunal ou assunto: CBS, Previ, BPC, ICMS, STF…" aria-label="Buscar edições" autocomplete="off">
+      <kbd>/</kbd>
     </div>
-  </div>
-
-  <div class="section-divider" style="margin-top: 44px;"></div>
-
-  <!-- ═══════════════════════════════════════════
-       LINHA 2 — BREVIS PREVIDENCIÁRIO
-  ════════════════════════════════════════════ -->
-  <div class="line-header">
-    <span class="line-num">02</span>
-    <span class="line-title">Brevis Previdenciário</span>
-    <div class="line-rule"></div>
-    <span class="line-badge badge-prev">Previdenciário</span>
-  </div>
-
-  <p class="line-desc">
-    <strong>Radar previdenciário estratégico.</strong> TNU, TRF6, STJ e INSS — decisões com impacto direto em carteiras de escritórios previdenciaristas. Curadoria Jean Barbosa.
-  </p>
-
-  <div class="editions-grid">
-
-    <!-- Edição Prev 017 — DESTAQUE ATUAL -->
-    <a href="brevis-previdenciario-edicao017-2026-11-03.html" class="card-featured prev">
-      <div class="card-label">
-        <span class="card-label-new gold">Edição Atual</span>
-        <span class="card-label-edition">Edição nº 017 · 3 de novembro de 2026</span>
-      </div>
-      <div class="card-title">STF valida o fim do duplo teto para servidor aposentado com doença incapacitante (7 a 3, ADI 6.336), MPS divulga os números da fila do INSS e Fachin devolve a Operação Sem Desconto a Mendonça</div>
-      <div class="card-summary">Quatro movimentos verificados: o STF decidiu por 7 a 3, na ADI 6.336, que a isenção de contribuição do servidor aposentado com doença incapacitante alcança só a parcela até o teto do RGPS (regime próprio, não INSS); o CNPS (27/10) apresentou 1,246 milhão de pedidos na fila e tempo médio de decisão de 24 dias; a Portaria Conjunta 48 cria o Benefício de Afastamento Protetivo, segundo o resumo oficial; e Fachin devolveu a Operação Sem Desconto à relatoria de Mendonça, com referendo do Plenário pendente. No Radar: Previ (Tema 1.423), TRU4 sobre BPC e facultativo, afetação no STJ (REsp 2.270.835) e correição do CNJ nos TRFs.</div>
-      <span class="card-arrow">→</span>
-    </a>
-
-    <!-- Edições anteriores Previdenciário -->
-    <div class="editions-grid" style="margin-top: 4px;">
-
-      <a href="brevis-previdenciario-edicao016-2026-10-26.html" class="card-list">
-        <span class="card-list-num">016</span>
-        <div class="card-list-body">
-          <div class="card-list-title">LC 238/2026 perdoa dívidas federais de MEI, STF tem repercussão geral sobre o índice dos atrasados antes do precatório e CNJ adia o instrumento biopsicossocial no BPC.</div>
-          <div class="card-list-meta">26 de outubro de 2026 · LC 238 · STF · CNJ · BPC</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao015-2026-10-20.html" class="card-list">
-        <span class="card-list-num">015</span>
-        <div class="card-list-body">
-          <div class="card-list-title">EC 140/2026 cria aposentadoria diferenciada para agentes de saúde, salário-maternidade passa a ser automático após 30 dias e STF publica o acórdão da ADI 6.309 sobre idade mínima na aposentadoria especial.</div>
-          <div class="card-list-meta">20 de outubro de 2026 · EC 140 · INSS · STF · CJF · TNU</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao014-2026-09-28.html" class="card-list">
-        <span class="card-list-num">014</span>
-        <div class="card-list-body">
-          <div class="card-list-title">CJF libera R$ 2,68 bi em RPVs, TNU forma maioria parcial no Tema 389, Câmara avança com fim da carência do salário-maternidade e prova de vida nas urnas</div>
-          <div class="card-list-meta">28 de setembro de 2026 · CJF · TNU · PL 1.599/2026 · ADI 7.949</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao013-2026-09-16.html" class="card-list">
-        <span class="card-list-num">013</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STF flexibiliza prisões da Operação Sem Desconto e solta ex-procurador-geral do INSS, STJ esclarece a DIB no Tema 1.124 e PLP 42/2023 recebe três pedidos de votação imediata</div>
-          <div class="card-list-meta">16 de setembro de 2026 · STF · STJ · Operação Sem Desconto · PLP 42/2023</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao012-2026-09-08.html" class="card-list">
-        <span class="card-list-num">012</span>
-        <div class="card-list-body">
-          <div class="card-list-title">Lula anuncia zeramento da fila do INSS acima de 45 dias (com contraponto: indeferimentos sobem 70%), STF fixa critério de R$ 5 mil na ADC 80 e nova lei reconhece Síndrome de Tourette para o BPC/LOAS</div>
-          <div class="card-list-meta">8 de setembro de 2026 · Governo Federal · STF · INSS · BPC/LOAS</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao011-2026-08-31.html" class="card-list">
-        <span class="card-list-num">011</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STF confirma teto de juros do consignado do INSS (ADI 7.759), STJ afasta divisor mínimo pós-reforma, CJF libera R$ 2,75 bi em RPVs e Câmara aprova urgência para aposentadoria especial</div>
-          <div class="card-list-meta">31 de agosto de 2026 · STF · STJ · INSS · CJF</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao010.html" class="card-list">
-        <span class="card-list-num">010</span>
-        <div class="card-list-body">
-          <div class="card-list-title">TNU confirma efeitos financeiros da complementação de contribuição (Tema 384), TRF3 concede BPC a mulher com fibromialgia e CJF libera R$ 321,4 milhões em RPVs previdenciárias na 3ª Região</div>
-          <div class="card-list-meta">23 de agosto de 2026 · TNU · TRF3 · TRF4 · CJF</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao009.html" class="card-list">
-        <span class="card-list-num">009</span>
-        <div class="card-list-body">
-          <div class="card-list-title">IN 212/2026 amplia o período de graça, STF afeta o Tema 1.467 sobre qualidade de segurado e novo Atestmed entra em vigor</div>
-          <div class="card-list-meta">13 de agosto de 2026 · INSS · STF · TNU</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao008.html" class="card-list">
-        <span class="card-list-num">008</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STF derruba idade mínima da aposentadoria especial, STJ reforça bloqueio de FPM por dívida previdenciária e ludopatia dispara nas concessões de auxílio-doença</div>
-          <div class="card-list-meta">7 de agosto de 2026 · STF · STJ · TRF4/TRF6 · INSS</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao007.html" class="card-list">
-        <span class="card-list-num">007</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STJ julga dois repetitivos no mesmo dia sobre incapacidade e penosidade, PEC dos agentes de saúde é aprovada e INSS paga pensão por feminicídio</div>
-          <div class="card-list-meta">31 de julho de 2026 · STJ · Senado · TRF4 · INSS</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao006.html" class="card-list">
-        <span class="card-list-num">006</span>
-        <div class="card-list-body">
-          <div class="card-list-title">TNU derruba exigência de incapacidade no BPC/LOAS, STJ mexe em decadência e prova nova, e INSS muda a procuração eletrônica</div>
-          <div class="card-list-meta">26 de julho de 2026 · STJ · TNU · STF · INSS</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao005.html" class="card-list">
-        <span class="card-list-num">005</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STJ autoriza cessação administrativa de benefício por incapacidade, motorista pré-1995 sem laudo e ADI 6.309 no plenário</div>
-          <div class="card-list-meta">19 de maio de 2026 · STJ · STF · TNU · TRF4</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao004.html" class="card-list">
-        <span class="card-list-num">004</span>
-        <div class="card-list-body">
-          <div class="card-list-title">STJ Tema 1421, descontos indevidos no INSS e novo radar previdenciário de abril</div>
-          <div class="card-list-meta">20 de abril de 2026 · STJ · TNU · STF · TRF6</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao003.html" class="card-list">
-        <span class="card-list-num">003</span>
-        <div class="card-list-body">
-          <div class="card-list-title">ADI 6309 no STF, Tema 348 TNU e Atestmed expandido — semana de alto impacto previdenciário</div>
-          <div class="card-list-meta">1º de abril de 2026 · TNU · TRF6 · STF · STJ</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao002.html" class="card-list">
-        <span class="card-list-num">002</span>
-        <div class="card-list-body">
-          <div class="card-list-title">Frentista com especialidade após 1997, B91 conta para carência (TNU 349) e reajuste 2026 em vigor</div>
-          <div class="card-list-meta">25 de março de 2026 · TRF6 · TNU · STJ · STF</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
-      <a href="brevis-previdenciario-edicao001.html" class="card-list">
-        <span class="card-list-num">001</span>
-        <div class="card-list-body">
-          <div class="card-list-title">TNU Tema 343 mantido, decadência em alerta no STJ e agentes de saúde sem aposentadoria automática</div>
-          <div class="card-list-meta">18 de março de 2026 · TNU · TRF6 · STJ · Edição inaugural</div>
-        </div>
-        <span class="card-list-arrow">→</span>
-      </a>
-
+    <div class="fl" id="lines"><b>Linha</b>
+      <button class="chip" data-line="all" aria-pressed="true">Todas</button>
+      <button class="chip geral" data-line="geral" aria-pressed="false">Jurídico Geral</button>
+      <button class="chip prev" data-line="prev" aria-pressed="false">Previdenciário</button>
+      <button class="chip trib" data-line="trib" aria-pressed="false">Tributário</button>
+      <button class="chip" data-line="especial" aria-pressed="false">Especial</button>
     </div>
-  </div>
+    <div class="fl" id="topics"><b>Assunto</b></div>
+  </section>
+  <div class="count" id="count" aria-live="polite"></div>
+  <div class="list" id="list"></div>
+  <button class="more" id="more" hidden>Mostrar mais edições</button>
 
-  <div class="section-divider" style="margin-top: 44px;"></div>
+  <div class="note"><b>Próxima edição do Tributário</b>O Brevis Tributário passa a sair às quartas-feiras, com foco na reforma tributária, nas regras de transição e no tributário geral. A edição nº 002 está prevista para 11 de novembro de 2026.</div>
 
-<!-- ═══════════════════════════════════════════
-LINHA 3 — BREVIS ESPECIAL
-════════════════════════════════════════════ -->
-<div class="line-header">
-<span class="line-num">03</span>
-<span class="line-title">Brevis Especial</span>
-<div class="line-rule"></div>
-<span class="line-badge badge-especial">Edição avulsa</span>
-</div>
-
-<p class="line-desc">
-<strong>Edições avulsas, fora da numeração regular.</strong> Dedicadas a um único caso de grande repercussão, quando o volume de desdobramentos justifica um tratamento à parte — sem viés, com fontes atribuídas e painel plural de vozes.
-</p>
-
-<div class="editions-grid">
-
-<a href="brevis-especial-caso-master-2026-09-16.html" class="card-featured especial">
-<div class="card-label">
-<span class="card-label-new black">Edição Atual</span>
-<span class="card-label-edition">Edição avulsa · 16 de setembro de 2026</span>
-</div>
-<div class="card-title">Seis horas, nenhum veredicto: por dentro da sessão que expôs a fratura do Supremo — o Caso Master, contado do início ao fim</div>
-<div class="card-summary">Reportagem completa sobre a sessão do STF de 15/09/2026 que discutiu, ao vivo, se cabe investigar o Min. Alexandre de Moraes por sua relação com Daniel Vorcaro (Banco Master) — com a fala de cada ministro em plenário, o mecanismo jurídico por trás do pedido de vista de Flávio Dino, um painel plural de vozes e a repercussão na imprensa nacional e internacional. Inclui link para consulta e podcast no NotebookLM.</div>
-<div class="card-meta" style="margin-top:14px;">
-<span class="card-date">16 de setembro de 2026</span>
-<div class="card-tags">
-<span class="tag tag-navy">STF</span>
-<span class="tag tag-red">Caso Master</span>
-<span class="tag tag-gray">Especial</span>
-</div>
-</div>
-<span class="card-arrow">→</span>
-</a>
-
-</div>
-
-<!-- FOOTER -->
   <footer class="footer">
     <div class="footer-logo">BREVI<span>S</span></div>
     <div class="footer-tagline">Radar jurídico estratégico · Curadoria independente</div>
     <div class="footer-text">Produzido por Jean Barbosa · CEO Maximiano Advogados · 2026</div>
   </footer>
-
 </div>
+<script>
+var LINES={"geral": "Jurídico Geral", "prev": "Previdenciário", "trib": "Tributário", "especial": "Especial"};
+var E=[{"l": "geral", "n": "017", "d": "2026-11-03", "t": "Previ no STF (Tema 1.423) em 5 a 3 e suspenso, TCU e a alíquota da CBS, decreto do SAC, IBS/CBS no Simples, TST (Temas 316 e 317) e paternidade registral no STJ.", "m": "Constitucional · Tributário · Trabalhista · Consumidor", "h": "brevis-semanal-edicao017-2026-11-03.html"}, {"l": "prev", "n": "017", "d": "2026-11-03", "t": "STF valida o fim do duplo teto para servidor aposentado com doença incapacitante (7 a 3, ADI 6.336), MPS divulga os números da fila do INSS e Fachin devolve a Operação Sem Desconto a Mendonça", "m": "STF · CNPS · INSS · Operação Sem Desconto", "h": "brevis-previdenciario-edicao017-2026-11-03.html"}, {"l": "trib", "n": "001", "d": "2026-11-03", "t": "STF suspende a ADPF 248 (prazo para restituição de tributo inconstitucional), MP do Imposto Seletivo é anunciada, CBS vai à CAE do Senado, transação da Receita é prorrogada e Confaz publica convênios de ICMS.", "m": "Reforma tributária · STF · Receita · Confaz · ICMS", "h": "brevis-tributario-edicao001-2026-11-03.html"}, {"l": "geral", "n": "016", "d": "2026-10-26", "t": "STF exclui o ISS da base do PIS/Cofins por 6 a 5 (Tema 118), STJ decide que o VGBL em acumulação não entra na partilha, TST barra pagamento de advogado do empregado em acordos de rescisão e STJ condena cinco por venda de decisões na Operação Faroeste.", "m": "Tributário · Cível · Trabalhista · Constitucional", "h": "brevis-semanal-edicao016-2026-10-26.html"}, {"l": "prev", "n": "016", "d": "2026-10-26", "t": "LC 238/2026 perdoa dívidas federais de MEI, STF tem repercussão geral sobre o índice dos atrasados antes do precatório e CNJ adia o instrumento biopsicossocial no BPC.", "m": "LC 238 · STF · CNJ · BPC", "h": "brevis-previdenciario-edicao016-2026-10-26.html"}, {"l": "geral", "n": "015", "d": "2026-10-20", "t": "Fim da escala 6x1 (EC 141) como assunto do momento, STF conclui o Tema 1.348 (ITBI de holdings) em 9 a 2, decide os Temas 843 e 1.016, STJ define penhora de salário (Tema 1.230) e PGFN abre transação de FGTS.", "m": "Trabalhista · Tributário · Constitucional · Cível", "h": "brevis-semanal-edicao015-2026-10-20.html"}, {"l": "prev", "n": "015", "d": "2026-10-20", "t": "EC 140/2026 cria aposentadoria diferenciada para agentes de saúde, salário-maternidade passa a ser automático após 30 dias e STF publica o acórdão da ADI 6.309 sobre idade mínima na aposentadoria especial.", "m": "EC 140 · INSS · STF · CJF · TNU", "h": "brevis-previdenciario-edicao015-2026-10-20.html"}, {"l": "prev", "n": "014", "d": "2026-09-28", "t": "CJF libera R$ 2,68 bi em RPVs, TNU forma maioria parcial no Tema 389, Câmara avança com fim da carência do salário-maternidade e prova de vida nas urnas", "m": "CJF · TNU · PL 1.599/2026 · ADI 7.949", "h": "brevis-previdenciario-edicao014-2026-09-28.html"}, {"l": "geral", "n": "014", "d": "2026-09-22", "t": "ADIn 6.200 (amianto), Tema 1.348 em 5x2 com vista de Moraes, Toyota no TJ-PI e a greve dos Correios como assunto do momento.", "m": "Constitucional · Tributário · Trabalhista · Institucional", "h": "brevis-semanal-edicao014-2026-09-22.html"}, {"l": "especial", "n": "ESP", "d": "2026-09-16", "t": "Seis horas, nenhum veredicto: por dentro da sessão que expôs a fratura do Supremo — o Caso Master, contado do início ao fim", "m": "STF · Caso Master · Especial", "h": "brevis-especial-caso-master-2026-09-16.html"}, {"l": "prev", "n": "013", "d": "2026-09-16", "t": "STF flexibiliza prisões da Operação Sem Desconto e solta ex-procurador-geral do INSS, STJ esclarece a DIB no Tema 1.124 e PLP 42/2023 recebe três pedidos de votação imediata", "m": "STF · STJ · Operação Sem Desconto · PLP 42/2023", "h": "brevis-previdenciario-edicao013-2026-09-16.html"}, {"l": "geral", "n": "013", "d": "2026-09-15", "t": "Semana com o Caso Master, Tema 1.348 (ITBI de holdings) e o \"assunto do momento\" jurídico da semana.", "m": "Constitucional · Tributário · Institucional", "h": "brevis-semanal-edicao013-2026-09-15.html"}, {"l": "prev", "n": "012", "d": "2026-09-08", "t": "Lula anuncia zeramento da fila do INSS acima de 45 dias (com contraponto: indeferimentos sobem 70%), STF fixa critério de R$ 5 mil na ADC 80 e nova lei reconhece Síndrome de Tourette para o BPC/LOAS", "m": "Governo Federal · STF · INSS · BPC/LOAS", "h": "brevis-previdenciario-edicao012-2026-09-08.html"}, {"l": "geral", "n": "012", "d": "2026-09-04", "t": "Receita Federal sinaliza 2028 como meta para o split payment, CARF cancela R$ 2,2 bi em autuações contra a B3 e Receita, e TST fixa tópico de relevância em recurso especial.", "m": "Tributário · Trabalhista", "h": "brevis-semanal-edicao012-2026-09-04.html"}, {"l": "prev", "n": "011", "d": "2026-08-31", "t": "STF confirma teto de juros do consignado do INSS (ADI 7.759), STJ afasta divisor mínimo pós-reforma, CJF libera R$ 2,75 bi em RPVs e Câmara aprova urgência para aposentadoria especial", "m": "STF · STJ · INSS · CJF", "h": "brevis-previdenciario-edicao011-2026-08-31.html"}, {"l": "geral", "n": "011", "d": "2026-08-25", "t": "STJ aprova Emenda Regimental 55 (filtro de relevância), TST redesenha competência do FGTS, STF estende Lei Maria da Penha e mais 12 movimentos verificados de 3 a 25 de agosto", "m": "Cível · Tributário · Trabalhista · Constitucional", "h": "brevis-semanal-edicao011.html"}, {"l": "prev", "n": "010", "d": "2026-08-23", "t": "TNU confirma efeitos financeiros da complementação de contribuição (Tema 384), TRF3 concede BPC a mulher com fibromialgia e CJF libera R$ 321,4 milhões em RPVs previdenciárias na 3ª Região", "m": "TNU · TRF3 · TRF4 · CJF", "h": "brevis-previdenciario-edicao010.html"}, {"l": "prev", "n": "009", "d": "2026-08-13", "t": "IN 212/2026 amplia o período de graça, STF afeta o Tema 1.467 sobre qualidade de segurado e novo Atestmed entra em vigor", "m": "INSS · STF · TNU", "h": "brevis-previdenciario-edicao009.html"}, {"l": "geral", "n": "009", "d": "2026-08-07", "t": "TST autoriza desconto parcial de dias de greve, IVA dual projeta 27,91%, STJ protege bem de família de alto valor e lei torna hediondos crimes sexuais digitais contra crianças", "m": "Trabalhista · Tributário · Cível · Criminal", "h": "brevis-semanal-edicao009.html"}, {"l": "prev", "n": "008", "d": "2026-08-07", "t": "STF derruba idade mínima da aposentadoria especial, STJ reforça bloqueio de FPM por dívida previdenciária e ludopatia dispara nas concessões de auxílio-doença", "m": "STF · STJ · TRF4/TRF6 · INSS", "h": "brevis-previdenciario-edicao008.html"}, {"l": "prev", "n": "007", "d": "2026-07-31", "t": "STJ julga dois repetitivos no mesmo dia sobre incapacidade e penosidade, PEC dos agentes de saúde é aprovada e INSS paga pensão por feminicídio", "m": "STJ · Senado · TRF4 · INSS", "h": "brevis-previdenciario-edicao007.html"}, {"l": "geral", "n": "008", "d": "2026-07-26", "t": "STF amplia responsabilidade de plataformas digitais, STJ trava crédito de PIS/Cofins e ICMS-Difal, TST fixa 40 teses vinculantes e janela do ITCMD progressivo se fecha", "m": "Cível · Tributário · Trabalhista · Holding", "h": "brevis-semanal-edicao008.html"}, {"l": "prev", "n": "006", "d": "2026-07-26", "t": "TNU derruba exigência de incapacidade no BPC/LOAS, STJ mexe em decadência e prova nova, e INSS muda a procuração eletrônica", "m": "STJ · TNU · STF · INSS", "h": "brevis-previdenciario-edicao006.html"}, {"l": "prev", "n": "005", "d": "2026-05-19", "t": "STJ autoriza cessação administrativa de benefício por incapacidade, motorista pré-1995 sem laudo e ADI 6.309 no plenário", "m": "STJ · STF · TNU · TRF4", "h": "brevis-previdenciario-edicao005.html"}, {"l": "geral", "n": "007", "d": "2026-05-02", "t": "TEA com reembolso retroativo, ITCMD acelerando nos Estados, transação tributária com desconto real e Direito à Desconexão na prática", "m": "Cível · Tributário · Trabalhista · Digital", "h": "brevis-edicao007.html"}, {"l": "prev", "n": "004", "d": "2026-04-20", "t": "STJ Tema 1421, descontos indevidos no INSS e novo radar previdenciário de abril", "m": "STJ · TNU · STF · TRF6", "h": "brevis-previdenciario-edicao004.html"}, {"l": "prev", "n": "003", "d": "2026-04-01", "t": "ADI 6309 no STF, Tema 348 TNU e Atestmed expandido — semana de alto impacto previdenciário", "m": "TNU · TRF6 · STF · STJ", "h": "brevis-previdenciario-edicao003.html"}, {"l": "geral", "n": "006", "d": "2026-03-31", "t": "STJ consolida remessa necessária e TEA, TST expande assédio moral político, FGTS em contratos de experiência e ITCMD progressivo", "m": "Civil · Trabalhista · Tributário · Família", "h": "brevis-semanal-edicao006.html"}, {"l": "prev", "n": "002", "d": "2026-03-25", "t": "Frentista com especialidade após 1997, B91 conta para carência (TNU 349) e reajuste 2026 em vigor", "m": "TRF6 · TNU · STJ · STF", "h": "brevis-previdenciario-edicao002.html"}, {"l": "geral", "n": "005", "d": "2026-03-24", "t": "PIX sob coação, adimplemento substancial em planos de saúde, ITBI no STF e NR-01 com riscos psicossociais", "m": "Civil · Tributário · Trabalhista", "h": "brevis-semanal-edicao005.html"}, {"l": "prev", "n": "001", "d": "2026-03-18", "t": "TNU Tema 343 mantido, decadência em alerta no STJ e agentes de saúde sem aposentadoria automática", "m": "TNU · TRF6 · STJ · Edição inaugural", "h": "brevis-previdenciario-edicao001.html"}, {"l": "geral", "n": "004", "d": "2026-03-13", "t": "AP 2670 no STF, outorga conjugal no STJ e pejotização aguardando julgamento", "m": "Civil · Previdenciário · Trabalhista", "h": "edicao-004.html"}, {"l": "geral", "n": "002", "d": "2026-03-11", "t": "Radar jurídico da semana de 11 de março", "m": "Multidisciplinar", "h": "edicao-002.html"}, {"l": "geral", "n": "001", "d": "2026-03-10", "t": "Primeira edição — Radar jurídico de lançamento", "m": "Edição inaugural", "h": "edicao-001.html"}];
+var MESES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+var STEP=10,shown=STEP,line='all',topic='',q='';
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+function fdate(d){var p=d.split('-');return (+p[2])+' '+MESES[+p[1]-1].slice(0,3)+' '+p[0]}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function hl(s){var t=esc(s);if(!q)return t;var n=norm(s),k=norm(q),i=n.indexOf(k);if(i<0||n.length!==s.length)return t;return esc(s.slice(0,i))+'<mark>'+esc(s.slice(i,i+k.length))+'</mark>'+esc(s.slice(i+k.length))}
+// assuntos mais frequentes
+(function(){var c={};E.forEach(function(e){e.m.split(' · ').forEach(function(t){t=t.trim();if(!t||/edi[cç][aã]o/i.test(t))return;c[t]=(c[t]||0)+1})});
+ var keys=Object.keys(c).filter(function(k){return c[k]>=3&&k!=='Multidisciplinar'}).sort(function(a,b){return c[b]-c[a]}).slice(0,10);
+ var box=document.getElementById('topics');
+ keys.forEach(function(k){var b=document.createElement('button');b.className='chip';b.setAttribute('data-topic',k);b.setAttribute('aria-pressed','false');b.textContent=k;box.appendChild(b)})})();
+function match(e){if(line!=='all'&&e.l!==line)return false;if(topic&&norm(e.m).indexOf(norm(topic))<0&&norm(e.t).indexOf(norm(topic))<0)return false;
+ if(q){var h=norm(e.t+' '+e.m+' '+LINES[e.l]+' '+e.n+' '+fdate(e.d));var ws=norm(q).split(/\s+/).filter(Boolean);for(var i=0;i<ws.length;i++)if(h.indexOf(ws[i])<0)return false}return true}
+function render(){var r=E.filter(match),list=document.getElementById('list'),h='';
+ r.slice(0,shown).forEach(function(e){h+='<a class="ed" href="'+e.h+'"><div class="ed-side"><span class="badge '+e.l+'">'+LINES[e.l]+(e.n&&e.n!=='ESP'?' · '+e.n:'')+'</span><span class="ed-date">'+fdate(e.d)+'</span></div><div><div class="ed-title">'+hl(e.t)+'</div><div class="ed-meta">'+hl(e.m)+'</div></div><span class="ed-arrow">→</span></a>'});
+ if(!r.length)h='<div class="empty"><b>Nenhuma edição encontrada</b>Tente outra palavra ou limpe os filtros.</div>';
+ list.innerHTML=h;
+ document.getElementById('count').textContent=r.length+(r.length===1?' edição':' edições')+(q||topic||line!=='all'?(r.length===1?' encontrada':' encontradas'):' no arquivo')+(r.length>shown?' · mostrando '+shown:'');
+ document.getElementById('more').hidden=r.length<=shown}
+document.getElementById('q').addEventListener('input',function(e){q=e.target.value.trim();shown=STEP;render()});
+document.getElementById('lines').addEventListener('click',function(e){var l=e.target.getAttribute('data-line');if(!l)return;line=l;shown=STEP;[].forEach.call(this.querySelectorAll('.chip'),function(c){c.setAttribute('aria-pressed',c.getAttribute('data-line')===l)});render()});
+document.getElementById('topics').addEventListener('click',function(e){var t=e.target.getAttribute('data-topic');if(!t)return;topic=(topic===t?'':t);shown=STEP;[].forEach.call(this.querySelectorAll('.chip'),function(c){c.setAttribute('aria-pressed',c.getAttribute('data-topic')===topic)});render()});
+document.getElementById('more').addEventListener('click',function(){shown+=STEP;render()});
+document.addEventListener('keydown',function(e){if(e.key==='/'&&document.activeElement.tagName!=='INPUT'){e.preventDefault();document.getElementById('q').focus()}});
+// etiqueta "Nova" para edicoes dos ultimos 7 dias (a partir da data do navegador)
+[].forEach.call(document.querySelectorAll('.door-new'),function(el){var d=new Date(el.getAttribute('data-date')+'T12:00:00'),n=Date.now();if(n-d.getTime()<8*86400000&&n>=d.getTime()-86400000)el.classList.add('on')});
+try{var p=new URLSearchParams(location.search).get('q');if(p){q=p;document.getElementById('q').value=p}}catch(x){}
+render();
+</script>
 </body>
 </html>
