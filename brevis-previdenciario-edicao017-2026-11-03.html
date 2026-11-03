@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 017 · 3 de novembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--azul-escuro:#0D1F3C;--azul-meio:#1A3A6B;--azul-claro:#2B5797;--dourado:#C9A84C;--dourado-claro:#E8CC7A;--branco:#FAFAF8;--cinza-claro:#F0EDE6;--texto:#3A3A3A;--sub:#777;--alerta:#A8230E;--alerta-claro:#FDF0EE;--verde:#1A5E3A;--verde-claro:#EAF5EE;--ambar:#B45309;--ambar-claro:#FFF3E0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0A1826;font-family:'DM Sans',sans-serif;color:var(--texto);-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;background:var(--branco);min-height:100vh;box-shadow:0 0 80px rgba(0,0,0,.5)}
+.mono{font-family:'DM Mono',monospace}
+/* topo compacto */
+.top{background:var(--azul-escuro);padding:26px 32px 22px;color:var(--branco);position:relative;overflow:hidden}
+.top:after{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border:1px solid rgba(201,168,76,.2);border-radius:50%}
+.eyebrow{font:500 9px 'DM Mono',monospace;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);opacity:.85}
+.top h1{font:900 32px 'Playfair Display',serif;letter-spacing:-.6px;margin:8px 0 4px}
+.top h1 span{color:var(--dourado)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(250,250,248,.7);margin-top:10px}
+.meta b{color:var(--dourado-claro);font:500 9px 'DM Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;display:block;opacity:.8}
+/* nav fixa */
+.nav{position:sticky;top:0;z-index:20;background:var(--azul-meio);display:flex;gap:2px;padding:8px 20px;overflow-x:auto;border-bottom:2px solid var(--dourado)}
+.nav a{font:500 10px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:rgba(232,204,122,.75);text-decoration:none;padding:7px 12px;border-radius:4px;white-space:nowrap}
+.nav a:hover,.nav a.on{background:rgba(201,168,76,.18);color:var(--dourado-claro)}
+section{padding:28px 32px;scroll-margin-top:50px}
+h2.sec{font:700 11px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul-claro);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2.sec:after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--dourado),transparent);opacity:.4}
+/* 30 segundos */
+.quick{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:6px 0;margin:22px 32px 0}
+.quick h3{font:500 10px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);padding:14px 20px 8px}
+.q{display:flex;gap:12px;align-items:flex-start;padding:11px 20px;border-top:1px solid rgba(201,168,76,.13);text-decoration:none;color:inherit;cursor:pointer}
+.q:hover{background:rgba(201,168,76,.08)}
+.q .n{font:500 11px 'DM Mono',monospace;color:var(--dourado);width:20px;padding-top:2px}
+.q .t{flex:1;font-size:14px;line-height:1.4}
+.q .t small{display:block;color:rgba(250,250,248,.5);font-size:11.5px;margin-top:2px}
+.tag{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:12px;white-space:nowrap}
+.t-stf{background:#F5E8C0;color:#8B5E00}.t-inss{background:#FDE0DA;color:#A8230E}.t-tnu{background:#DCE8F7;color:#2B5797}.t-cjf{background:#D9E2F7;color:#1A3A8B}.t-cn{background:#D9E6F3;color:#1A3A6B}.t-stj{background:#E8DBF0;color:#5A2E7A}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.d-alto{background:#1A5E3A}.d-medio{background:#C9A84C}
+/* em alta */
+.hot{margin:18px 32px 0;border:1px solid var(--dourado);border-left:5px solid var(--dourado);background:linear-gradient(135deg,#FFFBEE,#fff);border-radius:8px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hot .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--ambar)}
+.hot h3{font:700 19px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.25;margin:6px 0}
+.hot p{font-size:13px;line-height:1.6}
+.hot .nums{display:flex;flex-direction:column;gap:6px;text-align:center}
+.hot .nums div{background:var(--azul-escuro);color:var(--dourado-claro);border-radius:8px;padding:8px 14px;font:700 20px 'Playfair Display',serif}
+.hot .nums small{display:block;font:400 8.5px 'DM Mono',monospace;letter-spacing:1px;color:rgba(250,250,248,.6);text-transform:uppercase}
+@media(max-width:640px){.hot{grid-template-columns:1fr}.hot .nums{flex-direction:row;justify-content:center}}
+/* filtros */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid #D8D2C2;background:#fff;border-radius:20px;padding:6px 14px;font:500 11px 'DM Sans',sans-serif;cursor:pointer;color:var(--texto)}
+.chip.on{background:var(--azul-meio);color:var(--dourado-claro);border-color:var(--azul-meio)}
+/* cards */
+.card{border:1px solid #DDD7C8;border-radius:12px;margin-bottom:34px;background:#fff;overflow:hidden;border-left:6px solid var(--azul-claro);box-shadow:0 8px 22px rgba(13,31,60,.12)}
+.card.stf{border-left-color:var(--dourado)}.card.inss{border-left-color:#D9634A}.card.cjf{border-left-color:#4D6FC9}.card.tnu{border-left-color:#6C97C9}.card.stj{border-left-color:#8B5EA8}.card.cn{border-left-color:#6C97C9}
+.card.hide{display:none}
+.ch{padding:16px 18px 12px;background:#FAF8F2;border-bottom:1px solid #EEE9DC}
+.ch .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;font:500 9px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--sub)}
+.ch h3{font:700 17px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3}
+.fato{padding:14px 18px 4px;font-size:13.5px;line-height:1.6}
+.acao{margin:10px 18px;background:var(--verde-claro);border-left:3px solid var(--verde);border-radius:6px;padding:10px 14px;font-size:13px;line-height:1.55}
+.acao b{display:block;font:500 9px 'DM Mono',monospace;letter-spacing:2px;text-transform:uppercase;color:var(--verde);margin-bottom:3px}
+.acao.warn{background:var(--ambar-claro);border-color:var(--ambar)}.acao.warn b{color:var(--ambar)}
+.more{display:none;padding:2px 18px 14px;font-size:13px;line-height:1.7;color:#4a4a4a}
+.more p{margin-bottom:10px}
+.card.open .more{display:block}
+.cf{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-top:1px solid #EFEBE0;background:#FBFAF6;gap:10px;flex-wrap:wrap}
+.pill{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:12px}
+.p-ok{background:var(--verde-claro);color:var(--verde)}.p-wait{background:var(--ambar-claro);color:var(--ambar)}
+.btn{border:0;background:none;color:var(--azul-claro);font:600 12px 'DM Sans',sans-serif;cursor:pointer;padding:4px 0}
+.btn:hover{color:var(--azul-escuro)}
+.fonte{font-size:11px;color:var(--sub)}
+.fonte a{color:var(--azul-claro)}
+/* radar */
+.radar{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.radar{grid-template-columns:1fr}}
+.rd{border:1px solid #E4DFD2;border-radius:10px;padding:14px 16px;background:#fff;font-size:12.5px;line-height:1.55}
+.rd .tag{margin-bottom:8px;display:inline-block}
+.rd h4{font:700 14px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3;margin-bottom:6px}
+.rd.full{grid-column:1/-1}
+/* painel de acao */
+.tabs{display:flex;gap:4px;border-bottom:2px solid #E4DFD2;margin-bottom:16px;overflow-x:auto}
+.tab{background:none;border:0;padding:11px 16px;font:600 12.5px 'DM Sans',sans-serif;color:var(--sub);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tab.on{color:var(--azul-escuro);border-bottom-color:var(--dourado)}
+.panel{display:none}.panel.on{display:block}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E4DFD2;border-radius:8px;margin-bottom:8px;background:#fff;font-size:13px;line-height:1.55}
+.chk input{margin-top:4px;accent-color:var(--azul-meio);width:16px;height:16px;flex-shrink:0}
+.chk.done{opacity:.5;text-decoration:line-through}
+.chk .ref{font:500 9px 'DM Mono',monospace;color:var(--azul-claro);text-decoration:none;white-space:nowrap;margin-left:auto;padding-left:8px}
+.prog{font:500 11px 'DM Mono',monospace;color:var(--sub);margin-bottom:10px}
+.src{display:flex;gap:10px;font-size:12.5px;line-height:1.5;padding:9px 0;border-bottom:1px solid #EFEBE0}
+.src b{font:500 10px 'DM Mono',monospace;color:var(--dourado);min-width:22px}
+.src a{color:var(--azul-claro);text-decoration:none;font-weight:500}
+.curio{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:20px 22px;font-size:13.5px;line-height:1.7}
+.curio .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px}
+footer{background:var(--azul-escuro);color:rgba(250,250,248,.5);text-align:center;padding:24px;font-size:11px;line-height:1.7}
+footer b{display:block;font:900 18px 'Playfair Display',serif;color:var(--branco);margin-bottom:4px}
+.proto{background:#1A3A6B;color:#E8CC7A;font:500 10px 'DM Mono',monospace;letter-spacing:1.5px;text-align:left;padding:10px 32px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="proto"><a href="index.html" style="color:inherit;text-decoration:none">← VOLTAR PARA O ARQUIVO DE EDIÇÕES</a></div>
+<div class="top">
+  <div class="eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+  <h1>Brevis <span>Previdenciário</span></h1>
+  <div class="meta"><div><b>Data</b>3 de novembro de 2026</div><div><b>Edição</b>017</div><div><b>Período</b>27/10 a 03/11</div><div><b>Leitura</b>2 min (resumo) · 9 min (completa)</div></div>
+</div>
+<nav class="nav" id="nav">
+  <a href="#resumo" class="on">Resumo</a><a href="#movs">Movimentos</a><a href="#radar">Radar</a><a href="#acao">Painel de ação</a><a href="#curio">Curiosidade</a>
+</nav>
+
+<div class="quick" id="resumo">
+  <h3>Em 30 segundos — toque para ir ao detalhe</h3>
+  <a class="q" href="#m1"><span class="n">01</span><span class="t"><span class="dot d-alto"></span>STF valida o fim do duplo teto: servidor aposentado com doença incapacitante contribui sobre o que passa do teto do RGPS (7 a 3)<small>ADI 6.336 · 29/10 · regime próprio, não INSS · acórdão não localizado</small></span><span class="tag t-stf">STF</span></a>
+  <a class="q" href="#m2"><span class="n">02</span><span class="t"><span class="dot d-medio"></span>MPS: fila do INSS em 1,246 milhão de pedidos e tempo médio de decisão de 24 dias<small>CNPS · 27/10 · médias do próprio governo, não prazos</small></span><span class="tag t-inss">INSS · MPS</span></a>
+  <a class="q" href="#m3"><span class="n">03</span><span class="t"><span class="dot d-alto"></span>Benefício de Afastamento Protetivo: INSS paga segurada afastada por medida protetiva, sem perícia e sem carência<small>Portaria Conjunta 48 · DOU 9/10 · resumo oficial (texto não lido)</small></span><span class="tag t-inss">INSS · MPS</span></a>
+  <a class="q" href="#m4"><span class="n">04</span><span class="t"><span class="dot d-medio"></span>Fachin devolve a Operação Sem Desconto à relatoria de Mendonça<small>PET 15.041 · 29/10 · referendo do Plenário pendente</small></span><span class="tag t-stf">STF</span></a>
+  <a class="q" href="#radar"><span class="n">+</span><span class="t"><span class="dot d-medio"></span>No Radar: Previ (Tema 1.423), TRU4 sobre BPC e facultativo, afetação no STJ, correição do CNJ nos TRFs<small>Itens de acompanhamento e de fonte secundária</small></span><span class="tag t-stj">Radar</span></a>
+</div>
+
+<section id="movs">
+  <h2 class="sec">Movimentos verificados</h2>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">Todos</button><button class="chip" data-f="alto">Impacto alto</button><button class="chip" data-f="inss">INSS · MPS</button><button class="chip" data-f="stf">STF</button>
+  </div>
+
+  <article class="card stf" id="m1" data-tags="all alto stf">
+    <div class="ch"><div class="row"><span class="tag t-stf">STF · ADI 6.336</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 01</span></div><h3>STF valida o fim do duplo teto: servidor aposentado com doença incapacitante contribui sobre o que passa do teto do RGPS, por 7 a 3</h3></div>
+    <div class="fato">Plenário, 29/10/2026, ADI 6.336 (Anamatra), retomada com o voto-vista de Fux. Maioria de 7 a 3, pela contagem dos votos nominais da nota do STF. Venceu o voto de Barroso (aposentado), acompanhado por Cármen Lúcia, Zanin, Mendonça, Nunes Marques, Moraes e Toffoli. Vencidos o relator Fachin, Rosa Weber (aposentada) e Fux. A EC 103/2019 revogou a regra pela qual o servidor com doença incapacitante só contribuía sobre o que excedesse o dobro do teto do RGPS; agora a isenção alcança só a parcela até o teto. A decisão trata do regime próprio (RPPS), não do INSS.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Servidor aposentado de regime próprio com doença incapacitante: a nota do STF indica validada a regra que limita a isenção ao teto do RGPS; a ADI tem efeito vinculante, mas reavalie ações que busquem afastar a cobrança só depois de ler o acórdão, a modulação e os embargos. Segurado do INSS: nada muda por esta decisão.</div>
+    <div class="more"><p>A nota do STF fala em sessão de "quarta-feira (29)", mas 29/10/2026 foi quinta-feira, como dizem as outras notas do tribunal do mesmo dia. Segundo o STF, o julgamento tinha sido suspenso em 18/12/2025. Barroso apresentou o voto em sessão virtual, antes de se aposentar.</p><p>Fachin, relator, afirmou que a imunidade era medida de equiparação para a inserção social de pessoas com deficiência, e que o déficit atuarial não justifica suprimi-la; Fux considerou inadmissível, na ordem de 1988, deixar pessoas com deficiência desamparadas. Barroso entendeu que a proteção da regra revogada ia além do indispensável a uma existência digna.</p><p>A nota não traz a tese formal, não fala em modulação e não trata do imposto de renda: a isenção de IR por moléstia grave é outro instituto e não é tema desta nota. Acórdão não localizado.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Julgamento concluído — acórdão não localizado</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://noticias.stf.jus.br/postsnoticias/stf-valida-regra-que-altera-isencao-de-contribuicao-previdenciaria-sobre-aposentadoria-de-servidores-incapacitados/">Notícias STF — 29/10</a> · fonte oficial</span></div>
+  </article>
+
+  <article class="card inss" id="m2" data-tags="all inss">
+    <div class="ch"><div class="row"><span class="tag t-inss">INSS · MPS · CNPS</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 02</span></div><h3>MPS: fila do INSS em 1,246 milhão de pedidos e tempo médio de decisão de 24 dias em outubro</h3></div>
+    <div class="fato">Na 330ª reunião do CNPS, em 27/10/2026, o diretor de Benefícios do INSS apresentou: 1,246 milhão de requerimentos em análise, o menor número da série desde janeiro de 2023; 764 mil dentro do prazo legal de 45 dias, 329 mil em exigência e 153 mil acima de 45 dias. Tempo médio de decisão de 24 dias em outubro (41 em janeiro): salário-maternidade 10, incapacidade 14, aposentadorias 32, assistenciais 42. Na perícia médica federal, 160,7 mil aguardavam, com espera média de 16 dias.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Use os números como parâmetro de cobrança, não como prazo do caso: são médias do próprio governo. Para pedido acima do prazo legal de 45 dias (contado na forma da lei, descontadas as exigências pendentes), avalie cobrança administrativa e medida judicial por mora, documentando datas de protocolo e de cumprimento de exigências.</div>
+    <div class="more"><p>Por estado, as maiores filas de perícia estavam em São Paulo (20,8 mil) e no Ceará (16 mil); o menor tempo de espera, em Mato Grosso do Sul (8 dias), e o de São Paulo, de 12 dias. A reunião também lançou o Anuário Estatístico da Previdência Social 2025 (nota do MPS de 29/10).</p><p>Segundo o anuário, em 2025 foram 7 milhões de concessões, recorde da série, e a despesa do RGPS foi de R$ 846,8 bilhões, alta nominal de 7,8% sobre 2024. A página oficial não traz taxa de indeferimento: a fila menor não diz nada sobre o resultado dos pedidos.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Dados oficiais — médias, não prazos</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.gov.br/previdencia/pt-br/noticias/2026/outubro/ministro-destaca-novos-mecanismos-de-protecao-social-e-a-ampliacao-de-beneficios-administrados-pelo-inss">MPS — CNPS (27/10)</a> · <a href="https://www.gov.br/previdencia/pt-br/noticias/2026/outubro/previdencia-social-concede-mais-de-7-milhoes-de-beneficios-em-2025-recorde-historico">MPS — Anuário 2025</a></span></div>
+  </article>
+
+  <article class="card inss" id="m3" data-tags="all alto inss">
+    <div class="ch"><div class="row"><span class="tag t-inss">INSS · Portaria Conjunta 48</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 03</span></div><h3>Benefício de Afastamento Protetivo: INSS paga a segurada afastada do trabalho por medida protetiva da Lei Maria da Penha, sem perícia e sem carência</h3></div>
+    <div class="fato">A Portaria Conjunta nº 48 (MPS/INSS) foi publicada no DOU de 9/10/2026, fora do período desta edição, e não havia sido tratada antes; o ministro citou o benefício no CNPS de 27/10. Terá direito a segurada de qualquer categoria do RGPS afastada do trabalho por decisão judicial criminal, com a decisão e a qualidade de segurada na data do início do afastamento (ou da decisão). Sem perícia e sem carência. Valor calculado como o auxílio por incapacidade temporária, entre o salário mínimo e o teto de R$ 8.475,55, por até seis meses (se a decisão não fixar prazo, vale o máximo).</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Oriente mulheres com medida protetiva e afastamento do trabalho a requerer pelo Meu INSS, pelo site ou pelo 135, com a decisão judicial. Requeira o benefício desde o início, sem esperar o empregador; segundo o resumo oficial, os primeiros 15 dias da empregada ficam com a empresa e o INSS paga do 16º dia. Em caso de negativa, confira o texto da portaria no DOU antes de recorrer, pois só lemos o resumo oficial.</div>
+    <div class="more"><p>Pagamento: para a empregada, os primeiros 15 dias ficam com o empregador e o INSS paga a partir do 16º; para empregada doméstica, avulsa, contribuinte individual, facultativa e segurada especial, o INSS paga desde o início do afastamento. O requerimento é feito pela própria segurada. Mulheres que não são seguradas podem receber benefício assistencial pago por estado, Distrito Federal ou município, conforme o juiz indicar.</p><p>Antes, a mulher precisava ajuizar ação contra o INSS, conforme o resumo oficial, que cita parecer da AGU. Só o resumo da Agência Gov e do INSS foi lido; não lemos o texto da portaria no DOU.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Publicada em 9/10 — resumo oficial, texto não lido</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://agenciagov.ebc.com.br/noticias/202610/beneficio-lei-maria-da-penha-do-inss-garante-renda-a-mulher-afastada-do-trabalho-por-situacao-de-violencia-domestica">Agência Gov / INSS — 9/10</a> · <a href="https://www.gov.br/previdencia/pt-br/noticias/2026/outubro/ministro-destaca-novos-mecanismos-de-protecao-social-e-a-ampliacao-de-beneficios-administrados-pelo-inss">MPS — CNPS (27/10)</a></span></div>
+  </article>
+
+  <article class="card stf" id="m4" data-tags="all inss stf">
+    <div class="ch"><div class="row"><span class="tag t-stf">STF · Operação Sem Desconto</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 04</span></div><h3>Fachin devolve a Operação Sem Desconto, sobre fraudes em descontos do INSS, à relatoria de Mendonça</h3></div>
+    <div class="fato">Em decisão de 29/10/2026, o presidente do STF, Edson Fachin, determinou o retorno dos autos da Operação Sem Desconto (PET 15.041) ao relator André Mendonça, por não haver menção ou indício concreto envolvendo autoridade com foro. As apurações tinham ido para a Presidência em setembro, após citações a autoridades com foro e representação de Moraes (PET 16.704). A PGR não viu indício de abuso de autoridade. A decisão será submetida a referendo do Plenário, que avaliará também a proposta de desmembramento definitivo das apurações e a competência.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>A nota do STF não trata de ressarcimento a segurados nem de mérito: ela só define o relator. Acompanhe o referendo do Plenário e as decisões de Mendonça antes de orientar clientes sobre andamento do caso.</div>
+    <div class="more"><p>O caso Banco Master (PET 15.556 e 16.662) fica provisoriamente com a Presidência, apenas para decisões urgentes, por até 90 dias contados de 12/9, ou até a conclusão da questão de ordem da PET 16.662 no Plenário, o fim do prazo do pedido de vista de Dino ou a entrega de relatório da PF. Fachin diz que não antecipa juízo de mérito nem fixa competência definitiva.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Decisão da Presidência — sujeita a referendo</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://noticias.stf.jus.br/postsnoticias/presidente-do-stf-devolve-operacao-sem-desconto-a-relator-e-mantem-provisoriamente-compliance-zero/">Notícias STF — 29/10</a> · fonte oficial</span></div>
+  </article>
+</section>
+
+<section id="radar">
+  <h2 class="sec">Radar de tribunais e atos</h2>
+  <div class="radar">
+    <div class="rd"><span class="tag t-stf">STF</span><h4>Previ (Tema 1.423): 5 a 3, julgamento suspenso</h4>Previdência complementar: quatro aposentadas do Banco do Brasil pedem benefício integral com 25 anos de filiação, e não 30, como o regulamento exige de ambos os sexos. Placar provisório de 5 a 3 a favor das aposentadas; o STF aponta que faltam os votos de Gilmar e Toffoli. Movimento completo no Brevis Semanal 017; fica no radar aqui porque o tema é de previdência privada.</div>
+    <div class="rd"><span class="tag t-tnu">TRU4</span><h4>BPC impede validar contribuição de facultativo de baixa renda (5%)</h4>A TRU da 4ª Região decidiu em 16/10, por unanimidade, que o BPC é renda própria e impede validar contribuições com alíquota de 5%, que exige três requisitos ao mesmo tempo (relatora Marina Vasques Duarte; processo 5015417-90.2023.4.04.7100; caso de segurada de 74 anos, contribuições de 12/2017 a 7/2018). Uniformização regional; fonte secundária (IEPREV, 30/10), acórdão não localizado.</div>
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Afetação: pensão por morte reabre o prazo decadencial da administração?</h4>A 1ª Seção afetou a questão ao regime da relevância em votação virtual encerrada em 28/10 e suspendeu os processos sobre o tema (REsp 2.270.835), que podem seguir na instrução e receber liminares, mas sem decisão de mérito até o STJ julgar. O caso concreto é de pensão de militar (TRF5); não está claro se a tese alcançará o RGPS. Fonte única (ConJur, 2/11).</div>
+    <div class="rd"><span class="tag t-cn">CNJ</span><h4>Correição nos seis TRFs sobre precatórios</h4>Começa em 3/11 pelo TRF1 e segue até 18/12, para apurar formação, cálculo, expedição, cessão e pagamento de precatórios, inclusive já pagos (Migalhas). A matéria não cita precatórios previdenciários; fonte única. Veja a Res. CJF 995/2026 na edição 015.</div>
+    <div class="rd"><span class="tag t-cn">CNJ</span><h4>BPC: perícia biopsicossocial unificada deixa de ter data nacional</h4>Segundo o IEPREV (26/10), portaria da Presidência do CNJ tirou a data de 3/11 e trocou a obrigatoriedade nacional por implantação gradual; o Tema 385 da TNU continua valendo. Desdobramento da Portaria 511/2026 (edição 016); fonte secundária (<a href="https://ieprev.com.br/noticias/cnj-adia-pericia-biopsicossocial-unificada-do-bpc-o-que-muda-nos-processos-do-seu-escritorio">IEPREV</a>).</div>
+    <div class="rd full"><span class="tag t-cn">Curadoria</span><h4>O que deixamos de fora, e por quê</h4>Ficaram fora, por fonte única, por serem anteriores ao período ou sem texto oficial lido: a Lei 15.371/2026 (licença-paternidade e salário-paternidade, citada pelo ministro no CNPS como novo benefício; não lemos o texto nem a regulamentação), a Operação Ubiquidade II da PF (29/10), a revisão de 535 mil auxílios por incapacidade (fonte única), o calendário de pagamentos de novembro e o Tema 1.370 do STJ (decadência em revisões; sem decisão confirmada). Não localizamos portaria, instrução normativa ou resolução nova do INSS ou do MPS no período, mas não abrimos o DOU diretamente. Preferimos não publicar o que não conseguimos checar.</div>
+  </div>
+</section>
+
+<section id="acao">
+  <h2 class="sec">Painel de ação — tudo que você precisa fazer, por movimento</h2>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-p="p1">✅ Passo a passo</button><button class="tab" data-p="p2">👥 Clientes para mapear</button><button class="tab" data-p="p3">⚠ Cuidados</button><button class="tab" data-p="p4">📚 Fontes</button>
+  </div>
+  <div class="panel on" id="p1">
+    <div class="prog" id="prog">0 de 5 feitos</div>
+    <label class="chk"><input type="checkbox"><span>Separar clientes servidores de regime próprio com doença incapacitante e rever ações sobre a contribuição acima do teto à luz da ADI 6.336.</span><a class="ref" href="#m1">Mov. 01 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Documentar datas de protocolo e de cumprimento de exigências nos pedidos parados há mais de 45 dias.</span><a class="ref" href="#m2">Mov. 02 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Orientar mulheres com medida protetiva e afastamento do trabalho a requerer o benefício com a decisão judicial.</span><a class="ref" href="#m3">Mov. 03 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Acompanhar o referendo do Plenário sobre a relatoria da Operação Sem Desconto.</span><a class="ref" href="#m4">Mov. 04 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Conferir, em clientes com BPC que recolhem como facultativos de baixa renda, o risco de a contribuição não ser validada (TRU4; efeito regional).</span><a class="ref" href="#radar">Radar ↑</a></label>
+  </div>
+  <div class="panel" id="p2">
+    <div class="chk"><span><b>Servidores aposentados de regime próprio</b> com doença incapacitante.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Segurados com pedido parado</b> há mais de 45 dias, sem exigência pendente.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Seguradas afastadas do trabalho</b> por medida protetiva (empregadas, domésticas, avulsas, contribuintes individuais, facultativas, seguradas especiais).</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>Clientes com descontos indevidos</b> em benefício que acompanham a Operação Sem Desconto.</span><a class="ref" href="#m4">Mov. 04</a></div>
+  </div>
+  <div class="panel" id="p3">
+    <div class="chk"><span><b>ADI 6.336:</b> trata do regime próprio, não do INSS; acórdão, modulação e embargos pendentes; a nota não toca no imposto de renda.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>CNPS:</b> médias do próprio governo; a página oficial não traz taxa de indeferimento.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Portaria Conjunta 48:</b> publicada em 9/10, fora do período; só o resumo oficial foi lido, não o texto do DOU.</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>Sem Desconto:</b> decisão de relatoria, sem mérito nem ressarcimento; sujeita a referendo.</span><a class="ref" href="#m4">Mov. 04</a></div>
+  </div>
+  <div class="panel" id="p4">
+    <div class="src"><b>01</b><span><a href="https://noticias.stf.jus.br/postsnoticias/stf-valida-regra-que-altera-isencao-de-contribuicao-previdenciaria-sobre-aposentadoria-de-servidores-incapacitados/">Notícias STF — ADI 6.336</a> · fonte oficial</span></div>
+    <div class="src"><b>02</b><span><a href="https://www.gov.br/previdencia/pt-br/noticias/2026/outubro/ministro-destaca-novos-mecanismos-de-protecao-social-e-a-ampliacao-de-beneficios-administrados-pelo-inss">MPS — 330ª reunião do CNPS</a> · <a href="https://www.gov.br/previdencia/pt-br/noticias/2026/outubro/previdencia-social-concede-mais-de-7-milhoes-de-beneficios-em-2025-recorde-historico">MPS — Anuário Estatístico 2025</a> · fonte oficial</span></div>
+    <div class="src"><b>03</b><span><a href="https://agenciagov.ebc.com.br/noticias/202610/beneficio-lei-maria-da-penha-do-inss-garante-renda-a-mulher-afastada-do-trabalho-por-situacao-de-violencia-domestica">Agência Gov / INSS — Portaria Conjunta 48</a> · fonte oficial (resumo)</span></div>
+    <div class="src"><b>04</b><span><a href="https://noticias.stf.jus.br/postsnoticias/presidente-do-stf-devolve-operacao-sem-desconto-a-relator-e-mantem-provisoriamente-compliance-zero/">Notícias STF — Operação Sem Desconto</a> · fonte oficial</span></div>
+    <div class="src"><b>05</b><span><a href="https://ieprev.com.br/noticias/cnj-adia-pericia-biopsicossocial-unificada-do-bpc-o-que-muda-nos-processos-do-seu-escritorio">IEPREV — CNJ e biopsicossocial</a> · <a href="https://ieprev.com.br/noticias/tru4-recebimento-de-bpc-impede-validacao-de-contribuicao-com-aliquota-de-5pct">IEPREV — TRU4 e BPC</a> · <a href="https://conjur.com.br/2026-nov-02/stj-julga-se-pensao-por-morte-reabre-prazo-para-rever-ato-administrativo">ConJur — afetação no STJ</a> · <a href="https://www.migalhas.com.br/quentes/467401/cnj-inicia-dia-3-correicao-nos-seis-trfs-para-investigar-precatorios">Migalhas — correição do CNJ</a> · fontes secundárias</span></div>
+    <div class="src"><b>06</b><span><a href="https://noticias.stf.jus.br/postsnoticias/stf-suspende-julgamento-sobre-igualdade-entre-homens-e-mulheres-na-previdencia-complementar/">Notícias STF — Previ (Tema 1.423)</a> · fonte oficial</span></div>
+    <div class="src"><b>✓</b><span>Verificação: conferência própria nas fontes oficiais (STF, MPS, Agência Gov), agente verificador independente, ChatGPT e Gemini. Itens de fonte única ou sem confirmação oficial estão sinalizados. Briefing informativo; confira as fontes antes de aplicar.</span></div>
+  </div>
+</section>
+
+<section id="curio">
+  <div class="curio"><div class="k">💡 Curiosidade previdenciária</div>Na ADI 6.336, o placar de 7 a 3 inclui o voto de dois ministros que já deixaram a Corte: Barroso, cujo voto, apresentado em sessão virtual, abriu a divergência vencedora, e Rosa Weber, entre os vencidos. O julgamento atravessou ao menos dois formatos, virtual e presencial, e ficou suspenso desde 18/12/2025 até o voto-vista de Fux, em 29/10.</div>
+</section>
+
+<footer><b>Brevis Previdenciário</b>Edição nº 017 · 3 de novembro de 2026 · Curadoria Jean Barbosa<br>Briefing informativo; não constitui opinião legal. Verifique as fontes antes de aplicar qualquer tese.</footer>
+</div>
+<script>
+document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.card');c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Recolher ▴':'Entenda os detalhes ▾'})});
+document.getElementById('chips').addEventListener('click',function(e){var f=e.target.getAttribute('data-f');if(!f)return;document.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c===e.target)});document.querySelectorAll('.card').forEach(function(c){c.classList.toggle('hide',c.getAttribute('data-tags').split(' ').indexOf(f)<0)})});
+document.getElementById('tabs').addEventListener('click',function(e){var p=e.target.getAttribute('data-p');if(!p)return;document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t===e.target)});document.querySelectorAll('.panel').forEach(function(x){x.classList.toggle('on',x.id===p)})});
+document.querySelectorAll('#p1 input').forEach(function(i){i.addEventListener('change',function(){i.closest('.chk').classList.toggle('done',i.checked);var n=document.querySelectorAll('#p1 input:checked').length;document.getElementById('prog').textContent=n+' de 5 feitos'})});
+</script>
+</body>
+</html>
