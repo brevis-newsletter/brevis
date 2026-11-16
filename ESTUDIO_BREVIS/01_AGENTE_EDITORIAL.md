@@ -253,6 +253,10 @@ Esta seção existe para que o padrão de rigor do Brevis melhore edição após
 
 **Auditor externo dá pista, e o verificador também erra:** no Tributário 001, o ChatGPT acertou o Tema 1.390 (mérito já julgado) e a desistência na transação; o Gemini não achou nada; o verificador independente errou ao dizer que a expressão "alteração normativa" não tinha fonte (estava na nota da Receita). Reverificar tudo na fonte.
 
+**Projeto aprovado pode virar lei no mesmo dia; notícia oficial tardia do STJ, de novo (lições de 16/11/2026, Previdenciário 019):** o PLN 23/2026 foi aprovado em 12/11 e a Agência Senado dizia "segue para sanção", mas a página do Congresso já registrava "transformada em norma jurídica" no mesmo dia e o DOU trazia a Lei 15.529 em edição extra (nº 213-B), com republicação parcial no dia seguinte. Antes de escrever "aguarda sanção", conferir a página da matéria no Congresso e o DOU (inclusive edições extras). Já o Tema 1.475 do STJ (aposentadoria especial por eletricidade, regime da relevância) foi noticiado pelo STJ em 12/11, mas decidido em sessão virtual datada de 7/10 por IBDP e Previdenciarista, com acórdão publicado em 15/10: para notícia oficial do STJ, abrir o link do acórdão e ler a data de publicação (parâmetro `publicacao_data` do endereço) e procurar a primeira notícia do mesmo fato. Temas do regime da relevância não são repetitivos clássicos e não aparecem na pesquisa de repetitivos. Segue a regra: o item decidido fora do período vai ao Radar com "decidido em X, divulgado em Y".
+
+**Chrome do computador pode cair no meio da rotina (16/11/2026):** a conexão caiu durante a auditoria externa, e a regra de parada foi aplicada (nada publicado) até a conexão voltar. O Gemini também pode responder "Algo deu errado" e devolver o texto ao campo de mensagem: reenviar e esperar mais de um minuto antes de ler.
+
 ---
 
 ## 12. ASSUNTO DO MOMENTO (bloco opcional, só quando houver tema forte)
