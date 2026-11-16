@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 019 · 16 de novembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--azul-escuro:#0D1F3C;--azul-meio:#1A3A6B;--azul-claro:#2B5797;--dourado:#C9A84C;--dourado-claro:#E8CC7A;--branco:#FAFAF8;--cinza-claro:#F0EDE6;--texto:#3A3A3A;--sub:#777;--alerta:#A8230E;--alerta-claro:#FDF0EE;--verde:#1A5E3A;--verde-claro:#EAF5EE;--ambar:#B45309;--ambar-claro:#FFF3E0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0A1826;font-family:'DM Sans',sans-serif;color:var(--texto);-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;background:var(--branco);min-height:100vh;box-shadow:0 0 80px rgba(0,0,0,.5)}
+.mono{font-family:'DM Mono',monospace}
+/* topo compacto */
+.top{background:var(--azul-escuro);padding:26px 32px 22px;color:var(--branco);position:relative;overflow:hidden}
+.top:after{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border:1px solid rgba(201,168,76,.2);border-radius:50%}
+.eyebrow{font:500 9px 'DM Mono',monospace;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);opacity:.85}
+.top h1{font:900 32px 'Playfair Display',serif;letter-spacing:-.6px;margin:8px 0 4px}
+.top h1 span{color:var(--dourado)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(250,250,248,.7);margin-top:10px}
+.meta b{color:var(--dourado-claro);font:500 9px 'DM Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;display:block;opacity:.8}
+/* nav fixa */
+.nav{position:sticky;top:0;z-index:20;background:var(--azul-meio);display:flex;gap:2px;padding:8px 20px;overflow-x:auto;border-bottom:2px solid var(--dourado)}
+.nav a{font:500 10px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:rgba(232,204,122,.75);text-decoration:none;padding:7px 12px;border-radius:4px;white-space:nowrap}
+.nav a:hover,.nav a.on{background:rgba(201,168,76,.18);color:var(--dourado-claro)}
+section{padding:28px 32px;scroll-margin-top:50px}
+h2.sec{font:700 11px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul-claro);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2.sec:after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--dourado),transparent);opacity:.4}
+/* 30 segundos */
+.quick{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:6px 0;margin:22px 32px 0}
+.quick h3{font:500 10px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);padding:14px 20px 8px}
+.q{display:flex;gap:12px;align-items:flex-start;padding:11px 20px;border-top:1px solid rgba(201,168,76,.13);text-decoration:none;color:inherit;cursor:pointer}
+.q:hover{background:rgba(201,168,76,.08)}
+.q .n{font:500 11px 'DM Mono',monospace;color:var(--dourado);width:20px;padding-top:2px}
+.q .t{flex:1;font-size:14px;line-height:1.4}
+.q .t small{display:block;color:rgba(250,250,248,.5);font-size:11.5px;margin-top:2px}
+.tag{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:12px;white-space:nowrap}
+.t-stf{background:#F5E8C0;color:#8B5E00}.t-inss{background:#FDE0DA;color:#A8230E}.t-tnu{background:#DCE8F7;color:#2B5797}.t-cjf{background:#D9E2F7;color:#1A3A8B}.t-cn{background:#D9E6F3;color:#1A3A6B}.t-stj{background:#E8DBF0;color:#5A2E7A}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.d-alto{background:#1A5E3A}.d-medio{background:#C9A84C}
+/* em alta */
+.hot{margin:18px 32px 0;border:1px solid var(--dourado);border-left:5px solid var(--dourado);background:linear-gradient(135deg,#FFFBEE,#fff);border-radius:8px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hot .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--ambar)}
+.hot h3{font:700 19px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.25;margin:6px 0}
+.hot p{font-size:13px;line-height:1.6}
+.hot .nums{display:flex;flex-direction:column;gap:6px;text-align:center}
+.hot .nums div{background:var(--azul-escuro);color:var(--dourado-claro);border-radius:8px;padding:8px 14px;font:700 20px 'Playfair Display',serif}
+.hot .nums small{display:block;font:400 8.5px 'DM Mono',monospace;letter-spacing:1px;color:rgba(250,250,248,.6);text-transform:uppercase}
+@media(max-width:640px){.hot{grid-template-columns:1fr}.hot .nums{flex-direction:row;justify-content:center}}
+/* filtros */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid #D8D2C2;background:#fff;border-radius:20px;padding:6px 14px;font:500 11px 'DM Sans',sans-serif;cursor:pointer;color:var(--texto)}
+.chip.on{background:var(--azul-meio);color:var(--dourado-claro);border-color:var(--azul-meio)}
+/* cards */
+.card{border:1px solid #DDD7C8;border-radius:12px;margin-bottom:34px;background:#fff;overflow:hidden;border-left:6px solid var(--azul-claro);box-shadow:0 8px 22px rgba(13,31,60,.12)}
+.card.stf{border-left-color:var(--dourado)}.card.inss{border-left-color:#D9634A}.card.cjf{border-left-color:#4D6FC9}.card.tnu{border-left-color:#6C97C9}.card.stj{border-left-color:#8B5EA8}.card.cn{border-left-color:#6C97C9}
+.card.hide{display:none}
+.ch{padding:16px 18px 12px;background:#FAF8F2;border-bottom:1px solid #EEE9DC}
+.ch .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;font:500 9px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--sub)}
+.ch h3{font:700 17px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3}
+.fato{padding:14px 18px 4px;font-size:13.5px;line-height:1.6}
+.acao{margin:10px 18px;background:var(--verde-claro);border-left:3px solid var(--verde);border-radius:6px;padding:10px 14px;font-size:13px;line-height:1.55}
+.acao b{display:block;font:500 9px 'DM Mono',monospace;letter-spacing:2px;text-transform:uppercase;color:var(--verde);margin-bottom:3px}
+.acao.warn{background:var(--ambar-claro);border-color:var(--ambar)}.acao.warn b{color:var(--ambar)}
+.more{display:none;padding:2px 18px 14px;font-size:13px;line-height:1.7;color:#4a4a4a}
+.more p{margin-bottom:10px}
+.card.open .more{display:block}
+.cf{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-top:1px solid #EFEBE0;background:#FBFAF6;gap:10px;flex-wrap:wrap}
+.pill{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:12px}
+.p-ok{background:var(--verde-claro);color:var(--verde)}.p-wait{background:var(--ambar-claro);color:var(--ambar)}
+.btn{border:0;background:none;color:var(--azul-claro);font:600 12px 'DM Sans',sans-serif;cursor:pointer;padding:4px 0}
+.btn:hover{color:var(--azul-escuro)}
+.fonte{font-size:11px;color:var(--sub)}
+.fonte a{color:var(--azul-claro)}
+/* radar */
+.radar{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.radar{grid-template-columns:1fr}}
+.rd{border:1px solid #E4DFD2;border-radius:10px;padding:14px 16px;background:#fff;font-size:12.5px;line-height:1.55}
+.rd .tag{margin-bottom:8px;display:inline-block}
+.rd h4{font:700 14px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3;margin-bottom:6px}
+.rd.full{grid-column:1/-1}
+/* painel de acao */
+.tabs{display:flex;gap:4px;border-bottom:2px solid #E4DFD2;margin-bottom:16px;overflow-x:auto}
+.tab{background:none;border:0;padding:11px 16px;font:600 12.5px 'DM Sans',sans-serif;color:var(--sub);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tab.on{color:var(--azul-escuro);border-bottom-color:var(--dourado)}
+.panel{display:none}.panel.on{display:block}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E4DFD2;border-radius:8px;margin-bottom:8px;background:#fff;font-size:13px;line-height:1.55}
+.chk input{margin-top:4px;accent-color:var(--azul-meio);width:16px;height:16px;flex-shrink:0}
+.chk.done{opacity:.5;text-decoration:line-through}
+.chk .ref{font:500 9px 'DM Mono',monospace;color:var(--azul-claro);text-decoration:none;white-space:nowrap;margin-left:auto;padding-left:8px}
+.prog{font:500 11px 'DM Mono',monospace;color:var(--sub);margin-bottom:10px}
+.src{display:flex;gap:10px;font-size:12.5px;line-height:1.5;padding:9px 0;border-bottom:1px solid #EFEBE0}
+.src b{font:500 10px 'DM Mono',monospace;color:var(--dourado);min-width:22px}
+.src a{color:var(--azul-claro);text-decoration:none;font-weight:500}
+.curio{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:20px 22px;font-size:13.5px;line-height:1.7}
+.curio .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px}
+footer{background:var(--azul-escuro);color:rgba(250,250,248,.5);text-align:center;padding:24px;font-size:11px;line-height:1.7}
+footer b{display:block;font:900 18px 'Playfair Display',serif;color:var(--branco);margin-bottom:4px}
+.proto{background:#1A3A6B;color:#E8CC7A;font:500 10px 'DM Mono',monospace;letter-spacing:1.5px;text-align:left;padding:10px 32px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="proto"><a href="index.html" style="color:inherit;text-decoration:none">← VOLTAR PARA O ARQUIVO DE EDIÇÕES</a></div>
+<div class="top">
+  <div class="eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+  <h1>Brevis <span>Previdenciário</span></h1>
+  <div class="meta"><div><b>Data</b>16 de novembro de 2026</div><div><b>Edição</b>019</div><div><b>Período</b>10/11 a 16/11</div><div><b>Leitura</b>2 min (resumo) · 6 min (completa)</div></div>
+</div>
+<nav class="nav" id="nav">
+  <a href="#resumo" class="on">Resumo</a><a href="#movs">Movimentos</a><a href="#radar">Radar</a><a href="#acao">Painel de ação</a><a href="#curio">Curiosidade</a>
+</nav>
+
+<div class="quick" id="resumo">
+  <h3>Em 30 segundos — toque para ir ao detalhe</h3>
+  <a class="q" href="#m1"><span class="n">01</span><span class="t"><span class="dot d-alto"></span>STJ decide que o período de graça de 24 meses pode ser usado de novo, sem novo ciclo de 120 contribuições<small>Tema 1.352 · 1ª Seção · julgado em 11/11 · acórdão a publicar</small></span><span class="tag t-stj">STJ</span></a>
+  <a class="q" href="#m2"><span class="n">02</span><span class="t"><span class="dot d-medio"></span>STF reconhece repercussão geral sobre o cálculo da aposentadoria da pessoa com deficiência após a EC 103/2019<small>Tema 1.497 · RE 1.597.638 · 11/11 · mérito sem data</small></span><span class="tag t-stf">STF</span></a>
+  <a class="q" href="#m3"><span class="n">03</span><span class="t"><span class="dot d-medio"></span>Previdência abre consulta pública sobre a nova metodologia do NTEP, com contribuições até 11/12<small>MPS · lançada em 9/11 · Brasil Participativo</small></span><span class="tag t-inss">INSS · MPS</span></a>
+  <a class="q" href="#m4"><span class="n">04</span><span class="t"><span class="dot d-medio"></span>Lei 15.529 libera crédito de R$ 149,4 bi para benefícios previdenciários, Bolsa Família e BPC<small>Aprovado e sancionado em 12/11 · DOU extra 12/11, republicação parcial 13/11</small></span><span class="tag t-cn">Congresso</span></a>
+  <a class="q" href="#radar"><span class="n">+</span><span class="t"><span class="dot d-medio"></span>No Radar: Tema 1.475 (eletricidade na aposentadoria especial, divulgado pelo STJ em 12/11), Tema 1.370, fatores de novembro e audiência de 25/11<small>Itens de acompanhamento</small></span><span class="tag t-stj">Radar</span></a>
+</div>
+
+<section id="movs">
+  <h2 class="sec">Movimentos verificados</h2>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">Todos</button><button class="chip" data-f="alto">Impacto alto</button><button class="chip" data-f="stj">STJ</button><button class="chip" data-f="stf">STF</button><button class="chip" data-f="mps">INSS · MPS</button><button class="chip" data-f="cong">Congresso</button>
+  </div>
+
+  <article class="card stj" id="m1" data-tags="all alto stj">
+    <div class="ch"><div class="row"><span class="tag t-stj">STJ · 1ª Seção · Tema 1.352</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 01</span></div><h3>STJ decide que o período de graça de 24 meses pode ser usado de novo, sem novo ciclo de 120 contribuições</h3></div>
+    <div class="fato">Em 11/11/2026, a 1ª Seção do STJ julgou o Tema Repetitivo 1.352 (REsps 2.171.338, 2.188.858, 2.188.859 e 2.189.004, todos do TRF3; relator ministro Paulo Sérgio Domingues). Segundo o Migalhas, o segurado que recolheu mais de 120 contribuições mensais sem interrupção que provoque a perda da qualidade de segurado incorpora ao seu patrimônio o direito ao período de graça de 24 meses (Lei 8.213/1991, art. 15, § 1º), e pode usá-lo de novo depois de perder a qualidade e voltar à Previdência, sem completar novo ciclo contributivo. Nos recursos, o INSS sustentava que a prorrogação valeria uma vez a cada novo ciclo contributivo; na sustentação oral, passou a defender posição intermediária (uso sucessivo enquanto não houvesse perda da qualidade de segurado, com novo requisito de 120 contribuições após o reingresso). O relator adotou a interpretação mais favorável ao segurado e afastou a modulação dos efeitos, e o colegiado o acompanhou.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Separe os clientes que tiveram benefício negado por perda da qualidade de segurado depois de já terem usado a prorrogação de 24 meses, e reavalie cada caso. A tese literal só sai no acórdão, ainda não publicado: confira a redação antes de peticionar e controle os prazos e a prescrição, que continuam correndo. A decisão trata da qualidade de segurado; carência, incapacidade e demais requisitos do benefício continuam exigidos.</div>
+    <div class="more"><p>A página de precedentes do STJ (atualizada em 12/11) marca o tema como "Mérito Julgado" e a tese como "Aguardando a publicação do acórdão do julgamento de mérito". Segundo a mesma página, a suspensão determinada na afetação alcançava apenas os recursos especiais e agravos em recurso especial sobre a questão.</p><p>O texto do Migalhas não traz placar. A unanimidade aparece em outras fontes secundárias (Conjur, 13/11; Previdenciarista, 12/11), e a afastada modulação só consta no Migalhas; nenhuma substitui o acórdão. O IBDP atuou como amicus curiae no tema. Não localizamos notícia oficial do STJ sobre o julgamento. Item que estava no Radar da edição 018 como "pauta não confirmada".</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Julgamento concluído — acórdão a publicar; embargos ainda possíveis</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&amp;tipo_pesquisa=T&amp;cod_tema_inicial=1352&amp;cod_tema_final=1352">STJ — Tema 1.352</a> · fonte oficial · <a href="https://www.migalhas.com.br/quentes/468408/stj-permite-reutilizar-prorrogacao-de-periodo-de-graca-sem-novas-contribuicoes">Migalhas</a> · <a href="https://conjur.com.br/2026-nov-13/periodo-de-graca-estendido-do-inss-pode-ser-reutilizado-sem-novas-contribuicoes/">Conjur</a> · <a href="https://previdenciarista.com/blog/stj-decide-que-periodo-de-graca-pode-ser-reutilizado-apos-retorno-ao-inss/">Previdenciarista</a> · fontes secundárias</span></div>
+  </article>
+
+  <article class="card stf" id="m2" data-tags="all stf">
+    <div class="ch"><div class="row"><span class="tag t-stf">STF · Plenário Virtual · Tema 1.497</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 02</span></div><h3>STF reconhece repercussão geral sobre o cálculo da aposentadoria da pessoa com deficiência após a EC 103/2019</h3></div>
+    <div class="fato">O andamento do RE 1.597.638 no portal do STF registra, em 11/11/2026, a decisão do Plenário Virtual que, por unanimidade, reconheceu a repercussão geral da questão constitucional (Tema 1.497); o julgamento virtual foi iniciado em 30/10/2026. O recurso é do INSS contra o Ministério Público Federal, vem do TRF4 (RS, processo 5000743-57.2021.4.04.7107) e consta com o "Ministro Presidente" como relator. A questão: se continuam aplicáveis, só para a pessoa com deficiência, o art. 8º da LC 142/2013 e o art. 29, II, da Lei 8.213/1991 (média dos 80% maiores salários de contribuição), ou se vale a regra geral do art. 26 da EC 103/2019, que considera todos os salários.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>O mérito não foi julgado e não há tese. Mapeie os clientes com aposentadoria da pessoa com deficiência concedida ou pedida sob a EC 103/2019 em que o cálculo está em disputa, e acompanhe o tema. No andamento que lemos (último registro em 13/11) não há determinação de suspensão nacional: prazos e prescrição seguem correndo.</div>
+    <div class="more"><p>A situação no portal é "Analisada Preliminar de Repercussão Geral"; o campo "data da repercussão geral" estava vazio na consulta, e a decisão de 11/11 vem do andamento do processo. Não há data de pauta do mérito. A TNU tem tema correlato em julgamento, que não verificamos.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Repercussão geral reconhecida — mérito sem data</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1497">STF — Tema 1.497</a> · <a href="https://portal.stf.jus.br/processos/detalhe.asp?incidente=7548127">STF — andamento do RE 1.597.638</a> · fonte oficial</span></div>
+  </article>
+
+  <article class="card inss" id="m3" data-tags="all mps">
+    <div class="ch"><div class="row"><span class="tag t-inss">MPS · Consulta pública do NTEP</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 03</span></div><h3>Previdência abre consulta pública sobre a nova metodologia do NTEP, com contribuições até 11 de dezembro</h3></div>
+    <div class="fato">O Ministério da Previdência Social lançou, na segunda-feira (9/11/2026), consulta pública sobre a nova metodologia do Nexo Técnico Epidemiológico Previdenciário (NTEP), aberta até 11/12/2026 na plataforma Brasil Participativo. O objetivo, segundo o ministério, é aprimorar a metodologia para atualizar a Lista C do Anexo II do Decreto 3.048/1999. O NTEP estabelece as associações entre atividades econômicas e agravos à saúde do trabalhador e é a base da presunção de nexo entre doença e trabalho (Lei 8.213/1991, art. 21-A).</div>
+    <div class="acao"><b>✔ O que fazer na carteira</b>Se o escritório atua com auxílio por incapacidade acidentário ou doença ocupacional, leia a proposta no Brasil Participativo e avalie enviar contribuição até 11/12, conforme as regras da consulta. Nada muda nos benefícios hoje: a notícia não traz lista nova.</div>
+    <div class="more"><p>A consulta foi aberta em 9/11, último dia do período da edição 018, que não a trouxe. A nota oficial é da Assessoria do MPS e cita a diretora do DPSSO, Márcia Rejane Campos. Não localizamos ato normativo (portaria ou edital) nem lista de doenças e atividades divulgada. Detalhes técnicos da metodologia só aparecem em fontes secundárias, que não lemos por inteiro e não repetimos aqui.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Consulta aberta — prazo até 11/12</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.gov.br/previdencia/pt-br/noticias/2026/novembro/mps-lanca-consulta-publica-sobre-nova-metodologia-do-ntep">MPS — notícia</a> · fonte oficial</span></div>
+  </article>
+
+  <article class="card cn" id="m4" data-tags="all cong">
+    <div class="ch"><div class="row"><span class="tag t-cn">Congresso · Lei 15.529/2026</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 04</span></div><h3>Lei 15.529 libera crédito de R$ 149,4 bilhões para pagar benefícios previdenciários, Bolsa Família e BPC</h3></div>
+    <div class="fato">Em 12/11/2026, o Congresso Nacional aprovou, em votação nominal, o substitutivo ao PLN 23/2026, que autoriza o governo a contratar operações de crédito de até R$ 149,4 bilhões, por emissão de títulos públicos, para despesas já previstas no Orçamento de 2026: R$ 119 bilhões para benefícios previdenciários, R$ 26 bilhões para o Bolsa Família e R$ 4,4 bilhões para o BPC e a Renda Mensal Vitalícia (Agência Senado). A página do Congresso registra a matéria como "transformada em norma jurídica" em 12/11, e o DOU traz a Lei nº 15.529, de 12/11/2026, que abre crédito suplementar de R$ 149.440.254.385,00 ao Orçamento da Seguridade Social, em favor dos Ministérios da Previdência Social e do Desenvolvimento e Assistência Social. O DOU registra a sanção pelo vice-presidente no exercício da Presidência e a publicação na edição extra B (nº 213-B) de 12/11, com republicação parcial em 13/11 (Seção 1, p. 2) por incorreção no original. Segundo o relator, deputado Hugo Leal, o texto não cria despesa nova, só muda a fonte de financiamento.</div>
+    <div class="acao"><b>✔ Uso prático</b>É medida orçamentária: não altera regra de benefício, valor nem calendário de pagamento. Serve de contexto para clientes que perguntem sobre a segurança dos pagamentos de fim de ano, sem prometer datas.</div>
+    <div class="more"><p>A ligação entre o PLN 23/2026 e a Lei 15.529 é conclusão nossa, pelo mesmo valor, pelos mesmos ministérios e pelo registro de transformação em norma jurídica na mesma data; o trecho do DOU que lemos não cita o número do projeto. A Agência Senado informou, no dia 12, que o texto seguia para sanção.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Lei publicada em 12/11 — vínculo com o PLN 23 por valor e data</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www12.senado.leg.br/noticias/materias/2026/11/12/previdencia-e-bolsa-familia-terao-credito-de-r-149-bi-apos-aval-do-congresso">Agência Senado — 12/11</a> · <a href="https://www.congressonacional.leg.br/materias/pesquisa/-/materia/175221">Congresso — PLN 23/2026</a> · <a href="https://www.in.gov.br/web/dou/-/republicacao-744140851">DOU — Lei 15.529 (republicação de 13/11)</a> · fonte oficial</span></div>
+  </article>
+</section>
+
+<section id="radar">
+  <h2 class="sec">Radar de tribunais e atos</h2>
+  <div class="radar">
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Tema 1.475: aposentadoria especial por eletricidade, divulgado pelo STJ em 12/11</h4>A notícia oficial do STJ, de 12/11, diz que a 1ª Seção reconheceu, no novo regime da relevância (precedente qualificado, não repetitivo clássico), a relevância da questão federal no REsp 2.267.903 (Tema 1.475): se a periculosidade por eletricidade ainda fundamenta a aposentadoria especial (Lei 8.213/1991, arts. 57 e 58), já que o Decreto 2.172/1997 suprimiu a eletricidade dos regulamentos. Todos os processos pendentes sobre a questão, inclusive nos juizados especiais federais, estão suspensos, e a suspensão não impede tutela provisória. Mas a decisão não é da semana: o link do acórdão no site do STJ traz publicação de 15/10, e IBDP (14/10) e Previdenciarista (9/10) a datam da sessão virtual encerrada em 7/10, por unanimidade; a data exata da sessão não foi confirmada em fonte oficial. Quem tem ação de eletricitário deve conferir se foi sobrestada. Não há tese nem data de julgamento do mérito. Não lemos o acórdão.</div>
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Tema 1.370 (decadência da revisão administrativa): ainda "em julgamento"</h4>A página de precedentes do STJ, consultada em 16/11, mostra o Tema 1.370 (Primeira Seção; art. 103 da Lei 8.213/1991, possível prazo decadencial autônomo para revisar o ato que decide o pedido de revisão) como "Em Julgamento", sem tese. O IBDP (10/11) anunciou o julgamento para 11/11, mas não encontramos resultado de sessão nem tese. Enquanto o tema não for decidido, não conte com a tese de prazos autônomos para clientes com o prazo de dez anos próximo. Acompanhe a pauta oficial; item que já esteve no Radar da edição 015.</div>
+    <div class="rd"><span class="tag t-inss">MPS</span><h4>Portaria MPS 1.624/2026: fatores de atualização de novembro</h4>Publicada no DOU de 13/11 (Seção 1, p. 178; ato de 12/11), a portaria fixa para novembro de 2026 o índice de 1,002200 para a atualização dos salários de contribuição no cálculo da renda mensal inicial e das parcelas de benefícios pagas em atraso (RPS, arts. 33 e 175). É ato periódico, não reajuste de benefícios. Confira se a sua calculadora usa o fator do mês.</div>
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Audiência pública de 25/11 sobre cessão de precatório previdenciário</h4>Já noticiada na edição 018: a 1ª Seção realiza em 25/11, a partir das 10h, audiência pública no Tema 1.418 (cessão de crédito de ação previdenciária inscrito em precatório). Não conferimos novamente a pauta nesta edição.</div>
+    <div class="rd full"><span class="tag t-cn">Curadoria</span><h4>O que deixamos de fora, e por quê</h4>Na busca do Diário Oficial de 10 a 16/11 pelos termos "Ministério da Previdência Social", "Instituto Nacional do Seguro Social" e "Regime Geral de Previdência Social", só encontramos a Portaria MPS 1.624 como ato previdenciário de interesse; não localizamos nova portaria do INSS. Ficaram fora projetos de lei apresentados na semana que só aparecem em fonte secundária, a notícia sobre a licença-paternidade (lei anterior ao período), o mutirão de perícias de 14 e 15/11 (sem ato normativo), decisões de primeiro grau noticiadas por fonte única e o aviso do IBDP de 10/11 sobre julgamento do Tema 1.157, que na página do STJ já consta com tese firmada e acórdão publicado (não localizamos resultado de sessão nova). Não localizamos fato novo na semana sobre a ADI 6.309, o Tema 1.209 ou o Tema 1.423 (Previ). Preferimos uma edição curta a publicar o que não conseguimos checar.</div>
+  </div>
+</section>
+
+<section id="acao">
+  <h2 class="sec">Painel de ação — tudo que você precisa fazer, por movimento</h2>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-p="p1">✅ Passo a passo</button><button class="tab" data-p="p2">👥 Clientes para mapear</button><button class="tab" data-p="p3">⚠ Cuidados</button><button class="tab" data-p="p4">📚 Fontes</button>
+  </div>
+  <div class="panel on" id="p1">
+    <div class="prog" id="prog">0 de 6 feitos</div>
+    <label class="chk"><input type="checkbox"><span>Separar os clientes com benefício negado por perda da qualidade de segurado após uso da prorrogação de 24 meses e reavaliar cada caso, conferindo a tese literal no acórdão quando sair.</span><a class="ref" href="#m1">Mov. 01 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Listar as ações de aposentadoria especial por eletricidade e conferir quais foram sobrestadas pelo Tema 1.475.</span><a class="ref" href="#radar">Radar ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Mapear os clientes com aposentadoria da pessoa com deficiência sob a EC 103/2019 em que o cálculo está em disputa e acompanhar o Tema 1.497.</span><a class="ref" href="#m2">Mov. 02 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Se atua com doença ocupacional, ler a proposta do NTEP e decidir até 11/12 se envia contribuição.</span><a class="ref" href="#m3">Mov. 03 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Conferir se a calculadora de atrasados e de salário de benefício usa o fator de novembro (1,002200).</span><a class="ref" href="#radar">Radar ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Se atua com cessão de precatório previdenciário, acompanhar a audiência pública de 25/11 (Tema 1.418).</span><a class="ref" href="#radar">Radar ↑</a></label>
+  </div>
+  <div class="panel" id="p2">
+    <div class="chk"><span><b>Segurados com benefício negado por perda da qualidade de segurado</b> que já haviam usado a prorrogação de 24 meses (mais de 120 contribuições).</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Eletricitários e eletricistas com ação de aposentadoria especial</b> em curso ou pedido administrativo negado.</span><a class="ref" href="#radar">Radar</a></div>
+    <div class="chk"><span><b>Pessoas com deficiência aposentadas ou em pedido sob a EC 103/2019</b>, com cálculo contestado.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Trabalhadores com doença ocupacional ou auxílio acidentário</b> em discussão de nexo.</span><a class="ref" href="#m3">Mov. 03</a></div>
+  </div>
+  <div class="panel" id="p3">
+    <div class="chk"><span><b>Tema 1.352:</b> o acórdão não foi publicado; a redação da tese e eventuais embargos podem mudar os detalhes. A unanimidade vem de fontes secundárias e o decidido não dispensa carência, incapacidade e demais requisitos.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Tema 1.475:</b> decisão de 7/10, divulgada pelo STJ em 12/11; só a relevância foi reconhecida, sem tese nem data de mérito. A suspensão não impede tutela provisória.</span><a class="ref" href="#radar">Radar</a></div>
+    <div class="chk"><span><b>Tema 1.497:</b> repercussão geral não é decisão de mérito; prazos e prescrição seguem correndo enquanto não houver suspensão.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Tema 1.370:</b> ainda em julgamento; não conte com a tese dos prazos autônomos se o prazo de dez anos estiver próximo.</span><a class="ref" href="#radar">Radar</a></div>
+    <div class="chk"><span><b>NTEP:</b> é proposta em consulta; a lista vigente não mudou.</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>Lei 15.529/2026:</b> medida orçamentária; não altera benefício nem calendário; não promete datas de pagamento.</span><a class="ref" href="#m4">Mov. 04</a></div>
+  </div>
+  <div class="panel" id="p4">
+    <div class="src"><b>01</b><span><a href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&amp;tipo_pesquisa=T&amp;cod_tema_inicial=1352&amp;cod_tema_final=1352">STJ — Tema Repetitivo 1.352</a> · fonte oficial · <a href="https://www.migalhas.com.br/quentes/468408/stj-permite-reutilizar-prorrogacao-de-periodo-de-graca-sem-novas-contribuicoes">Migalhas</a> · <a href="https://conjur.com.br/2026-nov-13/periodo-de-graca-estendido-do-inss-pode-ser-reutilizado-sem-novas-contribuicoes/">Conjur</a> · <a href="https://previdenciarista.com/blog/stj-decide-que-periodo-de-graca-pode-ser-reutilizado-apos-retorno-ao-inss/">Previdenciarista</a> · fontes secundárias</span></div>
+    <div class="src"><b>02</b><span><a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1497">STF — Tema 1.497</a> · <a href="https://portal.stf.jus.br/processos/detalhe.asp?incidente=7548127">STF — andamento do RE 1.597.638</a> · fonte oficial</span></div>
+    <div class="src"><b>03</b><span><a href="https://www.gov.br/previdencia/pt-br/noticias/2026/novembro/mps-lanca-consulta-publica-sobre-nova-metodologia-do-ntep">MPS — consulta pública do NTEP</a> · fonte oficial</span></div>
+    <div class="src"><b>04</b><span><a href="https://www12.senado.leg.br/noticias/materias/2026/11/12/previdencia-e-bolsa-familia-terao-credito-de-r-149-bi-apos-aval-do-congresso">Agência Senado — PLN 23/2026</a> · <a href="https://www.congressonacional.leg.br/materias/pesquisa/-/materia/175221">Congresso — PLN 23/2026</a> · <a href="https://www.in.gov.br/web/dou/-/republicacao-744140851">DOU — Lei 15.529/2026</a> · fonte oficial</span></div>
+    <div class="src"><b>05</b><span><a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/12112026-primeira-secao-discute-se-exposicao-a-eletricidade-ainda-garante-direito-a-aposentadoria-especial.aspx">Notícias STJ — Tema 1.475 (12/11)</a> · fonte oficial · <a href="https://www.ibdp.org.br/?p=20836">IBDP (14/10)</a> · <a href="https://previdenciarista.com/blog/stj-vai-decidir-se-periculosidade-por-eletricidade-permite-aposentadoria/">Previdenciarista (9/10)</a> · fonte secundária</span></div>
+    <div class="src"><b>06</b><span><a href="https://www.in.gov.br/web/dou/-/portaria-mps-n-1.624-de-12-de-novembro-de-2026-744160994">DOU — Portaria MPS 1.624/2026</a> · <a href="https://processo.stj.jus.br/repetitivos/temas_repetitivos/pesquisa.jsp?novaConsulta=true&amp;tipo_pesquisa=T&amp;cod_tema_inicial=1370&amp;cod_tema_final=1370">STJ — Tema 1.370</a> · fonte oficial · <a href="https://www.ibdp.org.br/?p=21078">IBDP (10/11)</a> · fonte secundária</span></div>
+    <div class="src"><b>✓</b><span>Verificação: conferência própria nas fontes oficiais (STJ, STF, DOU, MPS, Congresso, Agência Senado); itens de fonte secundária estão sinalizados. Briefing informativo; confira as fontes antes de aplicar.</span></div>
+  </div>
+</section>
+
+<section id="curio">
+  <div class="curio"><div class="k">💡 Curiosidade previdenciária</div>O Tema 1.352 foi afetado pelo STJ em junho de 2025 (sessão eletrônica encerrada em 3/6/2025) e julgado em 11/11/2026, cerca de 17 meses depois. Os quatro recursos vieram do TRF3, e o ponto em discussão cabe numa pergunta: depois de contribuir por mais de 120 meses, quantas vezes o segurado pode usar os 24 meses de período de graça?</div>
+</section>
+
+<footer><b>Brevis Previdenciário</b>Edição nº 019 · 16 de novembro de 2026 · Curadoria Jean Barbosa<br>Briefing informativo; não constitui opinião legal. Verifique as fontes antes de aplicar qualquer tese.</footer>
+</div>
+<script>
+document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.card');c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Recolher ▴':'Entenda os detalhes ▾'})});
+document.getElementById('chips').addEventListener('click',function(e){var f=e.target.getAttribute('data-f');if(!f)return;document.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c===e.target)});document.querySelectorAll('.card').forEach(function(c){c.classList.toggle('hide',c.getAttribute('data-tags').split(' ').indexOf(f)<0)})});
+document.getElementById('tabs').addEventListener('click',function(e){var p=e.target.getAttribute('data-p');if(!p)return;document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t===e.target)});document.querySelectorAll('.panel').forEach(function(x){x.classList.toggle('on',x.id===p)})});
+document.querySelectorAll('#p1 input').forEach(function(i){i.addEventListener('change',function(){i.closest('.chk').classList.toggle('done',i.checked);var n=document.querySelectorAll('#p1 input:checked').length;document.getElementById('prog').textContent=n+' de 6 feitos'})});
+</script>
+</body>
+</html>
