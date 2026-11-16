@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Brevis Semanal nº 018 — 13/11/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--azul-escuro:#0f0e0c;--azul-meio:#2E1811;--azul-claro:#1a4c8c;--dourado:#c8371a;--dourado-claro:#E8C6BC;--branco:#f7f4ee;--cinza-claro:#F0E9D8;--texto:#3A3A3A;--sub:#777;--alerta:#A8230E;--alerta-claro:#FDF0EE;--verde:#1A5E3A;--verde-claro:#EAF5EE;--ambar:#B45309;--ambar-claro:#FFF3E0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#2E1811;font-family:'DM Sans',sans-serif;color:var(--texto);-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;background:var(--branco);min-height:100vh;box-shadow:0 0 80px rgba(0,0,0,.5)}
+.mono{font-family:'DM Mono',monospace}
+/* topo compacto */
+.top{background:repeating-linear-gradient(135deg,rgba(247,244,238,.022) 0,rgba(247,244,238,.022) 1px,transparent 1px,transparent 9px),radial-gradient(circle at 85% 0%,#3a2118 0%,transparent 55%),#14100d;padding:26px 32px 22px;color:var(--branco);position:relative;overflow:hidden}
+.top:after{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border:1px solid rgba(200,55,26,.2);border-radius:50%}
+.eyebrow{font:500 9px 'DM Mono',monospace;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);opacity:.85}
+.top h1{font:900 32px 'Playfair Display',serif;letter-spacing:-.6px;margin:8px 0 4px}
+.top h1 span{color:var(--dourado)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(250,250,248,.7);margin-top:10px}
+.meta b{color:var(--dourado-claro);font:500 9px 'DM Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;display:block;opacity:.8}
+/* nav fixa */
+.nav{position:sticky;top:0;z-index:20;background:var(--azul-meio);display:flex;gap:2px;padding:8px 20px;overflow-x:auto;border-bottom:2px solid var(--dourado)}
+.nav a{font:500 10px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:rgba(232,198,188,.75);text-decoration:none;padding:7px 12px;border-radius:4px;white-space:nowrap}
+.nav a:hover,.nav a.on{background:rgba(200,55,26,.18);color:var(--dourado-claro)}
+section{padding:28px 32px;scroll-margin-top:50px}
+h2.sec{font:700 11px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul-claro);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2.sec:after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--dourado),transparent);opacity:.4}
+/* 30 segundos */
+.quick{background:repeating-linear-gradient(135deg,rgba(247,244,238,.022) 0,rgba(247,244,238,.022) 1px,transparent 1px,transparent 9px),radial-gradient(circle at 100% 0%,#3a2118 0%,transparent 60%),#1a1411;color:var(--branco);border-top:3px solid var(--dourado);border-radius:10px;padding:6px 0;margin:22px 32px 0}
+.quick h3{font:500 10px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);padding:14px 20px 8px}
+.q{display:flex;gap:12px;align-items:flex-start;padding:11px 20px;border-top:1px solid rgba(247,244,238,.09);text-decoration:none;color:inherit;cursor:pointer}
+.q:hover{background:rgba(247,244,238,.06)}
+.q .n{font:500 11px 'DM Mono',monospace;color:var(--dourado);width:20px;padding-top:2px}
+.q .t{flex:1;font-size:14px;line-height:1.4}
+.q .t small{display:block;color:rgba(247,244,238,.55);font-size:11.5px;margin-top:2px}
+.tag{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:12px;white-space:nowrap}
+.t-stf{background:#F5E8C0;color:#8B5E00}.t-tst{background:#FBEAE5;color:#a02a12}.t-pgfn{background:#E8F5EE;color:#1a6b42}.t-trib{background:#E8F5EE;color:#1a6b42}.t-inss{background:#FDE0DA;color:#A8230E}.t-tnu{background:#DCE8F7;color:#2B5797}.t-cjf{background:#D9E2F7;color:#1A3A8B}.t-cn{background:#D9E6F3;color:#1A3A6B}.t-stj{background:#E8DBF0;color:#5A2E7A}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.d-alto{background:#1A5E3A}.d-medio{background:#c8a14a}
+/* em alta */
+.hot{margin:18px 32px 0;border:1px solid var(--dourado);border-left:5px solid var(--dourado);background:linear-gradient(135deg,#FBEAE5,#fff);border-radius:8px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hot .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--ambar)}
+.hot h3{font:700 19px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.25;margin:6px 0}
+.hot p{font-size:13px;line-height:1.6}
+.hot .nums{display:flex;flex-direction:column;gap:6px;text-align:center}
+.hot .nums div{background:var(--azul-escuro);color:var(--dourado-claro);border-radius:8px;padding:8px 14px;font:700 20px 'Playfair Display',serif}
+.hot .nums small{display:block;font:400 8.5px 'DM Mono',monospace;letter-spacing:1px;color:rgba(250,250,248,.6);text-transform:uppercase}
+@media(max-width:640px){.hot{grid-template-columns:1fr}.hot .nums{flex-direction:row;justify-content:center}}
+/* filtros */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid #D8D2C2;background:#fff;border-radius:20px;padding:6px 14px;font:500 11px 'DM Sans',sans-serif;cursor:pointer;color:var(--texto)}
+.chip.on{background:var(--azul-meio);color:var(--dourado-claro);border-color:var(--azul-meio)}
+/* cards */
+.card{border:1px solid #DDD5C3;border-radius:12px;margin-bottom:34px;background:#fff;overflow:hidden;border-left:6px solid var(--azul-claro);box-shadow:0 8px 22px rgba(46,24,17,.12)}
+.card.stf{border-left-color:#c8a14a}.card.tst{border-left-color:#c8371a}.card.pgfn{border-left-color:#1a6b42}.card.inss{border-left-color:#D9634A}.card.cjf{border-left-color:#4D6FC9}.card.tnu{border-left-color:#6C97C9}.card.stj{border-left-color:#8B5EA8}.card.cn{border-left-color:#6C97C9}
+.card.hide{display:none}
+.ch{padding:16px 18px 12px;background:#FBF8F1;border-bottom:1px solid #EFE7D6}
+.ch .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;font:500 9px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--sub)}
+.ch h3{font:700 17px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3}
+.fato{padding:14px 18px 4px;font-size:13.5px;line-height:1.6}
+.acao{margin:10px 18px;background:var(--verde-claro);border-left:3px solid var(--verde);border-radius:6px;padding:10px 14px;font-size:13px;line-height:1.55}
+.acao b{display:block;font:500 9px 'DM Mono',monospace;letter-spacing:2px;text-transform:uppercase;color:var(--verde);margin-bottom:3px}
+.acao.warn{background:var(--ambar-claro);border-color:var(--ambar)}.acao.warn b{color:var(--ambar)}
+.more{display:none;padding:2px 18px 14px;font-size:13px;line-height:1.7;color:#4a4a4a}
+.more p{margin-bottom:10px}
+.card.open .more{display:block}
+.cf{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-top:1px solid #EFEBE0;background:#FBFAF6;gap:10px;flex-wrap:wrap}
+.pill{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:12px}
+.p-ok{background:var(--verde-claro);color:var(--verde)}.p-wait{background:var(--ambar-claro);color:var(--ambar)}
+.btn{border:0;background:none;color:var(--azul-claro);font:600 12px 'DM Sans',sans-serif;cursor:pointer;padding:4px 0}
+.btn:hover{color:var(--azul-escuro)}
+.fonte{font-size:11px;color:var(--sub)}
+.fonte a{color:var(--azul-claro)}
+/* radar */
+.radar{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.radar{grid-template-columns:1fr}}
+.rd{border:1px solid #E4DFD2;border-radius:10px;padding:14px 16px;background:#fff;font-size:12.5px;line-height:1.55}
+.rd .tag{margin-bottom:8px;display:inline-block}
+.rd h4{font:700 14px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3;margin-bottom:6px}
+.rd.full{grid-column:1/-1}
+/* painel de acao */
+.tabs{display:flex;gap:4px;border-bottom:2px solid #E4DFD2;margin-bottom:16px;overflow-x:auto}
+.tab{background:none;border:0;padding:11px 16px;font:600 12.5px 'DM Sans',sans-serif;color:var(--sub);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tab.on{color:var(--azul-escuro);border-bottom-color:var(--dourado)}
+.panel{display:none}.panel.on{display:block}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E4DFD2;border-radius:8px;margin-bottom:8px;background:#fff;font-size:13px;line-height:1.55}
+.chk input{margin-top:4px;accent-color:var(--azul-meio);width:16px;height:16px;flex-shrink:0}
+.chk.done{opacity:.5;text-decoration:line-through}
+.chk .ref{font:500 9px 'DM Mono',monospace;color:var(--azul-claro);text-decoration:none;white-space:nowrap;margin-left:auto;padding-left:8px}
+.prog{font:500 11px 'DM Mono',monospace;color:var(--sub);margin-bottom:10px}
+.src{display:flex;gap:10px;font-size:12.5px;line-height:1.5;padding:9px 0;border-bottom:1px solid #EFEBE0}
+.src b{font:500 10px 'DM Mono',monospace;color:var(--dourado);min-width:22px}
+.src a{color:var(--azul-claro);text-decoration:none;font-weight:500}
+.curio{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:20px 22px;font-size:13.5px;line-height:1.7}
+.curio .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px}
+footer{background:var(--azul-escuro);color:rgba(250,250,248,.5);text-align:center;padding:24px;font-size:11px;line-height:1.7}
+footer b{display:block;font:900 18px 'Playfair Display',serif;color:var(--branco);margin-bottom:4px}
+.proto{background:#2E1811;color:#E8C6BC;font:500 10px 'DM Mono',monospace;letter-spacing:1.5px;text-align:left;padding:10px 32px}
+.hot{margin:18px 32px 0;border:1px solid var(--dourado);border-left:5px solid var(--dourado);background:linear-gradient(135deg,#FBEAE5,#fff);border-radius:8px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hot .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--ambar)}
+.hot h3{font:700 19px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.25;margin:6px 0}
+.hot p{font-size:13px;line-height:1.6}
+.hot .nums{display:flex;flex-direction:column;gap:6px;text-align:center}
+.hot .nums div{background:var(--azul-escuro);color:var(--dourado-claro);border-radius:8px;padding:8px 14px;font:700 20px 'Playfair Display',serif}
+.hot .nums small{display:block;font:400 8.5px 'DM Mono',monospace;letter-spacing:1px;color:rgba(250,250,248,.6);text-transform:uppercase}
+@media(max-width:640px){.hot{grid-template-columns:1fr}.hot .nums{flex-direction:row;justify-content:center}}
+</style></head>
+<body>
+<div class="wrap">
+<div class="proto"><a href="index.html" style="color:inherit;text-decoration:none">← VOLTAR PARA O ARQUIVO DE EDIÇÕES</a></div>
+<div class="top">
+  <div class="eyebrow">Brevis · Vertical Jurídica Geral · Curadoria Jean Barbosa</div>
+  <h1>Brevis <span>Semanal</span></h1>
+  <div class="meta"><div><b>Data</b>13 de novembro de 2026</div><div><b>Edição</b>018</div><div><b>Período</b>04/11 a 13/11</div><div><b>Leitura</b>2 min (resumo) · 7 min (completa)</div></div>
+</div>
+<nav class="nav" id="nav">
+  <a href="#resumo" class="on">Resumo</a><a href="#alta">Assunto do momento</a><a href="#movs">Movimentos</a><a href="#radar">Radar</a><a href="#acao">Painel de ação</a><a href="#curio">Curiosidade</a>
+</nav>
+
+<div class="quick" id="resumo">
+  <h3>Em 30 segundos — toque para ir ao detalhe</h3>
+  <a class="q" href="#m1"><span class="n">01</span><span class="t"><span class="dot d-alto"></span>Fachin arquiva o Inq 4.781 (inquérito das fake news), preservando provas, decisões e ações penais<small>Notícia do STF de 9/11 · PGR indicou esgotamento do objeto · sigilo mantido provisoriamente</small></span><span class="tag t-stf">STF</span></a>
+  <a class="q" href="#m2"><span class="n">02</span><span class="t"><span class="dot d-alto"></span>STJ muda a jurisprudência: pedir droga para dentro de presídio pode ser tráfico, mesmo sem a droga chegar<small>3ª Seção · 11/11 · REsp 2.238.193 · Tema 1.431 · fonte: ConJur</small></span><span class="tag t-stj">STJ</span></a>
+  <a class="q" href="#m3"><span class="n">03</span><span class="t"><span class="dot d-medio"></span>Boate Kiss: 6ª Turma do STJ fixa 14a4m (Spohr) e 13a2m (Hoffmann), regime inicial fechado<small>10/11 · recursos do MPRS e de Spohr · placar não informado</small></span><span class="tag t-stj">STJ</span></a>
+  <a class="q" href="#m4"><span class="n">04</span><span class="t"><span class="dot d-medio"></span>PEC 18/2025 (Susp): Senado aprova em 3/11 com 73 votos no 1º turno e 75 no 2º<small>Agência Senado · destino do texto após a votação não informado na fonte</small></span><span class="tag t-cn">Senado</span></a>
+</div>
+
+<div class="hot" id="alta">
+  <div>
+    <div class="k">🔥 Assunto do momento</div>
+    <h3>Fim da escala 6x1: Dino define a transição da EC 141 e fixa 16/12/2026 como início</h3>
+    <p><b>O que está bombando.</b> Em 12/11, nas ADIs 8.041 e 8.042 (CNC e CNI), o ministro Flávio Dino decidiu pontos da implementação da EC 141, com eficácia imediata e submissão ao referendo do Plenário (a fonte não informa data nem horário). <b>O gancho jurídico.</b> As novas regras começam em 16/12/2026; até 15/12/2027 vale a jornada de 42h semanais. Sem acordo ou convenção até 15/12/2026, as 42h podem ser distribuídas em cinco dias de 8h24, e os 24 minutos acima da oitava hora não geram adicional de hora extra. A falta de negociação não antecipa as 40h nem torna obrigatória a hora extra nessa fase. A redução não pode diminuir salário, inclusive pisos. Acordos coletivos têm 90 dias a partir de 16/12 para renegociar contrapartidas; cláusulas incompatíveis com a emenda deixam de produzir efeito nessa data. Folgas: caem os limites semanais e mensais para fruição dos dois dias, e, se a negociação falhar nos primeiros 90 dias, três ministérios podem editar portaria conjunta. Contratos administrativos: prazo máximo de adaptação de 180 dias. Estatais concorrenciais podem entrar no regime excepcional (diploma superior e remuneração de ao menos 2,5 vezes o teto do RGPS). O Congresso tem 180 dias para as regras de micro e pequenas empresas e para regimes diferenciados por atividade. <b>Atenção:</b> a decisão ainda passa pelo referendo, e o detalhamento vem de uma só fonte jornalística (Migalhas); a página oficial do STF que consultamos só traz a audiência de 10/11. Confira o texto da decisão no processo antes de orientar clientes.</p>
+  </div>
+  <div class="nums"><div>16/12<small>início das regras</small></div><div>42h<small>até 15/12/2027</small></div><div>8h24<small>5 dias, sem negociação</small></div></div>
+</div>
+
+<section id="movs">
+  <h2 class="sec">Movimentos verificados</h2>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">Todos</button><button class="chip" data-f="alto">Impacto alto</button><button class="chip" data-f="stf">STF</button><button class="chip" data-f="stj">STJ</button><button class="chip" data-f="cons">Legislativo</button>
+  </div>
+
+  <article class="card stf" id="m1" data-tags="all alto stf">
+    <div class="ch"><div class="row"><span class="tag t-stf">STF · Inq 4.781</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 01</span></div><h3>Fachin arquiva o inquérito das fake news, preservando provas, decisões e ações penais</h3></div>
+    <div class="fato">O presidente do STF, ministro Edson Fachin, decidiu monocraticamente arquivar o Inq 4.781, acolhendo manifestação da PGR, que apontou o esgotamento do objeto específico das investigações após mais de sete anos. Segundo a notícia do STF (9/11/2026), a constitucionalidade do inquérito, validada pelo Plenário na ADPF 572, não permite sua perpetuação nem seu uso como canal permanente para apurar fatos futuros. As diligências se encerram de imediato; o arquivamento não invalida decisões, provas, acordos ou ações penais decorrentes; ações com denúncia recebida e procedimentos autônomos seguem nos órgãos competentes. A data exata da decisão não consta da notícia.</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Para clientes que figuram em procedimentos derivados, identifique se o caso é ação penal já recebida ou procedimento autônomo (seguem) e não presuma extinção. O sigilo do inquérito continua provisoriamente até a triagem de dados sensíveis; acompanhe o levantamento do sigilo antes de pedir acesso a peças.</div>
+    <div class="more"><p>A fonte cita como balanço do próprio inquérito mais de 1.600 ações penais e centenas de condenações. Fachin invocou a razoável duração do processo (art. 5º, LXXVII, da Constituição) e considerou que o inquérito cumpriu sua função instrumental. O sigilo é mantido até a separação de documentos com dados sensíveis (sigilos bancário, fiscal e telefônico e dados pessoais); depois da triagem e da criação de um apenso específico, será levantado.</p><p>Não localizamos o número do despacho nem a data exata; a notícia é do STF, fonte oficial, mas é um resumo da decisão, não a decisão.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Arquivamento noticiado pelo STF — sigilo provisório mantido</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://noticias.stf.jus.br/?p=167665">Notícias STF (9/11)</a> · fonte oficial</span></div>
+  </article>
+
+  <article class="card stj" id="m2" data-tags="all alto stj">
+    <div class="ch"><div class="row"><span class="tag t-stj">STJ · 3ª Seção · Tema 1.431</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 02</span></div><h3>STJ muda a jurisprudência: pedir droga para dentro de presídio pode configurar tráfico</h3></div>
+    <div class="fato">A 3ª Seção do STJ julgou em 11/11/2026, como recurso repetitivo (REsp 2.238.193, Tema 1.431, relatora ministra Marluce Caldas), a conduta de quem pede droga para dentro de presídio. Segundo a ConJur, a tese fixada diz que configura tráfico, por coautoria ou participação (art. 29 do Código Penal c/c art. 33, caput, da Lei 11.343/2006), a conduta de quem comprovadamente solicita ou ajusta com terceiro a introdução ou entrega de droga em presídio, desde que a conduta do executor se enquadre em um verbo nuclear do tipo; é irrelevante que a droga seja apreendida antes de chegar ao destinatário. A mudança de jurisprudência foi unânime. Antes, as turmas criminais entendiam que o mero pedido era, no máximo, ato preparatório.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Na defesa criminal, revise casos de preso acusado só por "pedir" droga: a tese exige pedido ou ajuste comprovado e conduta do executor enquadrada em verbo do tipo; a prova do ajuste passa a ser o ponto central. Não ajuíze nem desista de nada com base só nesta notícia: leia o acórdão quando for publicado e confira a redação final da tese.</div>
+    <div class="more"><p>Pelo relato da ConJur, a tese final foi alterada em relação à proposta inicial da relatora. Uma tese complementar proposta pelo ministro Rogerio Schietti em voto-vista foi rejeitada por 4 votos a 3 (acompanharam a relatora Carlos Brandão, Reynaldo Soares da Fonseca e a desembargadora convocada Nilsoni de Freitas Custódio; vencidos Schietti, Og Fernandes e Sebastião Reis Júnior); o ministro Messod Azulay não votou. Teses complementares sobre crime impossível e perspectiva de gênero foram descartadas.</p><p>Fonte única e secundária (ConJur): não localizamos a notícia do STJ nem o acórdão. Número do processo, placar e texto da tese devem ser conferidos no site do tribunal antes de citar em peça.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Fonte secundária — acórdão e notícia oficial não localizados</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://conjur.com.br/2026-nov-12/pedido-de-drogas-em-presidio-e-sempre-crime-redefine-stj/">ConJur (12/11)</a></span></div>
+  </article>
+
+  <article class="card stj" id="m3" data-tags="all stj">
+    <div class="ch"><div class="row"><span class="tag t-stj">STJ · 6ª Turma</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 03</span></div><h3>Boate Kiss: STJ fixa as penas dos sócios em 14 anos e 4 meses e 13 anos e 2 meses</h3></div>
+    <div class="fato">A 6ª Turma do STJ julgou em 10/11/2026 recursos do MPRS e de Elissandro Spohr contra a dosimetria. Fixou 14 anos e 4 meses de prisão para Elissandro Callegaro Spohr e 13 anos e 2 meses de reclusão para Mauro Londero Hoffmann, ambos em regime inicial fechado. O recurso do MPRS foi acolhido parcialmente, por entender que a gravidade da conduta pesa mais; o de Spohr foi provido em parte, com extensão de efeitos a Hoffmann, para corrigir um aumento considerado desproporcional pelo TJRS. A notícia oficial não informa o placar.</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Para advogados criminalistas, o precedente interessa pela dosimetria: a relatora, desembargadora convocada Nilsoni de Freitas, entendeu que a culpabilidade pode ser valorada na primeira fase, separadamente do dolo eventual. Em recurso exclusivo da defesa, Schietti lembrou o Tema 1.214: a pena-base é reduzida na medida do peso atribuído na origem, para evitar reformatio in pejus. Leia o acórdão antes de usar em peça.</div>
+    <div class="more"><p>A relatora votou pelo provimento do recurso do MPRS em maior extensão, mas prevaleceu o voto do ministro Rogerio Schietti Cruz quanto aos fundamentos principais da dosimetria. A nota não informa as penas anteriores nem se cabem embargos, e não localizamos o acórdão.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Julgamento de 10/11 — acórdão e placar não informados</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/10112026-sexta-turma-aumenta-pena-dos-socios-pela-tragedia-da-boate-kiss.aspx">Notícias STJ (10/11)</a> · fonte oficial</span></div>
+  </article>
+
+  <article class="card cn" id="m4" data-tags="all cons">
+    <div class="ch"><div class="row"><span class="tag t-cn">Senado · PEC 18/2025</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 04</span></div><h3>PEC da Segurança Pública: Senado aprova em 3/11 a inclusão do Susp na Constituição</h3></div>
+    <div class="fato">Segundo notícia da Presidência do Senado, a PEC 18/2025 foi aprovada em 3/11/2026, por unanimidade, com 73 votos favoráveis no primeiro turno e 75 no segundo. O texto inclui o Sistema Único de Segurança Pública (Susp) na Constituição, busca integrar União, estados e municípios contra o crime organizado e fortalece a atuação da Polícia Federal. A votação havia sido adiada na sessão de 14/10 para permitir mais diálogo sobre as emendas. A edição 017 deixou o resultado em aberto; ele está fechado aqui.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Nada a ajuizar agora. A fonte não informa se a PEC segue para promulgação ou volta à Câmara; antes de citar a emenda como vigente, confirme no site do Senado ou da Câmara o destino do texto e a data de promulgação, se houver.</div>
+    <div class="more"><p>A notícia é institucional (Presidência do Senado) e resume a votação; não detalha o conteúdo normativo nem as emendas. Não conferimos o texto aprovado. Não tratar como Emenda Constitucional promulgada até haver publicação.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Aprovada no Senado — promulgação não confirmada</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www12.senado.leg.br/institucional/presidencia/noticia/davi-alcolumbre/davi-alcolumbre-destaca-aprovacao-da-pec-da-seguranca-publica-e-defende-uniao-de-forcas-contra-o-crime-organizado">Senado — Presidência</a> · fonte oficial</span></div>
+  </article>
+</section>
+
+<section id="radar">
+  <h2 class="sec">Radar de tribunais e atos</h2>
+  <div class="radar">
+    <div class="rd"><span class="tag t-stf">STF</span><h4>EC 141: audiência de conciliação em 10/11</h4>Na véspera da decisão, Dino ouviu as partes nas ADIs 8.041 e 8.042. Segundo o STF, ele disse que não haveria flexibilização da emenda nem autorização para manter a 6x1, e que não existe redução imediata de 44 para 40 horas se a negociação falhar. Divergiam o prazo de 60 dias para a primeira etapa e o tratamento dos contratos administrativos (prazo de até um ano).</div>
+    <div class="rd"><span class="tag t-cn">Curadoria</span><h4>Tributário e Previdenciário</h4>Movimentos desses temas desta semana ficam nos boletins próprios: Brevis Previdenciário 018 (9/11) e Brevis Tributário.</div>
+    <div class="rd full"><span class="tag t-cn">Curadoria</span><h4>O que deixamos de fora, e por quê</h4>Esta edição ficou menor de propósito. Itens levantados na pesquisa que não conseguimos confirmar em fonte oficial ou em duas fontes antes do fechamento ficaram de fora (entre eles, ADPFs 1.185 e 1.241, poupança na ADPF 165, bets, regras de prazos e questões institucionais do CNJ e da OAB). Preferimos não publicar o que não conseguimos checar.</div>
+  </div>
+</section>
+
+<section id="acao">
+  <h2 class="sec">Painel de ação — tudo que você precisa fazer, por movimento</h2>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-p="p1">✅ Passo a passo</button><button class="tab" data-p="p2">👥 Clientes para mapear</button><button class="tab" data-p="p3">⚠ Cuidados</button><button class="tab" data-p="p4">📚 Fontes</button>
+  </div>
+  <div class="panel on" id="p1">
+    <div class="prog" id="prog">0 de 5 feitos</div>
+    <label class="chk"><input type="checkbox"><span>EC 141: ler a decisão de Dino no processo, mapear acordos coletivos e contratos com a administração e marcar 15/12/2026 e 16/12/2026 na agenda.</span><a class="ref" href="#alta">Assunto ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Identificar clientes em procedimentos derivados do Inq 4.781 e separar ação penal recebida de procedimento autônomo.</span><a class="ref" href="#m1">Mov. 01 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Revisar casos de preso acusado de pedir droga, após ler o acórdão do Tema 1.431.</span><a class="ref" href="#m2">Mov. 02 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Conferir o acórdão da Boate Kiss para teses de dosimetria (culpabilidade na 1ª fase; Tema 1.214).</span><a class="ref" href="#m3">Mov. 03 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Confirmar o destino da PEC 18/2025 após a votação do Senado.</span><a class="ref" href="#m4">Mov. 04 ↑</a></label>
+  </div>
+  <div class="panel" id="p2">
+    <div class="chk"><span><b>Empregadores, sindicatos e fornecedores da administração pública</b> afetados pela jornada de 42h e pelos contratos administrativos.</span><a class="ref" href="#alta">Assunto</a></div>
+    <div class="chk"><span><b>Clientes e investigados</b> em ações ou procedimentos ligados ao Inq 4.781.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Réus presos ou familiares</b> em casos de pedido de droga em presídio.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Criminalistas</b> com casos de dolo eventual e dosimetria em júri.</span><a class="ref" href="#m3">Mov. 03</a></div>
+  </div>
+  <div class="panel" id="p3">
+    <div class="chk"><span><b>EC 141:</b> decisão liminar sujeita a referendo; detalhes de uma só fonte jornalística; confira o texto.</span><a class="ref" href="#alta">Assunto</a></div>
+    <div class="chk"><span><b>Inq 4.781:</b> resumo do STF, sem número ou data do despacho; sigilo provisório.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Tema 1.431:</b> só ConJur; acórdão e tese oficial não localizados.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Boate Kiss:</b> placar e acórdão não informados.</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>PEC 18:</b> aprovada no Senado, mas destino e promulgação não confirmados.</span><a class="ref" href="#m4">Mov. 04</a></div>
+  </div>
+  <div class="panel" id="p4">
+    <div class="src"><b>00</b><span><a href="https://www.migalhas.com.br/quentes/468490/fim-da-escala-6x1-dino-mantem-prazo-de-transicao-e-flexibiliza-folgas">Migalhas — decisão de Dino (12/11)</a> · <a href="https://noticias.stf.jus.br/?p=167719">Notícias STF — audiência de 10/11</a></span></div>
+    <div class="src"><b>01</b><span><a href="https://noticias.stf.jus.br/?p=167665">Notícias STF — arquivamento do Inq 4.781 (9/11)</a> · fonte oficial</span></div>
+    <div class="src"><b>02</b><span><a href="https://conjur.com.br/2026-nov-12/pedido-de-drogas-em-presidio-e-sempre-crime-redefine-stj/">ConJur — Tema 1.431 do STJ</a></span></div>
+    <div class="src"><b>03</b><span><a href="https://www.stj.jus.br/sites/portalp/paginas/comunicacao/noticias/2026/10112026-sexta-turma-aumenta-pena-dos-socios-pela-tragedia-da-boate-kiss.aspx">Notícias STJ — Boate Kiss (10/11)</a> · fonte oficial</span></div>
+    <div class="src"><b>04</b><span><a href="https://www12.senado.leg.br/institucional/presidencia/noticia/davi-alcolumbre/davi-alcolumbre-destaca-aprovacao-da-pec-da-seguranca-publica-e-defende-uniao-de-forcas-contra-o-crime-organizado">Senado — PEC 18/2025</a> · fonte oficial</span></div>
+    <div class="src"><b>✓</b><span>Verificação: conferência própria nas páginas citadas. Os itens de fonte única estão sinalizados nos cartões. Briefing informativo; confira as fontes antes de aplicar.</span></div>
+  </div>
+</section>
+
+<section id="curio">
+  <div class="curio"><div class="k">💡 Curiosidade jurídica</div>A conta da decisão de Dino fecha em minutos: 42 horas divididas em cinco dias dão 8,4 horas por dia, ou 8h24. Sobram 24 minutos por dia além da oitava hora, e é exatamente esse excedente que a decisão diz não gerar adicional de hora extra na fase de transição sem negociação coletiva.</div>
+</section>
+
+<footer><b>Brevis Semanal</b>Edição nº 018 · 13 de novembro de 2026 · Curadoria Jean Barbosa<br>Briefing informativo; não constitui opinião legal. Verifique as fontes antes de aplicar qualquer tese.</footer>
+</div>
+<script>
+document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.card');c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Recolher ▴':'Entenda os detalhes ▾'})});
+document.getElementById('chips').addEventListener('click',function(e){var f=e.target.getAttribute('data-f');if(!f)return;document.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c===e.target)});document.querySelectorAll('.card').forEach(function(c){c.classList.toggle('hide',c.getAttribute('data-tags').split(' ').indexOf(f)<0)})});
+document.getElementById('tabs').addEventListener('click',function(e){var p=e.target.getAttribute('data-p');if(!p)return;document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t===e.target)});document.querySelectorAll('.panel').forEach(function(x){x.classList.toggle('on',x.id===p)})});
+document.querySelectorAll('#p1 input').forEach(function(i){i.addEventListener('change',function(){i.closest('.chk').classList.toggle('done',i.checked);var n=document.querySelectorAll('#p1 input:checked').length;document.getElementById('prog').textContent=n+' de 5 feitos'})});
+</script>
+</body>
+</html>
