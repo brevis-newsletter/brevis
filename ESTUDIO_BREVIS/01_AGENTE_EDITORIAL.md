@@ -257,6 +257,16 @@ Esta seção existe para que o padrão de rigor do Brevis melhore edição após
 
 **Chrome do computador pode cair no meio da rotina (16/11/2026):** a conexão caiu durante a auditoria externa, e a regra de parada foi aplicada (nada publicado) até a conexão voltar. O Gemini também pode responder "Algo deu errado" e devolver o texto ao campo de mensagem: reenviar e esperar mais de um minuto antes de ler.
 
+**Fonte secundária pode errar o número de um ato (lição de 19/11/2026, Semanal 019):** a matéria do Migalhas sobre o decreto do fim da 6x1 grafava "13.373"; o texto no Planalto é o Decreto 13.173. Antes de citar número de decreto, lei ou portaria, abrir o ato no Planalto, no DOU ou no órgão e usar o número de lá; se a imprensa errar, dizer isso uma vez no texto ("a matéria que lemos grafava…") para o leitor que procurar pelo número errado.
+
+**O texto da tese e a página do Tema podem estar em momentos diferentes (Tema 1.180, 19/11/2026):** o Informativo do STJ já trazia a redação da tese, enquanto a imprensa noticiou uma retificação posterior e a página do Tema estava desatualizada. Quando as datas da retificação divergirem, citar a fonte de cada texto, sinalizar no cartão ("datas da retificação divergem — confira o acórdão") e não afirmar qual data é a certa sem o acórdão.
+
+**Verificador independente também erra, e a página relida resolve:** em 19/11/2026 um verificador disse que o Migalhas nunca escreveu "13.373" (a página ainda mostrava) e outro não confirmou a data do Tema 1.180 (a página do STJ mostrava). Tratar "NÃO VERIFICÁVEL" ou "CORRIGIR" como pista: reabrir a fonte e só então aceitar ou rejeitar. O ChatGPT, na mesma rodada, restringiu os arts. 181/182 do CP à violência contra a mulher, e a nota do STF diz que o efeito independe do gênero da vítima. Lembrete: o silêncio de uma IA ("nada a corrigir") não prova nada.
+
+**Avisos tardios do STJ (reforço da lição de 20/10):** o Tema 1.285 foi julgado em 21/10, teve acórdão em 03/11 e notícia em 17/11; o REsp 2.217.405 foi julgado em 06/10 e divulgado em 19/11. Escrever sempre "julgado em X, acórdão em Y, divulgado em Z" e conferir a página do Tema ou o Informativo para a data real.
+
+**Técnica para ler o ChatGPT quando a extração de texto é negada:** usar `document.querySelector('main').innerText` em fatias de cerca de 1.300 caracteres (a ferramenta de JavaScript trunca saídas longas e bloqueia textos com endereços de URL), ou `read_page`. O Gemini funciona em modo visitante.
+
 ---
 
 ## 12. ASSUNTO DO MOMENTO (bloco opcional, só quando houver tema forte)
@@ -326,4 +336,4 @@ Aprovado pelo Jean em 20/10/2026 (Previdenciário 015) e replicado no Semanal 01
 
 ---
 
-*Estúdio Brevis · Agente Editorial · v1.0 · 31/03/2026 · Seção 11 adicionada em 23/08/2026, ampliada em 25/08/2026 e 04/09/2026 · Seção 12 adicionada em 15/09/2026 · Lições de 20/10/2026 em §11, §13 (dupla verificação) e §14 (layout v2) adicionadas em 20/10/2026*
+*Estúdio Brevis · Agente Editorial · v1.0 · 31/03/2026 · Seção 11 adicionada em 23/08/2026, ampliada em 25/08/2026 e 04/09/2026 · Seção 12 adicionada em 15/09/2026 · Lições de 20/10/2026 em §11, §13 (dupla verificação) e §14 (layout v2) adicionadas em 20/10/2026 · Lições de 19/11/2026 (Semanal 019) em §11*
