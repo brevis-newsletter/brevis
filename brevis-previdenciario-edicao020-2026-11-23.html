@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brevis Previdenciário — Edição nº 020 · 23 de novembro de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--azul-escuro:#0D1F3C;--azul-meio:#1A3A6B;--azul-claro:#2B5797;--dourado:#C9A84C;--dourado-claro:#E8CC7A;--branco:#FAFAF8;--cinza-claro:#F0EDE6;--texto:#3A3A3A;--sub:#777;--alerta:#A8230E;--alerta-claro:#FDF0EE;--verde:#1A5E3A;--verde-claro:#EAF5EE;--ambar:#B45309;--ambar-claro:#FFF3E0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0A1826;font-family:'DM Sans',sans-serif;color:var(--texto);-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;background:var(--branco);min-height:100vh;box-shadow:0 0 80px rgba(0,0,0,.5)}
+.mono{font-family:'DM Mono',monospace}
+/* topo compacto */
+.top{background:var(--azul-escuro);padding:26px 32px 22px;color:var(--branco);position:relative;overflow:hidden}
+.top:after{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border:1px solid rgba(201,168,76,.2);border-radius:50%}
+.eyebrow{font:500 9px 'DM Mono',monospace;letter-spacing:3px;text-transform:uppercase;color:var(--dourado);opacity:.85}
+.top h1{font:900 32px 'Playfair Display',serif;letter-spacing:-.6px;margin:8px 0 4px}
+.top h1 span{color:var(--dourado)}
+.meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:rgba(250,250,248,.7);margin-top:10px}
+.meta b{color:var(--dourado-claro);font:500 9px 'DM Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;display:block;opacity:.8}
+/* nav fixa */
+.nav{position:sticky;top:0;z-index:20;background:var(--azul-meio);display:flex;gap:2px;padding:8px 20px;overflow-x:auto;border-bottom:2px solid var(--dourado)}
+.nav a{font:500 10px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:rgba(232,204,122,.75);text-decoration:none;padding:7px 12px;border-radius:4px;white-space:nowrap}
+.nav a:hover,.nav a.on{background:rgba(201,168,76,.18);color:var(--dourado-claro)}
+section{padding:28px 32px;scroll-margin-top:50px}
+h2.sec{font:700 11px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--azul-claro);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+h2.sec:after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--dourado),transparent);opacity:.4}
+/* 30 segundos */
+.quick{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:6px 0;margin:22px 32px 0}
+.quick h3{font:500 10px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);padding:14px 20px 8px}
+.q{display:flex;gap:12px;align-items:flex-start;padding:11px 20px;border-top:1px solid rgba(201,168,76,.13);text-decoration:none;color:inherit;cursor:pointer}
+.q:hover{background:rgba(201,168,76,.08)}
+.q .n{font:500 11px 'DM Mono',monospace;color:var(--dourado);width:20px;padding-top:2px}
+.q .t{flex:1;font-size:14px;line-height:1.4}
+.q .t small{display:block;color:rgba(250,250,248,.5);font-size:11.5px;margin-top:2px}
+.tag{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:12px;white-space:nowrap}
+.t-stf{background:#F5E8C0;color:#8B5E00}.t-inss{background:#FDE0DA;color:#A8230E}.t-tnu{background:#DCE8F7;color:#2B5797}.t-cjf{background:#D9E2F7;color:#1A3A8B}.t-cn{background:#D9E6F3;color:#1A3A6B}.t-stj{background:#E8DBF0;color:#5A2E7A}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+.d-alto{background:#1A5E3A}.d-medio{background:#C9A84C}
+/* em alta */
+.hot{margin:18px 32px 0;border:1px solid var(--dourado);border-left:5px solid var(--dourado);background:linear-gradient(135deg,#FFFBEE,#fff);border-radius:8px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hot .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--ambar)}
+.hot h3{font:700 19px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.25;margin:6px 0}
+.hot p{font-size:13px;line-height:1.6}
+.hot .nums{display:flex;flex-direction:column;gap:6px;text-align:center}
+.hot .nums div{background:var(--azul-escuro);color:var(--dourado-claro);border-radius:8px;padding:8px 14px;font:700 20px 'Playfair Display',serif}
+.hot .nums small{display:block;font:400 8.5px 'DM Mono',monospace;letter-spacing:1px;color:rgba(250,250,248,.6);text-transform:uppercase}
+@media(max-width:640px){.hot{grid-template-columns:1fr}.hot .nums{flex-direction:row;justify-content:center}}
+/* filtros */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{border:1px solid #D8D2C2;background:#fff;border-radius:20px;padding:6px 14px;font:500 11px 'DM Sans',sans-serif;cursor:pointer;color:var(--texto)}
+.chip.on{background:var(--azul-meio);color:var(--dourado-claro);border-color:var(--azul-meio)}
+/* cards */
+.card{border:1px solid #DDD7C8;border-radius:12px;margin-bottom:34px;background:#fff;overflow:hidden;border-left:6px solid var(--azul-claro);box-shadow:0 8px 22px rgba(13,31,60,.12)}
+.card.stf{border-left-color:var(--dourado)}.card.inss{border-left-color:#D9634A}.card.cjf{border-left-color:#4D6FC9}.card.tnu{border-left-color:#6C97C9}.card.stj{border-left-color:#8B5EA8}.card.cn{border-left-color:#6C97C9}
+.card.hide{display:none}
+.ch{padding:16px 18px 12px;background:#FAF8F2;border-bottom:1px solid #EEE9DC}
+.ch .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px;font:500 9px 'DM Mono',monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--sub)}
+.ch h3{font:700 17px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3}
+.fato{padding:14px 18px 4px;font-size:13.5px;line-height:1.6}
+.acao{margin:10px 18px;background:var(--verde-claro);border-left:3px solid var(--verde);border-radius:6px;padding:10px 14px;font-size:13px;line-height:1.55}
+.acao b{display:block;font:500 9px 'DM Mono',monospace;letter-spacing:2px;text-transform:uppercase;color:var(--verde);margin-bottom:3px}
+.acao.warn{background:var(--ambar-claro);border-color:var(--ambar)}.acao.warn b{color:var(--ambar)}
+.more{display:none;padding:2px 18px 14px;font-size:13px;line-height:1.7;color:#4a4a4a}
+.more p{margin-bottom:10px}
+.card.open .more{display:block}
+.cf{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-top:1px solid #EFEBE0;background:#FBFAF6;gap:10px;flex-wrap:wrap}
+.pill{font:500 9px 'DM Mono',monospace;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:12px}
+.p-ok{background:var(--verde-claro);color:var(--verde)}.p-wait{background:var(--ambar-claro);color:var(--ambar)}
+.btn{border:0;background:none;color:var(--azul-claro);font:600 12px 'DM Sans',sans-serif;cursor:pointer;padding:4px 0}
+.btn:hover{color:var(--azul-escuro)}
+.fonte{font-size:11px;color:var(--sub)}
+.fonte a{color:var(--azul-claro)}
+/* radar */
+.radar{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.radar{grid-template-columns:1fr}}
+.rd{border:1px solid #E4DFD2;border-radius:10px;padding:14px 16px;background:#fff;font-size:12.5px;line-height:1.55}
+.rd .tag{margin-bottom:8px;display:inline-block}
+.rd h4{font:700 14px 'Playfair Display',serif;color:var(--azul-escuro);line-height:1.3;margin-bottom:6px}
+.rd.full{grid-column:1/-1}
+/* painel de acao */
+.tabs{display:flex;gap:4px;border-bottom:2px solid #E4DFD2;margin-bottom:16px;overflow-x:auto}
+.tab{background:none;border:0;padding:11px 16px;font:600 12.5px 'DM Sans',sans-serif;color:var(--sub);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap}
+.tab.on{color:var(--azul-escuro);border-bottom-color:var(--dourado)}
+.panel{display:none}.panel.on{display:block}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E4DFD2;border-radius:8px;margin-bottom:8px;background:#fff;font-size:13px;line-height:1.55}
+.chk input{margin-top:4px;accent-color:var(--azul-meio);width:16px;height:16px;flex-shrink:0}
+.chk.done{opacity:.5;text-decoration:line-through}
+.chk .ref{font:500 9px 'DM Mono',monospace;color:var(--azul-claro);text-decoration:none;white-space:nowrap;margin-left:auto;padding-left:8px}
+.prog{font:500 11px 'DM Mono',monospace;color:var(--sub);margin-bottom:10px}
+.src{display:flex;gap:10px;font-size:12.5px;line-height:1.5;padding:9px 0;border-bottom:1px solid #EFEBE0}
+.src b{font:500 10px 'DM Mono',monospace;color:var(--dourado);min-width:22px}
+.src a{color:var(--azul-claro);text-decoration:none;font-weight:500}
+.curio{background:var(--azul-escuro);color:var(--branco);border-radius:10px;padding:20px 22px;font-size:13.5px;line-height:1.7}
+.curio .k{font:500 9px 'DM Mono',monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--dourado);margin-bottom:8px}
+footer{background:var(--azul-escuro);color:rgba(250,250,248,.5);text-align:center;padding:24px;font-size:11px;line-height:1.7}
+footer b{display:block;font:900 18px 'Playfair Display',serif;color:var(--branco);margin-bottom:4px}
+.proto{background:#1A3A6B;color:#E8CC7A;font:500 10px 'DM Mono',monospace;letter-spacing:1.5px;text-align:left;padding:10px 32px}
+</style></head>
+<body>
+<div class="wrap">
+<div class="proto"><a href="index.html" style="color:inherit;text-decoration:none">← VOLTAR PARA O ARQUIVO DE EDIÇÕES</a></div>
+<div class="top">
+  <div class="eyebrow">Brevis · Vertical Previdenciária · Curadoria Jean Barbosa</div>
+  <h1>Brevis <span>Previdenciário</span></h1>
+  <div class="meta"><div><b>Data</b>23 de novembro de 2026</div><div><b>Edição</b>020</div><div><b>Período</b>17/11 a 23/11</div><div><b>Leitura</b>2 min (resumo) · 6 min (completa)</div></div>
+</div>
+<nav class="nav" id="nav">
+  <a href="#resumo" class="on">Resumo</a><a href="#movs">Movimentos</a><a href="#radar">Radar</a><a href="#acao">Painel de ação</a><a href="#curio">Curiosidade</a>
+</nav>
+
+<div class="quick" id="resumo">
+  <h3>Em 30 segundos — toque para ir ao detalhe</h3>
+  <a class="q" href="#m1"><span class="n">01</span><span class="t"><span class="dot d-alto"></span>STF reconhece repercussão geral do "milagre da contribuição única" e suspende em todo o país os processos sobre o divisor mínimo<small>Tema 1.499 · RE 1.624.991 · decisão registrada em 14/11, nota do STF de 19/11 · mérito sem data</small></span><span class="tag t-stf">STF</span></a>
+  <a class="q" href="#m2"><span class="n">02</span><span class="t"><span class="dot d-alto"></span>INSS reorganiza o processo administrativo: exigência não cumprida em 30 dias pode virar desistência, e falta à perícia pesa na análise<small>Portaria DIRBEN/INSS 1.363/2026 · DOU de 16/11 · incorpora ao Livro IV a regra de 30 dias; óbito do requerente também muda</small></span><span class="tag t-inss">INSS</span></a>
+  <a class="q" href="#m3"><span class="n">03</span><span class="t"><span class="dot d-medio"></span>AGU e Previdência criam o comitê EFETIVA-PREV para levar ao INSS teses já consolidadas nos tribunais<small>Portaria Interministerial AGU/MPS 4/2026 · DOU de 18/11 · sem efeito sobre pedidos anteriores</small></span><span class="tag t-inss">AGU · MPS</span></a>
+  <a class="q" href="#m4"><span class="n">04</span><span class="t"><span class="dot d-medio"></span>Comissão da Câmara aprova o fim da carência do salário-maternidade para três categorias<small>PL 1.599/2026 · noticiado em 19/11 · o STF já derrubou a carência em 2024 · ainda precisa passar por mais duas comissões, pela Câmara e pelo Senado</small></span><span class="tag t-cn">Câmara</span></a>
+  <a class="q" href="#radar"><span class="n">+</span><span class="t">No Radar: audiência do STJ sobre prescrição para pessoas com deficiência (Tema 1.321), TRF4 e a execução invertida, 13º do INSS a partir de 24/11<small>Itens de acompanhamento</small></span><span class="tag t-stj">Radar</span></a>
+</div>
+
+<section id="movs">
+  <h2 class="sec">Movimentos verificados</h2>
+  <p style="font-size:12.5px;line-height:1.55;color:#555;margin:0 0 14px">Semana magra em decisões novas. Entra também a Portaria DIRBEN/INSS 1.363, publicada em 16/11 e que ficou fora da edição 019, sempre com as datas de cada fonte.</p>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">Todos</button><button class="chip" data-f="alto">Impacto alto</button><button class="chip" data-f="stf">STF</button><button class="chip" data-f="inss">INSS</button><button class="chip" data-f="leg">Legislativo</button>
+  </div>
+
+  <article class="card stf" id="m1" data-tags="all alto stf">
+    <div class="ch"><div class="row"><span class="tag t-stf">STF · Tema 1.499</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 01</span></div><h3>STF reconhece repercussão geral sobre o divisor mínimo no cálculo da aposentadoria e suspende os processos em todo o país</h3></div>
+    <div class="fato">A nota do STF de 19/11/2026 informa que o Plenário Virtual reconheceu, por unanimidade, a repercussão geral do RE 1.624.991 (Tema 1.499) e determinou a suspensão nacional dos processos sobre o tema. O andamento no portal do STF registra a decisão em 14/11/2026, depois de julgamento virtual iniciado em 6/11: a nota veio cinco dias depois. A questão é se vale o divisor mínimo (previsto na Lei 9.876/1999 e exigido de forma expressa, em 108 meses, pela Lei 14.331/2022) nas aposentadorias cujos requisitos foram cumpridos entre 13/11/2019 (EC 103) e 5/5/2022, ou se o cálculo pode se basear apenas na contribuição mais alta. O recurso é do INSS contra decisão da TNU que admitiu o cálculo sem divisor mínimo. O mérito não tem data.</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Revise pedidos e ações de aposentadoria com requisitos cumpridos entre 13/11/2019 e 5/5/2022 em que o divisor mínimo é o ponto: os processos judiciais sobre o tema estão suspensos em todo o país, e vale conferir, caso a caso, se o seu foi sobrestado. A nota fala em processos em tramitação: não presuma que o requerimento administrativo no INSS esteja suspenso. A nota do STF não trata de prazos nem de prescrição, então não presuma que eles estejam suspensos.</div>
+    <div class="more"><p>Pela regra anterior à reforma, entravam só os 80% maiores salários desde julho de 1994; com a EC 103, todo o período contributivo, com possibilidade de descartar contribuições que reduzam o benefício. A regra nova não mencionou o divisor mínimo. A TNU entendeu, segundo a nota, que o próprio INSS aplicou administrativamente a regra sem divisor no período anterior à Lei 14.331/2022 e que o Judiciário não poderia criar restrições não previstas em lei. O INSS sustenta que o divisor foi mantido de forma implícita e que a tese contraria a isonomia, a contributividade e o equilíbrio financeiro e atuarial.</p><p>O portal do STF registra o "Ministro Presidente" como relator e mostra a data da repercussão geral em branco; a nota diz que o presidente, Edson Fachin, propôs o reconhecimento e destacou que o impacto econômico e social é grande, embora a disputa se limite a cerca de dois anos e meio. Não há tese nem data de mérito. Segundo o Previdenciarista (fonte secundária; não lemos o acórdão), em agosto a 2ª Turma do STJ afastou o divisor mínimo em aposentadoria pós-reforma, no mesmo intervalo (REsp 2.193.427): decisão do STJ não vincula o STF e pode ser superada pelo Tema 1.499. A suspensão nacional consta da nota do STF; o andamento do processo no portal, quando o consultamos, registrava a decisão sobre a repercussão geral e uma petição de suspensão nacional de 13/10, mas não um despacho de suspensão: confira o despacho no processo antes de pedir sobrestamento. O Semanal 019 citou a nota do STF no Radar, com remissão a esta linha.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Repercussão geral reconhecida — mérito sem data</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://noticias.stf.jus.br/postsnoticias/stf-vai-julgar-validade-do-divisor-minimo-na-aposentadoria/">Notícias STF (19/11)</a> · <a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1499">Tema 1.499</a> · <a href="https://portal.stf.jus.br/processos/abaAndamentos.asp?incidente=7697625">andamento do RE 1.624.991</a> · fonte oficial</span></div>
+  </article>
+
+  <article class="card inss" id="m2" data-tags="all alto inss">
+    <div class="ch"><div class="row"><span class="tag t-inss">INSS · Portaria DIRBEN 1.363</span><span><span class="dot d-alto"></span>Impacto alto</span><span>Movimento 02</span></div><h3>INSS reorganiza o processo administrativo no Livro IV: exigência não cumprida em 30 dias pode virar desistência, e falta à perícia ou à SIMA impede concluir a análise da incapacidade</h3></div>
+    <div class="fato">A Portaria DIRBEN/INSS 1.363, de 13/11/2026, alterou o Livro IV das Normas Procedimentais (Portaria DIRBEN/INSS 993/2022). Segundo o DOU de 16/11 (Seção 1, edição extra 215-B, p. 61), vale desde a publicação (art. 2º). Quando é emitida carta de exigência com o intuito de evitar a conclusão do requerimento sem análise de mérito, o requerimento é encerrado por desistência 30 dias depois da ciência se os documentos forem insuficientes ou não vierem (art. 105, § 3º, e art. 110, § 4º), e os prazos do INSS ficam suspensos durante a exigência (art. 75, § 3º). A regra dos 30 dias não nasce aqui: a IN PRES/INSS 212/2026 (DOU de 11/8/2026), ao alterar a IN 128/2022, já previa o encerramento por desistência após 30 dias da ciência da exigência (art. 574, § 4º, II); segundo o Previdenciarista, o prazo anterior era de 75 dias (não conferido), e a Portaria incorpora a regra ao Livro IV. Em benefício por incapacidade e auxílio-acidente, o texto diz que não há conclusão da análise da incapacidade quando o segurado falta à perícia agendada ou não atende à solicitação de informações ao médico assistente (SIMA) (art. 105, § 1º, IV).</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>Controle o prazo de 30 dias da ciência de cada exigência: documento insuficiente também leva à desistência, e a desistência não é indeferimento (avalie os efeitos de um novo requerimento sobre a data de entrada). A Portaria não trata de prorrogação do prazo; o Previdenciarista cita prorrogação justificada na IN 212, que não conferimos. Confirme o comparecimento às perícias e a resposta às SIMA. Se o cliente falecer com o pedido em curso, oriente herdeiros e dependentes; e confira a representação de dependentes menores e incapazes antes do protocolo.</div>
+    <div class="more"><p>Óbito do requerente: a análise de mérito pode ser concluída sem manifestação de dependentes ou herdeiros; se havia atendimento agendado, eles devem comparecer na data marcada, e herdeiro ou dependente pode pedir CTC (art. 35-A, V, § 5º e § 5º-A). Dependentes: se a representação legal vale só para alguns, a análise segue só para eles (art. 37-A); se a exigência de comprovar a representação não é cumprida, o pedido é encerrado sem análise de mérito (art. 77, § 1º). INSS Empresa: empresas e entes públicos passam a consultar as decisões administrativas de benefícios de seus empregados e servidores, inicialmente de benefícios com início a partir de novembro de 2019 (art. 112).</p><p>A ligação entre a falta à perícia ou à SIMA e o encerramento do pedido sem análise de mérito (art. 105, II, "c", combinado com o § 1º, IV) é leitura nossa. O texto foi lido na página do DOU na Imprensa Nacional, que avisa não substituir a versão certificada. A edição 019 informou não ter localizado portaria nova do INSS na busca de 10 a 16/11; esta, publicada em 16/11, escapou daquela busca.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Portaria publicada em 16/11 — texto lido no DOU</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.in.gov.br/web/dou/-/portaria-dirben/inss-n-1.363-de-13-de-novembro-de-2026-744711408">DOU — Portaria DIRBEN/INSS 1.363</a> · <a href="https://atlaspublico.com.br/regulacao/dou/portaria-dirben-inss-n-1-363-de-13-de-novembro-de-2026-924659">Atlas Público</a> · fonte oficial</span></div>
+  </article>
+
+  <article class="card inss" id="m3" data-tags="all inss">
+    <div class="ch"><div class="row"><span class="tag t-inss">AGU · MPS · EFETIVA-PREV</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 03</span></div><h3>AGU e Previdência criam o comitê EFETIVA-PREV para levar ao INSS entendimentos já consolidados nos tribunais</h3></div>
+    <div class="fato">A Portaria Interministerial AGU/MPS 4, de 5/11/2026 (DOU de 18/11, Seção 1, edição 217, p. 1; vale desde a publicação, art. 9º), institui o Comitê de Efetivação de Direitos Previdenciários. Cabe a ele identificar entendimentos consolidados do STF, do STJ e da TNU cuja inobservância gere ações em multiplicidade e em que não haja viabilidade de reverter a tese contrária ao INSS, propor sua adoção administrativa, sugerir mudanças normativas e discutir teses de defesa do INSS. A mudança de entendimento só vale a partir da efetivação e não atinge requerimentos anteriores nem benefícios em manutenção.</div>
+    <div class="acao"><b>↗ O que fazer na carteira</b>Nada muda hoje no processo administrativo: o comitê ainda será composto e não há tese internalizada. Acompanhe as primeiras teses escolhidas e a Portaria Conjunta PGF/INSS que complementará as regras. Para pedidos já negados, a portaria não cria direito retroativo.</div>
+    <div class="more"><p>Composição: três representantes da AGU (por meio da Procuradoria-Geral Federal), três do Ministério da Previdência e três do INSS, indicados em até 30 dias da publicação; reuniões ordinárias a cada dois meses; em caso de empate, a proposta de adoção ou alteração de entendimento é considerada não aprovada. A portaria diz que a mudança de entendimento não é reconhecimento de erro e não renuncia nem interrompe a prescrição.</p><p>Texto lido na página do DOU na Imprensa Nacional (art. 3º a 8º conferidos), que avisa não substituir a versão certificada.</p></div>
+    <div class="cf"><span class="pill p-ok">✔ Ato publicado em 18/11 — comitê ainda a constituir</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.in.gov.br/web/dou/-/portaria-interministerial-agu/mps-n-4-de-5-de-novembro-de-2026-744960669">DOU — Portaria Interministerial AGU/MPS 4</a> · fonte oficial</span></div>
+  </article>
+
+  <article class="card cn" id="m4" data-tags="all leg">
+    <div class="ch"><div class="row"><span class="tag t-cn">Câmara · PL 1.599/2026</span><span><span class="dot d-medio"></span>Impacto médio</span><span>Movimento 04</span></div><h3>Comissão da Câmara aprova o fim da carência do salário-maternidade para contribuintes individuais, facultativas e seguradas especiais</h3></div>
+    <div class="fato">A Agência Câmara noticiou em 19/11/2026 que a Comissão de Previdência, Assistência Social, Infância, Adolescência e Família aprovou o substitutivo da deputada Rogéria Santos ao PL 1.599/2026 (deputada Laura Carneiro) e a um apensado (a notícia não informa o dia da votação; o Atlas Público fala em votação simbólica em 18/11 e cita o PL 2.517/2026 como apensado). O texto revoga os dispositivos da Lei 8.213/1991 que exigem dez contribuições (individual e facultativa) e 12 meses de atividade rural (segurada especial) e inclui o salário-maternidade entre os benefícios sem carência. A segurada especial continua obrigada a comprovar atividade rural, ainda que descontínua, em pelo menos um dos 12 meses anteriores ao fato gerador. A Agência Câmara diz que o texto adapta a lei ao entendimento do STF que declarou a carência inconstitucional: são as ADIs 2.110 e 2.111, julgadas em 21/3/2024 (o acórdão, no Senado, traz na ementa "salário-maternidade, carência, impossibilidade" e procedência quanto aos arts. 25 e 26 da Lei 8.213/1991, na redação da Lei 9.876/1999).</div>
+    <div class="acao warn"><b>⚠ O que fazer na carteira</b>O projeto não é norma, e o pedido não depende dele: segundo o Atlas Público, a relatora afirma que o INSS já aplica a isenção por norma interna, e o Previdenciarista cita a IN PRES/INSS 188/2025 (não conferida em fonte primária). Em pedido de salário-maternidade negado só por falta de carência, confira a norma do INSS e o marco temporal da decisão do STF, e fundamente na ADI 2.110/2.111; mantenha a análise da qualidade de segurada e do fato gerador. Segue para Finanças e Tributação e para a CCJ (apreciação conclusiva), depois Câmara e Senado.</div>
+    <div class="more"><p>A edição 014 (28/09) já havia registrado o avanço anterior do projeto na Câmara. O salário-maternidade automático após 30 dias (Portaria Conjunta MPS/INSS 49/2026, edição 015) é assunto distinto: trata da forma de concessão, não da carência.</p><p>Votação e apensado vêm do Atlas Público (fonte secundária); da Agência Câmara só a notícia de 19/11. Não abrimos o texto do substitutivo.</p></div>
+    <div class="cf"><span class="pill p-wait">⚠ Aprovado em comissão — ainda é projeto</span><button class="btn" data-more>Entenda os detalhes ▾</button><span class="fonte"><a href="https://www.camara.leg.br/noticias/1321151-comissao-aprova-fim-de-carencia-para-salario-maternidade-de-tres-categorias">Agência Câmara (19/11)</a> · <a href="https://legis.senado.leg.br/norma/38306350">acórdão da ADI 2.110</a> · fonte oficial · <a href="https://atlaspublico.com.br/camara/noticias/comissao-da-camara-aprova-substitutivo-que-isenta-de-103623">Atlas Público</a></span></div>
+  </article>
+
+</section>
+
+<section id="radar">
+  <h2 class="sec">Radar de tribunais e atos</h2>
+  <div class="radar">
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Tema 1.321: audiência pública sobre prescrição e decadência para pessoas com deficiência</h4>Em 19/11, a Corte Especial (relator Min. Raul Araújo) ouviu entidades e especialistas sobre se, depois do Estatuto da Pessoa com Deficiência, prescrição e decadência correm contra pessoa com deficiência mental ou intelectual. O MPF defendeu uma salvaguarda quando a pessoa não reúne condições concretas de agir, mas disse que a deficiência, por si só, não impede o curso dos prazos. Na audiência, o relator associou a controvérsia à assistência e à previdência. É audiência, não decisão; sem data de julgamento (<a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/19112026-Audiencia-publica-recebe-sugestoes-de-entidades-e-especialistas-sobre-prescricao-e-decadencia-em-acoes-envolvendo-.aspx">Notícias STJ</a>).</div>
+    <div class="rd"><span class="tag t-cn">TRF4</span><h4>TRF4 (5ª Turma): o INSS não é obrigado a calcular os atrasados na execução invertida</h4>Segundo Conjur (20/11) e IBDP (18/11), a 5ª Turma do TRF4 decidiu, em apelação do INSS (relatora: juíza federal convocada Carla Fernanda Fritsch Martins), que cabe ao autor apresentar o cálculo, com base no art. 534 do CPC, e que a execução invertida é faculdade da Fazenda, não imposição do juízo. Fonte secundária, sem número do processo nem data do julgamento; decisão de turma, sem efeito vinculante (<a href="https://conjur.com.br/2026-nov-20/inss-nao-e-obrigado-a-apresentar-calculos-de-valores-atrasados-em-acao">Conjur</a> · <a href="https://www.ibdp.org.br/2026/11/18/inss-nao-e-obrigado-a-apresentar-calculos-de-valores-atrasados-em-acoes-previdenciarias/">IBDP</a>).</div>
+    <div class="rd"><span class="tag t-inss">INSS</span><h4>13º salário: depósitos para quem começou a receber a partir de maio, de 24/11 a 7/12</h4>Segundo o INSS (notícia de 9/7), quem teve benefício concedido a partir de maio recebe o 13º no calendário regular de novembro, de 24/11 a 7/12, conforme o final do cartão. Em benefícios temporários ou concedidos depois da antecipação, o valor é proporcional ao período de recebimento. BPC não tem 13º. Confira o calendário oficial (<a href="https://www.gov.br/inss/pt-br/assuntos/noticias/beneficiarios-que-comecaram-a-receber-apos-maio-terao-13o-salario-pago-em-novembro">INSS</a>).</div>
+    <div class="rd"><span class="tag t-stj">STJ</span><h4>Audiência pública de 25/11 sobre cessão de precatório previdenciário (Tema 1.418)</h4>Lembrete da edição 019: a 1ª Seção realiza a audiência em 25/11. Não conferimos de novo a pauta nesta edição.</div>
+    <div class="rd"><span class="tag t-cn">Curadoria</span><h4>Remissão ao Brevis Semanal 020</h4>O Semanal 020 (23/11) traz itens gerais de 18 e 19/11: ADI 5.405 (honorários em acordos com o poder público), PL 4.186/2021 e o ajuste fiscal (PLP 299/2026).</div>
+    <div class="rd full"><span class="tag t-cn">Curadoria</span><h4>O que deixamos de fora, e por quê</h4>Ficaram fora o Tema 1.426 do STJ (execução complementar contra a Fazenda; julgado em 11/11 e sem fonte que ligue ao INSS), a pensão por morte à ex-esposa de servidor federal (REsp 2.170.130, só Migalhas, regime próprio), a proposta de fiscalização do Senado sobre fraudes no INSS (não altera benefício), o PL 5.891/2026 (apenas protocolado, fonte secundária), a operação "Cartas Marcadas" da PF (investigação, fonte secundária), a Portaria SE/MPS 1.634/2026 (pontuação da perícia, tabela não lida), a minuta do CNJ sobre precatórios (não votada) e o Tema 1.475 (sem fato novo). Preferimos uma edição curta a publicar o que não conseguimos checar.</div>
+  </div>
+</section>
+
+<section id="acao">
+  <h2 class="sec">Painel de ação — tudo que você precisa fazer, por movimento</h2>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-p="p1">✅ Passo a passo</button><button class="tab" data-p="p2">👥 Clientes para mapear</button><button class="tab" data-p="p3">⚠ Cuidados</button><button class="tab" data-p="p4">📚 Fontes</button>
+  </div>
+  <div class="panel on" id="p1">
+    <div class="prog" id="prog">0 de 5 feitos</div>
+    <label class="chk"><input type="checkbox"><span>Listar pedidos e ações de aposentadoria com requisitos cumpridos entre 13/11/2019 e 5/5/2022 em que o divisor mínimo é o ponto e conferir quais foram sobrestadas.</span><a class="ref" href="#m1">Mov. 01 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Criar alerta de 30 dias para cada carta de exigência e conferir perícias e SIMA agendadas.</span><a class="ref" href="#m2">Mov. 02 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Acompanhar as teses escolhidas pelo EFETIVA-PREV e a Portaria Conjunta PGF/INSS.</span><a class="ref" href="#m3">Mov. 03 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Em salário-maternidade negado por falta de carência, conferir a norma do INSS e o marco da ADI 2.110/2.111 e acompanhar o PL 1.599/2026.</span><a class="ref" href="#m4">Mov. 04 ↑</a></label>
+    <label class="chk"><input type="checkbox"><span>Conferir a data de depósito do 13º dos clientes com benefício concedido a partir de maio (24/11 a 7/12).</span><a class="ref" href="#radar">Radar ↑</a></label>
+  </div>
+  <div class="panel" id="p2">
+    <div class="chk"><span><b>Segurados aposentados ou em pedido</b> com requisitos cumpridos entre 13/11/2019 e 5/5/2022, com cálculo contestado.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Requerentes com exigência, perícia ou SIMA pendentes</b> e herdeiros ou dependentes de requerentes falecidos.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>Segurados com tese já consolidada nos tribunais</b> e pedido negado pelo INSS (acompanhar, sem efeito retroativo).</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>Contribuintes individuais, facultativas e seguradas especiais</b> sem carência do salário-maternidade.</span><a class="ref" href="#m4">Mov. 04</a></div>
+    <div class="chk"><span><b>Beneficiários com concessão a partir de maio</b> que aguardam o 13º.</span><a class="ref" href="#radar">Radar</a></div>
+  </div>
+  <div class="panel" id="p3">
+    <div class="chk"><span><b>Tema 1.499:</b> repercussão geral, não mérito; nota do STF não trata de prazos e prescrição; decisão registrada em 14/11 e noticiada em 19/11.</span><a class="ref" href="#m1">Mov. 01</a></div>
+    <div class="chk"><span><b>Portaria 1.363:</b> texto lido no DOU (Imprensa Nacional); a regra dos 30 dias já vinha da IN 212/2026 (texto lido na Lex Editora; prazo anterior de 75 dias só em fonte secundária); a ligação entre falta à perícia e encerramento sem mérito é leitura nossa.</span><a class="ref" href="#m2">Mov. 02</a></div>
+    <div class="chk"><span><b>EFETIVA-PREV:</b> comitê a constituir; sem efeito sobre requerimentos anteriores.</span><a class="ref" href="#m3">Mov. 03</a></div>
+    <div class="chk"><span><b>PL 1.599/2026:</b> aprovado só em comissão; data da votação (18 ou 19/11) divergente entre fontes; o INSS já dispensaria a carência (IN 188/2025 não conferida em fonte primária).</span><a class="ref" href="#m4">Mov. 04</a></div>
+    <div class="chk"><span><b>TRF4 e execução invertida:</b> fonte secundária, sem número nem data do julgamento.</span><a class="ref" href="#radar">Radar</a></div>
+  </div>
+  <div class="panel" id="p4">
+    <div class="src"><b>01</b><span><a href="https://noticias.stf.jus.br/postsnoticias/stf-vai-julgar-validade-do-divisor-minimo-na-aposentadoria/">Notícias STF — Tema 1.499 (19/11)</a> · <a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1499">Tema 1.499</a> · <a href="https://portal.stf.jus.br/processos/abaAndamentos.asp?incidente=7697625">andamento do RE 1.624.991</a> · fonte oficial</span></div>
+    <div class="src"><b>02</b><span><a href="https://www.in.gov.br/web/dou/-/portaria-dirben/inss-n-1.363-de-13-de-novembro-de-2026-744711408">DOU — Portaria DIRBEN/INSS 1.363/2026</a> · fonte oficial · <a href="https://www.lex.com.br/instrucao-normativa-inss-no-212-de-6-de-agosto-de-2026/">IN INSS 212/2026 (Lex Editora)</a> · <a href="https://previdenciarista.com/blog/inss-altera-aposentadoria-pensao-e-auxilio-acidente/">Previdenciarista</a> (secundária)</span></div>
+    <div class="src"><b>03</b><span><a href="https://www.in.gov.br/web/dou/-/portaria-interministerial-agu/mps-n-4-de-5-de-novembro-de-2026-744960669">DOU — Portaria Interministerial AGU/MPS 4/2026</a> · fonte oficial</span></div>
+    <div class="src"><b>04</b><span><a href="https://www.camara.leg.br/noticias/1321151-comissao-aprova-fim-de-carencia-para-salario-maternidade-de-tres-categorias">Agência Câmara — PL 1.599/2026 (19/11)</a> · <a href="https://legis.senado.leg.br/norma/38306350">Acórdão da ADI 2.110 (Senado)</a> · fonte oficial · <a href="https://atlaspublico.com.br/camara/noticias/comissao-da-camara-aprova-substitutivo-que-isenta-de-103623">Atlas Público</a> · <a href="https://previdenciarista.com/blog/inss-regulamenta-isencao-de-carencia-para-salario-maternidade/">Previdenciarista — IN 188/2025</a> (secundárias)</span></div>
+    <div class="src"><b>R</b><span><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/19112026-Audiencia-publica-recebe-sugestoes-de-entidades-e-especialistas-sobre-prescricao-e-decadencia-em-acoes-envolvendo-.aspx">Notícias STJ — Tema 1.321 (19/11)</a> · <a href="https://www.gov.br/inss/pt-br/assuntos/noticias/beneficiarios-que-comecaram-a-receber-apos-maio-terao-13o-salario-pago-em-novembro">INSS — 13º salário</a> · fonte oficial · <a href="https://conjur.com.br/2026-nov-20/inss-nao-e-obrigado-a-apresentar-calculos-de-valores-atrasados-em-acao">Conjur — TRF4</a> · <a href="https://www.ibdp.org.br/2026/11/18/inss-nao-e-obrigado-a-apresentar-calculos-de-valores-atrasados-em-acoes-previdenciarias/">IBDP — TRF4</a> · fonte secundária</span></div>
+    <div class="src"><b>✓</b><span><b>Dupla verificação (23/11):</b> fatos conferidos nas fontes oficiais (STF, DOU na Imprensa Nacional, Agência Câmara, STJ, INSS); revisão independente por agente Claude em contexto limpo (data da votação, regra de 30 dias, carência já derrubada pelo STF); auditorias do ChatGPT e do Gemini, cada apontamento reverificado na fonte. Aceitos: condição do art. 105, § 3º, ressalva sobre o despacho de suspensão do Tema 1.499, atribuição à Lex da IN 212. Rejeitados por contrariar o DOU ou a Agência Câmara: "indeferimento em vez de desistência" (o DOU diz desistência), carência da segurada especial (a Agência Câmara fala em 12 meses de atividade rural), dúvida sobre o Tema 1.418 (confirmado pelo IEPREV). Itens com ressalva: REsp 2.193.427 e IN 188/2025 (fontes secundárias) e data da votação do PL 1.599.</span></div>
+  </div>
+</section>
+
+<section id="curio">
+  <div class="curio"><div class="k">💡 Curiosidade previdenciária</div>O divisor mínimo que a Lei 14.331/2022 passou a exigir de forma expressa é de 108 meses, ou seja, nove anos de contribuições. O intervalo em disputa no Tema 1.499, entre a EC 103 (13/11/2019) e a Lei 14.331 (5/5/2022), tem cerca de dois anos e meio, e a nota do STF diz que, mesmo assim, o impacto é grande por causa da quantidade de pedidos feitos nesse período.</div>
+</section>
+
+<footer><b>Brevis Previdenciário</b>Edição nº 020 · 23 de novembro de 2026 · Curadoria Jean Barbosa<br>Briefing informativo; não constitui opinião legal. Verifique as fontes antes de aplicar qualquer tese.</footer>
+</div>
+<script>
+document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.card');c.classList.toggle('open');b.textContent=c.classList.contains('open')?'Recolher ▴':'Entenda os detalhes ▾'})});
+document.getElementById('chips').addEventListener('click',function(e){var f=e.target.getAttribute('data-f');if(!f)return;document.querySelectorAll('.chip').forEach(function(c){c.classList.toggle('on',c===e.target)});document.querySelectorAll('.card').forEach(function(c){c.classList.toggle('hide',c.getAttribute('data-tags').split(' ').indexOf(f)<0)})});
+document.getElementById('tabs').addEventListener('click',function(e){var p=e.target.getAttribute('data-p');if(!p)return;document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('on',t===e.target)});document.querySelectorAll('.panel').forEach(function(x){x.classList.toggle('on',x.id===p)})});
+document.querySelectorAll('#p1 input').forEach(function(i){i.addEventListener('change',function(){i.closest('.chk').classList.toggle('done',i.checked);var n=document.querySelectorAll('#p1 input:checked').length;document.getElementById('prog').textContent=n+' de '+document.querySelectorAll('#p1 input').length+' feitos'})});
+</script>
+</body>
+</html>
